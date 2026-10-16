@@ -19,7 +19,6 @@
 | ケープタウン冬 | https://www.capetown.travel/the-best-time-of-year-to-visit-cape-town/ | 冬季気温/降雨日、観光季節感 | 2026-10-16 | 2027予報ではない |
 | ケープタウン観光 | https://www.capetown.travel/100-things-to-do-in-winter-in-cape-town/ | 冬季の観光候補・現地住民向け特別料金と区別 | 2026-10-16 | キャンペーンは2026年 |
 | ケープタウン治安 | https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521 | 在ケープタウン領事事務所の犯罪注意喚起 | 2026-10-16 | 原通知は2025-06-07 |
-
 | 潜水後の標高 | https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/ | DANの標高上昇/減圧症、飛行前水面休息の考え方 | 2026-10-16 | バギオへのバス移動には個別判断が必要 |
 
 ### 引き続き調査
@@ -28,4 +27,4 @@
 - スーパー実売の数量・値段、衣料品の店舗と商品価格、観光非居住者料金。
 - 外貨換算レート：**未採用**（検証可能な日付/レートが取得できたときに記録）。
 
-公開時には出典リンクを明示し、記事・体験・価格の更新日を残す。| 潜水後の標高 | https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/ | DANの標高上昇/減圧症、飛行前水面休息の考え方 | 2026-10-16 | バギオへのバス移動には個別判断が必要 |
+公開時には出典リンクを明示し、記事・体験・価格の更新日を残す。
