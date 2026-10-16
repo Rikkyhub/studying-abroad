@@ -9,3 +9,6 @@ secrets/
 *.pem
 __pycache__/
 .DS_Store
+
+# Local working copy of the pre-repo planning folder (merged into data/, docs/, research/)
+study-abroad-2027/

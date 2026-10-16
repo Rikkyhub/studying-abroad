@@ -1,0 +1,4 @@
+currency,jpy_per_unit,rate_date,source,note
+USD,158.19,2026-10-16,https://www.murc-kawasesouba.jp/fx/index.php,三菱UFJ TTM（TTS 159.19／TTB 157.19）。見積換算用。実績は actual_jpy に実際の円額を記録
+PHP,2.53,2026-10-16,https://www.murc-kawasesouba.jp/fx/index.php,三菱UFJ 参考相場の中間値（TTS 2.67／TTB 2.39）
+ZAR,9.59,2026-10-16,https://www.murc-kawasesouba.jp/fx/index.php,三菱UFJ 参考相場の中間値（TTS 11.09／TTB 8.09）
