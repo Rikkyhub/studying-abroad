@@ -43,6 +43,7 @@
 | T-M01 | ⬜ | 海外用クレジットカード2枚以上・デビットカードの準備 | 2026-12-31 | 未着手 | 本人 | 年会費による | ブランド（Visa/Master）を分けて用意 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-M05 | ⬜ | ふるさと納税・年末調整・確定申告の要否を確認 | 2026-12-31 | 未着手 | 本人 | — | 2027年分は会社の年末調整で対応か確認 | [出典](https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2665.htm) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-M02 | ⬜ | 日本の携帯番号の維持方法を決める（povo0円・ahamo等） | 2027-01-15 | 未着手 | 本人 | povo 基本料0円（180日以内に有料トッピング必要） | SMS認証用に番号を維持する方法を決める | [出典](https://povo.jp/) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-C10 | ⬜ | 冬服（防水シェル・軽量ダウン）を日本で購入 | 2027-01-25 | 未着手 | 本人 | 約1.6〜5.6万円 | research/winter-clothing.md §3 の持参リストで手持ちを確認して不足分を購入 | [出典](https://www.uniqlo.com/jp/) | [#6](https://github.com/Rikkyhub/studying-abroad/issues/6) |
 
 ### 住居・荷物
 
