@@ -98,7 +98,7 @@
 | ID |  | タスク | 期限 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|
 | T008 | ⬜ | 2都市の週末ダイビング交通と見積を取得 | 2027-01-31 | 未着手 | 本人 | — | research/*-diving.md の候補ショップに空き・料金を確認 | — | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) |
-| T009 | ⬜ | 2都市の観光・雨天代替案を検証 | 2027-01-31 | 未着手 | 本人 | — | research/*-sightseeing.md のモデルコースを日程に配置 | — | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) |
+| T009 | ⬜ | 2都市の観光・雨天代替案を検証 | 2027-01-31 | 進行中 | 本人 | — | research/*-sightseeing.md のモデルコースを週末に配置。2027年のケーブルカー年次運休・Panagbenga・Mt. Pulag 料金は発表後に再確認 | — | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) |
 | T010 | ⬜ | ケープタウンの食材価格と衣類実売価格を確認 | 2027-04-30 | 未着手 | 本人 | — | research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認 | — | [#5](https://github.com/Rikkyhub/studying-abroad/issues/5) |
 
 ### 渡航中

@@ -7,7 +7,7 @@ T005,出発前,南ア5月入国案と6月初入国案の再入国条件を確認
 T006,出発前,6か月分費用の請求書・領収書を非公開で照合,2027-01-31,未着手,1,本人,—,支払いのたびに expenses.csv の paid_jpy・evidence（private/のラベル）を記入,—,https://github.com/Rikkyhub/studying-abroad/issues/7,個人情報は公開しない
 T007,出発前,休職・税社保・住居と国内固定費を確認,2026-12-15,未着手,1,本人＋勤務先人事,—,T-W02・T-W03・T-H01〜T-H06 に分割して管理,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T008,計画,2都市の週末ダイビング交通と見積を取得,2027-01-31,未着手,2,本人,—,research/*-diving.md の候補ショップに空き・料金を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/3,
-T009,計画,2都市の観光・雨天代替案を検証,2027-01-31,未着手,2,本人,—,research/*-sightseeing.md のモデルコースを日程に配置,—,https://github.com/Rikkyhub/studying-abroad/issues/4,
+T009,計画,2都市の観光・雨天代替案を検証,2027-01-31,進行中,2,本人,—,research/*-sightseeing.md のモデルコースを週末に配置。2027年のケーブルカー年次運休・Panagbenga・Mt. Pulag 料金は発表後に再確認,—,https://github.com/Rikkyhub/studying-abroad/issues/4,
 T010,計画,ケープタウンの食材価格と衣類実売価格を確認,2027-04-30,未着手,2,本人,—,research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認,—,https://github.com/Rikkyhub/studying-abroad/issues/5,
 T011,出発前,外務省危険情報と旅行保険・医療連絡先を確認,2027-01-15,未着手,1,本人,—,research/safety-and-health.md の再確認チェックリストを実施,https://www.anzen.mofa.go.jp/,https://github.com/Rikkyhub/studying-abroad/issues/8,
 T-W01,休職・会社,休職の正式承認（期間 2027-02-01〜07-31）を書面で得る,2026-11-30,要確認,1,本人＋勤務先人事,—,人事に承認状況と必要書類を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/7,会社規定次第
