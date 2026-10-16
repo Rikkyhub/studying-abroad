@@ -1,0 +1,11 @@
+# Personal documents, passports, receipts and local drafts
+.env
+.env.*
+!.env.example
+private/
+receipts/
+secrets/
+*.key
+*.pem
+__pycache__/
+.DS_Store
