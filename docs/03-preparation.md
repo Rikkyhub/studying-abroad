@@ -24,7 +24,7 @@
 | T003 | ⬜ | PINESにSSPと滞在延長代行範囲・費用を確認 | 2026-12-31 | 未着手 | 本人 | — | PINES（またはエージェント）に問い合わせ文案を送る | [出典](https://immigration.gov.ph/services/special-study-permit/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 | T004 | ⬜ | ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認 | 2026-12-31 | 未着手 | 本人 | — | 在日南ア大使館・UCT ELC に問い合わせ文案を送る | [出典](https://dirco.gov.za/japan/immigration-visa-info/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 | T005 | ⬜ | 南ア5月入国案と6月初入国案の再入国条件を確認 | 2026-12-31 | 未着手 | 本人 | — | T004と同じ問い合わせで回答を得る | [出典](https://dirco.gov.za/japan/frequently-asked-questions/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
-| T011 | ⬜ | 外務省危険情報と旅行保険・医療連絡先を確認 | 2027-01-15 | 未着手 | 本人 | — | research/safety-and-health.md の再確認チェックリストを実施 | [出典](https://www.anzen.mofa.go.jp/) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
+| T011 | ⬜ | 外務省危険情報と旅行保険・医療連絡先を確認 | 2027-01-15 | 進行中 | 本人 | — | research/safety-and-health.md §10 の渡航前チェックリストを実施（2027-01 と出発2週間前に再確認） | [出典](https://www.anzen.mofa.go.jp/) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T006 | ⬜ | 6か月分費用の請求書・領収書を非公開で照合 | 2027-01-31 | 未着手 | 本人 | — | 支払いのたびに expenses.csv の paid_jpy・evidence（private/のラベル）を記入 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 
 ### パスポート・ビザ
@@ -62,9 +62,11 @@
 | T-I02 | ⬜ | トラベルクリニック受診・予防接種計画（A型・B型肝炎・破傷風・腸チフス・狂犬病） | 2026-11-15 | 未着手 | 本人 | 1回 約4400〜16500円（東京医大病院の例） | 出発3か月以上前に受診予約 | [出典](https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I03 | ⬜ | 黄熱ワクチンの要否判断（経由地・訪問国次第） | 2026-12-31 | 未着手 | 本人 | 検疫所 17680円 | ルート決定後にFORTHの要求国リストで判断 | [出典](https://www.forth.go.jp/moreinfo/topics/yellow_fever_certificate.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I01 | ⬜ | 海外旅行保険（約180日・アジア＋アフリカ）の見積・加入 | 2027-01-15 | 未着手 | 本人 | 6か月 約18〜35万円（東京海上 代理店掲載例・年齢による） | 東京海上日動・t@biho 等で見積 | [出典](https://www.tmn-hoken.jp/study/simulation.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
+| T-S11 | ⬜ | PINESの門限・外出規則・夜間外出時のルールを確認 | 2027-01-15 | 未着手 | 本人 | — | PINES（またはエージェント）に問い合わせ | — | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I05 | ⬜ | 歯科検診・常備薬・処方薬（英文処方箋） | 2027-01-20 | 未着手 | 本人 | — | 歯科予約 | — | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I06 | ⬜ | 健康保険の海外療養費の申請方法・様式を確認 | 2027-01-20 | 未着手 | 本人 | — | 加入健保（協会けんぽ／組合）を確認 | [出典](https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I04 | ⬜ | マラリア予防薬の相談（クルーガー・チョベ・ビクトリア滝方面に行く場合） | 2027-01-31 | 未着手 | 本人 | 自由診療 | トラベルクリニックで相談 | [出典](https://www.forth.go.jp/destinations/country/s_africa.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
+| T-S10 | ⬜ | 緊急連絡先・病院・領事事務所の連絡先をスマホとオフライン（紙）に保存 | 2027-02-01 | 未着手 | 本人 | — | research/safety-and-health.md §2-5 の番号を出発前に公式で再確認して保存 | [出典](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 
 ### 休職・会社
 

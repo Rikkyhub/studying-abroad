@@ -9,7 +9,7 @@ T007,出発前,休職・税社保・住居と国内固定費を確認,2026-12-15
 T008,計画,2都市の週末ダイビング交通と見積を取得,2027-01-31,未着手,2,本人,—,research/*-diving.md の候補ショップに空き・料金を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/3,
 T009,計画,2都市の観光・雨天代替案を検証,2027-01-31,未着手,2,本人,—,research/*-sightseeing.md のモデルコースを日程に配置,—,https://github.com/Rikkyhub/studying-abroad/issues/4,
 T010,計画,ケープタウンの食材価格と衣類実売価格を確認,2027-04-30,未着手,2,本人,—,research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認,—,https://github.com/Rikkyhub/studying-abroad/issues/5,
-T011,出発前,外務省危険情報と旅行保険・医療連絡先を確認,2027-01-15,未着手,1,本人,—,research/safety-and-health.md の再確認チェックリストを実施,https://www.anzen.mofa.go.jp/,https://github.com/Rikkyhub/studying-abroad/issues/8,
+T011,出発前,外務省危険情報と旅行保険・医療連絡先を確認,2027-01-15,進行中,1,本人,—,research/safety-and-health.md §10 の渡航前チェックリストを実施（2027-01 と出発2週間前に再確認）,https://www.anzen.mofa.go.jp/,https://github.com/Rikkyhub/studying-abroad/issues/8,
 T-W01,休職・会社,休職の正式承認（期間 2027-02-01〜07-31）を書面で得る,2026-11-30,要確認,1,本人＋勤務先人事,—,人事に承認状況と必要書類を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/7,会社規定次第
 T-W02,休職・会社,休職中の社会保険料（本人負担分）の支払方法を確認,2026-12-15,未着手,1,本人＋勤務先人事,月額は標準報酬月額による（休職前と同じ等級の見込み）,人事に「立替・振込・復職後天引き」のどれか確認,https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154,https://github.com/Rikkyhub/studying-abroad/issues/7,4〜6月無給なら従前の標準報酬で定時決定（日本年金機構）
 T-W03,休職・会社,住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認,2026-12-15,未着手,1,本人＋勤務先人事,2026年度分2〜5月＋2027年度分6〜7月,人事に確認。普通徴収なら市区町村の納付方法も確認,https://www.city.setagaya.lg.jp/02051/233.html,https://github.com/Rikkyhub/studying-abroad/issues/7,会社・自治体ごとに異なる
@@ -48,3 +48,5 @@ T-R01,帰国・復職,帰国後の住居・荷物の受け取り,2027-08-15,未�
 T-R02,帰国・復職,復職手続き・休職中の社会保険料等の精算,2027-08-23,未着手,2,本人,—,人事に確認,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-R03,帰国・復職,海外療養費の申請（使った場合）,2027-09-30,未着手,3,本人,—,領収書と翻訳文を準備,https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/,https://github.com/Rikkyhub/studying-abroad/issues/7,時効は支払翌日から2年
 T-R04,帰国・復職,実費の最終集計・ブログ記事化,2027-09-30,未着手,3,本人,—,全行を実績にする,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
+T-S10,保険・医療,緊急連絡先・病院・領事事務所の連絡先をスマホとオフライン（紙）に保存,2027-02-01,未着手,2,本人,—,research/safety-and-health.md §2-5 の番号を出発前に公式で再確認して保存,https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html,https://github.com/Rikkyhub/studying-abroad/issues/8,Netcare 911・バギオ市警察・Notre Dame de Chartres の番号は未確認
+T-S11,保険・医療,PINESの門限・外出規則・夜間外出時のルールを確認,2027-01-15,未着手,2,本人,—,PINES（またはエージェント）に問い合わせ,—,https://github.com/Rikkyhub/studying-abroad/issues/8,公式サイトが閲覧できず未確認
