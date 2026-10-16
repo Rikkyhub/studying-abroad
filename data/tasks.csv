@@ -1,0 +1,12 @@
+id,phase,task,status,priority,due_date,estimated_jpy,source_url,issue_url,notes
+T001,predeparture,PINES最終日程と支払証憑の照合,not_started,P0,,,,https://github.com/Rikkyhub/studying-abroad/issues/7,証憑を公開repoにアップしない
+T002,predeparture,フィリピン入国用の有効な出国航空券を確保,not_started,P0,,,https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/,https://github.com/Rikkyhub/studying-abroad/issues/2,返金/変更可能な正規手段を検討
+T003,predeparture,PINESにSSPと滞在延長代行範囲・費用を確認,not_started,P0,,,https://immigration.gov.ph/services/special-study-permit/,https://github.com/Rikkyhub/studying-abroad/issues/2,2014年公開料金は現行ではない
+T004,predeparture,ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認,not_started,P0,,,https://dirco.gov.za/japan/immigration-visa-info/,https://github.com/Rikkyhub/studying-abroad/issues/2,旅行前の回答取得が必要
+T005,predeparture,南ア5月入国案と6月初入国案の再入国条件を確認,not_started,P0,,,https://dirco.gov.za/japan/frequently-asked-questions/,https://github.com/Rikkyhub/studying-abroad/issues/2,90日自動リセットとみなさない
+T006,predeparture,6か月分費用の請求書・領収書を非公開で照合,not_started,P0,,,,https://github.com/Rikkyhub/studying-abroad/issues/7,個人情報は公開しない
+T007,predeparture,休職・税社保・住居と国内固定費を確認,not_started,P0,,,,https://github.com/Rikkyhub/studying-abroad/issues/7,
+T008,planning,2都市の週末ダイビング交通と見積を取得,not_started,P1,,,,https://github.com/Rikkyhub/studying-abroad/issues/3,
+T009,planning,2都市の観光・雨天代替案を検証,not_started,P1,,,,https://github.com/Rikkyhub/studying-abroad/issues/4,
+T010,planning,ケープタウンの食材価格と衣類実売価格を確認,not_started,P1,,,,https://github.com/Rikkyhub/studying-abroad/issues/5,
+T011,predeparture,外務省危険情報と旅行保険・医療連絡先を確認,not_started,P0,,,https://www.anzen.mofa.go.jp/,https://github.com/Rikkyhub/studying-abroad/issues/8,

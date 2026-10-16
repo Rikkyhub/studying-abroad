@@ -34,3 +34,11 @@ PINESのコース予定：Power ESL5（4週）→ Intensive ESL（8週）。
 - [治安・健康 #8](https://github.com/Rikkyhub/studying-abroad/issues/8)
 
 **重要**：リポジトリの一般公開を前提とする。パスポート情報、宿泊予約番号、領収書画像、勤務先内部資料、住所はコミットしない。
+
+## Webで見られる計画画面
+
+- [ダッシュボード](index.html)：月別計画・入力済み費用小計・準備タスク・調査資料へのリンク。ブラウザで使う場合はリポジトリ内で `python3 -m http.server 8000` を起動して `http://localhost:8000` を開く（GitHub Pagesは**未設定**）。
+- [ダッシュボードの更新方法](docs/04-dashboard.md)
+- CSVの検証：`python3 scripts/validate_data.py`。GitHub ActionsでもPR時に検証。
+
+現時点の研究資料は完成版ではない。公式で確認できた情報と未確認の候補を区別し、各Issueで継続調査する。
