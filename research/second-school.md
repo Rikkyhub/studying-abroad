@@ -79,7 +79,7 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 
 | 項目 | 内容 | 出典 |
 |---|---|---|
-| 査証免除 | 一般旅券で**90日以内は査証不要**（1回の入国ごと） | [DHA 免除国一覧](https://www.dha.gov.za/index.php/immigration-services/exempt-countries)（2025-12-09版） |
+| 査証免除 | 一般旅券で**90日以内は査証不要**。**周辺国へ出て再入国しても期限は延びない**（Immigration Regulations reg 11(5)：日本以外から再入国すると最初の許可の期限を引き継ぐ。2026-10-17 訂正。詳細は [visa-and-immigration.md](visa-and-immigration.md)） | [DHA 免除国一覧](https://www.dha.gov.za/index.php/immigration-services/exempt-countries)（2025-12-09版） |
 | 語学留学は可能か | DHA は訪問者ビザの目的に「study purposes」を含めています。UCT ELC は「90日未満のコースなら訪問者ビザで学べる場合がある」と案内。外務省の記載は「観光・短期商用・知人訪問など」で、語学学習は明記されていません | [DHA ビザ種類](https://www.dha.gov.za/index.php/immigration-services/types-of-visas)、[UCT ELC ビザ情報](https://uctlanguagecentre.com/enroll/student-support/visa-information)、[外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html) |
 | 旅券 | 出国予定日から**30日以上の残存期間**。**未使用の査証欄2ページ以上**（大使館の案内は1ページだが、搭乗拒否の例あり）。周辺国に行く場合はさらに必要 | 外務省、DHA |
 | その他 | 復路・第三国行きの航空券。資金証明を求められる場合あり | 同上 |

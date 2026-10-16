@@ -1,9 +1,9 @@
 id,phase,task,deadline,status,priority,owner,cost_note,next_action,source,issue,note
 T001,出発前,PINES最終日程と支払証憑の照合,2026-10-31,未着手,1,本人,—,PINES請求書・領収書・予約証明を private/ に保存し、PH-01 の支払額と部屋タイプを記入,—,https://github.com/Rikkyhub/studying-abroad/issues/7,証憑を公開repoにアップしない
-T002,出発前,フィリピン入国用の有効な出国航空券を確保,2026-12-31,未着手,1,本人,—,research/visa-and-immigration.md の推奨案を見て、5月のマニラ発便を先に買うか判断,https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/,https://github.com/Rikkyhub/studying-abroad/issues/2,返金/変更可能な正規手段を検討
-T003,出発前,PINESにSSPと滞在延長代行範囲・費用を確認,2026-12-31,未着手,1,本人,—,PINES（またはエージェント）に問い合わせ文案を送る,https://immigration.gov.ph/services/special-study-permit/,https://github.com/Rikkyhub/studying-abroad/issues/2,2014年公開料金は現行ではない
-T004,出発前,ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認,2026-12-31,未着手,1,本人,—,在日南ア大使館・UCT ELC に問い合わせ文案を送る,https://dirco.gov.za/japan/immigration-visa-info/,https://github.com/Rikkyhub/studying-abroad/issues/2,旅行前の回答取得が必要
-T005,出発前,南ア5月入国案と6月初入国案の再入国条件を確認,2026-12-31,未着手,1,本人,—,T004と同じ問い合わせで回答を得る,https://dirco.gov.za/japan/frequently-asked-questions/,https://github.com/Rikkyhub/studying-abroad/issues/2,90日自動リセットとみなさない
+T002,出発前,フィリピン入国用の有効な出国航空券を確保,2026-12-31,進行中,1,本人,—,推奨：5月に実際に乗るマニラ発の便を変更可能な運賃で先に購入し、入学許可書と一緒に提示（onward ticket rental は非推奨）。research/visa-and-immigration.md 参照,https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/,https://github.com/Rikkyhub/studying-abroad/issues/2,返金/変更可能な正規手段を検討
+T003,出発前,PINESにSSPと滞在延長代行範囲・費用を確認,2026-12-31,進行中,1,本人,—,research/visa-and-immigration.md §7 の PINES 宛て文案を送る（85日の延長区分 11150/15390・ACR I-CARD の要否）,https://immigration.gov.ph/services/special-study-permit/,https://github.com/Rikkyhub/studying-abroad/issues/2,2014年公開料金は現行ではない
+T004,出発前,ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認,2026-12-31,進行中,1,本人,—,research/visa-and-immigration.md §7 の大使館・UCT ELC 宛て文案を送る（本人が送信）,https://dirco.gov.za/japan/immigration-visa-info/,https://github.com/Rikkyhub/studying-abroad/issues/2,旅行前の回答取得が必要
+T005,出発前,南ア5月入国案と6月初入国案の再入国条件を確認,2026-12-31,進行中,1,本人,—,推奨はケースB（5月は南ア以外を周遊し、南ア初入国は5/29〜30）。reg 11(5) が現行条文かを大使館に確認,https://dirco.gov.za/japan/frequently-asked-questions/,https://github.com/Rikkyhub/studying-abroad/issues/2,90日自動リセットとみなさない
 T006,出発前,6か月分費用の請求書・領収書を非公開で照合,2027-01-31,未着手,1,本人,—,支払いのたびに expenses.csv の paid_jpy・evidence（private/のラベル）を記入,—,https://github.com/Rikkyhub/studying-abroad/issues/7,個人情報は公開しない
 T007,出発前,休職・税社保・住居と国内固定費を確認,2026-12-15,未着手,1,本人＋勤務先人事,—,T-W02・T-W03・T-H01〜T-H06 に分割して管理,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T008,計画,2都市の週末ダイビング交通と見積を取得,2027-01-31,未着手,2,本人,—,research/*-diving.md の候補ショップに空き・料金を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/3,
@@ -23,7 +23,7 @@ T-H04,住居・荷物,電気・ガス・水道・ネットの解約／休止,202
 T-H05,住居・荷物,郵便転送届（e転居）・重要書類の受取先を決める,2027-01-20,未着手,3,本人,無料,家族に受取を依頼するか決める,https://welcometown.post.japanpost.jp/etn/,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-H06,住居・荷物,住民票：海外転出届は原則不要（1年未満）を自治体に確認,2026-12-31,要確認,2,本人,—,住民票のある市区町村に確認,https://www.city.koto.lg.jp/060301/kurashi/jumin/idotodoke/5021.html,https://github.com/Rikkyhub/studying-abroad/issues/7,1/1時点で日本にいるため住民税への影響なし（推論）
 T-P01,パスポート・ビザ,パスポート残存期間を確認（帰国予定日＋6か月以上・査証欄2ページ以上×訪問国数）,2026-10-31,未着手,1,本人,更新時 電子申請8900円／窓口9300円,パスポートの有効期限と空白ページを確認,https://www.anzen.mofa.go.jp/m/mbimmigration_122.html,https://github.com/Rikkyhub/studying-abroad/issues/2,不足なら11月中に申請（交付約2週間〜1か月）
-T-P02,パスポート・ビザ,フィリピン eTravel 登録,2027-02-03,未着手,2,本人,無料,出発72時間前以内に登録,https://etravel.gov.ph/,https://github.com/Rikkyhub/studying-abroad/issues/2,
+T-P02,パスポート・ビザ,フィリピン eTravel 登録,2027-02-03,未着手,2,本人,無料,出発前に etravel.gov.ph で登録可能時期を確認して登録,https://etravel.gov.ph/,https://github.com/Rikkyhub/studying-abroad/issues/2,
 T-P05,パスポート・ビザ,周遊国のビザ要否・費用を確定,2027-03-31,未着手,2,本人,05_africa-trip.md 参照,ルート確定後に各国公式で再確認,—,https://github.com/Rikkyhub/studying-abroad/issues/2,
 T-F01,航空券,日本→マニラ（2/5〜6着）を購入,2026-12-15,未着手,2,本人,片道 約2.2〜6.5万円（KAYAK参考）,便を比較して購入,https://www.kayak.com/flight-routes/Tokyo-TYO/Manila-Ninoy-Aquino-Intl-MNL,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-F02,航空券,マニラ→南部アフリカ（5/2頃）を購入,2027-01-31,未着手,2,本人,05_africa-trip.md 参照,ルート案を決めて購入,—,https://github.com/Rikkyhub/studying-abroad/issues/7,黄熱リスク国経由に注意
@@ -48,3 +48,4 @@ T-R01,帰国・復職,帰国後の住居・荷物の受け取り,2027-08-15,未�
 T-R02,帰国・復職,復職手続き・休職中の社会保険料等の精算,2027-08-23,未着手,2,本人,—,人事に確認,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-R03,帰国・復職,海外療養費の申請（使った場合）,2027-09-30,未着手,3,本人,—,領収書と翻訳文を準備,https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/,https://github.com/Rikkyhub/studying-abroad/issues/7,時効は支払翌日から2年
 T-R04,帰国・復職,実費の最終集計・ブログ記事化,2027-09-30,未着手,3,本人,—,全行を実績にする,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
+T-P06,パスポート・ビザ,5月周遊ルートを「南ア初入国は5月末」（ケースB）で組むか決定,2027-01-31,未着手,1,本人,—,research/visa-and-immigration.md のケース表を見て決める。ケースAなら8月の南ア再訪はしない,https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf,https://github.com/Rikkyhub/studying-abroad/issues/2,90日は周辺国に出てもリセットされない（reg 11(5)）

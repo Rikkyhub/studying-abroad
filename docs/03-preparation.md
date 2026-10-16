@@ -20,10 +20,10 @@
 |---|---|---|---|---|---|---|---|---|---|
 | T001 | ⬜ | PINES最終日程と支払証憑の照合 | 2026-10-31 | 未着手 | 本人 | — | PINES請求書・領収書・予約証明を private/ に保存し、PH-01 の支払額と部屋タイプを記入 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T007 | ⬜ | 休職・税社保・住居と国内固定費を確認 | 2026-12-15 | 未着手 | 本人＋勤務先人事 | — | T-W02・T-W03・T-H01〜T-H06 に分割して管理 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
-| T002 | ⬜ | フィリピン入国用の有効な出国航空券を確保 | 2026-12-31 | 未着手 | 本人 | — | research/visa-and-immigration.md の推奨案を見て、5月のマニラ発便を先に買うか判断 | [出典](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
-| T003 | ⬜ | PINESにSSPと滞在延長代行範囲・費用を確認 | 2026-12-31 | 未着手 | 本人 | — | PINES（またはエージェント）に問い合わせ文案を送る | [出典](https://immigration.gov.ph/services/special-study-permit/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
-| T004 | ⬜ | ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認 | 2026-12-31 | 未着手 | 本人 | — | 在日南ア大使館・UCT ELC に問い合わせ文案を送る | [出典](https://dirco.gov.za/japan/immigration-visa-info/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
-| T005 | ⬜ | 南ア5月入国案と6月初入国案の再入国条件を確認 | 2026-12-31 | 未着手 | 本人 | — | T004と同じ問い合わせで回答を得る | [出典](https://dirco.gov.za/japan/frequently-asked-questions/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
+| T002 | ⬜ | フィリピン入国用の有効な出国航空券を確保 | 2026-12-31 | 進行中 | 本人 | — | 推奨：5月に実際に乗るマニラ発の便を変更可能な運賃で先に購入し、入学許可書と一緒に提示（onward ticket rental は非推奨）。research/visa-and-immigration.md 参照 | [出典](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
+| T003 | ⬜ | PINESにSSPと滞在延長代行範囲・費用を確認 | 2026-12-31 | 進行中 | 本人 | — | research/visa-and-immigration.md §7 の PINES 宛て文案を送る（85日の延長区分 11150/15390・ACR I-CARD の要否） | [出典](https://immigration.gov.ph/services/special-study-permit/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
+| T004 | ⬜ | ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認 | 2026-12-31 | 進行中 | 本人 | — | research/visa-and-immigration.md §7 の大使館・UCT ELC 宛て文案を送る（本人が送信） | [出典](https://dirco.gov.za/japan/immigration-visa-info/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
+| T005 | ⬜ | 南ア5月入国案と6月初入国案の再入国条件を確認 | 2026-12-31 | 進行中 | 本人 | — | 推奨はケースB（5月は南ア以外を周遊し、南ア初入国は5/29〜30）。reg 11(5) が現行条文かを大使館に確認 | [出典](https://dirco.gov.za/japan/frequently-asked-questions/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 | T011 | ⬜ | 外務省危険情報と旅行保険・医療連絡先を確認 | 2027-01-15 | 未着手 | 本人 | — | research/safety-and-health.md の再確認チェックリストを実施 | [出典](https://www.anzen.mofa.go.jp/) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T006 | ⬜ | 6か月分費用の請求書・領収書を非公開で照合 | 2027-01-31 | 未着手 | 本人 | — | 支払いのたびに expenses.csv の paid_jpy・evidence（private/のラベル）を記入 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 
@@ -32,7 +32,8 @@
 | ID |  | タスク | 期限 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|
 | T-P01 | ⬜ | パスポート残存期間を確認（帰国予定日＋6か月以上・査証欄2ページ以上×訪問国数） | 2026-10-31 | 未着手 | 本人 | 更新時 電子申請8900円／窓口9300円 | パスポートの有効期限と空白ページを確認 | [出典](https://www.anzen.mofa.go.jp/m/mbimmigration_122.html) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
-| T-P02 | ⬜ | フィリピン eTravel 登録 | 2027-02-03 | 未着手 | 本人 | 無料 | 出発72時間前以内に登録 | [出典](https://etravel.gov.ph/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
+| T-P06 | ⬜ | 5月周遊ルートを「南ア初入国は5月末」（ケースB）で組むか決定 | 2027-01-31 | 未着手 | 本人 | — | research/visa-and-immigration.md のケース表を見て決める。ケースAなら8月の南ア再訪はしない | [出典](https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
+| T-P02 | ⬜ | フィリピン eTravel 登録 | 2027-02-03 | 未着手 | 本人 | 無料 | 出発前に etravel.gov.ph で登録可能時期を確認して登録 | [出典](https://etravel.gov.ph/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 | T-P05 | ⬜ | 周遊国のビザ要否・費用を確定 | 2027-03-31 | 未着手 | 本人 | 05_africa-trip.md 参照 | ルート確定後に各国公式で再確認 | — | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 
 ### お金・通信
