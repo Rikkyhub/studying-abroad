@@ -8,7 +8,7 @@ T006,出発前,6か月分費用の請求書・領収書を非公開で照合,202
 T007,出発前,休職・税社保・住居と国内固定費を確認,2026-12-15,未着手,1,本人＋勤務先人事,—,T-W02・T-W03・T-H01〜T-H06 に分割して管理,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T008,計画,2都市の週末ダイビング交通と見積を取得,2027-01-31,未着手,2,本人,—,research/*-diving.md の候補ショップに空き・料金を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/3,
 T009,計画,2都市の観光・雨天代替案を検証,2027-01-31,未着手,2,本人,—,research/*-sightseeing.md のモデルコースを日程に配置,—,https://github.com/Rikkyhub/studying-abroad/issues/4,
-T010,計画,ケープタウンの食材価格と衣類実売価格を確認,2027-04-30,未着手,2,本人,—,research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認,—,https://github.com/Rikkyhub/studying-abroad/issues/5,
+T010,計画,ケープタウンの食材価格と衣類実売価格を確認,2027-04-30,進行中,2,本人,—,食材価格は取得済み（PnP/Checkers/Shoprite/Woolworths）。住居が決まったら最寄り店で再計算。バギオの外食店の価格を現地で記録,—,https://github.com/Rikkyhub/studying-abroad/issues/5,
 T011,出発前,外務省危険情報と旅行保険・医療連絡先を確認,2027-01-15,未着手,1,本人,—,research/safety-and-health.md の再確認チェックリストを実施,https://www.anzen.mofa.go.jp/,https://github.com/Rikkyhub/studying-abroad/issues/8,
 T-W01,休職・会社,休職の正式承認（期間 2027-02-01〜07-31）を書面で得る,2026-11-30,要確認,1,本人＋勤務先人事,—,人事に承認状況と必要書類を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/7,会社規定次第
 T-W02,休職・会社,休職中の社会保険料（本人負担分）の支払方法を確認,2026-12-15,未着手,1,本人＋勤務先人事,月額は標準報酬月額による（休職前と同じ等級の見込み）,人事に「立替・振込・復職後天引き」のどれか確認,https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154,https://github.com/Rikkyhub/studying-abroad/issues/7,4〜6月無給なら従前の標準報酬で定時決定（日本年金機構）
@@ -48,3 +48,4 @@ T-R01,帰国・復職,帰国後の住居・荷物の受け取り,2027-08-15,未�
 T-R02,帰国・復職,復職手続き・休職中の社会保険料等の精算,2027-08-23,未着手,2,本人,—,人事に確認,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-R03,帰国・復職,海外療養費の申請（使った場合）,2027-09-30,未着手,3,本人,—,領収書と翻訳文を準備,https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/,https://github.com/Rikkyhub/studying-abroad/issues/7,時効は支払翌日から2年
 T-R04,帰国・復職,実費の最終集計・ブログ記事化,2027-09-30,未着手,3,本人,—,全行を実績にする,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
+T-F10,留学先手続き,UCT ELC のホームステイの食事条件（朝夕食付きか）を確認,2027-01-31,未着手,2,本人,食費が週R773程度変わる,UCT ELC に問い合わせ（#2 の文案に追記）,https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027,https://github.com/Rikkyhub/studying-abroad/issues/5,料金表に食事の記載なし

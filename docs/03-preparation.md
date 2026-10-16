@@ -91,6 +91,7 @@
 |---|---|---|---|---|---|---|---|---|---|
 | T-S01 | ⬜ | PINES の予約証明・入学案内・現地費用の最新版を受け取る | 2026-12-31 | 未着手 | 本人 | — | エージェント／学校に2027年版の現地費用を確認 | [出典](https://philschools.jp/pricelist/pines.pdf) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-S02 | ⬜ | 2校目（ケープタウン）の学校・期間を決定 | 2027-01-31 | 未着手 | 本人 | 06_second-school.md 参照 | UCT ELC 等に見積依頼 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-F10 | ⬜ | UCT ELC のホームステイの食事条件（朝夕食付きか）を確認 | 2027-01-31 | 未着手 | 本人 | 食費が週R773程度変わる | UCT ELC に問い合わせ（#2 の文案に追記） | [出典](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027) | [#5](https://github.com/Rikkyhub/studying-abroad/issues/5) |
 | T-S03 | ⬜ | 2校目の宿泊（ホームステイ等）を手配 | 2027-03-31 | 未着手 | 本人 | 06_second-school.md 参照 | 学校決定後に申込 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 
 ### 計画
@@ -99,7 +100,7 @@
 |---|---|---|---|---|---|---|---|---|---|
 | T008 | ⬜ | 2都市の週末ダイビング交通と見積を取得 | 2027-01-31 | 未着手 | 本人 | — | research/*-diving.md の候補ショップに空き・料金を確認 | — | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) |
 | T009 | ⬜ | 2都市の観光・雨天代替案を検証 | 2027-01-31 | 未着手 | 本人 | — | research/*-sightseeing.md のモデルコースを日程に配置 | — | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) |
-| T010 | ⬜ | ケープタウンの食材価格と衣類実売価格を確認 | 2027-04-30 | 未着手 | 本人 | — | research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認 | — | [#5](https://github.com/Rikkyhub/studying-abroad/issues/5) |
+| T010 | ⬜ | ケープタウンの食材価格と衣類実売価格を確認 | 2027-04-30 | 進行中 | 本人 | — | 食材価格は取得済み（PnP/Checkers/Shoprite/Woolworths）。住居が決まったら最寄り店で再計算。バギオの外食店の価格を現地で記録 | — | [#5](https://github.com/Rikkyhub/studying-abroad/issues/5) |
 
 ### 渡航中
 
