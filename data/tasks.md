@@ -1,17 +1,52 @@
 # tasks.csv
 
-`data/tasks.csv` を表にした閲覧用のページです（11行 × 10列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
+`data/tasks.csv` を表にした閲覧用のページです（46行 × 12列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
 
-| id | phase | task | status | priority | due_date | estimated_jpy | source_url | issue_url | notes |
-|---|---|---|---|---|---|---|---|---|---|
-| T001 | predeparture | PINES最終日程と支払証憑の照合 | not_started | P0 |  |  |  | https://github.com/Rikkyhub/studying-abroad/issues/7 | 証憑を公開repoにアップしない |
-| T002 | predeparture | フィリピン入国用の有効な出国航空券を確保 | not_started | P0 |  |  | https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 返金/変更可能な正規手段を検討 |
-| T003 | predeparture | PINESにSSPと滞在延長代行範囲・費用を確認 | not_started | P0 |  |  | https://immigration.gov.ph/services/special-study-permit/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 2014年公開料金は現行ではない |
-| T004 | predeparture | ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認 | not_started | P0 |  |  | https://dirco.gov.za/japan/immigration-visa-info/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 旅行前の回答取得が必要 |
-| T005 | predeparture | 南ア5月入国案と6月初入国案の再入国条件を確認 | not_started | P0 |  |  | https://dirco.gov.za/japan/frequently-asked-questions/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 90日自動リセットとみなさない |
-| T006 | predeparture | 6か月分費用の請求書・領収書を非公開で照合 | not_started | P0 |  |  |  | https://github.com/Rikkyhub/studying-abroad/issues/7 | 個人情報は公開しない |
-| T007 | predeparture | 休職・税社保・住居と国内固定費を確認 | not_started | P0 |  |  |  | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
-| T008 | planning | 2都市の週末ダイビング交通と見積を取得 | not_started | P1 |  |  |  | https://github.com/Rikkyhub/studying-abroad/issues/3 |  |
-| T009 | planning | 2都市の観光・雨天代替案を検証 | not_started | P1 |  |  |  | https://github.com/Rikkyhub/studying-abroad/issues/4 |  |
-| T010 | planning | ケープタウンの食材価格と衣類実売価格を確認 | not_started | P1 |  |  |  | https://github.com/Rikkyhub/studying-abroad/issues/5 |  |
-| T011 | predeparture | 外務省危険情報と旅行保険・医療連絡先を確認 | not_started | P0 |  |  | https://www.anzen.mofa.go.jp/ | https://github.com/Rikkyhub/studying-abroad/issues/8 |  |
+| id | phase | task | deadline | status | priority | owner | cost_note | next_action | source | issue | note |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| T002 | 出発前 | フィリピン入国用の有効な出国航空券を確保 | 2026-12-31 | 未着手 | 1 | 本人 | — | research/visa-and-immigration.md の推奨案を見て、5月のマニラ発便を先に買うか判断 | https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 返金/変更可能な正規手段を検討 |
+| T003 | 出発前 | PINESにSSPと滞在延長代行範囲・費用を確認 | 2026-12-31 | 未着手 | 1 | 本人 | — | PINES（またはエージェント）に問い合わせ文案を送る | https://immigration.gov.ph/services/special-study-permit/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 2014年公開料金は現行ではない |
+| T004 | 出発前 | ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認 | 2026-12-31 | 未着手 | 1 | 本人 | — | 在日南ア大使館・UCT ELC に問い合わせ文案を送る | https://dirco.gov.za/japan/immigration-visa-info/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 旅行前の回答取得が必要 |
+| T005 | 出発前 | 南ア5月入国案と6月初入国案の再入国条件を確認 | 2026-12-31 | 未着手 | 1 | 本人 | — | T004と同じ問い合わせで回答を得る | https://dirco.gov.za/japan/frequently-asked-questions/ | https://github.com/Rikkyhub/studying-abroad/issues/2 | 90日自動リセットとみなさない |
+| T007 | 出発前 | 休職制度・税社保・住居と国内固定費の一般的な確認項目を整理 | 2026-12-15 | 未着手 | 1 | 本人 | — | T-W02・T-W03・T-H01〜T-H06 に分割して管理 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T008 | 計画 | 2都市の週末ダイビング交通と見積を取得 | 2027-01-31 | 未着手 | 2 | 本人 | — | research/*-diving.md の候補ショップに空き・料金を確認 | — | https://github.com/Rikkyhub/studying-abroad/issues/3 |  |
+| T009 | 計画 | 2都市の観光・雨天代替案を検証 | 2027-01-31 | 未着手 | 2 | 本人 | — | research/*-sightseeing.md のモデルコースを日程に配置 | — | https://github.com/Rikkyhub/studying-abroad/issues/4 |  |
+| T010 | 計画 | ケープタウンの食材価格と衣類実売価格を確認 | 2027-04-30 | 未着手 | 2 | 本人 | — | research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認 | — | https://github.com/Rikkyhub/studying-abroad/issues/5 |  |
+| T011 | 出発前 | 外務省危険情報と旅行保険・医療連絡先を確認 | 2027-01-15 | 未着手 | 1 | 本人 | — | research/safety-and-health.md の再確認チェックリストを実施 | https://www.anzen.mofa.go.jp/ | https://github.com/Rikkyhub/studying-abroad/issues/8 |  |
+| T-W01 | 休職・会社 | 勤務先の休職制度・承認手続きを確認 | 2026-11-30 | 要確認 | 1 | 本人 | — | 就業規則と必要書類を確認（内容は公開しない） | — | https://github.com/Rikkyhub/studying-abroad/issues/7 | 勤務先の規定次第 |
+| T-W02 | 休職・会社 | 休職中の社会保険料（本人負担分）の支払方法を確認 | 2026-12-15 | 未着手 | 1 | 本人 | 月額は標準報酬月額による | 本人負担分の払い方（立替・振込・復職後天引き等）を勤務先の規定で確認 | https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154 | https://github.com/Rikkyhub/studying-abroad/issues/7 | 4〜6月無給なら従前の標準報酬で定時決定（日本年金機構） |
+| T-W03 | 休職・会社 | 住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認 | 2026-12-15 | 未着手 | 1 | 本人 | 2026年度分2〜5月＋2027年度分6〜7月 | 特別徴収・普通徴収の扱いを勤務先・住所地の自治体で確認 | https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html | https://github.com/Rikkyhub/studying-abroad/issues/7 | 会社・自治体ごとに異なる |
+| T-W04 | 休職・会社 | 休職前後の休暇・復職手続きの規定を確認 | 2026-12-15 | 未着手 | 2 | 本人 | — | 就業規則を確認（個別の日付・処遇は公開しない） | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-W05 | 休職・会社 | 就業規則上の休職中の海外渡航・緊急連絡体制を確認 | 2026-12-15 | 未着手 | 2 | 本人 | — | 就業規則を確認 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-W06 | 休職・会社 | 業務の引継ぎ計画 | 2027-01-29 | 未着手 | 2 | 本人 | — | 引継ぎ範囲を決める | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-H01 | 住居・荷物 | 賃貸契約の解約予告期間・退去費用を確認 | 2026-11-15 | 未着手 | 1 | 本人 | 契約による | 賃貸借契約書を確認（解約予告は1〜2か月前が多い） | — | https://github.com/Rikkyhub/studying-abroad/issues/7 | 住居を残すか退去するか決める |
+| T-H02 | 住居・荷物 | 住居を残す／退去するかを決定 | 2026-11-30 | 未着手 | 1 | 本人 | 家賃6か月分 vs 退去＋保管＋再契約費 | 固定費比較を docs/02-budget.md に記入 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-H03 | 住居・荷物 | 荷物の保管先を決定（実家・トランクルーム・宅配型収納） | 2026-12-31 | 未着手 | 2 | 本人 | 宅配型収納 1箱 約320〜330円/月 | サマリーポケット・minikura の見積を取る | https://pocket.sumally.com/ | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-H04 | 住居・荷物 | 電気・ガス・水道・ネットの解約／休止 | 2027-01-20 | 未着手 | 3 | 本人 | — | 各社の手続き方法を確認 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-H05 | 住居・荷物 | 郵便転送届（e転居）・重要書類の受取先を決める | 2027-01-20 | 未着手 | 3 | 本人 | 無料 | 家族に受取を依頼するか決める | https://welcometown.post.japanpost.jp/etn/ | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-H06 | 住居・荷物 | 住民票：海外転出届は原則不要（1年未満）を自治体に確認 | 2026-12-31 | 要確認 | 2 | 本人 | — | 住民票のある市区町村の案内で確認 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 | 1/1時点で日本にいるため住民税への影響なし（推論） |
+| T-P01 | パスポート・ビザ | パスポート残存期間を確認（帰国予定日＋6か月以上・査証欄2ページ以上×訪問国数） | 2026-10-31 | 未着手 | 1 | 本人 | 更新時 電子申請8900円／窓口9300円 | パスポートの有効期限と空白ページを確認 | https://www.anzen.mofa.go.jp/m/mbimmigration_122.html | https://github.com/Rikkyhub/studying-abroad/issues/2 | 不足なら11月中に申請（交付約2週間〜1か月） |
+| T-P02 | パスポート・ビザ | フィリピン eTravel 登録 | 2027-02-01 | 未着手 | 2 | 本人 | 無料 | 出発72時間前以内に登録 | https://etravel.gov.ph/ | https://github.com/Rikkyhub/studying-abroad/issues/2 |  |
+| T-P05 | パスポート・ビザ | 周遊国のビザ要否・費用を確定 | 2027-03-31 | 未着手 | 2 | 本人 | research/africa-trip.md 参照 | ルート確定後に各国公式で再確認 | — | https://github.com/Rikkyhub/studying-abroad/issues/2 |  |
+| T-F01 | 航空券 | 日本→マニラ（2月上旬着）を購入 | 2026-12-15 | 未着手 | 2 | 本人 | 片道 約2.2〜6.5万円（KAYAK参考） | 便を比較して購入 | https://www.kayak.com/flight-routes/Tokyo-TYO/Manila-Ninoy-Aquino-Intl-MNL | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-F02 | 航空券 | マニラ→南部アフリカ（5/2頃）を購入 | 2027-01-31 | 未着手 | 2 | 本人 | research/africa-trip.md 参照 | ルート案を決めて購入 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 | 黄熱リスク国経由に注意 |
+| T-F03 | 航空券 | ケープタウン→日本（7月下旬）を購入 | 2027-03-31 | 未着手 | 3 | 本人 | research/second-school.md 参照 | 2校目の終了日確定後に購入 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-I01 | 保険・医療 | 海外旅行保険（約180日・アジア＋アフリカ）の見積・加入 | 2027-01-15 | 未着手 | 1 | 本人 | 6か月 約18〜35万円（東京海上 代理店掲載例・年齢による） | 東京海上日動・t@biho 等で見積 | https://www.tmn-hoken.jp/study/simulation.html | https://github.com/Rikkyhub/studying-abroad/issues/8 | カード付帯は通常90日まで。off!・たびともは31日まで |
+| T-I02 | 保険・医療 | トラベルクリニック受診・予防接種計画（A型・B型肝炎・破傷風・腸チフス・狂犬病） | 2026-11-15 | 未着手 | 1 | 本人 | 1回 約4400〜16500円（東京医大病院の例） | 出発3か月以上前に受診予約 | https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html | https://github.com/Rikkyhub/studying-abroad/issues/8 | 複数回接種が必要なものあり |
+| T-I03 | 保険・医療 | 黄熱ワクチンの要否判断（経由地・訪問国次第） | 2026-12-31 | 未着手 | 2 | 本人 | 検疫所 17680円 | ルート決定後にFORTHの要求国リストで判断 | https://www.forth.go.jp/moreinfo/topics/yellow_fever_certificate.html | https://github.com/Rikkyhub/studying-abroad/issues/8 | ザンビア等に行く場合は要検討 |
+| T-I04 | 保険・医療 | マラリア予防薬の相談（クルーガー・チョベ・ビクトリア滝方面に行く場合） | 2027-01-31 | 未着手 | 2 | 本人 | 自由診療 | トラベルクリニックで相談 | https://www.forth.go.jp/destinations/country/s_africa.html | https://github.com/Rikkyhub/studying-abroad/issues/8 |  |
+| T-I05 | 保険・医療 | 歯科検診・常備薬・処方薬（英文処方箋） | 2027-01-20 | 未着手 | 3 | 本人 | — | 歯科予約 | — | https://github.com/Rikkyhub/studying-abroad/issues/8 |  |
+| T-I06 | 保険・医療 | 健康保険の海外療養費の申請方法・様式を確認 | 2027-01-20 | 未着手 | 3 | 本人 | — | 加入健保（協会けんぽ／組合）を確認 | https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/ | https://github.com/Rikkyhub/studying-abroad/issues/8 |  |
+| T-M01 | お金・通信 | 海外用クレジットカード2枚以上・デビットカードの準備 | 2026-12-31 | 未着手 | 2 | 本人 | 年会費による | ブランド（Visa/Master）を分けて用意 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 | 付帯保険の条件も確認 |
+| T-M02 | お金・通信 | 日本の携帯番号の維持方法を決める（povo0円・ahamo等） | 2027-01-15 | 未着手 | 2 | 本人 | povo 基本料0円（180日以内に有料トッピング必要） | SMS認証用に番号を維持する方法を決める | https://povo.jp/ | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-M05 | お金・通信 | ふるさと納税・年末調整・確定申告の要否を確認 | 2026-12-31 | 未着手 | 3 | 本人 | — | 在籍中の年末調整・確定申告の要否を国税庁の案内で確認 | https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2665.htm | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-S01 | 留学先手続き | PINES の入学案内・現地費用の2027年版を確認 | 2026-12-31 | 未着手 | 1 | 本人 | — | エージェント／学校に2027年版の現地費用を確認 | https://philschools.jp/pricelist/pines.pdf | https://github.com/Rikkyhub/studying-abroad/issues/7 | 滞在84日超時のビザ延長区分も確認 |
+| T-S02 | 留学先手続き | 2校目（ケープタウン）の学校・期間を決定 | 2027-01-31 | 未着手 | 1 | 本人 | research/second-school.md 参照 | UCT ELC 等に見積依頼 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-S03 | 留学先手続き | 2校目の宿泊（ホームステイ等）を手配 | 2027-03-31 | 未着手 | 2 | 本人 | research/second-school.md 参照 | 学校決定後に申込 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-T01 | 渡航中 | 外務省 たびレジ登録（フィリピン・アフリカ各国） | 2027-02-01 | 未着手 | 2 | 本人 | 無料 | 出発前に登録 | https://www.ezairyu.mofa.go.jp/tabireg/index.html | https://github.com/Rikkyhub/studying-abroad/issues/7 | 3か月以上なら在留届（フィリピン85日は境界のため要確認） |
+| T-T02 | 渡航中 | 5月の周遊ルート確定・宿・ツアー予約 | 2027-03-31 | 未着手 | 1 | 本人 | research/africa-trip.md 参照 | ルート案から選ぶ | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-T03 | 渡航中 | 渡航中の経費は非公開で記録し、公開CSVの見積を更新 | 2027-07-31 | 未着手 | 2 | 本人 | — | 個人の支払記録は公開repoに書かない | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-R01 | 帰国・復職 | 帰国後の住居・荷物の受け取り | 2027-08-15 | 未着手 | 3 | 本人 | — | 7月中に手配 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-R02 | 帰国・復職 | 復職手続き・休職中の社会保険料等の精算（休職する場合） | 2027-08-31 | 未着手 | 2 | 本人 | — | 勤務先の規定を確認 | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |
+| T-R03 | 帰国・復職 | 海外療養費の申請（使った場合） | 2027-09-30 | 未着手 | 3 | 本人 | — | 領収書と翻訳文を準備 | https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/ | https://github.com/Rikkyhub/studying-abroad/issues/7 | 時効は支払翌日から2年 |
+| T-R04 | 帰国・復職 | 見積モデルの振り返り・ブログ記事化 | 2027-09-30 | 未着手 | 3 | 本人 | — | 公開する場合は匿名化した概算のみ使う | — | https://github.com/Rikkyhub/studying-abroad/issues/7 |  |

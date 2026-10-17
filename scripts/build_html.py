@@ -322,14 +322,14 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         for name, content in (("summary", summary_block(root)), ("timeline", timeline_table(root)),
                               ("tasks", tasks_table(root)), ("research", pages_table(root, "research")),
                               ("plan", pages_table(root, "plan")), ("places", places_table(root)),
-                              ("fx", fx_block(root))):
+                              ("fx", fx_block(root)), ("budget", budget_block(root))):
             text = fill_auto(text, name, content)
         out[index] = text
     return out
 
 
 # ---------------------------------------------------------------- dashboard tables
-TASK_STATUS = {"not_started": "未着手", "in_progress": "進行中", "blocked": "保留", "done": "完了"}
+DONE_STATUS = ("完了", "不要")
 PAGE_STATUS = {"researching": "調査中", "ready": "整理済", "draft": "作成中"}
 AREA_LABEL = {"baguio": "バギオ", "capetown": "ケープタウン", "africa": "アフリカ", "other": "その他"}
 KIND_LABEL = {"school": "学校", "sightseeing": "観光", "diving": "ダイビング", "airport": "空港",
@@ -379,12 +379,14 @@ def ref_links(refs: str) -> str:
 def tasks_table(root: Path = ROOT) -> str:
     """準備タスクの表（先頭12件）。CSV を fetch しないので file:// でも表示できる。Issue は出さない"""
     rows = csv_records(root / DATA_DIR / "tasks.csv")
-    done = sum(1 for r in rows if r["status"] == "done")
-    todo = sum(1 for r in rows if r["status"] == "not_started")
-    body = [[esc(r["priority"]), esc(r["task"]), esc(TASK_STATUS.get(r["status"], r["status"])),
-             ref_links(r["source_url"]) if r["source_url"].startswith("http") else "－"] for r in rows[:12]]
-    return (f'<p class="muted">登録 {len(rows)}件 ／ 完了 {done}件 ／ 未着手 {todo}件</p>'
-            + table(["優先", "作業", "状態", "参考"], body))
+    done = sum(1 for r in rows if r["status"] in DONE_STATUS)
+    todo = sum(1 for r in rows if r["status"] == "未着手")
+    open_rows = sorted((r for r in rows if r["status"] not in DONE_STATUS),
+                       key=lambda r: (r["priority"] or "9", r["deadline"] or "9999"))
+    body = [[esc(r["priority"]), esc(r["task"]), esc(r["status"]), esc(r["deadline"]) or "－",
+             ref_links(r["source"]) if r["source"].startswith("http") else "－"] for r in open_rows[:12]]
+    return (f'<p class="muted">登録 {len(rows)}件 ／ 完了 {done}件 ／ 未着手 {todo}件（優先度1が最優先。表は優先度順の先頭12件、全件は <a href="data/tasks.html">data/tasks.csv</a>）</p>'
+            + table(["優先", "作業", "状態", "期限", "参考"], body, num=(0,)))
 
 
 def pages_table(root: Path, group: str) -> str:
@@ -497,16 +499,45 @@ def fx_block(root: Path = ROOT) -> str:
 
 def summary_block(root: Path = ROOT) -> str:
     tasks = csv_records(root / DATA_DIR / "tasks.csv")
-    open_p0 = [t for t in tasks if t["priority"] == "P0" and t["status"] != "done"]
+    open_p0 = [t for t in tasks if t["priority"] == "1" and t["status"] not in DONE_STATUS]
     pages = csv_records(root / DATA_DIR / "pages.csv")
     researching = [p for p in pages if p["status"] == "researching"]
     no_rate = [r["currency"] for r in fx_records(root) if not num(r["jpy_per_unit"])] if (root / DATA_DIR / "fx.csv").exists() else []
     items = "".join(f"<li>{esc(t['task'])}</li>" for t in open_p0[:5])
-    facts = [f"最優先（P0）の未完了タスク：{len(open_p0)}件（上は先頭{min(5, len(open_p0))}件。全件は「準備タスク」）",
+    facts = [f"最優先（優先度1）の未完了タスク：{len(open_p0)}件（上は先頭{min(5, len(open_p0))}件。全件は「準備タスク」）",
              f"調査中の資料：{len(researching)}件（「調査資料」の状態列）"]
     if no_rate:
         facts.append("円換算レートが未確認の通貨：" + "、".join(no_rate))
     return (f'<ol class="todo">{items}</ol>\n<ul class="facts">' + "".join(f"<li>{esc(f)}</li>" for f in facts) + "</ul>")
+
+
+def budget_block(root: Path = ROOT) -> str:
+    """予算の目標（funds.csv）と費用の見積集計（build.py の集計）。支払い・残額・実績は出さない"""
+    funds = csv_records(root / DATA_DIR / "funds.csv")
+    desc = {"budget_ideal": ("目標値であり実費ではない", "docs/02-budget.html", "予算の計算ルール"),
+            "budget_cap": ("旅行・留学・国内固定費を含む。超過の判定に使う", "docs/02-budget.html", "予算の計算ルール"),
+            "budget_africa": ("総予算の内数（上乗せではない）", "research/africa-route-comparison.html", "アフリカ周遊ルート比較")}
+    rows = []
+    for r in funds:
+        meaning, href, label = desc.get(r["id"], (r["note"], "docs/02-budget.html", "予算の計算ルール"))
+        if not (root / href).exists():
+            href, label = "docs/02-budget.html", "予算の計算ルール"
+        rows.append([esc(r["name"]), f'¥{int(Decimal(r["amount_jpy"])):,}', esc(meaning), f'<a href="{esc(href)}">{esc(label)}</a>'])
+    out = table(["項目", "金額", "意味", "詳細"], rows, num=(1,))
+    if root != ROOT:
+        return out
+    import build  # scripts/build.py（集計の正本）
+    S = build.load_model()[0]
+    t, st, y = S["total"], S["by_status"], build.yen
+    est = [["見積合計（金額入力済みの全行）", y(t["low"]), y(t["std"]), y(t["high"]), "各行を1回だけ加算"],
+           [f'うち 見積（出典あり・{S["status_count"]["見積"]}件）', y(st["見積"]["low"]), y(st["見積"]["std"]), y(st["見積"]["high"]), "公開料金表などの出典つき"],
+           [f'うち 未確認（出典なし・推定・{S["status_count"]["未確認"]}件）', y(st["未確認"]["low"]), y(st["未確認"]["std"]), y(st["未確認"]["high"]), "加算するだけで、何からも差し引かない"],
+           [f'金額未入力（{len(S["no_amount"])}件）', "－", "－", "－", "0円ではない。合計に含まれないため、総額は下限の目安"]]
+    out += ("\n<h3>費用の見積集計（匿名モデル）</h3>\n"
+            + table(["区分", "低予算", "標準", "余裕", "備考"], est, num=(1, 2, 3))
+            + f'<p class="muted">集計基準日 {esc(build.today().isoformat())}。すべて公開料金などに基づく見積で、実際の支払額・支払済み・残額ではありません。'
+              f'明細は <a href="docs/02-budget.html">予算の計算ルール</a>・<a href="data/expenses.html">費用データ（CSV）</a>。</p>')
+    return out
 
 
 # ---------------------------------------------------------------- issue map (maintainers / AI)
@@ -516,13 +547,13 @@ def issue_map_markdown(root: Path = ROOT) -> str:
         return f"[#{m.group(1)}]({url})" if m else "－"
     out = ["# Issue対応表（AI・保守者向け）", "",
            "このページは保守者とAIが資料・タスクと GitHub Issue の対応を確認するための一覧です。閲覧者向けのダッシュボードの表には出していません。"
-           "正本は `data/pages.csv` の `issue` 列と `data/tasks.csv` の `issue_url` 列で、このページは `py scripts/build_html.py` が生成します。手で編集しないでください。", "",
+           "正本は `data/pages.csv` の `issue` 列と `data/tasks.csv` の `issue` 列で、このページは `py scripts/build_all.py` が生成します。手で編集しないでください。", "",
            "## 資料と Issue", "", "| 資料 | Issue | 状態 | 最終確認日 |", "|---|---|---|---|"]
     for r in sorted_pages(root):
         out.append(f"| [{r['title']}](../{r['path']}) | {issue_cell(r['issue'])} | {PAGE_STATUS.get(r['status'], r['status'])} | {r['verified_at'] or '－'} |")
     out += ["", "## タスクと Issue", "", "| ID | 優先 | 作業 | Issue | 状態 |", "|---|---|---|---|---|"]
     for r in csv_records(root / DATA_DIR / "tasks.csv"):
-        out.append(f"| {r['id']} | {r['priority']} | {r['task']} | {issue_cell(r['issue_url'])} | {TASK_STATUS.get(r['status'], r['status'])} |")
+        out.append(f"| {r['id']} | {r['priority']} | {r['task']} | {issue_cell(r['issue'])} | {r['status']} |")
     return "\n".join(out) + "\n"
 
 
