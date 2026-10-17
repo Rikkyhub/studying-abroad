@@ -122,6 +122,25 @@
 | ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
 | ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
 | ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
+| アフリカ周遊（入国） | https://etakenya.go.ke/eligibility | ケニアeTA：標準USD30、通過USD20、1年複数回USD300 | 2026-10-17 | 日本旅券の対象判定は国別画面（JS）で未確認。2027年改定未確認 |
+| アフリカ周遊（入国） | https://visa.immigration.go.tz/guidelines | タンザニア通常ビザUSD50（90日）、国リストにJapan（到着時/オンライン） | 2026-10-17 | 2027年改定未確認 |
+| アフリカ周遊（入国） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 南ア免除国表（2025-12-09発行）でJapan 90日・ビザ手数料なし | 2026-10-17 | 公式表。個別の滞在許可判断ではない |
+| アフリカ周遊（入国） | https://www.gov.uk/foreign-travel-advice/kenya/entry-requirements | ケニア eTA必須、2026-10-05以降政府提供旅行保険が必須（英国旅券向け記載） | 2026-10-17 | 英国政府の記載。日本旅券・保険料は未確認 |
+| アフリカ周遊（入国） | https://www.gov.uk/foreign-travel-advice/zambia/entry-requirements | KAZA UNIVISA USD50/30日、出国券・資金 | 2026-10-17 | 英国旅券向け。日本旅券未確認 |
+| アフリカ周遊（入国） | https://www.gov.uk/foreign-travel-advice/zimbabwe/entry-requirements | VOA 30日/eVisa、KAZA UNIVISA | 2026-10-17 | 英国旅券向け。日本旅券未確認 |
+| アフリカ周遊（入国） | https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 事前ETA約USD47、ランド国境の強盗注意 | 2026-10-17 | 英国旅券向け |
+| アフリカ周遊（入国） | https://www.gov.uk/foreign-travel-advice/madagascar/entry-requirements | 15日まで無査証＋EUR10、30/60日到着時査証 | 2026-10-17 | Issue記載のeVisa料金と不一致。公式evisamada.gov.mgは取得不可 |
+| アフリカ周遊（入国） | https://www.gov.uk/foreign-travel-advice/botswana/entry-requirements | 90日査証免除（英国旅券） | 2026-10-17 | 日本旅券・公式サイト未確認 |
+| アフリカ周遊（安全） | https://www.gov.uk/foreign-travel-advice/ethiopia | 2026-10-16更新：ティグライ・アムハラ等への渡航回避勧告 | 2026-10-17 | ADDは乗継のみ想定 |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pcspotinfo_2026C043.html | 外務省スポット情報2026-09-26：エチオピア北部情勢、ティグライ3空港の運航停止 | 2026-10-17 | — |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T106.html | マダガスカル全土レベル1（2025-11-26更新） | 2026-10-17 | 政情不安 |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T100.html | タンザニア：キゴマ州西部レベル3、アルーシャ等レベル1（2025-11-03） | 2026-10-17 | — |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T046.html | ケニア：ナイロビ市の一部レベル2ほか（2025-05-19） | 2026-10-17 | — |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T042.html | 南ア：JNB/ツワネ/ダーバンCBDレベル2、他レベル1（2025-04-28） | 2026-10-17 | — |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2026T042.html | ザンビア：DRC/アンゴラ国境レベル2、他レベル1（2026-04-15） | 2026-10-17 | — |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T116.html | ジンバブエ全土レベル1（2024-12-18） | 2026-10-17 | 更新が古い |
+| アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T062.html | モザンビーク：マプトを含むその他レベル1（2025-07-04） | 2026-10-17 | 北部はレベル3 |
+| アフリカ周遊（航空） | https://www.flightconnections.com/flights-from-nbo-to-tnr | NBO→TNR直行（Issue記載） | 2026-10-17 | 動的ページで本文取得不可（HTTP 202）。運航頻度は未確認 |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
