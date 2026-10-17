@@ -35,7 +35,7 @@ T-I06,保険・医療,健康保険の海外療養費の申請方法・様式を�
 T-M01,お金・通信,海外用クレジットカード2枚以上・デビットカードの準備,2026-12-31,未着手,2,本人,年会費による,ブランド（Visa/Master）を分けて用意,—,https://github.com/Rikkyhub/studying-abroad/issues/7,付帯保険の条件も確認
 T-M02,お金・通信,日本の携帯番号の維持方法を決める（povo0円・ahamo等）,2027-01-15,未着手,2,本人,povo 基本料0円（180日以内に有料トッピング必要）,SMS認証用に番号を維持する方法を決める,https://povo.jp/,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-M05,お金・通信,ふるさと納税・年末調整・確定申告の要否を確認,2026-12-31,未着手,3,本人,—,在籍中の年末調整・確定申告の要否を国税庁の案内で確認,https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2665.htm,https://github.com/Rikkyhub/studying-abroad/issues/7,
-T-S01,留学先手続き,PINES の予約証明・入学案内・現地費用の最新版を受け取る,2026-12-31,未着手,1,本人,—,エージェント／学校に2027年版の現地費用を確認,https://philschools.jp/pricelist/pines.pdf,https://github.com/Rikkyhub/studying-abroad/issues/7,滞在84日超時のビザ延長区分も確認
+T-S01,留学先手続き,PINES の入学案内・現地費用の2027年版を確認,2026-12-31,未着手,1,本人,—,エージェント／学校に2027年版の現地費用を確認,https://philschools.jp/pricelist/pines.pdf,https://github.com/Rikkyhub/studying-abroad/issues/7,滞在84日超時のビザ延長区分も確認
 T-S02,留学先手続き,2校目（ケープタウン）の学校・期間を決定,2027-01-31,未着手,1,本人,research/second-school.md 参照,UCT ELC 等に見積依頼,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-S03,留学先手続き,2校目の宿泊（ホームステイ等）を手配,2027-03-31,未着手,2,本人,research/second-school.md 参照,学校決定後に申込,—,https://github.com/Rikkyhub/studying-abroad/issues/7,
 T-T01,渡航中,外務省 たびレジ登録（フィリピン・アフリカ各国）,2027-02-04,未着手,2,本人,無料,出発前に登録,https://www.ezairyu.mofa.go.jp/tabireg/index.html,https://github.com/Rikkyhub/studying-abroad/issues/7,3か月以上なら在留届（フィリピン85日は境界のため要確認）

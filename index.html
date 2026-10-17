@@ -1,70 +1,304 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="2027年2〜7月の海外留学・アフリカ周遊の計画・費用・準備・調査">
-<title>2027 留学・アフリカ周遊｜6か月計画</title>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 留学・周遊ダッシュボード</title>
+<!-- このファイルは scripts/build.py が自動生成します。直接編集せず CSV / テンプレートを修正してください。 -->
 <style>
-:root{color-scheme:light;--ink:#182b35;--muted:#536874;--brand:#0c6174;--bg:#f5f8f8;--line:#dbe6e8;--paper:white}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
-main{max-width:1100px;margin:auto;padding:28px 20px 70px}header{background:#153948;color:white;padding:34px 0}header .wrap{max-width:1100px;margin:auto;padding:0 20px}h1{font-size:clamp(25px,3.3vw,39px);margin:7px 0}h2{font-size:1.4rem;margin:38px 0 16px}p{margin:8px 0}a{color:var(--brand)}header p{max-width:840px;color:#dce9ee}.eyebrow{letter-spacing:.14em;font-weight:700;font-size:12px;color:#b9e4df}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:19px}.card small,.muted{color:var(--muted)}.value{font-size:clamp(23px,3vw,32px);font-weight:750;letter-spacing:-.02em}.box{background:white;border:1px solid var(--line);border-radius:13px;padding:18px;margin:16px 0}.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:13px}.month{border-left:4px solid var(--brand);padding:10px 16px;background:white;border-radius:0 12px 12px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.month b{font-size:17px}.month p{font-size:14px;color:var(--muted)}.pill{font-size:12px;border-radius:40px;background:#e6f1f2;padding:4px 9px;font-weight:650;color:#15546a;display:inline-block}.warn{border-left:4px solid #b77a24;background:#fffaf1;padding:14px 17px;border-radius:5px}.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.links a{background:white;border:1px solid var(--line);border-radius:9px;display:block;padding:15px;text-decoration:none;font-weight:700}.links a span{display:block;font-size:13px;font-weight:400;color:var(--muted)}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:#eff4f5}.scroll{overflow-x:auto}footer{color:var(--muted);font-size:13px;margin-top:40px}.bad{color:#9d442f}.good{color:#136649}
-@media(max-width:640px){main{padding:20px 14px 60px}header .wrap{padding:0 14px}.box{padding:12px}.month{padding:11px}}
-</style></head><body>
-<header><div class="wrap"><div class="eyebrow">2027 FEB — JUL · STUDY ABROAD + AFRICA TRIP</div><h1>海外留学・アフリカ周遊<br>6か月計画と実績</h1><p>フィリピンの語学留学、5月のアフリカ周遊、6〜7月の第2か国留学をひとつの旅程として管理。予算・準備・現地調査・ブログ記録を集約します。</p></div></header>
-<main>
-<div class="warn"><strong>現段階は計画・調査中です。</strong> 出発日・留学先・ビザ・2027年料金の未確定事項が残ります。個人の支払実績・資産・予約情報は公開しません。</div>
-<h2>予算の全体像</h2><section class="cards">
-<div class="card"><small>6か月の目標総予算</small><div class="value">¥2,500,000</div><small>目標値・実費ではありません</small></div>
-<div class="card"><small>6か月の上限予算</small><div class="value">¥3,000,000</div><small>旅行・留学・国内固定費を含む</small></div>
-<div class="card"><small>登録済み支出の参考小計</small><div class="value" id="entered">未入力</div><small id="entered-note">CSVに支出データがまだありません</small></div>
-<div class="card"><small>登録済み支払額</small><div class="value" id="paid">未入力</div><small>証憑に基づくデータだけ入力</small></div>
-</section>
-<p class="muted">5月アフリカ周遊の予算目安は60万円（総予算の内数）。支出CSVが未完成の間、参考小計を「6か月の確定総費用」として表示しません。外貨の円換算には確認日のレートが必要です。</p>
-<h2>旅程</h2><section class="timeline">
-<div class="month"><b>2〜4月｜バギオ</b><br><span class="pill">コース決定</span><p>PINES 12週間。2/6入寮・2/8授業開始予定。前半4週 Power ESL5、後半8週 Intensive ESL。</p></div>
-<div class="month"><b>5月｜アフリカ周遊</b><br><span class="pill">検討中</span><p>約1か月、目安60万円。国・経路・サファリ・ダイビング・航空券を精査。</p></div>
-<div class="month"><b>6〜7月｜第2か国留学</b><br><span class="pill">未確定</span><p>ケープタウンで8週間の語学留学を検討中。学校・就学資格・住居未決定。</p></div>
-<div class="month"><b>8月｜観光・帰国</b><br><span class="pill">調整中</span><p>追加観光・日本帰国・復職の整合性を確認。南ア再入国条件は最優先で検証。</p></div>
-</section>
-<h2>準備タスク</h2><div class="box"><div id="task-status" class="muted">データを読み込んでいます...</div><div class="scroll"><table><thead><tr><th>優先</th><th>作業</th><th>状態</th><th>Issue</th></tr></thead><tbody id="task-list"></tbody></table></div></div>
-<h2>調査資料</h2><section class="links">
-<a href="research/visa-and-immigration.md">ビザ・再入国 <span>フィリピン12週 / 南アの就学と5〜8月の入出国</span></a>
-<a href="research/baguio-diving.md">バギオ発ダイビング <span>週末・2〜4月・ショップ料金・高地移動への注意</span></a>
-<a href="research/capetown-diving.md">ケープタウン発ダイビング <span>冬季・ケルプ・ガイド付き2ダイブと装備</span></a>
-<a href="research/baguio-sightseeing.md">バギオの週末観光 <span>市内・近郊・2〜4月</span></a>
-<a href="research/capetown-sightseeing.md">ケープタウン観光 <span>冬季・雨天・強風時の代替案</span></a>
-<a href="research/food-and-living.md">食費・自炊・スーパー <span>バギオの寮食、ケープタウンの買物</span></a>
-<a href="research/winter-clothing.md">ケープタウン冬服 <span>持参と現地調達・価格調査</span></a>
-<a href="research/safety-and-health.md">治安・医療・安全 <span>日本外務省などの情報</span></a>
-<a href="research/sources.md">すべての出典 <span>URL・確認日・未確認事項</span></a>
-</section>
-<h2>計画・記録</h2><section class="links">
-<a href="docs/01-timeline.md">月別タイムライン<span>6か月全体の移動・留学・帰国</span></a>
-<a href="docs/02-budget.md">予算の計算ルール<span>二重計上防止・未確定の扱い</span></a>
-<a href="docs/03-preparation.md">準備チェック<span>やることと確認順</span></a>
-<a href="blog/article-ideas.md">ブログ記事候補<span>準備・旅行・帰国後の情報公開</span></a>
-<a href="blog/experience-log.md">実体験ログ<span>体験した事実と調査を分離</span></a>
-<a href="https://github.com/Rikkyhub/studying-abroad/issues">GitHub Issues<span>すべての調査タスクと進捗</span></a>
-</section>
-<footer>基準日：2026-10-16。資料は一次ソース・確認日を優先。プライバシー保護のため旅券番号・予約番号・領収書原本を公開しません。表示する費用はCSV入力分の小計です。</footer>
-</main>
-<script>
-function parseCSV(raw){const rows=[];let r=[],cell='',q=false;raw=raw.replace(/^\uFEFF/,'');for(let i=0;i<raw.length;i++){let ch=raw[i];if(ch==='"'){if(q&&raw[i+1]==='"'){cell+='"';i++}else q=!q}else if(!q&&(ch===','||ch==='\n')){r.push(cell.trim());cell='';if(ch==='\n'){if(r.some(x=>x!==''))rows.push(r);r=[]}}else if(ch!=='\r'||q)cell+=ch}r.push(cell.trim());if(r.some(x=>x!==''))rows.push(r);if(!rows.length)return[];const cols=rows.shift();return rows.map(v=>Object.fromEntries(cols.map((c,i)=>[c,v[i]||''])));}
-function money(n){return new Intl.NumberFormat('ja-JP',{style:'currency',currency:'JPY',maximumFractionDigits:0}).format(n)}
-async function loadCSV(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return parseCSV(await r.text())}
-async function refresh(){
-try{
-const expenses=await loadCSV('data/expenses.csv');let estimate=0,paid=0,estimatedRows=0,paidRows=0,unknown=0;
-for(const e of expenses){if(!e.id)continue;const fx=e.currency==='JPY'?1:Number(e.fx_jpy_per_unit);const a=[e.actual_amount,e.quoted_amount,e.paid_amount].find(x=>x!=='');if(a!==undefined){if(Number.isFinite(fx)&&fx>0){estimate+=Number(a)*fx;estimatedRows++}else unknown++}
-if(e.paid_amount!==''){if(Number.isFinite(fx)&&fx>0){paid+=Number(e.paid_amount)*fx;paidRows++}else unknown++}
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834;
+  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --crit:#d03b3b; --goodtext:#006300;
+  --range:rgba(42,120,214,.16);
 }
-document.getElementById('entered').textContent=estimatedRows?money(estimate):'未入力';
-document.getElementById('paid').textContent=paidRows?money(paid):'未入力';
-document.getElementById('entered-note').textContent=estimatedRows+'件の入力済み対象の参考小計'+(unknown?' / 為替未登録等：'+unknown+'件':'')+'（全体完成額ではありません）';
-}catch(err){document.getElementById('entered-note').textContent='CSV読込不可。静的Webサーバーで表示してください。'}
-try{
-const tasks=await loadCSV('data/tasks.csv');const labels={not_started:'未着手',in_progress:'進行中',blocked:'保留',done:'完了'};
-document.getElementById('task-status').textContent='登録タスク '+tasks.length+'件 / 完了 '+tasks.filter(t=>t.status==='done').length+'件 / 未着手 '+tasks.filter(t=>t.status==='not_started').length+'件';
-const tbody=document.getElementById('task-list');tbody.replaceChildren();for(const t of tasks.slice(0,12)){const tr=document.createElement('tr');for(const val of [t.priority,t.task,labels[t.status]||t.status]){const td=document.createElement('td');td.textContent=val;tr.appendChild(td)}const td=document.createElement('td');if(t.issue_url&&t.issue_url.startsWith('https://github.com/')){const a=document.createElement('a');a.href=t.issue_url;a.textContent='Issue';td.appendChild(a)}tr.appendChild(td);tbody.appendChild(tr)}
-}catch(err){document.getElementById('task-status').textContent='タスクCSVを読み込めません。静的Webサーバーで表示してください。'}
-}refresh();
-</script></body></html>
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --goodtext:#0ca30c; --range:rgba(57,135,229,.22);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --goodtext:#0ca30c; --range:rgba(57,135,229,.22);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI","Hiragino Sans","Yu Gothic UI",sans-serif}
+main{max-width:1080px;margin:0 auto;padding:16px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin:8px 0 16px}
+h1{font-size:22px;margin:0;line-height:1.3}
+h2{font-size:17px;margin:0 0 12px}
+.muted{color:var(--muted);font-size:13px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px;min-width:0}
+.grid2{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:820px){.grid2{grid-template-columns:1fr 1fr}.grid2>.card{margin-bottom:0}.grid2{margin-bottom:16px}}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(min-width:720px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px;min-width:0}
+.tile-label{font-size:12px;color:var(--ink2)}
+.tile-value{font-size:22px;font-weight:700;margin:2px 0;overflow-wrap:anywhere}
+.tile-sub{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.bbar{margin-top:16px}
+.bbar-track{position:relative;height:28px;background:var(--grid);border-radius:6px;margin:28px 0 30px}
+.bbar-range{position:absolute;top:0;bottom:0;background:var(--range)}
+.bbar-est{position:absolute;left:0;top:6px;bottom:6px;background:var(--s1)}
+.bbar-unv{position:absolute;top:6px;bottom:6px;background:var(--s2);border-radius:0 4px 4px 0}
+.bbar-std{position:absolute;top:-4px;bottom:-4px;width:3px;margin-left:-1px;background:var(--ink);border-radius:2px}
+.bbar-line{position:absolute;top:-22px;bottom:0;border-left:1px dashed var(--ink2)}
+.bbar-line span{position:absolute;top:0;font-size:11px;color:var(--ink2);white-space:nowrap;transform:translateX(-50%)}
+.bbar-line.cap{top:0;bottom:-22px}.bbar-line.cap span{top:auto;bottom:0;transform:translateX(-100%)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ink2)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.sw-est{background:var(--s1)} .sw-unv{background:var(--s2)} .sw-std{background:var(--ink);width:3px} .sw-range{background:var(--range);outline:1px solid var(--border)}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{padding:8px 0;border-bottom:1px solid var(--grid)}
+ul.list li:last-child{border-bottom:0}
+.due{font-variant-numeric:tabular-nums;color:var(--ink2);font-size:13px;margin-right:6px}
+.na{display:block;color:var(--ink2);font-size:13px}
+.pill{display:inline-block;font-size:11px;line-height:1.6;padding:0 7px;border-radius:999px;border:1px solid var(--border);color:var(--ink2);margin-right:6px;white-space:nowrap}
+.p-完了,.p-公開可能,.p-公開済み{border-color:var(--good);color:var(--goodtext)}
+.p-見積,.p-計画,.p-進行中,.p-下書き,.p-資料収集中,.p-検討中{border-color:var(--s1);color:var(--s1)}
+.p-未確認,.p-要確認{border-color:var(--crit);color:var(--crit)}
+.p-未確認::before,.p-要確認::before{content:"! "}
+.prow{display:grid;grid-template-columns:7.5em 1fr 3em;align-items:center;gap:8px;font-size:13px;margin:6px 0}
+.ptrack{height:8px;background:var(--grid);border-radius:4px;overflow:hidden}
+.ptrack span{display:block;height:100%;background:var(--s1);border-radius:0 4px 4px 0}
+.pnum{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.big{font-size:28px;font-weight:700}
+ol.tl{list-style:none;margin:0;padding:0}
+ol.tl li{display:grid;grid-template-columns:7.2em 1fr;gap:8px;padding:8px 0;border-bottom:1px solid var(--grid)}
+.tl-date{font-variant-numeric:tabular-nums;color:var(--ink2);font-size:13px}
+.chart{position:relative}
+.chart svg{display:block;overflow:visible}
+.chart .lbl{fill:var(--muted);font-size:11px}
+.chart .val{fill:var(--ink2);font-size:11px}
+.chart .gl{stroke:var(--grid);stroke-width:1}
+.chart .base{stroke:var(--axis);stroke-width:1}
+.chart .hit{fill:transparent;cursor:default}
+.chart .hit:hover{fill:var(--grid);fill-opacity:.5}
+.tip{position:absolute;pointer-events:none;background:var(--surface);color:var(--ink);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 4px 16px rgba(0,0,0,.12);display:none;z-index:5;white-space:nowrap}
+.tip b{display:block;margin-bottom:2px}
+details{margin-top:8px}
+summary{cursor:pointer;color:var(--ink2);font-size:13px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+th{color:var(--ink2);font-weight:600;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+a{color:var(--s1)}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.filters button{font:inherit;font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--ink2);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.docs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media(min-width:720px){.docs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.doc{display:block;padding:10px;border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px}
+.doc span{display:block;font-weight:400;font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+.warnbox li{color:var(--ink2);font-size:13px}
+.themebtn{font:inherit;font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--ink2);cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div>
+    <h1>2027年2〜7月 留学・アフリカ周遊</h1>
+    <div class="muted">最終集計 2026-10-17｜正本は Markdown / CSV。<code>python3 scripts/build.py</code> で再生成</div>
+  </div>
+  <button class="themebtn" id="theme" type="button">表示: 自動</button>
+</header>
+
+<section class="card" aria-labelledby="h-money">
+  <h2 id="h-money">お金の全体像</h2>
+  <div class="tiles"><div class="tile"><div class="tile-label">見積合計（標準）</div><div class="tile-value">330.0万円</div><div class="tile-sub">低予算 281.4万円 ／ 余裕 388.9万円</div></div><div class="tile"><div class="tile-label">うち 見積（出典あり）</div><div class="tile-value">313.2万円</div><div class="tile-sub">29件</div></div><div class="tile"><div class="tile-label">うち 未確認（推定）</div><div class="tile-value">16.8万円</div><div class="tile-sub">16件・差し引きには使わない</div></div><div class="tile"><div class="tile-label">金額未入力</div><div class="tile-value">11件</div><div class="tile-sub">0円ではない・合計に含まない</div></div><div class="tile"><div class="tile-label">目標250万円との差</div><div class="tile-value">-80.0万円</div><div class="tile-sub">予算目標 − 見積合計（マイナスは超過）</div></div><div class="tile"><div class="tile-label">上限300万円との差</div><div class="tile-value">-30.0万円</div><div class="tile-sub">予算目標 − 見積合計（マイナスは超過）</div></div><div class="tile"><div class="tile-label">5月アフリカ周遊</div><div class="tile-value">60.3万円</div><div class="tile-sub">配分目標 60.0万円</div></div><div class="tile"><div class="tile-label">準備タスク</div><div class="tile-value">0/46</div><div class="tile-sub">完了・不要の件数</div></div></div>
+  
+<div class="bbar" role="img" aria-label="見積合計と予算目標の比較">
+  <div class="bbar-track">
+    <div class="bbar-range" style="left:70.93%;width:calc(98.04% - 70.93%)" title="低予算〜余裕 281.4万円〜388.9万円"></div>
+    <div class="bbar-est" style="width:78.95%" title="見積（出典あり） ¥3,131,529"></div>
+    <div class="bbar-unv" style="left:78.95%;width:4.24%" title="未確認（推定） ¥168,000"></div>
+    <div class="bbar-std" style="left:83.18%" title="見積合計（標準） ¥3,299,529"></div>
+    <div class="bbar-line" style="left:63.03%"><span>目標 250.0万円</span></div>
+    <div class="bbar-line cap" style="left:75.63%"><span>上限 300.0万円</span></div>
+  </div>
+  <div class="legend">
+    <span><i class="sw sw-est"></i>見積（出典あり） 313.2万円</span>
+    <span><i class="sw sw-unv"></i>未確認（推定） 16.8万円</span>
+    <span><i class="sw sw-std"></i>見積合計（標準） 330.0万円</span>
+    <span><i class="sw sw-range"></i>低予算〜余裕 281.4万円〜388.9万円</span>
+  </div>
+</div>
+  <p class="muted">為替: 1 USD = 158.19円（2026-10-16）、1 PHP = 2.53円（2026-10-16）、1 ZAR = 9.59円（2026-10-16）。公開用の匿名モデルで、金額はすべて見積です（支払い・実費ではありません）。「未確認」は出典のない推定で、見積合計に別枠で加算するだけで何からも差し引きません。金額未入力の行は0円として扱いません。</p>
+</section>
+
+<div class="grid2">
+  <section class="card" aria-labelledby="h-next">
+    <h2 id="h-next">次にやること</h2>
+    <ul class="list"><li><span class="due">2026-10-31</span><span class="pill p-未着手">未着手</span><b>パスポート残存期間を確認（帰国予定日＋6か月以上・査証欄2ページ以上×訪問国数）</b><span class="na">→ パスポートの有効期限と空白ページを確認</span></li><li><span class="due">2026-11-15</span><span class="pill p-未着手">未着手</span><b>賃貸契約の解約予告期間・退去費用を確認</b><span class="na">→ 賃貸借契約書を確認（解約予告は1〜2か月前が多い）</span></li><li><span class="due">2026-11-15</span><span class="pill p-未着手">未着手</span><b>トラベルクリニック受診・予防接種計画（A型・B型肝炎・破傷風・腸チフス・狂犬病）</b><span class="na">→ 出発3か月以上前に受診予約</span></li><li><span class="due">2026-11-30</span><span class="pill p-要確認">要確認</span><b>勤務先の休職制度・承認手続きを確認</b><span class="na">→ 就業規則と必要書類を確認（内容は公開しない）</span></li><li><span class="due">2026-11-30</span><span class="pill p-未着手">未着手</span><b>住居を残す／退去するかを決定</b><span class="na">→ 固定費比較を docs/02-budget.md に記入</span></li><li><span class="due">2026-12-15</span><span class="pill p-未着手">未着手</span><b>休職制度・税社保・住居と国内固定費の一般的な確認項目を整理</b><span class="na">→ T-W02・T-W03・T-H01〜T-H06 に分割して管理</span></li><li><span class="due">2026-12-15</span><span class="pill p-未着手">未着手</span><b>休職中の社会保険料（本人負担分）の支払方法を確認</b><span class="na">→ 本人負担分の払い方（立替・振込・復職後天引き等）を勤務先の規定で確認</span></li><li><span class="due">2026-12-15</span><span class="pill p-未着手">未着手</span><b>住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認</b><span class="na">→ 特別徴収・普通徴収の扱いを勤務先・住所地の自治体で確認</span></li><li><span class="due">2026-12-15</span><span class="pill p-未着手">未着手</span><b>休職前後の休暇・復職手続きの規定を確認</b><span class="na">→ 就業規則を確認（個別の日付・処遇は公開しない）</span></li><li><span class="due">2026-12-15</span><span class="pill p-未着手">未着手</span><b>就業規則上の休職中の海外渡航・緊急連絡体制を確認</b><span class="na">→ 就業規則を確認</span></li></ul>
+    <p class="muted"><a href="docs/03-preparation.md">準備ToDoをすべて見る →</a></p>
+  </section>
+  <section class="card" aria-labelledby="h-prog">
+    <h2 id="h-prog">準備の進み具合</h2>
+    <div><span class="big">0%</span> <span class="muted">0/46 タスク完了</span></div>
+    <div class="prow"><span class="plabel">出発前</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/6</span></div><div class="prow"><span class="plabel">計画</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/3</span></div><div class="prow"><span class="plabel">休職・会社</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/6</span></div><div class="prow"><span class="plabel">住居・荷物</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/6</span></div><div class="prow"><span class="plabel">パスポート・ビザ</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/3</span></div><div class="prow"><span class="plabel">航空券</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/3</span></div><div class="prow"><span class="plabel">保険・医療</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/6</span></div><div class="prow"><span class="plabel">お金・通信</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/3</span></div><div class="prow"><span class="plabel">留学先手続き</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/3</span></div><div class="prow"><span class="plabel">渡航中</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/3</span></div><div class="prow"><span class="plabel">帰国・復職</span><span class="ptrack"><span style="width:0%"></span></span><span class="pnum">0/4</span></div>
+  </section>
+</div>
+
+<section class="card" aria-labelledby="h-month">
+  <h2 id="h-month">月別の見積（標準プラン）</h2>
+  <div class="legend"><span><i class="sw sw-est"></i>見積（出典あり）</span><span><i class="sw sw-unv"></i>未確認（推定）</span></div>
+  <div class="chart" id="monthChart"></div>
+  <details><summary>表で見る</summary><div class="tablewrap" id="monthTable"></div></details>
+</section>
+
+<section class="card" aria-labelledby="h-cat">
+  <h2 id="h-cat">費目別の見積（標準プラン）</h2>
+  <div class="legend"><span><i class="sw sw-est"></i>見積合計（標準）</span></div>
+  <div class="chart" id="catChart"></div>
+  <details><summary>表で見る（低予算・余裕プラン付き）</summary><div class="tablewrap" id="catTable"></div></details>
+</section>
+
+<div class="grid2">
+  <section class="card" aria-labelledby="h-tl">
+    <h2 id="h-tl">スケジュール</h2>
+    <ol class="tl"><li><div class="tl-date">02/01〜07/31</div><div class="tl-body"><b>休職・長期休暇の期間（モデル）</b> <span class="pill p-要確認">要確認</span><div class="muted">日本　勤務先の休職制度を確認</div></div></li><li><div class="tl-date">02/05〜02/06</div><div class="tl-body"><b>日本→マニラ→バギオ</b> <span class="pill p-未確定">未確定</span><div class="muted">日本／マニラ／バギオ　入寮2/6に間に合う便。航空券未手配</div></div></li><li><div class="tl-date">02/06</div><div class="tl-body"><b>PINES 入寮</b> <span class="pill p-計画">計画</span><div class="muted">バギオ　学校の開講日程からの計画案</div></div></li><li><div class="tl-date">02/08〜03/05</div><div class="tl-body"><b>Power ESL5（4週間）</b> <span class="pill p-計画">計画</span><div class="muted">バギオ PINES　終了日は4週間からの計算値（月〜金）。学校の最新日程で確認</div></div></li><li><div class="tl-date">03/08〜04/30</div><div class="tl-body"><b>Intensive ESL（8週間）</b> <span class="pill p-計画">計画</span><div class="muted">バギオ PINES　開始・終了日は計算値。退寮日（5/1頃）は学校の最新日程で確認</div></div></li><li><div class="tl-date">05/01〜05/02</div><div class="tl-body"><b>バギオ→マニラ→南部アフリカ</b> <span class="pill p-未確定">未確定</span><div class="muted">マニラ→ヨハネスブルグ等　航空券未手配</div></div></li><li><div class="tl-date">05/02〜05/29</div><div class="tl-body"><b>南部アフリカ周遊（約1か月）</b> <span class="pill p-未確定">未確定</span><div class="muted">南アフリカ・周辺国　ルート案は research/africa-trip.md</div></div></li><li><div class="tl-date">05/31〜07/23</div><div class="tl-body"><b>ケープタウン語学留学（8週間・案）</b> <span class="pill p-検討中">検討中</span><div class="muted">ケープタウン　UCT ELC は毎週月曜開講。宿泊 5/30〜7/24 の想定</div></div></li><li><div class="tl-date">07/24〜07/26</div><div class="tl-body"><b>ケープタウン→日本</b> <span class="pill p-未確定">未確定</span><div class="muted">ケープタウン→日本　航空券未手配</div></div></li><li><div class="tl-date">07/27〜08/31</div><div class="tl-body"><b>帰国後の準備（モデル）</b> <span class="pill p-要確認">要確認</span><div class="muted">日本　勤務先の規定に沿って確認</div></div></li></ol>
+  </section>
+  <section class="card" aria-labelledby="h-unc">
+    <h2 id="h-unc">未確認の費目（16 件・出典なし／金額未入力）</h2>
+    <ul class="list"><li><b>現地の生活費（外食・日用品・交際費・週末の外出）</b> <span class="muted">食費・日常生活費・金額未入力（0円ではない・合計外）</span></li><li><b>ツアーの現地払い（ローカルペイメント）等</b> <span class="muted">観光・ツアー・ダイビング・推定 ¥15,000（出典なし）</span></li><li><b>チョベ国立公園 日帰りツアー</b> <span class="muted">観光・ツアー・ダイビング・推定 ¥30,000（出典なし）</span></li><li><b>ツアー外の食費</b> <span class="muted">食費・日常生活費・推定 ¥63,000（出典なし）</span></li><li><b>現地交通（送迎・バス・レンタカー）</b> <span class="muted">現地交通費・推定 ¥30,000（出典なし）</span></li><li><b>ケープ半島・ガーデンルート等の観光</b> <span class="muted">観光・ツアー・ダイビング・推定 ¥30,000（出典なし）</span></li><li><b>週末の観光（テーブルマウンテン等）</b> <span class="muted">観光・ツアー・ダイビング・金額未入力（0円ではない・合計外）</span></li><li><b>マラリア予防薬・常備薬</b> <span class="muted">保険・医療・金額未入力（0円ではない・合計外）</span></li><li><b>出発準備・持ち物購入（スーツケース・防寒着・変換プラグ等）</b> <span class="muted">出発準備・持ち物・金額未入力（0円ではない・合計外）</span></li><li><b>日本の携帯番号の維持（povo等）</b> <span class="muted">通信費・金額未入力（0円ではない・合計外）</span></li><li><b>荷物の保管（宅配型収納・トランクルーム等）</b> <span class="muted">日本の固定費・金額未入力（0円ではない・合計外）</span></li><li><b>住居（家賃を払い続ける場合）または退去・再契約費用</b> <span class="muted">日本の固定費・金額未入力（0円ではない・合計外）</span></li><li><b>休職中の健康保険・厚生年金（本人負担）6か月（休職する場合のモデル）</b> <span class="muted">税金・社会保険・金額未入力（0円ではない・合計外）</span></li><li><b>住民税（2〜7月分）</b> <span class="muted">税金・社会保険・金額未入力（0円ではない・合計外）</span></li><li><b>予備費（モデル設定）</b> <span class="muted">予備費・金額未入力（0円ではない・合計外）</span></li><li><b>7月末〜8月の追加観光（任意・未計画）</b> <span class="muted">観光・ツアー・ダイビング・金額未入力（0円ではない・合計外）</span></li></ul>
+    <h2 style="margin-top:16px">要確認タスク</h2>
+    <ul class="list"><li><b>勤務先の休職制度・承認手続きを確認</b> <span class="muted">就業規則と必要書類を確認（内容は公開しない）</span></li><li><b>住民票：海外転出届は原則不要（1年未満）を自治体に確認</b> <span class="muted">住民票のある市区町村の案内で確認</span></li></ul>
+  </section>
+</div>
+
+<section class="card" aria-labelledby="h-exp">
+  <h2 id="h-exp">費用明細（見積モデル）</h2>
+  <div class="filters" id="expFilter">
+    <button type="button" aria-pressed="true" data-f="">すべて</button>
+    <button type="button" aria-pressed="false" data-f="見積">見積</button>
+    <button type="button" aria-pressed="false" data-f="未確認">未確認</button>
+  </div>
+  <div class="tablewrap"><table id="expTable">
+    <thead><tr><th>ID</th><th>内容</th><th>費目</th><th>国</th><th>区分</th><th class="n">低予算</th><th class="n">標準</th><th class="n">余裕</th><th>出典</th></tr></thead>
+    <tbody><tr data-st="見積"><td>PH-01</td><td>PINES 授業料・寮費・登録料（12週・公開料金表からの計算）<div class="muted">PINES</div></td><td>授業料・入学金・教材費</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥768,803</td><td class="n">¥896,937</td><td class="n">¥1,091,511</td><td><a href="https://philschools.jp/pricelist/pines.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-02</td><td>SSP（特別就学許可）＋SSP I-CARD<div class="muted">PINES（現地払い）</div></td><td>ビザ・滞在許可</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥31,119</td><td class="n">¥31,119</td><td class="n">¥31,119</td><td><a href="https://philschools.jp/pricelist/pines.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-03</td><td>ビザ延長（9〜12週の区分）<div class="muted">PINES（現地払い）</div></td><td>ビザ・滞在許可</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥28,209</td><td class="n">¥28,209</td><td class="n">¥38,937</td><td><a href="https://philschools.jp/pricelist/pines.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-04</td><td>寮の光熱費（電気・水道）12週<div class="muted">PINES（現地払い）</div></td><td>寮・ホームステイ・宿泊</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥22,770</td><td class="n">¥22,770</td><td class="n">¥22,770</td><td><a href="https://philschools.jp/pricelist/pines.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-05</td><td>教材（ポイントから差し引き）12週<div class="muted">PINES（現地払い）</div></td><td>授業料・入学金・教材費</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥8,349</td><td class="n">¥8,349</td><td class="n">¥8,349</td><td><a href="https://philschools.jp/pricelist/pines.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-06</td><td>洗濯・ID等（ポイントの残り）<div class="muted">PINES（現地払い）</div></td><td>食費・日常生活費</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥22,011</td><td class="n">¥22,011</td><td class="n">¥22,011</td><td><a href="https://philschools.jp/pricelist/pines.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-07</td><td>マニラ空港→バギオ（学校ピックアップまたはバス）<div class="muted">PINES／Victory Liner</div></td><td>現地交通費</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥1,265</td><td class="n">¥7,590</td><td class="n">¥7,590</td><td><a href="https://philschools.jp/pricelist/pines.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-08</td><td>週末の寮の食事（12週分）<div class="muted">PINES（現地払い）</div></td><td>食費・日常生活費</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥10,869</td><td class="n">¥24,774</td><td class="n">¥24,774</td><td><a href="https://www.hub1234.com/philippines/baguio/pines-main/fee" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>PH-09</td><td>現地の生活費（外食・日用品・交際費・週末の外出）<div class="muted">—</div></td><td>食費・日常生活費</td><td>フィリピン</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td>—</td></tr><tr data-st="見積"><td>PH-10</td><td>現地SIM（Globe GoSURF 30日×3か月）<div class="muted">Globe Telecom</div></td><td>通信費</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥2,269</td><td class="n">¥7,582</td><td class="n">¥11,377</td><td><a href="https://pinoyloads.com/globe-gosurf-promos" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>PH-11</td><td>日本→マニラ 片道航空券<div class="muted">航空会社（未定）</div></td><td>航空券・長距離移動</td><td>フィリピン</td><td><span class="pill p-見積">見積</span></td><td class="n">¥22,147</td><td class="n">¥31,638</td><td class="n">¥65,174</td><td><a href="https://www.kayak.com/flight-routes/Tokyo-TYO/Manila-Ninoy-Aquino-Intl-MNL" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>AF-01</td><td>マニラ→ヨハネスブルグ（またはケープタウン）片道<div class="muted">航空会社（未定）</div></td><td>航空券・長距離移動</td><td>南部アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥110,733</td><td class="n">¥120,224</td><td class="n">¥120,224</td><td><a href="https://www.kayak.com/flight-routes/Manila-Ninoy-Aquino-Intl-MNL/Johannesburg-O-R-Tambo-Intl-JNB" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>AF-02</td><td>アフリカ域内の航空券<div class="muted">航空会社（未定）</div></td><td>航空券・長距離移動</td><td>南部アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥15,000</td><td class="n">¥45,000</td><td class="n">¥20,000</td><td><a href="https://www.kayak.com/flight-routes/Manila-Ninoy-Aquino-Intl-MNL/Cape-Town-Intl-CPT" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>AF-03</td><td>サファリ／オーバーランドツアー<div class="muted">Acacia Africa（候補）</div></td><td>観光・ツアー・ダイビング</td><td>南部アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥140,473</td><td class="n">¥189,195</td><td class="n">¥395,633</td><td><a href="https://www.acacia-africa.com/search.php" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>AF-04</td><td>ツアーの現地払い（ローカルペイメント）等<div class="muted">Acacia Africa（候補）</div></td><td>観光・ツアー・ダイビング</td><td>南部アフリカ</td><td><span class="pill p-未確認">未確認</span></td><td class="n">¥15,000</td><td class="n">¥15,000</td><td class="n">¥20,000</td><td>—</td></tr><tr data-st="見積"><td>AF-05</td><td>ソドワナ：PADIオープンウォーター＋ファンダイブ5本＋器材<div class="muted">Coral Divers</div></td><td>観光・ツアー・ダイビング</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥87,748</td><td class="n">¥0</td><td class="n">¥0</td><td><a href="https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>AF-06</td><td>KAZA UNIVISA（ジンバブエ・ザンビア）<div class="muted">入国管理（現地払い）</div></td><td>ビザ・滞在許可</td><td>南部アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥0</td><td class="n">¥7,910</td><td class="n">¥7,910</td><td><a href="https://www.zambiaimmigration.gov.zm/kaza-univisa/" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>AF-07</td><td>ビクトリアの滝 入場料（ジンバブエ側＋ザンビア側）<div class="muted">ZimParks／Zambia Tourism</div></td><td>観光・ツアー・ダイビング</td><td>南部アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥0</td><td class="n">¥9,491</td><td class="n">¥9,491</td><td><a href="https://www.zambiatourism.com/park-entry-fees/" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>AF-08</td><td>ナミビア 到着ビザ<div class="muted">ナミビア入国管理</div></td><td>ビザ・滞在許可</td><td>南部アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥0</td><td class="n">¥0</td><td class="n">¥15,344</td><td><a href="https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>AF-09</td><td>チョベ国立公園 日帰りツアー<div class="muted">未定</div></td><td>観光・ツアー・ダイビング</td><td>南部アフリカ</td><td><span class="pill p-未確認">未確認</span></td><td class="n">¥0</td><td class="n">¥30,000</td><td class="n">¥0</td><td>—</td></tr><tr data-st="見積"><td>AF-10</td><td>ツアー外の宿泊（ホステル等）<div class="muted">未定</div></td><td>寮・ホームステイ・宿泊</td><td>南部アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥42,000</td><td class="n">¥63,000</td><td class="n">¥30,000</td><td><a href="https://www.hostelworld.com/hostels/africa/south-africa/cape-town/" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>AF-11</td><td>ツアー外の食費<div class="muted">—</div></td><td>食費・日常生活費</td><td>南部アフリカ</td><td><span class="pill p-未確認">未確認</span></td><td class="n">¥66,000</td><td class="n">¥63,000</td><td class="n">¥30,000</td><td>—</td></tr><tr data-st="未確認"><td>AF-12</td><td>現地交通（送迎・バス・レンタカー）<div class="muted">未定</div></td><td>現地交通費</td><td>南部アフリカ</td><td><span class="pill p-未確認">未確認</span></td><td class="n">¥50,000</td><td class="n">¥30,000</td><td class="n">¥10,000</td><td>—</td></tr><tr data-st="未確認"><td>AF-13</td><td>ケープ半島・ガーデンルート等の観光<div class="muted">未定</div></td><td>観光・ツアー・ダイビング</td><td>南アフリカ</td><td><span class="pill p-未確認">未確認</span></td><td class="n">¥20,000</td><td class="n">¥30,000</td><td class="n">¥20,000</td><td>—</td></tr><tr data-st="見積"><td>SC-01</td><td>UCT ELC 授業料 8週（標準＝Standard 20レッスン／余裕＝Intensive 30レッスン）<div class="muted">UCT English Language Centre</div></td><td>授業料・入学金・教材費</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥425,029</td><td class="n">¥425,029</td><td class="n">¥571,564</td><td><a href="https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>SC-02</td><td>UCT ELC 登録料<div class="muted">UCT English Language Centre</div></td><td>授業料・入学金・教材費</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥9,590</td><td class="n">¥9,590</td><td class="n">¥9,590</td><td><a href="https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>SC-03</td><td>宿泊 8週（低＝Yellow House／標準＝ホームステイ共用バス／余裕＝ホームステイ専用バス）<div class="muted">UCT English Language Centre</div></td><td>寮・ホームステイ・宿泊</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥327,594</td><td class="n">¥372,092</td><td class="n">¥417,357</td><td><a href="https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>SC-04</td><td>空港送迎（片道）<div class="muted">UCT English Language Centre</div></td><td>現地交通費</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥7,192</td><td class="n">¥7,192</td><td class="n">¥7,192</td><td><a href="https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>SC-05</td><td>ケープタウンの生活費（家賃以外）2か月<div class="muted">—</div></td><td>食費・日常生活費</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥229,604</td><td class="n">¥229,604</td><td class="n">¥229,604</td><td><a href="https://www.numbeo.com/cost-of-living/in/Cape-Town" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>SC-06</td><td>MyCiTi バス 月間パス×2＋カード<div class="muted">City of Cape Town</div></td><td>現地交通費</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥29,154</td><td class="n">¥29,154</td><td class="n">¥29,154</td><td><a href="https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>SC-07</td><td>Vodacom プリペイドデータ（30GB×2）<div class="muted">Vodacom</div></td><td>通信費</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥13,407</td><td class="n">¥13,407</td><td class="n">¥13,407</td><td><a href="https://www.vodacom.co.za/vodacom/shopping/data/data-for-your-smartphone" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>SC-08</td><td>ケープタウン→日本 片道<div class="muted">航空会社（未定）</div></td><td>航空券・長距離移動</td><td>南アフリカ</td><td><span class="pill p-見積">見積</span></td><td class="n">¥79,285</td><td class="n">¥100,000</td><td class="n">¥111,961</td><td><a href="https://www.kayak.co.jp/flight-routes/Cape-Town-CPT/Tokyo-TYO" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>SC-09</td><td>週末の観光（テーブルマウンテン等）<div class="muted">—</div></td><td>観光・ツアー・ダイビング</td><td>南アフリカ</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td>—</td></tr><tr data-st="見積"><td>CM-01</td><td>海外旅行保険（約6か月・アジア＋アフリカ）<div class="muted">保険会社（未定）</div></td><td>保険・医療</td><td>共通</td><td><span class="pill p-見積">見積</span></td><td class="n">¥178,540</td><td class="n">¥351,560</td><td class="n">¥351,560</td><td><a href="https://www.travel-hoken.net/comp/price_set.html" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="見積"><td>CM-02</td><td>予防接種（トラベルクリニック）<div class="muted">医療機関（未定）</div></td><td>保険・医療</td><td>共通</td><td><span class="pill p-見積">見積</span></td><td class="n">¥49,401</td><td class="n">¥69,201</td><td class="n">¥136,381</td><td><a href="https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>CM-03</td><td>マラリア予防薬・常備薬<div class="muted">医療機関（未定）</div></td><td>保険・医療</td><td>共通</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td>—</td></tr><tr data-st="見積"><td>CM-04</td><td>パスポート更新（必要な場合）<div class="muted">都道府県旅券窓口</div></td><td>ビザ・滞在許可</td><td>日本</td><td><span class="pill p-見積">見積</span></td><td class="n">¥0</td><td class="n">¥8,900</td><td class="n">¥8,900</td><td><a href="https://www.seikatubunka.metro.tokyo.lg.jp/passport/documents/0000000432" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>CM-05</td><td>出発準備・持ち物購入（スーツケース・防寒着・変換プラグ等）<div class="muted">—</div></td><td>出発準備・持ち物</td><td>共通</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td>—</td></tr><tr data-st="未確認"><td>CM-06</td><td>日本の携帯番号の維持（povo等）<div class="muted">通信会社</div></td><td>通信費</td><td>日本</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td><a href="https://povo.jp/" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>CM-07</td><td>荷物の保管（宅配型収納・トランクルーム等）<div class="muted">未定</div></td><td>日本の固定費</td><td>日本</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td><a href="https://pocket.sumally.com/" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>CM-08</td><td>住居（家賃を払い続ける場合）または退去・再契約費用<div class="muted">大家・管理会社</div></td><td>日本の固定費</td><td>日本</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td>—</td></tr><tr data-st="未確認"><td>CM-09</td><td>休職中の健康保険・厚生年金（本人負担）6か月（休職する場合のモデル）<div class="muted">加入している健康保険・年金</div></td><td>税金・社会保険</td><td>日本</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td><a href="https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>CM-10</td><td>住民税（2〜7月分）<div class="muted">住所地の市区町村</div></td><td>税金・社会保険</td><td>日本</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td><a href="https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html" target="_blank" rel="noopener">出典</a></td></tr><tr data-st="未確認"><td>CM-11</td><td>予備費（モデル設定）<div class="muted">—</div></td><td>予備費</td><td>共通</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td>—</td></tr><tr data-st="未確認"><td>AU-01</td><td>7月末〜8月の追加観光（任意・未計画）<div class="muted">—</div></td><td>観光・ツアー・ダイビング</td><td>南アフリカ</td><td><span class="pill p-未確認">未確認</span></td><td class="n">金額未入力</td><td class="n">金額未入力</td><td class="n">金額未入力</td><td>—</td></tr></tbody>
+  </table></div>
+</section>
+
+<section class="card" aria-labelledby="h-blog">
+  <h2 id="h-blog">ブログ記事候補</h2>
+  <p class="muted">未着手 18 ／ 資料収集中 7 ／ 下書き 0 ／ 公開可能 0 ／ 公開済み 0</p>
+  <details><summary>記事候補の一覧</summary><ul class="list"><li><span class="pill p-資料収集中">資料収集中</span> <b>休職制度を使って半年間海外に行く準備（一般的な手続き）</b><div class="muted">留学準備｜資料: docs/03-preparation.md（休職タスク）</div></li><li><span class="pill p-資料収集中">資料収集中</span> <b>留学先にフィリピン（バギオ・PINES）を選んだ理由</b><div class="muted">留学準備｜資料: research/philippines-pines.md</div></li><li><span class="pill p-資料収集中">資料収集中</span> <b>半年間の予算モデル（目標250万円の内訳）</b><div class="muted">留学準備｜資料: docs/02-budget.md／data/expenses.csv</div></li><li><span class="pill p-未着手">未着手</span> <b>退去・荷物整理・日本に残る固定費の整理</b><div class="muted">留学準備｜資料: docs/03-preparation.md（住居・固定費タスク）</div></li><li><span class="pill p-資料収集中">資料収集中</span> <b>実際に必要だった準備と手続きチェックリスト</b><div class="muted">留学準備｜資料: docs/03-preparation.md／data/tasks.csv</div></li><li><span class="pill p-資料収集中">資料収集中</span> <b>休職中の社会保険料・住民税はいくらかかるか</b><div class="muted">留学準備｜資料: docs/03-preparation.md（税・社会保険）</div></li><li><span class="pill p-資料収集中">資料収集中</span> <b>半年・アジア＋アフリカの海外旅行保険の選び方</b><div class="muted">留学準備｜資料: docs/03-preparation.md（保険）</div></li><li><span class="pill p-未着手">未着手</span> <b>アフリカ渡航前の予防接種と費用</b><div class="muted">留学準備｜資料: docs/03-preparation.md（予防接種）</div></li><li><span class="pill p-未着手">未着手</span> <b>PINESの授業：Power ESL5とIntensive ESLの実際</b><div class="muted">留学生活｜資料: research/philippines-pines.md</div></li><li><span class="pill p-未着手">未着手</span> <b>バギオの寮生活・食事・1か月の生活費</b><div class="muted">留学生活｜資料: research/philippines-pines.md／blog/experience-log.md</div></li><li><span class="pill p-未着手">未着手</span> <b>12週間で英語力はどう変わったか</b><div class="muted">留学生活｜資料: blog/experience-log.md</div></li><li><span class="pill p-未着手">未着手</span> <b>学校や生活で苦労したこと・おすすめできる点／できない点</b><div class="muted">留学生活｜資料: blog/experience-log.md</div></li><li><span class="pill p-未着手">未着手</span> <b>ケープタウン留学の学校選びと実際（2校目）</b><div class="muted">留学生活｜資料: research/second-school.md</div></li><li><span class="pill p-未着手">未着手</span> <b>フィリピンと南アフリカで学んでみて（体験ベース）</b><div class="muted">留学生活｜資料: research/philippines-pines.md／research/second-school.md</div></li><li><span class="pill p-未着手">未着手</span> <b>1か月で南部アフリカを何か国周遊できたか</b><div class="muted">アフリカ旅行｜資料: research/africa-trip.md</div></li><li><span class="pill p-未着手">未着手</span> <b>周遊ルートと移動費の目安</b><div class="muted">アフリカ旅行｜資料: research/africa-trip.md／data/expenses.csv</div></li><li><span class="pill p-未着手">未着手</span> <b>サファリ体験記</b><div class="muted">アフリカ旅行｜資料: research/africa-trip.md</div></li><li><span class="pill p-未着手">未着手</span> <b>南部アフリカでのダイビング体験記</b><div class="muted">アフリカ旅行｜資料: research/africa-trip.md</div></li><li><span class="pill p-資料収集中">資料収集中</span> <b>アフリカ周遊中の安全対策（実際にやったこと）</b><div class="muted">アフリカ旅行｜資料: research/africa-trip.md（安全情報）</div></li><li><span class="pill p-未着手">未着手</span> <b>1か月のアフリカ周遊の費用モデルと節約方法</b><div class="muted">アフリカ旅行｜資料: docs/02-budget.md</div></li><li><span class="pill p-未着手">未着手</span> <b>半年間の費用モデルの振り返り</b><div class="muted">帰国後｜資料: docs/02-budget.md／data/expenses.csv</div></li><li><span class="pill p-未着手">未着手</span> <b>当初の予算モデルと見直し後の差</b><div class="muted">帰国後｜資料: docs/02-budget.md</div></li><li><span class="pill p-未着手">未着手</span> <b>半年の海外経験は英語力・キャリアにどう影響したか</b><div class="muted">帰国後｜資料: blog/experience-log.md</div></li><li><span class="pill p-未着手">未着手</span> <b>やってよかったこと・失敗したこと</b><div class="muted">帰国後｜資料: blog/experience-log.md</div></li><li><span class="pill p-未着手">未着手</span> <b>これから半年間の留学を考える人へのアドバイス</b><div class="muted">帰国後｜資料: 全資料</div></li></ul></details>
+</section>
+
+<section class="card" aria-labelledby="h-docs">
+  <h2 id="h-docs">資料</h2>
+  <div class="docs"><a class="doc" href="README.md">全体概要<span>README.md</span></a><a class="doc" href="docs/01-timeline.md">スケジュール<span>docs/01-timeline.md</span></a><a class="doc" href="docs/02-budget.md">予算モデル<span>docs/02-budget.md</span></a><a class="doc" href="docs/03-preparation.md">準備ToDo<span>docs/03-preparation.md</span></a><a class="doc" href="docs/05-public-data-policy.md">公開データ方針<span>docs/05-public-data-policy.md</span></a><a class="doc" href="docs/06-predeparture-roadmap.md">出発前ロードマップ<span>docs/06-predeparture-roadmap.md</span></a><a class="doc" href="research/visa-and-immigration.md">ビザ・再入国<span>research/visa-and-immigration.md</span></a><a class="doc" href="research/baguio-diving.md">バギオ発ダイビング<span>research/baguio-diving.md</span></a><a class="doc" href="research/capetown-diving.md">ケープタウン発ダイビング<span>research/capetown-diving.md</span></a><a class="doc" href="research/baguio-sightseeing.md">バギオ観光<span>research/baguio-sightseeing.md</span></a><a class="doc" href="research/capetown-sightseeing.md">ケープタウン観光<span>research/capetown-sightseeing.md</span></a><a class="doc" href="research/food-and-living.md">食費・生活<span>research/food-and-living.md</span></a><a class="doc" href="research/winter-clothing.md">冬服<span>research/winter-clothing.md</span></a><a class="doc" href="research/safety-and-health.md">治安・健康<span>research/safety-and-health.md</span></a><a class="doc" href="research/philippines-pines.md">PINES・フィリピン<span>research/philippines-pines.md</span></a><a class="doc" href="research/africa-trip.md">5月アフリカ周遊<span>research/africa-trip.md</span></a><a class="doc" href="research/second-school.md">2校目（ケープタウン）<span>research/second-school.md</span></a><a class="doc" href="research/sources.md">出典・調査ログ<span>research/sources.md</span></a><a class="doc" href="blog/article-ideas.md">記事候補<span>blog/article-ideas.md</span></a><a class="doc" href="blog/experience-log.md">体験ログ<span>blog/experience-log.md</span></a><a class="doc" href="data/expenses.csv">費用CSV<span>data/expenses.csv</span></a><a class="doc" href="data/tasks.csv">タスクCSV<span>data/tasks.csv</span></a></div>
+</section>
+
+<section class="card warnbox" aria-labelledby="h-chk">
+  <h2 id="h-chk">データ検証（0 件）</h2>
+  <ul><li>問題なし</li></ul>
+</section>
+</main>
+
+<script>
+const DATA = {"months": [{"key": "pre", "label": "出発前", "est": 78101, "unv": 0}, {"key": "2027-02", "label": "2月 フィリピン", "est": 422913, "unv": 0}, {"key": "2027-03", "label": "3月 フィリピン", "est": 421770, "unv": 0}, {"key": "2027-04", "label": "4月 フィリピン", "est": 408164, "unv": 0}, {"key": "2027-05", "label": "5月 アフリカ周遊", "est": 551523, "unv": 168000}, {"key": "2027-06", "label": "6月 2校目", "est": 640767, "unv": 0}, {"key": "2027-07", "label": "7月 2校目", "est": 608291, "unv": 0}, {"key": "post", "label": "帰国後", "est": 0, "unv": 0}], "cats": [{"label": "授業料・入学金・教材費", "std": 1339905, "low": 1211771, "high": 1681014}, {"label": "寮・ホームステイ・宿泊", "std": 457862, "low": 392364, "high": 470127}, {"label": "食費・日常生活費", "std": 339389, "low": 328484, "high": 306389}, {"label": "航空券・長距離移動", "std": 296862, "low": 227165, "high": 317360}, {"label": "現地交通費", "std": 73936, "low": 87611, "high": 53936}, {"label": "観光・ツアー・ダイビング", "std": 273687, "low": 263221, "high": 445125}, {"label": "ビザ・滞在許可", "std": 76138, "low": 59328, "high": 102209}, {"label": "保険・医療", "std": 420761, "low": 227941, "high": 487941}, {"label": "通信費", "std": 20989, "low": 15676, "high": 24784}, {"label": "出発準備・持ち物", "std": 0, "low": 0, "high": 0}, {"label": "日本の固定費", "std": 0, "low": 0, "high": 0}, {"label": "税金・社会保険", "std": 0, "low": 0, "high": 0}, {"label": "予備費", "std": 0, "low": 0, "high": 0}]};
+const yen = v => "¥" + Math.round(v).toLocaleString("ja-JP");
+const man = v => (v / 10000).toLocaleString("ja-JP", {maximumFractionDigits: 1}) + "万";
+
+// テーマ切替（自動 → ライト → ダーク）
+(function(){
+  const btn = document.getElementById("theme"), modes = ["auto","light","dark"], label = {auto:"自動",light:"ライト",dark:"ダーク"};
+  let m = "auto"; try { m = localStorage.getItem("theme") || "auto"; } catch(e) {}
+  const apply = () => { if (m === "auto") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", m); btn.textContent = "表示: " + label[m]; };
+  apply();
+  btn.onclick = () => { m = modes[(modes.indexOf(m) + 1) % 3]; try { localStorage.setItem("theme", m); } catch(e) {} apply(); };
+})();
+
+function tipFor(el){
+  const t = document.createElement("div"); t.className = "tip"; el.appendChild(t);
+  return {
+    show(ev, html){ t.innerHTML = html; t.style.display = "block";
+      const r = el.getBoundingClientRect(); let x = ev.clientX - r.left + 12, y = ev.clientY - r.top + 12;
+      if (x + t.offsetWidth > r.width) x = Math.max(0, ev.clientX - r.left - t.offsetWidth - 12);
+      t.style.left = x + "px"; t.style.top = y + "px"; },
+    hide(){ t.style.display = "none"; }
+  };
+}
+const NS = "http://www.w3.org/2000/svg";
+function svgEl(tag, attrs){ const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+function niceMax(v){ if (v <= 0) return 1; const p = Math.pow(10, Math.floor(Math.log10(v))); for (const m of [1,2,2.5,5,10]) if (m * p >= v) return m * p; return 10 * p; }
+
+// 角丸は先端（値の端）だけ 4px、基線側は直角
+function barPath(x, y, w, h, horizontal, roundEnd){
+  const r = roundEnd ? Math.min(4, horizontal ? h / 2 : w / 2, horizontal ? w : h) : 0;
+  if (w <= 0 || h <= 0) return "";
+  if (!horizontal) return `M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`;
+  return `M${x},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h-r}Q${x+w},${y+h} ${x+w-r},${y+h}H${x}Z`;
+}
+
+function monthChart(){
+  const host = document.getElementById("monthChart"); host.innerHTML = ""; const tip = tipFor(host);
+  const d = DATA.months, W = Math.max(280, host.clientWidth), H = 240, L = 44, R = 8, T = 18, B = 40;
+  const max = niceMax(Math.max(...d.map(x => x.est + x.unv)));
+  const svg = svgEl("svg", {width:W, height:H, viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":"月別見積の棒グラフ"});
+  for (let i = 0; i <= 4; i++) { const y = T + (H - T - B) * i / 4;
+    svg.appendChild(svgEl("line", {x1:L, x2:W-R, y1:y, y2:y, class: i === 4 ? "base" : "gl"}));
+    const t = svgEl("text", {x:L-6, y:y+4, "text-anchor":"end", class:"lbl"}); t.textContent = man(max * (1 - i / 4)); svg.appendChild(t); }
+  const bw = (W - L - R) / d.length, w = Math.min(36, bw * .55), ph = H - T - B;
+  d.forEach((m, i) => {
+    const x = L + bw * i + (bw - w) / 2, tot = m.est + m.unv;
+    const he = m.est / max * ph, hu = m.unv / max * ph, base = H - B;
+    const gap = he > 0 && hu > 0 ? 2 : 0;
+    if (he > 0) svg.appendChild(svgEl("path", {d: barPath(x, base - he, w, he, false, hu <= 0), fill:"var(--s1)"}));
+    if (hu > 0) svg.appendChild(svgEl("path", {d: barPath(x, base - he - hu - gap, w, hu, false, true), fill:"var(--s2)"}));
+    if (tot > 0 && bw >= 36) { const v = svgEl("text", {x:x + w / 2, y: base - he - hu - gap - 5, "text-anchor":"middle", class:"val"}); v.textContent = man(tot); svg.appendChild(v); }
+    const lab = bw < 52 ? [m.label.split(" ")[0]] : m.label.split(" ");
+    lab.forEach((s, j) => { const t = svgEl("text", {x:x + w / 2, y: base + 15 + j * 13, "text-anchor":"middle", class:"lbl"}); t.textContent = s; svg.appendChild(t); });
+    const hit = svgEl("rect", {x: L + bw * i, y: T, width: bw, height: ph, class:"hit"});
+    hit.addEventListener("mousemove", ev => tip.show(ev, `<b>${m.label}</b>見積合計 ${yen(tot)}<br>うち見積 ${yen(m.est)}<br>うち未確認 ${yen(m.unv)}`));
+    hit.addEventListener("mouseleave", () => tip.hide());
+    svg.appendChild(hit);
+  });
+  host.appendChild(svg);
+  document.getElementById("monthTable").innerHTML = "<table><thead><tr><th>月</th><th class=n>見積合計</th><th class=n>うち見積</th><th class=n>うち未確認</th></tr></thead><tbody>" +
+    d.map(m => `<tr><td>${m.label}</td><td class=n>${yen(m.est + m.unv)}</td><td class=n>${yen(m.est)}</td><td class=n>${yen(m.unv)}</td></tr>`).join("") + "</tbody></table>";
+}
+
+function catChart(){
+  const host = document.getElementById("catChart"); host.innerHTML = ""; const tip = tipFor(host);
+  const d = DATA.cats.filter(c => c.std > 0).sort((a, b) => b.std - a.std);
+  const W = Math.max(280, host.clientWidth), row = 26, L = Math.min(150, Math.round(W * 0.36)), R = 52, H = d.length * row + 8;
+  const max = niceMax(Math.max(...d.map(c => c.std)));
+  const svg = svgEl("svg", {width:W, height:H, viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":"費目別見積の横棒グラフ"});
+  svg.appendChild(svgEl("line", {x1:L, x2:L, y1:0, y2:H, class:"base"}));
+  d.forEach((c, i) => {
+    const y = i * row + 6, h = 14, pw = W - L - R, wv = c.std / max * pw;
+    const t = svgEl("text", {x:L - 8, y:y + 11, "text-anchor":"end", class:"lbl"}); t.textContent = W < 480 ? c.label.split("・")[0] : c.label; svg.appendChild(t);
+    if (wv > 0) svg.appendChild(svgEl("path", {d: barPath(L, y, wv, h, true, true), fill:"var(--s1)"}));
+    const v = svgEl("text", {x: L + wv + 6, y: y + 11, class:"val"}); v.textContent = man(c.std); svg.appendChild(v);
+    const hit = svgEl("rect", {x:0, y:i * row, width:W, height:row, class:"hit"});
+    hit.addEventListener("mousemove", ev => tip.show(ev, `<b>${c.label}</b>標準 ${yen(c.std)}<br>低予算 ${yen(c.low)} ／ 余裕 ${yen(c.high)}`));
+    hit.addEventListener("mouseleave", () => tip.hide());
+    svg.appendChild(hit);
+  });
+  host.appendChild(svg);
+  document.getElementById("catTable").innerHTML = "<table><thead><tr><th>費目</th><th class=n>低予算</th><th class=n>標準</th><th class=n>余裕</th></tr></thead><tbody>" +
+    DATA.cats.map(c => `<tr><td>${c.label}</td><td class=n>${yen(c.low)}</td><td class=n>${yen(c.std)}</td><td class=n>${yen(c.high)}</td></tr>`).join("") + "</tbody></table>";
+}
+
+document.getElementById("expFilter").addEventListener("click", ev => {
+  const b = ev.target.closest("button"); if (!b) return;
+  document.querySelectorAll("#expFilter button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  document.querySelectorAll("#expTable tbody tr").forEach(tr => { tr.style.display = !b.dataset.f || tr.dataset.st === b.dataset.f ? "" : "none"; });
+});
+monthChart(); catChart();
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { monthChart(); catChart(); }, 150); });
+</script>
+</body>
+</html>
