@@ -113,6 +113,15 @@
 | ケープタウン観光 | https://aquilasafari.com/day-trip-safaris/ ／ https://aquilasafari.com/transport/ | 4x4終日From R2,895、送迎From R1,180 | 2026-10-17 | 送迎は2025-11〜2026-10有効 |
 | ケープタウン観光 | https://www.hermanus-whale-cruises.co.za/trip.php | 大人R1,500（rack rate）、出航時刻、天候次第 | 2026-10-17 | 年度表記なし、遭遇保証なし |
 | ケープタウン気候 | https://en.wikipedia.org/wiki/Cape_Town | 空港1991–2020平年値：6月92.3mm/10.1日、7月84.8mm/9.1日 | 2026-10-17 | 二次（出典SAWS/NOAA）。風統計未確認 |
+| PH食事（紹介会社） | https://www.hub1234.com/philippines/baguio/pines-main | PINESの平日3食込み・週末1食PHP179・土曜朝食無料・日曜朝食PHP100の掲載 | 2026-10-17 | 準公式。学校公式では未確認（要確認） |
+| PH食事 | https://pinesacademy.com/ | 学校公式サイト | 2026-10-17 | 403で取得不可。2024-03のアーカイブに食事規定なし |
+| PH外食 | https://www.foodpanda.ph/restaurant/r1dl/lechon-house-baguio | バギオのデリバリー価格 | 2026-10-17 | 403で取得不可（未確認） |
+| ZAスーパー | https://www.pnp.co.za/ （商品検索API、storeCode=WC21） | Pick n Payの食品表示価格 | 2026-10-17 | 店舗名未特定。配送料含まず |
+| ZAスーパー | https://www.checkers.co.za/sitemap.xml （商品ページのJSON-LD） | Checkersの食品表示価格・在庫表示 | 2026-10-17 | 配達エリア未指定のオンライン価格 |
+| ZAスーパー | https://www.shoprite.co.za/ （商品ページのJSON-LD） | Shopriteの食品表示価格 | 2026-10-17 | 同上 |
+| ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
+| ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
+| ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
