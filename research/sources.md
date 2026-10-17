@@ -60,6 +60,15 @@
 | ZAダイビング | https://www.diveschoolcapetown.co.za/fun-dives/scuba-dive-with-great-white-sharks/ | ケージR3,655＋送迎R1,000 | 2026-10-17 | 2027年冬の出現・催行未確認 |
 | ZAダイビング | https://www.diveschoolcapetown.co.za/terms-and-conditions/ | 全額前払い、48時間未満取消は没収、天候中止は返金/振替 | 2026-10-17 | — |
 | ZA健康 | https://www.nicd.ac.za/wp-content/uploads/2025/08/Rabies-and-seals-_-August-2025-final.pdf | Cape fur sealの狂犬病（2024年5月〜）、ダイバー等は曝露前接種を医療者と相談 | 2026-10-17 | 2025年8月更新 |
+| PH食事（紹介会社） | https://www.hub1234.com/philippines/baguio/pines-main | PINESの平日3食込み・週末1食PHP179・土曜朝食無料・日曜朝食PHP100の掲載 | 2026-10-17 | 準公式。学校公式では未確認（要確認） |
+| PH食事 | https://pinesacademy.com/ | 学校公式サイト | 2026-10-17 | 403で取得不可。2024-03のアーカイブに食事規定なし |
+| PH外食 | https://www.foodpanda.ph/restaurant/r1dl/lechon-house-baguio | バギオのデリバリー価格 | 2026-10-17 | 403で取得不可（未確認） |
+| ZAスーパー | https://www.pnp.co.za/ （商品検索API、storeCode=WC21） | Pick n Payの食品表示価格 | 2026-10-17 | 店舗名未特定。配送料含まず |
+| ZAスーパー | https://www.checkers.co.za/sitemap.xml （商品ページのJSON-LD） | Checkersの食品表示価格・在庫表示 | 2026-10-17 | 配達エリア未指定のオンライン価格 |
+| ZAスーパー | https://www.shoprite.co.za/ （商品ページのJSON-LD） | Shopriteの食品表示価格 | 2026-10-17 | 同上 |
+| ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
+| ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
+| ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
 | 経路推計 | https://router.project-osrm.org/ | 車の距離・時間（バギオ→San Juan 83km/1.9h、→Bolinao 175km/3.5h、→Olongapo 242km/3.7h、ケープタウン→Simon's Town 39km/0.7h） | 2026-10-17 | 推計。渋滞・公共交通は含まない |
 | ケープタウン気候 | https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/1.1/data/0-data/Region-1-WMO-Normals-9120/SouthAfrica/CSV/CapeTown_68816.csv | WMO 1991-2020平年値、Cape Town International Airport（WMO 68816・標高42m）：6/7月 最高18.2/17.9°C・最低8.1/7.4°C・降水92.3/84.8mm・降水日10.1/9.1日 | 2026-10-17 | 空港地点。市街地差・風は含まない。SAWSでの照合未了 |
 | ケープタウン気候 | https://www.ncei.noaa.gov/products/wmo-climate-normals | 上記WMO平年値の公開元（NOAA NCEI） | 2026-10-17 | — |
@@ -119,6 +128,8 @@
 - バギオ起点の現実的な土日交通便とショップの総額、学校門限（ダイビングは #3 で一部更新：バギオ→San Juan/ボリナオのバス便・運賃、ボリナオのショップは未確認）。
 - 2026-10-17のダイビング調査では WebSearch が使えず、外部検索エンジンもボット判定で大半が失敗した。各レポートの調査ログを参照。
 - スーパー実売の数量・値段、観光非居住者料金。衣料品は #6 で公式EC価格を一部記録（Cape Town 店舗・冬季在庫・403 のチェーンは未確認）。
+- スーパー：ケープタウンの4社のオンライン表示価格は2026-10-17に取得（[food-and-living.md](food-and-living.md)）。バギオのスーパー・外食の価格と、PINES公式の食事規定は未確認。
+- 衣料品の店舗と商品価格、観光非居住者料金。
 - 外貨換算レート：**未採用**（検証可能な日付/レートが取得できたときに記録）。
 
 公開時には出典リンクを明示し、記事・体験・価格の更新日を残す。
