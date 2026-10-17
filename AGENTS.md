@@ -33,9 +33,11 @@ Windows は `py`、Linux/macOS は `python3`（CIは Python 3.12・追加依存�
 ```
 py scripts/validate_data.py
 py scripts/check_public_data.py
-py -m unittest discover -s tests -p "test_public_data.py"
+py scripts/build_all.py --check    # 生成物（README・docs の AUTO ブロック、全HTML、index.html）が最新か
+py scripts/check_links.py
+py -m unittest discover -s tests
 ```
-`scripts/build_html.py` や `scripts/export_docx.py` がある場合は、その手順に従って再生成する。
+CSV・Markdown を変えたら `py scripts/build_all.py` で再生成して同じコミットに含める（`build.py` が集計の AUTO ブロック、続けて `build_html.py` が HTML と index.html を生成する。生成物は手で編集しない）。Word 出力は `py scripts/export_docx.py`（[docs/07-export.md](docs/07-export.md)）。
 
 ## GitHub運用ルール
 - ブランチ名：`feat/<issue番号>-<slug>`、調査は `research/<issue番号>-<slug>`、文書は `docs/<slug>`。

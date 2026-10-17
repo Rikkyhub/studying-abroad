@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""生成物をまとめて更新する入口。使い方:  py scripts/build_all.py [--check]
+
+順序（この順でないと docs の HTML が AUTO ブロックの更新前の内容になる）:
+  1. scripts/build.py       data/*.csv -> README.md・docs/*.md・blog/*.md の AUTO ブロック（集計）
+  2. scripts/build_html.py  Markdown/CSV -> *.html、index.html（ダッシュボード）
+
+--check は書き込まず、どれかの生成物が CSV/Markdown と一致しなければ失敗する（CI 用）。
+"""
+import subprocess
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+STEPS = ["build.py", "build_html.py"]
+
+
+def main(argv=None):
+    extra = [a for a in (argv if argv is not None else sys.argv[1:]) if a == "--check"]
+    rc = 0
+    for step in STEPS:
+        print(f"== {step} {' '.join(extra)}".rstrip(), flush=True)
+        r = subprocess.run([sys.executable, str(HERE / step), *extra])
+        if r.returncode:
+            rc = r.returncode
+            if not extra:
+                break
+    return rc
+
+
+if __name__ == "__main__":
+    sys.exit(main())
