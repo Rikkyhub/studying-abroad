@@ -77,7 +77,7 @@
 |---|---|---|
 | 最低／推奨日数 | 2日／3〜4日（JNBからのバス往復日を含めて数える） | 推計 |
 | 主題 | [Mlilwane Wildlife Sanctuary](https://www.google.com/maps/search/?api=1&query=Mlilwane%20Wildlife%20Sanctuary)の自然・乗馬・徒歩、[Hlane](https://www.google.com/maps/search/?api=1&query=Hlane%20Royal%20National%20Park)のサイ観察 | — |
-| 公式料金（Big Game Parks, ZAR） | 保全料 **ZAR 95/人・日**（Mlilwane・Hlane同額）、Sondzela Backpackers ドミトリー **ZAR 215/泊**（B&B、相部屋）、乗馬 **ZAR 430/時間**（最低1名）、1.5時間ゲームドライブ **ZAR 390/人**（**最低2名**）。料金は「毎年12月1日〜11月30日」。年の明記なし（ページ末尾©2026、キャッシュレス化は2026-07-01〜）。[biggameparks.org/rates](https://biggameparks.org/rates) | **確認済み**（2026-10-18） |
+| 公式料金（Big Game Parks, ZAR） | 保全料 **ZAR 95/人・日**（Mlilwane・Hlane同額）、Sondzela Backpackers ドミトリー **ZAR 215/泊**（素泊まり・相部屋。朝食は別料金）、乗馬 **ZAR 430/時間**（最低1名）、1.5時間ゲームドライブ **ZAR 390/人**（**最低2名**）。料金は「毎年12月1日〜11月30日」。年の明記なし（ページ末尾©2026、キャッシュレス化は2026-07-01〜）。[biggameparks.org/rates](https://biggameparks.org/rates) | **確認済み**（2026-10-18） |
 | 円換算 | 95×9.59＝911円、215×9.59＝2,062円、430×9.59＝4,124円、390×9.59＝3,740円 | 推計（式） |
 | アクセス | [TransMagnific](https://transmagnific.com/schedule.php)：JNB（OR Tambo／Sandton）⇔Mbabane **片道ZAR 750／往復ZAR 1,400**、毎日4便（Sandton 08:00/10:00/13:00/16:30、OR Tambo 09:00/11:00/14:00/18:00）、OR Tambo発で約4時間40分（国境待ち30〜60分含む）。運賃の有効日の記載なし。往復1,400×9.59＝13,426円 | **確認済み**（2026-10-18） |
 | 現地費の内訳（3日・2〜3泊） | バス往復1.34万＋ドミトリー 215×2〜3泊＝430〜645ZAR＝0.41〜0.62万＋保全料・乗馬 約0.6〜0.7万＋食事・域内交通0.5〜1.5万 ＝ **約2.9〜4.2万円**（1.34＋0.41＋0.6＋0.5＝2.85／1.34＋0.62＋0.7＋1.5＝4.16）。範囲表の2.5〜5万円は送迎・サイ観察の上振れを含む | 推計（式） |
