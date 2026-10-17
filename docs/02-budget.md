@@ -7,7 +7,7 @@
 ## 1. 概要（自動）
 
 <!-- AUTO:summary -->
-集計日: 2026-10-17（`python3 scripts/build.py` で再計算）。**公開用の匿名モデル**で、個人の支払い・実費・資金は含みません。
+集計日: 2026-10-17（`py scripts/build_all.py` で再計算）。**公開用の匿名モデル**で、個人の支払い・実費・資金は含みません。
 
 | 指標 | 標準 | 低予算 ／ 余裕 | 説明 |
 |---|---|---|---|
@@ -296,6 +296,6 @@
 2. 出典がない推定は区分を「未確認」にする。金額が分からなければ空欄のままにする（0を入れない）。
 3. 個人の請求・支払い・領収書・資産は**公開CSVに書かない**。列も追加しない（`check_public_data.py` が CI で検出する）。
 4. 費用を追加するときは、新しい ID の行を足す。接頭辞は PH-（フィリピン）／AF-（アフリカ周遊）／SC-（2校目）／AU-（8月）／CM-（共通・日本）。
-5. `python3 scripts/build.py` を実行して、生成物も一緒にコミットする。CI は `--check` で、生成物が CSV と一致しているかを検証する。
+5. `py scripts/build_all.py` を実行して、生成物も一緒にコミットする。CI は `--check` で、生成物が CSV と一致しているかを検証する。
 
 進行Issue：[#7](https://github.com/Rikkyhub/studying-abroad/issues/7)、[#16](https://github.com/Rikkyhub/studying-abroad/issues/16)。

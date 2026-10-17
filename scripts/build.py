@@ -287,7 +287,7 @@ def gen_budget_summary(S):
     t = S["total"]
     na = S["no_amount"]
     lines = [
-        f"集計日: {today().isoformat()}（`python3 scripts/build.py` で再計算）。**公開用の匿名モデル**で、個人の支払い・実費・資金は含みません。",
+        f"集計日: {today().isoformat()}（`py scripts/build_all.py` で再計算）。**公開用の匿名モデル**で、個人の支払い・実費・資金は含みません。",
         "",
         md_table(["指標", "標準", "低予算 ／ 余裕", "説明"], [
             ["見積合計（金額入力済みの全行）", yen(t["std"]), f"{yen(t['low'])} ／ {yen(t['high'])}", "各行を1回だけ加算。金額未入力の行は含まない"],

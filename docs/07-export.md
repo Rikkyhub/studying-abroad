@@ -14,11 +14,11 @@
 | `py scripts/export.py all` | HTML と Word の両方 |
 | `py scripts/export.py docx --out C:\temp\out` | 出力先を変更（既定は `exports/`） |
 
-個別に実行する場合は `py scripts/build_html.py`（`--check` で HTML と Markdown の一致確認）と `py scripts/export_docx.py` を使います。
+個別に実行する場合は `py scripts/build_all.py`（集計の AUTO ブロック → HTML。`--check` で最新かを確認）と `py scripts/export_docx.py` を使います。HTML だけなら `py scripts/build_html.py` ですが、AUTO ブロックを更新していないと古い内容が HTML に出るため、通常は `build_all.py` を使います。
 
 ## コミットするもの・しないもの
 
-- HTML: 生成物ですがコミットします（GitHub Pages 等でそのまま読めるようにするため）。`py scripts/build_html.py --check` が Markdown との不一致を検出します。
+- HTML: 生成物ですがコミットします（GitHub Pages 等でそのまま読めるようにするため）。`py scripts/build_all.py --check` が Markdown/CSV との不一致を検出します。
 - Word（.docx）: コミットしません。`exports/` は `.gitignore` 済みで、必要なときに手元で生成します。
 - 公開データの扱いは [公開データと非公開データの分離](05-public-data-policy.md) に従います。個人の支払い・資産・契約情報は Markdown に書かないため、変換結果にも含まれません。
 

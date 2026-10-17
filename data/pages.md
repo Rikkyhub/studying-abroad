@@ -1,6 +1,6 @@
 # pages.csv
 
-`data/pages.csv` を表にした閲覧用のページです（16行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
+`data/pages.csv` を表にした閲覧用のページです（25行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
 
 | id | group | area | title | summary | path | issue | status | sort | verified_at | refs |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -20,3 +20,12 @@
 | P14 | plan | ブログ | 実体験ログ | 体験した事実と調査を分離 | blog/experience-log.html |  | ready | 50 |  |  |
 | P15 | plan | データ | 費用データ（CSV） | 見積・出典・確認日の一覧 | data/expenses.html |  | ready | 60 |  |  |
 | P16 | plan | データ | タスクデータ（CSV） | 準備タスクの一覧 | data/tasks.html |  | ready | 70 |  |  |
+| P17 | research | ビザ・入国 | フィリピン留学（PINES） | バギオPINESの12週間・料金表・生活の前提 | research/philippines-pines.html |  | researching | 100 | 2026-10-17 | https://philschools.jp/pricelist/pines.pdf;https://immigration.gov.ph/;https://etravel.gov.ph/ |
+| P18 | research | アフリカ | 5月アフリカ周遊（案） | 5月約1か月の周遊の案・費用の前提 | research/africa-trip.html |  | researching | 110 | 2026-10-17 | https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf;https://nomadafrica.co.za/tour/cape-town-to-victoria-falls/;https://www.acacia-africa.com/search.php |
+| P19 | research | アフリカ | アフリカ周遊ルート比較 | フィリピン発・複数国の低コスト周遊ルート5案の比較 | research/africa-route-comparison.html | https://github.com/Rikkyhub/studying-abroad/issues/23 | researching | 120 | 2026-10-17 | https://www.anzen.mofa.go.jp/info/arealeaveinfolist_14.html;https://marinemegafauna.org/where-we-work/mozambique |
+| P20 | research | 留学 | 第2か国留学（ケープタウン） | 6〜7月8週間の語学留学の候補と入国条件 | research/second-school.html |  | researching | 130 | 2026-10-17 | https://uctlanguagecentre.com/;https://www.dha.gov.za/ |
+| P21 | plan | 準備 | 出発前ロードマップ | 出発前に公式情報で確認する手続きの一般的な順序 | docs/06-predeparture-roadmap.html | https://github.com/Rikkyhub/studying-abroad/issues/20 | ready | 35 | 2026-10-17 | https://etravel.gov.ph/en/frequently-asked-questions;https://immigration.gov.ph/services/special-study-permit/ |
+| P22 | plan | データ | ダッシュボードの更新方法 | CSVから画面を生成する手順と為替の更新 | docs/04-dashboard.html |  | ready | 80 |  |  |
+| P23 | plan | 公開方針 | 公開データ方針 | 公開してよいデータと非公開で管理するデータ | docs/05-public-data-policy.html | https://github.com/Rikkyhub/studying-abroad/issues/16 | ready | 90 |  |  |
+| P24 | plan | 運用 | HTML・Word への変換 | Markdownを正本にHTML/Wordを作る方法 | docs/07-export.html |  | ready | 100 |  |  |
+| P25 | plan | 運用 | AI・別PC向け引き継ぎ | 別のAI・PCで作業を引き継ぐ手順 | docs/08-handoff.html |  | ready | 110 |  |  |

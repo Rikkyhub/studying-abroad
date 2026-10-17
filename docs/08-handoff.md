@@ -37,15 +37,15 @@ gh auth login        # アカウント: Rikkyhub
 
 ## 5. データ(CSV)変更タスクの流れ
 1. `feat/<issue>-<slug>` ブランチを作る。
-2. `data/tasks.csv` / `data/expenses.csv` を編集。費用は**調査価格・匿名モデル**のみ。`quoted_amount` は見積/調査額。
+2. `data/tasks.csv` / `data/expenses.csv` を編集。費用は**調査価格・匿名モデル**のみ。金額は `low_local`/`std_local`/`high_local`（見積）で、区分は `見積`（出典あり）か `未確認`。
 3. 禁止列(`paid_jpy`, `evidence`, `receipt` 等)や個人の支払い値を入れない。`py scripts/check_public_data.py` で確認。
-4. `py scripts/validate_data.py`、`py -m unittest discover -s tests -p "test_public_data.py"`。
-5. ダッシュボード(`index.html`)の表示を、`py -m http.server 8000` で確認（任意）。
+4. `py scripts/build_all.py` で再生成し、`py scripts/validate_data.py`、`py -m unittest discover -s tests`。
+5. ダッシュボード(`index.html`)は静的HTMLなので、ブラウザで直接開いて確認する（`file://` で表示できる）。
 
 ## 6. HTML・DOCXの再生成
 - 正本はMarkdown/CSV。HTMLなどの生成物は手で直さない。
-- `scripts/build_html.py` がある場合：`py scripts/build_html.py`（PR #22 がマージされるまではmainにない場合がある）。
-- `scripts/export_docx.py` がある場合：同様にその説明に従う。なければ不要。
+- `py scripts/build_all.py`（`build.py` → `build_html.py` の順）。CIは `py scripts/build_all.py --check` で最新かを確認する。
+- Word出力は `py scripts/export_docx.py`（[07-export.md](07-export.md)）。コミットしない。
 - 生成物の差分も目視でプライバシー確認する。
 
 ## 7. PRの出し方

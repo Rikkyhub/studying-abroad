@@ -14,9 +14,9 @@ description: studying-abroad でブランチ作成・コミット・PR作成・�
 ```
 py scripts/validate_data.py
 py scripts/check_public_data.py
-py -m unittest discover -s tests -p "test_public_data.py"
+py -m unittest discover -s tests
 ```
-生成スクリプト（`scripts/build_html.py` 等）がある場合は再生成して差分を確認。
+`py scripts/build_all.py` で生成物（AUTO ブロック・HTML・index.html）を再生成して差分を確認。
 
 ## マージ前プライバシー確認(#16)
 - [ ] 個人の支払い・請求・資産・所得・税額がない

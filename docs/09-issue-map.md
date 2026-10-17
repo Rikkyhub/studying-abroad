@@ -12,6 +12,7 @@
 | [予算の計算ルール](../docs/02-budget.html) | － | 整理済 | － |
 | [ケープタウン発ダイビング](../research/capetown-diving.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 調査中 | 2026-10-17 |
 | [準備チェック](../docs/03-preparation.html) | － | 整理済 | － |
+| [出発前ロードマップ](../docs/06-predeparture-roadmap.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 整理済 | 2026-10-17 |
 | [バギオの週末観光](../research/baguio-sightseeing.html) | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) | 調査中 | 2026-10-16 |
 | [ブログ記事候補](../blog/article-ideas.html) | － | 整理済 | － |
 | [ケープタウン観光](../research/capetown-sightseeing.html) | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) | 調査中 | 2026-10-16 |
@@ -21,7 +22,15 @@
 | [ケープタウン冬服](../research/winter-clothing.html) | [#6](https://github.com/Rikkyhub/studying-abroad/issues/6) | 調査中 | 2026-10-16 |
 | [タスクデータ（CSV）](../data/tasks.html) | － | 整理済 | － |
 | [治安・医療・安全](../research/safety-and-health.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 調査中 | 2026-10-16 |
+| [ダッシュボードの更新方法](../docs/04-dashboard.html) | － | 整理済 | － |
 | [すべての出典](../research/sources.html) | － | 整理済 | 2026-10-17 |
+| [公開データ方針](../docs/05-public-data-policy.html) | [#16](https://github.com/Rikkyhub/studying-abroad/issues/16) | 整理済 | － |
+| [フィリピン留学（PINES）](../research/philippines-pines.html) | － | 調査中 | 2026-10-17 |
+| [HTML・Word への変換](../docs/07-export.html) | － | 整理済 | － |
+| [5月アフリカ周遊（案）](../research/africa-trip.html) | － | 調査中 | 2026-10-17 |
+| [AI・別PC向け引き継ぎ](../docs/08-handoff.html) | － | 整理済 | － |
+| [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
+| [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
 
 ## タスクと Issue
 

@@ -238,8 +238,6 @@ def nav(root: Path, current: Path) -> str:
         files = sorted((root / d).glob("*.csv" if d == DATA_DIR else "*.md"))
         links = []
         for f in files:
-            if f.name == ISSUE_MAP:
-                continue
             t = f.name if d == DATA_DIR else page_title(f)
             href = f"{rel_root}{d}/{f.stem}.html"
             cur = ' aria-current="page"' if f == current else ""
