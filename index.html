@@ -15,8 +15,7 @@ main{max-width:1100px;margin:auto;padding:28px 20px 70px}header{background:#1539
 <h2>予算の全体像</h2><section class="cards">
 <div class="card"><small>6か月の目標総予算</small><div class="value">¥2,500,000</div><small>目標値・実費ではありません</small></div>
 <div class="card"><small>6か月の上限予算</small><div class="value">¥3,000,000</div><small>旅行・留学・国内固定費を含む</small></div>
-<div class="card"><small>登録済み支出の参考小計</small><div class="value" id="entered">未入力</div><small id="entered-note">CSVに支出データがまだありません</small></div>
-<div class="card"><small>登録済み支払額</small><div class="value" id="paid">未入力</div><small>証憑に基づくデータだけ入力</small></div>
+<div class="card"><small>費用の見積（CSV）</small><div class="value">表で確認</div><small><a href="data/expenses.html">data/expenses.html</a> に全行を表示。個人の支払額は載せません</small></div>
 </section>
 <p class="muted">5月アフリカ周遊の予算目安は60万円（総予算の内数）。支出CSVが未完成の間、参考小計を「6か月の確定総費用」として表示しません。外貨の円換算には確認日のレートが必要です。</p>
 <h2>旅程</h2><section class="timeline">
@@ -25,7 +24,11 @@ main{max-width:1100px;margin:auto;padding:28px 20px 70px}header{background:#1539
 <div class="month"><b>6〜7月｜第2か国留学</b><br><span class="pill">未確定</span><p>ケープタウンで8週間の語学留学を検討中。学校・就学資格・住居未決定。</p></div>
 <div class="month"><b>8月｜観光・帰国</b><br><span class="pill">調整中</span><p>追加観光・日本帰国・復職の整合性を確認。南ア再入国条件は最優先で検証。</p></div>
 </section>
-<h2>準備タスク</h2><div class="box"><div id="task-status" class="muted">データを読み込んでいます...</div><div class="scroll"><table><thead><tr><th>優先</th><th>作業</th><th>状態</th><th>Issue</th></tr></thead><tbody id="task-list"></tbody></table></div></div>
+<h2>準備タスク</h2>
+<!-- AUTO:tasks -->
+<div class="box"><div class="muted">登録タスク 11件 / 完了 0件 / 未着手 11件</div><div class="scroll"><table><thead><tr><th>優先</th><th>作業</th><th>状態</th><th>Issue</th></tr></thead><tbody><tr><td>P0</td><td>PINES最終日程と支払証憑の照合</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7">Issue</a></td></tr><tr><td>P0</td><td>フィリピン入国用の有効な出国航空券を確保</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/2">Issue</a></td></tr><tr><td>P0</td><td>PINESにSSPと滞在延長代行範囲・費用を確認</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/2">Issue</a></td></tr><tr><td>P0</td><td>ケープタウン学校と南ア大使館に8週間語学就学の必要資格を確認</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/2">Issue</a></td></tr><tr><td>P0</td><td>南ア5月入国案と6月初入国案の再入国条件を確認</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/2">Issue</a></td></tr><tr><td>P0</td><td>6か月分費用の請求書・領収書を非公開で照合</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7">Issue</a></td></tr><tr><td>P0</td><td>休職・税社保・住居と国内固定費を確認</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7">Issue</a></td></tr><tr><td>P1</td><td>2都市の週末ダイビング交通と見積を取得</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/3">Issue</a></td></tr><tr><td>P1</td><td>2都市の観光・雨天代替案を検証</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/4">Issue</a></td></tr><tr><td>P1</td><td>ケープタウンの食材価格と衣類実売価格を確認</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/5">Issue</a></td></tr><tr><td>P0</td><td>外務省危険情報と旅行保険・医療連絡先を確認</td><td>未着手</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/8">Issue</a></td></tr></tbody></table></div></div>
+<!-- /AUTO:tasks -->
+<p class="muted">全件は <a href="data/tasks.html">data/tasks.html</a>（CSV の表示）で確認できます。</p>
 <h2>調査資料</h2><section class="links">
 <a href="research/visa-and-immigration.html">ビザ・再入国 <span>フィリピン12週 / 南アの就学と5〜8月の入出国</span></a>
 <a href="research/baguio-diving.html">バギオ発ダイビング <span>週末・2〜4月・ショップ料金・高地移動への注意</span></a>
@@ -43,28 +46,10 @@ main{max-width:1100px;margin:auto;padding:28px 20px 70px}header{background:#1539
 <a href="docs/03-preparation.html">準備チェック<span>やることと確認順</span></a>
 <a href="blog/article-ideas.html">ブログ記事候補<span>準備・旅行・帰国後の情報公開</span></a>
 <a href="blog/experience-log.html">実体験ログ<span>体験した事実と調査を分離</span></a>
+<a href="data/expenses.html">費用データ（CSV）<span>見積・出典・確認日の一覧</span></a>
+<a href="data/tasks.html">タスクデータ（CSV）<span>準備タスクの一覧</span></a>
 <a href="https://github.com/Rikkyhub/studying-abroad/issues">GitHub Issues<span>すべての調査タスクと進捗</span></a>
 </section>
 <footer>基準日：2026-10-16。資料は一次ソース・確認日を優先。プライバシー保護のため旅券番号・予約番号・領収書原本を公開しません。表示する費用はCSV入力分の小計です。</footer>
 </main>
-<script>
-function parseCSV(raw){const rows=[];let r=[],cell='',q=false;raw=raw.replace(/^\uFEFF/,'');for(let i=0;i<raw.length;i++){let ch=raw[i];if(ch==='"'){if(q&&raw[i+1]==='"'){cell+='"';i++}else q=!q}else if(!q&&(ch===','||ch==='\n')){r.push(cell.trim());cell='';if(ch==='\n'){if(r.some(x=>x!==''))rows.push(r);r=[]}}else if(ch!=='\r'||q)cell+=ch}r.push(cell.trim());if(r.some(x=>x!==''))rows.push(r);if(!rows.length)return[];const cols=rows.shift();return rows.map(v=>Object.fromEntries(cols.map((c,i)=>[c,v[i]||''])));}
-function money(n){return new Intl.NumberFormat('ja-JP',{style:'currency',currency:'JPY',maximumFractionDigits:0}).format(n)}
-async function loadCSV(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return parseCSV(await r.text())}
-async function refresh(){
-try{
-const expenses=await loadCSV('data/expenses.csv');let estimate=0,paid=0,estimatedRows=0,paidRows=0,unknown=0;
-for(const e of expenses){if(!e.id)continue;const fx=e.currency==='JPY'?1:Number(e.fx_jpy_per_unit);const a=[e.actual_amount,e.quoted_amount,e.paid_amount].find(x=>x!=='');if(a!==undefined){if(Number.isFinite(fx)&&fx>0){estimate+=Number(a)*fx;estimatedRows++}else unknown++}
-if(e.paid_amount!==''){if(Number.isFinite(fx)&&fx>0){paid+=Number(e.paid_amount)*fx;paidRows++}else unknown++}
-}
-document.getElementById('entered').textContent=estimatedRows?money(estimate):'未入力';
-document.getElementById('paid').textContent=paidRows?money(paid):'未入力';
-document.getElementById('entered-note').textContent=estimatedRows+'件の入力済み対象の参考小計'+(unknown?' / 為替未登録等：'+unknown+'件':'')+'（全体完成額ではありません）';
-}catch(err){document.getElementById('entered-note').textContent='CSV読込不可。静的Webサーバーで表示してください。'}
-try{
-const tasks=await loadCSV('data/tasks.csv');const labels={not_started:'未着手',in_progress:'進行中',blocked:'保留',done:'完了'};
-document.getElementById('task-status').textContent='登録タスク '+tasks.length+'件 / 完了 '+tasks.filter(t=>t.status==='done').length+'件 / 未着手 '+tasks.filter(t=>t.status==='not_started').length+'件';
-const tbody=document.getElementById('task-list');tbody.replaceChildren();for(const t of tasks.slice(0,12)){const tr=document.createElement('tr');for(const val of [t.priority,t.task,labels[t.status]||t.status]){const td=document.createElement('td');td.textContent=val;tr.appendChild(td)}const td=document.createElement('td');if(t.issue_url&&t.issue_url.startsWith('https://github.com/')){const a=document.createElement('a');a.href=t.issue_url;a.textContent='Issue';td.appendChild(a)}tr.appendChild(td);tbody.appendChild(tr)}
-}catch(err){document.getElementById('task-status').textContent='タスクCSVを読み込めません。静的Webサーバーで表示してください。'}
-}refresh();
-</script></body></html>
+</body></html>

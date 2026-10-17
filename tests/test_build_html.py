@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from build_html import ROOT, convert, inline, outputs
+from build_html import ROOT, convert, csv_to_markdown, inline, outputs
 
 
 class InlineTests(unittest.TestCase):
@@ -40,6 +40,25 @@ class BlockTests(unittest.TestCase):
     def test_comments_removed(self):
         _, body, _ = convert("<!-- AUTO:x -->\n本文\n")
         self.assertNotIn("AUTO", body)
+
+
+class CsvViewTests(unittest.TestCase):
+    def test_csv_becomes_table_without_breaking_on_pipes_or_newlines(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "data").mkdir()
+            (root / "data" / "x.csv").write_text('a,b\n"1|2","line1\nline2"\n3\n', encoding="utf-8")
+            md = csv_to_markdown(root / "data" / "x.csv", root)
+        self.assertIn("| a | b |", md)
+        self.assertIn("| 1／2 | line1 line2 |", md)
+        self.assertIn("| 3 |  |", md)
+
+    def test_every_csv_has_md_and_html_view(self):
+        out = outputs()
+        for csv_path in (ROOT / "data").glob("*.csv"):
+            self.assertIn(csv_path.with_suffix(".md"), out)
+            self.assertIn(csv_path.with_suffix(".html"), out)
 
 
 class RepoTests(unittest.TestCase):
