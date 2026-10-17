@@ -29,7 +29,7 @@ def visible_lines(path):
 
 def pages():
     out = [REPO / "index.html"]
-    for d in ("docs", "data", "research", "blog"):
+    for d in ("areas", "docs", "research", "blog"):
         out += sorted((REPO / d).glob("*.html"))
     return out
 
@@ -73,16 +73,15 @@ class PublicPageAuditTests(unittest.TestCase):
                     bad.append(f"{p.relative_to(REPO).as_posix()}: {line[:100]}")
         self.assertEqual(bad, [])
 
-    def test_dashboard_budget_has_no_paid_or_remaining(self):
-        text = (REPO / "index.html").read_text(encoding="utf-8")
-        block = text[text.index("<!-- AUTO:budget -->"):text.index("<!-- /AUTO:budget -->")]
-        self.assertIn("費用の見積集計", block)
-        for word in ("残り", "残額", "支払済", "実績", "不足"):
-            self.assertNotIn(word, block.replace("支払額・支払済み・残額ではありません", ""))
+    def test_area_cost_has_no_paid_or_remaining(self):
+        for k in ("baguio", "africa", "capetown", "common"):
+            text = (REPO / "areas" / f"{k}.md").read_text(encoding="utf-8")
+            for word in ("支払済", "実績", "不足", "利用可能資金"):
+                self.assertNotIn(word, text.replace("実際の支払額ではありません", ""))
 
     def test_no_day_level_dates_pinned_to_the_person(self):
         pat = re.compile(r"\b(2/6|2/8|4/30|5/31|7/23|5/30|7/24|2027-0[2-8]-\d\d)\b")
-        for rel in ("index.html", "data/timeline.csv", "docs/01-timeline.md", "README.md"):
+        for rel in ("index.html", "areas/baguio.md", "areas/africa.md", "areas/capetown.md", "data/timeline.csv", "docs/01-timeline.md", "README.md"):
             text = (REPO / rel).read_text(encoding="utf-8")
             if rel == "README.md":  # 準備タスクの期限（一般的な締切）は AUTO ブロックの外の記述だけを見る
                 text = re.sub(r"<!-- AUTO:.*?<!-- /AUTO:\w+ -->", "", text, flags=re.S)
@@ -100,7 +99,7 @@ class PageListTests(unittest.TestCase):
         with (REPO / "data" / "pages.csv").open(encoding="utf-8", newline="") as f:
             listed = {r["path"] for r in csv.DictReader(f)}
         missing = []
-        for d in ("research", "docs", "blog"):
+        for d in ("areas", "research", "docs", "blog"):
             for md in sorted((REPO / d).glob("*.md")):
                 rel = md.relative_to(REPO).as_posix()
                 if rel not in self.EXCLUDED and rel[:-3] + ".html" not in listed:

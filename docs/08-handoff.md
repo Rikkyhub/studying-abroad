@@ -17,13 +17,13 @@ gh auth login        # アカウント: Rikkyhub
 3. [ ] `docs/05-public-data-policy.md` を読む（**必須**）
 4. [ ] `git fetch origin && git log --oneline -10`
 5. [ ] `gh issue view 1` / `7` / `16`、`gh pr list`（未マージPRと重複しないか確認）
-6. [ ] `data/tasks.csv` を眺め、状態が `not_started` / `in_progress` / `blocked` のものを把握
+6. [ ] `areas/*.md` を眺め、未着手の確認事項を把握（元データは内部入力の `data/tasks.csv`）
 7. [ ] 検証コマンドを一度流して現状がgreenか確認
 
 ## 3. 次の作業の見つけ方
 - `gh issue list`：優先度 P0 → P1 の順。Issueの受け入れ条件を読む。
 - `gh pr list`：同じIssueのPRが既にあれば、それを置き換えるのか補うのかを確認（「main基準の置き換え版」PRが存在する）。
-- `data/tasks.csv`：`priority`、`due_date`、`issue_url` から着手候補を探す。
+- `data/tasks.csv`（内部入力）：`priority`、`region`、`issue` から着手候補を探す。
 - 迷ったらユーザーに確認する。予約・購入・外部送信は必ず事前承認。
 
 ## 4. 調査タスクの流れ（research）
@@ -35,15 +35,15 @@ gh auth login        # アカウント: Rikkyhub
 6. 個人情報が入っていないか見直す。
 7. 検証コマンドを流し、PRを出す（第6節）。
 
-## 5. データ(CSV)変更タスクの流れ
+## 5. データ変更タスクの流れ（CSV は生成用の内部入力。読者向けページではない）
 1. `feat/<issue>-<slug>` ブランチを作る。
 2. `data/tasks.csv` / `data/expenses.csv` を編集。費用は**調査価格・匿名モデル**のみ。金額は `low_local`/`std_local`/`high_local`（見積）で、区分は `見積`（出典あり）か `未確認`。
 3. 禁止列(`paid_jpy`, `evidence`, `receipt` 等)や個人の支払い値を入れない。`py scripts/check_public_data.py` で確認。
 4. `py scripts/build_all.py` で再生成し、`py scripts/validate_data.py`、`py -m unittest discover -s tests`。
-5. ダッシュボード(`index.html`)は静的HTMLなので、ブラウザで直接開いて確認する（`file://` で表示できる）。
+5. `index.html` と `areas/*.html` は静的HTMLなので、ブラウザで直接開いて確認する（`file://` で表示できる）。表が横にはみ出していないか、1100px幅と400px幅の両方で見る。
 
 ## 6. HTML・DOCXの再生成
-- 正本はMarkdown/CSV。HTMLなどの生成物は手で直さない。
+- 正本はMarkdown（費用などの数値の元データは内部入力のCSV）。HTMLなどの生成物は手で直さない。
 - `py scripts/build_all.py`（`build.py` → `build_html.py` の順）。CIは `py scripts/build_all.py --check` で最新かを確認する。
 - Word出力は `py scripts/export_docx.py`（[07-export.md](07-export.md)）。コミットしない。
 - 生成物の差分も目視でプライバシー確認する。
