@@ -380,11 +380,11 @@ def tasks_table(root: Path = ROOT) -> str:
     done = sum(1 for r in rows if r["status"] in DONE_STATUS)
     todo = sum(1 for r in rows if r["status"] == "未着手")
     open_rows = sorted((r for r in rows if r["status"] not in DONE_STATUS),
-                       key=lambda r: (r["priority"] or "9", r["deadline"] or "9999"))
-    body = [[esc(r["priority"]), esc(r["task"]), esc(r["status"]), esc(r["deadline"]) or "－",
+                       key=lambda r: (r["priority"] or "9", -int(r["lead_days"] or 0), r["id"]))
+    body = [[esc(r["priority"]), esc(r["task"]), esc(r["status"]), esc(r["deadline_note"]) or "－", esc(r["deadline_kind"]) or "－",
              ref_links(r["source"]) if r["source"].startswith("http") else "－"] for r in open_rows[:12]]
-    return (f'<p class="muted">登録 {len(rows)}件 ／ 完了 {done}件 ／ 未着手 {todo}件（優先度1が最優先。表は優先度順の先頭12件、全件は <a href="data/tasks.html">data/tasks.csv</a>）</p>'
-            + table(["優先", "作業", "状態", "期限", "参考"], body, num=(0,)))
+    return (f'<p class="muted">登録 {len(rows)}件 ／ 完了 {done}件 ／ 未着手 {todo}件（優先度1が最優先。表は優先度順の先頭12件、全件は <a href="data/tasks.html">準備タスク一覧</a>）。期限は暦日ではなく、出発日を基準にした相対的な目安です（種類：公式期限＝制度上の期限／学校・機関の個別期限＝各機関の案内に従う／推奨目安＝このモデルの提案）。</p>'
+            + table(["優先", "作業", "状態", "期限（目安）", "期限の種類", "参考"], body, num=(0,)))
 
 
 def pages_table(root: Path, group: str) -> str:
@@ -506,7 +506,7 @@ def summary_block(root: Path = ROOT) -> str:
              f"調査中の資料：{len(researching)}件（「調査資料」の状態列）"]
     if no_rate:
         facts.append("円換算レートが未確認の通貨：" + "、".join(no_rate))
-    return (f'<ol class="todo">{items}</ol>\n<ul class="facts">' + "".join(f"<li>{esc(f)}</li>" for f in facts) + "</ul>")
+    return (f'<p class="muted">一般的な最優先の確認項目です（匿名モデル。個人の進捗ではありません）。</p>\n<ol class="todo">{items}</ol>\n<ul class="facts">' + "".join(f"<li>{esc(f)}</li>" for f in facts) + "</ul>")
 
 
 def budget_block(root: Path = ROOT) -> str:

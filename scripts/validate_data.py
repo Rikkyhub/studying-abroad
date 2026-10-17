@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = {
     "expenses.csv": ["id", "category", "country", "phase", "item", "payee", "period_start", "period_end", "due_date", "status",
                      "currency", "low_local", "std_local", "high_local", "source", "collected_on", "recheck_by", "issue", "note"],
-    "tasks.csv": ["id", "phase", "task", "deadline", "status", "priority", "owner", "cost_note", "next_action", "source", "issue", "note"],
+    "tasks.csv": ["id", "phase", "task", "deadline_kind", "deadline_note", "lead_days", "status", "priority", "owner", "cost_note", "next_action", "source", "issue", "note"],
     "timeline.csv": ["id", "period", "title", "status", "summary", "page_ids", "sort"],
     "pages.csv": ["id", "group", "area", "title", "summary", "path", "issue", "status", "sort", "verified_at", "refs"],
     "places.csv": ["id", "area", "name", "kind", "maps_query", "note", "source"],
@@ -31,7 +31,6 @@ NUMERIC = {
 }
 DATES = {
     "expenses.csv": ["period_start", "period_end", "due_date", "collected_on", "recheck_by"],
-    "tasks.csv": ["deadline"],
     "pages.csv": ["verified_at"],
     "funds.csv": ["as_of"],
     "fx.csv": ["rate_date"],
@@ -41,6 +40,7 @@ ENUMS = {
     ("expenses.csv", "status"): {"見積", "未確認"},
     ("tasks.csv", "status"): {"未着手", "進行中", "要確認", "完了", "保留", "不要"},
     ("tasks.csv", "priority"): {"1", "2", "3", "4"},
+    ("tasks.csv", "deadline_kind"): {"公式期限", "学校・機関の個別期限", "推奨目安", "要確認"},
     ("articles.csv", "status"): {"未着手", "資料収集中", "下書き", "公開可能", "公開済み"},
     ("funds.csv", "type"): {"予算"},
     ("pages.csv", "group"): {"research", "plan"},
@@ -102,7 +102,19 @@ def check(name, rows):
         for (fname, col), allowed in ENUMS.items():
             if fname == name and row[col] not in allowed:
                 ERRORS.append(f"{label}:{col}: unknown value {row[col]!r}（{'/'.join(sorted(allowed))}）")
+        if name == "tasks.csv":
+            if not row["deadline_note"]:
+                ERRORS.append(f"{label}: deadline_note is required（相対期限・要確認の文言）")
+            elif re.search(r"\d{4}-\d{2}-\d{2}|\d{4}年\d{1,2}月\d{1,2}日", row["deadline_note"]):
+                ERRORS.append(f"{label}: deadline_note に暦日を書かない（相対表記の目安にする）")
+            if not re.fullmatch(r"-?\d+", row["lead_days"]):
+                ERRORS.append(f"{label}: lead_days must be an integer")
         if name == "expenses.csv":
+            for s in ("std", "high"):
+                raw = row[f"{s}_local"]
+                if row["low_local"] and raw and re.fullmatch(r"[\d.]+", row["low_local"]) and re.fullmatch(r"[\d.]+", raw):
+                    if Decimal(row["low_local"]) > 0 and Decimal(raw) == 0:
+                        ERRORS.append(f"{label}:{s}_local: 0 は未計上ではありません。low が非ゼロで {s} が未計上なら空欄にする")
             if row["currency"] and not re.fullmatch(r"[A-Z]{3}", row["currency"]):
                 ERRORS.append(f"{label}: currency must be ISO 4217 3-letter code")
             if row["period_start"] and row["period_end"] and row["period_end"] < row["period_start"]:
