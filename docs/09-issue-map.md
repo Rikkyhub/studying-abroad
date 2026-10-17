@@ -29,6 +29,8 @@
 | [HTML・Word への変換](../docs/07-export.html) | － | 整理済 | － |
 | [5月アフリカ周遊（案）](../research/africa-trip.html) | － | 調査中 | 2026-10-17 |
 | [AI・別PC向け引き継ぎ](../docs/08-handoff.html) | － | 整理済 | － |
+| [世界地図（候補ルート）](../maps/world-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
+| [アフリカ地図（候補ルート）](../maps/africa-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
 
