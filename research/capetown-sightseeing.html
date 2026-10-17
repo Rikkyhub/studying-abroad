@@ -3,50 +3,54 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ケープタウンと周辺観光（6〜7月・冬季）｜2027 留学・アフリカ周遊</title>
 <style>
-/* layout: 左に目次つきの読み物カラム。配色は index.html と同じ系統 */
-:root{color-scheme:light;--ink:#182b35;--muted:#536874;--brand:#0c6174;--bg:#f5f8f8;--paper:#ffffff;--line:#dbe6e8;--head:#153948;--headink:#dce9ee;--th:#eff4f5;--code:#e9f0f1;--warn:#fffaf1;--warnline:#b77a24;
+:root{color-scheme:light;--ink:#1d2227;--muted:#5b656e;--link:#0a58a8;--bg:#fbfbfa;--line:#d9d9d3;--th:#efefea;--code:#ecece7;--hl:#fff6dc;
 --sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#dbe7ea;--muted:#9db1b9;--brand:#6cc3d3;--bg:#0f1b20;--paper:#15252b;--line:#28404a;--head:#0b2a36;--headink:#c7dde4;--th:#1b3038;--code:#1d333b;--warn:#2a2416;--warnline:#d39b45}}
-:root[data-theme="dark"]{color-scheme:dark;--ink:#dbe7ea;--muted:#9db1b9;--brand:#6cc3d3;--bg:#0f1b20;--paper:#15252b;--line:#28404a;--head:#0b2a36;--headink:#c7dde4;--th:#1b3038;--code:#1d333b;--warn:#2a2416;--warnline:#d39b45}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--code:#23282b;--hl:#2a2619}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--code:#23282b;--hl:#2a2619}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 var(--sans)}
-a{color:var(--brand)} a:focus-visible,summary:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-header{background:var(--head);color:#fff}
-.wrap{max-width:1240px;margin:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-header .wrap{padding-block:26px}
-.eyebrow{letter-spacing:.14em;font-weight:700;font-size:12px;color:#b9e4df}
-header h1{font-size:clamp(24px,3vw,34px);line-height:1.3;margin:6px 0 0;text-wrap:balance}
-header p{margin:8px 0 0;color:var(--headink);font-size:14px} header a{color:#b9e4df}
-.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;padding-block:28px 70px}
-aside{font-size:14px;position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow:auto;display:grid;gap:18px}
-aside nav a,.toc a{display:block;padding:3px 0;text-decoration:none;color:var(--muted)}
-aside nav a[aria-current]{color:var(--brand);font-weight:700}
-aside summary{cursor:pointer;font-weight:700;padding:4px 0} aside details a{padding-left:12px}
-.toc .t3{padding-left:14px;font-size:13px} .label{font-size:12px;letter-spacing:.1em;font-weight:700;color:var(--muted)}
-article{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:8px clamp(16px,3vw,36px) 32px}
-article p,article li{max-width:72ch}
-h2{font-size:1.35rem;margin:36px 0 12px;padding-top:6px;border-top:1px solid var(--line);text-wrap:balance}
-h3{font-size:1.1rem;margin:26px 0 8px} h4{font-size:1rem;margin:20px 0 6px}
-.scroll{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:8px}
-table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.6}
-th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;min-width:6em}
-th{background:var(--th);position:sticky;top:0} tr:last-child td{border-bottom:0}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums} td.c,th.c{text-align:center}
-code{font-family:var(--mono);font-size:.88em;background:var(--code);padding:1px 5px;border-radius:4px}
-pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow-x:auto} pre code{padding:0;background:none}
-blockquote{margin:14px 0;border-left:4px solid var(--warnline);background:var(--warn);padding:6px 16px;border-radius:4px}
-ul,ol{padding-left:1.4em} li{margin:3px 0}
-.check{display:inline-block;width:.95em;height:.95em;border:1.5px solid var(--muted);border-radius:3px;margin-right:6px;vertical-align:-1px}
-.check.done{background:var(--brand);border-color:var(--brand)}
-footer{color:var(--muted);font-size:13px;margin-top:28px}
-aside{min-width:0} article,header h1,header p{overflow-wrap:anywhere}
-table{width:max-content;min-width:100%} td{max-width:32em;overflow-wrap:anywhere}
-@media(max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}aside{position:static;max-height:none;order:2}.toc{display:none}th,td{min-width:5em}}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans)}
+a{color:var(--link);text-underline-offset:2px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:1.5rem;line-height:1.35;margin:28px 0 6px;font-weight:700}
+h2{font-size:1.15rem;line-height:1.4;margin:36px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
+h3{font-size:1rem;margin:22px 0 4px} h4{font-size:.95rem;margin:16px 0 4px}
+p{margin:6px 0} .lead{color:var(--muted);margin:0 0 4px} .muted{color:var(--muted);font-size:.93em}
+nav.jump{display:flex;flex-wrap:wrap;gap:2px 18px;margin:14px 0 0;padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.93em}
+nav.jump a{padding:2px 0}
+.note{background:var(--hl);padding:8px 12px;margin:14px 0}
+ol.todo{margin:6px 0;padding-left:1.5em} ol.todo li{margin:2px 0} ul.facts{margin:6px 0;padding-left:1.3em;color:var(--muted)}
+.scroll{overflow:auto;max-height:min(72vh,720px);margin:8px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+table{border-collapse:collapse;width:max-content;min-width:100%;font-size:.93em;line-height:1.55}
+th,td{padding:7px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+td{max-width:30em;min-width:5em} tr:last-child td{border-bottom:0}
+th{position:sticky;top:0;z-index:1;background:var(--th);font-weight:700;white-space:nowrap;border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.c,th.c{text-align:center}
+code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 4px}
+pre{background:var(--code);padding:10px 12px;overflow-x:auto} pre code{padding:0;background:none}
+blockquote{margin:12px 0;background:var(--hl);padding:4px 14px}
+ul,ol{padding-left:1.4em} li{margin:2px 0}
+.check{display:inline-block;width:.9em;height:.9em;border:1.5px solid var(--muted);margin-right:6px;vertical-align:-1px}
+.check.done{background:var(--link);border-color:var(--link)}
+form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 18px;margin:8px 0 12px}
+form.calc label{display:grid;gap:3px;font-size:.93em;color:var(--muted)}
+form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:6px 8px;min-width:0;width:100%}
+form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.7em}
+footer{color:var(--muted);font-size:.87em;margin-top:40px;padding-top:12px;border-top:1px solid var(--line)}
+article,h1,p,li{overflow-wrap:anywhere}
+.doc{display:grid;grid-template-columns:230px minmax(0,1fr);gap:32px;padding-bottom:60px}
+.doc aside{font-size:.93em;position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow:auto;min-width:0;display:grid;gap:14px}
+.doc aside a{display:block;padding:2px 0;text-decoration:none;color:var(--muted)} .doc aside a[aria-current]{color:var(--link);font-weight:700}
+.doc aside summary{cursor:pointer;font-weight:700;padding:3px 0} .doc aside details a{padding-left:12px}
+.doc .toc .t3{padding-left:14px;font-size:.93em} .doc .label{font-weight:700;color:var(--muted)}
+.doc article{min-width:0} .doc article p,.doc article li{max-width:72ch} .doc h2:first-child{margin-top:8px}
+.crumb{margin:20px 0 0;color:var(--muted);font-size:.9em}
+@media(max-width:860px){.doc{grid-template-columns:minmax(0,1fr)}.doc aside{position:static;max-height:none;order:2}.doc .toc{display:none}}
+@media(max-width:480px){body{font-size:14.5px}th,td{padding:6px 9px}}
 </style></head><body>
-<header><div class="wrap"><div class="eyebrow">2027 FEB — JUL · 現地調査</div><h1>ケープタウンと周辺観光（6〜7月・冬季）</h1>
-<p>Markdown（<a href="https://github.com/Rikkyhub/studying-abroad/blob/main/research/capetown-sightseeing.md" target="_blank" rel="noopener">research/capetown-sightseeing.md</a>）から自動生成したページです。内容の正本は Markdown 側です。</p></div></header>
-<div class="wrap layout">
-<aside><nav aria-label="ページ一覧"><a href="../index.html">ダッシュボード</a><details open><summary>現地調査</summary><a href="../research/baguio-diving.html">バギオ発の週末ダイビング（2〜4月）</a><a href="../research/baguio-sightseeing.html">バギオと周辺週末観光（2〜4月）</a><a href="../research/capetown-diving.html">ケープタウン発の週末ダイビング（6〜7月・冬）</a><a href="../research/capetown-sightseeing.html" aria-current="page">ケープタウンと周辺観光（6〜7月・冬季）</a><a href="../research/food-and-living.html">現地の食事・スーパー・日常生活費</a><a href="../research/safety-and-health.html">バギオ・ケープタウンの安全、健康、日常移動</a><a href="../research/sources.html">一次資料・調査ログ</a><a href="../research/visa-and-immigration.html">査証・滞在・語学就学・再入国（重要）</a><a href="../research/winter-clothing.html">ケープタウンの6〜7月用衣類と現地調達</a></details><details><summary>計画・費用</summary><a href="../docs/01-timeline.html">2027年2〜8月：全体日程（計画と確定を区別）</a><a href="../docs/02-budget.html">6か月間の資金計画と実費管理</a><a href="../docs/03-preparation.html">出発前・現地・帰国の準備チェック</a><a href="../docs/04-dashboard.html">ダッシュボードの見方と更新方法</a><a href="../docs/05-public-data-policy.html">公開データと非公開データの分離</a><a href="../docs/06-predeparture-roadmap.html">海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</a></details><details><summary>ブログ</summary><a href="../blog/article-ideas.html">ブログの将来記事・調査の再利用</a><a href="../blog/experience-log.html">体験/実費の記録フォーム</a></details><details><summary>データ（CSV）</summary><a href="../data/expenses.html">expenses.csv</a><a href="../data/pages.html">pages.csv</a><a href="../data/tasks.html">tasks.csv</a><a href="../data/timeline.html">timeline.csv</a></details></nav><div class="toc"><div class="label">このページの目次</div><a class="t2" href="#季節計画の前提">季節・計画の前提</a><a class="t2" href="#公式サイトで挙げられる候補">公式サイトで挙げられる候補</a><a class="t2" href="#候補に加えるもの費用交通未確認">候補に加えるもの（費用・交通未確認）</a></div></aside>
+<div class="wrap"><p class="crumb"><a href="../index.html">ダッシュボード</a> ／ 現地調査</p><h1>ケープタウンと周辺観光（6〜7月・冬季）</h1></div>
+<div class="wrap doc">
+<aside><nav aria-label="ページ一覧"><a href="../index.html">ダッシュボード</a><details open><summary>現地調査</summary><a href="../research/baguio-diving.html">バギオ発の週末ダイビング（2〜4月）</a><a href="../research/baguio-sightseeing.html">バギオと周辺週末観光（2〜4月）</a><a href="../research/capetown-diving.html">ケープタウン発の週末ダイビング（6〜7月・冬）</a><a href="../research/capetown-sightseeing.html" aria-current="page">ケープタウンと周辺観光（6〜7月・冬季）</a><a href="../research/food-and-living.html">現地の食事・スーパー・日常生活費</a><a href="../research/safety-and-health.html">バギオ・ケープタウンの安全、健康、日常移動</a><a href="../research/sources.html">一次資料・調査ログ</a><a href="../research/visa-and-immigration.html">査証・滞在・語学就学・再入国（重要）</a><a href="../research/winter-clothing.html">ケープタウンの6〜7月用衣類と現地調達</a></details><details><summary>計画・費用</summary><a href="../docs/01-timeline.html">2027年2〜8月：全体日程（計画と確定を区別）</a><a href="../docs/02-budget.html">6か月間の資金計画と実費管理</a><a href="../docs/03-preparation.html">出発前・現地・帰国の準備チェック</a><a href="../docs/04-dashboard.html">ダッシュボードの見方と更新方法</a><a href="../docs/05-public-data-policy.html">公開データと非公開データの分離</a><a href="../docs/06-predeparture-roadmap.html">海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</a></details><details><summary>ブログ</summary><a href="../blog/article-ideas.html">ブログの将来記事・調査の再利用</a><a href="../blog/experience-log.html">体験/実費の記録フォーム</a></details><details><summary>データ（CSV）</summary><a href="../data/expenses.html">expenses.csv</a><a href="../data/fx.html">fx.csv</a><a href="../data/pages.html">pages.csv</a><a href="../data/places.html">places.csv</a><a href="../data/tasks.html">tasks.csv</a><a href="../data/timeline.html">timeline.csv</a></details></nav><div class="toc"><div class="label">このページの目次</div><a class="t2" href="#季節計画の前提">季節・計画の前提</a><a class="t2" href="#公式サイトで挙げられる候補">公式サイトで挙げられる候補</a><a class="t2" href="#候補に加えるもの費用交通未確認">候補に加えるもの（費用・交通未確認）</a></div></aside>
 <article>
 <p>2026-10-16 / <a href="https://github.com/Rikkyhub/studying-abroad/issues/4" target="_blank" rel="noopener">Issue #4</a>。</p>
 <h2 id="季節計画の前提">季節・計画の前提</h2>
@@ -57,7 +61,7 @@ table{width:max-content;min-width:100%} td{max-width:32em;overflow-wrap:anywhere
 <h2 id="候補に加えるもの費用交通未確認">候補に加えるもの（費用・交通未確認）</h2>
 <ul><li>Boulders Beachのペンギン、Cape Peninsula周遊、Hermanus、Stellenbosch/Franschhoek、サファリ（Aquila等）、野生動物、冬の文化イベント。</li><li>晴天/雨天/強風時の代替を割り当て、長距離ドライブより安全な公式送迎やツアーを優先。</li><li>2026年の<a href="https://www.capetown.travel/whats-on-in-cape-town-in-june-2026/" target="_blank" rel="noopener">6月イベント</a>・<a href="https://www.capetown.travel/whats-on-in-cape-town-in-july-2026/" target="_blank" rel="noopener">7月イベント</a>は<strong>2027年も開催する根拠ではない</strong>。</li></ul>
 <p>未完了：Google Maps位置、学校住所からの移動時間、非居住者料金、モデル旅程、雨天チケット払戻規定。</p>
-<footer>公開リポジトリの生成物です。個人の支払・資産・予約情報は掲載しません。料金・制度は確認日時点の情報で、2027年の内容を保証しません。</footer>
+<footer>Markdown（<a href="https://github.com/Rikkyhub/studying-abroad/blob/main/research/capetown-sightseeing.md" target="_blank" rel="noopener">research/capetown-sightseeing.md</a>）から自動生成。内容の正本は Markdown 側です。公開リポジトリの生成物のため、個人の支払・資産・予約情報は掲載しません。料金・制度は確認日時点の情報で、2027年の内容を保証しません。</footer>
 </article>
 </div>
 </body></html>

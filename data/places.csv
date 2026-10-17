@@ -1,0 +1,16 @@
+id,area,name,kind,maps_query,note,source
+PL01,baguio,Burnham Park,sightseeing,Burnham Park Baguio,市内の公園。週末観光の候補（料金未調査）,research/baguio-sightseeing.html
+PL02,baguio,Baguio Botanical Garden,sightseeing,Baguio Botanical Garden,市内の候補（料金未調査）,research/baguio-sightseeing.html
+PL03,baguio,Mines View Park,sightseeing,Mines View Park Baguio,市内の候補（料金未調査）,research/baguio-sightseeing.html
+PL04,baguio,The Mansion,sightseeing,The Mansion Baguio,入場無料の掲示あり（公開表示9:00-15:00）,https://visita.baguio.gov.ph/park-tickets/20
+PL05,baguio,Dive Union @ Kahuna Beach Resort（ラウニオン）,diving,Kahuna Beach Resort San Juan La Union,バギオから車で約1.9時間,research/baguio-diving.html
+PL06,baguio,Mangos Dive Center（スービック）,diving,Mangos Dive Center Barretto Olongapo,バス約5時間20分,https://mangosdivecenter.com/fun-diving-in-subic-bay/
+PL07,baguio,Buceo Anilao Beach & Dive Resort,diving,Buceo Anilao Beach Dive Resort Mabini,合計9時間超の見込み,https://buceoanilao.com/season-iii/
+PL08,baguio,ボリナオ（パンガシナン）,diving,Bolinao Pangasinan dive,ショップは未確認,research/baguio-diving.html
+PL09,capetown,Table Mountain,sightseeing,Table Mountain Cape Town,ケーブルカーは強風・整備で運休あり,https://www.tablemountain.net/
+PL10,capetown,Cape Point,sightseeing,Cape Point Nature Reserve,天候・風に左右される,research/capetown-sightseeing.html
+PL11,capetown,Kirstenbosch National Botanical Garden,sightseeing,Kirstenbosch National Botanical Garden,2026年掲示の入場料 ZAR270,research/capetown-sightseeing.html
+PL12,capetown,Boulders Beach,sightseeing,Boulders Beach Simon's Town,ペンギンの観察候補,research/capetown-sightseeing.html
+PL13,capetown,Pisces Divers（Simon's Town）,diving,Pisces Divers Simon's Town,ボート2本 R3600,https://piscesdivers.co.za/reef-and-kelp/
+PL14,capetown,Into the Blue Dive Centre（Sea Point）,diving,Into the Blue Dive Centre 88 Main Road Sea Point,市中心部は送迎無料,https://www.diveschoolcapetown.co.za/fun-dives/scuba-shoredives/
+PL15,capetown,Gansbaai Kleinbaai Harbour,diving,Gansbaai Kleinbaai harbour,ホホジロザメのケージダイブ発着,research/capetown-diving.html

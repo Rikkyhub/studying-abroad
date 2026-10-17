@@ -102,5 +102,58 @@ class IndexTableTests(unittest.TestCase):
         self.assertNotIn('class="links"', self.index)
 
 
+class DashboardDataTests(unittest.TestCase):
+    def setUp(self):
+        import csv
+        self.index = (ROOT / "index.html").read_text(encoding="utf-8")
+        def rd(n):
+            with (ROOT / "data" / n).open(newline="", encoding="utf-8-sig") as f:
+                return list(csv.DictReader(f))
+        self.pages, self.places, self.fx = rd("pages.csv"), rd("places.csv"), rd("fx.csv")
+
+    def test_refs_are_http_urls_and_rendered(self):
+        import re
+        for r in self.pages:
+            for u in filter(None, r["refs"].split(";")):
+                with self.subTest(id=r["id"], url=u):
+                    self.assertRegex(u, r"^https?://[^\s;]+$")
+                    self.assertIn(f'href="{u.replace("&", "&amp;")}"', self.index)
+
+    def test_no_issue_links_in_dashboard_tables(self):
+        self.assertNotIn("関連Issue", self.index)
+        self.assertNotIn("/issues/", self.index.split("<footer>")[0])
+        self.assertIn("docs/09-issue-map.html", self.index)
+        self.assertTrue((ROOT / "docs" / "09-issue-map.html").exists())
+
+    def test_map_links_well_formed(self):
+        import re
+        import html as _h
+        urls = [_h.unescape(u) for u in re.findall(r'href="(https://www\.google\.com/maps/search/[^"]*)"', self.index)]
+        self.assertGreaterEqual(len(urls), len(self.places))
+        for r in self.places:
+            self.assertTrue(r["maps_query"].strip())
+            from build_html import maps_url
+            self.assertIn(maps_url(r["maps_query"]), urls)
+        for u in urls:
+            self.assertRegex(u, r"^https://www\.google\.com/maps/search/\?api=1&query=[A-Za-z0-9%+_.~-]+$")
+
+    def test_fx_json_matches_csv_and_unknown_shows_unconfirmed(self):
+        import json, re
+        m = re.search(r'<script type="application/json" id="fx-data">(.*?)</script>', self.index, re.S)
+        data = json.loads(m.group(1))
+        self.assertEqual([d["code"] for d in data], [r["currency"] for r in self.fx])
+        for d, r in zip(data, self.fx):
+            self.assertEqual(d["rate"], float(r["jpy_per_unit"]) if r["jpy_per_unit"] else None)
+            self.assertRegex(r["currency"], r"^[A-Z]{3}$")
+        from build_html import fx_table
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); (root / "data").mkdir()
+            (root / "data" / "fx.csv").write_text(
+                "currency,name_ja,unit,region,jpy_per_unit,rate_date,rate_kind,source\nBWP,プラ,P,ボツワナ,,,,\n",
+                encoding="utf-8")
+            self.assertIn("未確認", fx_table(root))
+
+
 if __name__ == "__main__":
     unittest.main()
