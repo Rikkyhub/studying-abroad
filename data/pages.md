@@ -1,6 +1,6 @@
 # pages.csv
 
-`data/pages.csv` を表にした閲覧用のページです（25行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
+`data/pages.csv` を表にした閲覧用のページです（27行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
 
 | id | group | area | title | summary | path | issue | status | sort | verified_at | refs |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -29,3 +29,5 @@
 | P23 | plan | 公開方針 | 公開データ方針 | 公開してよいデータと非公開で管理するデータ | docs/05-public-data-policy.html | https://github.com/Rikkyhub/studying-abroad/issues/16 | ready | 90 |  |  |
 | P24 | plan | 運用 | HTML・Word への変換 | Markdownを正本にHTML/Wordを作る方法 | docs/07-export.html |  | ready | 100 |  |  |
 | P25 | plan | 運用 | AI・別PC向け引き継ぎ | 別のAI・PCで作業を引き継ぐ手順 | docs/08-handoff.html |  | ready | 110 |  |  |
+| P26 | research | アフリカ | 世界地図（候補ルート） | バギオ/マニラ発の候補ルートA〜Eを世界地図に描いた概念図 | maps/world-map.html | https://github.com/Rikkyhub/studying-abroad/issues/23 | researching | 115 | 2026-10-18 |  |
+| P27 | research | アフリカ | アフリカ地図（候補ルート） | アフリカ大陸の候補ルートA〜Eと乗継空港・行き先の概念図 | maps/africa-map.html | https://github.com/Rikkyhub/studying-abroad/issues/23 | researching | 116 | 2026-10-18 |  |
