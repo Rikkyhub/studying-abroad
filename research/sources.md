@@ -11,7 +11,7 @@
 | PH FAQ | https://immigration.gov.ph/faqs/ | SSPは非学位コース等への許可（査証でない）、59日超はACR I-Card、ECC-Aは6か月以上 | 2026-10-17 | 日付表記なし |
 | PH手数料告知 | https://immigration.gov.ph/advisory-proposed-schedule-of-fees-annual-report/ | 2026-10-09告知はAnnual Report手数料案のみ（PDFはスキャン画像） | 2026-10-17 | 観光延長・SSPは対象外 |
 | PH入国拒否 | https://immigration.gov.ph/3300-unwanted-aliens-barred-from-entering-ph-in-2023/ | 復路航空券なし等の軽微な不備による入国拒否（2023年実績） | 2026-10-17 | 日付は画像名から推定 |
-| PH eTravel | https://etravel.gov.ph/frequently-asked-questions | 無料、到着する外国人は登録、到着72時間前から登録可 | 2026-10-17 | — |
+| PH eTravel | https://etravel.gov.ph/frequently-asked-questions | 無料、到着する外国人は登録、到着前72時間以内に登録（公式FAQ） | 2026-10-17 | — |
 | PH学校料金 | https://philschools.jp/pricelist/pines.pdf | 学校の一般料金表（2026年10月〜）：延長区分別、SSP 7,800、SSP I-CARD 4,500、ACR I-CARD 4,000（PHP） | 2026-10-17 | 本人の請求額ではない。区分の当てはめは学校確認 |
 | PHオンライン | https://e-services.immigration.gov.ph/ | SSP/延長などの手続分類 | 2026-10-16 | 2026-10-17は接続失敗。本人/学校の役割未確認 |
 | SA東京大使館 | https://dirco.gov.za/japan/frequently-asked-questions/ | 日本旅券・holiday/business目的で90日未満査証免除、期限は入国日から計算 | 2026-10-17 | 就学の記載なし。就学や再入国に一律適用しない |
