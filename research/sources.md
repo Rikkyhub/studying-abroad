@@ -142,6 +142,35 @@
 | アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T062.html | モザンビーク：マプトを含むその他レベル1（2025-07-04） | 2026-10-17 | 北部はレベル3 |
 | アフリカ周遊（航空） | https://www.flightconnections.com/flights-from-nbo-to-tnr | NBO→TNR直行（Issue記載） | 2026-10-17 | 動的ページで本文取得不可（HTTP 202）。運航頻度は未確認 |
 
+### 南部アフリカ各国（#38、確認日 2026-10-18）
+詳細は [southern-africa-countries.md](southern-africa-countries.md)。
+
+| 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
+|---|---|---|---|---|
+| 南部ア（ESW料金） | https://biggameparks.org/rates | Mlilwane/Hlane保全料ZAR95/日、Sondzelaドミ ZAR215、乗馬ZAR430/h、1.5hドライブZAR390（最低2名）、毎年12/1〜11/30適用 | 2026-10-18 | 年の明記なし |
+| 南部ア（ESW交通） | https://transmagnific.com/schedule.php | JNB⇔Mbabane 片道ZAR750/往復ZAR1,400、毎日4便、OR Tambo発約4h40m | 2026-10-18 | 運賃の有効日なし |
+| 南部ア（KAZA） | https://www.zambiaimmigration.gov.zm/kaza-univisa/ | KAZA UNIVISA USD50、30日、ザンビア＋ジンバブエ、日本は対象、ボツワナは日帰りのみ | 2026-10-18 | — |
+| 南部ア（ザンビア査証） | https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ | 日本は査証免除リスト（No.76）、航空は往復券が条件 | 2026-10-18 | 滞在日数はfor-visitorsの一般記述（90日/12か月） |
+| 南部ア（ジンバブエ査証） | https://www.zimimmigration.gov.zw/?p=7186 | 日本はCategory B（到着時査証可） | 2026-10-18 | 料金記載なし |
+| 南部ア（ジンバブエ料金） | https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/ | Zim側滝入場USD58（2026-02-16記事） | 2026-10-18 | 二次情報。Zimparks公式ページは料金欄なし |
+| 南部ア（ザンビア料金） | https://www.zambiatourism.com/park-entry-fees/ | 外国人公園料USD10/日（2025年表） | 2026-10-18 | 2027年要確認 |
+| 南部ア（Devil's Pool） | https://www.zambiatourism.com/destinations/waterfalls/victoria-falls/victoria-falls-devils-pool/ | 約8〜1月の低水位期のみ | 2026-10-18 | — |
+| 南部ア（滝流量） | https://www.zambezira.org/node/2992 | 2026-05-05 3,610→05-18 3,330 m3/s | 2026-10-18 | 2027年は不明 |
+| 南部ア（Chobe） | https://www.visit-chobe.com/chobe-game-drive/ | ドライブFrom USD65、フルデイUSD115、公園料USD15別 | 2026-10-18 | 年未表示、ページ内に$49/$126の不一致 |
+| 南部ア（Chobe入園） | https://visitchobepark.com/entry-fees/ | 非居住者BWP190（ツアー客）/270（個人）、2022施行、値上げ案は延期 | 2026-10-18 | 二次情報。DWNP公式未取得 |
+| 南部ア（宿） | https://www.hostelworld.com/hostels/p/276112/bananyana-backpackers-camp/ | Bananyanaドミ USD15/P150 | 2026-10-18 | 現金払い |
+| 南部ア（Okavango） | https://www.safarivendors.com/Safaris/1-day-okavango-delta-mokoro-day-trip-from-maun | 2027年 1人USD345/2人USD250/人 | 2026-10-18 | 最低人数条件 |
+| 南部ア（Okavango比較） | https://www.safaribookings.com/tours/1-day-safari-from-maun | 11ツアー ¥24,889〜¥60,445（JPY表示） | 2026-10-18 | 為替依存 |
+| 南部ア（Okavango季節） | https://www.okavango.com/best-time-to-visit-okavango-delta.php | 5月は洪水拡大期 | 2026-10-18 | 民間ガイド |
+| 南部ア（Hwange） | https://www.safaribookings.com/tours/t108604 | 2日ツアー ¥125,156/人（2名参加時） | 2026-10-18 | 最低2名 |
+| 南部ア（ナミビア） | https://indigosafaris.com/tours/namibia-3-day-sossusvlei-express/ | 2027年(4/1〜) NAD13,500、単独追加NAD1,500、キャンプ・食事・入園料込み | 2026-10-18 | — |
+| 南部ア（ナミビア） | https://indigosafaris.com/tours/3-day-etosha-express-safari/ | 2027年 NAD13,000、単独追加NAD1,500 | 2026-10-18 | — |
+| 南部ア（モザンビーク査証） | https://evisa.gov.mz/Home | 日本はeTA（30日）/eVisa対象、免除リスト外 | 2026-10-18 | 料金記載なし |
+| 南部ア（モザンビーク潜水） | https://gozo-azul.co.za/scuba-diving/ | 2026年 リーフUSD50/本、レンタルUSD15/本、サメUSD60/本、保護区USD10 | 2026-10-18 | — |
+| 南部ア（為替） | https://www.murc-kawasesouba.jp/fx/index.php / https://open.er-api.com/v6/latest/JPY | USD TTM158.19、ZAR TTM9.59（MUFG 2026-10-16）。API: USD158.00、ZAR9.59、BWP11.06 | 2026-10-18 | BWPは単一の二次出典 |
+| 南部ア（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T017.html | ナミビア全土レベル1（2024-02-22） | 2026-10-18 | ザンビア2026T042／ジンバブエ2024T116／モザンビーク2025T062は既存行・本資料に記載 |
+| 南部ア（取得不可） | eservices.mhaiss.gov.na／gov.bw／gov.sz／namibiatokyo.or.jp／Imvelo料金PDF | HTTP 468／証明書期限切れ／接続拒否／証明書不一致／404 | 2026-10-18 | 該当項目は未確認 |
+
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
 - バギオ起点の現実的な土日交通便とショップの総額、学校門限（ダイビングは #3 で一部更新：バギオ→San Juan/ボリナオのバス便・運賃、ボリナオのショップは未確認）。
