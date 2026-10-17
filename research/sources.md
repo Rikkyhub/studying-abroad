@@ -73,6 +73,25 @@
 | JP衣料 | https://www.uniqlo.com/jp/ja/ | 公式商品APIの価格（JPY税込）：ブロックテックパーカ¥6,990、ULD ¥7,990、パフテック¥6,990/7,990、フリース¥5,990、ヒートテック¥1,290 ほか | 2026-10-17 | 2026秋冬商品。春に入替の可能性 |
 | JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1128615 | ストームクルーザー Men's ¥22,880（アウトレット価格）、平均重量254g | 2026-10-17 | アウトレット在庫は変動 |
 | JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1101661 | スペリオダウン Men's ¥19,500 | 2026-10-17 | 重量は未特定 |
+| PH治安 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_013.html | 危険情報（2024-12-19）：ルソン島を含む大部分がレベル1、ミンダナオ一部がレベル3・2 | 2026-10-17 | WebFetchは403、curlで取得 |
+| PH治安 | https://www.anzen.mofa.go.jp/info/pcspotinfo_2025C019.html | マニラ首都圏の強盗連続発生（2025-05-09）、配車サービス推奨 | 2026-10-17 | バギオ固有の情報ではない |
+| PH治安 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html | 緊急番号911/143、大使館・邦人援護ホットライン | 2026-10-17 | — |
+| PH治安 | https://www.ezairyu.mofa.go.jp/opendata/country/0063.xml | 領事メール：首都圏の強盗・睡眠薬強盗、1〜2月の台風、地震 | 2026-10-17 | バギオ・ベンゲットの事案は0件 |
+| ZA治安 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_122.html | 危険情報（2025-04-28）：全土レベル1、3都市CBDがレベル2 | 2026-10-17 | ケープタウンはレベル2対象外 |
+| ZA治安 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html | 公共交通機関の利用回避、配車サービス・ATMの注意、緊急番号 | 2026-10-17 | 2024年統計 |
+| ZA治安 | https://www.ezairyu.mofa.go.jp/opendata/country/0027.xml | 領事メール：空港の偽配車、Castle付近の強盗、Boulders Beach駐車場のカード詐取 | 2026-10-17 | 2025〜2026年 |
+| ZA治安（英政府） | https://www.gov.uk/foreign-travel-advice/south-africa/safety-and-security | MyCiTiを比較的安全な手段に含める、登山は4人以上、海の安全・アザラシ、停電 | 2026-10-17 | 外務省とMyCiTiの評価が分かれる |
+| PH治安（英政府） | https://www.gov.uk/foreign-travel-advice/philippines/safety-and-security | 台風は主に6〜11月、ダイビング業者・再圧チャンバーの確認 | 2026-10-17 | — |
+| 健康 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines | 偽造狂犬病ワクチン、レプトスピラ、チクングニア | 2026-10-17 | 2026-09-18レビュー |
+| 健康 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/south-africa | アザラシの狂犬病、マラリア予防内服の推奨地域 | 2026-10-17 | 2026-08-25レビュー |
+| 健康 | https://www.forth.go.jp/destinations/country/philippines.html | 水・感染症・推奨ワクチン | 2026-10-17 | 2019-09-27更新 |
+| 健康 | https://www.forth.go.jp/destinations/country/s_africa.html | 水道水は飲用非推奨、マラリア地域 | 2026-10-17 | 2012-08-02更新で古い。観光局と食い違い |
+| 健康 | https://www.who.int/news-room/fact-sheets/detail/tuberculosis | フィリピンが新規結核の6.8% | 2026-10-17 | 2026-03-24 |
+| ZA海 | https://www.nsri.org.za/water-safety/all-about-rip-currents | 離岸流の情報、緊急087 094 9774 | 2026-10-17 | 冬季の月別統計なし |
+| ZA停電 | https://loadshedding.eskom.co.za/ | 確認日時点でload sheddingなし | 2026-10-17 | 2027年は未確認 |
+| 保険 | https://faq.sompo-japan.jp/off/faq_detail.html?id=50136 | ネット型off!は31日まで | 2026-10-17 | — |
+| 保険 | https://www.ms-ins.com/personal/travel/kairyo/ | ネット型は92日超申込不可 | 2026-10-17 | 長期契約は代理店で見積 |
+| 保険 | https://faq2.ms-ins.com/faq/show/1589?site_domain=default | スクーバは危険な運動に該当しない | 2026-10-17 | 長期契約・他社の約款は未確認 |
 | バギオ観光 | https://api-booking.baguio.visita.ph/api/parks（https://visita.baguio.gov.ph/park-tickets のデータ） | 市内16施設の入場料（Botanical 110、BenCab 200 等）・営業時間・座標 | 2026-10-17 | 2026年登録値。外国人/居住者区分・学割の表示なし |
 | バギオ観光 | https://tribune.net.ph/2026/02/18/residents-now-must-pay-for-baguio-botanical-garden | BLISTT住民向け無料措置（Ordinance No. 62 s.2025）が2026年1月末で終了 | 2026-10-17 | 報道。居住者向けで旅行者には非適用。金額記載なし |
 | バギオ気候 | https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/cad/CLIMATOLOGICAL%20NORMALS%20(1991-2020)/BAGUIO.pdf | 2〜5月の降水量・降雨日数・雷雨日数・気温 | 2026-10-17 | 1991–2020平年値。2027年予報ではない |
