@@ -1,6 +1,6 @@
 # 一次資料・調査ログ
 
-最終確認：2026-10-16（ダイビング・冬服・治安/健康関連は2026-10-17）。治安・健康の詳細な出典一覧と調査ログは [safety-and-health.md](safety-and-health.md) §10・§11 にある。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
+最終確認：2026-10-16（ダイビング・冬服・食事/生活費・治安/健康関連は2026-10-17）。治安・健康の詳細な出典一覧と調査ログは [safety-and-health.md](safety-and-health.md) §10・§11 にある。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
 
 | 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
 |---|---|---|---|---|
@@ -60,15 +60,6 @@
 | ZAダイビング | https://www.diveschoolcapetown.co.za/fun-dives/scuba-dive-with-great-white-sharks/ | ケージR3,655＋送迎R1,000 | 2026-10-17 | 2027年冬の出現・催行未確認 |
 | ZAダイビング | https://www.diveschoolcapetown.co.za/terms-and-conditions/ | 全額前払い、48時間未満取消は没収、天候中止は返金/振替 | 2026-10-17 | — |
 | ZA健康 | https://www.nicd.ac.za/wp-content/uploads/2025/08/Rabies-and-seals-_-August-2025-final.pdf | Cape fur sealの狂犬病（2024年5月〜）、ダイバー等は曝露前接種を医療者と相談 | 2026-10-17 | 2025年8月更新 |
-| PH食事（紹介会社） | https://www.hub1234.com/philippines/baguio/pines-main | PINESの平日3食込み・週末1食PHP179・土曜朝食無料・日曜朝食PHP100の掲載 | 2026-10-17 | 準公式。学校公式では未確認（要確認） |
-| PH食事 | https://pinesacademy.com/ | 学校公式サイト | 2026-10-17 | 403で取得不可。2024-03のアーカイブに食事規定なし |
-| PH外食 | https://www.foodpanda.ph/restaurant/r1dl/lechon-house-baguio | バギオのデリバリー価格 | 2026-10-17 | 403で取得不可（未確認） |
-| ZAスーパー | https://www.pnp.co.za/ （商品検索API、storeCode=WC21） | Pick n Payの食品表示価格 | 2026-10-17 | 店舗名未特定。配送料含まず |
-| ZAスーパー | https://www.checkers.co.za/sitemap.xml （商品ページのJSON-LD） | Checkersの食品表示価格・在庫表示 | 2026-10-17 | 配達エリア未指定のオンライン価格 |
-| ZAスーパー | https://www.shoprite.co.za/ （商品ページのJSON-LD） | Shopriteの食品表示価格 | 2026-10-17 | 同上 |
-| ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
-| ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
-| ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
 | 経路推計 | https://router.project-osrm.org/ | 車の距離・時間（バギオ→San Juan 83km/1.9h、→Bolinao 175km/3.5h、→Olongapo 242km/3.7h、ケープタウン→Simon's Town 39km/0.7h） | 2026-10-17 | 推計。渋滞・公共交通は含まない |
 | ケープタウン気候 | https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/1.1/data/0-data/Region-1-WMO-Normals-9120/SouthAfrica/CSV/CapeTown_68816.csv | WMO 1991-2020平年値、Cape Town International Airport（WMO 68816・標高42m）：6/7月 最高18.2/17.9°C・最低8.1/7.4°C・降水92.3/84.8mm・降水日10.1/9.1日 | 2026-10-17 | 空港地点。市街地差・風は含まない。SAWSでの照合未了 |
 | ケープタウン気候 | https://www.ncei.noaa.gov/products/wmo-climate-normals | 上記WMO平年値の公開元（NOAA NCEI） | 2026-10-17 | — |
@@ -122,6 +113,15 @@
 | ケープタウン観光 | https://aquilasafari.com/day-trip-safaris/ ／ https://aquilasafari.com/transport/ | 4x4終日From R2,895、送迎From R1,180 | 2026-10-17 | 送迎は2025-11〜2026-10有効 |
 | ケープタウン観光 | https://www.hermanus-whale-cruises.co.za/trip.php | 大人R1,500（rack rate）、出航時刻、天候次第 | 2026-10-17 | 年度表記なし、遭遇保証なし |
 | ケープタウン気候 | https://en.wikipedia.org/wiki/Cape_Town | 空港1991–2020平年値：6月92.3mm/10.1日、7月84.8mm/9.1日 | 2026-10-17 | 二次（出典SAWS/NOAA）。風統計未確認 |
+| PH食事（紹介会社） | https://www.hub1234.com/philippines/baguio/pines-main | PINESの平日3食込み・週末1食PHP179・土曜朝食無料・日曜朝食PHP100の掲載 | 2026-10-17 | 準公式。学校公式では未確認（要確認） |
+| PH食事 | https://pinesacademy.com/ | 学校公式サイト | 2026-10-17 | 403で取得不可。2024-03のアーカイブに食事規定なし |
+| PH外食 | https://www.foodpanda.ph/restaurant/r1dl/lechon-house-baguio | バギオのデリバリー価格 | 2026-10-17 | 403で取得不可（未確認） |
+| ZAスーパー | https://www.pnp.co.za/ （商品検索API、storeCode=WC21） | Pick n Payの食品表示価格 | 2026-10-17 | 店舗名未特定。配送料含まず |
+| ZAスーパー | https://www.checkers.co.za/sitemap.xml （商品ページのJSON-LD） | Checkersの食品表示価格・在庫表示 | 2026-10-17 | 配達エリア未指定のオンライン価格 |
+| ZAスーパー | https://www.shoprite.co.za/ （商品ページのJSON-LD） | Shopriteの食品表示価格 | 2026-10-17 | 同上 |
+| ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
+| ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
+| ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
 | アフリカ周遊（入国） | https://etakenya.go.ke/eligibility | ケニアeTA：標準USD30、通過USD20、1年複数回USD300 | 2026-10-17 | 日本旅券の対象判定は国別画面（JS）で未確認。2027年改定未確認 |
 | アフリカ周遊（入国） | https://visa.immigration.go.tz/guidelines | タンザニア通常ビザUSD50（90日）、国リストにJapan（到着時/オンライン） | 2026-10-17 | 2027年改定未確認 |
 | アフリカ周遊（入国） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 南ア免除国表（2025-12-09発行）でJapan 90日・ビザ手数料なし | 2026-10-17 | 公式表。個別の滞在許可判断ではない |
