@@ -1,6 +1,6 @@
 # 一次資料・調査ログ
 
-最終確認：2026-10-16（ダイビング関連は2026-10-17）。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
+最終確認：2026-10-16（ダイビング・冬服関連は2026-10-17）。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
 
 | 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
 |---|---|---|---|---|
@@ -40,12 +40,24 @@
 | ZAダイビング | https://www.diveschoolcapetown.co.za/terms-and-conditions/ | 全額前払い、48時間未満取消は没収、天候中止は返金/振替 | 2026-10-17 | — |
 | ZA健康 | https://www.nicd.ac.za/wp-content/uploads/2025/08/Rabies-and-seals-_-August-2025-final.pdf | Cape fur sealの狂犬病（2024年5月〜）、ダイバー等は曝露前接種を医療者と相談 | 2026-10-17 | 2025年8月更新 |
 | 経路推計 | https://router.project-osrm.org/ | 車の距離・時間（バギオ→San Juan 83km/1.9h、→Bolinao 175km/3.5h、→Olongapo 242km/3.7h、ケープタウン→Simon's Town 39km/0.7h） | 2026-10-17 | 推計。渋滞・公共交通は含まない |
+| ケープタウン気候 | https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/1.1/data/0-data/Region-1-WMO-Normals-9120/SouthAfrica/CSV/CapeTown_68816.csv | WMO 1991-2020平年値、Cape Town International Airport（WMO 68816・標高42m）：6/7月 最高18.2/17.9°C・最低8.1/7.4°C・降水92.3/84.8mm・降水日10.1/9.1日 | 2026-10-17 | 空港地点。市街地差・風は含まない。SAWSでの照合未了 |
+| ケープタウン気候 | https://www.ncei.noaa.gov/products/wmo-climate-normals | 上記WMO平年値の公開元（NOAA NCEI） | 2026-10-17 | — |
+| ケープタウン風（参考） | https://weatherspark.com/y/82961/Average-Weather-in-Cape-Town-South-Africa-Year-Round | MERRA-2再解析：6/7月平均風速11.2/11.5mph、5/13〜8/10は北風最多 | 2026-10-17 | 非公式集計。沿岸部の誤差注記あり |
+| ケープタウン冬 | https://www.capetown.travel/the-best-time-of-year-to-visit-cape-town/ | 再取得を試行 | 2026-10-17 | 403。2026-10-16の確認内容のみ |
+| ZA衣料 | https://www.pepstores.com/ | 公式EC表示価格（ZAR）：Rain Jacket R134.99、Plush Zip-Up R169.99、Quilted Jacket R279.99、Thermal Tights R79.99、Beanie R49.99、Gloves R24.99 ほか | 2026-10-17 | 2026年掲載品。店舗在庫・2027年冬の取扱は未確認 |
+| ZA衣料 | https://www.ackermans.co.za/ | 公式EC表示価格（ZAR）：Foldable Raincoat R129.95（学校向けタグ）、Fleece Top R199.95、Puffer R499.95、Beanie R69.95 | 2026-10-17 | 同上 |
+| ZA衣料 | https://www.woolworths.co.za/ | サイト内検索APIの価格（ZAR）：Thermal Vest R249、Thermal Top 2 Pack R399、Beanie/Gloves R50、Socks 3 Pack R169、Helly Hansen Rain Jacket R3,499 | 2026-10-17 | 商品ページの価格表示とは未照合 |
+| ZA衣料（集約サイト） | https://www.tiendeo.co.za/stores/decathlon-r | Decathlon店舗名（Alberton、Boksburg、Randburg、Centurion、Roodepoort＝Gauteng） | 2026-10-17 | 二次情報。Cape Town店舗は未確認。公式サイトは403 |
+| ZA衣料 | https://www.capeunionmart.co.za/ ／ https://www.mrp.com/ ／ https://www.sportsmanswarehouse.co.za/ | 取得を試行 | 2026-10-17 | いずれも403。価格・店舗未確認 |
+| JP衣料 | https://www.uniqlo.com/jp/ja/ | 公式商品APIの価格（JPY税込）：ブロックテックパーカ¥6,990、ULD ¥7,990、パフテック¥6,990/7,990、フリース¥5,990、ヒートテック¥1,290 ほか | 2026-10-17 | 2026秋冬商品。春に入替の可能性 |
+| JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1128615 | ストームクルーザー Men's ¥22,880（アウトレット価格）、平均重量254g | 2026-10-17 | アウトレット在庫は変動 |
+| JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1101661 | スペリオダウン Men's ¥19,500 | 2026-10-17 | 重量は未特定 |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。
 - バギオ起点の現実的な土日交通便とショップの総額、学校門限（ダイビングは #3 で一部更新：バギオ→San Juan/ボリナオのバス便・運賃、ボリナオのショップは未確認）。
 - 2026-10-17のダイビング調査では WebSearch が使えず、外部検索エンジンもボット判定で大半が失敗した。各レポートの調査ログを参照。
-- スーパー実売の数量・値段、衣料品の店舗と商品価格、観光非居住者料金。
+- スーパー実売の数量・値段、観光非居住者料金。衣料品は #6 で公式EC価格を一部記録（Cape Town 店舗・冬季在庫・403 のチェーンは未確認）。
 - 外貨換算レート：**未採用**（検証可能な日付/レートが取得できたときに記録）。
 
 公開時には出典リンクを明示し、記事・体験・価格の更新日を残す。
