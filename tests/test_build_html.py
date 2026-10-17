@@ -75,5 +75,32 @@ class RepoTests(unittest.TestCase):
                 self.assertNotIn("\x00", text)
 
 
+class IndexTableTests(unittest.TestCase):
+    def setUp(self):
+        self.index = (ROOT / "index.html").read_text(encoding="utf-8")
+
+    def test_index_matches_generated(self):
+        self.assertEqual(self.index, outputs()[ROOT / "index.html"])
+
+    def test_every_pages_csv_path_exists_and_is_linked(self):
+        import csv
+        with (ROOT / "data" / "pages.csv").open(newline="", encoding="utf-8-sig") as f:
+            rows = list(csv.DictReader(f))
+        self.assertTrue(rows)
+        for r in rows:
+            with self.subTest(id=r["id"]):
+                self.assertTrue((ROOT / r["path"]).is_file())
+                self.assertIn(f'href="{r["path"]}"', self.index)
+
+    def test_tables_have_headers_and_no_cards(self):
+        import re
+        tables = re.findall(r"<table>.*?</table>", self.index, re.S)
+        self.assertGreaterEqual(len(tables), 5)
+        for t in tables:
+            self.assertIn("<thead><tr><th", t)
+        self.assertNotIn('class="card"', self.index)
+        self.assertNotIn('class="links"', self.index)
+
+
 if __name__ == "__main__":
     unittest.main()

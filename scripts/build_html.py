@@ -307,7 +307,12 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         out[p.with_suffix(".html")] = render_text(md, p, root)
     index = root / "index.html"
     if index.exists() and (root / "data" / "tasks.csv").exists():
-        out[index] = fill_auto(index.read_text(encoding="utf-8"), "tasks", tasks_table(root))
+        text = fill_auto(index.read_text(encoding="utf-8"), "tasks", tasks_table(root))
+        if (root / "data" / "pages.csv").exists() and (root / "data" / "timeline.csv").exists():
+            text = fill_auto(text, "timeline", timeline_table(root))
+            text = fill_auto(text, "research", pages_table(root, "research"))
+            text = fill_auto(text, "plan", pages_table(root, "plan"))
+        out[index] = text
     return out
 
 
@@ -330,6 +335,55 @@ def tasks_table(root: Path = ROOT) -> str:
     return (f'<div class="box"><div class="muted">登録タスク {len(rows)}件 / 完了 {done}件 / 未着手 {todo}件</div>'
             '<div class="scroll"><table><thead><tr><th>優先</th><th>作業</th><th>状態</th><th>Issue</th></tr></thead>'
             f'<tbody>{"".join(body)}</tbody></table></div></div>')
+
+
+PAGE_STATUS = {"researching": "調査中", "ready": "整理済", "draft": "作成中"}
+
+
+def csv_records(path: Path) -> list[dict]:
+    head, rows = read_csv_rows(path)
+    return [dict(zip(head, (r + [""] * len(head))[:len(head)])) for r in rows]
+
+
+def sorted_pages(root: Path = ROOT) -> list[dict]:
+    return sorted(csv_records(root / DATA_DIR / "pages.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
+
+
+def table(headers: list[str], rows: list[list[str]]) -> str:
+    """セルは生成済みHTML。横スクロールは .scroll の中だけで起きる"""
+    th = "".join(f"<th>{h}</th>" for h in headers)
+    tr = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
+    return f'<div class="scroll"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
+
+
+def pages_table(root: Path, group: str) -> str:
+    """data/pages.csv の group 行から 分野/資料/内容/関連Issue/最終確認日 の対応表を作る"""
+    rows = []
+    for r in sorted_pages(root):
+        if r["group"] != group:
+            continue
+        issue = r["issue"]
+        m = re.search(r"/issues/(\d+)$", issue)
+        link = f'<a href="{html.escape(issue, quote=True)}" target="_blank" rel="noopener">#{m.group(1)}</a>' if m else "－"
+        rows.append([html.escape(r["area"]),
+                     f'<a href="{html.escape(r["path"], quote=True)}">{html.escape(r["title"])}</a>',
+                     html.escape(r["summary"]),
+                     html.escape(PAGE_STATUS.get(r["status"], r["status"])),
+                     link, html.escape(r["verified_at"]) or "－"])
+    return table(["分野", "資料", "内容", "状態", "関連Issue", "最終確認日"], rows)
+
+
+def timeline_table(root: Path = ROOT) -> str:
+    """data/timeline.csv の旅程表。関連資料は pages.csv の id から解決する"""
+    pages = {r["id"]: r for r in csv_records(root / DATA_DIR / "pages.csv")}
+    rows = []
+    for r in sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"])):
+        links = " ／ ".join(
+            f'<a href="{html.escape(pages[i]["path"], quote=True)}">{html.escape(pages[i]["title"])}</a>'
+            for i in r["page_ids"].split(";") if i in pages)
+        rows.append([html.escape(r["period"]), f'<strong>{html.escape(r["title"])}</strong>',
+                     f'<span class="pill">{html.escape(r["status"])}</span>', html.escape(r["summary"]), links or "－"])
+    return table(["期間", "内容", "状態", "概要", "関連資料"], rows)
 
 
 def fill_auto(text: str, name: str, content: str) -> str:

@@ -1,5 +1,6 @@
 """Validate public CSV trackers without dependencies. Run: python3 scripts/validate_data.py"""
 import csv
+import re
 import sys
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -7,6 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXPENSES = {"id", "period_start", "period_end", "phase", "category", "item", "currency", "quoted_amount", "paid_amount", "actual_amount", "fx_jpy_per_unit", "fx_asof", "quote_status", "payment_status", "paid_on", "source_url", "verified_at", "notes"}
 TASKS = {"id", "phase", "task", "status", "priority", "due_date", "estimated_jpy", "source_url", "issue_url", "notes"}
+PAGES = {"id", "group", "area", "title", "summary", "path", "issue", "status", "sort", "verified_at"}
+TIMELINE = {"id", "period", "title", "status", "summary", "page_ids", "sort"}
+ISSUE_URL = re.compile(r"^https://github\.com/[\w.-]+/[\w.-]+/issues/\d+$")
 ERRORS = []
 
 
@@ -61,6 +65,25 @@ def main():
         if row["priority"] not in ("P0", "P1", "P2", "P3"):
             ERRORS.append(f"{label}: unknown priority")
         amount(row["estimated_jpy"], label + ":estimated_jpy")
+    page_rows = load(ROOT / "data/pages.csv", PAGES)
+    page_ids = {(r.get("id") or "").strip() for r in page_rows}
+    for n, row in enumerate(page_rows, 2):
+        label = f"pages.csv:{n}"
+        if not (ROOT / row["path"]).is_file():
+            ERRORS.append(f"{label}: path does not exist: {row['path']!r}")
+        if row["issue"] and not ISSUE_URL.match(row["issue"]):
+            ERRORS.append(f"{label}: issue must be a github issues URL or empty")
+        if row["group"] not in ("research", "plan"):
+            ERRORS.append(f"{label}: unknown group")
+        if not row["title"].strip() or not row["sort"].isdigit():
+            ERRORS.append(f"{label}: title required and sort must be an integer")
+    timeline_rows = load(ROOT / "data/timeline.csv", TIMELINE)
+    for n, row in enumerate(timeline_rows, 2):
+        for pid in filter(None, row["page_ids"].split(";")):
+            if pid not in page_ids:
+                ERRORS.append(f"timeline.csv:{n}: unknown page id {pid!r}")
+        if not row["sort"].isdigit():
+            ERRORS.append(f"timeline.csv:{n}: sort must be an integer")
     if ERRORS:
         for err in ERRORS:
             print("ERROR:", err, file=sys.stderr)
