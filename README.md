@@ -40,6 +40,7 @@ PINESのコース予定：Power ESL5（4週）→ Intensive ESL（8週）。
 
 - [ダッシュボード](index.html)：月別計画・入力済み費用小計・準備タスク・調査資料へのリンク。ブラウザで使う場合はリポジトリ内で `python3 -m http.server 8000` を起動して `http://localhost:8000` を開く（GitHub Pagesは**未設定**）。
 - [ダッシュボードの更新方法](docs/04-dashboard.md)
-- CSVの検証：`python3 scripts/validate_data.py`。GitHub ActionsでもPR時に検証。
+- 調査・計画資料のHTML版：`research/*.html`・`docs/*.html`・`blog/*.html`。正本は同名の Markdown で、`python3 scripts/build_html.py` で生成する（手で編集しない）。Markdown を変更したら再生成して同じコミットに含める。
+- CSVの検証：`python3 scripts/validate_data.py`。GitHub ActionsでもPR時に検証（HTMLとMarkdownの一致は `python3 scripts/build_html.py --check`）。
 
 現時点の研究資料は完成版ではない。公式で確認できた情報と未確認の候補を区別し、各Issueで継続調査する。

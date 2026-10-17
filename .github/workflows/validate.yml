@@ -17,5 +17,7 @@ jobs:
         run: python3 scripts/validate_data.py
       - name: Reject private transaction fields in public CSV
         run: python3 scripts/check_public_data.py
-      - name: Test public-data guard
-        run: python3 -m unittest discover -s tests -p 'test_public_data.py'
+      - name: Check HTML pages match Markdown
+        run: python3 scripts/build_html.py --check
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
