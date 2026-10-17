@@ -1,15 +1,36 @@
 # 一次資料・調査ログ
 
-最終確認：2026-10-16（ダイビング関連は2026-10-17）。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
+最終確認：2026-10-16（ダイビング・冬服関連は2026-10-17）。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
 
 | 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
 |---|---|---|---|---|
-| PH入国 | https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/ | 対象国の30日短期査証免除・有効な復路/第三国航空券 | 2026-10-16 | 語学就学・延長は別要件 |
-| PH延長 | https://immigration.gov.ph/visas/visa-waiver/ | 30日免除後の初回29日Waiver | 2026-10-16 | 12週を完了する後続手続を学校確認 |
-| PH SSP | https://immigration.gov.ph/services/special-study-permit/ | 非学位学習の許可制度 | 2026-10-16 | 公開料金は2014年更新表記で古い |
-| PHオンライン | https://e-services.immigration.gov.ph/ | SSP/延長などの手続分類 | 2026-10-16 | 本人/学校の役割未確認 |
-| SA東京大使館 | https://dirco.gov.za/japan/frequently-asked-questions/ | 日本旅券・観光/商用90日未満査証免除 | 2026-10-16 | 就学や再入国に一律適用しない |
-| SA東京大使館 | https://dirco.gov.za/japan/immigration-visa-info/ | Study Visa、旅券余白、資金/航空・黄熱病案内 | 2026-10-16 | 国籍/在留区分に応じた適用要確認 |
+| PH入国 | https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/ | 対象国の30日短期査証免除・有効な復路/第三国航空券、Japanは旅券6か月未満でも入国可（SBM-2015-026） | 2026-10-17 | 語学就学・延長は別要件。ページに更新日表記なし |
+| PH延長 | https://tokyo.philembassy.net/en/consular-section/services/visa/other-visa-categories-and-extension-of-period-of-stay/ | 延長はBI、6か月一括のLSVVEはBI本庁のみ（2013-06-10〜） | 2026-10-17 | 手数料記載なし |
+| PH延長 | https://immigration.gov.ph/visas/visa-waiver/ | 初回29日Waiver PHP3,030、59日超延長（成人・査証不要国）1か月PHP4,400/2か月4,900、ACR I-Card USD50 | 2026-10-17 | 手数料表は2014-03-06更新。2027年適用額とみなさない |
+| PH SSP | https://immigration.gov.ph/special-study-permit/ | SSP PHP5,240＋I-Card USD50 | 2026-10-17 | 2014-03-06更新。有効期間の記載なし |
+| PH FAQ | https://immigration.gov.ph/faqs/ | SSPは非学位コース等への許可（査証でない）、59日超はACR I-Card、ECC-Aは6か月以上 | 2026-10-17 | 日付表記なし |
+| PH手数料告知 | https://immigration.gov.ph/advisory-proposed-schedule-of-fees-annual-report/ | 2026-10-09告知はAnnual Report手数料案のみ（PDFはスキャン画像） | 2026-10-17 | 観光延長・SSPは対象外 |
+| PH入国拒否 | https://immigration.gov.ph/3300-unwanted-aliens-barred-from-entering-ph-in-2023/ | 復路航空券なし等の軽微な不備による入国拒否（2023年実績） | 2026-10-17 | 日付は画像名から推定 |
+| PH eTravel | https://etravel.gov.ph/frequently-asked-questions | 無料、到着する外国人は登録、到着72時間前から登録可 | 2026-10-17 | — |
+| PH学校料金 | https://philschools.jp/pricelist/pines.pdf | 学校の一般料金表（2026年10月〜）：延長区分別、SSP 7,800、SSP I-CARD 4,500、ACR I-CARD 4,000（PHP） | 2026-10-17 | 本人の請求額ではない。区分の当てはめは学校確認 |
+| PHオンライン | https://e-services.immigration.gov.ph/ | SSP/延長などの手続分類 | 2026-10-16 | 2026-10-17は接続失敗。本人/学校の役割未確認 |
+| SA東京大使館 | https://dirco.gov.za/japan/frequently-asked-questions/ | 日本旅券・holiday/business目的で90日未満査証免除、期限は入国日から計算 | 2026-10-17 | 就学の記載なし。就学や再入国に一律適用しない |
+| SA東京大使館 | https://dirco.gov.za/japan/immigration-visa-info/ | Study Visa 4,300円・最大14営業日、Visa表示の未使用2ページ、書類 | 2026-10-17 | 短期語学就学と免除入国の関係は記載なし |
+| SA免除国 | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | Japan 90日・査証料なし（2025-12-09発行） | 2026-10-17 | 予告なく変更あり |
+| SA査証種別 | https://www.dha.gov.za/index.php/immigration-services/types-of-visas | visitor's visaの目的にstudy purposes、旅券1ページ・30日、復路航空券・資金 | 2026-10-17 | 免除入国での就学可否は明記なし |
+| SA手数料 | https://www.dha.gov.za/index.php/fees | visitor's visa（更新含む）R425、ETA R500（Gazette 55209） | 2026-10-17 | UPDATED AUGUST 2026 |
+| SA法令 | https://www.dha.gov.za/images/PDFs/IMMIGRATION-ACT-2002---UPDATED-2015.pdf | s10A(4)免除、s11(1)(a) 3か月＋更新3か月 | 2026-10-17 | 2015年統合版 |
+| SA規則 | https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf | reg 11(5)再入国は同じvisa・期限切れは7日以内・居住国からは免除期間、reg 9(5) | 2026-10-17 | 2018年統合版。2024年改正後の現行性は未確認 |
+| SA規則改正 | https://www.gov.za/documents/notices/immigration-act-regulations-second-amendment-20-may-2024 | 第2次改正 R.4847／Gazette 50675（2024-05-20） | 2026-10-17 | PDFは画像のみで本文未確認 |
+| SA規則改正 | https://www.dha.gov.za/index.php/notices/1825-third-amendment-immi-regulations-8-oct-2024 | 第3次改正 No.5398／Gazette 51366（2024-10-09） | 2026-10-17 | PDFは画像のみで本文未確認 |
+| SA規則改正 | https://www.gov.za/news/media-statements/minister-aaron-motsoaledi-media-briefing-amended-immigration-regulations-09 | 2024年改正の概要（就労系、reg 11言及なし） | 2026-10-17 | 改正全体の網羅ではない |
+| SA ETA | https://www.gov.za/news/speeches/minister-leon-schreiber-launch-south-africa%E2%80%99s-electronic-travel-authorisation-12-aug | 2026-08-12導入、査証要国から段階義務化、査証免除国は任意 | 2026-10-17 | 日本への適用時期未確認 |
+| SA学校 | https://uctlanguagecentre.com/enroll/student-support/visa-information | 90日未満はvisitor's visaで受講「may be eligible」、延長R1,775 | 2026-10-17 | 年度表記なし。当局の確認ではない |
+| SA外務省 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html | 90日免除の目的、2ページ、スタンプ誤記、黄熱、陸路国境 | 2026-10-17 | 2025-08-22更新 |
+| 黄熱 | https://www.forth.go.jp/useful/yellowfever.html | 黄熱リスク国一覧（エチオピア・ケニアは該当、周遊候補国は非該当） | 2026-10-17 | WHO 2022年版データ |
+| 周遊国 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html ほか（104/106/123/130/281/296） | ナミビア・ザンビア・ジンバブエ・モザンビーク・レソト・エスワティニ・ボツワナの査証 | 2026-10-17 | 詳細は visa-and-immigration.md 第2-3節 |
+| 周遊国 | https://www.zambiaimmigration.gov.zm/kaza-univisa/ | KAZA UNIVISA USD50、12か月で最大30日、Japan対象 | 2026-10-17 | — |
+| 周遊国 | https://visitnamibia.com.na/visa-information/ | ナミビア到着時査証の対象にJapan、観光90日 | 2026-10-17 | 料金は内務省参照（未確認） |
 | PHダイビング | https://diveunion.com.ph/ | La Unionのコース料金・海洋保護区料・時期 | 2026-10-16 | フルレンタル/ダイブ本数未確認 |
 | ZAダイビング | https://piscesdivers.co.za/reef-and-kelp/ | 2ガイドダイブ＋レンタル、ZAR3600 | 2026-10-16 | 2027価格は不明 |
 | ZAダイビング | https://piscesdivers.co.za/wreck-and-reef/ | 2ガイドダイブ＋レンタル、ZAR3200 | 2026-10-16 | 2027価格は不明 |
@@ -40,6 +61,18 @@
 | ZAダイビング | https://www.diveschoolcapetown.co.za/terms-and-conditions/ | 全額前払い、48時間未満取消は没収、天候中止は返金/振替 | 2026-10-17 | — |
 | ZA健康 | https://www.nicd.ac.za/wp-content/uploads/2025/08/Rabies-and-seals-_-August-2025-final.pdf | Cape fur sealの狂犬病（2024年5月〜）、ダイバー等は曝露前接種を医療者と相談 | 2026-10-17 | 2025年8月更新 |
 | 経路推計 | https://router.project-osrm.org/ | 車の距離・時間（バギオ→San Juan 83km/1.9h、→Bolinao 175km/3.5h、→Olongapo 242km/3.7h、ケープタウン→Simon's Town 39km/0.7h） | 2026-10-17 | 推計。渋滞・公共交通は含まない |
+| ケープタウン気候 | https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/1.1/data/0-data/Region-1-WMO-Normals-9120/SouthAfrica/CSV/CapeTown_68816.csv | WMO 1991-2020平年値、Cape Town International Airport（WMO 68816・標高42m）：6/7月 最高18.2/17.9°C・最低8.1/7.4°C・降水92.3/84.8mm・降水日10.1/9.1日 | 2026-10-17 | 空港地点。市街地差・風は含まない。SAWSでの照合未了 |
+| ケープタウン気候 | https://www.ncei.noaa.gov/products/wmo-climate-normals | 上記WMO平年値の公開元（NOAA NCEI） | 2026-10-17 | — |
+| ケープタウン風（参考） | https://weatherspark.com/y/82961/Average-Weather-in-Cape-Town-South-Africa-Year-Round | MERRA-2再解析：6/7月平均風速11.2/11.5mph、5/13〜8/10は北風最多 | 2026-10-17 | 非公式集計。沿岸部の誤差注記あり |
+| ケープタウン冬 | https://www.capetown.travel/the-best-time-of-year-to-visit-cape-town/ | 再取得を試行 | 2026-10-17 | 403。2026-10-16の確認内容のみ |
+| ZA衣料 | https://www.pepstores.com/ | 公式EC表示価格（ZAR）：Rain Jacket R134.99、Plush Zip-Up R169.99、Quilted Jacket R279.99、Thermal Tights R79.99、Beanie R49.99、Gloves R24.99 ほか | 2026-10-17 | 2026年掲載品。店舗在庫・2027年冬の取扱は未確認 |
+| ZA衣料 | https://www.ackermans.co.za/ | 公式EC表示価格（ZAR）：Foldable Raincoat R129.95（学校向けタグ）、Fleece Top R199.95、Puffer R499.95、Beanie R69.95 | 2026-10-17 | 同上 |
+| ZA衣料 | https://www.woolworths.co.za/ | サイト内検索APIの価格（ZAR）：Thermal Vest R249、Thermal Top 2 Pack R399、Beanie/Gloves R50、Socks 3 Pack R169、Helly Hansen Rain Jacket R3,499 | 2026-10-17 | 商品ページの価格表示とは未照合 |
+| ZA衣料（集約サイト） | https://www.tiendeo.co.za/stores/decathlon-r | Decathlon店舗名（Alberton、Boksburg、Randburg、Centurion、Roodepoort＝Gauteng） | 2026-10-17 | 二次情報。Cape Town店舗は未確認。公式サイトは403 |
+| ZA衣料 | https://www.capeunionmart.co.za/ ／ https://www.mrp.com/ ／ https://www.sportsmanswarehouse.co.za/ | 取得を試行 | 2026-10-17 | いずれも403。価格・店舗未確認 |
+| JP衣料 | https://www.uniqlo.com/jp/ja/ | 公式商品APIの価格（JPY税込）：ブロックテックパーカ¥6,990、ULD ¥7,990、パフテック¥6,990/7,990、フリース¥5,990、ヒートテック¥1,290 ほか | 2026-10-17 | 2026秋冬商品。春に入替の可能性 |
+| JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1128615 | ストームクルーザー Men's ¥22,880（アウトレット価格）、平均重量254g | 2026-10-17 | アウトレット在庫は変動 |
+| JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1101661 | スペリオダウン Men's ¥19,500 | 2026-10-17 | 重量は未特定 |
 | アフリカ周遊（入国） | https://etakenya.go.ke/eligibility | ケニアeTA：標準USD30、通過USD20、1年複数回USD300 | 2026-10-17 | 日本旅券の対象判定は国別画面（JS）で未確認。2027年改定未確認 |
 | アフリカ周遊（入国） | https://visa.immigration.go.tz/guidelines | タンザニア通常ビザUSD50（90日）、国リストにJapan（到着時/オンライン） | 2026-10-17 | 2027年改定未確認 |
 | アフリカ周遊（入国） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 南ア免除国表（2025-12-09発行）でJapan 90日・ビザ手数料なし | 2026-10-17 | 公式表。個別の滞在許可判断ではない |
@@ -61,10 +94,10 @@
 | アフリカ周遊（航空） | https://www.flightconnections.com/flights-from-nbo-to-tnr | NBO→TNR直行（Issue記載） | 2026-10-17 | 動的ページで本文取得不可（HTTP 202）。運航頻度は未確認 |
 
 ### 引き続き調査
-- 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。
+- 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
 - バギオ起点の現実的な土日交通便とショップの総額、学校門限（ダイビングは #3 で一部更新：バギオ→San Juan/ボリナオのバス便・運賃、ボリナオのショップは未確認）。
 - 2026-10-17のダイビング調査では WebSearch が使えず、外部検索エンジンもボット判定で大半が失敗した。各レポートの調査ログを参照。
-- スーパー実売の数量・値段、衣料品の店舗と商品価格、観光非居住者料金。
+- スーパー実売の数量・値段、観光非居住者料金。衣料品は #6 で公式EC価格を一部記録（Cape Town 店舗・冬季在庫・403 のチェーンは未確認）。
 - 外貨換算レート：**未採用**（検証可能な日付/レートが取得できたときに記録）。
 
 公開時には出典リンクを明示し、記事・体験・価格の更新日を残す。
