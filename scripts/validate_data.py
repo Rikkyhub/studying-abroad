@@ -15,9 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = {
     "expenses.csv": ["id", "category", "country", "phase", "item", "payee", "period_start", "period_end", "due_date", "status",
                      "currency", "low_local", "std_local", "high_local", "source", "collected_on", "recheck_by", "issue", "note"],
-    "tasks.csv": ["id", "phase", "task", "deadline_kind", "deadline_note", "lead_days", "status", "priority", "owner", "cost_note", "next_action", "source", "issue", "note"],
-    "timeline.csv": ["id", "period", "title", "status", "summary", "page_ids", "sort"],
-    "pages.csv": ["id", "group", "area", "title", "summary", "path", "issue", "status", "sort", "verified_at", "refs"],
+    "tasks.csv": ["id", "phase", "task", "deadline_kind", "deadline_note", "lead_days", "status", "priority", "owner", "cost_note", "next_action", "source", "issue", "note", "region"],
+    "timeline.csv": ["id", "period", "title", "status", "summary", "page_ids", "sort", "region"],
+    "pages.csv": ["id", "group", "area", "title", "summary", "path", "issue", "status", "sort", "verified_at", "refs", "region"],
     "places.csv": ["id", "area", "name", "kind", "maps_query", "note", "source"],
     "articles.csv": ["id", "series", "title", "status", "materials", "needs", "draft"],
     "funds.csv": ["id", "type", "name", "amount_jpy", "as_of", "note"],
@@ -138,6 +138,18 @@ def main():
     for n, row in loaded["expenses.csv"]:
         if row["currency"] and row["currency"] not in fx:
             ERRORS.append(f"expenses.csv:{n}: currency {row['currency']} has no rate in fx.csv")
+    regions = {"baguio", "africa", "capetown", "common"}
+    for name in ("tasks.csv", "timeline.csv", "pages.csv"):
+        for n, row in loaded[name]:
+            for rg in filter(None, (x.strip() for x in row["region"].split(";"))):
+                if rg not in regions:
+                    ERRORS.append(f"{name}:{n}: region {rg!r} は baguio/africa/capetown/common（; 区切り）のいずれか")
+            if name == "tasks.csv" and not row["region"]:
+                ERRORS.append(f"{name}:{n}: region が空です（地域別ページへの割り当て。共通なら common）")
+    phases = {"フィリピン", "アフリカ周遊", "2校目", "8月", "共通・日本"}
+    for n, row in loaded["expenses.csv"]:
+        if row["phase"] not in phases:
+            ERRORS.append(f"expenses.csv:{n}: phase {row['phase']!r} が地域に対応づけられていません（scripts/areas.py の PHASE_REGION）")
     page_ids = {row["id"] for _, row in loaded["pages.csv"]}
     for n, row in loaded["pages.csv"]:
         label = f"pages.csv:{n}"
