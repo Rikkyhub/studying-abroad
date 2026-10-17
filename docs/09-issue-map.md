@@ -18,9 +18,7 @@
 | [ケープタウン観光](../research/capetown-sightseeing.html) | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) | 調査中 | 2026-10-16 |
 | [実体験ログ](../blog/experience-log.html) | － | 整理済 | － |
 | [食費・自炊・スーパー](../research/food-and-living.html) | [#5](https://github.com/Rikkyhub/studying-abroad/issues/5) | 調査中 | 2026-10-16 |
-| [費用データ（CSV）](../data/expenses.html) | － | 整理済 | － |
 | [ケープタウン冬服](../research/winter-clothing.html) | [#6](https://github.com/Rikkyhub/studying-abroad/issues/6) | 調査中 | 2026-10-16 |
-| [タスクデータ（CSV）](../data/tasks.html) | － | 整理済 | － |
 | [治安・医療・安全](../research/safety-and-health.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 調査中 | 2026-10-16 |
 | [ダッシュボードの更新方法](../docs/04-dashboard.html) | － | 整理済 | － |
 | [すべての出典](../research/sources.html) | － | 整理済 | 2026-10-17 |
@@ -29,8 +27,12 @@
 | [HTML・Word への変換](../docs/07-export.html) | － | 整理済 | － |
 | [5月アフリカ周遊（案）](../research/africa-trip.html) | － | 調査中 | 2026-10-17 |
 | [AI・別PC向け引き継ぎ](../docs/08-handoff.html) | － | 整理済 | － |
+| [バギオ（フィリピン語学留学）](../areas/baguio.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
+| [アフリカ周遊（5月）](../areas/africa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
+| [ケープタウン（第2か国留学）](../areas/capetown.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
+| [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 
 ## タスクと Issue
 
@@ -77,7 +79,7 @@
 | T-S03 | 2 | 2校目の宿泊（ホームステイ等）を手配 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
 | T-T01 | 2 | 外務省 たびレジ登録（フィリピン・アフリカ各国） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
 | T-T02 | 1 | 5月の周遊ルート確定・宿・ツアー予約 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-T03 | 2 | 渡航中の経費は非公開で記録し、公開CSVの見積を更新 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-T03 | 2 | 渡航中の経費は非公開で記録し、公開用の見積を更新 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
 | T-R01 | 3 | 帰国後の住居・荷物の受け取り | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
 | T-R02 | 2 | 復職手続き・休職中の社会保険料等の精算（休職した場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
 | T-R03 | 3 | 海外療養費の申請（使った場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |

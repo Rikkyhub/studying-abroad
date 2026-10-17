@@ -1,6 +1,6 @@
 # 出発前・現地・帰国の準備チェック
 
-一般的な準備チェックリスト（[タスク表](../data/tasks.md)）。下の AUTO ブロックは `py scripts/build_all.py`（内部で build.py）が生成する。ここには判断の順序と、公的情報の調査結果を記載する。公開用の匿名モデルで、個別の雇用条件・契約・支払い・提出状況は書かない。
+一般的な準備チェックリスト（地域ごとの確認事項は [バギオ](../areas/baguio.md)・[アフリカ周遊](../areas/africa.md)・[ケープタウン](../areas/capetown.md)・[共通](../areas/common.md)）。下の AUTO ブロックは `py scripts/build_all.py`（内部で build.py）が生成する。ここには判断の順序と、公的情報の調査結果を記載する。公開用の匿名モデルで、個別の雇用条件・契約・支払い・提出状況は書かない。
 
 ## 先に確定すべきもの
 - [ ] 語学学校の入寮・修了・退寮日を学校の最新案内で確認
@@ -106,7 +106,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | T-T01 | ⬜ | 外務省 たびレジ登録（フィリピン・アフリカ各国） | 出発7日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 無料 | 出発前に登録 | [出典](https://www.ezairyu.mofa.go.jp/tabireg/index.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-T02 | ⬜ | 5月の周遊ルート確定・宿・ツアー予約 | 周遊開始60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | research/africa-trip.md 参照 | ルート案から選ぶ | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
-| T-T03 | ⬜ | 渡航中の経費は非公開で記録し、公開CSVの見積を更新 | 渡航中は随時（推奨目安） | 推奨目安 | 未着手 | 本人 | — | 個人の支払記録は公開repoに書かない | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-T03 | ⬜ | 渡航中の経費は非公開で記録し、公開用の見積を更新 | 渡航中は随時（推奨目安） | 推奨目安 | 未着手 | 本人 | — | 個人の支払記録は公開repoに書かない | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 
 ### 帰国・復職
 
