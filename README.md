@@ -117,3 +117,7 @@ PINESのコース予定：Power ESL5（4週）→ Intensive ESL（8週）。
 | `scripts/` | `build_all.py`（入口）・`build.py`（集計）・`build_html.py`（HTML）・検証・公開データ検査・リンク確認 |
 
 現時点の研究資料は完成版ではない。公式で確認できた情報と未確認の候補を区別し、各Issueで継続調査する。
+
+## AI・別PCで作業する場合
+
+[AGENTS.md](AGENTS.md)（入口・規則）→ [docs/08-handoff.md](docs/08-handoff.md)（引き継ぎ手順書）。専用skillsは `.claude/skills/`。
