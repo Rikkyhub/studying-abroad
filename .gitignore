@@ -9,3 +9,7 @@ secrets/
 *.pem
 __pycache__/
 .DS_Store
+
+# Agent worktrees and local Claude state (skills in .claude/skills are tracked)
+.claude/worktrees/
+.claude/settings.local.json
