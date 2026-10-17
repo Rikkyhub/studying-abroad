@@ -42,7 +42,7 @@ def rewrite_href(href: str) -> str:
     if re.match(r"^[a-z]+:", href) or href.startswith("#"):
         return href
     path, sep, frag = href.partition("#")
-    if path.endswith(".md") and Path(path).name != "README.md":
+    if path.endswith(".md") and Path(path).name not in ("README.md", "AGENTS.md", "CLAUDE.md"):
         path = path[:-3] + ".html"
     return path + sep + frag
 
@@ -520,7 +520,7 @@ def budget_block(root: Path = ROOT) -> str:
     rows = []
     for r in funds:
         meaning, href, label = desc.get(r["id"], (r["note"], "docs/02-budget.html", "予算の計算ルール"))
-        if not (root / href).exists():
+        if not (root / href).with_suffix(".md").exists():
             href, label = "docs/02-budget.html", "予算の計算ルール"
         rows.append([esc(r["name"]), f'¥{int(Decimal(r["amount_jpy"])):,}', esc(meaning), f'<a href="{esc(href)}">{esc(label)}</a>'])
     out = table(["項目", "金額", "意味", "詳細"], rows, num=(1,))
