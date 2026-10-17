@@ -73,6 +73,55 @@
 | JP衣料 | https://www.uniqlo.com/jp/ja/ | 公式商品APIの価格（JPY税込）：ブロックテックパーカ¥6,990、ULD ¥7,990、パフテック¥6,990/7,990、フリース¥5,990、ヒートテック¥1,290 ほか | 2026-10-17 | 2026秋冬商品。春に入替の可能性 |
 | JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1128615 | ストームクルーザー Men's ¥22,880（アウトレット価格）、平均重量254g | 2026-10-17 | アウトレット在庫は変動 |
 | JP衣料 | https://webshop.montbell.jp/goods/disp.php?product_id=1101661 | スペリオダウン Men's ¥19,500 | 2026-10-17 | 重量は未特定 |
+| PH治安 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_013.html | 危険情報（2024-12-19）：ルソン島を含む大部分がレベル1、ミンダナオ一部がレベル3・2 | 2026-10-17 | WebFetchは403、curlで取得 |
+| PH治安 | https://www.anzen.mofa.go.jp/info/pcspotinfo_2025C019.html | マニラ首都圏の強盗連続発生（2025-05-09）、配車サービス推奨 | 2026-10-17 | バギオ固有の情報ではない |
+| PH治安 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html | 緊急番号911/143、大使館・邦人援護ホットライン | 2026-10-17 | — |
+| PH治安 | https://www.ezairyu.mofa.go.jp/opendata/country/0063.xml | 領事メール：首都圏の強盗・睡眠薬強盗、1〜2月の台風、地震 | 2026-10-17 | バギオ・ベンゲットの事案は0件 |
+| ZA治安 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_122.html | 危険情報（2025-04-28）：全土レベル1、3都市CBDがレベル2 | 2026-10-17 | ケープタウンはレベル2対象外 |
+| ZA治安 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html | 公共交通機関の利用回避、配車サービス・ATMの注意、緊急番号 | 2026-10-17 | 2024年統計 |
+| ZA治安 | https://www.ezairyu.mofa.go.jp/opendata/country/0027.xml | 領事メール：空港の偽配車、Castle付近の強盗、Boulders Beach駐車場のカード詐取 | 2026-10-17 | 2025〜2026年 |
+| ZA治安（英政府） | https://www.gov.uk/foreign-travel-advice/south-africa/safety-and-security | MyCiTiを比較的安全な手段に含める、登山は4人以上、海の安全・アザラシ、停電 | 2026-10-17 | 外務省とMyCiTiの評価が分かれる |
+| PH治安（英政府） | https://www.gov.uk/foreign-travel-advice/philippines/safety-and-security | 台風は主に6〜11月、ダイビング業者・再圧チャンバーの確認 | 2026-10-17 | — |
+| 健康 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines | 偽造狂犬病ワクチン、レプトスピラ、チクングニア | 2026-10-17 | 2026-09-18レビュー |
+| 健康 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/south-africa | アザラシの狂犬病、マラリア予防内服の推奨地域 | 2026-10-17 | 2026-08-25レビュー |
+| 健康 | https://www.forth.go.jp/destinations/country/philippines.html | 水・感染症・推奨ワクチン | 2026-10-17 | 2019-09-27更新 |
+| 健康 | https://www.forth.go.jp/destinations/country/s_africa.html | 水道水は飲用非推奨、マラリア地域 | 2026-10-17 | 2012-08-02更新で古い。観光局と食い違い |
+| 健康 | https://www.who.int/news-room/fact-sheets/detail/tuberculosis | フィリピンが新規結核の6.8% | 2026-10-17 | 2026-03-24 |
+| ZA海 | https://www.nsri.org.za/water-safety/all-about-rip-currents | 離岸流の情報、緊急087 094 9774 | 2026-10-17 | 冬季の月別統計なし |
+| ZA停電 | https://loadshedding.eskom.co.za/ | 確認日時点でload sheddingなし | 2026-10-17 | 2027年は未確認 |
+| 保険 | https://faq.sompo-japan.jp/off/faq_detail.html?id=50136 | ネット型off!は31日まで | 2026-10-17 | — |
+| 保険 | https://www.ms-ins.com/personal/travel/kairyo/ | ネット型は92日超申込不可 | 2026-10-17 | 長期契約は代理店で見積 |
+| 保険 | https://faq2.ms-ins.com/faq/show/1589?site_domain=default | スクーバは危険な運動に該当しない | 2026-10-17 | 長期契約・他社の約款は未確認 |
+| バギオ観光 | https://api-booking.baguio.visita.ph/api/parks（https://visita.baguio.gov.ph/park-tickets のデータ） | 市内16施設の入場料（Botanical 110、BenCab 200 等）・営業時間・座標 | 2026-10-17 | 2026年登録値。外国人/居住者区分・学割の表示なし |
+| バギオ観光 | https://tribune.net.ph/2026/02/18/residents-now-must-pay-for-baguio-botanical-garden | BLISTT住民向け無料措置（Ordinance No. 62 s.2025）が2026年1月末で終了 | 2026-10-17 | 報道。居住者向けで旅行者には非適用。金額記載なし |
+| バギオ気候 | https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/cad/CLIMATOLOGICAL%20NORMALS%20(1991-2020)/BAGUIO.pdf | 2〜5月の降水量・降雨日数・雷雨日数・気温 | 2026-10-17 | 1991–2020平年値。2027年予報ではない |
+| バギオ交通 | https://ifugao.gov.ph/getting-here/ | Ohayami Bus バギオ（Governor Pack Rd）21:00発 Banaue行き | 2026-10-17 | 運賃記載なし |
+| バギオ交通 | https://www.victoryliner.com/ | オンライン予約はFirst/Royal Classのみ、2026-10-17〜19に予約停止告知 | 2026-10-17 | 2027年の予約方法は再確認 |
+| バギオイベント | https://panagbenga.com/ | 「Launching Soon」表示、2027年日程未発表 | 2026-10-17 | 2026年日程を2027年に流用しない |
+| バギオ周辺（口コミ） | https://en.wikivoyage.org/wiki/Sagada | バギオ発バスPHP220・約6時間、登録料PHP100（2025年6月）、洞窟ツアーPHP800 | 2026-10-17 | 口コミ。公式未確認 |
+| ケープタウン観光 | https://cms.tablemountain.net/api（https://www.tablemountain.net/） | ケーブルカー大人往復 R475（オンライン）/R530（窓口）、学生R320、2026年運休7/27〜8/9、7日間有効・返金/日付変更 | 2026-10-17 | 一般料金の有効期間表記なし。2027年運休日未発表 |
+| ケープタウン観光 | http://web.archive.org/web/20261010190236/https://www.sanparks.org/parks/table-mountain/rates-entry-fees | 国際料金 Cape Point R515・Boulders R245・Newlands/Oudekraal R200、居住者料金の条件（Study/Work等のビザ貼付） | 2026-10-17 | 2025-11-01〜2026-10-31。現行ページ403のためアーカイブ |
+| ケープタウン観光 | https://www.sanbi.org/gardens/kirstenboch/visitor-information/information/ | Kirstenbosch アフリカ/SADC以外の大人R270、冬8:00–18:00 | 2026-10-17 | 2026–2027料金。居住者R110等は旅行者非適用 |
+| ケープタウン観光 | https://zeitzmocaa.museum/plan-your-visit/ | 大人R350（2026-09-01〜）、南ア/アフリカ国籍は窓口R199 | 2026-10-17 | — |
+| ケープタウン観光 | https://www.iziko.org.za/visit/ | International 大人R100（2026-04-01〜）、Local R60 | 2026-10-17 | — |
+| ケープタウン観光 | https://www.robben-island.org.za/ | Non South Africans 大人R600、Walking Tour R1,400、出航時刻 | 2026-10-17 | 年度表記なし。欠航規定未確認 |
+| ケープタウン観光 | https://www.aquarium.co.za/visit-us/plan-your-trip | 営業時間、大人R280（shop.aquarium.co.za） | 2026-10-17 | 年度表記なし |
+| ケープタウン観光 | https://theoldbiscuitmill.co.za/visitor-info/ | Neighbourgoods Market 土9–15時・日10–16時 | 2026-10-17 | — |
+| ケープタウン交通 | https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/ | 1日R130/3日R290/7日R420、カードR40 | 2026-10-17 | — |
+| ケープタウン観光 | https://winetram.co.za/ | Hop-on Hop-off R350、2026-11-01から値上げ | 2026-10-17 | 2027年料金未掲載 |
+| ケープタウン交通 | https://www.chapmanspeakdrive.co.za/tariff/standard.html | 普通車R68、取得時「CLOSED」表示 | 2026-10-17 | 当日確認が必要 |
+| ケープタウン観光 | https://aquilasafari.com/day-trip-safaris/ ／ https://aquilasafari.com/transport/ | 4x4終日From R2,895、送迎From R1,180 | 2026-10-17 | 送迎は2025-11〜2026-10有効 |
+| ケープタウン観光 | https://www.hermanus-whale-cruises.co.za/trip.php | 大人R1,500（rack rate）、出航時刻、天候次第 | 2026-10-17 | 年度表記なし、遭遇保証なし |
+| ケープタウン気候 | https://en.wikipedia.org/wiki/Cape_Town | 空港1991–2020平年値：6月92.3mm/10.1日、7月84.8mm/9.1日 | 2026-10-17 | 二次（出典SAWS/NOAA）。風統計未確認 |
+| PH食事（紹介会社） | https://www.hub1234.com/philippines/baguio/pines-main | PINESの平日3食込み・週末1食PHP179・土曜朝食無料・日曜朝食PHP100の掲載 | 2026-10-17 | 準公式。学校公式では未確認（要確認） |
+| PH食事 | https://pinesacademy.com/ | 学校公式サイト | 2026-10-17 | 403で取得不可。2024-03のアーカイブに食事規定なし |
+| PH外食 | https://www.foodpanda.ph/restaurant/r1dl/lechon-house-baguio | バギオのデリバリー価格 | 2026-10-17 | 403で取得不可（未確認） |
+| ZAスーパー | https://www.pnp.co.za/ （商品検索API、storeCode=WC21） | Pick n Payの食品表示価格 | 2026-10-17 | 店舗名未特定。配送料含まず |
+| ZAスーパー | https://www.checkers.co.za/sitemap.xml （商品ページのJSON-LD） | Checkersの食品表示価格・在庫表示 | 2026-10-17 | 配達エリア未指定のオンライン価格 |
+| ZAスーパー | https://www.shoprite.co.za/ （商品ページのJSON-LD） | Shopriteの食品表示価格 | 2026-10-17 | 同上 |
+| ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
+| ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
+| ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
 | アフリカ周遊（入国） | https://etakenya.go.ke/eligibility | ケニアeTA：標準USD30、通過USD20、1年複数回USD300 | 2026-10-17 | 日本旅券の対象判定は国別画面（JS）で未確認。2027年改定未確認 |
 | アフリカ周遊（入国） | https://visa.immigration.go.tz/guidelines | タンザニア通常ビザUSD50（90日）、国リストにJapan（到着時/オンライン） | 2026-10-17 | 2027年改定未確認 |
 | アフリカ周遊（入国） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 南ア免除国表（2025-12-09発行）でJapan 90日・ビザ手数料なし | 2026-10-17 | 公式表。個別の滞在許可判断ではない |
