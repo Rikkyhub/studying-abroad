@@ -40,6 +40,27 @@
 | ZAダイビング | https://www.diveschoolcapetown.co.za/terms-and-conditions/ | 全額前払い、48時間未満取消は没収、天候中止は返金/振替 | 2026-10-17 | — |
 | ZA健康 | https://www.nicd.ac.za/wp-content/uploads/2025/08/Rabies-and-seals-_-August-2025-final.pdf | Cape fur sealの狂犬病（2024年5月〜）、ダイバー等は曝露前接種を医療者と相談 | 2026-10-17 | 2025年8月更新 |
 | 経路推計 | https://router.project-osrm.org/ | 車の距離・時間（バギオ→San Juan 83km/1.9h、→Bolinao 175km/3.5h、→Olongapo 242km/3.7h、ケープタウン→Simon's Town 39km/0.7h） | 2026-10-17 | 推計。渋滞・公共交通は含まない |
+| バギオ観光 | https://api-booking.baguio.visita.ph/api/parks（https://visita.baguio.gov.ph/park-tickets のデータ） | 市内16施設の入場料（Botanical 110、BenCab 200 等）・営業時間・座標 | 2026-10-17 | 2026年登録値。外国人/居住者区分・学割の表示なし |
+| バギオ観光 | https://tribune.net.ph/2026/02/18/residents-now-must-pay-for-baguio-botanical-garden | BLISTT住民向け無料措置（Ordinance No. 62 s.2025）が2026年1月末で終了 | 2026-10-17 | 報道。居住者向けで旅行者には非適用。金額記載なし |
+| バギオ気候 | https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/cad/CLIMATOLOGICAL%20NORMALS%20(1991-2020)/BAGUIO.pdf | 2〜5月の降水量・降雨日数・雷雨日数・気温 | 2026-10-17 | 1991–2020平年値。2027年予報ではない |
+| バギオ交通 | https://ifugao.gov.ph/getting-here/ | Ohayami Bus バギオ（Governor Pack Rd）21:00発 Banaue行き | 2026-10-17 | 運賃記載なし |
+| バギオ交通 | https://www.victoryliner.com/ | オンライン予約はFirst/Royal Classのみ、2026-10-17〜19に予約停止告知 | 2026-10-17 | 2027年の予約方法は再確認 |
+| バギオイベント | https://panagbenga.com/ | 「Launching Soon」表示、2027年日程未発表 | 2026-10-17 | 2026年日程を2027年に流用しない |
+| バギオ周辺（口コミ） | https://en.wikivoyage.org/wiki/Sagada | バギオ発バスPHP220・約6時間、登録料PHP100（2025年6月）、洞窟ツアーPHP800 | 2026-10-17 | 口コミ。公式未確認 |
+| ケープタウン観光 | https://cms.tablemountain.net/api（https://www.tablemountain.net/） | ケーブルカー大人往復 R475（オンライン）/R530（窓口）、学生R320、2026年運休7/27〜8/9、7日間有効・返金/日付変更 | 2026-10-17 | 一般料金の有効期間表記なし。2027年運休日未発表 |
+| ケープタウン観光 | http://web.archive.org/web/20261010190236/https://www.sanparks.org/parks/table-mountain/rates-entry-fees | 国際料金 Cape Point R515・Boulders R245・Newlands/Oudekraal R200、居住者料金の条件（Study/Work等のビザ貼付） | 2026-10-17 | 2025-11-01〜2026-10-31。現行ページ403のためアーカイブ |
+| ケープタウン観光 | https://www.sanbi.org/gardens/kirstenboch/visitor-information/information/ | Kirstenbosch アフリカ/SADC以外の大人R270、冬8:00–18:00 | 2026-10-17 | 2026–2027料金。居住者R110等は旅行者非適用 |
+| ケープタウン観光 | https://zeitzmocaa.museum/plan-your-visit/ | 大人R350（2026-09-01〜）、南ア/アフリカ国籍は窓口R199 | 2026-10-17 | — |
+| ケープタウン観光 | https://www.iziko.org.za/visit/ | International 大人R100（2026-04-01〜）、Local R60 | 2026-10-17 | — |
+| ケープタウン観光 | https://www.robben-island.org.za/ | Non South Africans 大人R600、Walking Tour R1,400、出航時刻 | 2026-10-17 | 年度表記なし。欠航規定未確認 |
+| ケープタウン観光 | https://www.aquarium.co.za/visit-us/plan-your-trip | 営業時間、大人R280（shop.aquarium.co.za） | 2026-10-17 | 年度表記なし |
+| ケープタウン観光 | https://theoldbiscuitmill.co.za/visitor-info/ | Neighbourgoods Market 土9–15時・日10–16時 | 2026-10-17 | — |
+| ケープタウン交通 | https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/ | 1日R130/3日R290/7日R420、カードR40 | 2026-10-17 | — |
+| ケープタウン観光 | https://winetram.co.za/ | Hop-on Hop-off R350、2026-11-01から値上げ | 2026-10-17 | 2027年料金未掲載 |
+| ケープタウン交通 | https://www.chapmanspeakdrive.co.za/tariff/standard.html | 普通車R68、取得時「CLOSED」表示 | 2026-10-17 | 当日確認が必要 |
+| ケープタウン観光 | https://aquilasafari.com/day-trip-safaris/ ／ https://aquilasafari.com/transport/ | 4x4終日From R2,895、送迎From R1,180 | 2026-10-17 | 送迎は2025-11〜2026-10有効 |
+| ケープタウン観光 | https://www.hermanus-whale-cruises.co.za/trip.php | 大人R1,500（rack rate）、出航時刻、天候次第 | 2026-10-17 | 年度表記なし、遭遇保証なし |
+| ケープタウン気候 | https://en.wikipedia.org/wiki/Cape_Town | 空港1991–2020平年値：6月92.3mm/10.1日、7月84.8mm/9.1日 | 2026-10-17 | 二次（出典SAWS/NOAA）。風統計未確認 |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。
