@@ -1,6 +1,6 @@
 # pages.csv
 
-`data/pages.csv` を表にした閲覧用のページです（25行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
+`data/pages.csv` を表にした閲覧用のページです（27行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
 
 | id | group | area | title | summary | path | issue | status | sort | verified_at | refs |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -29,3 +29,5 @@
 | P23 | plan | 公開方針 | 公開データ方針 | 公開してよいデータと非公開で管理するデータ | docs/05-public-data-policy.html | https://github.com/Rikkyhub/studying-abroad/issues/16 | ready | 90 |  |  |
 | P24 | plan | 運用 | HTML・Word への変換 | Markdownを正本にHTML/Wordを作る方法 | docs/07-export.html |  | ready | 100 |  |  |
 | P25 | plan | 運用 | AI・別PC向け引き継ぎ | 別のAI・PCで作業を引き継ぐ手順 | docs/08-handoff.html |  | ready | 110 |  |  |
+| P26 | research | アフリカ | 南部アフリカ各国の日数・費用・体験の多様性 | 5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先） | research/southern-africa-countries.html | https://github.com/Rikkyhub/studying-abroad/issues/38 | researching | 140 | 2026-10-18 | https://biggameparks.org/rates;https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/;https://www.anac.gov.mz/en/parques/ponta-do-ouro/ |
+| P27 | research | アフリカ | ケニア・ナイロビ短期滞在モデル | ナイロビ3泊4日と半日サファリの匿名モデル試算 | research/kenya-nairobi-short-stay.html | https://github.com/Rikkyhub/studying-abroad/issues/42 | researching | 150 | 2026-10-18 | https://kws.go.ke/park/nairobi-national-park/;https://extern.api.etakenya.go.ke/eligibility;https://nairobipark.org/half-day-nairobi-national-park-tour/ |

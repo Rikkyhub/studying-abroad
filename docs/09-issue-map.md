@@ -31,6 +31,8 @@
 | [AI・別PC向け引き継ぎ](../docs/08-handoff.html) | － | 整理済 | － |
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
+| [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.html) | [#38](https://github.com/Rikkyhub/studying-abroad/issues/38) | 調査中 | 2026-10-18 |
+| [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.html) | [#42](https://github.com/Rikkyhub/studying-abroad/issues/42) | 調査中 | 2026-10-18 |
 
 ## タスクと Issue
 
