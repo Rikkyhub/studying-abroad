@@ -3,7 +3,7 @@
 このファイルは Claude Code / Codex / その他のAIエージェントが最初に読む入口。詳細な手順は [docs/08-handoff.md](docs/08-handoff.md)。
 
 ## このリポジトリは何か
-2027年2〜7月の海外留学（フィリピン・バギオ → アフリカ周遊 → ケープタウン等）の**準備・費用・調査**を管理する**公開リポジトリ**（Rikkyhub/studying-abroad）。調査資料(`research/`)、計画(`docs/`)、トラッカー(`data/*.csv`)、静的ダッシュボード(`index.html`)で構成。国の優劣を比較するサイトではない。
+2027年2〜7月の海外留学（フィリピン・バギオ → アフリカ周遊 → ケープタウン等）の**準備・費用・調査**を管理する**公開リポジトリ**（Rikkyhub/studying-abroad）。調査資料(`research/`)、計画(`docs/`)、地域別ページ(`areas/`)、静的トップページ(`index.html`)、生成用の内部データ(`data/*.csv`)で構成。国の優劣を比較するサイトではない。
 
 ## 最重要：公開リポジトリのプライバシー規則
 正本は [docs/05-public-data-policy.md](docs/05-public-data-policy.md)。要約：
@@ -20,13 +20,14 @@
 3. `docs/05-public-data-policy.md`
 4. 進行中の作業：Issue #1（全体）・#7（予算・基盤）・#16（プライバシー）と `gh pr list`
 5. 必要に応じて `docs/` と `research/`（`docs/08-handoff.md` に手順の詳細）
-6. `data/*.csv`（`tasks.csv`、`expenses.csv`）
+6. 地域別ページ `areas/*.md`（読者向け）。元データは内部入力 `data/*.csv`（保守者のみ）
 
 ## 正本と生成物
 | 種別 | 扱い |
 |---|---|
-| `research/*.md`, `docs/*.md`, `data/*.csv` | **正本**（ここを編集する） |
-| `index.html` ほかHTML、生成された表示用ファイル（`data/*.md` など） | 閲覧用。生成スクリプトがある場合は手で直さず再生成する |
+| `areas/*.md`, `research/*.md`, `docs/*.md` | **正本**（ここを編集する。読者が見るのはこれらと生成HTML） |
+| `data/*.csv` | 生成スクリプトの**内部入力**（読者向けにはリンクしない。費用・タスク・日程・資料・場所・為替。行を足すときは `region` 列も付ける） |
+| `index.html` ほかHTML、Markdown内の AUTO ブロック | 閲覧用。生成スクリプトがある場合は手で直さず再生成する |
 
 ## 検証コマンド
 Windows は `py`、Linux/macOS は `python3`（CIは Python 3.12・追加依存なし）。

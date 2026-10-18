@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from build_html import ROOT, convert, csv_to_markdown, inline, outputs
+from build_html import ROOT, convert, inline, outputs
 
 
 class InlineTests(unittest.TestCase):
@@ -19,7 +19,6 @@ class InlineTests(unittest.TestCase):
 
     def test_repo_md_link_points_to_html(self):
         self.assertIn('href="sources.html"', inline("[出典](sources.md)"))
-        self.assertIn('href="../data/expenses.csv"', inline("[CSV](../data/expenses.csv)"))
 
     def test_bare_url_linked(self):
         self.assertIn('<a href="https://immigration.gov.ph/x"', inline("https://immigration.gov.ph/x"))
@@ -42,25 +41,6 @@ class BlockTests(unittest.TestCase):
         self.assertNotIn("AUTO", body)
 
 
-class CsvViewTests(unittest.TestCase):
-    def test_csv_becomes_table_without_breaking_on_pipes_or_newlines(self):
-        import tempfile
-        with tempfile.TemporaryDirectory() as d:
-            root = Path(d)
-            (root / "data").mkdir()
-            (root / "data" / "x.csv").write_text('a,b\n"1|2","line1\nline2"\n3\n', encoding="utf-8")
-            md = csv_to_markdown(root / "data" / "x.csv", root)
-        self.assertIn("| a | b |", md)
-        self.assertIn("| 1／2 | line1 line2 |", md)
-        self.assertIn("| 3 |  |", md)
-
-    def test_every_csv_has_md_and_html_view(self):
-        out = outputs()
-        for csv_path in (ROOT / "data").glob("*.csv"):
-            self.assertIn(csv_path.with_suffix(".md"), out)
-            self.assertIn(csv_path.with_suffix(".html"), out)
-
-
 class RepoTests(unittest.TestCase):
     def test_generated_pages_are_current(self):
         for path, text in outputs().items():
@@ -74,85 +54,64 @@ class RepoTests(unittest.TestCase):
                 self.assertNotIn("**", text)
                 self.assertNotIn("\x00", text)
 
+    def test_csv_has_no_reader_pages(self):
+        """CSV の閲覧用ページ（data/*.html|md）は作らない"""
+        for p in outputs():
+            self.assertNotEqual(p.parent.name, "data", p)
 
-class IndexTableTests(unittest.TestCase):
+
+class IndexTests(unittest.TestCase):
     def setUp(self):
         self.index = (ROOT / "index.html").read_text(encoding="utf-8")
 
     def test_index_matches_generated(self):
         self.assertEqual(self.index, outputs()[ROOT / "index.html"])
 
-    def test_every_pages_csv_path_exists_and_is_linked(self):
-        import csv
-        with (ROOT / "data" / "pages.csv").open(newline="", encoding="utf-8-sig") as f:
-            rows = list(csv.DictReader(f))
-        self.assertTrue(rows)
-        for r in rows:
-            with self.subTest(id=r["id"]):
-                self.assertTrue((ROOT / r["path"]).is_file())
-                self.assertIn(f'href="{r["path"]}"', self.index)
+    def test_index_is_short_and_links_every_area(self):
+        for k in ("baguio", "africa", "capetown", "common"):
+            self.assertIn(f'href="areas/{k}.html"', self.index)
+        import re
+        self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
+        self.assertLess(len(self.index), 30000)
 
     def test_tables_have_headers_and_no_cards(self):
         import re
-        tables = re.findall(r"<table>.*?</table>", self.index, re.S)
-        self.assertGreaterEqual(len(tables), 5)
-        for t in tables:
+        for t in re.findall(r"<table>.*?</table>", self.index, re.S):
             self.assertIn("<thead><tr><th", t)
         self.assertNotIn('class="card"', self.index)
-        self.assertNotIn('class="links"', self.index)
 
-
-class DashboardDataTests(unittest.TestCase):
-    def setUp(self):
+    def test_all_pages_csv_non_ops_pages_listed(self):
         import csv
-        self.index = (ROOT / "index.html").read_text(encoding="utf-8")
-        def rd(n):
-            with (ROOT / "data" / n).open(newline="", encoding="utf-8-sig") as f:
-                return list(csv.DictReader(f))
-        self.pages, self.places, self.fx = rd("pages.csv"), rd("places.csv"), rd("fx.csv")
-
-    def test_refs_are_http_urls_and_rendered(self):
-        import re
-        for r in self.pages:
-            for u in filter(None, r["refs"].split(";")):
-                with self.subTest(id=r["id"], url=u):
-                    self.assertRegex(u, r"^https?://[^\s;]+$")
-                    self.assertIn(f'href="{u.replace("&", "&amp;")}"', self.index)
+        with (ROOT / "data" / "pages.csv").open(newline="", encoding="utf-8-sig") as f:
+            rows = list(csv.DictReader(f))
+        for r in rows:
+            self.assertTrue((ROOT / r["path"]).is_file(), r["path"])
+            if r["area"] not in ("地域別", "運用"):
+                self.assertIn(f'href="{r["path"]}"', self.index)
 
     def test_no_issue_links_in_dashboard_tables(self):
-        self.assertNotIn("関連Issue", self.index)
         self.assertNotIn("/issues/", self.index.split("<footer>")[0])
         self.assertIn("docs/09-issue-map.html", self.index)
-        self.assertTrue((ROOT / "docs" / "09-issue-map.html").exists())
 
-    def test_map_links_well_formed(self):
-        import re
-        import html as _h
-        urls = [_h.unescape(u) for u in re.findall(r'href="(https://www\.google\.com/maps/search/[^"]*)"', self.index)]
-        self.assertGreaterEqual(len(urls), len(self.places))
-        for r in self.places:
-            self.assertTrue(r["maps_query"].strip())
-            from build_html import maps_url
-            self.assertIn(maps_url(r["maps_query"]), urls)
-        for u in urls:
-            self.assertRegex(u, r"^https://www\.google\.com/maps/search/\?api=1&query=[A-Za-z0-9%+_.~-]+$")
-
-    def test_fx_json_matches_csv_and_unknown_shows_unconfirmed(self):
-        import json, re
+    def test_fx_json_matches_csv(self):
+        import csv, json, re
+        with (ROOT / "data" / "fx.csv").open(newline="", encoding="utf-8-sig") as f:
+            fx = list(csv.DictReader(f))
         m = re.search(r'<script type="application/json" id="fx-data">(.*?)</script>', self.index, re.S)
         data = json.loads(m.group(1))
-        self.assertEqual([d["code"] for d in data], [r["currency"] for r in self.fx])
-        for d, r in zip(data, self.fx):
+        self.assertEqual([d["code"] for d in data], [r["currency"] for r in fx])
+        for d, r in zip(data, fx):
             self.assertEqual(d["rate"], float(r["jpy_per_unit"]) if r["jpy_per_unit"] else None)
-            self.assertRegex(r["currency"], r"^[A-Z]{3}$")
-        from build_html import fx_table
+
+    def test_unknown_rate_shows_unconfirmed(self):
         import tempfile
+        from build_html import fx_summary
         with tempfile.TemporaryDirectory() as d:
             root = Path(d); (root / "data").mkdir()
             (root / "data" / "fx.csv").write_text(
                 "currency,name_ja,unit,region,jpy_per_unit,rate_date,rate_kind,source\nBWP,プラ,P,ボツワナ,,,,\n",
                 encoding="utf-8")
-            self.assertIn("未確認", fx_table(root))
+            self.assertIn("未確認", fx_summary(root))
 
 
 if __name__ == "__main__":

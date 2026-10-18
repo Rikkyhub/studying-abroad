@@ -8,8 +8,8 @@
 
 | コマンド | 内容 |
 |---|---|
-| `py scripts/export.py html` | 全 Markdown と `data/*.csv` から HTML を再生成 |
-| `py scripts/export.py docx` | `research/`・`docs/`・`blog/` の全 Markdown を `exports/` に Word 出力 |
+| `py scripts/export.py html` | 全 Markdown（地域別ページ含む）と内部の集計用データから HTML を再生成 |
+| `py scripts/export.py docx` | `areas/`・`research/`・`docs/`・`blog/` の全 Markdown を `exports/` に Word 出力 |
 | `py scripts/export.py docx docs/02-budget.md` | 指定した Markdown だけを Word 出力 |
 | `py scripts/export.py all` | HTML と Word の両方 |
 | `py scripts/export.py docx --out C:\temp\out` | 出力先を変更（既定は `exports/`） |
