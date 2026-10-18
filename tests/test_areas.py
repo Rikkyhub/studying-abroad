@@ -135,7 +135,7 @@ class LayoutTemplateTests(unittest.TestCase):
         self.assertIn("tabular-nums", css)
         self.assertIn("72ch", css)
         self.assertRegex(css, r"th\{position:sticky")
-        for bad in ("gradient", "box-shadow:0"):
+        for bad in ("gradient", "border-left", "border-inline-start"):
             self.assertNotIn(bad, css)
 
     def test_generated_pages_share_template(self):
