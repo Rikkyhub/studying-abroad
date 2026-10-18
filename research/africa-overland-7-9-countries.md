@@ -26,6 +26,34 @@
 
 ---
 
+## 1A. Issue #44 改訂版（2026-10-18）への対応：固定アンカーと日数の突き合わせ
+
+Issue #44 は初版後に改訂され、季節と順序の根拠は Issue [#46](https://github.com/Rikkyhub/studying-abroad/issues/46)（決定ログ）に分離された。改訂版は従来案より優先する暫定設計。**改訂版の日付表記は匿名モデルであり、本書では相対日（Day N、Day 1 = マニラ出発日）に置き換えている。** 本書の第7章（独自推計）は残し、改訂版の A／B／C 案を[7.5](#75-改訂版issueの案-案-案相対日モデル)に別表で併記する。
+
+### 1A.1 先に固定する3つのアンカー
+
+| アンカー | 内容 | 状態 |
+|---|---|---|
+| 1. 出発端 | マニラ（MNL）発→ナイロビ（NBO）方面。Day 1〜2 に出発・到着。購入できる通し航空券、乗継地の入国条件、荷物は未検証 | **未確認**（航空券の実日付照合は未達） |
+| 2. 南部の固定体験 | Victoria Falls（Zambia／Zimbabwe 側）2〜3日＋Botswana Chobe で陸上ゲームドライブ1回とボート1回（2〜3日）。同種のゲームドライブを他国で繰り返さない | 候補（運行・宿は**未確認**） |
+| 3. 終点 | CPT 着を Day 28〜32 付近（5月末〜6月初旬相当）に置き、数日の生活準備の余裕を残す。BBK／MUB／VFA／JNB または Mozambique の MPM からの最終空路を、先に実日付で確認する。**MPM→CPT は運航案内で掲載元により週2〜4便と差がある**ため、2027年の曜日・便数は確定扱いしない | MPM→CPT の頻度＝**未確認**（掲載元で相違）。最終便＝**未確認** |
+
+### 1A.2 日数見積りの突き合わせ（本書の独自推計 vs 改訂版 Issue）
+
+両者を並べる。どちらかに寄せて採用はしない。
+
+| 案 | 本書の推計（最小／標準／最大、第7.1） | 改訂版 Issue の推定 | 差の主な理由 |
+|---|---|---|---|
+| A7 | 20／29／37 | 25〜31 | 本書は MNL→NBO の移動を2日と置き、Nairobi→Dar es Salaam（バス14h、掲載）経由を前提にする。Issue は Nairobi→Arusha→Tanzania 南下の経路で、Tanzania 内5日。予備日は本書3日（標準）、Issue はCPT前の数日を別枠で確保 |
+| B9 | 25／36／46 | 29〜36 | 本書は Mwanza→Mbeya を中間泊込みで2日、Rusumo 区間を2日（標準）と置く。Issue はMwanza→Mbeya を1.5〜2日、全体を A+5〜7日 とする。標準値（36）は Issue の上限と一致 |
+| A7＋Moz（8か国） | 27／36／46 | 30〜37 | 本書は JNB→Kosi Bay→Ponta→Maputo→CPT の復路と潜水後の待機を含め +7日（標準）。Issue は A の観光を間引いて +4〜6日 |
+| B9＋Moz（10か国） | 32／43／55 | 34〜42 | 同上。Issue は「原則、1か月に収めるのは非推奨」としており、本書の判定（最小でも32で収まらない）と方向は一致 |
+
+- 帯の差は、観光日の最小値の置き方（本書は最小で大きく圧縮、Issue は圧縮前提を明示しない）と、予備日の数え方の違い。**どちらも実運行で接続検証した日程ではない。**
+- Issue の A 案見出しは「約29〜31日」、同じ Issue の推定表は 25〜31日で、Issue 内でも幅がある。
+
+---
+
 ## 2. 前提
 
 | 項目 | 前提 |
@@ -309,6 +337,52 @@ Day 1〜24 は A7（7.2）と同じ。25日目以降：
 | 32 | Maputo→JNB→CPT | 空路 | **未確認** | South Africa 入国 | CPT | — | 候補 |
 | 33〜36 | 予備日 | — | — | — | — | — | **Day 30 を6日超過** |
 
+### 7.5 改訂版 Issue の案（A案・B案・C案、相対日モデル）
+
+Issue #44 改訂版の A／B／C 案を、カレンダー日付ではなく **Day N（Day 1 = マニラ出発日）** に置き換えて再掲する。換算は「Issue 表の開始行 = Day 1」とした匿名モデルで、実在の旅程ではない。上の7.2〜7.4（本書の推計）とは別の見積りで、**運行済み・予約可能な完成日程ではない**。週1〜2便しかない交通は1便の欠航で全体が変わる。
+
+#### A案（現在の基準・7か国、Mozambique なし。Issue 見出し「約29〜31日」）
+
+Kenya → Tanzania（Arusha 経由で南下）→ Malawi → Zambia → Zimbabwe → Botswana → South Africa（CPT 着）。
+
+| Day | 地域 | 目的・移動 | 検証 |
+|---|---|---|---|
+| 1〜3 | MNL→Nairobi（Kenya） | 到着1日＋市内観光半日〜1日。観光を増やしすぎない | 最初の入国とワクチン書類 |
+| 4〜6 | Nairobi→Arusha（Tanzania） | 国境バス、街・地域文化、次の南下へ | Nairobi→Arusha の国境運行 |
+| 7〜11 | Tanzania 国内南下 | 観光せず通過する都市はバス中心。Arusha→Dar es Salaam／Dodoma→Mbeya 等を比較 | この5日間に観光できる時間は限定。Zanzibar 追加は往復移動と5月の長雨季で別計算 |
+| 12〜15 | Malawi | Songwe／Kasumulu 国境、Lake Malawi 約2日、Lilongwe 方面へ | 入国書類、宿、Mbeya からのバス接続 |
+| 16〜19 | Zambia | Mchinji／Chipata、Lusaka は通過、Livingstone | Malawi→Zambia の接続 |
+| 20〜22 | Zimbabwe／Victoria Falls | 滝・橋など独自体験。再入国の要否確認 | KAZA USD50 と通常 Zimbabwe USD30 の比較（第4.2） |
+| 23〜26 | Botswana Kasane／Chobe | ゲームドライブ1回＋ボート1回、余れば休息 | Kasane の交通と一人参加ツアー |
+| 27〜30 | CPT への移動＋予備 | Kasane／VFA→CPT 等を検証。Day 32 付近までを最終到着許容帯 | 実日付・荷物・空港送迎 |
+
+#### B案（9か国、Uganda＋Rwanda。A に最低約5〜7日を追加）
+
+- Kenya → Uganda（Kampala／Jinja）→ Rwanda（Kigali）→ Tanzania（Rusumo→Mwanza→Mbeya）の北西寄りを検証。Mwanza→Mbeya の長距離バスは約19〜21hの掲載例があり、出発日／日中到着／休息を含め **1.5〜2日程度の移動コスト**を見込む（第5章のとおり、本書は Premierline の特定便を再現できていない＝**未確認**）。
+- 追加日数を浮かすため、Kenya 観光1日、Tanzania の街観光2日、Malawi 湖観光1日、Botswana 休息1日などを削る案を比較する。9か国にするためだけの連日の夜行バスは採用しない。
+- Rwanda→Burundi は 2026年10月時点の案内で国境閉鎖とされるため、Burundi は追加しない（**本書では国境閉鎖を再取得していない＝Issue 記載のまま**）。
+- EATV USD100 は Kenya 初入国で発給不可／不明（第4.1）。USD100 を前提に旅費を確定しない。
+- 判定：9か国を1か月で確実に楽しめるとはまだいえない。実運行確認後の挑戦案。
+
+#### C案（8か国、Mozambique 潜水を優先。A ＋約4〜6日、A の観光を間引いて調整）
+
+- Botswana から South Africa を移動拠点として Mozambique 南部の Maputo／Ponta do Ouro へ。Mozambique 北部・危険な迂回路は採用しない。
+- Ponta do Ouro で2〜4ダイブ、街・食文化の時間を確保（料金・アクセスは第6章。Gozo Azul 2026年公開料金：リーフ USD50／本＋フルギア USD15、保護区税 USD10。2本で USD140）。
+- 最終ダイブから搭乗まで 24時間以上を置く（モデル）。Maputo→CPT が実日付で成立するなら候補、不成立なら JNB 等経由と費用を比較。
+- Malawi 湖、Tanzania の自由時間、Kenya 市内観光を圧縮して確保する。Mozambique 潜水のためにサファリを増やさない。
+- 判定：A7＋Moz で自動的に30日完走とはいえない。海況による欠航・最終便を含めると Day 32 を超えうる。CPT 到着の硬い制約を優先する。
+
+### 7.6 Zanzibar と TAZARA の扱い
+
+**Zanzibar**：Tanzania 国内（同じ国）なので国数は増えない。5月は長雨季で、Tanzania 観光案内は長雨季を3〜5月（平均で開始 3/25 頃・終了 5/21 頃）と記載する（**確認済み**、[visittanzania.org](https://www.visittanzania.org/tanzania-fast-facts/climate/)、2026-10-19）。ただし同ページは Zanzibar 固有の雨季には触れていない。島への往復と2〜4泊で A／C の南下時間が減るため、**必須にしない**。Dar es Salaam 経由が決まった場合のみ2泊程度を検討する（**任意**）。
+
+**TAZARA（Malawi を省略する場合の代替）**：TAZARA 公式ページ（[node/505](https://www.tazarasite.com/node/505)、2026-10-19取得）に次の記載を確認した（**確認済み**）。
+- 越境旅客列車（Mukuba）を **2026年2月10日**に再開（New Kapiri Mposhi 発初便）。2024年6月から技術的理由で運休していた。
+- 運行は週2便（従来の4便から減便）。New Kapiri Mposhi 発は毎週火曜 14:00、Dar es Salaam 発は毎週金曜 15:50。
+- 予約は TAZARA の駅または公式の問い合わせ窓口。
+
+未検証：実所要、遅延、車内の安全、2027年5月時点の運行継続、予約の可否＝**未確認**。必須経路にしない。Dar es Salaam 発が金曜のみで週1本のため、1便欠航で計画が崩れる（Issue の「曜日指定・週2便相当」は、運行日が往復で別曜日のため片方向では週1便である点を補足する）。
+
 ---
 
 ## 8. 費用モデル
@@ -354,6 +428,30 @@ Day 1〜24 は A7（7.2）と同じ。25日目以降：
 
 ## 10. 未確認・後続タスクと調査ログ
 
+### 10.0 改訂版 Issue の P0／P1 高リスク項目：受入チェックリスト
+
+達成＝この調査版で根拠つきに完了、未達＝実日付・外部への確認が必要で未完。**未達は後続タスクとして残す**（外部への問い合わせ送信はユーザー承認なしに行わない）。
+
+| 優先 | 項目 | 状態 | 現在の到達点 |
+|---|---|---|---|
+| P0 | South Africa の入国と留学資格 | **未達（要確認）** | 日本旅券の90日免除は DHA の免除国表で確認済み（第4.4）。ただし**免除での観光入国は、約8週間の語学コースを受講する滞在資格と同一ではない**。入学開始前の入国可否、渡航前の申請の要否、出入国回数は、学校と駐日南アフリカ大使館（[DIRCO](https://dirco.gov.za/japan/immigration-visa-info/)）に確認が必要で、本書では**未確認**。学校からの正式案内を最優先する |
+| P0 | 黄熱証明書・感染症対策 | **一部達成**（規則文書は確認、適用は未確認） | 下の10.0.1。当該PDFは**2015年付の1ページの画像**で、現行の適用は渡航外来での個別確認が必要 |
+| P0 | MNL出発・CPT到着の実運航照合 | **未達** | 航空券の日付指定検索は未実施（第8章のとおり運賃は参考値のみ）。先に終端（→CPT）を固定してから内陸のバスを埋める |
+| P1 | 国境移動の実時刻 | **未達** | Nairobi–Kampala、Lusaka–Livingstone 等の一部の掲載は確認（第5章）。Tanzania 南下、Songwe、Malawi→Zambia、Livingstone↔Vic Falls↔Kasane は**未確認** |
+| P1 | 見どころの取捨 | **達成（モデル）** | 優先は Malawi 湖、Vic Falls、Chobe、（選択）Ponta 潜水。Zanzibar は後順位。サファリは Chobe に集約（第2章） |
+| P1 | A7／B9／C8 の総額（項目別・二重計上なし） | **未達** | 式と分類のみ。MNL→NBO、バス運賃の円換算、宿・食、保険が未確認で総額は未算出（第8章） |
+| P1 | 大移動が2日に1度以上続く場合は順序変更／国数削減 | **達成（方針）** | 国数のために観光を犠牲にしない判断基準を第1A・第7.5に明記 |
+
+#### 10.0.1 黄熱証明書：南アフリカ保健省文書の読み取り（2026-10-19取得）
+
+出典：[南アフリカ保健省 Revised Yellow Fever Vaccination Requirements in South Africa（PDF）](https://www.health.gov.za/wp-content/uploads/2026/09/Revised-Yellow-Fever-Vaccination-Requirements-in-South-Africa.pdf)。テキスト層のない画像PDFのため、画像として読み取った。
+
+- **文書の日付は「2015年10月30日」**（URLの`2026/09`はアップロード月と読める。文書自体は2015年付）。ファイルは1ページのみで、本文に「Page 1 of 2」とあり、**2ページ目（入国拒否に続く措置の記載）は取得したファイルに含まれず読めていない**。
+- 証明書が必要な人：国籍を問わず**1歳超**で、(1) 黄熱の感染リスク国から渡航する者、または (2) **感染リスク国の空港で12時間を超えて乗継（transit）した者**。リスク国から来て証明書を提示できない場合の措置として「入国拒否；または…」と記載（続きは2ページ目＝**未読**）。
+- 例外（証明書が**不要**とされる国）：Zambia、Tanzania、Eritrea、Somalia、Sao Tome and Principe、Rwanda。WHOの「黄熱ウイルスへの曝露可能性が低い国」の一覧に含まれたため、とされる（WHO執行理事会第136回会合の見直しに基づき即時発効）。
+- 読み取れなかった／書かれていないこと：Kenya、Uganda、Malawi、Zimbabwe、Botswana、Mozambique が「リスク国」に該当するかはこの文書に明記がない（**未確認**）。2015年付の例外一覧が現在も有効かも**未確認**。Uganda は自国の入国で黄熱証明を不要にした（第3.1）が、それは南アフリカ入国の要件とは別。
+- 行動：Kenya 起点で南下する本ルートは、Kenya／Uganda 通過後の南アフリカ入国で証明書を求められうるため、**接種（国際証明書）を前提に渡航外来へ確認**する。航空の乗継が12時間を超えるルートは避けるか、要否を事前確認する。
+
 ### 10.1 Issue #44 受入条件の達成状況
 
 | 受入条件 | 状態 | 備考 |
@@ -382,7 +480,27 @@ Day 1〜24 は A7（7.2）と同じ。25日目以降：
 | KAZA | USD50 | **一致**。窓口料金表は手数料込み USD50.50 |
 | Kenya EATV | 大使館 TEMPORARILY UNAVAILABLE／政府 COMING SOON | **一致** |
 | Rwanda 単独 USD50 | USD50 | 公式料金ページを取得できず**未確認** |
+| TAZARA | 2026-02-10 再開、Dar es Salaam↔New Kapiri Mposhi、週2便 | **一致**（公式 node/505、2026-10-19）。ただし運行日は New Kapiri 発が火曜・Dar es Salaam 発が金曜で、片方向は週1便。Issue の「曜日指定」に当たる |
+| 南アフリカ保健省の黄熱文書 | 12h超の空港乗継で証明書。例外国に Tanzania／Zambia／Rwanda 等 | 例外国と12h条件は**一致**。ただし文書は**2015年10月30日付**の画像PDF（URLは2026/09）で、Issue が現行規則として引く点は**要確認**。Kenya・Uganda・Malawi 等の扱いは文書に記載なし |
+| Mauritius 強風 | 7・8月の強風リスク | 気象局の2026年見通しに一致（風）。ダイブ催行への影響は記載なし |
+| Mwanza→Mbeya | 約19〜21h（改訂版） | 初版の約19hに21hが加わったが、本書は掲載を再現できず（**未確認**） |
 | 新規（Issue に無い） | — | Uganda の黄熱病証明が2026-10-02付で不要に。Kenya・Tanzania は政府提供の旅行保険が必須（FCDO）。FCDOはKenya・Uganda・Rwanda・Tanzania にエボラ関連の入国時スクリーニングを記載 |
+
+### 10.2A 季節と順序の根拠（Issue #46）と公式ページでの照合
+
+Issue #46 は、2027年の順序を「5月に大陸縦断 → 6〜7月にケープタウンで語学学習 → 7月末〜8月前半に Madagascar＋Mauritius」と決めた理由を記録した決定ログである。要点は、Madagascar と Mauritius を5月に入れると縦断が分断され国際線・移動日が増えること、Victoria Falls は5月が高水量であること、Kenya／Tanzania／Zanzibar は5月が長雨季終盤で必ずしも好期でないことの妥協点で、「5月が最高の季節だから」ではない。本書は #46 の引用事実のうち、公式ページから取れたものだけを確認済みとし、残りは未確認として扱う（2026-10-19取得）。
+
+| #46 の主張 | 公式／参照ページでの確認 | 状態 |
+|---|---|---|
+| Tanzania：長雨季3〜5月、終了平均 5/21 頃 | [visittanzania.org](https://www.visittanzania.org/tanzania-fast-facts/climate/)：北部・東部の長雨季は3〜5月、平均で開始 3/25 頃、終了 5/21 頃 | **確認済み**（Zanzibar 固有の雨季は同ページに記載なし） |
+| Victoria Falls：5月は高水量、8月は減水・写真向き、Devil's Pool は5月に期待しない | [victoriafalls.co.zm](https://victoriafalls.co.zm/best-time-to-visit-victoria-falls/)：5月 High Water、8月 Medium／Falling。飛沫は3〜5月がピークで眺望を遮りうる。Devil's Pool は低水位期（おおむね9〜12月）。民間サイトで公的機関ではない | **確認済み**（民間サイト）。公的な水位データは未確認 |
+| Mauritius：5月は移行期、6〜9月が冬 | [Mauritius Meteorological Services](https://metservice.intnet.mu/climate-services/climate-of-mauritius.php)：「relatively cool dry winter from June to September」、10月と5月は移行月、7・8月が最も涼しい | **確認済み** |
+| Mauritius：7・8月は強風リスク（ダイブ／船の催行条件） | [同機関の2026年冬の見通し（2026-04-29付）](https://metservice.intnet.mu/news-details-5.php)：冬は持続的な貿易風（東南東、約20〜30km/h）、7〜8月は約40km/h の風、露出域で突風90km/h超の可能性。**ダイビング催行への影響は同ページに記載なし** | **確認済み**（風）／催行への影響は**未確認**。2026年の見通しで2027年のものではない |
+| Botswana：5〜8月が乾季 | [Botswana Tourism](https://www.botswanatourism.co.bw/climate) は取得時に HTTP 500 | **未確認** |
+| Zanzibar：6〜10月が乾季の好適期 | [Zanzibar Commission for Tourism](https://zanzibartourism.go.tz/) は接続拒否（ECONNREFUSED） | **未確認** |
+| Madagascar：乾季、Sainte-Marie の7〜9月ザトウクジラ | 民間観光サイト2件。今回は未取得 | **未確認** |
+
+**暫定の整理**：5月縦断の時期は「Victoria Falls の水量が多い」「Botswana が乾季入り」（後者は未確認）と「Kenya／Tanzania の長雨季終盤」の妥協である。Madagascar（乾季・クジラ）と Mauritius（8月は冬で風が強まりうる）は #46 が別期間に置いた。これらの季節の主張のうち、未確認のものを事実として他ページへ転記しない。
 
 ### 10.3 後続タスク
 
@@ -399,4 +517,5 @@ Day 1〜24 は A7（7.2）と同じ。25日目以降：
 - 方法：公式ページを直接取得（各25秒以内のタイムアウト、失敗ページは再試行せず）。WebSearch は使っていない。
 - 取得成功：[Kenya eTA 資格画面](https://extern.api.etakenya.go.ke/eligibility)、[Kenya 駐日大使館](https://www.kenyarep-jp.com/en/eta/)（証明書チェーンの検証に失敗するため、本文の読み取りのみ検証なしで取得）、[Uganda EATV](https://immigration.go.ug/services/east-african-tourist-visa)、[Uganda Tourist Visa](https://immigration.go.ug/services/tourist-visa)、[Uganda 免除国](https://immigration.go.ug/services/visa-exempt-countries)、[Rwanda 特別枠査証](https://www.migration.gov.rw/our-services/visa-issued-under-special-arrangement)、[Tanzania eVisa ガイドライン](https://visa.immigration.go.tz/guidelines)、[Malawi 料金](https://www.immigration.gov.mw/visa-fees)、[Malawi 査証種別](https://www.immigration.gov.mw/types-of-malawi-visa)、[Zambia KAZA](https://www.zambiaimmigration.gov.zm/kaza-univisa/)、[Zambia 免除国](https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/)、[Zambia 料金表](https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/)、[Zimbabwe 料金](https://www.zimimmigration.gov.zw/?page_id=6958)、[南アフリカ DHA](https://www.dha.gov.za/index.php/immigration-services/exempt-countries)、[駐日モザンビーク大使館](https://embamoc.jp/visas)、[Mozambique ポータル](https://evisa.gov.mz/Home)、[FCDO Mozambique](https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements)（および各国のFCDO入国要件とAPIの更新日）、[Gozo-Azul](https://gozo-azul.co.za/scuba-diving/)、[ANAC](https://www.anac.gov.mz/en/parques/ponta-do-ouro/)、[DAN](https://dan.org/health-medicine/health-resource/health-safety-guidelines/guidelines-for-flying-after-diving/)、[Modern Coast 路線一覧](https://moderncoastltd.com/routes)、[Modern Coast Nairobi–Kampala](https://moderncoastltd.com/routes/nairobi-to-kampala)、[Premierline](https://premierline.co.tz/bus-tickets/mwanza-to-mbeya)、[African Bus](https://www.africanbus.com/tickets)。
 - 取得失敗：rome2rio（HTTP 403）、gov.bw（証明書エラー）、gov.sz（タイムアウト）、外務省 anzen.mofa.go.jp（保守ページ）、Uganda／Rwanda／Tanzania の旧URL（404。別URLで取得）、Rwanda の査証料金（公式の個別料金ページ未特定。PDFは取得したが本文を読み取れず）。
+- 2026-10-19の追加取得（改訂版対応）：成功＝[TAZARA node/505](https://www.tazarasite.com/node/505)、[Tanzania 気候](https://www.visittanzania.org/tanzania-fast-facts/climate/)、[Mauritius 気候](https://metservice.intnet.mu/climate-services/climate-of-mauritius.php)、[Mauritius 冬の見通し](https://metservice.intnet.mu/news-details-5.php)、[Victoria Falls 時期](https://victoriafalls.co.zm/best-time-to-visit-victoria-falls/)、南アフリカ保健省の黄熱PDF（画像として読取り）。失敗＝Botswana Tourism（HTTP 500）、Zanzibar Commission for Tourism（接続拒否）。
 - 個人情報・アフィリエイト用パラメータ付きURLは含めていない。
