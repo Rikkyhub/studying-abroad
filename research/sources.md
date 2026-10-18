@@ -171,6 +171,22 @@
 | 南部ア（為替） | https://www.murc-kawasesouba.jp/fx/index.php / https://open.er-api.com/v6/latest/JPY | USD TTM158.19、ZAR TTM9.59（MUFG 2026-10-16）。API: USD158.00、ZAR9.59、BWP11.06 | 2026-10-18 | BWPは単一の二次出典 |
 | 南部ア（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T017.html | ナミビア全土レベル1（2024-02-22） | 2026-10-18 | ザンビア2026T042／ジンバブエ2024T116／モザンビーク2025T062は既存行・本資料に記載 |
 | 南部ア（取得不可） | eservices.mhaiss.gov.na／gov.bw／gov.sz／namibiatokyo.or.jp／Imvelo料金PDF | HTTP 468／証明書期限切れ／接続拒否／証明書不一致／404 | 2026-10-18 | 該当項目は未確認 |
+| 南部ア（Eswatini 活動、再取得） | https://biggameparks.org/rates | Mlilwane 乗馬ZAR430/時（最低1名）、ドライブZAR515（最低2名）、Esitjeni Village Walk ZAR295・Umphakatsi ZAR220（最低4名）、2026-07から現金なし | 2026-10-18 | 2026年値。文化体験は最低4名 |
+| 南部ア（Mantenga） | https://gov.sz/index.php/latest-news/204-latest-news/1129-government-takes-over-mantenga-village | 接続タイムアウトで内容取得不可 | 2026-10-18 | 未確認 |
+| 南部ア（橋アクティビティ） | https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/ | バンジー111m USD180、スウィング・ソロUSD185〜、スライド・ソロUSD65〜、ツアーUSD80 | 2026-10-18 | 運営者の掲載料金。2027年未確認 |
+| 南部ア（Livingstone Island） | https://www.zambiatourism.com/activities/adventure/livingstone-island/ | 3〜6月はほぼ入れない。乾季（8〜12月）のみ | 2026-10-18 | 民間観光情報 |
+| 南部ア（ナミビア観光局） | https://visitnamibia.com.na/other-popular-sites/ / https://visitnamibia.com.na/2022/02/swakopmund-walvis-bay/ | Sossusvlei・Deadvleiの説明、Swakopmundのクアッド・サンドボード | 2026-10-18 | 説明のみ、料金なし |
+| 南部ア（Ponta do Ouro） | https://www.anac.gov.mz/en/parques/ponta-do-ouro/ | 部分海洋保護区678km2、Maputoから約3〜4時間、JNBからKosy Bay国境673km | 2026-10-18 | 公式。料金なし |
+
+### ケニア短期滞在モデル（#42、確認日 2026-10-18）
+
+| 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
+|---|---|---|---|---|
+| ケニア（公園） | https://kws.go.ke/park/nairobi-national-park/ | 非居住・成人USD80、6:00〜18:00、ゾウを除くBig 5の4種 | 2026-10-18 | 初回は証明書エラー、再取得で成功 |
+| ケニア（料金表） | https://kws.go.ke/wp-content/uploads/2026/05/KWS-Conservation-Fee-October-2025.pdf | 表題「CONSERVATION FEES 2025」、Nairobi National Park 非居住・成人80 | 2026-10-18 | 表題は2025。2027年は未確認 |
+| ケニア（eTA） | https://extern.api.etakenya.go.ke/eligibility / https://etakenya.go.ke/form/apply/how-to-apply | 標準eTA USD30、通過USD20、90日以内の渡航に有効、処理3営業日 | 2026-10-18 | 決済手数料・日本旅券の特例は未確認 |
+| ケニア（安全） | https://www.anzen.mofa.go.jp/m/mbhazardinfo1_100.html / https://www.anzen.mofa.go.jp/info/pcterror_100.html | 危険情報2025-05-19（ナイロビのスラム街周辺レベル2）、テロ情勢2026-04-17 | 2026-10-18 | 渡航直前に再確認 |
+| ケニア（サファリ料金） | https://nairobipark.org/half-day-nairobi-national-park-tour/ | 貸切USD200（1人）〜50（8人）、混載3〜6人で65〜45（成立保証なし）、集合はメインゲート | 2026-10-18 | 民間運営者。政府資料ではない |
 
 ### アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水（#44、確認日 2026-10-18）
 詳細は [africa-overland-7-9-countries.md](africa-overland-7-9-countries.md)。
