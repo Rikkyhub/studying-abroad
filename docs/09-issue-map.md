@@ -33,6 +33,8 @@
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
 | [ケープタウン（第2か国留学）](../areas/capetown.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
+| [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.html) | [#38](https://github.com/Rikkyhub/studying-abroad/issues/38) | 調査中 | 2026-10-18 |
+| [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.html) | [#42](https://github.com/Rikkyhub/studying-abroad/issues/42) | 調査中 | 2026-10-18 |
 
 ## タスクと Issue
 
