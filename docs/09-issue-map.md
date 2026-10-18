@@ -33,6 +33,7 @@
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
 | [ケープタウン（第2か国留学）](../areas/capetown.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
+| [5月仮旅程（MNL→NBO→CPT）の実現性](../research/may-itinerary-nbo-to-cpt.html) | [#47](https://github.com/Rikkyhub/studying-abroad/issues/47) | 調査中 | 2026-10-19 |
 
 ## タスクと Issue
 

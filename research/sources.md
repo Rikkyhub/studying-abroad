@@ -171,6 +171,18 @@
 | 南部ア（為替） | https://www.murc-kawasesouba.jp/fx/index.php / https://open.er-api.com/v6/latest/JPY | USD TTM158.19、ZAR TTM9.59（MUFG 2026-10-16）。API: USD158.00、ZAR9.59、BWP11.06 | 2026-10-18 | BWPは単一の二次出典 |
 | 南部ア（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T017.html | ナミビア全土レベル1（2024-02-22） | 2026-10-18 | ザンビア2026T042／ジンバブエ2024T116／モザンビーク2025T062は既存行・本資料に記載 |
 | 南部ア（取得不可） | eservices.mhaiss.gov.na／gov.bw／gov.sz／namibiatokyo.or.jp／Imvelo料金PDF | HTTP 468／証明書期限切れ／接続拒否／証明書不一致／404 | 2026-10-18 | 該当項目は未確認 |
+| 5月仮旅程（シャトル） | https://www.riverside-shuttle.com/ | NBO↔アルーシャ 08:00/14:00、5.5〜6時間、USD35.56〜（公開スクリプトの設定データ） | 2026-10-19 | 2027年の運行日は未確認 |
+| 5月仮旅程（Ngorongoro乗合） | https://www.resiliencesafaris.com/tanzania-group-joining-safari-2-days.html / https://eastafricajungle.com/trip/2-days-tarangire-ngorongoro-group-joining-safari | 2日乗合 USD450〜（最低2名、一人は相部屋）／USD725（月・金・土出発） | 2026-10-19 | Issue記載のUSD380は両ページで見つからず。個室追加料金は未記載 |
+| 5月仮旅程（タンザニア保険） | https://zic.co.tz/2026/10/07/public-notice-clarification-on-the-implementation-of-mandatoryinbound-travel-insurance-for-foreign-visitors-enteringzanzibar-and-tanzania-mainland | 本土も2026-10-01から必須、本土＋ザンジバルで2枚不要、92日有効、購入先は最初の入国地点で決まる | 2026-10-19 | 金額（USD44）は公式出典なし。日本大使館ページはHTTP 403 |
+| 5月仮旅程（タンザニア査証） | https://visa.immigration.go.tz/guidelines | 通常ビザ50 USD（最長90日） | 2026-10-19 | — |
+| 5月仮旅程（ジンバブエ・ザンビア） | https://www.zimimmigration.gov.zw/?page_id=6958 / https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ | ジンバブエ単一入国30 USD、複数55 USD／ザンビア免除リストに日本 | 2026-10-19 | 免除の滞在日数は未確認 |
+| 5月仮旅程（Chobe） | https://www.visit-chobe.com/ | ボート USD49（朝・夕）〜157（終日） | 2026-10-19 | 既存行とページ内の価格不一致あり、年未表示 |
+| 5月仮旅程（ナミビア査証） | https://namibiatokyo.or.jp/wordpress/wp-content/uploads/2025/02/IMPLEMENTATION-OF-NEW-VISA-REQUIREMENTS-AND-ADDITIN-TO-THE-LIST-OF-COUNTRIES-BENEFITING-FROM-VISA-ON-ARRIVAL01Apr25.pdf / https://eservices.mhaiss.gov.na/form/FactSheetVisaRequirementstoNamibia.pdf | 日本は2025-04-01から査証（到着時NAD1,600または東京¥16,000）。Ngoma・Impalilaは到着査証可、Kasikaはe-visaのみ、その他の国NAD1,600 | 2026-10-19 | 直接取得は失敗（HTTP 468等）。Internet Archive の2025年保存版を読んだ。事実表は画像由来で文字が崩れ版日付は判読不能 |
+| 5月仮旅程（モザンビーク入国） | https://embamoc.jp/visas / https://evisa.gov.mz/Home / https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 大使館：冒頭は全員査証必要、後段で日本は免除30日＋48時間前の事前登録／政府ポータル：日本は免除表に30日／FCDO（英国旅券）：ETA約USD47・5営業日前 | 2026-10-19 | 3者が不一致。日本向け手数料は未確認 |
+| 5月仮旅程（黄熱） | https://dirco.gov.za/canberra/yellow-fever/ / https://www.health.gov.za/wp-content/uploads/2026/09/Protocols-for-Travellers.pdf / https://cdn.who.int/media/docs/default-source/travel-and-health/countries-with-risk-of-yellow-fever-transmission.pdf?sfvrsn=bf42ac59_4&download=true | 在豪南ア高等弁務官事務所の必要国一覧にKenya掲載（Zambia・Tanzaniaは不要に）。保健省文書（2026/09のURL、文字PDF）には国名一覧なくWHO一覧を参照。WHO Annex 1（2022）でKenyaは一部リスク | 2026-10-19 | 2015年付の画像スキャン（別URL）は読んでいない。ケニア出発後の適用範囲は未確認 |
+| 5月仮旅程（エスワティニ・レソト） | https://biggameparks.org/rates / https://www.lesothoemb-usa.gov.ls/visa/ | Mlilwane ZAR95、乗馬1時間ZAR430、Sondzelaドミ ZAR215／レソトは日本NO（査証不要） | 2026-10-19 | エスワティニの日本旅券の入国条件は未確認 |
+| 5月仮旅程（南ア免除） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | Japan 90 Days・査証料なし（2025-12-09発行） | 2026-10-19 | 8週間の語学就学の可否は未確認 |
+| 5月仮旅程（取得不可） | etihad.com／flightconnections.com／maasaiculturecenter.com／tz.emb-japan.go.jp／zic.co.tz購入ページ／inbound.nicinsurance.co.tz／gov.bw／gov.sz | 接続失敗／HTTP 202（本文なし）／403／スクリプト描画 | 2026-10-19 | 該当項目は未確認 |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。

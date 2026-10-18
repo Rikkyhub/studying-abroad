@@ -95,6 +95,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
 | アフリカ | [5月アフリカ周遊（案）](../research/africa-trip.md) | 5月約1か月の周遊の案・費用の前提 | [coraldivers.co.za](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf)<br>[nomadafrica.co.za](https://nomadafrica.co.za/tour/cape-town-to-victoria-falls/)<br>[acacia-africa.com](https://www.acacia-africa.com/search.php) | 2026-10-17 |
 | アフリカ | [アフリカ周遊ルート比較](../research/africa-route-comparison.md) | フィリピン発・複数国の低コスト周遊ルート5案の比較 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/arealeaveinfolist_14.html)<br>[marinemegafauna.org](https://marinemegafauna.org/where-we-work/mozambique) | 2026-10-17 |
+| アフリカ | [5月仮旅程（MNL→NBO→CPT）の実現性](../research/may-itinerary-nbo-to-cpt.md) | Day表つき2日程（現実型8か国・挑戦型10か国）・費用の式・出典の食い違い | [zic.co.tz](https://zic.co.tz/2026/10/07/public-notice-clarification-on-the-implementation-of-mandatoryinbound-travel-insurance-for-foreign-visitors-enteringzanzibar-and-tanzania-mainland)<br>[embamoc.jp](https://embamoc.jp/visas)<br>[dirco.gov.za](https://dirco.gov.za/canberra/yellow-fever/) | 2026-10-19 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
 <!-- /AUTO:docs -->
