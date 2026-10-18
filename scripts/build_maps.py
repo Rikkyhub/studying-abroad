@@ -37,11 +37,12 @@ ROUTE_COLORS = {
     "C": ("#007A5A", "#3DCCA0"),
     "D": ("#A5498A", "#E7A6CE"),
     "E": ("#8A6D00", "#F2C94C"),
+    "F": ("#3B3B3B", "#D9D9D9"),
 }
-BADGE_SHAPE = {"A": "circle", "B": "square", "C": "diamond", "D": "triangle", "E": "hexagon"}
-ROUTE_SHORT = {"A": "ナイロビ起点", "B": "ADD乗継→マダガスカル", "C": "陸路主体", "D": "島めぐり", "E": "ケニア→マダガスカル"}
+BADGE_SHAPE = {"A": "circle", "B": "square", "C": "diamond", "D": "triangle", "E": "hexagon", "F": "pentagon"}
+ROUTE_SHORT = {"A": "ナイロビ起点", "B": "ADD乗継→マダガスカル", "C": "陸路主体", "D": "島めぐり", "E": "ケニア→マダガスカル", "F": "S2 南部アフリカ周遊"}
 # 行き先として色を付ける国（ISO 3166-1 numeric）
-VISIT = {"404", "834", "450", "894", "716", "072", "710", "480", "690", "608"}
+VISIT = {"404", "834", "450", "894", "716", "072", "710", "480", "690", "608", "748"}
 CAUTION = "231"  # エチオピア
 MODE_JA = {"flight": "航空", "overland": "陸路（直線で例示）", "ferry": "船", "sea": "海路"}
 
@@ -434,7 +435,22 @@ def place_labels(items, obstacles, fs, bounds):
                 return True
         return False
 
+    # CSV で位置を直接指定したラベル（label_dx/dy/anchor）は先に確定し、他のラベルが避ける
+    for it in items:
+        fx = it.get("fixed")
+        if not fx:
+            continue
+        dx, dy, anchor = fx
+        txt = it["lv0"]
+        w = text_w(txt, fs) + 2
+        tx, ty = it["x"] + dx, it["y"] + dy
+        x0 = tx if anchor == "start" else tx - w if anchor == "end" else tx - w / 2
+        r = (x0, ty - fs * 0.85, x0 + w, ty + fs * 0.25)
+        placed.append(r)
+        result[it["id"]] = (txt, anchor, tx, ty, r, 0)
     for it in sorted(items, key=lambda i: i["prio"]):
+        if it.get("fixed"):
+            continue
         done = None
         for level, txt in ((0, it["lv0"]), (1, it["lv1"])):
             w = text_w(txt, fs) + 2
@@ -492,6 +508,9 @@ def badge_svg(shape, x, y, letter):
         g = f'<path d="M{f1(x)} {f1(y - r - 1.5)}L{f1(x + r + 1.5)} {f1(y)}L{f1(x)} {f1(y + r + 1.5)}L{f1(x - r - 1.5)} {f1(y)}Z"/>'
     elif shape == "triangle":
         g = f'<path d="M{f1(x)} {f1(y - r - 1.5)}L{f1(x + r + 1.8)} {f1(y + r)}L{f1(x - r - 1.8)} {f1(y + r)}Z"/>'
+    elif shape == "pentagon":
+        pts = [(x + (r + 1.4) * math.cos(math.radians(-90 + 72 * k)), y + (r + 1.4) * math.sin(math.radians(-90 + 72 * k))) for k in range(5)]
+        g = f'<path d="{poly_d(pts)}"/>'
     else:
         pts = [(x + (r + 1) * math.cos(math.radians(60 * k)), y + (r + 1) * math.sin(math.radians(60 * k))) for k in range(6)]
         g = f'<path d="{poly_d(pts)}"/>'
@@ -607,7 +626,12 @@ def build_map(kind, points, routes, world_geo, africa_geo):
         pref = p[key]
         if pref not in ("none", "dot"):
             prio = 0 if pid in ("MNL", "CPT", "JNB") else 1 if p["kind"] == "airport" else 2
-            items.append({"id": pid, "x": x, "y": y, "pref": pref, "lv0": label_for(p, 0), "lv1": label_for(p, 1), "prio": prio})
+            it = {"id": pid, "x": x, "y": y, "pref": pref, "lv0": label_for(p, 0), "lv1": label_for(p, 1), "prio": prio}
+            pre = "world_label_" if world else "label_"
+            if p.get(pre + "dx", "") != "" or p.get(pre + "dy", "") != "":
+                it["fixed"] = (float(p.get(pre + "dx") or 0), float(p.get(pre + "dy") or 0),
+                               {"s": "start", "e": "end", "m": "middle"}.get(p.get(pre + "anchor") or "s"))
+            items.append(it)
     labels = place_labels(items, obstacles, fs, (2, 2, W - 2, H - 2))
     for pid, p in points.items():
         x, y = pt_xy[pid]
@@ -650,13 +674,22 @@ def build_map(kind, points, routes, world_geo, africa_geo):
     # 方面タグ（重なりを避けて縦にずらす）
     tag_svgs = []
     seen = {}
+    tag_rects = []
     for rid, q, txt in sorted(tags, key=lambda t: (t[2], t[0])):
         k = txt
         seen[k] = seen.get(k, 0) + 1
         if seen[k] > 1:
             continue
         x, y = q
-        tag_svgs.append(f'<text class="tag" x="{f1(min(W - 4, x + 5))}" y="{f1(y - 5)}" text-anchor="end">{html.escape(txt)}</text>')
+        tx, ty = min(W - 4, x + 5), y - 5
+        tw = text_w(txt, 10.5) + 4
+        for _ in range(12):  # 他の方面タグと重なるなら下へずらす
+            r = (tx - tw, ty - 12, tx, ty + 3)
+            if not any(r[0] < o[2] and r[2] > o[0] and r[1] < o[3] and r[3] > o[1] for o in tag_rects):
+                break
+            ty += 18
+        tag_rects.append((tx - tw, ty - 12, tx, ty + 3))
+        tag_svgs.append(f'<text class="tag" x="{f1(tx)}" y="{f1(ty)}" text-anchor="end">{html.escape(txt)}</text>')
 
     # エチオピア警戒
     eth = paths.get(CAUTION)
@@ -744,6 +777,7 @@ svg#map.zoomed{touch-action:none;cursor:grab}
 .leg.unc .ln{stroke-dasharray:.1 5.2;stroke-width:2.6}
 .leg.m-overland.unc .ln{stroke-width:3}
 .leg.tr .ln{stroke-dasharray:7 4 1.5 4}
+.leg.r-F:not(.unc):not(.tr) .ln{stroke-dasharray:14 3 3 3}
 .leg .badge path,.leg .badge circle,.leg .badge rect{fill:var(--c);stroke:var(--bg);stroke-width:1.2}
 .leg .bl{font-size:9.5px;font-weight:700;fill:var(--bg);pointer-events:none}
 .leg .uncl{display:none;font-size:10px;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px;pointer-events:none}
@@ -817,7 +851,7 @@ svg.addEventListener('pointermove',function(e){if(!drag)return;var k=vb.w/svg.ge
 svg.addEventListener('pointerup',function(){drag=null});svg.addEventListener('pointercancel',function(){drag=null});
 window.addEventListener('resize',setVB);
 if(svg.getBoundingClientRect().width<640&&svg.dataset.focus){var f=svg.dataset.focus.split(' ').map(Number);vb={x:f[0],y:f[1],w:f[2],h:f[3]}}
-setVB();apply('all');
+setVB();apply('all');var hm=/^#route-([A-Z])$/.exec(location.hash);if(hm&&document.querySelector('input[name=rt][value='+hm[1]+']'))pick(hm[1]);
 })();"""
 
 
@@ -835,7 +869,7 @@ def legend_html():
         ('<svg viewBox="0 0 54 16" aria-hidden="true"><rect x="2" y="2" width="50" height="12" fill="var(--visit)" stroke="var(--border)"/></svg>', "薄い緑：候補ルートの行き先の国"),
     ]
     return '<div class="legend">' + "".join(f"<div>{i}<span>{t}</span></div>" for i, t in items) + "</div>" + \
-        '<p class="muted">ルートは色と、区間の中央のバッジの形・文字（A 丸／B 四角／C ひし形／D 三角／E 六角形）で区別します。同じ区間を通るルートは少しずらして描いています。</p>'
+        '<p class="muted">ルートは色と、区間の中央のバッジの形・文字（A 丸／B 四角／C ひし形／D 三角／E 六角形／F 五角形）で区別します。同じ区間を通るルートは少しずらして描いています。</p>'
 
 
 def build_page(kind, points, routes, world_geo, africa_geo):
@@ -897,7 +931,7 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <h2>凡例</h2>
 {legend_html()}
 <p class="note">個人の予約・日程・支払いは含みません。公開されている空港・都市・公園の位置と、資料に載っている一般的なルート案だけを描いた概念図です。陸路は実際の道路経路ではなく、点を直線で結んだ例示です。</p>
-<footer><nav class="all" id="all-pages" aria-label="全ページ">{site_nav(ROOT, ROOT / "maps" / ("world-map.html" if world else "africa-map.html"))}</nav><p>地図データ：<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a>（パブリックドメイン）を <a href="https://github.com/topojson/world-atlas" target="_blank" rel="noopener">world-atlas</a> 2.0.2（ISC）経由で使用し、{"図法はNatural Earth図法" if world else "図法はランベルト正積方位図法"}で描画。このページは <code>scripts/build_maps.py</code> が <code>data/route_points.csv</code>・<code>data/routes.csv</code> から自動生成します（手で編集しない）。外部の通信は行いません。</p></footer>
+<footer><nav class="all" id="all-pages" aria-label="全ページ">{site_nav(ROOT, ROOT / "maps" / ("world-map.html" if world else "africa-map.html"))}</nav><p>地図データ：<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a>（パブリックドメイン）を <a href="https://github.com/topojson/world-atlas" target="_blank" rel="noopener">world-atlas</a> 2.0.2（ISC）経由で使用し、{"図法はNatural Earth図法" if world else "図法はランベルト正積方位図法"}で描画。このページは <code>scripts/build_maps.py</code> が内部データから自動生成します（手で編集しない）。外部の通信は行いません。</p></footer>
 </main>
 <script type="application/json" id="map-data">{data}</script>
 <script>

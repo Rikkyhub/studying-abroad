@@ -24,7 +24,8 @@ SCHEMAS = {
     "fx.csv": ["currency", "name_ja", "unit", "region", "jpy_per_unit", "rate_date", "rate_kind", "source"],
     "meta.csv": ["key", "value", "note"],
     "route_points.csv": ["id", "name_ja", "name_en", "iata_or_code", "country", "lat", "lon", "kind", "note", "maps_query",
-                         "world_pos", "africa_pos", "provisional"],
+                         "world_pos", "africa_pos", "provisional",
+                         "label_dx", "label_dy", "label_anchor", "world_label_dx", "world_label_dy", "world_label_anchor"],
     "routes.csv": ["route_id", "route_name_ja", "seq", "from_point", "to_point", "mode", "status", "unconfirmed", "note"],
 }
 NUMERIC = {
@@ -151,6 +152,18 @@ def check_routes(points, legs):
         for col in ("world_pos", "africa_pos"):
             if row[col] not in {"r", "l", "t", "b", "tr", "tl", "br", "bl", "dot", "none"}:
                 ERRORS.append(f"route_points.csv:{n}:{col}: unknown label position {row[col]!r}")
+        # ラベル位置の手動指定（任意）: 点からの差 dx/dy（px、図の座標系）と、s=左端起点 / e=右端起点 / m=中央
+        for pre in ("", "world_"):
+            for axis in ("dx", "dy"):
+                v = row[f"{pre}label_{axis}"]
+                if v != "":
+                    try:
+                        if abs(float(v)) > 120:
+                            raise ValueError
+                    except ValueError:
+                        ERRORS.append(f"route_points.csv:{n}:{pre}label_{axis}: must be empty or a number within ±120")
+            if row[f"{pre}label_anchor"] not in {"", "s", "e", "m"}:
+                ERRORS.append(f"route_points.csv:{n}:{pre}label_anchor: must be empty, s, e or m")
     by_route = {}
     for n, row in legs:
         for col in ("from_point", "to_point"):

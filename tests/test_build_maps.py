@@ -81,7 +81,7 @@ class RouteDataTests(unittest.TestCase):
             self.assertIn(r["from_point"], self.points)
             self.assertIn(r["to_point"], self.points)
             by.setdefault(r["route_id"], []).append(r)
-        self.assertEqual(sorted(by), ["A", "B", "C", "D", "E"])
+        self.assertEqual(sorted(by), ["A", "B", "C", "D", "E", "F"])
         for rid, legs in by.items():
             legs.sort(key=lambda r: int(r["seq"]))
             self.assertEqual([int(r["seq"]) for r in legs], list(range(1, len(legs) + 1)), rid)
@@ -89,12 +89,12 @@ class RouteDataTests(unittest.TestCase):
                 self.assertEqual(a["to_point"], b["from_point"], f"{rid}-{b['seq']}")
 
     def test_routes_start_in_manila_and_end_as_researched(self):
-        ends = {"A": "CPT", "B": "CPT", "C": "JNB", "D": "TNR", "E": "CPT"}  # Dは「マダガスカルのみB/Eで扱う」。南アには繋げない
+        ends = {"A": "CPT", "B": "CPT", "C": "JNB", "D": "TNR", "E": "CPT", "F": "CPT"}  # Dは「マダガスカルのみB/Eで扱う」。南アには繋げない
         for rid, end in ends.items():
             legs = sorted((r for r in self.legs if r["route_id"] == rid), key=lambda r: int(r["seq"]))
             self.assertEqual(legs[0]["from_point"], "MNL")
             self.assertEqual(legs[-1]["to_point"], end)
-        for rid in "ABCE":
+        for rid in "ABCEF":
             last = [r for r in self.legs if r["route_id"] == rid][-1]
             self.assertEqual(self.points[last["to_point"]]["country"], "南アフリカ")
 
@@ -110,6 +110,52 @@ class RouteDataTests(unittest.TestCase):
             p = self.points[pid]
             self.assertAlmostEqual(float(p["lat"]), lat, delta=0.15, msg=pid)
             self.assertAlmostEqual(float(p["lon"]), lon, delta=0.15, msg=pid)
+
+
+class RouteFTests(unittest.TestCase):
+    def setUp(self):
+        self.points = {r["id"]: r for r in rows("route_points.csv")}
+        self.legs = sorted((r for r in rows("routes.csv") if r["route_id"] == "F"), key=lambda r: int(r["seq"]))
+
+    def test_order_matches_research_s2(self):
+        order = [self.legs[0]["from_point"]] + [r["to_point"] for r in self.legs]
+        self.assertEqual(order, ["MNL", "KUL", "JNB", "MLILWANE", "JNB", "VICFALLS", "LIVINGSTONE", "CHOBE", "MAUN", "CPT"])
+
+    def test_countries_and_end(self):
+        countries = {self.points[p]["country"] for r in self.legs for p in (r["from_point"], r["to_point"])}
+        for c in ("エスワティニ", "ジンバブエ", "ザンビア", "ボツワナ", "南アフリカ"):
+            self.assertIn(c, countries)
+        self.assertEqual(self.points[self.legs[-1]["to_point"]]["country"], "南アフリカ")
+
+    def test_new_point_coordinates(self):
+        expect = {"MAUN": (-19.97, 23.43), "MLILWANE": (-26.47, 31.16), "LIVINGSTONE": (-17.85, 25.87), "CHOBE": (-17.83, 25.16)}
+        for pid, (lat, lon) in expect.items():
+            self.assertAlmostEqual(float(self.points[pid]["lat"]), lat, delta=0.1, msg=pid)
+            self.assertAlmostEqual(float(self.points[pid]["lon"]), lon, delta=0.1, msg=pid)
+
+    def test_great_circle_sanity(self):
+        def d(r):
+            a, b = self.points[r["from_point"]], self.points[r["to_point"]]
+            return bm.haversine(float(a["lat"]), float(a["lon"]), float(b["lat"]), float(b["lon"]))
+        km = {(r["from_point"], r["to_point"]): d(r) for r in self.legs}
+        self.assertAlmostEqual(km[("JNB", "MLILWANE")], 293, delta=30)  # JNB-ムババーネ付近は約290km（道路は約360km）
+        self.assertAlmostEqual(km[("CHOBE", "MAUN")], 302, delta=30)  # 直線約300km（道路は約520km）
+        self.assertAlmostEqual(km[("MAUN", "CPT")], 1700, delta=150)
+
+    def test_unverified_legs_are_marked(self):
+        self.assertEqual(self.legs[7]["unconfirmed"], "Y")  # カサネ→マウン
+
+
+class LabelOffsetTests(unittest.TestCase):
+    def test_label_columns_valid(self):
+        for r in rows("route_points.csv"):
+            for pre in ("", "world_"):
+                self.assertIn(r[f"{pre}label_anchor"], ("", "s", "e", "m"))
+
+    def test_fixed_offset_label_is_used(self):
+        items = [{"id": "X", "x": 100.0, "y": 100.0, "pref": "r", "lv0": "テスト", "lv1": "T", "prio": 1, "fixed": (-8.0, 11.0, "end")}]
+        res = bm.place_labels(items, [], 11.0, (0, 0, 500, 500))
+        self.assertEqual(res["X"][1:4], ("end", 92.0, 111.0))
 
 
 class PageTests(unittest.TestCase):
@@ -148,6 +194,19 @@ class PageTests(unittest.TestCase):
         nav = (REPO / "docs" / "02-budget.html").read_text(encoding="utf-8")
         for rel in ("../maps/world-map.html", "../maps/africa-map.html"):
             self.assertIn(rel, nav)
+        self.assertIn("ルート地図", nav)
+        africa = (REPO / "areas" / "africa.md").read_text(encoding="utf-8")
+        for rel in ("../maps/world-map.html", "../maps/africa-map.html"):
+            self.assertIn(rel, africa)
+
+    def test_maps_use_shared_template_and_have_no_csv_links(self):
+        for p in MAPS:
+            t = p.read_text(encoding="utf-8")
+            self.assertIn('class="bar"', t)
+            self.assertIn("font:16px/1.8", t)
+            self.assertNotIn("border-left", t)
+            self.assertNotRegex(re.sub(r"<!--.*?-->|<script.*?</script>", "", t, flags=re.S), r"\.csv")
+            self.assertNotIn("区間データ", t)
 
 
 if __name__ == "__main__":
