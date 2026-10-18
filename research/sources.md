@@ -150,6 +150,7 @@
 | 南部ア（ESW料金） | https://biggameparks.org/rates | Mlilwane/Hlane保全料ZAR95/日、Sondzelaドミ ZAR215、乗馬ZAR430/h、1.5hドライブZAR390（最低2名）、毎年12/1〜11/30適用 | 2026-10-18 | 年の明記なし |
 | 南部ア（ESW交通） | https://transmagnific.com/schedule.php | JNB⇔Mbabane 片道ZAR750/往復ZAR1,400、毎日4便、OR Tambo発約4h40m | 2026-10-18 | 運賃の有効日なし |
 | 南部ア（KAZA） | https://www.zambiaimmigration.gov.zm/kaza-univisa/ | KAZA UNIVISA USD50、30日、ザンビア＋ジンバブエ、日本は対象、ボツワナは日帰りのみ | 2026-10-18 | — |
+| 南部ア（KAZAカード決済） | https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/ | 法定USD50＋カード決済事務手数料USD0.50＝USD50.50 | 2026-10-18 | カード決済時の掲載総額。現金・現地窓口の対応可否は未確認。2027年再確認 |
 | 南部ア（ザンビア査証） | https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ | 日本は査証免除リスト（No.76）、航空は往復券が条件 | 2026-10-18 | 滞在日数はfor-visitorsの一般記述（90日/12か月） |
 | 南部ア（ジンバブエ査証） | https://www.zimimmigration.gov.zw/?p=7186 | 日本はCategory B（到着時査証可） | 2026-10-18 | 料金記載なし |
 | 南部ア（ジンバブエ料金） | https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/ | Zim側滝入場USD58（2026-02-16記事） | 2026-10-18 | 二次情報。Zimparks公式ページは料金欄なし |
