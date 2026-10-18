@@ -95,6 +95,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
 | アフリカ | [5月アフリカ周遊（案）](../research/africa-trip.md) | 5月約1か月の周遊の案・費用の前提 | [coraldivers.co.za](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf)<br>[nomadafrica.co.za](https://nomadafrica.co.za/tour/cape-town-to-victoria-falls/)<br>[acacia-africa.com](https://www.acacia-africa.com/search.php) | 2026-10-17 |
 | アフリカ | [アフリカ周遊ルート比較](../research/africa-route-comparison.md) | フィリピン発・複数国の低コスト周遊ルート5案の比較 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/arealeaveinfolist_14.html)<br>[marinemegafauna.org](https://marinemegafauna.org/where-we-work/mozambique) | 2026-10-17 |
+| アフリカ | [アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水](../research/africa-overland-7-9-countries.md) | Kenya起点の7国・9国・モザンビーク追加の日数・ビザ比較・潜水の実現性（調査版） | [immigration.go.ug](https://immigration.go.ug/services/east-african-tourist-visa)<br>[zambiaimmigration.gov.zm](https://www.zambiaimmigration.gov.zm/kaza-univisa/)<br>[gozo-azul.co.za](https://gozo-azul.co.za/scuba-diving/) | 2026-10-18 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
 <!-- /AUTO:docs -->

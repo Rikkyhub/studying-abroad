@@ -172,6 +172,31 @@
 | 南部ア（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T017.html | ナミビア全土レベル1（2024-02-22） | 2026-10-18 | ザンビア2026T042／ジンバブエ2024T116／モザンビーク2025T062は既存行・本資料に記載 |
 | 南部ア（取得不可） | eservices.mhaiss.gov.na／gov.bw／gov.sz／namibiatokyo.or.jp／Imvelo料金PDF | HTTP 468／証明書期限切れ／接続拒否／証明書不一致／404 | 2026-10-18 | 該当項目は未確認 |
 
+### アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水（#44、確認日 2026-10-18）
+詳細は [africa-overland-7-9-countries.md](africa-overland-7-9-countries.md)。
+
+| 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
+|---|---|---|---|---|
+| 縦断（Kenya EATV） | https://www.kenyarep-jp.com/en/eta/ | 標準eTA USD30、East African Tourist eTA（USD100）は TEMPORARILY UNAVAILABLE | 2026-10-18 | 証明書チェーン検証に失敗し、本文の読み取りのみ |
+| 縦断（Kenya eTA画面） | https://extern.api.etakenya.go.ke/eligibility | East African Tourist eTA は COMING SOON | 2026-10-18 | — |
+| 縦断（Uganda EATV） | https://immigration.go.ug/services/east-african-tourist-visa | EATV USD100、90日、発給国が最初の入国国。黄熱病証明は2026-10-02付で不要 | 2026-10-18 | Kenya初入国での通用は記載なし |
+| 縦断（Uganda単独） | https://immigration.go.ug/services/tourist-visa | 単独入国の査証 USD50 | 2026-10-18 | — |
+| 縦断（Rwanda EATV） | https://www.migration.gov.rw/our-services/visa-issued-under-special-arrangement | EATV USD100、90日、発給国が最初の入国国。到着時査証あり | 2026-10-18 | Rwanda単独の料金は未確認 |
+| 縦断（Tanzania査証） | https://visa.immigration.go.tz/guidelines | 通常査証 USD50（90日）、複数入国 USD100。日本は到着時／オンライン可の一覧に掲載 | 2026-10-18 | — |
+| 縦断（Malawi査証） | https://www.immigration.gov.mw/visa-fees | オンライン Single USD75、Transit USD50 | 2026-10-18 | FCDOの到着時 USD50 とは別 |
+| 縦断（Zimbabwe料金） | https://www.zimimmigration.gov.zw/?page_id=6958 | 単独入国 USD30（オンライン・港とも）、複数入国 USD55 | 2026-10-18 | — |
+| 縦断（南アDHA） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 日本は90日免除 | 2026-10-18 | — |
+| 縦断（Moz大使館） | https://embamoc.jp/visas | 日本はビザ免除（30日）、evisa.gov.mz で48時間前までに事前登録 | 2026-10-18 | 停止注記は取得本文で見つからず |
+| 縦断（Mozポータル） | https://evisa.gov.mz/Home | 日本はETA表（30日）に掲載。新プラットフォームは2026-02-11開始 | 2026-10-18 | 金額未掲載 |
+| 縦断（FCDO Moz） | https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 英国旅券はETA必須、5営業日前、約USD47 | 2026-10-18 | 英国旅券向け |
+| 縦断（Gozo Azul） | https://gozo-azul.co.za/scuba-diving/ | リーフUSD50/本、フルギアUSD15/本、リーフ税USD10 → 2本=USD140 | 2026-10-18 | 為替変動の注記あり |
+| 縦断（ANAC） | https://www.anac.gov.mz/en/parques/ponta-do-ouro/ | Kosi Bay国境 08:00〜17:00、JNBから673km、7〜8h、4WD推奨、Maputoから3〜4h | 2026-10-18 | — |
+| 縦断（DAN） | https://dan.org/health-medicine/health-resource/health-safety-guidelines/guidelines-for-flying-after-diving/ | 飛行前の水面休息：単回12h、複数日18h以上 | 2026-10-18 | 飛行向けの勧告 |
+| 縦断（Modern Coast） | https://moderncoastltd.com/routes | Nairobi→Kampala 12h、Kampala→Kigali 9h、Nairobi→Kigali 15h、Nairobi→Dar es Salaam 14h | 2026-10-18 | 2027年便は未購入 |
+| 縦断（Premierline） | https://premierline.co.tz/bus-tickets/mwanza-to-mbeya | 検索フォームのみ、取得日の便なし | 2026-10-18 | Issue記載の19h・87,000TZSは再現不可 |
+| 縦断（African Bus） | https://www.africanbus.com/tickets | Lusaka→Livingstone 7h45、ZMW300（Power Tools） | 2026-10-18 | — |
+| 縦断（取得不可） | rome2rio／gov.bw／gov.sz／anzen.mofa.go.jp | HTTP 403／証明書エラー／タイムアウト／保守ページ | 2026-10-18 | 該当項目は未確認 |
+
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
 - バギオ起点の現実的な土日交通便とショップの総額、学校門限（ダイビングは #3 で一部更新：バギオ→San Juan/ボリナオのバス便・運賃、ボリナオのショップは未確認）。
