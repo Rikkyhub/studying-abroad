@@ -171,6 +171,7 @@
 | 南部ア（為替） | https://www.murc-kawasesouba.jp/fx/index.php / https://open.er-api.com/v6/latest/JPY | USD TTM158.19、ZAR TTM9.59（MUFG 2026-10-16）。API: USD158.00、ZAR9.59、BWP11.06 | 2026-10-18 | BWPは単一の二次出典 |
 | 南部ア（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T017.html | ナミビア全土レベル1（2024-02-22） | 2026-10-18 | ザンビア2026T042／ジンバブエ2024T116／モザンビーク2025T062は既存行・本資料に記載 |
 | 南部ア（取得不可） | eservices.mhaiss.gov.na／gov.bw／gov.sz／namibiatokyo.or.jp／Imvelo料金PDF | HTTP 468／証明書期限切れ／接続拒否／証明書不一致／404 | 2026-10-18 | 該当項目は未確認 |
+| 航空（NBO→JNB） | https://www.kenya-airways.com/en_ke/flights-to-johannesburg | Kenya AirwaysがNBO→JNBの直行便を案内（平均飛行時間 約4時間15分）。「nonstop」の語はなし | 2026-10-19 | 運航頻度・時刻・2027年5月の運航と運賃は未確認。ページの運賃例は2026年10〜12月の往復で、予約時に変わる場合がある。トップページ https://www.kenya-airways.com/ には路線の記述がない |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
