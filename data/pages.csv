@@ -26,6 +26,7 @@ P26,plan,地域別,バギオ（フィリピン語学留学）,語学学校の12�
 P27,plan,地域別,アフリカ周遊（5月）,約1か月の周遊モデル・ルート案・費用・資料,areas/africa.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,120,2026-10-17,,
 P28,plan,地域別,ケープタウン（第2か国留学）,8週間の語学留学モデル・費用・資料・場所,areas/capetown.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,130,2026-10-17,,
 P29,plan,地域別,日本国内・保険・共通,出発前後の共通手続き・保険・共通費用,areas/common.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,140,2026-10-17,,
-P30,research,アフリカ,世界地図（候補ルート）,バギオ/マニラ発の候補ルートを世界地図に描いた概念図,maps/world-map.html,https://github.com/Rikkyhub/studying-abroad/issues/23,researching,115,2026-10-18,,africa
-P31,research,アフリカ,アフリカ地図（候補ルート）,アフリカ大陸の候補ルートと乗継空港・行き先の概念図,maps/africa-map.html,https://github.com/Rikkyhub/studying-abroad/issues/23,researching,116,2026-10-18,,africa
-P32,research,アフリカ,南部アフリカ各国の日数・費用・体験（Issue #38）,2027年5月・S1〜S5の国別の必要日数・費用・体験価値の調査版,research/southern-africa-countries.html,https://github.com/Rikkyhub/studying-abroad/issues/38,researching,117,2026-10-18,,africa
+P30,research,アフリカ,南部アフリカ各国の日数・費用・体験の多様性,5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先）,research/southern-africa-countries.html,https://github.com/Rikkyhub/studying-abroad/issues/38,researching,140,2026-10-18,https://biggameparks.org/rates;https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/;https://www.anac.gov.mz/en/parques/ponta-do-ouro/,africa
+P31,research,アフリカ,ケニア・ナイロビ短期滞在モデル,ナイロビ3泊4日と半日サファリの匿名モデル試算,research/kenya-nairobi-short-stay.html,https://github.com/Rikkyhub/studying-abroad/issues/42,researching,150,2026-10-18,https://kws.go.ke/park/nairobi-national-park/;https://extern.api.etakenya.go.ke/eligibility;https://nairobipark.org/half-day-nairobi-national-park-tour/,africa
+P32,research,アフリカ,世界地図（候補ルート）,バギオ/マニラ発の候補ルートを世界地図に描いた概念図,maps/world-map.html,https://github.com/Rikkyhub/studying-abroad/issues/23,researching,115,2026-10-18,,africa
+P33,research,アフリカ,アフリカ地図（候補ルート）,アフリカ大陸の候補ルートと乗継空港・行き先の概念図,maps/africa-map.html,https://github.com/Rikkyhub/studying-abroad/issues/23,researching,116,2026-10-18,,africa

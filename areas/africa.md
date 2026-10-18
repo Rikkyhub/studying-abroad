@@ -6,6 +6,8 @@
 
 サファリ、ダイビング、自然、文化体験が目的です。国数を増やすことは目的ではなく、往復の迂回なしにつながる区間だけを検討しています。6〜7月にケープタウンで留学する場合は、南アフリカの滞在日数（90日）の扱いに注意が必要です。
 
+体験の多様性を重視した国別の再比較は [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.md)（多様性方針の節）、短期滞在の匿名モデルは [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.md) にあります。
+
 <!-- AUTO:timeline -->
 | 時期（モデル） | 内容 | 状態 | 概要 |
 |---|---|---|---|
@@ -96,8 +98,9 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [5月アフリカ周遊（案）](../research/africa-trip.md) | 5月約1か月の周遊の案・費用の前提 | [coraldivers.co.za](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf)<br>[nomadafrica.co.za](https://nomadafrica.co.za/tour/cape-town-to-victoria-falls/)<br>[acacia-africa.com](https://www.acacia-africa.com/search.php) | 2026-10-17 |
 | アフリカ | [世界地図（候補ルート）](../maps/world-map.html) | バギオ/マニラ発の候補ルートを世界地図に描いた概念図 | － | 2026-10-18 |
 | アフリカ | [アフリカ地図（候補ルート）](../maps/africa-map.html) | アフリカ大陸の候補ルートと乗継空港・行き先の概念図 | － | 2026-10-18 |
-| アフリカ | [南部アフリカ各国の日数・費用・体験（Issue #38）](../research/southern-africa-countries.md) | 2027年5月・S1〜S5の国別の必要日数・費用・体験価値の調査版 | － | 2026-10-18 |
 | アフリカ | [アフリカ周遊ルート比較](../research/africa-route-comparison.md) | フィリピン発・複数国の低コスト周遊ルート5案の比較 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/arealeaveinfolist_14.html)<br>[marinemegafauna.org](https://marinemegafauna.org/where-we-work/mozambique) | 2026-10-17 |
+| アフリカ | [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.md) | 5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先） | [biggameparks.org](https://biggameparks.org/rates)<br>[victoriafallsbridge.com](https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/)<br>[anac.gov.mz](https://www.anac.gov.mz/en/parques/ponta-do-ouro/) | 2026-10-18 |
+| アフリカ | [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.md) | ナイロビ3泊4日と半日サファリの匿名モデル試算 | [kws.go.ke](https://kws.go.ke/park/nairobi-national-park/)<br>[extern.api.etakenya.go.ke](https://extern.api.etakenya.go.ke/eligibility)<br>[nairobipark.org](https://nairobipark.org/half-day-nairobi-national-park-tour/) | 2026-10-18 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
 <!-- /AUTO:docs -->
