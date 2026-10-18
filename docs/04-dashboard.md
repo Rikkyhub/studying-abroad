@@ -15,7 +15,7 @@ Linux/macOS では `py` の代わりに `python3` を使います。
 | 順 | スクリプト | 読むもの | 書くもの |
 |---|---|---|---|
 | 1 | `scripts/build.py` | `data/expenses.csv`・`funds.csv`・`fx.csv`・`tasks.csv`・`timeline.csv`・`articles.csv`・`meta.csv` | `README.md`・`docs/01〜03-*.md`・`blog/article-ideas.md` の `<!-- AUTO:... -->` ブロック（見積集計・月別・費目別・為替・タスク表など）。`index.html` は書かない |
-| 2 | `scripts/build_html.py` | 上記のMarkdown（AUTO更新後）と `data/*.csv` | `research/`・`docs/`・`blog/` の `*.html`、`data/*.md|html`（CSVの表示用）、`docs/09-issue-map.*`、`index.html` の AUTO ブロック |
+| 2 | `scripts/build_html.py` | 上記のMarkdown（AUTO更新後）と `data/*.csv` | `research/`・`docs/`・`blog/` の `*.html`、`data/*.md|html`（データ表の閲覧用ページ）、`docs/09-issue-map.*`、`index.html` の AUTO ブロック |
 
 - 順序が逆だと、docs の HTML が AUTO ブロック更新前の内容になります。
 - 手で HTML や AUTO ブロックを編集しても次回の生成で上書きされます。CIの `--check` が古い生成物を検出します。

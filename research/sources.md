@@ -1,6 +1,6 @@
 # 一次資料・調査ログ
 
-最終確認：2026-10-16（ダイビング・冬服・治安/健康関連は2026-10-17）。治安・健康の詳細な出典一覧と調査ログは [safety-and-health.md](safety-and-health.md) §10・§11 にある。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
+最終確認：2026-10-16（ダイビング・冬服・食事/生活費・治安/健康関連は2026-10-17）。治安・健康の詳細な出典一覧と調査ログは [safety-and-health.md](safety-and-health.md) §10・§11 にある。公式サイト上の料金でも**2027年価格・空き状況・制度改定を保証しない**。サイトの利用条件・対象者（現地住民限定等）を読む。
 
 | 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
 |---|---|---|---|---|
@@ -11,7 +11,7 @@
 | PH FAQ | https://immigration.gov.ph/faqs/ | SSPは非学位コース等への許可（査証でない）、59日超はACR I-Card、ECC-Aは6か月以上 | 2026-10-17 | 日付表記なし |
 | PH手数料告知 | https://immigration.gov.ph/advisory-proposed-schedule-of-fees-annual-report/ | 2026-10-09告知はAnnual Report手数料案のみ（PDFはスキャン画像） | 2026-10-17 | 観光延長・SSPは対象外 |
 | PH入国拒否 | https://immigration.gov.ph/3300-unwanted-aliens-barred-from-entering-ph-in-2023/ | 復路航空券なし等の軽微な不備による入国拒否（2023年実績） | 2026-10-17 | 日付は画像名から推定 |
-| PH eTravel | https://etravel.gov.ph/frequently-asked-questions | 無料、到着する外国人は登録、到着72時間前から登録可 | 2026-10-17 | — |
+| PH eTravel | https://etravel.gov.ph/frequently-asked-questions | 無料、到着する外国人は登録、到着前72時間以内に登録（公式FAQ） | 2026-10-17 | — |
 | PH学校料金 | https://philschools.jp/pricelist/pines.pdf | 学校の一般料金表（2026年10月〜）：延長区分別、SSP 7,800、SSP I-CARD 4,500、ACR I-CARD 4,000（PHP） | 2026-10-17 | 本人の請求額ではない。区分の当てはめは学校確認 |
 | PHオンライン | https://e-services.immigration.gov.ph/ | SSP/延長などの手続分類 | 2026-10-16 | 2026-10-17は接続失敗。本人/学校の役割未確認 |
 | SA東京大使館 | https://dirco.gov.za/japan/frequently-asked-questions/ | 日本旅券・holiday/business目的で90日未満査証免除、期限は入国日から計算 | 2026-10-17 | 就学の記載なし。就学や再入国に一律適用しない |
@@ -60,15 +60,6 @@
 | ZAダイビング | https://www.diveschoolcapetown.co.za/fun-dives/scuba-dive-with-great-white-sharks/ | ケージR3,655＋送迎R1,000 | 2026-10-17 | 2027年冬の出現・催行未確認 |
 | ZAダイビング | https://www.diveschoolcapetown.co.za/terms-and-conditions/ | 全額前払い、48時間未満取消は没収、天候中止は返金/振替 | 2026-10-17 | — |
 | ZA健康 | https://www.nicd.ac.za/wp-content/uploads/2025/08/Rabies-and-seals-_-August-2025-final.pdf | Cape fur sealの狂犬病（2024年5月〜）、ダイバー等は曝露前接種を医療者と相談 | 2026-10-17 | 2025年8月更新 |
-| PH食事（紹介会社） | https://www.hub1234.com/philippines/baguio/pines-main | PINESの平日3食込み・週末1食PHP179・土曜朝食無料・日曜朝食PHP100の掲載 | 2026-10-17 | 準公式。学校公式では未確認（要確認） |
-| PH食事 | https://pinesacademy.com/ | 学校公式サイト | 2026-10-17 | 403で取得不可。2024-03のアーカイブに食事規定なし |
-| PH外食 | https://www.foodpanda.ph/restaurant/r1dl/lechon-house-baguio | バギオのデリバリー価格 | 2026-10-17 | 403で取得不可（未確認） |
-| ZAスーパー | https://www.pnp.co.za/ （商品検索API、storeCode=WC21） | Pick n Payの食品表示価格 | 2026-10-17 | 店舗名未特定。配送料含まず |
-| ZAスーパー | https://www.checkers.co.za/sitemap.xml （商品ページのJSON-LD） | Checkersの食品表示価格・在庫表示 | 2026-10-17 | 配達エリア未指定のオンライン価格 |
-| ZAスーパー | https://www.shoprite.co.za/ （商品ページのJSON-LD） | Shopriteの食品表示価格 | 2026-10-17 | 同上 |
-| ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
-| ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
-| ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
 | 経路推計 | https://router.project-osrm.org/ | 車の距離・時間（バギオ→San Juan 83km/1.9h、→Bolinao 175km/3.5h、→Olongapo 242km/3.7h、ケープタウン→Simon's Town 39km/0.7h） | 2026-10-17 | 推計。渋滞・公共交通は含まない |
 | ケープタウン気候 | https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/1.1/data/0-data/Region-1-WMO-Normals-9120/SouthAfrica/CSV/CapeTown_68816.csv | WMO 1991-2020平年値、Cape Town International Airport（WMO 68816・標高42m）：6/7月 最高18.2/17.9°C・最低8.1/7.4°C・降水92.3/84.8mm・降水日10.1/9.1日 | 2026-10-17 | 空港地点。市街地差・風は含まない。SAWSでの照合未了 |
 | ケープタウン気候 | https://www.ncei.noaa.gov/products/wmo-climate-normals | 上記WMO平年値の公開元（NOAA NCEI） | 2026-10-17 | — |
@@ -122,6 +113,15 @@
 | ケープタウン観光 | https://aquilasafari.com/day-trip-safaris/ ／ https://aquilasafari.com/transport/ | 4x4終日From R2,895、送迎From R1,180 | 2026-10-17 | 送迎は2025-11〜2026-10有効 |
 | ケープタウン観光 | https://www.hermanus-whale-cruises.co.za/trip.php | 大人R1,500（rack rate）、出航時刻、天候次第 | 2026-10-17 | 年度表記なし、遭遇保証なし |
 | ケープタウン気候 | https://en.wikipedia.org/wiki/Cape_Town | 空港1991–2020平年値：6月92.3mm/10.1日、7月84.8mm/9.1日 | 2026-10-17 | 二次（出典SAWS/NOAA）。風統計未確認 |
+| PH食事（紹介会社） | https://www.hub1234.com/philippines/baguio/pines-main | PINESの平日3食込み・週末1食PHP179・土曜朝食無料・日曜朝食PHP100の掲載 | 2026-10-17 | 準公式。学校公式では未確認（要確認） |
+| PH食事 | https://pinesacademy.com/ | 学校公式サイト | 2026-10-17 | 403で取得不可。2024-03のアーカイブに食事規定なし |
+| PH外食 | https://www.foodpanda.ph/restaurant/r1dl/lechon-house-baguio | バギオのデリバリー価格 | 2026-10-17 | 403で取得不可（未確認） |
+| ZAスーパー | https://www.pnp.co.za/ （商品検索API、storeCode=WC21） | Pick n Payの食品表示価格 | 2026-10-17 | 店舗名未特定。配送料含まず |
+| ZAスーパー | https://www.checkers.co.za/sitemap.xml （商品ページのJSON-LD） | Checkersの食品表示価格・在庫表示 | 2026-10-17 | 配達エリア未指定のオンライン価格 |
+| ZAスーパー | https://www.shoprite.co.za/ （商品ページのJSON-LD） | Shopriteの食品表示価格 | 2026-10-17 | 同上 |
+| ZAスーパー | https://www.woolworths.co.za/ （サイトの検索API ac.cnstrc.com） | Woolworthsの食品表示価格（地域別3区分） | 2026-10-17 | 区分と地域の対応は未確認 |
+| ZA外食 | https://api.nandos.co.za/api/v2/pack/menu/default | Nando's SAのdefaultメニュー価格 | 2026-10-17 | 店舗・デリバリーで変わりうる |
+| ZAデリバリー | https://www.mrd.com/help/faqs | Mr DのService Fee（かご金額で変動）、TakealotMORE最低注文額R150/R350 | 2026-10-17 | 手数料の金額は記載なし |
 | アフリカ周遊（入国） | https://etakenya.go.ke/eligibility | ケニアeTA：標準USD30、通過USD20、1年複数回USD300 | 2026-10-17 | 日本旅券の対象判定は国別画面（JS）で未確認。2027年改定未確認 |
 | アフリカ周遊（入国） | https://visa.immigration.go.tz/guidelines | タンザニア通常ビザUSD50（90日）、国リストにJapan（到着時/オンライン） | 2026-10-17 | 2027年改定未確認 |
 | アフリカ周遊（入国） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 南ア免除国表（2025-12-09発行）でJapan 90日・ビザ手数料なし | 2026-10-17 | 公式表。個別の滞在許可判断ではない |
@@ -141,6 +141,36 @@
 | アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T116.html | ジンバブエ全土レベル1（2024-12-18） | 2026-10-17 | 更新が古い |
 | アフリカ周遊（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T062.html | モザンビーク：マプトを含むその他レベル1（2025-07-04） | 2026-10-17 | 北部はレベル3 |
 | アフリカ周遊（航空） | https://www.flightconnections.com/flights-from-nbo-to-tnr | NBO→TNR直行（Issue記載） | 2026-10-17 | 動的ページで本文取得不可（HTTP 202）。運航頻度は未確認 |
+
+### 南部アフリカ各国（#38、確認日 2026-10-18）
+詳細は [southern-africa-countries.md](southern-africa-countries.md)。
+
+| 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
+|---|---|---|---|---|
+| 南部ア（ESW料金） | https://biggameparks.org/rates | Mlilwane/Hlane保全料ZAR95/日、Sondzelaドミ ZAR215、乗馬ZAR430/h、1.5hドライブZAR390（最低2名）、毎年12/1〜11/30適用 | 2026-10-18 | 年の明記なし |
+| 南部ア（ESW交通） | https://transmagnific.com/schedule.php | JNB⇔Mbabane 片道ZAR750/往復ZAR1,400、毎日4便、OR Tambo発約4h40m | 2026-10-18 | 運賃の有効日なし |
+| 南部ア（KAZA） | https://www.zambiaimmigration.gov.zm/kaza-univisa/ | KAZA UNIVISA USD50、30日、ザンビア＋ジンバブエ、日本は対象、ボツワナは日帰りのみ | 2026-10-18 | — |
+| 南部ア（KAZAカード決済） | https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/ | 法定USD50＋カード決済事務手数料USD0.50＝USD50.50 | 2026-10-18 | カード決済時の掲載総額。現金・現地窓口の対応可否は未確認。2027年再確認 |
+| 南部ア（ザンビア査証） | https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ | 日本は査証免除リスト（No.76）、航空は往復券が条件 | 2026-10-18 | 滞在日数はfor-visitorsの一般記述（90日/12か月） |
+| 南部ア（ジンバブエ査証） | https://www.zimimmigration.gov.zw/?p=7186 | 日本はCategory B（到着時査証可） | 2026-10-18 | 料金記載なし |
+| 南部ア（ジンバブエ料金） | https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/ | Zim側滝入場USD58（2026-02-16記事） | 2026-10-18 | 二次情報。Zimparks公式ページは料金欄なし |
+| 南部ア（ザンビア料金） | https://www.zambiatourism.com/park-entry-fees/ | 外国人公園料USD10/日（2025年表） | 2026-10-18 | 2027年要確認 |
+| 南部ア（Devil's Pool） | https://www.zambiatourism.com/destinations/waterfalls/victoria-falls/victoria-falls-devils-pool/ | 約8〜1月の低水位期のみ | 2026-10-18 | — |
+| 南部ア（滝流量） | https://www.zambezira.org/node/2992 | 2026-05-05 3,610→05-18 3,330 m3/s | 2026-10-18 | 2027年は不明 |
+| 南部ア（Chobe） | https://www.visit-chobe.com/chobe-game-drive/ | ドライブFrom USD65、フルデイUSD115、公園料USD15別 | 2026-10-18 | 年未表示、ページ内に$49/$126の不一致 |
+| 南部ア（Chobe入園） | https://visitchobepark.com/entry-fees/ | 非居住者BWP190（ツアー客）/270（個人）、2022施行、値上げ案は延期 | 2026-10-18 | 二次情報。DWNP公式未取得 |
+| 南部ア（宿） | https://www.hostelworld.com/hostels/p/276112/bananyana-backpackers-camp/ | Bananyanaドミ USD15/P150 | 2026-10-18 | 現金払い |
+| 南部ア（Okavango） | https://www.safarivendors.com/Safaris/1-day-okavango-delta-mokoro-day-trip-from-maun | 2027年 1人USD345/2人USD250/人 | 2026-10-18 | 最低人数条件 |
+| 南部ア（Okavango比較） | https://www.safaribookings.com/tours/1-day-safari-from-maun | 11ツアー ¥24,889〜¥60,445（JPY表示） | 2026-10-18 | 為替依存 |
+| 南部ア（Okavango季節） | https://www.okavango.com/best-time-to-visit-okavango-delta.php | 5月は洪水拡大期 | 2026-10-18 | 民間ガイド |
+| 南部ア（Hwange） | https://www.safaribookings.com/tours/t108604 | 2日ツアー ¥125,156/人（2名参加時） | 2026-10-18 | 最低2名 |
+| 南部ア（ナミビア） | https://indigosafaris.com/tours/namibia-3-day-sossusvlei-express/ | 2027年(4/1〜) NAD13,500、単独追加NAD1,500、キャンプ・食事・入園料込み | 2026-10-18 | — |
+| 南部ア（ナミビア） | https://indigosafaris.com/tours/3-day-etosha-express-safari/ | 2027年 NAD13,000、単独追加NAD1,500 | 2026-10-18 | — |
+| 南部ア（モザンビーク査証） | https://evisa.gov.mz/Home | 日本はeTA（30日）/eVisa対象、免除リスト外 | 2026-10-18 | 料金記載なし |
+| 南部ア（モザンビーク潜水） | https://gozo-azul.co.za/scuba-diving/ | 2026年 リーフUSD50/本、レンタルUSD15/本、サメUSD60/本、保護区USD10 | 2026-10-18 | — |
+| 南部ア（為替） | https://www.murc-kawasesouba.jp/fx/index.php / https://open.er-api.com/v6/latest/JPY | USD TTM158.19、ZAR TTM9.59（MUFG 2026-10-16）。API: USD158.00、ZAR9.59、BWP11.06 | 2026-10-18 | BWPは単一の二次出典 |
+| 南部ア（安全） | https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T017.html | ナミビア全土レベル1（2024-02-22） | 2026-10-18 | ザンビア2026T042／ジンバブエ2024T116／モザンビーク2025T062は既存行・本資料に記載 |
+| 南部ア（取得不可） | eservices.mhaiss.gov.na／gov.bw／gov.sz／namibiatokyo.or.jp／Imvelo料金PDF | HTTP 468／証明書期限切れ／接続拒否／証明書不一致／404 | 2026-10-18 | 該当項目は未確認 |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。

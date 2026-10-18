@@ -41,6 +41,7 @@ CATEGORIES = [
 ]
 EXPENSE_STATUS = ["見積", "未確認"]  # 公開CSVでは「確定」「実績」を使わない
 TASK_STATUS = ["未着手", "進行中", "要確認", "完了", "保留", "不要"]
+DEADLINE_KINDS = ["公式期限", "学校・機関の個別期限", "推奨目安", "要確認"]
 ARTICLE_STATUS = ["未着手", "資料収集中", "下書き", "公開可能", "公開済み"]
 SCENARIOS = OrderedDict([("low", "低予算"), ("std", "標準"), ("high", "余裕")])
 # 集計上の「月」。期間が無い費用は支払予定日の月、どちらも無ければ「出発前」。
@@ -148,14 +149,15 @@ def compute(expenses, fx, problems):
             raw = {s: None for s in SCENARIOS}
         no_amount = all(v is None for v in raw.values())
         est = {s: None if raw[s] is None else raw[s] * rate for s in SCENARIOS}
-        if not no_amount:
-            if est["std"] is None:
-                est["std"] = est["low"] if est["low"] is not None else est["high"]
+        # 標準だけが入力された行は低予算・余裕にも同額を使う（簡略入力）。
+        # 低予算または余裕だけが入力され標準が空の行は、標準を「未計上」とする（0円にも他シナリオの額にもしない）。
+        if est["std"] is not None:
             if est["low"] is None:
                 est["low"] = est["std"]
             if est["high"] is None:
                 est["high"] = est["std"]
-        out.append({**r, "rate": rate or 0, "est": est, "no_amount": no_amount, "alloc": allocate(r)})
+        unpriced = [] if no_amount else [s for s in SCENARIOS if est[s] is None]
+        out.append({**r, "rate": rate or 0, "est": est, "no_amount": no_amount, "unpriced": unpriced, "alloc": allocate(r)})
     return out
 
 
@@ -171,7 +173,9 @@ def summarize(rows, funds):
     """
     S = {"count": len(rows)}
     priced = [r for r in rows if not r["no_amount"]]
-    S["total"] = {s: sum(r["est"][s] for r in priced) for s in SCENARIOS}
+    S["total"] = {s: sum(r["est"][s] for r in priced if r["est"][s] is not None) for s in SCENARIOS}
+    # 一部のシナリオだけ金額が入っている行（空欄＝未計上。0円ではなく、そのシナリオの合計に含まれない）
+    S["partial"] = [r for r in priced if r["unpriced"]]
     S["by_status"] = OrderedDict((k, _z()) for k in EXPENSE_STATUS)
     S["status_count"] = OrderedDict((k, 0) for k in EXPENSE_STATUS)
     for r in rows:
@@ -179,7 +183,7 @@ def summarize(rows, funds):
     for r in priced:
         b = S["by_status"].setdefault(r["status"], _z())
         for s in SCENARIOS:
-            b[s] += r["est"][s]
+            b[s] += r["est"][s] or 0.0
     S["no_amount"] = [r for r in rows if r["no_amount"]]
     S["unverified"] = [r for r in rows if r["status"] == "未確認"]
     S["by_cat"] = OrderedDict((c, _z()) for c in CATEGORIES)
@@ -188,15 +192,15 @@ def summarize(rows, funds):
     for r in priced:
         c = S["by_cat"][r["category"]]
         for s in SCENARIOS:
-            c[s] += r["est"][s]
-        S["by_country"][r["country"] or "共通"] += r["est"]["std"]
+            c[s] += r["est"][s] or 0.0
+        S["by_country"][r["country"] or "共通"] += r["est"]["std"] or 0.0
         for m, ratio in r["alloc"].items():
-            S["by_month"][m][r["status"]] += r["est"]["std"] * ratio
+            S["by_month"][m][r["status"]] += (r["est"]["std"] or 0.0) * ratio
     budget = {r["id"]: num(r["amount_jpy"]) for r in funds if r["type"] == "予算"}
     S["budget_ideal"] = budget.get("budget_ideal")
     S["budget_cap"] = budget.get("budget_cap")
     S["budget_africa"] = budget.get("budget_africa")
-    S["africa_total"] = sum(r["est"]["std"] for r in priced if r["id"].startswith("AF-"))
+    S["africa_total"] = sum(r["est"]["std"] or 0.0 for r in priced if r["id"].startswith("AF-"))
     # 予算目標との差（予算 − 見積合計）。マイナスは超過。支払いや資金の残高ではない
     S["vs_ideal"] = {s: S["budget_ideal"] - S["total"][s] for s in SCENARIOS}
     S["vs_cap"] = {s: S["budget_cap"] - S["total"][s] for s in SCENARIOS}
@@ -205,6 +209,26 @@ def summarize(rows, funds):
 
 # ---------------------------------------------------------------- 検証
 PRIVATE_PATTERNS = [re.compile(p) for p in (r"[\w.+-]+@[\w-]+\.[\w.]+", r"\b\d{9,}\b")]
+
+
+def suspicious_zero(r):
+    """low が非ゼロなのに std/high が明示的に 0 の行は「未計上」を 0円と書いた疑い。未計上は空欄にする"""
+    out = []
+    low = num(r.get("low_local")) if not _bad(r.get("low_local")) else None
+    if low:
+        for s in ("std", "high"):
+            raw = (r.get(f"{s}_local") or "").strip()
+            if raw != "" and not _bad(raw) and num(raw) == 0:
+                out.append(f"{r['id']}: {s}_local が 0 ですが low_local は非ゼロです。0円は「不要」を意味します。金額が未計上なら空欄にしてください（0は未計上ではない）")
+    return out
+
+
+def _bad(s):
+    try:
+        num(s)
+        return False
+    except ValueError:
+        return True
 
 
 def validate(expenses, tasks, articles, timeline, problems, funds=()):
@@ -216,6 +240,7 @@ def validate(expenses, tasks, articles, timeline, problems, funds=()):
         if r["status"] not in EXPENSE_STATUS:
             problems.append(f"{r['id']}: 区分「{r['status']}」は {'/'.join(EXPENSE_STATUS)} のいずれかにしてください（公開CSVに確定・実績は使わない）")
         has_amount = any(r[f"{s}_local"] for s in SCENARIOS)
+        problems.extend(suspicious_zero(r))
         if r["status"] == "見積" and not r["source"].startswith("http"):
             problems.append(f"{r['id']}: 区分が見積なのに出典URL（source）が空です。出典がなければ「未確認」にしてください")
         if r["status"] == "見積" and not has_amount:
@@ -243,10 +268,16 @@ def validate(expenses, tasks, articles, timeline, problems, funds=()):
             problems.append(f"{r['id']}: 優先度は 1〜4（1が最優先）にしてください")
         if r["status"] not in TASK_STATUS:
             problems.append(f"{r['id']}: 進捗「{r['status']}」は {'/'.join(TASK_STATUS)} のいずれかにしてください")
+        if r["deadline_kind"] not in DEADLINE_KINDS:
+            problems.append(f"{r['id']}: 期限の種類「{r['deadline_kind']}」は {'/'.join(DEADLINE_KINDS)} のいずれかにしてください")
+        if not r["deadline_note"]:
+            problems.append(f"{r['id']}: deadline_note（相対期限・要確認の文言）が空です")
+        elif re.search(r"\d{4}-\d{2}-\d{2}|\d{4}年\d{1,2}月\d{1,2}日", r["deadline_note"]):
+            problems.append(f"{r['id']}: deadline_note に暦日を書かないでください（公開は「出発90日前（推奨目安）」等の相対表記）")
         try:
-            date(r["deadline"])
+            int(r["lead_days"])
         except ValueError:
-            problems.append(f"{r['id']}: 期限「{r['deadline']}」は YYYY-MM-DD 形式にしてください")
+            problems.append(f"{r['id']}: lead_days は整数（並び替え用。出発の何日前か。負は出発後）にしてください")
     for r in articles:
         ids[r["id"]] += 1
         if r["status"] not in ARTICLE_STATUS:
@@ -300,6 +331,12 @@ def gen_budget_summary(S):
         ]),
         "",
         ("**金額未入力（0円扱いしない）**: " + "、".join(f"{r['id']} {r['item']}" for r in na) if na else "金額未入力の行はありません。"),
+        "",
+        ("**一部シナリオが未計上（空欄＝未計上。0円ではなく、該当シナリオの合計に含まれない）**: "
+         + "、".join(f"{r['id']} {r['item']}（{'・'.join(SCENARIOS[s] for s in r['unpriced'])}）" for r in S["partial"])
+         if S["partial"] else "一部シナリオだけ未計上の行はありません。"),
+        "",
+        "金額は公開価格表などからの**匿名の見積**です。実際の支払額・個人の実績ではありません。",
     ]
     return "\n".join(lines)
 
@@ -308,12 +345,12 @@ def gen_budget_by_cat(S):
     rows = [[c, yen(v["low"]), yen(v["std"]), yen(v["high"])] for c, v in S["by_cat"].items()]
     t = S["total"]
     rows.append(["**合計**", f"**{yen(t['low'])}**", f"**{yen(t['std'])}**", f"**{yen(t['high'])}**"])
-    return md_table(["費目", "低予算", "標準", "余裕"], rows) + "\n\n金額未入力の行は含みません（0円ではありません）。"
+    return md_table(["費目", "低予算", "標準", "余裕"], rows) + "\n\n金額は公開価格表などからの匿名の見積です。金額未入力の行・未計上のシナリオは含みません（0円ではありません）。"
 
 
 def gen_budget_by_month(S):
     rows = [[MONTHS[m], yen(v["見積"] + v["未確認"]), yen(v["見積"]), yen(v["未確認"])] for m, v in S["by_month"].items()]
-    return ("期間をまたぐ費用（保険・授業料など）は利用期間の日数で月に按分しています（標準プラン・金額入力済みの行のみ）。\n\n"
+    return ("期間をまたぐ費用（保険・授業料など）は利用期間の日数で月に按分しています（標準プラン・金額入力済みの行のみ。公開価格表からの匿名の見積）。\n\n"
             + md_table(["月", "見積合計(標準)", "うち見積", "うち未確認"], rows))
 
 
@@ -323,7 +360,9 @@ def gen_budget_by_country(S):
 
 
 def amount_cell(r, s):
-    return "金額未入力" if r["no_amount"] else yen(r["est"][s])
+    if r["no_amount"]:
+        return "金額未入力"
+    return "未計上" if r["est"][s] is None else yen(r["est"][s])
 
 
 def gen_budget_detail(rows):
@@ -356,18 +395,27 @@ def gen_fx(fx):
 
 def gen_tasks(tasks, group_field="phase"):
     groups = OrderedDict()
-    for t in sorted(tasks, key=lambda t: (t["deadline"] or "9999")):
+    for t in sorted(tasks, key=task_sort_key):
         groups.setdefault(t[group_field], []).append(t)
     out = []
     for g, ts in groups.items():
         out.append(f"### {g}\n")
-        out.append(md_table(["ID", "", "タスク", "期限", "進捗", "担当", "費用目安", "次のアクション", "根拠", "Issue"],
+        out.append(md_table(["ID", "", "タスク", "期限（目安）", "期限の種類", "進捗", "担当", "費用目安", "次のアクション", "根拠", "Issue"],
                             [[t["id"], "✅" if t["status"] in ("完了", "不要") else ("⚠️" if t["status"] == "要確認" else "⬜"),
-                              t["task"], t["deadline"] or "—", t["status"], t["owner"] or "本人", t["cost_note"] or "—", t["next_action"] or "—",
+                              t["task"], t["deadline_note"] or "—", t["deadline_kind"], t["status"], t["owner"] or "本人", t["cost_note"] or "—", t["next_action"] or "—",
                               md_link(t["source"]) if t["source"].startswith("http") else "—",
                               f"[#{t['issue'].rsplit('/', 1)[-1]}]({t['issue']})" if t["issue"] else "—"] for t in ts]))
         out.append("")
     return "\n".join(out)
+
+
+def task_sort_key(t):
+    """並び替え: 出発の何日前か（lead_days）が大きい順＝早く着手するものが先。同値は優先度、ID"""
+    try:
+        lead = int(t["lead_days"])
+    except (KeyError, ValueError):
+        lead = -9999
+    return (-lead, t["priority"] or "9", t["id"])
 
 
 def task_progress(tasks):
@@ -377,12 +425,12 @@ def task_progress(tasks):
 
 def next_tasks(tasks, n=8):
     open_ = [t for t in tasks if t["status"] not in ("完了", "不要", "保留")]
-    return sorted(open_, key=lambda t: (t["deadline"] or "9999", t["priority"] or "9"))[:n]
+    return sorted(open_, key=task_sort_key)[:n]
 
 
 def gen_next_tasks(tasks):
-    return md_table(["期限", "タスク", "進捗", "次のアクション"],
-                    [[t["deadline"] or "—", t["task"], t["status"], t["next_action"]] for t in next_tasks(tasks)])
+    return md_table(["期限（目安）", "種類", "タスク", "進捗", "次のアクション"],
+                    [[t["deadline_note"] or "—", t["deadline_kind"], t["task"], t["status"], t["next_action"]] for t in next_tasks(tasks)])
 
 
 def gen_timeline(timeline):
@@ -408,6 +456,7 @@ def gen_articles(articles):
 
 def gen_unconfirmed(rows, tasks):
     items = [f"- 費用 {r['id']}: {r['item']}（{'金額未入力・見積合計に含まれていない（0円ではない）' if r['no_amount'] else '推定 ' + yen(r['est']['std']) + '・出典なし'}）" for r in rows if r["status"] == "未確認"]
+    items += [f"- 費用 {r['id']}: {r['item']}（{'・'.join(SCENARIOS[s] for s in r['unpriced'])}は未計上＝空欄。0円ではない）" for r in rows if r.get("unpriced")]
     items += [f"- タスク {t['id']}: {t['task']}（{t['next_action']}）" for t in tasks if t["status"] == "要確認"]
     return "\n".join(items) if items else "なし"
 

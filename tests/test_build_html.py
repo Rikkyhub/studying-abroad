@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from build_html import ROOT, convert, csv_to_markdown, inline, outputs
+from build_html import INTERNAL_CSV, ROOT, convert, csv_to_markdown, inline, outputs
 
 
 class InlineTests(unittest.TestCase):
@@ -57,6 +57,9 @@ class CsvViewTests(unittest.TestCase):
     def test_every_csv_has_md_and_html_view(self):
         out = outputs()
         for csv_path in (ROOT / "data").glob("*.csv"):
+            if csv_path.name in INTERNAL_CSV:  # 地図の入力データは閲覧ページを作らない
+                self.assertNotIn(csv_path.with_suffix(".html"), out)
+                continue
             self.assertIn(csv_path.with_suffix(".md"), out)
             self.assertIn(csv_path.with_suffix(".html"), out)
 

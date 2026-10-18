@@ -1,6 +1,6 @@
 # pages.csv
 
-`data/pages.csv` を表にした閲覧用のページです（27行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
+`data/pages.csv` を表にした閲覧用のページです（28行 × 11列）。正本は CSV で、このファイルは `python3 scripts/build_html.py` が生成します。手で編集しないでください。
 
 | id | group | area | title | summary | path | issue | status | sort | verified_at | refs |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -31,3 +31,4 @@
 | P25 | plan | 運用 | AI・別PC向け引き継ぎ | 別のAI・PCで作業を引き継ぐ手順 | docs/08-handoff.html |  | ready | 110 |  |  |
 | P26 | research | アフリカ | 世界地図（候補ルート） | バギオ/マニラ発の候補ルートA〜Eを世界地図に描いた概念図 | maps/world-map.html | https://github.com/Rikkyhub/studying-abroad/issues/23 | researching | 115 | 2026-10-18 |  |
 | P27 | research | アフリカ | アフリカ地図（候補ルート） | アフリカ大陸の候補ルートA〜Eと乗継空港・行き先の概念図 | maps/africa-map.html | https://github.com/Rikkyhub/studying-abroad/issues/23 | researching | 116 | 2026-10-18 |  |
+| P28 | research | アフリカ | 南部アフリカ各国の日数・費用・体験（Issue #38） | 2027年5月・S1〜S5の国別の必要日数・費用・体験価値の調査版 | research/southern-africa-countries.html | https://github.com/Rikkyhub/studying-abroad/issues/38 | researching | 117 | 2026-10-18 |  |

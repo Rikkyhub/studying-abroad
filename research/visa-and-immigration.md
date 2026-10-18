@@ -3,7 +3,7 @@
 - **確認日: 2026-10-17**（本文中で特に断りのない「確認日」はこの日付）
 - Issue: [#2 フィリピン・南アフリカの査証/再入国を旅程別に検証](https://github.com/Rikkyhub/studying-abroad/issues/2)。公開情報の扱いは [#16](https://github.com/Rikkyhub/studying-abroad/issues/16) と [docs/05-public-data-policy.md](../docs/05-public-data-policy.md) に従う。
 - **対象（一般向けモデル）**: 日本国籍・一般旅券・日本居住・現地で就労しない成人。
-  - フィリピン: 語学学校に12週間（モデル日程: 2027-02-06 入国〜05-01 出国、[全体日程](../docs/01-timeline.md)と同じ仮置き）
+  - フィリピン: 語学学校に約12週間（匿名モデル：合計85日間。具体的な渡航日・予約状況は掲載せず、入国日をDay 1として計算）
   - 南部アフリカ周遊: 2027年5月（仮）
   - ケープタウンの語学学校で約8週間（2027年6〜7月の仮置き）。前後に周辺国観光の可能性
 - 本資料は**個別の入国許可・就学資格を保証しない**。最終判断は入国審査官・当局が行う。大使館・学校からの個別回答は**未取得**（第7節は送信前の文案）。
@@ -21,7 +21,7 @@
 | P4 | 2026-10-09 のBI告知は**登録外国人の Annual Report 手数料案だけ**（対面 PHP 500＋LRF 10＋Express 1,000、オンライン PHP 500＋10＋1,500、掲載から30日間意見募集）。観光延長・SSPの手数料は対象外 | 高 | BI告知PDF（スキャン画像を目視確認） |
 | P5 | SSP は18歳未満または**非学位コース**の受講者に出す許可（PERMIT、査証ではない。一時訪問者査証の下で発行）。外務省も短期語学留学には SSP が必要と案内 | 高 | BI FAQ、外務省 |
 | P6 | 学校の一般料金表（PINES、**2026年10月〜版**、エージェントサイト掲載）は SSP PHP 7,800、SSP I-CARD 4,500、ACR I-CARD 4,000、延長は滞在週数の区分別（9〜12週 11,150／13〜16週 15,390 など）。**BI公式額とは別物**（代行費等を含むとみられるが内訳は非公開）。区分の当てはめ・ACR I-CARD の要否は学校確認事項 | 中 | PINES料金表PDF |
-| P7 | eTravel は無料。外国人は**到着時に登録が必要**で、登録は到着の**72時間（3日）前から**可能（前回「未確認」→今回FAQで確認） | 高 | eTravel FAQ |
+| P7 | eTravel は無料。外国人は**到着時に登録が必要**で、登録は**フィリピン到着前72時間（3日）以内**（公式FAQ原文: “may register within 72 hours (3 days) prior to your arrival into or departure from the Philippines”）。有料の代行サイトは公式ではない（前回「未確認」→今回FAQで確認） | 高 | eTravel FAQ |
 | P8 | 出国航空券は入国条件として政府が案内している。航空会社のチェックインで「30日以内の出国便」を求めるかは**未確認** | 高（入国条件）／未確認（航空会社運用） | 大使館、外務省。航空会社サイトは取得失敗 |
 | S1 | 南アは日本の一般旅券に90日の査証免除・査証料なし（DHA一覧「Issued on 09 December 2025」「SUBJECT TO CHANGE WITHOUT NOTICE」） | 高 | DHA Exempt Countries |
 | S2 | **査証免除入国で8週間の語学コースを受講できるかは確定扱いしない。** 大使館FAQの文言は「holiday / business purposes」。DHAは visitor's visa の目的に「study purposes」を挙げ、学校（UCT ELC）は90日未満なら visitor's visa で受講「may be eligible」と案内するが、**免除入国で語学就学してよいと明記した当局文言は見つからない** | 要確認 | 大使館FAQ、DHA、Immigration Act s11、UCT ELC |
@@ -40,14 +40,14 @@
 
 #### 滞在日数の計算（モデル）
 
-- 入国日を 2027-02-06 と仮置き（入国日を1日目と数える。外務省「日数は到着日から起算」）。
-- 計算式: 2/6＋29日＝3/7（30日目）、2/6＋58日＝4/5（59日目）、2/6〜5/1（両端含む）＝85日（12週＋1日）。
+- 匿名モデルの入国日を Day 1 と定義（入国日を1日目と数える。外務省「日数は到着日から起算」）。
+- 計算式: Day 1＋29日＝Day 30、Day 1＋58日＝Day 59。想定滞在85日（12週＋1日）はDay 59を超えるため、延長手続の確認が必要。
 
 | 段階 | 期間 | 期限（計算値） | 必要な手続 |
 |---|---|---|---|
-| 初回の無査証滞在 | 30日 | 2027-03-07 | 入国時に付与 |
-| Visa Waiver（初回延長） | ＋29日（計59日） | 2027-04-05 | BI事務所または BI eサービスへ申請。学校代行の有無は学校確認 |
-| 59日超の延長 | ＋1か月（1・2・6か月単位） | 2027-05-05 頃 | BI FAQ「期限の1週間前までに」「期限の7日前から申請可」。ACR I-Card の対象 |
+| 初回の無査証滞在 | 30日 | Day 30 | 入国時に付与 |
+| Visa Waiver（初回延長） | ＋29日（計59日） | Day 59 | BI事務所または BI eサービスへ申請。学校代行の有無は学校確認 |
+| 59日超の延長 | ＋1か月（1・2・6か月単位） | Day 59以降の許可期限（期間は当局確認） | BI FAQ「期限の1週間前までに」「期限の7日前から申請可」。ACR I-Card の対象 |
 | 出国 | 85日 | — | ECC-A は観光査証で**6か月以上**滞在した人が対象のため、モデルでは不要の見込み |
 
 #### 入国条件と制度
@@ -58,13 +58,13 @@
 | 出国航空券（外務省） | 「eTravelへの登録やフィリピンを出国することが確認できる航空券が必要とフィリピン政府は案内」。延長の説明にも「入国時にはフィリピンを出国する航空券の提示が必要」 | [外務省 安全対策基礎データ（2025-10-21更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html) | 公式 |
 | 入国拒否の実例 | 2023年に3,300人超が入国拒否。「入国査証や復路航空券を用意していない」等の軽微な不備の人はブラックリスト対象外と説明 | [BI ニュース](https://immigration.gov.ph/3300-unwanted-aliens-barred-from-entering-ph-in-2023/)（日付表記なし。画像名から2024-01頃） | 公式 |
 | 偽の復路航空券 | 偽の復路航空券を含む書類不備で入国を止めた事例（ダバオ空港、2024-04頃） | [BI ニュース](https://immigration.gov.ph/bi-halts-entry-of-suspected-illegal-lending-gang-member-at-davao-airport/)、[BI サイト内検索](https://immigration.gov.ph/?s=return+ticket) | 公式 |
-| eTravel | 無料。到着する外国人旅客は登録が必要。到着の72時間（3日）前から登録可。搭乗前にQRを提示できるようにする。出国時の登録義務はフィリピン国籍者のみ | [eTravel](https://etravel.gov.ph/)、[eTravel FAQ](https://etravel.gov.ph/frequently-asked-questions) | 公式 |
+| eTravel | 無料。到着する外国人旅客は登録が必要。フィリピン到着前72時間（3日）以内に登録（公式FAQ）。到着日時が決まるまで日付は固定しない。搭乗前にQRを提示できるようにする。出国時の登録義務はフィリピン国籍者のみ | [eTravel](https://etravel.gov.ph/)、[eTravel FAQ](https://etravel.gov.ph/frequently-asked-questions) | 公式 |
 | 延長の申請先 | BI本庁・その他の認可事務所、または BI eサービス。6か月一括の LSVVE は BI本庁（マニラ）のみ（2013-06-10 開始、「until further notice」） | [BI Visa Waiver](https://immigration.gov.ph/visas/visa-waiver/)、[BI 告知](https://immigration.gov.ph/tourist-visa-extension/)、[大使館 延長](https://tokyo.philembassy.net/en/consular-section/services/visa/other-visa-categories-and-extension-of-period-of-stay/) | 公式 |
 | SSP | 学生査証の対象外の外国人向け。18歳未満、または**非学位コース**受講者に発行。PERMIT であり査証ではない。有効期間は公式ページに記載なし | [BI FAQ](https://immigration.gov.ph/faqs/)、[BI SSP](https://immigration.gov.ph/special-study-permit/) | 公式 |
 | SSP（外務省） | 「短期語学留学等を目的とする滞在では…SSPが必要」「受け入れ先の学校とも相談の上、確実に取得」 | 外務省 | 公式 |
 | ACR I-Card | 一時訪問者査証で59日を超えて滞在した外国人が対象（Tourist は白色カード）。外務省も59日以内の短期滞在を除き外国人登録が必要と案内 | BI FAQ、外務省 | 公式 |
 | Annual Report | ACR I-Card 所持者は毎年、年初から60日以内に年次報告（外務省）。モデル日程では3〜4月にカード取得のため2027年分は対象外の見込み（**推測、未確認**） | 外務省 | 公式（適用は推測） |
-| ECC-A | 観光査証で6か月以上滞在した人が出国前に取得（出国72時間前まで） | BI FAQ | 公式 |
+| ECC-A | 観光査証で6か月以上滞在した人が出国前に取得。BI FAQの原文は “at least 72 hours prior to his/her departure”（出国の少なくとも72時間前に申請。eTravelの到着前72時間とは別の制度・別の起算点。2026-10-18確認） | BI FAQ | 公式 |
 
 #### BI公式手数料（PHP、**2014-03-06 更新**の表。BIは「may change without prior notice」と注記）
 
@@ -292,7 +292,7 @@
 | https://immigration.gov.ph/3300-unwanted-aliens-barred-from-entering-ph-in-2023/ | 公式 | 2023年実績（2024-01頃） | 復路航空券なしによる入国拒否 |
 | https://immigration.gov.ph/bi-halts-entry-of-suspected-illegal-lending-gang-member-at-davao-airport/ | 公式 | 2024-04頃 | 偽の復路航空券 |
 | https://immigration.gov.ph/tourist-visa-extension/ | 公式 | 2023年実績 | 初回30日、オンライン延長 |
-| https://etravel.gov.ph/ 、https://etravel.gov.ph/frequently-asked-questions | 公式 | 現行 | 無料、到着72時間前から登録、対象者 |
+| https://etravel.gov.ph/ 、https://etravel.gov.ph/frequently-asked-questions | 公式 | 現行 | 無料、到着前72時間以内に登録、対象者 |
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html | 公式 | 2025-10-21更新 | 比: 30日、出国航空券、延長、SSP、ACR、ECC |
 | https://philschools.jp/pricelist/pines.pdf | 学校料金表（エージェント掲載） | 2026年10月〜 | 延長区分・SSP・I-CARD の一般料金 |
 | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 公式 | 2025-12-09発行 | Japan 90日・無料 |

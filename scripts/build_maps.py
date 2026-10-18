@@ -768,7 +768,7 @@ svg#map.solo .leg .uncl{display:inline}
 .lb{font-size:calc(11px * var(--ts,1));fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3.2px;stroke-linejoin:round;pointer-events:none}
 .tag{font-size:calc(10.5px * var(--ts,1));fill:var(--muted);paint-order:stroke;stroke:var(--sea);stroke-width:3px}
 svg#map.lo .lb.minor{display:none}
-#detail{margin:8px 0;padding:10px 14px;border-left:4px solid var(--line);background:var(--th);min-height:5.5em;font-size:.95em}
+#detail{margin:8px 0;padding:10px 14px;border:1px solid var(--line);border-radius:4px;background:var(--th);min-height:5.5em;font-size:.95em}
 #detail h3{margin:0 0 4px;font-size:1rem} #detail dl{margin:4px 0;display:grid;grid-template-columns:7em 1fr;gap:2px 10px} #detail dt{color:var(--muted)} #detail dd{margin:0;overflow-wrap:anywhere}
 .scroll{overflow:auto;margin:8px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93em;line-height:1.5}
@@ -781,7 +781,7 @@ tr:last-child td{border-bottom:0}
 .legend svg{flex:none;width:54px;height:16px;overflow:visible}
 .lgl{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round}
 .note{background:var(--hl);padding:8px 12px;margin:12px 0;font-size:.93em}
-.cautionnote{border-left:4px solid var(--caution);background:var(--cautionbg);padding:8px 12px;margin:12px 0;font-size:.93em}
+.cautionnote{border:1px solid var(--caution);border-radius:4px;background:var(--cautionbg);padding:8px 12px;margin:12px 0;font-size:.93em}
 footer{color:var(--muted);font-size:.87em;margin:36px 0 40px;padding-top:12px;border-top:1px solid var(--line)}
 .rb{display:inline-block;min-width:1.6em;padding:0 5px;margin-right:4px;font-weight:700;text-align:center;color:var(--bg);background:var(--c,var(--ink))}
 .rb.A{--c:var(--rA)} .rb.B{--c:var(--rB)} .rb.C{--c:var(--rC)} .rb.D{--c:var(--rD)} .rb.E{--c:var(--rE)}
@@ -896,7 +896,7 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <p class="crumb"><a href="../index.html">ダッシュボード</a> ／ ルート確認用の地図</p>
 <h1>{title}</h1>
 <p class="lead">候補ルートの概念図。実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
-<nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../index.html">ダッシュボード</a><a href="../data/routes.html">区間データ（CSV）</a></nav>
+<nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../index.html">ダッシュボード</a></nav>
 <fieldset><legend>表示するルート</legend><div class="sel">{"".join(radios)}</div></fieldset>
 <p class="muted">直線距離の合計は大圏（地球上の最短距離）の足し算で、<strong>実際の飛行・走行距離ではありません</strong>。区間の運賃・ダイヤは未確認のものを含みます。{zoom_note}</p>
 <div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div>
