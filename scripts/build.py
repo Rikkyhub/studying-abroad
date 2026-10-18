@@ -20,6 +20,9 @@ import sys
 from collections import OrderedDict, defaultdict
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import areas  # noqa: E402  地域別ページの AUTO ブロック
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
@@ -513,6 +516,15 @@ def render_all(S, rows, tasks, articles, timeline, fx, problems):
     }
     for key, b in blocks.items():
         out[TARGETS[key]] = apply_auto(TARGETS[key].read_text(encoding="utf-8").replace("\r\n", "\n"), b)
+    # 地域別ページ（areas/*.md）。手書きの導入文はそのまま、AUTO ブロックだけを作り直す
+    pages, places, fx_records = read_csv("pages.csv"), read_csv("places.csv"), read_csv("fx.csv")
+    for region in areas.REGION_LABEL:
+        path = ROOT / areas.REGION_FILE[region]
+        if not path.exists():
+            continue
+        b = areas.all_blocks(region, rows=rows, tasks=tasks, timeline=timeline, pages=pages, places=places,
+                             fx_records=fx_records, root=ROOT)
+        out[path] = apply_auto(path.read_text(encoding="utf-8").replace("\r\n", "\n"), b)
     return out
 
 

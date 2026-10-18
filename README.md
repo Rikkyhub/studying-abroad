@@ -4,7 +4,7 @@
 
 公開データには本人の実際の支払い・資産・契約内容は載せず、調査価格とモデル試算だけを掲載する（[公開データ方針](docs/05-public-data-policy.md)、[#16](https://github.com/Rikkyhub/studying-abroad/issues/16)）。
 
-## 現在の状況（自動・CSVから集計）
+## 現在の状況（自動集計）
 
 <!-- AUTO:status -->
 集計基準日: 2026-10-17（data/meta.csv）
@@ -99,17 +99,18 @@
 
 ## Webで見られる計画画面
 
-- [ダッシュボード](index.html)：CSV から生成した静的HTML（データ埋め込み済み）。`file://` で直接開いても表示できる（GitHub Pages は**未設定**）。
+- [トップページ](index.html)：地域への入口。地域別ページ [バギオ](areas/baguio.md)・[アフリカ周遊](areas/africa.md)・[ケープタウン](areas/capetown.md)・[共通](areas/common.md) に、費用・確認事項・資料・地図がまとまっています。`file://` で直接開いても表示できます（GitHub Pages は**未設定**）。
 - [ダッシュボードの更新方法](docs/04-dashboard.md)
-- 更新：CSV を編集 → `py scripts/build_all.py`（`build.py` が README・docs の AUTO ブロックを、続けて `build_html.py` が index.html と各HTML版を生成）→ 生成物ごとコミット（Linux/macOS は `python3`）。
-- 調査・計画資料のHTML版：`research/*.html`・`docs/*.html`・`blog/*.html`・`data/*.html`。正本は同名の Markdown/CSV で、手で編集しない。
+- 更新：地域ページ・docs・research の Markdown（または内部入力のデータ）を編集 → `py scripts/build_all.py`（`build.py` が README・docs の AUTO ブロックを、続けて `build_html.py` が index.html と各HTML版を生成）→ 生成物ごとコミット（Linux/macOS は `python3`）。
+- 調査・計画資料のHTML版：`areas/*.html`・`research/*.html`・`docs/*.html`・`blog/*.html`。正本は同名の Markdown で、手で編集しない。
 - 検証：`py scripts/validate_data.py`（スキーマ）／`py scripts/check_public_data.py`（個人データ列の混入）／`py scripts/build_all.py --check`（集計・生成物の一致）／`py scripts/check_links.py`（リンク）／`py -m unittest discover -s tests`。GitHub Actions でも PR 時に実行。
 
 ## ファイル構成
 
 | 場所 | 内容 |
 |---|---|
-| `data/*.csv` | **正本**：費用見積・タスク・日程（月単位）・調査資料一覧・場所・記事候補・予算目標・為替・基準日 |
+| `areas/` | 地域別ページ（バギオ・アフリカ周遊・ケープタウン・共通）。手書きの導入文＋自動生成の表 |
+| `data/*.csv` | 生成スクリプトの**内部入力**（費用見積・タスク・日程・資料一覧・場所・為替など）。読者は見ない。地域別ページとトップページがここから作られる |
 | `docs/` | 日程・予算モデル・準備（AUTO ブロックは生成）・公開データ方針 |
 | `research/` | Issue ごとの調査レポートと出典（`sources.md`） |
 | `blog/` | 記事候補・体験ログ |
