@@ -233,7 +233,7 @@
 | ナミビア | 日本旅券は査証が必要（初版・既存資料の理解）。内務省の[eVisa on arrival](https://eservices.mhaiss.gov.na/visaonarrival)はHTTP 468で取得不可、在日大使館[ファクトシートPDF](https://namibiatokyo.or.jp/wordpress/wp-content/themes/namibia/visa_consular_matter/NamibiaVisa04-28May2025.pdf)は証明書不一致で検証接続できず → 料金（NAD 1,600前後）・Ngoma国境での発給可否は**未確認** | 首都Windhoekを含む全土レベル1（新規、**2024-02-22**更新）。Zambezi州などもレベル1継続。一般犯罪（強盗・ひったくり）増加。[外務省](https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2024T017.html) | 安全＝確認済み／査証＝未確認 |
 | モザンビーク | **日本は査証免除リスト外で、30日のeTA対象**（all passports, Tourist/Business）。eVisaも対象国。eTA・eVisaの料金は同ページ未掲載 → 未確認。[evisa.gov.mz](https://evisa.gov.mz/Home) | カーボデルガード州（ペンバ市を除く）等レベル3、ペンバ市等レベル2、**マプトを含むその他レベル1**（2025-07-04更新）。[外務省](https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2025T062.html) | eTA対象＝確認済み／料金＝未確認 |
 
-**KAZA UNIVISA**（[Zambia Immigration 公式](https://www.zambiaimmigration.gov.zm/kaza-univisa/)、2026-10-18確認）：**USD 50**、12か月のうち最大30日、ザンビアとジンバブエ内に滞在する間有効。日本は対象国に掲載。ボツワナには**Kazungula国境経由の日帰り**のみ可。ボツワナに数泊する場合はKAZAで十分と読まない。発行場所はVFA空港・Victoria Falls国境・Kazungula国境等。**本資料ではKAZAを1回だけ計上**（50×158＝7,900円≒0.79万円）。ザンビアは日本旅券が査証免除のため、KAZAの要否はジンバブエの単独査証料金（未確認）との比較で決める。本資料はKAZA USD 50を1回計上する保守的な扱い。
+**KAZA UNIVISA**（[Zambia Immigration 公式](https://www.zambiaimmigration.gov.zm/kaza-univisa/)、2026-10-18確認）：**USD 50**、12か月のうち最大30日、ザンビアとジンバブエ内に滞在する間有効。日本は対象国に掲載。ボツワナには**Kazungula国境経由の日帰り**のみ可。ボツワナに数泊する場合はKAZAで十分と読まない。発行場所はVFA空港・Victoria Falls国境・Kazungula国境等。**本資料ではKAZAを1回だけ計上**。法定料金はUSD 50、[ザンビア入管の公式料金表](https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/)ではカード決済時の事務手数料USD 0.50を含め**USD 50.50**（50.50×158＝**7,979円≒0.80万円**、2026-10-18確認）。以下の総額モデルはカード決済を仮定し0.80万円を計上する。窓口・現金等の支払可否や手数料は入国地点ごとに未確認。ザンビアは日本旅券が査証免除のため、KAZAの要否はジンバブエの単独査証・入国回数との比較で決める。2027年の料金と決済条件は再確認。
 **感染症・保険**：マラリア予防、黄熱予防接種証明（前滞在国・乗継国に依存）、医療搬送つき保険を出発前に確認。外務省の感染症危険情報は出発直前に確認（本調査では未取得）。
 
 ---
@@ -247,7 +247,7 @@
 | ① 航空（第5章） | S1 16.57〜22.37 / S2・S3 15.39〜20.78 / S4 13.50〜18.23 | 参考最安合算〜×1.35（上限は仮置き） |
 | ② 国別現地費 | ESW 2.5〜5、ZIM 3〜7、ZAM 1.8〜4.5、BWA 4〜8、BWB 4〜10、N1 3〜7、N2 17〜28、MOZ 3〜8 | JNB往復バスはESWに含める。宿・食事はパッケージ（Sossusvlei等）に含まれる分を別に足さない |
 | ③ 陸路送迎 | 2〜5 | 国間の乗合送迎。未配賦の乗換交通のみ（ESW往復・ツアー内送迎は除く） |
-| ④ KAZA | 0.79（= 50×158÷10000） | 1回のみ |
+| ④ KAZA | 0.80（= 50.50×158÷10000＝0.7979、万円単位で小数第2位に丸め） | カード決済想定、1回のみ。2027年要再確認 |
 | ⑤ 保険・SIM・予備費 | 2〜6 | 仮置き |
 | 追加：S5の広域交通 | 1〜3 | モザンビークの往復交通。**根拠なしの仮置き** |
 
