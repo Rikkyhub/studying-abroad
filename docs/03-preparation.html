@@ -3,56 +3,64 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>出発前・現地・帰国の準備チェック｜2027 留学・アフリカ周遊</title>
 <style>
-:root{color-scheme:light;--ink:#1d2227;--muted:#5b656e;--link:#0a58a8;--bg:#fbfbfa;--line:#d9d9d3;--th:#efefea;--code:#ecece7;--hl:#fff6dc;
---sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--code:#23282b;--hl:#2a2619}}
-:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--code:#23282b;--hl:#2a2619}
+:root{color-scheme:light;--ink:#1d2227;--muted:#555f68;--link:#0a58a8;--bg:#fbfbfa;--line:#d4d4cd;--th:#ecece6;--code:#ecece7;--hl:#fff6dc;--bar:44px;
+--sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans)}
-a{color:var(--link);text-underline-offset:2px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+html{scroll-padding-top:calc(var(--bar) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--sans)}
+a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1{font-size:1.5rem;line-height:1.35;margin:28px 0 6px;font-weight:700}
-h2{font-size:1.15rem;line-height:1.4;margin:36px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
-h3{font-size:1rem;margin:22px 0 4px} h4{font-size:.95rem;margin:16px 0 4px}
-p{margin:6px 0} .lead{color:var(--muted);margin:0 0 4px} .muted{color:var(--muted);font-size:.93em}
-nav.jump{display:flex;flex-wrap:wrap;gap:2px 18px;margin:14px 0 0;padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.93em}
-nav.jump a{padding:2px 0}
-.note{background:var(--hl);padding:8px 12px;margin:14px 0}
-ol.todo{margin:6px 0;padding-left:1.5em} ol.todo li{margin:2px 0} ul.facts{margin:6px 0;padding-left:1.3em;color:var(--muted)}
-.scroll{overflow:auto;max-height:min(72vh,720px);margin:8px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-table{border-collapse:collapse;width:max-content;min-width:100%;font-size:.93em;line-height:1.55}
-th,td{padding:7px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
-td{max-width:30em;min-width:5em} tr:last-child td{border-bottom:0}
-th{position:sticky;top:0;z-index:1;background:var(--th);font-weight:700;white-space:nowrap;border-bottom:1px solid var(--line)}
+header.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.bar nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px;min-height:var(--bar);font-size:.94rem}
+header.bar a,header.bar .here{padding:8px 0;text-decoration:none;white-space:nowrap}
+header.bar .here,header.bar a[aria-current]{font-weight:700;color:var(--ink);box-shadow:inset 0 -3px 0 var(--link)}
+header.bar a:hover{text-decoration:underline}
+h1{font-size:1.65rem;line-height:1.4;margin:26px 0 8px;font-weight:700}
+h2{font-size:1.25rem;line-height:1.5;margin:44px 0 10px;padding-top:14px;border-top:2px solid var(--line)}
+h3{font-size:1.05rem;line-height:1.6;margin:28px 0 6px} h4{font-size:1rem;margin:20px 0 4px}
+p{margin:10px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px} .muted{color:var(--muted);font-size:.93rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:2px 22px;margin:14px 0 4px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.94rem}
+nav.toc .label{font-weight:700;color:var(--muted)}
+.note{background:var(--hl);padding:10px 14px;margin:16px 0;max-width:none}
+ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
+.scroll{margin:12px 0 22px;border-top:2px solid var(--line);border-bottom:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
+td{min-width:4.4em} tbody tr:last-child td{border-bottom:0} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 38%,transparent)}
+th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line)}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.c,th.c{text-align:center}
+td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 4px}
 pre{background:var(--code);padding:10px 12px;overflow-x:auto} pre code{padding:0;background:none}
-blockquote{margin:12px 0;background:var(--hl);padding:4px 14px}
-ul,ol{padding-left:1.4em} li{margin:2px 0}
+blockquote{margin:14px 0;background:var(--hl);padding:4px 14px}
+ul,ol{padding-left:1.5em} li{margin:4px 0}
 .check{display:inline-block;width:.9em;height:.9em;border:1.5px solid var(--muted);margin-right:6px;vertical-align:-1px}
 .check.done{background:var(--link);border-color:var(--link)}
-form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 18px;margin:8px 0 12px}
-form.calc label{display:grid;gap:3px;font-size:.93em;color:var(--muted)}
-form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:6px 8px;min-width:0;width:100%}
-form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.7em}
-footer{color:var(--muted);font-size:.87em;margin-top:40px;padding-top:12px;border-top:1px solid var(--line)}
+form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px;margin:10px 0 14px}
+form.calc label{display:grid;gap:4px;font-size:.93rem;color:var(--muted)}
+form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:7px 9px;min-width:0;width:100%}
+form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.8em}
+footer{color:var(--muted);font-size:.9rem;margin-top:48px;padding:14px 0 40px;border-top:1px solid var(--line)}
+footer p{max-width:none}
 article,h1,p,li{overflow-wrap:anywhere}
-.doc{display:grid;grid-template-columns:230px minmax(0,1fr);gap:32px;padding-bottom:60px}
-.doc aside{font-size:.93em;position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow:auto;min-width:0;display:grid;gap:14px}
-.doc aside a{display:block;padding:2px 0;text-decoration:none;color:var(--muted)} .doc aside a[aria-current]{color:var(--link);font-weight:700}
-.doc aside summary{cursor:pointer;font-weight:700;padding:3px 0} .doc aside details a{padding-left:12px}
-.doc .toc .t3{padding-left:14px;font-size:.93em} .doc .label{font-weight:700;color:var(--muted)}
-.doc article{min-width:0} .doc article p,.doc article li{max-width:72ch} .doc h2:first-child{margin-top:8px}
-.crumb{margin:20px 0 0;color:var(--muted);font-size:.9em}
-@media(max-width:860px){.doc{grid-template-columns:minmax(0,1fr)}.doc aside{position:static;max-height:none;order:2}.doc .toc{display:none}}
-@media(max-width:480px){body{font-size:14.5px}th,td{padding:6px 9px}}
+.crumb{margin:18px 0 0;color:var(--muted);font-size:.9rem}
+nav.all{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 28px;margin:14px 0;font-size:.94rem}
+nav.all .g{font-weight:700;color:var(--muted);margin-top:8px} nav.all a{display:block;padding:1px 0}
+nav.all a[aria-current]{font-weight:700;color:var(--ink)}
+main.page{padding-bottom:24px}
+@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 </style></head><body>
-<div class="wrap"><p class="crumb"><a href="../index.html">ダッシュボード</a> ／ 計画・費用</p><h1>出発前・現地・帰国の準備チェック</h1></div>
-<div class="wrap doc">
-<aside><nav aria-label="ページ一覧"><a href="../index.html">ダッシュボード</a><details><summary>ルート地図</summary><a href="../maps/world-map.html">世界地図</a><a href="../maps/africa-map.html">アフリカ地図</a></details><details><summary>現地調査</summary><a href="../research/africa-route-comparison.html">フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</a><a href="../research/africa-trip.html">05 5月 南部アフリカ周遊（2027年5月）【未確定】</a><a href="../research/baguio-diving.html">バギオ発の週末ダイビング（2〜4月）</a><a href="../research/baguio-sightseeing.html">バギオ週末観光（2〜4月）と季節・雨天代替</a><a href="../research/capetown-diving.html">ケープタウン発の週末ダイビング（6〜7月・冬）</a><a href="../research/capetown-sightseeing.html">ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替</a><a href="../research/food-and-living.html">現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）</a><a href="../research/philippines-pines.html">04 フィリピン留学（2027年2〜4月）PINES International Academy／バギオ</a><a href="../research/safety-and-health.html">バギオ・ケープタウンの治安・健康・日常移動</a><a href="../research/second-school.html">06 2カ国目の語学留学（2027年6〜7月）ケープタウン【検討中】</a><a href="../research/sources.html">一次資料・調査ログ</a><a href="../research/southern-africa-countries.html">2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）</a><a href="../research/visa-and-immigration.html">査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）</a><a href="../research/winter-clothing.html">ケープタウン 6〜7月の衣類と現地調達・防寒</a></details><details open><summary>計画・費用</summary><a href="../docs/01-timeline.html">2027年2〜8月：全体日程（匿名モデル）</a><a href="../docs/02-budget.html">6か月間の予算モデル（公開用・匿名）</a><a href="../docs/03-preparation.html" aria-current="page">出発前・現地・帰国の準備チェック</a><a href="../docs/04-dashboard.html">ダッシュボードの見方と更新方法</a><a href="../docs/05-public-data-policy.html">公開データと非公開データの分離</a><a href="../docs/06-predeparture-roadmap.html">海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</a><a href="../docs/07-export.html">HTML・Word への変換（Markdown が正本）</a><a href="../docs/08-handoff.html">AI・別PC向け 引き継ぎ手順書</a><a href="../docs/09-issue-map.html">Issue対応表（AI・保守者向け）</a></details><details><summary>ブログ</summary><a href="../blog/article-ideas.html">ブログの将来記事・調査の再利用</a><a href="../blog/experience-log.html">体験/実費の記録フォーム</a></details><details><summary>データ（CSV）</summary><a href="../data/articles.html">articles.csv</a><a href="../data/expenses.html">expenses.csv</a><a href="../data/funds.html">funds.csv</a><a href="../data/fx.html">fx.csv</a><a href="../data/meta.html">meta.csv</a><a href="../data/pages.html">pages.csv</a><a href="../data/places.html">places.csv</a><a href="../data/tasks.html">tasks.csv</a><a href="../data/timeline.html">timeline.csv</a></details></nav><div class="toc"><div class="label">このページの目次</div><a class="t2" href="#先に確定すべきもの">先に確定すべきもの</a><a class="t2" href="#タスク一覧自動">タスク一覧（自動）</a><a class="t3" href="#住居荷物">住居・荷物</a><a class="t3" href="#保険医療">保険・医療</a><a class="t3" href="#パスポートビザ">パスポート・ビザ</a><a class="t3" href="#留学先手続き">留学先手続き</a><a class="t3" href="#休職会社">休職・会社</a><a class="t3" href="#出発前">出発前</a><a class="t3" href="#航空券">航空券</a><a class="t3" href="#お金通信">お金・通信</a><a class="t3" href="#計画">計画</a><a class="t3" href="#渡航中">渡航中</a><a class="t3" href="#帰国復職">帰国・復職</a><a class="t2" href="#後続作業">後続作業</a><a class="t2" href="#手続きの要点公的情報の調査結果2026-10-16-調査">手続きの要点（公的情報の調査結果・2026-10-16 調査）</a><a class="t3" href="#1-休職中の社会保険料健康保険厚生年金">1. 休職中の社会保険料（健康保険・厚生年金）</a><a class="t3" href="#2-住民税">2. 住民税</a><a class="t3" href="#3-所得税年末調整">3. 所得税・年末調整</a><a class="t3" href="#4-海外療養費健康保険">4. 海外療養費（健康保険）</a><a class="t3" href="#5-在留届たびレジ">5. 在留届・たびレジ</a><a class="t3" href="#6-パスポート">6. パスポート</a><a class="t3" href="#7-予防接種">7. 予防接種</a><a class="t3" href="#8-海外旅行保険">8. 海外旅行保険</a><a class="t3" href="#9-荷物保管携帯電話">9. 荷物保管・携帯電話</a><a class="t2" href="#勤務先自治体に確認すること一般的な確認項目">勤務先・自治体に確認すること（一般的な確認項目）</a><a class="t2" href="#持ち物リスト準備中に更新">持ち物リスト（準備中に更新）</a></div></aside>
+<header class="bar"><div class="wrap"><nav aria-label="ページ間の移動"><a href="../index.html">トップ</a><a href="../areas/baguio.html">バギオ</a><a href="../areas/africa.html">アフリカ周遊</a><a href="../areas/capetown.html">ケープタウン</a><a href="../areas/common.html">日本国内・保険・共通</a><a href="../maps/world-map.html">ルート地図</a><a href="#all-pages">全ページ</a></nav></div></header>
+<main class="wrap page">
+<p class="crumb"><a href="../index.html">トップ</a> ／ 計画・費用</p>
+<h1>出発前・現地・帰国の準備チェック</h1>
+<nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#先に確定すべきもの">先に確定すべきもの</a><a href="#タスク一覧自動">タスク一覧（自動）</a><a href="#後続作業">後続作業</a><a href="#手続きの要点公的情報の調査結果2026-10-16-調査">手続きの要点（公的情報の調査結果・2026-10-16 調査）</a><a href="#勤務先自治体に確認すること一般的な確認項目">勤務先・自治体に確認すること（一般的な確認項目）</a><a href="#持ち物リスト準備中に更新">持ち物リスト（準備中に更新）</a></nav>
 <article>
-<p>一般的な準備チェックリスト（<a href="../data/tasks.html">タスク表</a>）。下の AUTO ブロックは <code>py scripts/build_all.py</code>（内部で build.py）が生成する。ここには判断の順序と、公的情報の調査結果を記載する。公開用の匿名モデルで、個別の雇用条件・契約・支払い・提出状況は書かない。</p>
+<p>一般的な準備チェックリスト（地域ごとの確認事項は <a href="../areas/baguio.html">バギオ</a>・<a href="../areas/africa.html">アフリカ周遊</a>・<a href="../areas/capetown.html">ケープタウン</a>・<a href="../areas/common.html">共通</a>）。下の AUTO ブロックは <code>py scripts/build_all.py</code>（内部で build.py）が生成する。ここには判断の順序と、公的情報の調査結果を記載する。公開用の匿名モデルで、個別の雇用条件・契約・支払い・提出状況は書かない。</p>
 <h2 id="先に確定すべきもの">先に確定すべきもの</h2>
 <ul><li><span class="check" aria-label="未完了"></span>語学学校の入寮・修了・退寮日を学校の最新案内で確認</li><li><span class="check" aria-label="未完了"></span>勤務先の休職制度、無給期間の税・社会保険料の扱い、住居と荷物保管</li><li><span class="check" aria-label="未完了"></span>南アフリカの<strong>8週間の英語コース</strong>で必要な滞在資格を学校・在日南アフリカ大使館に確認</li><li><span class="check" aria-label="未完了"></span><strong>5月南アフリカ初入国案</strong>と<strong>6月初入国案</strong>をビザ/再入国ルールで検証</li><li><span class="check" aria-label="未完了"></span>フィリピンへの入国時に必要な出国用航空券（正式な予約を用意する）</li><li><span class="check" aria-label="未完了"></span>フィリピンの観光滞在延長・SSP等が学校代行かどうかと最終料金</li><li><span class="check" aria-label="未完了"></span>アフリカ周遊国のビザ、黄熱病の接種証明条件、国をまたぐ移動の現実性</li></ul>
 <h2 id="タスク一覧自動">タスク一覧（自動）</h2>
@@ -76,7 +84,7 @@ article,h1,p,li{overflow-wrap:anywhere}
 <h3 id="計画">計画</h3>
 <div class="scroll"><table><thead><tr><th>ID</th><th></th><th>タスク</th><th>期限（目安）</th><th>期限の種類</th><th>進捗</th><th>担当</th><th>費用目安</th><th>次のアクション</th><th>根拠</th><th>Issue</th></tr></thead><tbody><tr><td>T008</td><td>⬜</td><td>2都市の週末ダイビング交通と見積を取得</td><td>出発30日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>research/*-diving.md の候補ショップに空き・料金を確認</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/3" target="_blank" rel="noopener">#3</a></td></tr><tr><td>T009</td><td>⬜</td><td>2都市の観光・雨天代替案を検証</td><td>出発30日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>research/*-sightseeing.md のモデルコースを日程に配置</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/4" target="_blank" rel="noopener">#4</a></td></tr><tr><td>T010</td><td>⬜</td><td>ケープタウンの食材価格と衣類実売価格を確認</td><td>第2校の開始90日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/5" target="_blank" rel="noopener">#5</a></td></tr></tbody></table></div>
 <h3 id="渡航中">渡航中</h3>
-<div class="scroll"><table><thead><tr><th>ID</th><th></th><th>タスク</th><th>期限（目安）</th><th>期限の種類</th><th>進捗</th><th>担当</th><th>費用目安</th><th>次のアクション</th><th>根拠</th><th>Issue</th></tr></thead><tbody><tr><td>T-T01</td><td>⬜</td><td>外務省 たびレジ登録（フィリピン・アフリカ各国）</td><td>出発7日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>無料</td><td>出発前に登録</td><td><a href="https://www.ezairyu.mofa.go.jp/tabireg/index.html" target="_blank" rel="noopener">出典</a></td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr><tr><td>T-T02</td><td>⬜</td><td>5月の周遊ルート確定・宿・ツアー予約</td><td>周遊開始60日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>research/africa-trip.md 参照</td><td>ルート案から選ぶ</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr><tr><td>T-T03</td><td>⬜</td><td>渡航中の経費は非公開で記録し、公開CSVの見積を更新</td><td>渡航中は随時（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>個人の支払記録は公開repoに書かない</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>ID</th><th></th><th>タスク</th><th>期限（目安）</th><th>期限の種類</th><th>進捗</th><th>担当</th><th>費用目安</th><th>次のアクション</th><th>根拠</th><th>Issue</th></tr></thead><tbody><tr><td>T-T01</td><td>⬜</td><td>外務省 たびレジ登録（フィリピン・アフリカ各国）</td><td>出発7日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>無料</td><td>出発前に登録</td><td><a href="https://www.ezairyu.mofa.go.jp/tabireg/index.html" target="_blank" rel="noopener">出典</a></td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr><tr><td>T-T02</td><td>⬜</td><td>5月の周遊ルート確定・宿・ツアー予約</td><td>周遊開始60日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>research/africa-trip.md 参照</td><td>ルート案から選ぶ</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr><tr><td>T-T03</td><td>⬜</td><td>渡航中の経費は非公開で記録し、公開用の見積を更新</td><td>渡航中は随時（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>個人の支払記録は公開repoに書かない</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr></tbody></table></div>
 <h3 id="帰国復職">帰国・復職</h3>
 <div class="scroll"><table><thead><tr><th>ID</th><th></th><th>タスク</th><th>期限（目安）</th><th>期限の種類</th><th>進捗</th><th>担当</th><th>費用目安</th><th>次のアクション</th><th>根拠</th><th>Issue</th></tr></thead><tbody><tr><td>T-R01</td><td>⬜</td><td>帰国後の住居・荷物の受け取り</td><td>帰国30日前（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>帰国前に手配</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr><tr><td>T-R02</td><td>⬜</td><td>復職手続き・休職中の社会保険料等の精算（休職した場合）</td><td>帰国後（時期は勤務先等の規定による。要確認）</td><td>要確認</td><td>未着手</td><td>本人</td><td>—</td><td>勤務先の規定を確認</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr><tr><td>T-R03</td><td>⬜</td><td>海外療養費の申請（使った場合）</td><td>帰国後30日以内（推奨目安）。請求の時効は制度で確認</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>領収書と翻訳文を準備</td><td><a href="https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/" target="_blank" rel="noopener">出典</a></td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr><tr><td>T-R04</td><td>⬜</td><td>見積モデルの振り返り・ブログ記事化</td><td>帰国後（推奨目安）</td><td>推奨目安</td><td>未着手</td><td>本人</td><td>—</td><td>公開する場合は匿名化した概算のみ使う</td><td>—</td><td><a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">#7</a></td></tr></tbody></table></div>
 <h2 id="後続作業">後続作業</h2>
@@ -114,7 +122,7 @@ article,h1,p,li{overflow-wrap:anywhere}
 <h2 id="持ち物リスト準備中に更新">持ち物リスト（準備中に更新）</h2>
 <div class="scroll"><table><thead><tr><th>区分</th><th>物</th><th>状態</th></tr></thead><tbody><tr><td>書類</td><td>パスポート（残存期間・空白ページ）、パスポートのコピー、証明写真、eTravel、航空券の控え、保険証券（英文）、予防接種証明（イエローカード）、学校の入学許可書、国際キャッシュカード・クレジットカード2枚以上</td><td>未着手</td></tr><tr><td>健康</td><td>常備薬、英文の処方箋、虫よけ（DEET）、日焼け止め、マスク</td><td>未着手</td></tr><tr><td>衣類</td><td>バギオ（朝晩涼しい）とケープタウン（6〜7月は冬で雨が多い）向けの防寒着、サファリ用の長袖・地味な色の服</td><td>未着手</td></tr><tr><td>電子機器</td><td>変換プラグ（フィリピンはA型、南アはM型など）、モバイルバッテリー、SIMフリーのスマートフォン</td><td>未着手</td></tr><tr><td>ダイビング</td><td>（任意）Cカード、ログブック、マスク</td><td>未着手</td></tr></tbody></table></div>
 <p>※ 南アのプラグ形状などは出発前に再確認すること（未調査）。</p>
-<footer>Markdown（<a href="https://github.com/Rikkyhub/studying-abroad/blob/main/docs/03-preparation.md" target="_blank" rel="noopener">docs/03-preparation.md</a>）から自動生成。内容の正本は Markdown 側です。公開リポジトリの生成物のため、個人の支払・資産・予約情報は掲載しません。料金・制度は確認日時点の情報で、2027年の内容を保証しません。</footer>
 </article>
-</div>
+<footer><nav class="all" id="all-pages" aria-label="全ページ"><div><div class="g">地域別</div><a href="../areas/africa.html">アフリカ周遊（5月）</a><a href="../areas/baguio.html">バギオ（フィリピン語学留学）</a><a href="../areas/capetown.html">ケープタウン（第2か国留学）</a><a href="../areas/common.html">日本国内・保険・共通</a></div><div><div class="g">ルート地図</div><a href="../maps/world-map.html">世界地図</a><a href="../maps/africa-map.html">アフリカ地図</a></div><div><div class="g">現地調査</div><a href="../research/africa-route-comparison.html">フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</a><a href="../research/africa-trip.html">05 5月 南部アフリカ周遊（2027年5月）【未確定】</a><a href="../research/baguio-diving.html">バギオ発の週末ダイビング（2〜4月）</a><a href="../research/baguio-sightseeing.html">バギオ週末観光（2〜4月）と季節・雨天代替</a><a href="../research/capetown-diving.html">ケープタウン発の週末ダイビング（6〜7月・冬）</a><a href="../research/capetown-sightseeing.html">ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替</a><a href="../research/food-and-living.html">現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）</a><a href="../research/philippines-pines.html">04 フィリピン留学（2027年2〜4月）PINES International Academy／バギオ</a><a href="../research/safety-and-health.html">バギオ・ケープタウンの治安・健康・日常移動</a><a href="../research/second-school.html">06 2カ国目の語学留学（2027年6〜7月）ケープタウン【検討中】</a><a href="../research/sources.html">一次資料・調査ログ</a><a href="../research/southern-africa-countries.html">2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）</a><a href="../research/visa-and-immigration.html">査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）</a><a href="../research/winter-clothing.html">ケープタウン 6〜7月の衣類と現地調達・防寒</a></div><div><div class="g">計画・費用</div><a href="../docs/01-timeline.html">2027年2〜8月：全体日程（匿名モデル）</a><a href="../docs/02-budget.html">6か月間の予算モデル（公開用・匿名）</a><a href="../docs/03-preparation.html" aria-current="page">出発前・現地・帰国の準備チェック</a><a href="../docs/04-dashboard.html">トップページと地域別ページの見方・更新方法</a><a href="../docs/05-public-data-policy.html">公開データと非公開データの分離</a><a href="../docs/06-predeparture-roadmap.html">海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</a><a href="../docs/07-export.html">HTML・Word への変換（Markdown が正本）</a><a href="../docs/08-handoff.html">AI・別PC向け 引き継ぎ手順書</a><a href="../docs/09-issue-map.html">Issue対応表（AI・保守者向け）</a></div><div><div class="g">ブログ</div><a href="../blog/article-ideas.html">ブログの将来記事・調査の再利用</a><a href="../blog/experience-log.html">体験/実費の記録フォーム</a></div></nav><p>Markdown（<a href="https://github.com/Rikkyhub/studying-abroad/blob/main/docs/03-preparation.md" target="_blank" rel="noopener">docs/03-preparation.md</a>）から自動生成。内容の正本は Markdown 側です。公開リポジトリの生成物のため、個人の支払・資産・予約情報は掲載しません。料金・制度は確認日時点の情報で、2027年の内容を保証しません。</p></footer>
+</main>
 </body></html>

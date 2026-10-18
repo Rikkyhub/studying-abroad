@@ -3,57 +3,65 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）｜2027 留学・アフリカ周遊</title>
 <style>
-:root{color-scheme:light;--ink:#1d2227;--muted:#5b656e;--link:#0a58a8;--bg:#fbfbfa;--line:#d9d9d3;--th:#efefea;--code:#ecece7;--hl:#fff6dc;
---sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--code:#23282b;--hl:#2a2619}}
-:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--code:#23282b;--hl:#2a2619}
+:root{color-scheme:light;--ink:#1d2227;--muted:#555f68;--link:#0a58a8;--bg:#fbfbfa;--line:#d4d4cd;--th:#ecece6;--code:#ecece7;--hl:#fff6dc;--bar:44px;
+--sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans)}
-a{color:var(--link);text-underline-offset:2px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+html{scroll-padding-top:calc(var(--bar) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--sans)}
+a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1{font-size:1.5rem;line-height:1.35;margin:28px 0 6px;font-weight:700}
-h2{font-size:1.15rem;line-height:1.4;margin:36px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
-h3{font-size:1rem;margin:22px 0 4px} h4{font-size:.95rem;margin:16px 0 4px}
-p{margin:6px 0} .lead{color:var(--muted);margin:0 0 4px} .muted{color:var(--muted);font-size:.93em}
-nav.jump{display:flex;flex-wrap:wrap;gap:2px 18px;margin:14px 0 0;padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.93em}
-nav.jump a{padding:2px 0}
-.note{background:var(--hl);padding:8px 12px;margin:14px 0}
-ol.todo{margin:6px 0;padding-left:1.5em} ol.todo li{margin:2px 0} ul.facts{margin:6px 0;padding-left:1.3em;color:var(--muted)}
-.scroll{overflow:auto;max-height:min(72vh,720px);margin:8px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-table{border-collapse:collapse;width:max-content;min-width:100%;font-size:.93em;line-height:1.55}
-th,td{padding:7px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
-td{max-width:30em;min-width:5em} tr:last-child td{border-bottom:0}
-th{position:sticky;top:0;z-index:1;background:var(--th);font-weight:700;white-space:nowrap;border-bottom:1px solid var(--line)}
+header.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.bar nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px;min-height:var(--bar);font-size:.94rem}
+header.bar a,header.bar .here{padding:8px 0;text-decoration:none;white-space:nowrap}
+header.bar .here,header.bar a[aria-current]{font-weight:700;color:var(--ink);box-shadow:inset 0 -3px 0 var(--link)}
+header.bar a:hover{text-decoration:underline}
+h1{font-size:1.65rem;line-height:1.4;margin:26px 0 8px;font-weight:700}
+h2{font-size:1.25rem;line-height:1.5;margin:44px 0 10px;padding-top:14px;border-top:2px solid var(--line)}
+h3{font-size:1.05rem;line-height:1.6;margin:28px 0 6px} h4{font-size:1rem;margin:20px 0 4px}
+p{margin:10px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px} .muted{color:var(--muted);font-size:.93rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:2px 22px;margin:14px 0 4px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.94rem}
+nav.toc .label{font-weight:700;color:var(--muted)}
+.note{background:var(--hl);padding:10px 14px;margin:16px 0;max-width:none}
+ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
+.scroll{margin:12px 0 22px;border-top:2px solid var(--line);border-bottom:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
+td{min-width:4.4em} tbody tr:last-child td{border-bottom:0} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 38%,transparent)}
+th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line)}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.c,th.c{text-align:center}
+td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 4px}
 pre{background:var(--code);padding:10px 12px;overflow-x:auto} pre code{padding:0;background:none}
-blockquote{margin:12px 0;background:var(--hl);padding:4px 14px}
-ul,ol{padding-left:1.4em} li{margin:2px 0}
+blockquote{margin:14px 0;background:var(--hl);padding:4px 14px}
+ul,ol{padding-left:1.5em} li{margin:4px 0}
 .check{display:inline-block;width:.9em;height:.9em;border:1.5px solid var(--muted);margin-right:6px;vertical-align:-1px}
 .check.done{background:var(--link);border-color:var(--link)}
-form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 18px;margin:8px 0 12px}
-form.calc label{display:grid;gap:3px;font-size:.93em;color:var(--muted)}
-form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:6px 8px;min-width:0;width:100%}
-form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.7em}
-footer{color:var(--muted);font-size:.87em;margin-top:40px;padding-top:12px;border-top:1px solid var(--line)}
+form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px;margin:10px 0 14px}
+form.calc label{display:grid;gap:4px;font-size:.93rem;color:var(--muted)}
+form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:7px 9px;min-width:0;width:100%}
+form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.8em}
+footer{color:var(--muted);font-size:.9rem;margin-top:48px;padding:14px 0 40px;border-top:1px solid var(--line)}
+footer p{max-width:none}
 article,h1,p,li{overflow-wrap:anywhere}
-.doc{display:grid;grid-template-columns:230px minmax(0,1fr);gap:32px;padding-bottom:60px}
-.doc aside{font-size:.93em;position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow:auto;min-width:0;display:grid;gap:14px}
-.doc aside a{display:block;padding:2px 0;text-decoration:none;color:var(--muted)} .doc aside a[aria-current]{color:var(--link);font-weight:700}
-.doc aside summary{cursor:pointer;font-weight:700;padding:3px 0} .doc aside details a{padding-left:12px}
-.doc .toc .t3{padding-left:14px;font-size:.93em} .doc .label{font-weight:700;color:var(--muted)}
-.doc article{min-width:0} .doc article p,.doc article li{max-width:72ch} .doc h2:first-child{margin-top:8px}
-.crumb{margin:20px 0 0;color:var(--muted);font-size:.9em}
-@media(max-width:860px){.doc{grid-template-columns:minmax(0,1fr)}.doc aside{position:static;max-height:none;order:2}.doc .toc{display:none}}
-@media(max-width:480px){body{font-size:14.5px}th,td{padding:6px 9px}}
+.crumb{margin:18px 0 0;color:var(--muted);font-size:.9rem}
+nav.all{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 28px;margin:14px 0;font-size:.94rem}
+nav.all .g{font-weight:700;color:var(--muted);margin-top:8px} nav.all a{display:block;padding:1px 0}
+nav.all a[aria-current]{font-weight:700;color:var(--ink)}
+main.page{padding-bottom:24px}
+@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 </style></head><body>
-<div class="wrap"><p class="crumb"><a href="../index.html">ダッシュボード</a> ／ 現地調査</p><h1>フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</h1></div>
-<div class="wrap doc">
-<aside><nav aria-label="ページ一覧"><a href="../index.html">ダッシュボード</a><details><summary>ルート地図</summary><a href="../maps/world-map.html">世界地図</a><a href="../maps/africa-map.html">アフリカ地図</a></details><details open><summary>現地調査</summary><a href="../research/africa-route-comparison.html" aria-current="page">フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</a><a href="../research/africa-trip.html">05 5月 南部アフリカ周遊（2027年5月）【未確定】</a><a href="../research/baguio-diving.html">バギオ発の週末ダイビング（2〜4月）</a><a href="../research/baguio-sightseeing.html">バギオ週末観光（2〜4月）と季節・雨天代替</a><a href="../research/capetown-diving.html">ケープタウン発の週末ダイビング（6〜7月・冬）</a><a href="../research/capetown-sightseeing.html">ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替</a><a href="../research/food-and-living.html">現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）</a><a href="../research/philippines-pines.html">04 フィリピン留学（2027年2〜4月）PINES International Academy／バギオ</a><a href="../research/safety-and-health.html">バギオ・ケープタウンの治安・健康・日常移動</a><a href="../research/second-school.html">06 2カ国目の語学留学（2027年6〜7月）ケープタウン【検討中】</a><a href="../research/sources.html">一次資料・調査ログ</a><a href="../research/southern-africa-countries.html">2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）</a><a href="../research/visa-and-immigration.html">査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）</a><a href="../research/winter-clothing.html">ケープタウン 6〜7月の衣類と現地調達・防寒</a></details><details><summary>計画・費用</summary><a href="../docs/01-timeline.html">2027年2〜8月：全体日程（匿名モデル）</a><a href="../docs/02-budget.html">6か月間の予算モデル（公開用・匿名）</a><a href="../docs/03-preparation.html">出発前・現地・帰国の準備チェック</a><a href="../docs/04-dashboard.html">ダッシュボードの見方と更新方法</a><a href="../docs/05-public-data-policy.html">公開データと非公開データの分離</a><a href="../docs/06-predeparture-roadmap.html">海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</a><a href="../docs/07-export.html">HTML・Word への変換（Markdown が正本）</a><a href="../docs/08-handoff.html">AI・別PC向け 引き継ぎ手順書</a><a href="../docs/09-issue-map.html">Issue対応表（AI・保守者向け）</a></details><details><summary>ブログ</summary><a href="../blog/article-ideas.html">ブログの将来記事・調査の再利用</a><a href="../blog/experience-log.html">体験/実費の記録フォーム</a></details><details><summary>データ（CSV）</summary><a href="../data/articles.html">articles.csv</a><a href="../data/expenses.html">expenses.csv</a><a href="../data/funds.html">funds.csv</a><a href="../data/fx.html">fx.csv</a><a href="../data/meta.html">meta.csv</a><a href="../data/pages.html">pages.csv</a><a href="../data/places.html">places.csv</a><a href="../data/tasks.html">tasks.csv</a><a href="../data/timeline.html">timeline.csv</a></details></nav><div class="toc"><div class="label">このページの目次</div><a class="t2" href="#0-結論先に">0. 結論（先に）</a><a class="t2" href="#1-ルート定義">1. ルート定義</a><a class="t2" href="#2-区間別比較表">2. 区間別比較表</a><a class="t2" href="#3-国別入国条件日本の一般旅券観光2027年5月想定">3. 国別入国条件（日本の一般旅券、観光、2027年5月想定）</a><a class="t2" href="#4-最新の危険情報確認日-2026-10-17">4. 最新の危険情報（確認日 2026-10-17）</a><a class="t2" href="#5-最低日数と5月の季節性">5. 最低日数と5月の季節性</a><a class="t2" href="#6-価格モデル匿名の例示予算上限-60万円">6. 価格モデル（匿名の例示予算上限 60万円）</a><a class="t3" href="#61-予算配分の枠上限-b--600000円">6.1 予算配分の枠（上限 B = 600,000円）</a><a class="t3" href="#62-既知の公式料金原通貨確認日-2026-10-17">6.2 既知の公式料金（原通貨・確認日 2026-10-17）</a><a class="t3" href="#63-航空参考skyscanner参考最安非保証2027年5月issue記載値の転記">6.3 航空参考（Skyscanner参考最安・非保証、2027年5月、Issue記載値の転記）</a><a class="t2" href="#7-国数別シナリオのトレードオフ約1か月">7. 国数別シナリオのトレードオフ（約1か月）</a><a class="t2" href="#8-主要地点のgoogle-mapsリンク">8. 主要地点のGoogle Mapsリンク</a><a class="t2" href="#9-公開データの確認16">9. 公開データの確認（#16）</a><a class="t2" href="#10-残課題未確認一覧">10. 残課題（未確認一覧）</a><a class="t2" href="#11-調査ログ2026-10-17">11. 調査ログ（2026-10-17）</a></div></aside>
+<header class="bar"><div class="wrap"><nav aria-label="ページ間の移動"><a href="../index.html">トップ</a><a href="../areas/baguio.html">バギオ</a><a href="../areas/africa.html">アフリカ周遊</a><a href="../areas/capetown.html">ケープタウン</a><a href="../areas/common.html">日本国内・保険・共通</a><a href="../maps/world-map.html">ルート地図</a><a href="#all-pages">全ページ</a></nav></div></header>
+<main class="wrap page">
+<p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
+<h1>フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</h1>
+<nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#0-結論先に">0. 結論（先に）</a><a href="#1-ルート定義">1. ルート定義</a><a href="#2-区間別比較表">2. 区間別比較表</a><a href="#3-国別入国条件日本の一般旅券観光2027年5月想定">3. 国別入国条件（日本の一般旅券、観光、2027年5月想定）</a><a href="#4-最新の危険情報確認日-2026-10-17">4. 最新の危険情報（確認日 2026-10-17）</a><a href="#5-最低日数と5月の季節性">5. 最低日数と5月の季節性</a><a href="#6-価格モデル匿名の例示予算上限-60万円">6. 価格モデル（匿名の例示予算上限 60万円）</a><a href="#7-国数別シナリオのトレードオフ約1か月">7. 国数別シナリオのトレードオフ（約1か月）</a><a href="#8-主要地点のgoogle-mapsリンク">8. 主要地点のGoogle Mapsリンク</a><a href="#9-公開データの確認16">9. 公開データの確認（#16）</a><a href="#10-残課題未確認一覧">10. 残課題（未確認一覧）</a><a href="#11-調査ログ2026-10-17">11. 調査ログ（2026-10-17）</a></nav>
 <article>
 <p><strong>調査日：2026-10-17 / 想定：2027年5月の約1か月、日本の一般旅券、匿名モデル。</strong> Issue <a href="https://github.com/Rikkyhub/studying-abroad/issues/23" target="_blank" rel="noopener">#23</a>（関連 #1, #2, #7, #8, #16）。</p>
-<ul><li>本資料は<strong>個人の予約・支払い・確定旅程を含まない一般向けの研究モデル</strong>。2027年の運賃・ダイヤ・制度は未確定で、購入や入国可否の保証ではない。公開方針は <a href="../docs/05-public-data-policy.html">docs/05-public-data-policy.md</a>、入国全般は <a href="visa-and-immigration.html">visa-and-immigration.md</a>。</li><li>ラベル：<strong>確定</strong>＝公式ページで取得日に確認できた事実 / <strong>推計</strong>＝根拠に基づく見積り・一般知識 / <strong>未確認</strong>＝根拠を取得できていない（0円や推測値では埋めない）。</li><li>本資料では外貨を円換算しない（参考レートは <a href="../data/fx.csv">data/fx.csv</a>、MUFG仲値・2026-10-16）。金額は原通貨のまま記す。円の数値は Issue #23 本文に記載された Skyscanner の参考値を転記したもので、<strong>今回の調査では再取得できていない</strong>。</li></ul>
+<ul><li>本資料は<strong>個人の予約・支払い・確定旅程を含まない一般向けの研究モデル</strong>。2027年の運賃・ダイヤ・制度は未確定で、購入や入国可否の保証ではない。公開方針は <a href="../docs/05-public-data-policy.html">docs/05-public-data-policy.md</a>、入国全般は <a href="visa-and-immigration.html">visa-and-immigration.md</a>。</li><li>ラベル：<strong>確定</strong>＝公式ページで取得日に確認できた事実 / <strong>推計</strong>＝根拠に基づく見積り・一般知識 / <strong>未確認</strong>＝根拠を取得できていない（0円や推測値では埋めない）。</li><li>本資料では外貨を円換算しない（参考レートは <a href="../areas/africa.html">アフリカ周遊のページ</a> の「通貨と円換算」、MUFG仲値・2026-10-16）。金額は原通貨のまま記す。円の数値は Issue #23 本文に記載された Skyscanner の参考値を転記したもので、<strong>今回の調査では再取得できていない</strong>。</li></ul>
 <blockquote><p><strong>後続資料：</strong> 南部アフリカ各国（エスワティニ／ジンバブエ／ザンビア／ボツワナ／ナミビア／モザンビーク）の日数・費用・査証・安全と S1–S5 の比較は <a href="southern-africa-countries.html">southern-africa-countries.md</a>（Issue #38）に移った。#38 は本資料の島国先行案（B・D・E など）に代わる南部アフリカ先行の検討であり、本資料の B〜E は比較履歴として残す。</p></blockquote>
 <h2 id="0-結論先に">0. 結論（先に）</h2>
 <div class="scroll"><table><thead><tr><th>観点</th><th>評価</th></tr></thead><tbody><tr><td>最有力</td><td><strong>A（ナイロビ起点・東アフリカ→南ア）またはその縮小版</strong>。エチオピアを経由せず、陸路の危険区間も少ない。</td></tr><tr><td>E（NBO→TNR→JNB）</td><td>ADDを避けつつマダガスカルに入れる。ただし NBO→TNR→JNB の2区間は参考値を単純加算すると約15.4万円と高く、約1か月・60万円では<strong>マダガスカル滞在日数を絞る</strong>必要がある。</td></tr><tr><td>B（ADD経由）</td><td>外務省・FCDOとも2026-09以降エチオピア情勢を警戒。<strong>ADDは空港乗継のみ</strong>、北部（アムハラ/ティグライ）は観光対象外。遅延時の市内滞在・入国を前提にしない。EよりBを優先する根拠は現状ない。</td></tr><tr><td>C（陸路）</td><td>国数は稼げるが移動日数・夜行交通・国境の変動が大きい。<strong>夜行バスは推奨しない</strong>（昼間移動を原則、未確認の区間は航空に置換）。</td></tr><tr><td>D（島）</td><td>モーリシャス/セーシェルは南部アフリカ本土との接続・費用の根拠を取得できず<strong>未確認</strong>。マダガスカルのみ E/B で扱う。</td></tr><tr><td>国数</td><td>1か月なら<strong>3〜4か国</strong>が現実的。5〜6か国は移動日が増え、観光日数が薄くなる（第7章）。</td></tr></tbody></table></div>
@@ -111,7 +119,7 @@ article,h1,p,li{overflow-wrap:anywhere}
 <h2 id="11-調査ログ2026-10-17">11. 調査ログ（2026-10-17）</h2>
 <ul><li>WebSearch は利用せず、公式ページを直接取得（タイムアウト20〜25秒、再試行なし）。</li><li>取得成功：etakenya.go.ke/eligibility（eTA料金）、etakenya.go.ke/、visa.immigration.go.tz/ と /guidelines、zambiaimmigration.gov.zm/、evisa.gov.zw/（トップのみ）、dha.gov.za（exempt-countries）、dirco.gov.za/japan/frequently-asked-questions/、www.zimparks.org、www.tanzaniaparks.go.tz、ethiopianairlines.com の ADD stopover ページ、kenya-airways.com（トップのみ。マダガスカル便の記載は取得できず）。</li><li>外務省：anzen.mofa.go.jp/info/arealeaveinfolist_14.html（アフリカ一覧）、pcspotinfo_2026C043（エチオピア北部）、pchazardspecificinfo_2026T042（ザンビア）、2025T106（マダガスカル）、2025T100（タンザニア）、2025T062（モザンビーク）、2025T046（ケニア）、2025T042（南ア）、2025T027（エチオピア）、2024T116（ジンバブエ）。</li><li>英国FCDO：gov.uk/foreign-travel-advice の ethiopia、madagascar（safety-and-security / entry-requirements）、kenya（entry / safety）、tanzania（entry / safety）、zambia、zimbabwe、botswana、mozambique、south-africa の entry-requirements。</li><li>失敗・未確認：evisamada.gov.mg（SSL検証エラー、無検証接続でもディレクトリ一覧のみ）、www.evisa.gov.mg / ambamadagascar.jp（DNS不可）、evisa.gov.zw の /faq /guide（403）、gov.bw（SSL/タイムアウト）、mha.gov.bw / migracao.gov.mz（DNS不可）、home-affairs.gov.za（502）、mofa.go.jp の国別基礎データ（403）、anzen.mofa.go.jp の pcinfectionspothazardinfo_037（存在せず）、flightconnections.com 5ページ（HTTP 202・本文空）、kenya-airways.com/en/destinations/madagascar（404）、zambiaimmigration.gov.zm/visa-exemptions/（404）、www.kenyaembassyjapan.org（DNS不可）。</li><li>外務省ページは文字コードの扱いで一部判読に追加処理が必要だったが、危険レベル・更新日は本文から確認した。</li><li>検索語：なし（直接URL取得のみ）。</li></ul>
 <p><strong>ラベル：確定（実施した取得の記録）</strong></p>
-<footer>Markdown（<a href="https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-route-comparison.md" target="_blank" rel="noopener">research/africa-route-comparison.md</a>）から自動生成。内容の正本は Markdown 側です。公開リポジトリの生成物のため、個人の支払・資産・予約情報は掲載しません。料金・制度は確認日時点の情報で、2027年の内容を保証しません。</footer>
 </article>
-</div>
+<footer><nav class="all" id="all-pages" aria-label="全ページ"><div><div class="g">地域別</div><a href="../areas/africa.html">アフリカ周遊（5月）</a><a href="../areas/baguio.html">バギオ（フィリピン語学留学）</a><a href="../areas/capetown.html">ケープタウン（第2か国留学）</a><a href="../areas/common.html">日本国内・保険・共通</a></div><div><div class="g">ルート地図</div><a href="../maps/world-map.html">世界地図</a><a href="../maps/africa-map.html">アフリカ地図</a></div><div><div class="g">現地調査</div><a href="../research/africa-route-comparison.html" aria-current="page">フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</a><a href="../research/africa-trip.html">05 5月 南部アフリカ周遊（2027年5月）【未確定】</a><a href="../research/baguio-diving.html">バギオ発の週末ダイビング（2〜4月）</a><a href="../research/baguio-sightseeing.html">バギオ週末観光（2〜4月）と季節・雨天代替</a><a href="../research/capetown-diving.html">ケープタウン発の週末ダイビング（6〜7月・冬）</a><a href="../research/capetown-sightseeing.html">ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替</a><a href="../research/food-and-living.html">現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）</a><a href="../research/philippines-pines.html">04 フィリピン留学（2027年2〜4月）PINES International Academy／バギオ</a><a href="../research/safety-and-health.html">バギオ・ケープタウンの治安・健康・日常移動</a><a href="../research/second-school.html">06 2カ国目の語学留学（2027年6〜7月）ケープタウン【検討中】</a><a href="../research/sources.html">一次資料・調査ログ</a><a href="../research/southern-africa-countries.html">2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）</a><a href="../research/visa-and-immigration.html">査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）</a><a href="../research/winter-clothing.html">ケープタウン 6〜7月の衣類と現地調達・防寒</a></div><div><div class="g">計画・費用</div><a href="../docs/01-timeline.html">2027年2〜8月：全体日程（匿名モデル）</a><a href="../docs/02-budget.html">6か月間の予算モデル（公開用・匿名）</a><a href="../docs/03-preparation.html">出発前・現地・帰国の準備チェック</a><a href="../docs/04-dashboard.html">トップページと地域別ページの見方・更新方法</a><a href="../docs/05-public-data-policy.html">公開データと非公開データの分離</a><a href="../docs/06-predeparture-roadmap.html">海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</a><a href="../docs/07-export.html">HTML・Word への変換（Markdown が正本）</a><a href="../docs/08-handoff.html">AI・別PC向け 引き継ぎ手順書</a><a href="../docs/09-issue-map.html">Issue対応表（AI・保守者向け）</a></div><div><div class="g">ブログ</div><a href="../blog/article-ideas.html">ブログの将来記事・調査の再利用</a><a href="../blog/experience-log.html">体験/実費の記録フォーム</a></div></nav><p>Markdown（<a href="https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-route-comparison.md" target="_blank" rel="noopener">research/africa-route-comparison.md</a>）から自動生成。内容の正本は Markdown 側です。公開リポジトリの生成物のため、個人の支払・資産・予約情報は掲載しません。料金・制度は確認日時点の情報で、2027年の内容を保証しません。</p></footer>
+</main>
 </body></html>

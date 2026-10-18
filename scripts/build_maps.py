@@ -20,6 +20,9 @@ import sys
 from pathlib import Path
 from urllib.parse import quote
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_html import BASE_CSS, bar, nav as site_nav  # noqa: E402  共通テンプレート
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 GEO = DATA / "geo"
@@ -705,26 +708,16 @@ def build_map(kind, points, routes, world_geo, africa_geo):
 
 
 # ---------------------------------------------------------------- page
-CSS = """:root{color-scheme:light;--ink:#1d2227;--muted:#59636c;--link:#0a58a8;--bg:#fbfbfa;--line:#d9d9d3;--th:#efefea;--hl:#fff6dc;
---sea:#e6eef3;--land:#f4f1e8;--visit:#e3e8c9;--border:#b9b4a4;--grat:#cdd8df;--pt:#1d2227;--caution:#b3261e;--cautionbg:#f1d9d6;
---rA:#0072B2;--rB:#B84A00;--rC:#007A5A;--rD:#A5498A;--rE:#8A6D00;
---sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--hl:#2a2619;
---sea:#1a2530;--land:#2b2f2c;--visit:#3b4328;--border:#59605a;--grat:#2a3844;--pt:#e3e6e8;--caution:#ff8a80;--cautionbg:#4a2523;
---rA:#56B4E9;--rB:#FF9A5C;--rC:#3DCCA0;--rD:#E7A6CE;--rE:#F2C94C}}
-:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a0a9b1;--link:#7db4ec;--bg:#16181a;--line:#33383c;--th:#202427;--hl:#2a2619;
---sea:#1a2530;--land:#2b2f2c;--visit:#3b4328;--border:#59605a;--grat:#2a3844;--pt:#e3e6e8;--caution:#ff8a80;--cautionbg:#4a2523;
---rA:#56B4E9;--rB:#FF9A5C;--rC:#3DCCA0;--rD:#E7A6CE;--rE:#F2C94C}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans)}
-a{color:var(--link);text-underline-offset:2px}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
-.crumb{margin:18px 0 0;color:var(--muted);font-size:.9em}
-h1{font-size:1.5rem;line-height:1.35;margin:10px 0 6px}
-h2{font-size:1.1rem;margin:26px 0 6px}
-p{margin:6px 0} .lead{color:var(--muted)} .muted{color:var(--muted);font-size:.93em}
-.switch{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0;padding:6px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.95em}
+MAP_VARS = """:root{--sea:#e6eef3;--land:#f4f1e8;--visit:#e3e8c9;--border:#b9b4a4;--grat:#cdd8df;--pt:#1d2227;--caution:#b3261e;--cautionbg:#f1d9d6;
+--rA:#0072B2;--rB:#B84A00;--rC:#007A5A;--rD:#A5498A;--rE:#8A6D00;--rF:#3B3B3B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sea:#1a2530;--land:#2b2f2c;--visit:#3b4328;--border:#59605a;--grat:#2a3844;--pt:#e3e6e8;--caution:#ff8a80;--cautionbg:#4a2523;
+--rA:#56B4E9;--rB:#FF9A5C;--rC:#3DCCA0;--rD:#E7A6CE;--rE:#F2C94C;--rF:#D9D9D9}}
+:root[data-theme="dark"]{--sea:#1a2530;--land:#2b2f2c;--visit:#3b4328;--border:#59605a;--grat:#2a3844;--pt:#e3e6e8;--caution:#ff8a80;--cautionbg:#4a2523;
+--rA:#56B4E9;--rB:#FF9A5C;--rC:#3DCCA0;--rD:#E7A6CE;--rE:#F2C94C;--rF:#D9D9D9}
+"""
+
+# 共通テンプレート（scripts/build_html.py の BASE_CSS：固定ナビ・16px・行間1.8・色トークン）の上に、地図固有の規則だけを足す
+CSS = BASE_CSS + MAP_VARS + """.switch{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0;padding:6px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.95em}
 fieldset{border:0;margin:14px 0 6px;padding:0;min-width:0}
 legend{font-weight:700;padding:0;margin-bottom:4px}
 .sel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:2px 16px}
@@ -743,7 +736,7 @@ svg#map.zoomed{touch-action:none;cursor:grab}
 .ctint{fill:var(--cautionbg);stroke:var(--caution);stroke-width:.8}
 .hatchln{stroke:var(--caution);stroke-width:1.1}
 .leg{--c:var(--rA);cursor:pointer;transition:opacity .15s}
-.leg.r-A{--c:var(--rA)} .leg.r-B{--c:var(--rB)} .leg.r-C{--c:var(--rC)} .leg.r-D{--c:var(--rD)} .leg.r-E{--c:var(--rE)}
+.leg.r-A{--c:var(--rA)} .leg.r-B{--c:var(--rB)} .leg.r-C{--c:var(--rC)} .leg.r-D{--c:var(--rD)} .leg.r-E{--c:var(--rE)} .leg.r-F{--c:var(--rF)}
 .leg .ln{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .leg .hit{fill:none;stroke:transparent;stroke-width:14}
 .leg.m-overland .ln{stroke-width:2.8}
@@ -770,22 +763,17 @@ svg#map.solo .leg .uncl{display:inline}
 svg#map.lo .lb.minor{display:none}
 #detail{margin:8px 0;padding:10px 14px;border:1px solid var(--line);border-radius:4px;background:var(--th);min-height:5.5em;font-size:.95em}
 #detail h3{margin:0 0 4px;font-size:1rem} #detail dl{margin:4px 0;display:grid;grid-template-columns:7em 1fr;gap:2px 10px} #detail dt{color:var(--muted)} #detail dd{margin:0;overflow-wrap:anywhere}
-.scroll{overflow:auto;margin:8px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93em;line-height:1.5}
-th,td{padding:7px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
-th{background:var(--th);white-space:nowrap} td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.scroll table{min-width:560px} th{white-space:nowrap}
 tr.row{cursor:pointer} tr.row:hover td,tr.row.on td{background:var(--hl)}
 tr:last-child td{border-bottom:0}
 .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:6px 18px;margin:8px 0;font-size:.93em}
 .legend div{display:flex;gap:8px;align-items:center}
 .legend svg{flex:none;width:54px;height:16px;overflow:visible}
 .lgl{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round}
-.note{background:var(--hl);padding:8px 12px;margin:12px 0;font-size:.93em}
 .cautionnote{border:1px solid var(--caution);border-radius:4px;background:var(--cautionbg);padding:8px 12px;margin:12px 0;font-size:.93em}
-footer{color:var(--muted);font-size:.87em;margin:36px 0 40px;padding-top:12px;border-top:1px solid var(--line)}
 .rb{display:inline-block;min-width:1.6em;padding:0 5px;margin-right:4px;font-weight:700;text-align:center;color:var(--bg);background:var(--c,var(--ink))}
-.rb.A{--c:var(--rA)} .rb.B{--c:var(--rB)} .rb.C{--c:var(--rC)} .rb.D{--c:var(--rD)} .rb.E{--c:var(--rE)}
-@media(max-width:480px){body{font-size:14.5px}th,td{padding:6px 7px}#detail dl{grid-template-columns:5.5em 1fr}}
+.rb.A{--c:var(--rA)} .rb.B{--c:var(--rB)} .rb.C{--c:var(--rC)} .rb.D{--c:var(--rD)} .rb.E{--c:var(--rE)} .rb.F{--c:var(--rF)}
+@media(max-width:480px){#detail dl{grid-template-columns:5.5em 1fr}}
 """
 
 JS = r"""(function(){
@@ -892,11 +880,12 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <title>{title}｜2027 留学・アフリカ周遊</title>
 <style>
 {CSS}</style></head><body>
-<div class="wrap">
-<p class="crumb"><a href="../index.html">ダッシュボード</a> ／ ルート確認用の地図</p>
+{bar("../", "maps/" + ("world-map" if world else "africa-map") + ".html")}
+<main class="wrap page">
+<p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <h1>{title}</h1>
 <p class="lead">候補ルートの概念図。実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
-<nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../index.html">ダッシュボード</a></nav>
+<nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../areas/africa.html">アフリカ周遊のページ</a></nav>
 <fieldset><legend>表示するルート</legend><div class="sel">{"".join(radios)}</div></fieldset>
 <p class="muted">直線距離の合計は大圏（地球上の最短距離）の足し算で、<strong>実際の飛行・走行距離ではありません</strong>。区間の運賃・ダイヤは未確認のものを含みます。{zoom_note}</p>
 <div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div>
@@ -908,8 +897,8 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <h2>凡例</h2>
 {legend_html()}
 <p class="note">個人の予約・日程・支払いは含みません。公開されている空港・都市・公園の位置と、資料に載っている一般的なルート案だけを描いた概念図です。陸路は実際の道路経路ではなく、点を直線で結んだ例示です。</p>
-<footer>地図データ：<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a>（パブリックドメイン）を <a href="https://github.com/topojson/world-atlas" target="_blank" rel="noopener">world-atlas</a> 2.0.2（ISC）経由で使用し、{"図法はNatural Earth図法" if world else "図法はランベルト正積方位図法"}で描画。このページは <code>scripts/build_maps.py</code> が <code>data/route_points.csv</code>・<code>data/routes.csv</code> から自動生成します（手で編集しない）。外部の通信は行いません。</footer>
-</div>
+<footer><nav class="all" id="all-pages" aria-label="全ページ">{site_nav(ROOT, ROOT / "maps" / ("world-map.html" if world else "africa-map.html"))}</nav><p>地図データ：<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a>（パブリックドメイン）を <a href="https://github.com/topojson/world-atlas" target="_blank" rel="noopener">world-atlas</a> 2.0.2（ISC）経由で使用し、{"図法はNatural Earth図法" if world else "図法はランベルト正積方位図法"}で描画。このページは <code>scripts/build_maps.py</code> が <code>data/route_points.csv</code>・<code>data/routes.csv</code> から自動生成します（手で編集しない）。外部の通信は行いません。</p></footer>
+</main>
 <script type="application/json" id="map-data">{data}</script>
 <script>
 {JS}
