@@ -23,6 +23,10 @@ SCHEMAS = {
     "funds.csv": ["id", "type", "name", "amount_jpy", "as_of", "note"],
     "fx.csv": ["currency", "name_ja", "unit", "region", "jpy_per_unit", "rate_date", "rate_kind", "source"],
     "meta.csv": ["key", "value", "note"],
+    "route_points.csv": ["id", "name_ja", "name_en", "iata_or_code", "country", "lat", "lon", "kind", "note", "maps_query",
+                         "world_pos", "africa_pos", "provisional",
+                         "label_dx", "label_dy", "label_anchor", "world_label_dx", "world_label_dy", "world_label_anchor"],
+    "routes.csv": ["route_id", "route_name_ja", "seq", "from_point", "to_point", "mode", "status", "unconfirmed", "note"],
 }
 NUMERIC = {
     "expenses.csv": ["low_local", "std_local", "high_local"],
@@ -46,6 +50,11 @@ ENUMS = {
     ("pages.csv", "group"): {"research", "plan"},
     ("pages.csv", "status"): {"researching", "ready", "draft"},
     ("places.csv", "area"): {"baguio", "capetown", "africa", "other"},
+    ("route_points.csv", "kind"): {"airport", "city", "park", "border", "sea"},
+    ("route_points.csv", "provisional"): {"Y", "N"},
+    ("routes.csv", "mode"): {"flight", "overland", "ferry", "sea"},
+    ("routes.csv", "status"): {"候補", "空港乗継のみ", "非推奨"},
+    ("routes.csv", "unconfirmed"): {"Y", "N"},
 }
 HTTP_URL = re.compile(r"^https?://[^\s;]+$")
 ISSUE_URL = re.compile(r"^https://github\.com/[\w.-]+/[\w.-]+/issues/\d+$")
@@ -64,7 +73,7 @@ def load(name):
         ERRORS.append(f"{name}: required columns are missing: {missing}")
         return []
     out, seen = [], set()
-    key = "currency" if name == "fx.csv" else "key" if name == "meta.csv" else "id"
+    key = {"fx.csv": "currency", "meta.csv": "key", "routes.csv": "_leg"}.get(name, "id")
     for n, values in enumerate(rows, 2):
         if not any(v.strip() for v in values):
             continue
@@ -72,7 +81,7 @@ def load(name):
             ERRORS.append(f"{name}:{n}: CSV column count mismatch ({len(values)} != {len(header)}). セル内の半角カンマを確認")
             continue
         row = {h: v.strip() for h, v in zip(header, values)}
-        k = row.get(key, "")
+        k = (row["route_id"] + "-" + row["seq"]) if key == "_leg" else row.get(key, "")
         if not k or k in seen:
             ERRORS.append(f"{name}:{n}: missing/duplicate {key} {k!r}")
         seen.add(k)
@@ -125,6 +134,52 @@ def check(name, rows):
             if any(p.search(v) for p in PRIVATE):
                 # 値そのものは出力しない（CIログへの露出防止）
                 ERRORS.append(f"{label}:{col}: 個人情報らしき値（番号・メール・電話）。公開リポジトリには書かない")
+
+
+def check_routes(points, legs):
+    """ルート地図の入力: 座標の範囲、区間の参照先、seq が 1 からの連番で、区間がつながっていること"""
+    ids = set()
+    for n, row in points:
+        ids.add(row["id"])
+        for col, lim in (("lat", 90), ("lon", 180)):
+            try:
+                if not -lim <= float(row[col]) <= lim:
+                    raise ValueError
+            except ValueError:
+                ERRORS.append(f"route_points.csv:{n}:{col}: must be a number in -{lim}..{lim}")
+        if not row["name_ja"] or not row["maps_query"]:
+            ERRORS.append(f"route_points.csv:{n}: name_ja and maps_query are required")
+        for col in ("world_pos", "africa_pos"):
+            if row[col] not in {"r", "l", "t", "b", "tr", "tl", "br", "bl", "dot", "none"}:
+                ERRORS.append(f"route_points.csv:{n}:{col}: unknown label position {row[col]!r}")
+        # ラベル位置の手動指定（任意）: 点からの差 dx/dy（px、図の座標系）と、s=左端起点 / e=右端起点 / m=中央
+        for pre in ("", "world_"):
+            for axis in ("dx", "dy"):
+                v = row[f"{pre}label_{axis}"]
+                if v != "":
+                    try:
+                        if abs(float(v)) > 120:
+                            raise ValueError
+                    except ValueError:
+                        ERRORS.append(f"route_points.csv:{n}:{pre}label_{axis}: must be empty or a number within ±120")
+            if row[f"{pre}label_anchor"] not in {"", "s", "e", "m"}:
+                ERRORS.append(f"route_points.csv:{n}:{pre}label_anchor: must be empty, s, e or m")
+    by_route = {}
+    for n, row in legs:
+        for col in ("from_point", "to_point"):
+            if row[col] not in ids:
+                ERRORS.append(f"routes.csv:{n}:{col}: unknown point {row[col]!r}")
+        if not row["seq"].isdigit():
+            ERRORS.append(f"routes.csv:{n}:seq: must be an integer")
+            continue
+        by_route.setdefault(row["route_id"], []).append((int(row["seq"]), n, row))
+    for rid, items in by_route.items():
+        items.sort()
+        if [i[0] for i in items] != list(range(1, len(items) + 1)):
+            ERRORS.append(f"routes.csv: route {rid}: seq must run 1..N without gaps")
+        for (_, _, a), (_, n2, b) in zip(items, items[1:]):
+            if a["to_point"] != b["from_point"]:
+                ERRORS.append(f"routes.csv:{n2}: route {rid} is not contiguous (to_point of the previous leg != from_point)")
 
 
 def main():
@@ -189,6 +244,7 @@ def main():
                 ERRORS.append(f"{label}: jpy_per_unit must be > 0 or empty")
             if not row["rate_date"] or not row["rate_kind"] or not HTTP_URL.match(row["source"]):
                 ERRORS.append(f"{label}: a rate needs rate_date, rate_kind and an http(s) source")
+    check_routes(loaded["route_points.csv"], loaded["routes.csv"])
     if ERRORS:
         for err in ERRORS:
             print("ERROR:", err, file=sys.stderr)
