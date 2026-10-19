@@ -124,7 +124,7 @@ Issue #44 は初版後に改訂され、季節と順序の根拠は Issue [#46](
 | 項目 | 内容 | 状態 |
 |---|---|---|
 | KAZA UNIVISA | USD50。12か月のうち30日まで、Zambia・Zimbabwe 滞在中有効。Botswana は **Kazungula 国境経由の日帰りのみ**。対象国に日本掲載 | **確認済み**（[KAZA](https://www.zambiaimmigration.gov.zm/kaza-univisa/)、2026-10-18） |
-| KAZA の窓口料金 | 公式料金表で Kaza 50＋手数料 0.5＝**USD50.50** | **確認済み**（[料金表](https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/)、2026-10-18） |
+| KAZA のカード決済時の料金例 | 基本料金 **USD50**＋カード決済の追加手数料 **USD0.50**＝**USD50.50**。窓口・現金払いでも一律に手数料がかかるとは断定しない | **確認済み**（[料金表](https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/)、2026-10-18） |
 | Zambia | 日本は査証免除（一覧 No.76）。無料 | **確認済み**（[免除国](https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/)、2026-10-18） |
 | Zimbabwe 単独 | USD30／入国。複数入国 USD55 の表記も | **確認済み**（[料金表](https://www.zimimmigration.gov.zw/?page_id=6958)、2026-10-18） |
 
@@ -477,7 +477,7 @@ Kenya → Tanzania（Arusha 経由で南下）→ Malawi → Zambia → Zimbabwe
 | Gozo Azul | 2本＋ギア＋税＝USD140 | **一致**（100＋30＋10＝140、22,147円）。シリンダー・ウエイトの別料金の扱いは未確認 |
 | ANAC | Kosi Bay 8:00〜17:00、673km、4WD | **一致**。4WD推奨は国境付近でなく宿泊地周辺の砂道。Maputo 経由の3〜4時間も記載あり |
 | Zimbabwe | 単独 USD30 | **一致**。複数入国 USD55 の表記は Issue に無い |
-| KAZA | USD50 | **一致**。窓口料金表は手数料込み USD50.50 |
+| KAZA | USD50 | **基本料金 USD50 は一致**。USD50.50 はカード決済の追加手数料を含む表示例であり、窓口現金払いの確定額ではない |
 | Kenya EATV | 大使館 TEMPORARILY UNAVAILABLE／政府 COMING SOON | **一致** |
 | Rwanda 単独 USD50 | USD50 | 公式料金ページを取得できず**未確認** |
 | TAZARA | 2026-02-10 再開、Dar es Salaam↔New Kapiri Mposhi、週2便 | **一致**（公式 node/505、2026-10-19）。ただし運行日は New Kapiri 発が火曜・Dar es Salaam 発が金曜で、片方向は週1便。Issue の「曜日指定」に当たる |
