@@ -369,33 +369,68 @@ def region_names(value: str) -> str:
     return "・".join(labels[r] for r in value.split(";") if r in labels)
 
 
-def region_table(root: Path = ROOT) -> str:
-    """地域別の入口の表（3地域＋共通）。時期と状態は timeline.csv、確認事項の件数は tasks.csv の region 列から"""
+def card_link(href: str, inner: str) -> str:
+    """カード全体を1つのリンクにする（カードの中に別のリンクを入れない）"""
+    return f'<a class="card link" href="{esc(href)}">{inner}<span class="go">ページを見る</span></a>'
+
+
+def region_cards(root: Path = ROOT) -> str:
+    """地域別の入口カード（3地域＋共通）。時期と状態は timeline.csv、確認事項の件数は tasks.csv の region 列から"""
     timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
     tasks = csv_records(root / DATA_DIR / "tasks.csv")
-    rows = []
+    cards = []
     for key, label in REGION_PAGES:
         tl = [r for r in timeline if key in r["region"].split(";")]
         n = sum(1 for t in tasks if key in t["region"].split(";") and t["status"] not in DONE_STATUS)
         if tl:
-            period = "<br>".join(esc(r["period"]) for r in tl)
-            status = "<br>".join(dict.fromkeys(esc(r["status"]) for r in tl))
+            period = "・".join(esc(r["period"]) for r in tl)
+            status = "・".join(dict.fromkeys(esc(r["status"]) for r in tl))
         else:
             period, status = "出発前〜帰国後（随時）", "一般的な確認項目（匿名モデル）"
-        rows.append([f"<strong>{esc(label)}</strong>", period, f'<a href="areas/{key}.html">{esc(label)}のページ</a>',
-                     f'{status}<br><span class="muted">確認事項 {n}件</span>'])
-    return table(["地域", "時期（モデル）", "見るページ", "状態"], rows, widths=[20, 24, 26, 30])
+        cards.append(card_link(f"areas/{key}.html",
+                               f'<p class="eyebrow">{period}</p><h3>{esc(label)}</h3>'
+                               f'<p class="sub">{status}</p><p class="sub">確認事項 <span class="n">{n}</span>件</p>'))
+    return '<div class="grid">' + "".join(cards) + "</div>"
 
 
-def total_note(root: Path = ROOT) -> str:
+def timeline_cards(root: Path = ROOT) -> str:
+    """旅程（モデル）。期間ごとに1枚。タイトル・状態・要約と、地域別ページへのリンク"""
+    timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
+    cards = []
+    for r in timeline:
+        key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
+        cards.append(card_link(f"areas/{key}.html",
+                               f'<p class="eyebrow">{esc(r["period"])}</p><h3>{esc(r["title"])}</h3>'
+                               f'<p class="status">{esc(r["status"])}</p><p class="sub">{esc(r["summary"])}</p>'))
+    return '<div class="grid">' + "".join(cards) + "</div>"
+
+
+def budget_cards(root: Path = ROOT) -> str:
+    """予算の全体像。モデルの目標・見積だけを表示する。金額未入力は「未計上」と書き、0円にも合計にもしない"""
     if root != ROOT:
         return ""
     import build  # scripts/build.py（集計の正本）
     S = build.load_model()[0]
-    return (f'<p class="muted">全地域の見積合計（標準・金額が入っている行だけ）は {esc(build.yen(S["total"]["std"]))}。'
-            f'予算の目標は{esc(build.man(S["budget_ideal"]))}、上限は{esc(build.man(S["budget_cap"]))}です。'
-            f'公開価格表からの匿名の見積で、実際の支払額ではありません。内訳は各地域のページ、計算ルールは '
-            f'<a href="docs/02-budget.html">予算の計算ルール</a>。</p>')
+    tot = S["total"]
+    n_na, n_part = len(S["no_amount"]), len(S["partial"])
+
+    def card(label, value, note):
+        return (f'<div class="card"><p class="eyebrow">{esc(label)}</p><p class="val">{esc(value)}</p>'
+                f'<p class="sub">{note}</p></div>')
+
+    unpriced = f'金額が入っていない {n_na} 件' + (f'と一部だけ未入力の {n_part} 件' if n_part else "") + \
+        'は未計上です（0円ではなく、合計に含まれていません）。'
+    cards = [
+        card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標です。実費ではありません。"),
+        card("上限予算", build.man(S["budget_cap"]), "モデルの上限です。実費ではありません。"),
+        card("5月アフリカ周遊の目安", build.man(S["budget_africa"]), "総予算の内数のモデル配分です。実費ではありません。"),
+        card("見積合計（標準）", build.yen(tot["std"]),
+             f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
+             f'実費ではありません。{unpriced}'),
+    ]
+    return ('<p class="sec-lead">表示している金額はすべて公開料金などに基づくモデルの目標・見積で、実際の支払額ではありません。'
+            '内訳は各地域のページ、計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
+            '<div class="grid">' + "".join(cards) + "</div>")
 
 
 def now_block(root: Path = ROOT) -> str:
@@ -411,8 +446,8 @@ def now_block(root: Path = ROOT) -> str:
              f"調査中の資料：{len(researching)}件"]
     if no_rate:
         facts.append("円換算レートが未確認の通貨：" + "、".join(no_rate))
-    return ('<p class="muted">一般的な最優先の確認項目です（匿名モデル。個人の進捗ではありません）。期限は出発日などを基準にした相対的な目安です。</p>\n'
-            f'<ol class="todo">{items}</ol>\n<ul class="facts">' + "".join(f"<li>{esc(f)}</li>" for f in facts) + "</ul>")
+    return ('<div class="card wide"><p class="sub">一般的な最優先の確認項目です（匿名モデル。個人の進捗ではありません）。期限は出発日などを基準にした相対的な目安です。</p>\n'
+            f'<ol class="todo">{items}</ol>\n<ul class="facts">' + "".join(f"<li>{esc(f)}</li>" for f in facts) + "</ul></div>")
 
 
 def fx_json(root: Path = ROOT) -> str:
@@ -427,21 +462,24 @@ def fx_json(root: Path = ROOT) -> str:
 
 def fx_summary(root: Path = ROOT) -> str:
     recs = fx_records(root)
-    rows = []
+    cards = []
     for r in recs:
         rate = num(r["jpy_per_unit"])
+        name = f'<p class="eyebrow">{esc(r["region"])}</p><h3>{esc(r["name_ja"])}（{esc(r["currency"])}）</h3>'
         if rate:
-            rows.append([esc(r["region"]), f'{esc(r["name_ja"])}（{esc(r["currency"])}）', fmt(rate), fmt(Decimal(10000) / rate), esc(r["rate_date"])])
+            body = (f'<dl class="kv"><div><dt>1{esc(r["currency"])}＝</dt><dd class="n">{fmt(rate)} 円</dd></div>'
+                    f'<div><dt>1万円＝</dt><dd class="n">{fmt(Decimal(10000) / rate)} {esc(r["currency"])}</dd></div></dl>'
+                    f'<p class="sub">レート日 {esc(r["rate_date"])}</p>')
         else:
-            rows.append([esc(r["region"]), f'{esc(r["name_ja"])}（{esc(r["currency"])}）', "未確認", "未確認", "未確認"])
+            body = '<p class="val">未確認</p><p class="sub">レート未確認のため換算していません。</p>'
+        cards.append(f'<div class="card">{name}{body}</div>')
     dates = sorted({r["rate_date"] for r in recs if num(r["jpy_per_unit"])})
     srcs = sorted({r["source"] for r in recs if num(r["jpy_per_unit"])})
     head = ""
     if dates:
         links = " ／ ".join(f'<a href="{esc(s)}" target="_blank" rel="noopener">{esc(urlparse(s).netloc)}</a>' for s in srcs)
-        head = f'<p>レート日：{esc(dates[-1])}（取得元：{links}）。{esc(FX_SOURCE_NOTE)}</p>'
-    return (head + table(["国・地域", "通貨", "1単位＝円", "1万円＝現地通貨", "レート日"], rows, num=(2, 3), widths=[32, 28, 14, 14, 12])
-            + "\n<h3>電卓</h3>\n" + fx_json(root))
+        head = f'<p class="sec-lead">レート日：{esc(dates[-1])}（取得元：{links}）。{esc(FX_SOURCE_NOTE)}</p>'
+    return head + '<div class="grid">' + "".join(cards) + "</div>\n" + fx_json(root)
 
 
 def docs_summary(root: Path = ROOT) -> str:
@@ -451,7 +489,7 @@ def docs_summary(root: Path = ROOT) -> str:
         if r["area"] in ("地域別", "運用"):
             continue
         rows.append([esc(r["area"]), f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>', ref_links(r["refs"])])
-    return table(["分野", "資料", "参考（一次情報）"], rows, widths=[16, 34, 50])
+    return '<div class="card wide">' + table(["分野", "資料", "参考（一次情報）"], rows, widths=[16, 34, 50]) + "</div>"
 
 
 INDEX_FX_SCRIPT = """<script>
@@ -474,22 +512,30 @@ form.hidden=false;upd();
 })();
 </script>"""
 
-INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ内の移動"><strong class="here">トップ</strong><a href="#areas">地域別</a><a href="#now">いま何をするか</a><a href="#fx">通貨と円換算</a><a href="#docs">資料一覧</a></nav></div></header>
+INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ内の移動"><strong class="here">トップ</strong><a href="#budget">予算の全体像</a><a href="#plan">旅程</a><a href="#areas">地域別</a><a href="#now">いま何をするか</a><a href="#fx">通貨と円換算</a><a href="#docs">資料一覧</a></nav></div></header>
 <main class="wrap top">
 <h1>2027 留学・アフリカ周遊 計画メモ</h1>
 <p class="lead">2027年2〜7月に、フィリピン・バギオの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学を一つの旅程として整理するための計画メモです。公開してよい一般の料金・制度・調査だけを匿名のモデルとして載せ、地域ごとに費用・確認事項・資料・地図を見られます。</p>
 <p class="note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。個人の支払い・資産・予約情報は公開していません。</p>
 
+<h2 id="budget">予算の全体像</h2>
+@@budget@@
+
+<h2 id="plan">旅程</h2>
+<p class="sec-lead">期間ごとの計画（モデル）です。カードを開くと、その地域の費用・確認事項・資料・地図を見られます。</p>
+@@timeline@@
+
 <h2 id="areas">地域別</h2>
-<p>知りたい地域のページを開いてください。各ページに、概要、いまの確認事項、費用の見積、資料、場所と地図、通貨の換算がまとまっています。</p>
+<p class="sec-lead">知りたい地域のページを開いてください。各ページに、概要、いまの確認事項、費用の見積、資料、場所と地図、通貨の換算がまとまっています。</p>
 @@regions@@
-@@total@@
 
 <h2 id="now">いま何をするか</h2>
 @@now@@
 
 <h2 id="fx">通貨と円換算</h2>
 @@fx@@
+<div class="card wide">
+<h3>電卓</h3>
 <form class="calc" id="fx-calc" hidden>
 <label>通貨<select id="fx-cur"></select></label>
 <label>現地通貨の金額<input id="fx-local" type="number" inputmode="decimal" min="0" step="any" placeholder="例 2300"></label>
@@ -497,7 +543,8 @@ INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ
 <label>円の金額<input id="fx-jpy" type="number" inputmode="decimal" min="0" step="any" placeholder="例 10000"></label>
 <label>現地通貨で言うと<output id="fx-to-local" for="fx-jpy fx-cur">－</output></label>
 </form>
-<p class="muted">電卓は同じレートで計算します（JavaScript が無効でも上の表は読めます）。通貨が違う金額を足し合わせた合計は出していません。</p>
+<p class="sub">電卓は上と同じレートで計算します（JavaScript が無効でも上のカードは読めます）。通貨が違う金額を足し合わせた合計は出していません。</p>
+</div>
 
 <h2 id="docs">資料一覧</h2>
 <p class="muted">「参考」は各資料が根拠にした一次情報へのリンクです。出典の全一覧は <a href="research/sources.html">すべての出典</a>。</p>
@@ -514,7 +561,7 @@ def index_page(root: Path = ROOT) -> str:
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY
-    for k, v in (("regions", region_table(root)), ("total", total_note(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
+    for k, v in (("budget", budget_cards(root)), ("timeline", timeline_cards(root)), ("regions", region_cards(root)),("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
@@ -564,9 +611,10 @@ def main() -> int:
 
 # ---------------------------------------------------------------- style / template
 BASE_CSS = """:root{color-scheme:light;--ink:#1d2227;--muted:#555f68;--link:#0a58a8;--bg:#fbfbfa;--line:#d4d4cd;--th:#ecece6;--code:#ecece7;--hl:#fff6dc;--bar:44px;
+--page:#f4f5f7;--card:#fff;--card-line:rgba(0,0,0,.04);--shadow:0 10px 30px rgba(0,0,0,.05);--shadow-up:0 20px 40px rgba(0,0,0,.10);
 --sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619}}
-:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619;--page:#111315;--card:#1c1f22;--card-line:rgba(255,255,255,.06);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.55)}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619;--page:#111315;--card:#1c1f22;--card-line:rgba(255,255,255,.06);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.55)}
 *{box-sizing:border-box}
 html{scroll-padding-top:calc(var(--bar) + 12px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--sans)}
@@ -611,6 +659,32 @@ nav.all{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));ga
 nav.all .g{font-weight:700;color:var(--muted);margin-top:8px} nav.all a{display:block;padding:1px 0}
 nav.all a[aria-current]{font-weight:700;color:var(--ink)}
 main.page{padding-bottom:24px}
+body.home{background:var(--page)} body.home header.bar{background:var(--page)}
+.top{max-width:1100px;overflow:visible} .top h1{font-size:1.9rem;margin-top:36px}
+.top h2{border-top:0;padding-top:0;margin:56px 0 6px;font-size:1.3rem}
+.top .note{background:var(--hl);padding:12px 16px;border-radius:8px}
+.sec-lead{color:var(--muted);font-size:.95rem;margin:6px 0 0;max-width:72ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;padding:20px 0 28px;overflow:visible;align-items:stretch}
+.card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:12px;padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease}
+.card.wide{grid-column:1/-1;margin:20px 0 28px}
+.card h3{font-size:1.08rem;margin:2px 0 6px;line-height:1.5}
+.card p{margin:6px 0;max-width:none}
+.card .eyebrow{font-size:.85rem;color:var(--muted);margin:0 0 2px}
+.card .val{font-size:1.75rem;line-height:1.3;font-weight:700;font-variant-numeric:tabular-nums;margin:4px 0 8px}
+.card .sub{font-size:.9rem;color:var(--muted);line-height:1.7}
+.card .status{font-size:.88rem;font-weight:700;margin:2px 0 6px}
+.card .go{display:block;margin-top:12px;font-size:.9rem;font-weight:700;color:var(--link)}
+.card .go::after{content:" \\2192"}
+a.card:focus-visible{outline:2px solid var(--link);outline-offset:4px}
+.card .n,dl.kv dd{font-variant-numeric:tabular-nums}
+dl.kv{margin:8px 0}
+dl.kv div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+dl.kv div:last-child{border-bottom:0}
+dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
+.card .scroll{margin:0;border-top:0}
+.card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
+@media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 """
@@ -639,7 +713,7 @@ INDEX_PAGE = """<!doctype html>
 <meta name="description" content="2027年2〜7月の海外留学・アフリカ周遊の計画・費用・準備・調査（地域別）">
 <title>2027 留学・アフリカ周遊｜計画メモ</title>
 <style>
-@@css@@</style></head><body>
+@@css@@</style></head><body class="home">
 @@body@@</body></html>
 """
 
