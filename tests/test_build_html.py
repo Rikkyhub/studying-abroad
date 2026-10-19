@@ -74,11 +74,66 @@ class IndexTests(unittest.TestCase):
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
         self.assertLess(len(self.index), 30000)
 
-    def test_tables_have_headers_and_no_cards(self):
+    def test_tables_have_headers(self):
         import re
         for t in re.findall(r"<table>.*?</table>", self.index, re.S):
             self.assertIn("<thead><tr><th", t)
-        self.assertNotIn('class="card"', self.index)
+
+    def test_top_page_sections_in_order(self):
+        import re
+        heads = re.findall(r"<h2 id=\"[^\"]+\">(.*?)</h2>", self.index)
+        self.assertEqual(heads, ["予算の全体像", "旅程", "地域別", "いま何をするか", "通貨と円換算", "資料一覧"])
+
+    def test_budget_cards_are_model_and_never_zero_for_unpriced(self):
+        import re
+        sec = self.index.split('<h2 id="budget">')[1].split("<h2 id=")[0]
+        for label in ("目標総予算", "上限予算", "5月アフリカ周遊の目安", "見積合計（標準）"):
+            self.assertIn(label, sec)
+        self.assertIn("モデル", sec)
+        self.assertIn("実費ではありません", sec)
+        self.assertIn("未計上", sec)
+        self.assertNotIn("¥0", sec)
+        self.assertNotIn("0円</", sec)
+
+    def test_timeline_cards_one_per_period_with_area_link(self):
+        import csv
+        sec = self.index.split('<h2 id="plan">')[1].split("<h2 id=")[0]
+        with (ROOT / "data" / "timeline.csv").open(newline="", encoding="utf-8-sig") as f:
+            rows = list(csv.DictReader(f))
+        self.assertEqual(sec.count('class="card link"'), len(rows))
+        for r in rows:
+            self.assertIn(r["period"], sec)
+        self.assertIn("モデル", sec)
+
+    def test_currency_cards(self):
+        sec = self.index.split('<h2 id="fx">')[1].split("<h2 id=")[0]
+        for c in ("PHP", "ZAR", "USD"):
+            self.assertIn(f"（{c}）", sec)
+        self.assertIn("1万円＝", sec)
+        self.assertIn('id="fx-calc"', sec)
+
+    def test_link_cards_do_not_nest_links(self):
+        import re
+        for m in re.findall(r'<a class="card link".*?</a>', self.index, re.S):
+            self.assertEqual(m.count("<a "), 1, m[:80])
+
+    def test_floating_card_css(self):
+        import re
+        style = re.search(r"<style>(.*?)</style>", self.index, re.S).group(1)
+        self.assertNotIn("border-left", style)
+        self.assertNotIn("border-left", self.index)
+        self.assertNotIn("gradient", style)
+        self.assertIn("transition:transform .3s ease,box-shadow .3s ease", style)
+        self.assertRegex(style, r"@media \(hover:hover\)\{\.card:hover\{transform:translateY\(-10px\);box-shadow:var\(--shadow-up\)")
+        self.assertIn("--shadow:0 10px 30px rgba(0,0,0,.05)", style)
+        self.assertRegex(style, r"@media \(prefers-reduced-motion:reduce\)\{\.card\{transition:none\}\.card:hover\{transform:none\}\}")
+        self.assertIn("a.card:focus-visible", style)
+        self.assertRegex(style, r"gap:2[4-9]px|gap:[3-9]\d px|gap:2[4-9]px")
+        self.assertIn("minmax(240px,1fr)", style)
+
+    def test_no_csv_links_on_top_page(self):
+        import re
+        self.assertNotRegex(self.index, r"""(href|src)=["'][^"']*\.csv""")
 
     def test_all_pages_csv_non_ops_pages_listed(self):
         import csv
