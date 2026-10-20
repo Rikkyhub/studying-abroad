@@ -192,6 +192,15 @@
 | D案 安全・入国 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html / https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html / https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html / https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html | レソト査証免除、モザンビーク650メティカル、ジンバブエ査証料、モザンビーク危険レベル | 2026-10-20 | MOFA更新日はレソト2025-08-22・モザンビーク2025-06-18・ジンバブエ2026-07-13 |
 | D案 FCDO | https://www.gov.uk/foreign-travel-advice/lesotho/safety-and-security / https://www.gov.uk/foreign-travel-advice/eswatini/safety-and-security | 夜間移動・国境付近の注意 | 2026-10-20 | 英国向け助言 |
 | D案 Tofo | https://www.tofoscuba.com/prices / https://www.tofoscuba.com/faqs | 1ダイブUS$55（器材込）、Maputoからの移動手段 | 2026-10-20 | FAQの著作権表記は2023 |
+| 準備・旅券 | https://www.anzen.mofa.go.jp/m/mbimmigration_122.html | 南ア：90日免除の目的、未使用2ページ、出国予定の30日後まで有効 | 2026-10-20 | WebFetchは403のためcurlで取得。更新日表記なし |
+| 準備・旅券 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html | フィリピン：滞在予定期間＋6か月、SSP、ACR、ECC | 2026-10-20 | データ更新 2025-10-21 |
+| 準備・予防接種 | https://www.forth.go.jp/useful/vaccination.html | A型・B型・破傷風・狂犬病・黄熱の回数・間隔 | 2026-10-20 | 腸チフスの記載は取得できず。ワクチン本文の更新日表記なし |
+| 準備・予防接種 | https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html | 渡航者医療センターのワクチン費用（自費・税込） | 2026-10-20 | 2026年6月1日現在 |
+| 準備・休職 | https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154 | 休職中の資格継続・無給でも事業主に納付義務 | 2026-10-20 | 本人負担分の集め方は記載なし。更新日表記なし |
+| 準備・住民税 | https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html | 賦課期日1月1日、特別徴収・普通徴収 | 2026-10-20 | 休職時・切替・納税管理人の記載なし |
+| 準備・住民税 | https://www.city.setagaya.lg.jp/02051/233.html | 休職時の異動届は翌月10日まで、普通徴収切替理由に休職者 | 2026-10-20 | 世田谷区の例。最終更新日 2026-10-19 |
+| 準備・住居 | https://laws.e-gov.go.jp/law/129AC0000000089 | 民法617条：建物賃貸借の解約申入れは3か月 | 2026-10-20 | 契約の特約が優先される例が多い |
+| 準備・住居 | https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000020.html | 原状回復ガイドライン（再改訂版）：通常損耗は貸主負担 | 2026-10-20 | 解約予告期間の記載なし |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
