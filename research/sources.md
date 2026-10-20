@@ -222,6 +222,19 @@
 | 準備・住民税 | https://www.city.setagaya.lg.jp/02051/233.html | 休職時の異動届は翌月10日まで、普通徴収切替理由に休職者 | 2026-10-20 | 世田谷区の例。最終更新日 2026-10-19 |
 | 準備・住居 | https://laws.e-gov.go.jp/law/129AC0000000089 | 民法617条：建物賃貸借の解約申入れは3か月 | 2026-10-20 | 契約の特約が優先される例が多い |
 | 準備・住居 | https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000020.html | 原状回復ガイドライン（再改訂版）：通常損耗は貸主負担 | 2026-10-20 | 解約予告期間の記載なし |
+| 準備・黄熱 | https://www.forth.go.jp/useful/yellowfever.html | リスク国一覧、証明書の有効期間（生涯）、国別の要求 | 2026-10-20 | 国別欄は2021表記。一覧の現行性は未確認 |
+| 準備・マラリア | https://www.forth.go.jp/destinations/country/philippines.html | フィリピンの感染症・推奨ワクチン・マラリアの地域 | 2026-10-20 | 更新日表記なし |
+| 準備・療養費 | https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/ | 海外療養費の対象・書類・時効2年 | 2026-10-20 | 更新日表記なし。健保組合は別運用の可能性 |
+| 準備・税 | https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2665.htm | 年末調整の対象（年の中途を含む） | 2026-10-20 | 令和8年4月1日現在法令。休職の記載なし |
+| 準備・保管 | https://pocket.sumally.com/ | 1箱330円/月（エコノミー） | 2026-10-20 | 現行表示。取り出し費用は未確認 |
+| 準備・保管 | https://minikura.com/ | 320円〜/月、1年以上で取り出し無料 | 2026-10-20 | 現行表示 |
+| 準備・携帯 | https://povo.jp/ | 基本料0円、180日間に有料トッピングがない場合の停止条件 | 2026-10-20 | 現行表示。海外でのSMSは未確認 |
+| 準備・安全 | https://www.anzen.mofa.go.jp/info/pcwideareaspecificinfo_2026C026.html | エボラ出血熱の広域情報（PHEIC）、アフリカ全域が対象 | 2026-10-20 | 2026-05-18 |
+| 準備・ワクチン | https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines | フィリピンの推奨ワクチン・マラリア・狂犬病・チクングニア | 2026-10-20 | 黄熱・マラリア欄は2025-04-23更新 |
+| 準備・ワクチン | https://wwwnc.cdc.gov/travel/destinations/traveler/none/south-africa | 南アの推奨ワクチン・マラリア地域 | 2026-10-20 | 同上 |
+| 準備・ワクチン | https://wwwnc.cdc.gov/travel/destinations/traveler/none/kenya | ケニア：髄膜炎ベルト、狂犬病、エボラ通知 | 2026-10-20 | エボラ通知は2026-10-19付 |
+| 準備・ワクチン | https://www.forth.go.jp/useful/vaccination.html | A型・B型・破傷風・狂犬病の回数・間隔 | 2026-10-20 | 腸チフスの記述は読めず。FAQは2019年3月更新 |
+| 準備・持参薬 | https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/yakubuturanyou/index_00005.html | 医薬品の携帯による持ち込み・持ち出し（麻薬の許可、向精神薬は1か月分超で処方せん写し） | 2026-10-20 | 国別の制度ページは未取得 |
 
 ### アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水（#44、確認日 2026-10-18）
 詳細は [africa-overland-7-9-countries.md](africa-overland-7-9-countries.md)。
