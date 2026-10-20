@@ -6,6 +6,7 @@
   2. scripts/build_html.py  Markdown/CSV -> *.html、index.html（ダッシュボード）
   3. scripts/build_maps.py  data/route_points.csv・routes.csv・data/geo -> maps/*.html（世界地図・アフリカ地図）
   4. scripts/build_single.py 上の生成物を連結 -> all.html（全ページを1枚にした閲覧用。Vercel などの静的ホスティング用）
+  5. scripts/build_app.py   data/tasks.csv・app/tokens.json -> app.html（準備タスクのアプリ風画面。モバイルアプリ maybego の UI 試作）
 
 --check は書き込まず、どれかの生成物が CSV/Markdown と一致しなければ失敗する（CI 用）。
 """
@@ -14,7 +15,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-STEPS = ["build.py", "build_html.py", "build_maps.py", "build_single.py"]
+STEPS = ["build.py", "build_html.py", "build_maps.py", "build_single.py", "build_app.py"]
 
 
 def main(argv=None):

@@ -4,7 +4,10 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "cleanUrls": false,
-  "rewrites": [{ "source": "/", "destination": "/all.html" }],
+  "rewrites": [
+    { "source": "/", "destination": "/app.html" },
+    { "source": "/docs-all", "destination": "/all.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
