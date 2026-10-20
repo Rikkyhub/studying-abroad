@@ -20,7 +20,7 @@
 
 | ID |  | タスク | 期限（目安） | 期限の種類 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|---|
-| T-H01 | ⬜ | 賃貸契約の解約予告期間・退去費用を確認（該当する場合） | 出発90日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 契約による | 賃貸借契約書を確認（解約予告は1〜2か月前が多い） | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-H01 | ⬜ | 賃貸契約の解約予告期間・退去費用を確認（該当する場合） | 出発90日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 契約による | 賃貸借契約書で解約予告期間・違約金・更新料を確認（民法617条の法定は3か月だが契約の特約が優先される例が多い。research/prep-priority1-tasks.md §4） | [出典](https://laws.e-gov.go.jp/law/129AC0000000089) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-H02 | ⬜ | 住居を残す場合と退去する場合の費用を比較（該当する場合） | 出発60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 家賃6か月分 vs 退去＋保管＋再契約費 | 固定費比較を docs/02-budget.md に記入 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-H06 | ⚠️ | 住民票：国外転出届（海外転出届）が必要かを住民登録のある自治体に確認 | 出発60日前（推奨目安）。届出の要否・時期は自治体の案内による | 推奨目安 | 要確認 | 本人 | — | 滞在期間・日本の生活の本拠・住居の扱いを整理し、住民登録のある市区町村に照会する | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-H03 | ⬜ | 荷物の保管先を決定（実家・トランクルーム・宅配型収納） | 出発30日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 宅配型収納 1箱 約320〜330円/月 | サマリーポケット・minikura の見積を取る | [出典](https://pocket.sumally.com/) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
@@ -31,7 +31,7 @@
 
 | ID |  | タスク | 期限（目安） | 期限の種類 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|---|
-| T-I02 | ⬜ | トラベルクリニック受診・予防接種計画（A型・B型肝炎・破傷風・腸チフス・狂犬病） | 出発90日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 1回 約4400〜16500円（東京医大病院の例） | 出発3か月以上前に受診予約 | [出典](https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
+| T-I02 | ⬜ | トラベルクリニック受診・予防接種計画（A型・B型肝炎・破傷風・腸チフス・狂犬病） | 出発90日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 1回 約4400〜16500円（東京医大病院の例） | 出発3か月以上前に受診予約。B型肝炎は最短24〜28週かかるため早めに相談（research/prep-priority1-tasks.md §2） | [出典](https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I03 | ⬜ | 黄熱ワクチンの要否判断（経由地・訪問国次第） | 出発45日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 検疫所 17680円 | ルート決定後にFORTHの要求国リストで判断 | [出典](https://www.forth.go.jp/moreinfo/topics/yellow_fever_certificate.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I01 | ⬜ | 海外旅行保険（約180日・アジア＋アフリカ）の見積・加入 | 出発30日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 6か月 約18〜35万円（東京海上 代理店掲載例・年齢による） | 東京海上日動・t@biho 等で見積 | [出典](https://www.tmn-hoken.jp/study/simulation.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
 | T-I04 | ⬜ | マラリア予防薬の相談（クルーガー・チョベ・ビクトリア滝方面に行く場合） | 出発30日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 自由診療 | トラベルクリニックで相談 | [出典](https://www.forth.go.jp/destinations/country/s_africa.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) |
@@ -42,7 +42,7 @@
 
 | ID |  | タスク | 期限（目安） | 期限の種類 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|---|
-| T-P01 | ⬜ | パスポート残存期間を確認（帰国予定日＋6か月以上・査証欄2ページ以上×訪問国数） | 出発90日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 更新時 電子申請8900円／窓口9300円 | パスポートの有効期限と空白ページを確認 | [出典](https://www.anzen.mofa.go.jp/m/mbimmigration_122.html) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
+| T-P01 | ⬜ | パスポート残存期間を確認（帰国予定日＋6か月以上・査証欄2ページ以上×訪問国数） | 出発90日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 更新時 電子申請8900円／窓口9300円 | パスポートの有効期限と空白ページを確認（フィリピンは滞在予定期間＋6か月以上、南アは未使用2ページ以上＋出国予定の30日後まで。research/prep-priority1-tasks.md §1） | [出典](https://www.anzen.mofa.go.jp/m/mbimmigration_122.html) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 | T-P02 | ⬜ | フィリピン eTravel 登録 | 到着前72時間以内（到着日未定のため日付なし） | 公式期限 | 未着手 | 本人 | 無料 | フィリピン到着前72時間以内に公式サイトで無料登録する（登録QRを搭乗時に提示できるようにする） | [出典](https://etravel.gov.ph/) | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 | T-P05 | ⬜ | 周遊国のビザ要否・費用を確定 | 周遊開始60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | research/africa-trip.md 参照 | ルート確定後に各国公式で再確認 | — | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) |
 
@@ -50,7 +50,7 @@
 
 | ID |  | タスク | 期限（目安） | 期限の種類 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|---|
-| T-S01 | ⬜ | 留学先学校の入学案内・現地費用の2027年版を確認 | 学校の案内に従う（要確認）。目安は出発90日前 | 学校・機関の個別期限 | 未着手 | 本人 | — | エージェント／学校に2027年版の現地費用を確認 | [出典](https://philschools.jp/pricelist/pines.pdf) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-S01 | ⬜ | 留学先学校の入学案内・現地費用の2027年版を確認 | 学校の案内に従う（要確認）。目安は出発90日前 | 学校・機関の個別期限 | 未着手 | 本人 | — | エージェント／学校に2027年版の現地費用を確認（公開PDFは2026年10月〜版のみで2027年2月入学分は未確認。research/prep-priority1-tasks.md §5） | [出典](https://philschools.jp/pricelist/pines.pdf) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-S02 | ⬜ | 2校目（南ア）の学校・期間を比較して選ぶ | 第2校の開始90日前（推奨目安） | 推奨目安 | 未着手 | 本人 | research/second-school.md 参照 | UCT ELC 等に見積依頼 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-S03 | ⬜ | 2校目の宿泊（ホームステイ等）を手配 | 第2校の開始60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | research/second-school.md 参照 | 学校決定後に申込 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 
@@ -59,8 +59,8 @@
 | ID |  | タスク | 期限（目安） | 期限の種類 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|---|
 | T-W01 | ⚠️ | 休職・長期休暇制度を利用する場合の規定・承認手続きを確認（該当する場合） | 出発90日前（推奨目安）。社内規定の期限があればそちらを優先 | 推奨目安 | 要確認 | 本人 | — | 就業規則と必要書類を確認（内容は公開しない） | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
-| T-W02 | ⬜ | 休職する場合の社会保険料（本人負担分）の支払方法を確認（該当する場合） | 出発60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 月額は標準報酬月額による | 本人負担分の払い方（立替・振込・復職後天引き等）を勤務先の規定で確認 | [出典](https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
-| T-W03 | ⬜ | 住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認（該当する場合） | 出発60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 滞在期間に応じた月数分（モデル） | 特別徴収・普通徴収の扱いを勤務先・住所地の自治体で確認 | [出典](https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-W02 | ⬜ | 休職する場合の社会保険料（本人負担分）の支払方法を確認（該当する場合） | 出発60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 月額は標準報酬月額による | 本人負担分の払い方（立替・振込・復職後天引き等）を勤務先の規定で確認。公式FAQは「無給でも事業主に納付義務」とするのみで集め方は未記載（research/prep-priority1-tasks.md §3） | [出典](https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-W03 | ⬜ | 住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認（該当する場合） | 出発60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | 滞在期間に応じた月数分（モデル） | 特別徴収・普通徴収の扱いを勤務先・住所地の自治体で確認（休職者を普通徴収にできる区分がある自治体の例あり：世田谷区。自治体ごとに異なる。research/prep-priority1-tasks.md §3） | [出典](https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-W04 | ⬜ | 休職前後の休暇・復職手続きの規定を確認（該当する場合） | 出発60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | — | 就業規則を確認（個別の日付・処遇は公開しない） | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-W05 | ⬜ | 休職中の海外渡航・緊急連絡体制の規定を確認（該当する場合） | 出発60日前（推奨目安） | 推奨目安 | 未着手 | 本人 | — | 就業規則を確認 | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-W06 | ⬜ | 業務の引継ぎ計画（該当する場合） | 出発14日前（推奨目安） | 推奨目安 | 未着手 | 本人 | — | 引継ぎ範囲を決める | — | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
