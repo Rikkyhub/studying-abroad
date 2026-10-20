@@ -37,6 +37,7 @@
 | [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.html) | [#38](https://github.com/Rikkyhub/studying-abroad/issues/38) | 調査中 | 2026-10-18 |
 | [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.html) | [#42](https://github.com/Rikkyhub/studying-abroad/issues/42) | 調査中 | 2026-10-18 |
+| [優先度1の準備タスク調査](../research/prep-priority1-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
 | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
 
 ## タスクと Issue
