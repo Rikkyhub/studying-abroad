@@ -88,6 +88,7 @@
 |---|---|---|---|---|
 | 出典 | [すべての出典](../research/sources.md) | URL・確認日・未確認事項 | － | 2026-10-17 |
 | 準備 | [優先度1の準備タスク調査](../research/prep-priority1-tasks.md) | 旅券・予防接種・休職の社保/住民税・住居・留学先手続きの公式確認結果 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html)<br>[hospinfo.tokyo-med.ac.jp](https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html)<br>[tokyokoukenpo.or.jp](https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154) | 2026-10-20 |
+| 保険 | [長期留学＋周遊の保険（カード90日・期間の穴）](../research/long-stay-insurance.md) | カード付帯90日・3/6/7か月の保険料掲載例・シナリオ別の日数の穴（匿名モデル） | [cr.mufg.jp](https://www.cr.mufg.jp/amex/apply/mucard_platinum/insurance/injury_ab/index.html)<br>[faq.eposcard.co.jp](https://faq.eposcard.co.jp/faq/show/4282?category_id=226&site_domain=default)<br>[hokende.com](https://www.hokende.com/damage-insurance/overseas_travel/study_abroad/item-jn14) | 2026-10-19 |
 | 計画 | [月別タイムライン](../docs/01-timeline.md) | 6か月全体の移動・留学・帰国 | － | － |
 | 費用 | [予算の計算ルール](../docs/02-budget.md) | 二重計上防止・未確定の扱い | － | － |
 | 準備 | [準備チェック](../docs/03-preparation.md) | やることと確認順 | － | － |
