@@ -187,6 +187,15 @@
 | ケニア（eTA） | https://extern.api.etakenya.go.ke/eligibility / https://etakenya.go.ke/form/apply/how-to-apply | 標準eTA USD30、通過USD20、90日以内の渡航に有効、処理3営業日 | 2026-10-18 | 決済手数料・日本旅券の特例は未確認 |
 | ケニア（安全） | https://www.anzen.mofa.go.jp/m/mbhazardinfo1_100.html / https://www.anzen.mofa.go.jp/info/pcterror_100.html | 危険情報2025-05-19（ナイロビのスラム街周辺レベル2）、テロ情勢2026-04-17 | 2026-10-18 | 渡航直前に再確認 |
 | ケニア（サファリ料金） | https://nairobipark.org/half-day-nairobi-national-park-tour/ | 貸切USD200（1人）〜50（8人）、混載3〜6人で65〜45（成立保証なし）、集合はメインゲート | 2026-10-18 | 民間運営者。政府資料ではない |
+| 周遊3ルート比較 | https://www.flyairlink.com/sites/default/files/files/Schedule-June.pdf | Airlink時刻表: CPT-VFA 4Z390/4Z391（土曜なし）、JNB-VFA 4Z494/495、JNB-マセル、JNB-マプトなど。ファイル作成日2024-05-20の6月版 | 2026-10-20 | 2024年版。2027年の運航・運賃は未確認 |
+| 周遊3ルート比較 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html | エスワティニ: 30日以内の短期滞在は査証不要。旅券残存3か月以上 | 2026-10-20 | ページ更新日2025-08-22 |
+| 周遊3ルート比較 | https://www.evisa.gov.mz/ | モザンビーク政府eVisaポータル: 日本はETA対象国（30日・観光/業務）の一覧に記載。料金は読み取れず | 2026-10-20 | 日本大使館ページは403で未確認 |
+| 周遊3ルート比較 | https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 英国旅券向け: ETA約47米ドル・処理5営業日以上 | 2026-10-20 | 日本旅券には適用しない |
+| 周遊3ルート比較 | https://www.gov.uk/foreign-travel-advice/zimbabwe/entry-requirements | 英国旅券向け: KAZA Univisa 50米ドル・30日・ジンバブエ-ザンビア間とボツワナ日帰り | 2026-10-20 | 日本旅券の価格は未確認 |
+| 周遊3ルート比較 | https://dirco.gov.za/japan/frequently-asked-questions/ | 日本旅券は90日免除 | 2026-10-20 | 就学許可と同義ではない |
+| 周遊3ルート比較 | https://www.namibiareise.de/en/stages/katima-mulilo-kasane/ | カティマムリロ-カサネ 125 km・全線舗装・運転1.5〜2時間 | 2026-10-20 | 民間旅行情報。国境手続時間は別 |
+| 周遊3ルート比較 | https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html | 取得不可（HTTP 403）。ナミビア査証料金は未確認 | 2026-10-20 | Issue本文の転記値のみ |
+| 周遊3ルート比較 | https://www.zw.emb-japan.go.jp/itpr_ja/visa.html | 取得不可（HTTP 403）。ジンバブエ査証料金は未確認 | 2026-10-20 | Issue本文の転記値のみ |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
