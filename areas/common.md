@@ -20,23 +20,23 @@
 | 1 | 住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認（該当する場合） | 出発60日前（推奨目安） | 未着手<br>推奨目安 | 特別徴収・普通徴収の扱いを勤務先・住所地の自治体で確認（休職者を普通徴収にできる区分がある自治体の例あり：世田谷区。自治体ごとに異なる。research/prep-priority1-tasks.md §3） |
 | 1 | 休職制度・税社保・住居と国内固定費の一般的な確認項目を整理 | 出発60日前（推奨目安） | 未着手<br>推奨目安 | T-W02・T-W03・T-H01〜T-H06 に分割して管理 |
 | 1 | 海外旅行保険（約180日・アジア＋アフリカ）の見積・加入 | 出発30日前（推奨目安） | 未着手<br>推奨目安 | 東京海上日動・t@biho 等で見積 |
-| 1 | 外務省危険情報と旅行保険・医療連絡先を確認 | 出発30日前（推奨目安） | 未着手<br>推奨目安 | research/safety-and-health.md の再確認チェックリストを実施 |
+| 1 | 外務省危険情報と旅行保険・医療連絡先を確認 | 出発30日前（推奨目安） | 未着手<br>推奨目安 | research/safety-and-health.md の再確認チェックリストを実施（2026-05-18にエボラの広域情報あり。research/prep-priority2-tasks.md §4） |
 | 2 | 住民票：国外転出届（海外転出届）が必要かを住民登録のある自治体に確認 | 出発60日前（推奨目安）。届出の要否・時期は自治体の案内による | 要確認<br>推奨目安 | 滞在期間・日本の生活の本拠・住居の扱いを整理し、住民登録のある市区町村に照会する |
 | 2 | 休職前後の休暇・復職手続きの規定を確認（該当する場合） | 出発60日前（推奨目安） | 未着手<br>推奨目安 | 就業規則を確認（個別の日付・処遇は公開しない） |
 | 2 | 休職中の海外渡航・緊急連絡体制の規定を確認（該当する場合） | 出発60日前（推奨目安） | 未着手<br>推奨目安 | 就業規則を確認 |
-| 2 | 荷物の保管先を決定（実家・トランクルーム・宅配型収納） | 出発30日前（推奨目安） | 未着手<br>推奨目安 | サマリーポケット・minikura の見積を取る |
+| 2 | 荷物の保管先を決定（実家・トランクルーム・宅配型収納） | 出発30日前（推奨目安） | 未着手<br>推奨目安 | サマリーポケット・minikura の見積を取る（公開料金は1箱330円・320円〜/月。取り出し・返送費は未確認。research/prep-priority2-tasks.md §3） |
 | 2 | 海外用クレジットカード2枚以上・デビットカードの準備 | 出発30日前（推奨目安） | 未着手<br>推奨目安 | ブランド（Visa/Master）を分けて用意 |
-| 2 | 日本の携帯番号の維持方法を決める（povo0円・ahamo等） | 出発30日前（推奨目安） | 未着手<br>推奨目安 | SMS認証用に番号を維持する方法を決める |
+| 2 | 日本の携帯番号の維持方法を決める（povo0円・ahamo等） | 出発30日前（推奨目安） | 未着手<br>推奨目安 | SMS認証用に番号を維持する方法を決める（povoは180日間に有料トッピング購入がないと停止の対象。research/prep-priority2-tasks.md §3） |
 | 2 | 業務の引継ぎ計画（該当する場合） | 出発14日前（推奨目安） | 未着手<br>推奨目安 | 引継ぎ範囲を決める |
 | 2 | 渡航中の経費は非公開で記録し、公開用の見積を更新 | 渡航中は随時（推奨目安） | 未着手<br>推奨目安 | 個人の支払記録は公開repoに書かない |
 | 2 | 復職手続き・休職中の社会保険料等の精算（休職した場合） | 帰国後（時期は勤務先等の規定による。要確認） | 未着手<br>要確認 | 勤務先の規定を確認 |
-| 3 | ふるさと納税・年末調整・確定申告の要否を確認 | 要確認（制度上の時期は国税庁の案内で確認） | 未着手<br>要確認 | 在籍中の年末調整・確定申告の要否を国税庁の案内で確認 |
+| 3 | ふるさと納税・年末調整・確定申告の要否を確認 | 要確認（制度上の時期は国税庁の案内で確認） | 未着手<br>要確認 | 在籍中の年末調整・確定申告の要否を国税庁の案内で確認（国税庁の対象例に留学・休職は挙がっていない。給与がない期間の扱いは勤務先・税務署に確認。research/prep-priority2-tasks.md §2） |
 | 3 | 電気・ガス・水道・ネットの解約／休止 | 出発14日前（推奨目安） | 未着手<br>推奨目安 | 各社の手続き方法を確認 |
 | 3 | 郵便転送届（e転居）・重要書類の受取先を決める | 出発14日前（推奨目安） | 未着手<br>推奨目安 | 家族に受取を依頼するか決める |
 | 3 | 歯科検診・常備薬・処方薬（英文処方箋） | 出発14日前（推奨目安） | 未着手<br>推奨目安 | 歯科予約 |
-| 3 | 健康保険の海外療養費の申請方法・様式を確認 | 出発14日前（推奨目安） | 未着手<br>推奨目安 | 加入健保（協会けんぽ／組合）を確認 |
+| 3 | 健康保険の海外療養費の申請方法・様式を確認 | 出発14日前（推奨目安） | 未着手<br>推奨目安 | 加入健保（協会けんぽ／組合）を確認。協会けんぽは時効2年・領収書の日本語訳が必要・治療目的の渡航は対象外（research/prep-priority2-tasks.md §2） |
 | 3 | 帰国後の住居・荷物の受け取り | 帰国30日前（推奨目安） | 未着手<br>推奨目安 | 帰国前に手配 |
-| 3 | 海外療養費の申請（使った場合） | 帰国後30日以内（推奨目安）。請求の時効は制度で確認 | 未着手<br>推奨目安 | 領収書と翻訳文を準備 |
+| 3 | 海外療養費の申請（使った場合） | 帰国後30日以内（推奨目安）。請求の時効は制度で確認 | 未着手<br>推奨目安 | 領収書と翻訳文を準備（様式A〜Cは担当医の記入・署名が必要。research/prep-priority2-tasks.md §2） |
 | 3 | 見積モデルの振り返り・ブログ記事化 | 帰国後（推奨目安） | 未着手<br>推奨目安 | 公開する場合は匿名化した概算のみ使う |
 
 優先度は1が最優先です。期限は暦日ではなく、出発日などを基準にした相対的な目安です（期限の種類：公式期限＝制度上の期限／学校・機関の個別期限＝各機関の案内に従う／推奨目安＝このモデルの提案／要確認）。一般的な確認項目で、個人の進捗ではありません。
@@ -89,6 +89,8 @@
 | 出典 | [すべての出典](../research/sources.md) | URL・確認日・未確認事項 | － | 2026-10-17 |
 | 準備 | [優先度1の準備タスク調査](../research/prep-priority1-tasks.md) | 旅券・予防接種・休職の社保/住民税・住居・留学先手続きの公式確認結果 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html)<br>[hospinfo.tokyo-med.ac.jp](https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html)<br>[tokyokoukenpo.or.jp](https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154) | 2026-10-20 |
 | 保険 | [長期留学＋周遊の保険（カード90日・期間の穴）](../research/long-stay-insurance.md) | カード付帯90日・3/6/7か月の保険料掲載例・シナリオ別の日数の穴（匿名モデル） | [cr.mufg.jp](https://www.cr.mufg.jp/amex/apply/mucard_platinum/insurance/injury_ab/index.html)<br>[faq.eposcard.co.jp](https://faq.eposcard.co.jp/faq/show/4282?category_id=226&site_domain=default)<br>[hokende.com](https://www.hokende.com/damage-insurance/overseas_travel/study_abroad/item-jn14) | 2026-10-19 |
+| 準備 | [優先度2の準備タスク調査](../research/prep-priority2-tasks.md) | 黄熱・マラリア・海外療養費・荷物保管・携帯・外務省の安全情報の確認結果 | [forth.go.jp](https://www.forth.go.jp/useful/yellowfever.html)<br>[kyoukaikenpo.or.jp](https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcwideareaspecificinfo_2026C026.html) | 2026-10-20 |
+| 安全・医療 | [予防接種・常備薬の一覧](../research/vaccines-and-medicines-checklist.md) | 国別の推奨ワクチン・回数・費用・マラリア予防薬・持参薬・持ち込み制度の整理（医師相談用） | [forth.go.jp](https://www.forth.go.jp/useful/vaccination.html)<br>[wwwnc.cdc.gov](https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines)<br>[mhlw.go.jp](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/yakubuturanyou/index_00005.html) | 2026-10-20 |
 | 計画 | [月別タイムライン](../docs/01-timeline.md) | 6か月全体の移動・留学・帰国 | － | － |
 | 費用 | [予算の計算ルール](../docs/02-budget.md) | 二重計上防止・未確定の扱い | － | － |
 | 準備 | [準備チェック](../docs/03-preparation.md) | やることと確認順 | － | － |
