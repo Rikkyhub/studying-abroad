@@ -21,12 +21,36 @@ class SingleHtmlTests(unittest.TestCase):
         ids = re.findall(r'\bid="([^"]+)"', TEXT)
         self.assertEqual([k for k, v in Counter(ids).items() if v > 1], [])
 
-    def test_in_page_anchors_resolve_except_known_source_breaks(self):
-        """元のMarkdown側で既に壊れているアンカーは除く（all.html が増やしていないことの確認）"""
+    def test_in_page_anchors_resolve(self):
         ids = set(re.findall(r'\bid="([^"]+)"', TEXT))
         broken = {h for h in re.findall(r'\bhref="#([^"]+)"', TEXT) if h not in ids}
-        known = {"75-改訂版issueの案-案-案相対日モデル", "9-関連資料", "issue-38-初版からの修正点"}
-        self.assertEqual(broken - known, set())
+        self.assertEqual(broken, set())
+
+    def test_page_anchors_in_individual_pages_resolve(self):
+        """個別HTMLの `ページ#見出し` リンクが、相手ページに実在する見出し id を指している"""
+        root = BS.ROOT
+        ids_of = {}
+        for _, rel, _ in BS.pages():
+            ids_of[rel] = set(re.findall(r'\bid="([^"]+)"', (root / rel).read_text(encoding="utf-8")))
+        bad = []
+        for _, rel, _ in BS.pages():
+            html_text = (root / rel).read_text(encoding="utf-8")
+            for href in re.findall(r'\bhref="([^"]+#[^"]+)"', html_text):
+                if re.match(r"^[a-z]+:", href):
+                    continue
+                path, _, frag = href.partition("#")
+                target = (Path(rel).parent / path).as_posix() if path else rel
+                target = str(Path(target).as_posix())
+                parts = []
+                for seg in target.split("/"):
+                    if seg == "..":
+                        parts and parts.pop()
+                    elif seg not in ("", "."):
+                        parts.append(seg)
+                target = "/".join(parts)
+                if target in ids_of and frag not in ids_of[target]:
+                    bad.append(f"{rel} -> {href}")
+        self.assertEqual(bad, [])
 
     def test_no_relative_page_links_left(self):
         left = [h for h in re.findall(r'\bhref="([^"#][^"]*)"', TEXT) if not re.match(r"^[a-z]+:", h)]
