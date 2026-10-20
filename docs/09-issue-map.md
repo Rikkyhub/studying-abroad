@@ -32,12 +32,17 @@
 | [アフリカ地図（候補ルート）](../maps/africa-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
 | [アフリカ周遊（5月）](../areas/africa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
+| [アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水](../research/africa-overland-7-9-countries.html) | [#44](https://github.com/Rikkyhub/studying-abroad/issues/44) | 調査中 | 2026-10-18 |
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
 | [ケープタウン（第2か国留学）](../areas/capetown.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.html) | [#38](https://github.com/Rikkyhub/studying-abroad/issues/38) | 調査中 | 2026-10-18 |
 | [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.html) | [#42](https://github.com/Rikkyhub/studying-abroad/issues/42) | 調査中 | 2026-10-18 |
+| [5月仮旅程（MNL→NBO→CPT）の実現性](../research/may-itinerary-nbo-to-cpt.html) | [#47](https://github.com/Rikkyhub/studying-abroad/issues/47) | 調査中 | 2026-10-19 |
 | [優先度1の準備タスク調査](../research/prep-priority1-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
+| [長期留学＋周遊の保険（カード90日・期間の穴）](../research/long-stay-insurance.html) | [#49](https://github.com/Rikkyhub/studying-abroad/issues/49) | 調査中 | 2026-10-19 |
+| [5月アフリカ周遊3ルートの比較](../research/may-three-routes-comparison.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-20 |
+| [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
 | [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.html) | [#53](https://github.com/Rikkyhub/studying-abroad/issues/53) | 調査中 | 2026-10-20 |
 
 ## タスクと Issue
