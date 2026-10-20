@@ -187,6 +187,11 @@
 | ケニア（eTA） | https://extern.api.etakenya.go.ke/eligibility / https://etakenya.go.ke/form/apply/how-to-apply | 標準eTA USD30、通過USD20、90日以内の渡航に有効、処理3営業日 | 2026-10-18 | 決済手数料・日本旅券の特例は未確認 |
 | ケニア（安全） | https://www.anzen.mofa.go.jp/m/mbhazardinfo1_100.html / https://www.anzen.mofa.go.jp/info/pcterror_100.html | 危険情報2025-05-19（ナイロビのスラム街周辺レベル2）、テロ情勢2026-04-17 | 2026-10-18 | 渡航直前に再確認 |
 | ケニア（サファリ料金） | https://nairobipark.org/half-day-nairobi-national-park-tour/ | 貸切USD200（1人）〜50（8人）、混載3〜6人で65〜45（成立保証なし）、集合はメインゲート | 2026-10-18 | 民間運営者。政府資料ではない |
+| D案 エスワティニ交通 | https://transmagnific.com/schedule.php | JNB↔Mbabane 毎日4便・R750片道、Maputo便は問合せ制 | 2026-10-20 | 2027年の時刻・料金とみなさない（[d-plan-no-namibia.md](d-plan-no-namibia.md)） |
+| D案 レンタカー | https://www.avis.co.za/contact-avis/rental-guide/before-rental / https://www.avis.co.za/safari-rental/Terms-and-Conditions | 通常車はジンバブエ・モザンビーク・ザンビア不可、Safari は最低7日・JNB→VFA片道R11,500 | 2026-10-20 | 書面承認は未取得 |
+| D案 安全・入国 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html / https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html / https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html / https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html | レソト査証免除、モザンビーク650メティカル、ジンバブエ査証料、モザンビーク危険レベル | 2026-10-20 | MOFA更新日はレソト2025-08-22・モザンビーク2025-06-18・ジンバブエ2026-07-13 |
+| D案 FCDO | https://www.gov.uk/foreign-travel-advice/lesotho/safety-and-security / https://www.gov.uk/foreign-travel-advice/eswatini/safety-and-security | 夜間移動・国境付近の注意 | 2026-10-20 | 英国向け助言 |
+| D案 Tofo | https://www.tofoscuba.com/prices / https://www.tofoscuba.com/faqs | 1ダイブUS$55（器材込）、Maputoからの移動手段 | 2026-10-20 | FAQの著作権表記は2023 |
 | 周遊3ルート比較 | https://www.flyairlink.com/sites/default/files/files/Schedule-June.pdf | Airlink時刻表: CPT-VFA 4Z390/4Z391（土曜なし）、JNB-VFA 4Z494/495、JNB-マセル、JNB-マプトなど。ファイル作成日2024-05-20の6月版 | 2026-10-20 | 2024年版。2027年の運航・運賃は未確認 |
 | 周遊3ルート比較 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html | エスワティニ: 30日以内の短期滞在は査証不要。旅券残存3か月以上 | 2026-10-20 | ページ更新日2025-08-22 |
 | 周遊3ルート比較 | https://www.evisa.gov.mz/ | モザンビーク政府eVisaポータル: 日本はETA対象国（30日・観光/業務）の一覧に記載。料金は読み取れず | 2026-10-20 | 日本大使館ページは403で未確認 |

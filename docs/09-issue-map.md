@@ -43,6 +43,7 @@
 | [長期留学＋周遊の保険（カード90日・期間の穴）](../research/long-stay-insurance.html) | [#49](https://github.com/Rikkyhub/studying-abroad/issues/49) | 調査中 | 2026-10-19 |
 | [5月アフリカ周遊3ルートの比較](../research/may-three-routes-comparison.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-20 |
 | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
+| [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.html) | [#53](https://github.com/Rikkyhub/studying-abroad/issues/53) | 調査中 | 2026-10-20 |
 
 ## タスクと Issue
 

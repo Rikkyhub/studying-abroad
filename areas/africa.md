@@ -105,6 +105,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [5月仮旅程（MNL→NBO→CPT）の実現性](../research/may-itinerary-nbo-to-cpt.md) | Day表つき2日程（現実型8か国・挑戦型10か国）・費用の式・出典の食い違い | [zic.co.tz](https://zic.co.tz/2026/10/07/public-notice-clarification-on-the-implementation-of-mandatoryinbound-travel-insurance-for-foreign-visitors-enteringzanzibar-and-tanzania-mainland)<br>[embamoc.jp](https://embamoc.jp/visas)<br>[dirco.gov.za](https://dirco.gov.za/canberra/yellow-fever/) | 2026-10-19 |
 | アフリカ | [5月アフリカ周遊3ルートの比較](../research/may-three-routes-comparison.md) | ケニア・タンザニア経由／JNB北側先行／JNB南側先行の日別表・費用式・入国条件の検証（調査版） | [flyairlink.com](https://www.flyairlink.com/sites/default/files/files/Schedule-June.pdf)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html)<br>[evisa.gov.mz](https://www.evisa.gov.mz/) | 2026-10-20 |
 | アフリカ | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.md) | MNL発・CPT着の東アフリカ/Namibia/Eswatini+Mozambique 3案の比較基準資料（匿名モデル） | － | 2026-10-19 |
+| アフリカ | [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.md) | JNB→レソト/エスワティニ/モザンビーク→ジンバブエのD1〜D4順序・交通・安全・レンタカー可否の検証（調査版） | [transmagnific.com](https://transmagnific.com/schedule.php)<br>[avis.co.za](https://www.avis.co.za/safari-rental/Terms-and-Conditions)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html) | 2026-10-20 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
 <!-- /AUTO:docs -->
