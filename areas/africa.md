@@ -98,6 +98,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [5月アフリカ周遊（案）](../research/africa-trip.md) | 5月約1か月の周遊の案・費用の前提 | [coraldivers.co.za](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf)<br>[nomadafrica.co.za](https://nomadafrica.co.za/tour/cape-town-to-victoria-falls/)<br>[acacia-africa.com](https://www.acacia-africa.com/search.php) | 2026-10-17 |
 | アフリカ | [世界地図（候補ルート）](../maps/world-map.html) | バギオ/マニラ発の候補ルートを世界地図に描いた概念図 | － | 2026-10-18 |
 | アフリカ | [アフリカ地図（候補ルート）](../maps/africa-map.html) | アフリカ大陸の候補ルートと乗継空港・行き先の概念図 | － | 2026-10-18 |
+| アフリカ | [アフリカ国別地図（国ごとのページへリンク）](../maps/africa-countries.html) | アフリカの地図の国を押すと、その国の観光地・食べ物・ビザ・安全・行き方のページへ移動する | － | 2026-10-20 |
 | アフリカ | [アフリカ周遊ルート比較](../research/africa-route-comparison.md) | フィリピン発・複数国の低コスト周遊ルート5案の比較 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/arealeaveinfolist_14.html)<br>[marinemegafauna.org](https://marinemegafauna.org/where-we-work/mozambique) | 2026-10-17 |
 | アフリカ | [アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水](../research/africa-overland-7-9-countries.md) | Kenya起点の7国・9国・モザンビーク追加の日数・ビザ比較・潜水の実現性（調査版） | [immigration.go.ug](https://immigration.go.ug/services/east-african-tourist-visa)<br>[zambiaimmigration.gov.zm](https://www.zambiaimmigration.gov.zm/kaza-univisa/)<br>[gozo-azul.co.za](https://gozo-azul.co.za/scuba-diving/) | 2026-10-18 |
 | アフリカ | [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.md) | 5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先） | [biggameparks.org](https://biggameparks.org/rates)<br>[victoriafallsbridge.com](https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/)<br>[anac.gov.mz](https://www.anac.gov.mz/en/parques/ponta-do-ouro/) | 2026-10-18 |
@@ -106,6 +107,18 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [5月アフリカ周遊3ルートの比較](../research/may-three-routes-comparison.md) | ケニア・タンザニア経由／JNB北側先行／JNB南側先行の日別表・費用式・入国条件の検証（調査版） | [flyairlink.com](https://www.flyairlink.com/sites/default/files/files/Schedule-June.pdf)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html)<br>[evisa.gov.mz](https://www.evisa.gov.mz/) | 2026-10-20 |
 | アフリカ | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.md) | MNL発・CPT着の東アフリカ/Namibia/Eswatini+Mozambique 3案の比較基準資料（匿名モデル） | － | 2026-10-19 |
 | アフリカ | [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.md) | JNB→レソト/エスワティニ/モザンビーク→ジンバブエのD1〜D4順序・交通・安全・レンタカー可否の検証（調査版） | [transmagnific.com](https://transmagnific.com/schedule.php)<br>[avis.co.za](https://www.avis.co.za/safari-rental/Terms-and-Conditions)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html) | 2026-10-20 |
+| アフリカ | [南アフリカ（国別ページ）](../countries/south-africa.html) | ケープタウン留学の国。サファリ・ダイビング・ワインの拠点。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [レソト（国別ページ）](../countries/lesotho.html) | 山岳の王国。南アに囲まれた小国。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [エスワティニ（国別ページ）](../countries/eswatini.html) | 小さな王国。野生動物保護区と文化体験。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [ナミビア（国別ページ）](../countries/namibia.html) | 砂漠と野生動物。2025年から査証が必要。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [ボツワナ（国別ページ）](../countries/botswana.html) | オカバンゴ・チョベ。サファリの本場。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [ジンバブエ（国別ページ）](../countries/zimbabwe.html) | ビクトリアの滝（ジンバブエ側）。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [ザンビア（国別ページ）](../countries/zambia.html) | ビクトリアの滝（ザンビア側）・リビングストン。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [モザンビーク（国別ページ）](../countries/mozambique.html) | インド洋のダイビング。入国は北部の危険度に注意。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [マダガスカル（国別ページ）](../countries/madagascar.html) | 固有種の島。到着ビザ。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [ケニア（国別ページ）](../countries/kenya.html) | ナイロビ起点の短期滞在・サファリ。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [タンザニア（国別ページ）](../countries/tanzania.html) | セレンゲティ・ンゴロンゴロ・ザンジバル。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
+| アフリカ | [エチオピア（国別ページ）](../countries/ethiopia.html) | アディスアベバ空港での乗継のみ（北部は渡航を避ける勧告）。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
 <!-- /AUTO:docs -->
@@ -146,6 +159,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 <!-- AUTO:maps -->
 - [世界地図（移動の全体像）](../maps/world-map.html)
 - [アフリカ地図（周遊ルート案）](../maps/africa-map.html)
+- [アフリカ国別地図（国を押すと、その国の観光地・食べ物・ビザ・安全のページへ）](../maps/africa-countries.html)
 
 主要な空港・国境・国立公園の地図リンクは、上の「場所と地図」の表と [アフリカ周遊ルート比較（主要地点のGoogle Mapsリンク）](../research/africa-route-comparison.md) にあります。
 <!-- /AUTO:maps -->

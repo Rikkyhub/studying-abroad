@@ -5,6 +5,7 @@
   1. scripts/build.py       data/*.csv -> README.md・docs/*.md・blog/*.md の AUTO ブロック（集計）
   2. scripts/build_html.py  Markdown/CSV -> *.html、index.html（ダッシュボード）
   3. scripts/build_maps.py  data/route_points.csv・routes.csv・data/geo -> maps/*.html（世界地図・アフリカ地図）
+  4. scripts/build_country_map.py  data/countries.csv・countries/*.md の有無 -> maps/africa-countries.html（国別リンク地図）
 
 --check は書き込まず、どれかの生成物が CSV/Markdown と一致しなければ失敗する（CI 用）。
 """
@@ -13,7 +14,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-STEPS = ["build.py", "build_html.py", "build_maps.py"]
+STEPS = ["build.py", "build_html.py", "build_maps.py", "build_country_map.py"]
 
 
 def main(argv=None):
