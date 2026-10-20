@@ -187,6 +187,15 @@
 | ケニア（eTA） | https://extern.api.etakenya.go.ke/eligibility / https://etakenya.go.ke/form/apply/how-to-apply | 標準eTA USD30、通過USD20、90日以内の渡航に有効、処理3営業日 | 2026-10-18 | 決済手数料・日本旅券の特例は未確認 |
 | ケニア（安全） | https://www.anzen.mofa.go.jp/m/mbhazardinfo1_100.html / https://www.anzen.mofa.go.jp/info/pcterror_100.html | 危険情報2025-05-19（ナイロビのスラム街周辺レベル2）、テロ情勢2026-04-17 | 2026-10-18 | 渡航直前に再確認 |
 | ケニア（サファリ料金） | https://nairobipark.org/half-day-nairobi-national-park-tour/ | 貸切USD200（1人）〜50（8人）、混載3〜6人で65〜45（成立保証なし）、集合はメインゲート | 2026-10-18 | 民間運営者。政府資料ではない |
+| 準備・旅券 | https://www.anzen.mofa.go.jp/m/mbimmigration_122.html | 南ア：90日免除の目的、未使用2ページ、出国予定の30日後まで有効 | 2026-10-20 | WebFetchは403のためcurlで取得。更新日表記なし |
+| 準備・旅券 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html | フィリピン：滞在予定期間＋6か月、SSP、ACR、ECC | 2026-10-20 | データ更新 2025-10-21 |
+| 準備・予防接種 | https://www.forth.go.jp/useful/vaccination.html | A型・B型・破傷風・狂犬病・黄熱の回数・間隔 | 2026-10-20 | 腸チフスの記載は取得できず。ワクチン本文の更新日表記なし |
+| 準備・予防接種 | https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html | 渡航者医療センターのワクチン費用（自費・税込） | 2026-10-20 | 2026年6月1日現在 |
+| 準備・休職 | https://www.tokyokoukenpo.or.jp/asp/faq/faq.asp?articleid=5154 | 休職中の資格継続・無給でも事業主に納付義務 | 2026-10-20 | 本人負担分の集め方は記載なし。更新日表記なし |
+| 準備・住民税 | https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html | 賦課期日1月1日、特別徴収・普通徴収 | 2026-10-20 | 休職時・切替・納税管理人の記載なし |
+| 準備・住民税 | https://www.city.setagaya.lg.jp/02051/233.html | 休職時の異動届は翌月10日まで、普通徴収切替理由に休職者 | 2026-10-20 | 世田谷区の例。最終更新日 2026-10-19 |
+| 準備・住居 | https://laws.e-gov.go.jp/law/129AC0000000089 | 民法617条：建物賃貸借の解約申入れは3か月 | 2026-10-20 | 契約の特約が優先される例が多い |
+| 準備・住居 | https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000020.html | 原状回復ガイドライン（再改訂版）：通常損耗は貸主負担 | 2026-10-20 | 解約予告期間の記載なし |
 
 ### 長期留学の保険（#49、確認日 2026-10-19）
 
