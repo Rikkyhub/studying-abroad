@@ -221,6 +221,23 @@
 | 縦断（Premierline） | https://premierline.co.tz/bus-tickets/mwanza-to-mbeya | 検索フォームのみ、取得日の便なし | 2026-10-18 | Issue記載の19h・87,000TZSは再現不可 |
 | 縦断（African Bus） | https://www.africanbus.com/tickets | Lusaka→Livingstone 7h45、ZMW300（Power Tools） | 2026-10-18 | — |
 | 縦断（取得不可） | rome2rio／gov.bw／gov.sz／anzen.mofa.go.jp | HTTP 403／証明書エラー／タイムアウト／保守ページ | 2026-10-18 | 該当項目は未確認 |
+### 長期留学の保険（#49、確認日 2026-10-19）
+
+| 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
+|---|---|---|---|---|
+| カード保険（MUFG） | https://www.cr.mufg.jp/amex/apply/mucard_platinum/insurance/injury_ab/index.html | プラチナ・アメックス：自動付帯、出国翌日から90日、疾病・傷害治療各300万円、救援500万円、家族特約あり | 2026-10-19 | 2025-12-01出発分から内容変更の記載。再出国でのリセットは記載なし |
+| カード保険（エポス） | https://www.eposcard.co.jp/insurance/oversea_insurance.html?webview=false | ゴールド：利用付帯、最長90日、治療各300万円、救援100万円、起算は出国前決済が優先 | 2026-10-19 | 文字化けのため再構成。要目視 |
+| カード保険（エポスFAQ） | https://faq.eposcard.co.jp/faq/show/4282?category_id=226&site_domain=default | 出国前決済は出国日起算、出国後の最初の対象決済はその時点から90日 | 2026-10-19 | 優先順位の明記なし |
+| 保険協会 | https://soudanguide.sonpo.or.jp/body/q082.html | 保険の重複時は実損まで、合算が限度 | 2026-10-19 | 文字化けのため再構成。要目視 |
+| 保険FAQ | https://faq.tokiomarine-nichido.co.jp/faq/show/1824?category_id=271&site_domain=default | カード付帯と民間保険の併用：合計が限度で実損払い | 2026-10-19 | — |
+| 保険FAQ | https://faq.tokiomarine-nichido.co.jp/faq/show/10111?category_id=231&site_domain=default | スキューバ中のケガは補償（減圧症等の記載なし） | 2026-10-19 | MARINE PASSPORTは別 |
+| 保険料表 | https://www.hokende.com/damage-insurance/overseas_travel/study_abroad/item-jn14 | 損保ジャパン留学生向け：K84・S84の3/6/7か月、特約例 | 2026-10-19 | 掲載例。個別見積ではない。更新日の記載なし |
+| 保険（代理店） | https://www.sompo-japan-off.jp/ryugaku_chuzai_plan_ryugaku.html | 一般契約終了・包括契約のみの注記、7か月の別料金 | 2026-10-19 | 保険市場の表と金額が異なる |
+| 保険（代理店） | https://www.sompo-japan-off.jp/ryugaku_chuzai_qanswer.html | 91日目からの有料保険の契約は不可、延長は2週間前までの申請 | 2026-10-19 | — |
+| 保険（t@biho） | https://travel-hoken.com/online/faq/ ／ https://tabiho.jp/overseas/inc/plan/jyusetsu.html ／ https://travel-hoken.com/online/studywork/ | 海外からの新規契約不可、延長は保険会社承認制、観光は通算2か月まで | 2026-10-19 | 2027契約用の最新版は要確認 |
+| 保険（短期） | https://guide.genki.world/genki-traveler-vs-genki-native/ ／ https://help.genki.world/en/articles/10769869-starting-genki-traveler ／ https://help.genki.world/en/articles/10763407-waiting-period-with-genki-traveler ／ https://help.genki.world/en/articles/10770036-sports-with-genki-traveler | 約€52.50/月の例、海外途中開始可、14日待機と免除条件、ダイビング30m | 2026-10-19 | 日本在住者の可否は未確認 |
+| 保険（短期） | https://safetywing.com/nomad-insurance | USD62.72/4週間（18〜39歳）、海外から加入可、限度USD250,000 | 2026-10-19 | スクーバの記載なし |
+| 保険（DAN） | https://dan.org/safety-prevention/diver-safety/divers-blog/know-your-benefits-dan-membership-dive-accident-insurance/ | 取得ツールのエラーで取得できず | 2026-10-19 | 未確認 |
 
 ### 引き続き調査
 - 南アでの8週間語学留学の適切な許可と5〜8月の再入国日数：**大使館からの個別回答なし**。査証免除入国での語学就学は確定扱いしない。reg 11(5) の2024年改正後の現行性も未確認（[visa-and-immigration.md](visa-and-immigration.md) 第6節）。
