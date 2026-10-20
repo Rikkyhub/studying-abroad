@@ -101,6 +101,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [アフリカ周遊ルート比較](../research/africa-route-comparison.md) | フィリピン発・複数国の低コスト周遊ルート5案の比較 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/arealeaveinfolist_14.html)<br>[marinemegafauna.org](https://marinemegafauna.org/where-we-work/mozambique) | 2026-10-17 |
 | アフリカ | [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.md) | 5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先） | [biggameparks.org](https://biggameparks.org/rates)<br>[victoriafallsbridge.com](https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/)<br>[anac.gov.mz](https://www.anac.gov.mz/en/parques/ponta-do-ouro/) | 2026-10-18 |
 | アフリカ | [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.md) | ナイロビ3泊4日と半日サファリの匿名モデル試算 | [kws.go.ke](https://kws.go.ke/park/nairobi-national-park/)<br>[extern.api.etakenya.go.ke](https://extern.api.etakenya.go.ke/eligibility)<br>[nairobipark.org](https://nairobipark.org/half-day-nairobi-national-park-tour/) | 2026-10-18 |
+| アフリカ | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.md) | MNL発・CPT着の東アフリカ/Namibia/Eswatini+Mozambique 3案の比較基準資料（匿名モデル） | － | 2026-10-19 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
 <!-- /AUTO:docs -->
