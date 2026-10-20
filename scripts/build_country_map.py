@@ -117,7 +117,7 @@ def build() -> str:
         x, y = proj.xy(lon, lat)
         labels.append(f'<text class="lb" x="{bm.f1(x)}" y="{bm.f1(y)}"><tspan class="full">{html.escape(c["name_ja"])}</tspan><tspan class="short">{html.escape(c["short"])}</tspan></text>')
     # 小国は図の外側に引き出さず、ラベルを近くに小さく置く
-    for cid in SMALL:
+    for cid in sorted(SMALL):
         c = by_id.get(cid)
         if not c:
             continue

@@ -84,4 +84,9 @@
 | https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf | 事業者公式 | 2026-10-17 | 2026/27 |
 | https://en.wikivoyage.org/wiki/Kruger_National_Park | 準公式（Wikivoyage） | 2026-10-17 | 2025 |
 
-調査ログは各リンク先の資料の末尾にあります。
+## 調査ログ
+
+- 2026-10-20：既存の確認済み資料（ビザ・ケープタウン観光・ダイビング・食費・治安）の記述を、ここに再編集した。新しい取得は次のとおり。
+  - 取得に成功：tablemountain.net（学生料金 R320、2026-07〜2027-06、窓口のみ）。外務省 南アフリカの安全対策基礎データ。Wikivoyage South Africa（料理の節）。
+  - 失敗・未取得：SANParks の公式料金ページ（403）。クルーガーの保全料は 2025 年の値を Wikivoyage 経由で記載した。
+- 検索エンジンは使っていない（利用できなかったため）。各行の詳細な調査ログは、リンク先の資料の末尾にある。
