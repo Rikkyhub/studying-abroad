@@ -187,6 +187,27 @@
 | ケニア（eTA） | https://extern.api.etakenya.go.ke/eligibility / https://etakenya.go.ke/form/apply/how-to-apply | 標準eTA USD30、通過USD20、90日以内の渡航に有効、処理3営業日 | 2026-10-18 | 決済手数料・日本旅券の特例は未確認 |
 | ケニア（安全） | https://www.anzen.mofa.go.jp/m/mbhazardinfo1_100.html / https://www.anzen.mofa.go.jp/info/pcterror_100.html | 危険情報2025-05-19（ナイロビのスラム街周辺レベル2）、テロ情勢2026-04-17 | 2026-10-18 | 渡航直前に再確認 |
 | ケニア（サファリ料金） | https://nairobipark.org/half-day-nairobi-national-park-tour/ | 貸切USD200（1人）〜50（8人）、混載3〜6人で65〜45（成立保証なし）、集合はメインゲート | 2026-10-18 | 民間運営者。政府資料ではない |
+| 周遊3ルート比較 | https://www.flyairlink.com/sites/default/files/files/Schedule-June.pdf | Airlink時刻表: CPT-VFA 4Z390/4Z391（土曜なし）、JNB-VFA 4Z494/495、JNB-マセル、JNB-マプトなど。ファイル作成日2024-05-20の6月版 | 2026-10-20 | 2024年版。2027年の運航・運賃は未確認 |
+| 周遊3ルート比較 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html | エスワティニ: 30日以内の短期滞在は査証不要。旅券残存3か月以上 | 2026-10-20 | ページ更新日2025-08-22 |
+| 周遊3ルート比較 | https://www.evisa.gov.mz/ | モザンビーク政府eVisaポータル: 日本はETA対象国（30日・観光/業務）の一覧に記載。料金は読み取れず | 2026-10-20 | 日本大使館ページは403で未確認 |
+| 周遊3ルート比較 | https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 英国旅券向け: ETA約47米ドル・処理5営業日以上 | 2026-10-20 | 日本旅券には適用しない |
+| 周遊3ルート比較 | https://www.gov.uk/foreign-travel-advice/zimbabwe/entry-requirements | 英国旅券向け: KAZA Univisa 50米ドル・30日・ジンバブエ-ザンビア間とボツワナ日帰り | 2026-10-20 | 日本旅券の価格は未確認 |
+| 周遊3ルート比較 | https://dirco.gov.za/japan/frequently-asked-questions/ | 日本旅券は90日免除 | 2026-10-20 | 就学許可と同義ではない |
+| 周遊3ルート比較 | https://www.namibiareise.de/en/stages/katima-mulilo-kasane/ | カティマムリロ-カサネ 125 km・全線舗装・運転1.5〜2時間 | 2026-10-20 | 民間旅行情報。国境手続時間は別 |
+| 周遊3ルート比較 | https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html | 取得不可（HTTP 403）。ナミビア査証料金は未確認 | 2026-10-20 | Issue本文の転記値のみ |
+| 周遊3ルート比較 | https://www.zw.emb-japan.go.jp/itpr_ja/visa.html | 取得不可（HTTP 403）。ジンバブエ査証料金は未確認 | 2026-10-20 | Issue本文の転記値のみ |
+| 5月仮旅程（シャトル） | https://www.riverside-shuttle.com/ | NBO↔アルーシャ 08:00/14:00、5.5〜6時間、USD35.56〜（公開スクリプトの設定データ） | 2026-10-19 | 2027年の運行日は未確認 |
+| 5月仮旅程（Ngorongoro乗合） | https://www.resiliencesafaris.com/tanzania-group-joining-safari-2-days.html / https://eastafricajungle.com/trip/2-days-tarangire-ngorongoro-group-joining-safari | 2日乗合 USD450〜（最低2名、一人は相部屋）／USD725（月・金・土出発） | 2026-10-19 | Issue記載のUSD380は両ページで見つからず。個室追加料金は未記載 |
+| 5月仮旅程（タンザニア保険） | https://zic.co.tz/2026/10/07/public-notice-clarification-on-the-implementation-of-mandatoryinbound-travel-insurance-for-foreign-visitors-enteringzanzibar-and-tanzania-mainland | 本土も2026-10-01から必須、本土＋ザンジバルで2枚不要、92日有効、購入先は最初の入国地点で決まる | 2026-10-19 | 金額（USD44）は公式出典なし。日本大使館ページはHTTP 403 |
+| 5月仮旅程（タンザニア査証） | https://visa.immigration.go.tz/guidelines | 通常ビザ50 USD（最長90日） | 2026-10-19 | — |
+| 5月仮旅程（ジンバブエ・ザンビア） | https://www.zimimmigration.gov.zw/?page_id=6958 / https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ | ジンバブエ単一入国30 USD、複数55 USD／ザンビア免除リストに日本 | 2026-10-19 | 免除の滞在日数は未確認 |
+| 5月仮旅程（Chobe） | https://www.visit-chobe.com/ | ボート USD49（朝・夕）〜157（終日） | 2026-10-19 | 既存行とページ内の価格不一致あり、年未表示 |
+| 5月仮旅程（ナミビア査証） | https://namibiatokyo.or.jp/wordpress/wp-content/uploads/2025/02/IMPLEMENTATION-OF-NEW-VISA-REQUIREMENTS-AND-ADDITIN-TO-THE-LIST-OF-COUNTRIES-BENEFITING-FROM-VISA-ON-ARRIVAL01Apr25.pdf / https://eservices.mhaiss.gov.na/form/FactSheetVisaRequirementstoNamibia.pdf | 日本は2025-04-01から査証（到着時NAD1,600または東京¥16,000）。Ngoma・Impalilaは到着査証可、Kasikaはe-visaのみ、その他の国NAD1,600 | 2026-10-19 | 直接取得は失敗（HTTP 468等）。Internet Archive の2025年保存版を読んだ。事実表は画像由来で文字が崩れ版日付は判読不能 |
+| 5月仮旅程（モザンビーク入国） | https://embamoc.jp/visas / https://evisa.gov.mz/Home / https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 大使館：冒頭は全員査証必要、後段で日本は免除30日＋48時間前の事前登録／政府ポータル：日本は免除表に30日／FCDO（英国旅券）：ETA約USD47・5営業日前 | 2026-10-19 | 3者が不一致。日本向け手数料は未確認 |
+| 5月仮旅程（黄熱） | https://dirco.gov.za/canberra/yellow-fever/ / https://www.health.gov.za/wp-content/uploads/2026/09/Protocols-for-Travellers.pdf / https://cdn.who.int/media/docs/default-source/travel-and-health/countries-with-risk-of-yellow-fever-transmission.pdf?sfvrsn=bf42ac59_4&download=true | 在豪南ア高等弁務官事務所の必要国一覧にKenya掲載（Zambia・Tanzaniaは不要に）。保健省文書（2026/09のURL、文字PDF）には国名一覧なくWHO一覧を参照。WHO Annex 1（2022）でKenyaは一部リスク | 2026-10-19 | 2015年付の画像スキャン（別URL）は読んでいない。ケニア出発後の適用範囲は未確認 |
+| 5月仮旅程（エスワティニ・レソト） | https://biggameparks.org/rates / https://www.lesothoemb-usa.gov.ls/visa/ | Mlilwane ZAR95、乗馬1時間ZAR430、Sondzelaドミ ZAR215／レソトは日本NO（査証不要） | 2026-10-19 | エスワティニの日本旅券の入国条件は未確認 |
+| 5月仮旅程（南ア免除） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | Japan 90 Days・査証料なし（2025-12-09発行） | 2026-10-19 | 8週間の語学就学の可否は未確認 |
+| 5月仮旅程（取得不可） | etihad.com／flightconnections.com／maasaiculturecenter.com／tz.emb-japan.go.jp／zic.co.tz購入ページ／inbound.nicinsurance.co.tz／gov.bw／gov.sz | 接続失敗／HTTP 202（本文なし）／403／スクリプト描画 | 2026-10-19 | 該当項目は未確認 |
 | 準備・旅券 | https://www.anzen.mofa.go.jp/m/mbimmigration_122.html | 南ア：90日免除の目的、未使用2ページ、出国予定の30日後まで有効 | 2026-10-20 | WebFetchは403のためcurlで取得。更新日表記なし |
 | 準備・旅券 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html | フィリピン：滞在予定期間＋6か月、SSP、ACR、ECC | 2026-10-20 | データ更新 2025-10-21 |
 | 準備・予防接種 | https://www.forth.go.jp/useful/vaccination.html | A型・B型・破傷風・狂犬病・黄熱の回数・間隔 | 2026-10-20 | 腸チフスの記載は取得できず。ワクチン本文の更新日表記なし |
@@ -197,6 +218,30 @@
 | 準備・住居 | https://laws.e-gov.go.jp/law/129AC0000000089 | 民法617条：建物賃貸借の解約申入れは3か月 | 2026-10-20 | 契約の特約が優先される例が多い |
 | 準備・住居 | https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000020.html | 原状回復ガイドライン（再改訂版）：通常損耗は貸主負担 | 2026-10-20 | 解約予告期間の記載なし |
 
+### アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水（#44、確認日 2026-10-18）
+詳細は [africa-overland-7-9-countries.md](africa-overland-7-9-countries.md)。
+
+| 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
+|---|---|---|---|---|
+| 縦断（Kenya EATV） | https://www.kenyarep-jp.com/en/eta/ | 標準eTA USD30、East African Tourist eTA（USD100）は TEMPORARILY UNAVAILABLE | 2026-10-18 | 証明書チェーン検証に失敗し、本文の読み取りのみ |
+| 縦断（Kenya eTA画面） | https://extern.api.etakenya.go.ke/eligibility | East African Tourist eTA は COMING SOON | 2026-10-18 | — |
+| 縦断（Uganda EATV） | https://immigration.go.ug/services/east-african-tourist-visa | EATV USD100、90日、発給国が最初の入国国。黄熱病証明は2026-10-02付で不要 | 2026-10-18 | Kenya初入国での通用は記載なし |
+| 縦断（Uganda単独） | https://immigration.go.ug/services/tourist-visa | 単独入国の査証 USD50 | 2026-10-18 | — |
+| 縦断（Rwanda EATV） | https://www.migration.gov.rw/our-services/visa-issued-under-special-arrangement | EATV USD100、90日、発給国が最初の入国国。到着時査証あり | 2026-10-18 | Rwanda単独の料金は未確認 |
+| 縦断（Tanzania査証） | https://visa.immigration.go.tz/guidelines | 通常査証 USD50（90日）、複数入国 USD100。日本は到着時／オンライン可の一覧に掲載 | 2026-10-18 | — |
+| 縦断（Malawi査証） | https://www.immigration.gov.mw/visa-fees | オンライン Single USD75、Transit USD50 | 2026-10-18 | FCDOの到着時 USD50 とは別 |
+| 縦断（Zimbabwe料金） | https://www.zimimmigration.gov.zw/?page_id=6958 | 単独入国 USD30（オンライン・港とも）、複数入国 USD55 | 2026-10-18 | — |
+| 縦断（南アDHA） | https://www.dha.gov.za/index.php/immigration-services/exempt-countries | 日本は90日免除 | 2026-10-18 | — |
+| 縦断（Moz大使館） | https://embamoc.jp/visas | 日本はビザ免除（30日）、evisa.gov.mz で48時間前までに事前登録 | 2026-10-18 | 停止注記は取得本文で見つからず |
+| 縦断（Mozポータル） | https://evisa.gov.mz/Home | 日本はETA表（30日）に掲載。新プラットフォームは2026-02-11開始 | 2026-10-18 | 金額未掲載 |
+| 縦断（FCDO Moz） | https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 英国旅券はETA必須、5営業日前、約USD47 | 2026-10-18 | 英国旅券向け |
+| 縦断（Gozo Azul） | https://gozo-azul.co.za/scuba-diving/ | リーフUSD50/本、フルギアUSD15/本、リーフ税USD10 → 2本=USD140 | 2026-10-18 | 為替変動の注記あり |
+| 縦断（ANAC） | https://www.anac.gov.mz/en/parques/ponta-do-ouro/ | Kosi Bay国境 08:00〜17:00、JNBから673km、7〜8h、4WD推奨、Maputoから3〜4h | 2026-10-18 | — |
+| 縦断（DAN） | https://dan.org/health-medicine/health-resource/health-safety-guidelines/guidelines-for-flying-after-diving/ | 飛行前の水面休息：単回12h、複数日18h以上 | 2026-10-18 | 飛行向けの勧告 |
+| 縦断（Modern Coast） | https://moderncoastltd.com/routes | Nairobi→Kampala 12h、Kampala→Kigali 9h、Nairobi→Kigali 15h、Nairobi→Dar es Salaam 14h | 2026-10-18 | 2027年便は未購入 |
+| 縦断（Premierline） | https://premierline.co.tz/bus-tickets/mwanza-to-mbeya | 検索フォームのみ、取得日の便なし | 2026-10-18 | Issue記載の19h・87,000TZSは再現不可 |
+| 縦断（African Bus） | https://www.africanbus.com/tickets | Lusaka→Livingstone 7h45、ZMW300（Power Tools） | 2026-10-18 | — |
+| 縦断（取得不可） | rome2rio／gov.bw／gov.sz／anzen.mofa.go.jp | HTTP 403／証明書エラー／タイムアウト／保守ページ | 2026-10-18 | 該当項目は未確認 |
 ### 長期留学の保険（#49、確認日 2026-10-19）
 
 | 分野 | 出典 | 確認したこと | 確認日 | 留意事項 |
