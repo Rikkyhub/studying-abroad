@@ -77,16 +77,35 @@ WeatherSpark（MERRA-2 再解析の集計サイト、2026-10-17 確認）:
 - 前回（2026-10-17 の旧ブランチ調査）からの変化: Woolworths の Bamboo Rich Socks 3 Pack は R149 → **R169**（再取得値を採用）。その他の掲載品は同額。
 - 「オンラインで在庫あり」の表示は確認したが、**特定の Cape Town 店舗での在庫・2027年冬の取扱は未確認**。ブーツの防水性も未確認。
 
-### 2.4 店舗の存在（公式に確認できた範囲）
+### 2.4 店舗の存在（公式に確認できた範囲・2026-10-20 更新）
 
-| 店 | 確認できたこと | Cape Town 店舗 |
-|---|---|---|
-| PEP / Ackermans / Woolworths | 南アの公式ECが稼働（2.3の取得結果） | **未確認**（店舗検索を取得していない） |
-| Cape Union Mart（K-Way） / Mr Price / Sportsmans Warehouse | 公式サイトが 403 | **未確認** |
-| Decathlon | 公式サイトが 403。Tiendeo（チラシ集約サイト・非公式）の店舗一覧で Alberton、Boksburg、Randburg、Centurion、Roodepoort（いずれも Gauteng）を確認 | **未確認**（同一覧に Cape Town の店舗は見当たらない） |
-| H&M | 旧調査では検索結果のURL・タイトルのみで、ページ本体は未取得 | **未確認**（確定扱いしない） |
+**確認できた事実（2026-10-20）**
+| 店舗 | 所在（Cape Town 圏） | 出典URL | 種別 | 備考 |
+|---|---|---|---|---|
+| Woolworths | Gardens（Gardens Centre, Cnr Buitenkant St & Mill St, Gardens 8001）[Maps](https://www.google.com/maps/search/?api=1&query=Woolworths+Gardens+Centre+Cape+Town) | https://www.woolworths.co.za/store-locator（埋め込み店舗データ） | 公式 | 配送対応店舗一覧のデータ。営業時間・冬物在庫は未確認 |
+| Woolworths | Piazza St John, Cnr St Johns Rd & Main Rd, Sea Point 8005 [Maps](https://www.google.com/maps/search/?api=1&query=Woolworths+Sea+Point+Cape+Town) | 同上 | 公式 | |
+| Woolworths | Palmyra Road, Palmyra Shopping Centre, Claremont 7708 [Maps](https://www.google.com/maps/search/?api=1&query=Woolworths+Palmyra+Road+Claremont) | 同上 | 公式 | |
+| Woolworths | Willow Bridge（Willowbridge Shopping Centre, Carel Cronje Rd, Tyger Valley 7530）[Maps](https://www.google.com/maps/search/?api=1&query=Woolworths+Willowbridge+Tyger+Valley) | 同上 | 公式 | |
+| Woolworths | Pinelands（Howard Centre）、Constantia Emporium、Meadowridge、Grassy Park、Simonstown ほか | 同上 | 公式 | 住所は同データに記載 |
+| Canal Walk（Century City） | Woolworths（2区画：婦人・子供／紳士・食品）、Ackermans、PEP、PEP Home、Mr Price（＋Home・Sport）、Cape Union Mart、Sportsmans Warehouse、H&M（婦人・紳士の2店） | https://canalwalk.co.za/stores/ が参照する公式モールAPI（api.hyprop.co.za の stores、367件中） | 公式（モール運営） | 階: Cape Union Mart・PEP は Lower、Ackermans・Mr Price・Sportsmans は Upper。Decathlon は一覧に無し。電話: Cape Union Mart (021) 555 2846、Sportsmans (021) 552 0163 |
+| Cavendish Square | Woolworths（Ground Level／Lower Ground）、Ackermans、PEP Clothing、PEP Home、Mr Price（＋Home・Sport）、Cape Union Mart、Sportsmans Warehouse、**H&M（Ground Level G75／First Level F19 の2店）** | https://cavendish.co.za/store-directory/ （私が2026-10-20に再取得して確認） | 公式（モール） | 店名一覧のみ。Decathlon は載っていない |
+| Gardens Centre | Woolworths Gardens のみ確認（上記） | 同上 | 公式 | モール側のテナント一覧は未取得 |
 
-店舗の所在地・営業時間は、渡航前に各社の公式店舗検索で確認する。
+**旧→新**
+- 旧「PEP／Ackermans／Woolworths の店舗は未確認」→ 新「Canal Walk・Cavendish Square に入居を公式テナント一覧で確認。Woolworths は Gardens ほか多数」。
+- 旧「Cape Union Mart／Mr Price／Sportsmans Warehouse は 403 で未確認」→ 新「店舗情報はモール公式一覧で Canal Walk・Cavendish に確認（各ブランド公式サイトは引き続き 403）」。
+- 旧「H&M 未確認」→ 新「Canal Walk に2店、Cavendish Square に2店（Ground Level／First Level）を各モールの公式一覧で確認」。
+- Decathlon: Cape Town の店舗は Canal Walk・Cavendish Square の一覧に無い。他のモールでは未確認のまま。
+
+**まだ未確認**
+- V&A Waterfront の各店（waterfront.co.za は 429）。Tyger Valley モールのテナント一覧（/stores/ は 404、/store-directory は未取得）。Gardens Centre のテナント一覧。
+- PEP・Ackermans・Mr Price・Cape Union Mart・Sportsmans Warehouse・H&M・Decathlon 各社の公式店舗検索（pepstores.com の locator は店舗データ無し、ackermans.co.za は404、mrp/capeunionmart/sportsmanswarehouse/hm は 403、decathlon.co.za 404）。
+- 2027年6〜7月の冬物在庫・価格、営業時間（Canal Walk 一般営業 9AM-9PM はモールAPI表記、店舗別は未確認）。
+
+**調査ログ**
+取得成功: woolworths.co.za/store-locator、canalwalk.co.za/stores/、api.hyprop.co.za/public/stores/<mallId>?amount=500、cavendish.co.za/store-directory/、tygervalley.co.za/（トップのみ）、gardenscentre.co.za（1.6KBのみ）。失敗: pepstores.com/pages/store-locator（店舗データ無し）、ackermans.co.za/store-locator（404）、mrp.com・capeunionmart.co.za・sportsmanswarehouse.co.za・hm.com（403）、decathlon.co.za（404）、waterfront.co.za/shop（429）、tygervalley.co.za/stores（404）。検索エンジンは未使用。
+
+モールのテナント一覧で入居を確認できても、**特定の店舗での冬物の在庫や2027年の取扱は未確認**です。店舗の所在地・営業時間は、渡航前に各社の公式店舗検索で確認してください。
 
 ### 2.5 日本の公式EC価格（確認日 2026-10-17、JPY税込、適用: 2026年秋冬の掲載品）
 
