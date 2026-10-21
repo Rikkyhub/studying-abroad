@@ -37,6 +37,32 @@ def load_tasks(root: Path = ROOT) -> list[dict]:
     return out
 
 
+def load_timeline(root: Path = ROOT) -> list[dict]:
+    with (root / "data" / "timeline.csv").open(encoding="utf-8", newline="") as f:
+        rows = list(csv.DictReader(f))
+    rows.sort(key=lambda r: int(r["sort"] or 0))
+    return [{"id": r["id"], "period": r["period"], "title": r["title"], "status": r["status"], "summary": r["summary"],
+             "regions": [x for x in r["region"].split(";") if x] or ["common"]} for r in rows]
+
+
+def load_routes(root: Path = ROOT):
+    """比較ビュー・地図ビュー用。build_maps のモデルと SVG を再利用する（外部通信なし）"""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build_maps as BM
+    points, routes = BM.load_model()
+    svg, _ = BM.build_map("africa", points, routes, BM.load_topo("countries-110m.json"), BM.load_topo("countries-50m.json"))
+    out = []
+    for rid in sorted(routes):
+        rt = routes[rid]
+        legs = rt["legs"]
+        out.append({"id": rid, "name": rt["name"], "km": BM.km_text(rt["km"]), "kmv": int(round(rt["km"])),
+                    "legs": len(legs), "unc": sum(1 for l in legs if l["unconfirmed"] == "Y"),
+                    "modes": sorted({l["mode"] for l in legs}),
+                    "stops": [points[legs[0]["from_point"]]["name_ja"]] + [points[l["to_point"]]["name_ja"] for l in legs],
+                    "countries": sorted({points[l["to_point"]]["country"] for l in legs} - {"フィリピン"})})
+    return out, svg
+
+
 def css_vars(tok: dict) -> str:
     def block(sel: str, d: dict) -> str:
         return sel + "{" + "".join(f"--c-{k}:{v};" for k, v in d.items()) + "}"
@@ -113,7 +139,47 @@ h1{font-size:var(--fs-head);line-height:var(--lh-tight);margin:0}
 .empty{text-align:center;color:var(--c-inkMuted);padding:var(--s-xxl) var(--s-lg)}
 .note{font-size:13px;color:var(--c-inkMuted);background:var(--c-surfaceAlt);border-radius:var(--r-md);padding:var(--s-md);margin:var(--s-lg) 0}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--c-surface);border-top:1px solid var(--c-line);padding-bottom:env(safe-area-inset-bottom,0px)}
-nav.tabs .in{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
+nav.tabs .in{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+[hidden]{display:none!important}
+.tools{display:grid;grid-template-columns:1fr auto auto;gap:var(--s-sm);align-items:center;margin-top:var(--s-sm)}
+.tools .search{margin-top:0}
+.sel{min-height:var(--touch);border:1px solid var(--c-line);background:var(--c-surface);color:var(--c-ink);border-radius:var(--r-md);padding:0 var(--s-sm);font:inherit}
+.filters{padding:var(--s-sm) 0 0}.filters .lbl{margin:var(--s-sm) 0 0;font-size:var(--fs-caption);font-weight:700;color:var(--c-inkMuted)}
+.hint{font-size:13px;color:var(--c-inkMuted);margin:var(--s-lg) 0 var(--s-md)}
+.muted{font-size:13px;color:var(--c-inkMuted);margin:4px 0 0}
+.pills{display:flex;flex-wrap:wrap;gap:var(--s-sm);margin:var(--s-sm) 0}
+.pill{min-height:36px;padding:0 14px;border:1px solid var(--c-brand);background:var(--c-brandSoft);color:var(--c-brand);border-radius:var(--r-pill);cursor:pointer;font-size:14px;font-weight:700}
+.tlitem{position:relative;display:grid;grid-template-columns:20px 1fr;gap:var(--s-md);padding-bottom:var(--s-xl)}
+.tlitem::before{content:"";position:absolute;left:9px;top:18px;bottom:0;width:2px;background:var(--c-line)}
+.tlitem:last-child::before{display:none}
+.tlitem .dot{width:18px;height:18px;border-radius:50%;background:var(--c-brand);border:3px solid var(--c-bg);box-shadow:0 0 0 2px var(--c-brand);margin-top:4px}
+.tlitem.pre .dot{background:var(--c-p1);box-shadow:0 0 0 2px var(--c-p1)}
+.tlbody{background:var(--c-surface);border:1px solid var(--c-line);border-radius:var(--r-lg);box-shadow:var(--sh-card);padding:var(--s-md) var(--s-lg);min-width:0}
+.tlbody h3{margin:2px 0 6px;font-size:var(--fs-title);line-height:var(--lh-tight)}
+.tlbody .per{margin:0;font-size:13px;font-weight:700;color:var(--c-brand)}
+.tag.status{background:var(--c-warnSoft);color:var(--c-warn);font-weight:700;margin-right:6px}
+.ctray{display:flex;flex-wrap:wrap;gap:var(--s-sm);margin-bottom:var(--s-md)}
+.cscroll{overflow-x:auto;margin:0 calc(var(--s-lg)*-1);padding:0 var(--s-lg) var(--s-md);-webkit-overflow-scrolling:touch}
+.cmpgrid{display:grid;gap:var(--s-md);min-width:min-content}
+.ccard{background:var(--c-surface);border:1px solid var(--c-line);border-radius:var(--r-lg);box-shadow:var(--sh-card);padding:var(--s-lg);min-width:0}
+.ccard h3{font-size:15px;line-height:var(--lh-tight);margin:8px 0}
+.ccard .big{font-size:20px;font-weight:700;margin:6px 0 2px}
+.kmbar{height:6px;background:var(--c-surfaceAlt);border-radius:var(--r-pill);overflow:hidden}.kmbar i{display:block;height:100%;background:var(--c-brand)}
+.rb{display:inline-block;min-width:1.8em;text-align:center;padding:2px 8px;border-radius:var(--r-sm);color:#fff;font-weight:700;background:var(--c-ink)}
+.rb.rA{background:#0072B2}.rb.rB{background:#B84A00}.rb.rC{background:#007A5A}.rb.rD{background:#A5498A}.rb.rE{background:#8A6D00}.rb.rF{background:#3B3B3B}
+.mapbox{margin:var(--s-md) 0;border:1px solid var(--c-line);border-radius:var(--r-lg);overflow:hidden;background:#e6eef3}
+.mapbox svg{display:block;width:100%;height:auto;font-family:var(--font)}
+.mapdet{min-height:3em;background:var(--c-surfaceAlt);border-radius:var(--r-md);padding:var(--s-md);font-size:14px}
+.sea{fill:#e6eef3}.frame{fill:none;stroke:#b9b4a4}.grat{fill:none;stroke:#cdd8df;stroke-width:.6}
+.co{fill:#f4f1e8;stroke:#b9b4a4;stroke-width:.5;fill-rule:evenodd}.co.visit{fill:#e3e8c9}
+.ctint{fill:#f1d9d6;stroke:#b3261e}.hatchln{stroke:#b3261e;stroke-width:1.1}
+.leg{--c:#0072B2;cursor:pointer}.leg.r-A{--c:#0072B2}.leg.r-B{--c:#B84A00}.leg.r-C{--c:#007A5A}.leg.r-D{--c:#A5498A}.leg.r-E{--c:#8A6D00}.leg.r-F{--c:#3B3B3B}
+.leg .ln{fill:none;stroke:var(--c);stroke-width:2.4;stroke-linecap:round;pointer-events:none}.leg .hit{fill:none;stroke:transparent;stroke-width:16}
+.leg.unc .ln{stroke-dasharray:.1 5.2;stroke-width:3}
+.leg .badge path,.leg .badge circle,.leg .badge rect{fill:var(--c);stroke:#fff;stroke-width:1.2}.leg .bl{font-size:9.5px;font-weight:700;fill:#fff;pointer-events:none}
+.leg.off,.pt.off{opacity:.1;pointer-events:none}
+.pt .dot{fill:#1d2227;stroke:#e6eef3;stroke-width:1.2}.pt .ring{fill:none;stroke:#1d2227;stroke-width:1.6}.pt .hitc{fill:transparent}
+.lb{font-size:11px;fill:#1d2227;paint-order:stroke;stroke:#e6eef3;stroke-width:3.2px;pointer-events:none}.tag.lb{fill:#555f68}
 nav.tabs button{min-height:var(--touch);border:0;background:none;cursor:pointer;font-size:12px;color:var(--c-inkMuted);padding:6px 0}
 nav.tabs button[aria-current=page]{color:var(--c-brand);font-weight:700}
 nav.tabs b{display:block;font-size:18px;line-height:1.2}
@@ -126,7 +192,7 @@ JS = r"""
 (function(){
 "use strict";
 var D=JSON.parse(document.getElementById("app-data").textContent),T=D.tasks,R=D.regions;
-var KEY="maybego.prep.done.v1",done={},st={region:"all",pri:"all",q:"",view:"todo",open:{}};
+var KEY="maybego.prep.done.v1",done={},st={region:"all",pri:"all",q:"",view:"todo",open:{},when:"all",sort:"lead",tab:"prep",route:"all",cmp:{}};
 try{done=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){done={}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
 function $(s){return document.querySelector(s)}
@@ -137,10 +203,12 @@ function whenText(t){var n=t.lead_days;
 function groupKey(t){var n=t.lead_days;if(n>=90)return["g1","いますぐ〜出発90日前（早めに着手）",1];if(n>=60)return["g2","出発60〜89日前",2];
  if(n>=30)return["g3","出発30〜59日前",3];if(n>0)return["g4","出発直前（30日前〜）",4];return["g5","出発後・到着時・帰国後",5]}
 function inRegion(t){return st.region==="all"||st.region==="common"?(st.region==="all"||t.regions.indexOf("common")>=0):(t.regions.indexOf(st.region)>=0||t.regions.indexOf("common")>=0)}
+var WHEN=[["all","すべて"],["now","いますぐ（90日前〜）"],["soon","60〜89日前"],["near","30〜59日前"],["last","出発直前"],["after","出発後・到着時"],["done","済"]];
+function whenOf(t){var n=t.lead_days;return n>=90?"now":n>=60?"soon":n>=30?"near":n>0?"last":"after"}
 function match(t){
  if(!inRegion(t))return false;
+ if(st.when==="done"){if(!isDone(t))return false}else{if(isDone(t))return false;if(st.when!=="all"&&whenOf(t)!==st.when)return false}
  if(st.pri!=="all"&&String(t.priority)!==st.pri)return false;
- if(st.view==="todo"&&isDone(t))return false;if(st.view==="done"&&!isDone(t))return false;
  if(st.q){var s=(t.task+" "+t.phase+" "+t.next_action+" "+t.note+" "+t.cost_note).toLowerCase();if(s.indexOf(st.q.toLowerCase())<0)return false}
  return true}
 function rich(d,v){var re=/(research|docs|areas|blog)\/([a-z0-9-]+)\.md(?:\s*(§[0-9A-Za-z.]+))?/g,i=0,m;
@@ -173,27 +241,91 @@ function card(t){
 function render(){
  var list=$("#list");list.textContent="";
  var all=T.filter(inRegion);
+ filterBadge();
  var nd=all.filter(isDone).length;$("#pn").textContent=nd+" / "+all.length+" 件 済";
  $("#pb").style.width=(all.length?Math.round(nd*100/all.length):0)+"%";
- var rows=T.filter(match).sort(function(a,b){return b.lead_days-a.lead_days||a.priority-b.priority||(a.id<b.id?-1:1)});
- if(!rows.length){list.appendChild(el("p","empty",st.view==="done"?"まだ「済」にした作業はありません。":"条件に合う作業はありません。"));return}
+ var cmpf={lead:function(a,b){return b.lead_days-a.lead_days||a.priority-b.priority||(a.id<b.id?-1:1)},
+  pri:function(a,b){return a.priority-b.priority||b.lead_days-a.lead_days||(a.id<b.id?-1:1)},
+  phase:function(a,b){return a.phase<b.phase?-1:a.phase>b.phase?1:b.lead_days-a.lead_days}};
+ var rows=T.filter(match).sort(cmpf[st.sort]);
+ if(!rows.length){list.appendChild(el("p","empty",st.when==="done"?"まだ「済」にした作業はありません。":"条件に合う作業はありません。"));return}
  var cur="",ul=null;
- rows.forEach(function(t){var g=groupKey(t);
+ rows.forEach(function(t){var g=st.sort==="lead"?groupKey(t):st.sort==="pri"?["p"+t.priority,"優先"+t.priority]:["f"+t.phase,t.phase];
   if(g[0]!==cur){cur=g[0];list.appendChild(el("h2","group",g[1]));ul=el("ul","list");list.appendChild(ul)}
   ul.appendChild(card(t))})}
+/* ---- 日程（タイムライン）---- */
+function renderPlan(){var box=$("#tl");box.textContent="";
+ var rows=D.timeline.filter(function(r){return st.region==="all"||r.regions.indexOf(st.region)>=0||r.regions.indexOf("common")>=0});
+ var prep=T.filter(function(t){return t.lead_days>0&&inRegion(t)}).length;
+ box.appendChild(el("p","hint","月ごとの計画（モデル）です。準備は出発前の作業なので、出発までの目安日数ごとの件数を先頭に出しています。"));
+ var pre=el("div","tlitem pre");pre.appendChild(el("span","dot"));var c=el("div","tlbody");c.appendChild(el("h3",null,"出発前の準備"));
+ var wrap=el("div","pills");[["now","90日前〜"],["soon","60〜89日前"],["near","30〜59日前"],["last","直前"]].forEach(function(w){
+  var n=T.filter(function(t){return inRegion(t)&&t.lead_days>0&&whenOf(t)===w[0]}).length;
+  var p=el("button","pill",w[1]+"　"+n+"件");p.type="button";p.addEventListener("click",function(){st.when=w[0];setTab("prep")});wrap.appendChild(p)});
+ c.appendChild(wrap);c.appendChild(el("p","muted","計 "+prep+" 件（出発前）"));pre.appendChild(c);box.appendChild(pre);
+ rows.forEach(function(r){var it=el("div","tlitem");it.appendChild(el("span","dot"));var b=el("div","tlbody");
+  b.appendChild(el("p","per",r.period));b.appendChild(el("h3",null,r.title));b.appendChild(el("span","tag status",r.status));
+  b.appendChild(el("p","muted",r.summary));r.regions.forEach(function(g){b.appendChild(el("span","tag region",R[g]||g))});
+  it.appendChild(b);box.appendChild(it)})}
+/* ---- 比較（ルート案）---- */
+var MODE={flight:"航空",overland:"陸路",ferry:"フェリー",sea:"船",rail:"鉄道",bus:"バス"};
+function renderCmp(){var box=$("#cmp");box.textContent="";
+ box.appendChild(el("p","hint","距離は直線距離の合計で、実際の飛行・走行距離ではありません。運賃・ダイヤは未確認です。下のボタンで2案以上を選ぶと、その案だけを並べます。"));
+ var maxkm=Math.max.apply(null,D.routes.map(function(r){return r.kmv}));
+ var tray=el("div","ctray");
+ D.routes.forEach(function(r){var on=!!st.cmp[r.id];var b=el("button","chip",r.id+" 案");b.type="button";b.setAttribute("aria-pressed",on?"true":"false");
+  b.addEventListener("click",function(){st.cmp[r.id]=!st.cmp[r.id];renderCmp()});tray.appendChild(b)});
+ box.appendChild(tray);
+ var sel=D.routes.filter(function(r){return st.cmp[r.id]});
+ if(sel.length<2){sel=D.routes}
+ var tbl=el("div","cmpgrid");tbl.style.gridTemplateColumns="repeat("+sel.length+",minmax(150px,1fr))";
+ sel.forEach(function(r){var c=el("div","ccard");c.appendChild(el("span","rb r"+r.id,r.id));c.appendChild(el("h3",null,r.name));
+  var bar=el("div","kmbar");var i=el("i");i.style.width=Math.round(r.kmv*100/maxkm)+"%";bar.appendChild(i);c.appendChild(bar);
+  c.appendChild(el("p","big",r.km));c.appendChild(el("p","muted","区間 "+r.legs+"（うち未確認 "+r.unc+"）"));
+  c.appendChild(el("p","muted","手段："+r.modes.map(function(m){return MODE[m]||m}).join("・")));c.appendChild(el("p","muted","行き先："+r.countries.join("・")));
+  var go=el("button","pill","地図で見る");go.type="button";go.addEventListener("click",function(){st.route=r.id;setTab("map")});c.appendChild(go);tbl.appendChild(c)});
+ var sc=el("div","cscroll");sc.appendChild(tbl);box.appendChild(sc)}
+/* ---- 地図 ---- */
+var mapBuilt=false;
+function renderMap(){var box=$("#mapv");
+ if(!mapBuilt){box.textContent="";box.appendChild(el("p","hint","候補ルートの概念図です。ルートを選ぶと、そのルートの線だけを表示します。実際の経路・運賃・入国条件は未確認の部分があります。"));
+  var tray=el("div","chips");tray.id="routeChips";box.appendChild(tray);
+  var holder=el("div","mapbox");holder.appendChild(document.getElementById("map-svg").content.cloneNode(true));box.appendChild(holder);
+  var det=el("div","mapdet");det.id="mapdet";det.setAttribute("role","status");det.setAttribute("aria-live","polite");box.appendChild(det);
+  var svg=holder.querySelector("svg");svg.removeAttribute("id");
+  svg.querySelectorAll(".leg").forEach(function(g){var id=g.dataset.leg;g.addEventListener("click",function(){showLeg(g)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();showLeg(g)}})});
+  mapBuilt=true}
+ var tray=$("#routeChips");tray.textContent="";
+ [["all","すべて"]].concat(D.routes.map(function(r){return[r.id,r.id+" 案"]})).forEach(function(it){var b=el("button","chip",it[1]);b.type="button";
+  b.setAttribute("aria-pressed",st.route===it[0]?"true":"false");b.addEventListener("click",function(){st.route=it[0];renderMap()});tray.appendChild(b)});
+ var svg=$("#mapv svg");
+ svg.querySelectorAll(".leg").forEach(function(g){g.classList.toggle("off",st.route!=="all"&&g.dataset.route!==st.route)});
+ svg.querySelectorAll(".pt").forEach(function(g){var r=g.dataset.routes||"";g.classList.toggle("off",st.route!=="all"&&r.indexOf(st.route)<0&&g.dataset.pt!=="MNL"&&g.dataset.pt!=="BAGUIO")});
+ var d=$("#mapdet");d.textContent=st.route==="all"?"線をタップすると、区間の名前を表示します。":"ルート"+st.route+"："+D.routes.filter(function(r){return r.id===st.route})[0].stops.join(" → ")}
+function showLeg(g){$("#mapdet").textContent=(g.getAttribute("aria-label")||"")}
+function setTab(t){st.tab=t;
+ ["prep","plan","cmp","map"].forEach(function(k){var v=$("#v-"+k);if(v)v.hidden=(k!==t)});
+ document.querySelectorAll("nav.tabs button").forEach(function(x){x.setAttribute("aria-current",x.dataset.tab===t?"page":"false")});
+ $("#whenChips").hidden=(t!=="prep");document.querySelector(".tools").hidden=(t!=="prep");if(t!=="prep")$("#filters").hidden=true;
+ var HEAD={prep:["出発前の準備","一般的な目安です（個人の進捗ではありません）。期限は出発日を基準にした相対表記。"],plan:["日程","2027年2〜8月の計画（モデル）。月単位で、個人の日付は載せません。"],cmp:["ルート比較","アフリカ周遊のルート案を並べて比べます。"],map:["地図","候補ルートの概念図。実際の経路・運賃・入国条件は未確認の部分があります。"]};
+ $("#ttl").textContent=HEAD[t][0];$("#sub").textContent=HEAD[t][1];$("#progress").hidden=(t!=="prep");$("#prepnote").hidden=(t!=="prep");
+ chipRow("#whenChips",WHEN,"when");
+ if(t==="prep")render();else if(t==="plan")renderPlan();else if(t==="cmp")renderCmp();else renderMap();window.scrollTo(0,0)}
 function chipRow(id,items,key){var box=$(id);box.textContent="";
  items.forEach(function(it){var b=el("button","chip",it[1]);b.type="button";b.setAttribute("aria-pressed",st[key]===it[0]?"true":"false");
   b.addEventListener("click",function(){st[key]=it[0];chipRow(id,items,key);render()});box.appendChild(b)})}
+function filterBadge(){var n=(st.region!=="all"?1:0)+(st.pri!=="all"?1:0);$("#filt").textContent=n?"⚙"+n:"⚙"}
 chipRow("#regionChips",[["all","すべて"]].concat(Object.keys(R).map(function(k){return[k,R[k]]})),"region");
 chipRow("#priChips",[["all","優先すべて"],["1","優先1"],["2","優先2"],["3","優先3"]],"pri");
 $("#q").addEventListener("input",function(e){st.q=e.target.value.trim();render()});
-document.querySelectorAll("nav.tabs button").forEach(function(b){b.addEventListener("click",function(){
- st.view=b.dataset.view;document.querySelectorAll("nav.tabs button").forEach(function(x){x.setAttribute("aria-current",x===b?"page":"false")});render();window.scrollTo(0,0)})});
+$("#sort").addEventListener("change",function(e){st.sort=e.target.value;render()});
+$("#filt").addEventListener("click",function(){var f=$("#filters"),o=f.hidden;f.hidden=!o;this.setAttribute("aria-expanded",o?"true":"false")});
+document.querySelectorAll("nav.tabs button").forEach(function(b){b.addEventListener("click",function(){setTab(b.dataset.tab)})});
 var th=$("#theme"),root=document.documentElement;
 try{var s=localStorage.getItem("maybego.theme");if(s)root.setAttribute("data-theme",s)}catch(e){}
 th.addEventListener("click",function(){var cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");
  var n=cur==="dark"?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("maybego.theme",n)}catch(e){}});
-render();
+var h=/^#(prep|plan|cmp|map)$/.exec(location.hash);setTab(h?h[1]:"prep");
 })();
 """
 
@@ -201,7 +333,9 @@ render();
 def build(root: Path = ROOT) -> str:
     tok = json.loads((root / "app" / "tokens.json").read_text(encoding="utf-8"))
     tasks = load_tasks(root)
-    payload = {"tasks": tasks, "regions": REGIONS, "doneStatus": list(DONE_STATUS)}
+    routes, map_svg = load_routes(root)
+    payload = {"tasks": tasks, "timeline": load_timeline(root), "routes": routes, "regions": REGIONS,
+               "doneStatus": list(DONE_STATUS)}
     data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     n = len(tasks)
     return f"""<!doctype html>
@@ -215,23 +349,37 @@ def build(root: Path = ROOT) -> str:
 {css_vars(tok)}
 {CSS}</style></head><body>
 <header class="top"><div class="app">
-<div class="title"><div><h1>出発前の準備</h1><p class="sub">一般的な目安です（個人の進捗ではありません）。期限は出発日を基準にした相対表記。</p></div>
+<div class="title"><div><h1 id="ttl">出発前の準備</h1><p class="sub" id="sub">一般的な目安です（個人の進捗ではありません）。期限は出発日を基準にした相対表記。</p></div>
 <button id="theme" class="iconbtn" type="button" aria-label="表示の明るさを切り替える">◐</button></div>
-<div class="progress"><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="済にした割合"><i id="pb"></i></div>
+<div class="progress" id="progress"><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="済にした割合"><i id="pb"></i></div>
 <div class="prow"><span id="pn">0 / {n} 件 済</span><span>「済」はこの端末のブラウザにだけ保存</span></div></div>
+<div id="whenChips" class="chips" role="group" aria-label="いつ着手するかで絞り込む"></div>
+<div class="tools">
 <label class="sr" for="q">作業を検索</label>
 <input id="q" class="search" type="search" placeholder="作業・次にやること・メモを検索" autocomplete="off">
-<div id="regionChips" class="chips" role="group" aria-label="地域で絞り込む"></div>
-<div id="priChips" class="chips" role="group" aria-label="優先度で絞り込む"></div>
+<label class="sr" for="sort">並べ替え</label>
+<select id="sort" class="sel" aria-label="並べ替え"><option value="lead">着手が早い順</option><option value="pri">優先度順</option><option value="phase">分野順</option></select>
+<button id="filt" class="iconbtn" type="button" aria-expanded="false" aria-controls="filters" aria-label="絞り込みを開く">⚙</button>
+</div>
+<div id="filters" class="filters" hidden>
+<p class="lbl">地域</p><div id="regionChips" class="chips" role="group" aria-label="地域で絞り込む"></div>
+<p class="lbl">優先度</p><div id="priChips" class="chips" role="group" aria-label="優先度で絞り込む"></div>
+</div>
 </div></header>
-<main class="app"><div id="list" aria-live="polite"></div>
-<p class="note">料金・制度は確認日時点の公開情報で、2027年の内容を保証しません。勤務先・自治体・契約・学校・大使館への個別確認が必要な項目は「要確認」と「次にやること」に書いてあります。詳しい調査は <a href="all.html#p-research-prep-priority1-tasks">優先度1の調査</a>・<a href="all.html#p-research-prep-priority2-tasks">優先度2の調査</a>・<a href="all.html#p-research-vaccines-and-medicines-checklist">予防接種・常備薬</a> を参照。</p>
+<main class="app">
+<section id="v-prep" class="view"><div id="list" aria-live="polite"></div></section>
+<section id="v-plan" class="view" hidden><div id="tl"></div></section>
+<section id="v-cmp" class="view" hidden><div id="cmp"></div></section>
+<section id="v-map" class="view" hidden><div id="mapv"></div></section>
+<p class="note" id="prepnote">料金・制度は確認日時点の公開情報で、2027年の内容を保証しません。勤務先・自治体・契約・学校・大使館への個別確認が必要な項目は「要確認」と「次にやること」に書いてあります。詳しい調査は <a href="all.html#p-research-prep-priority1-tasks">優先度1の調査</a>・<a href="all.html#p-research-prep-priority2-tasks">優先度2の調査</a>・<a href="all.html#p-research-vaccines-and-medicines-checklist">予防接種・常備薬</a> を参照。</p>
 </main>
-<nav class="tabs" aria-label="表示の切り替え"><div class="in">
-<button type="button" data-view="todo" aria-current="page"><b>☐</b>これから</button>
-<button type="button" data-view="done" aria-current="false"><b>☑</b>済</button>
-<button type="button" data-view="all" aria-current="false"><b>≡</b>すべて</button>
+<nav class="tabs" aria-label="画面の切り替え"><div class="in">
+<button type="button" data-tab="prep" aria-current="page"><b>☐</b>準備</button>
+<button type="button" data-tab="plan" aria-current="false"><b>▤</b>日程</button>
+<button type="button" data-tab="cmp" aria-current="false"><b>⇄</b>比較</button>
+<button type="button" data-tab="map" aria-current="false"><b>◎</b>地図</button>
 </div></nav>
+<template id="map-svg">{map_svg}</template>
 <script type="application/json" id="app-data">{data}</script>
 <script>{JS}</script>
 </body></html>

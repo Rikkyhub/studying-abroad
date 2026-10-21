@@ -30,6 +30,25 @@ class AppTests(unittest.TestCase):
         for t in data["tasks"]:
             self.assertNotIn("issue", t)
 
+    def test_timeline_and_routes_are_embedded(self):
+        data = json.loads(re.search(r'id="app-data">(.*?)</script>', TEXT, re.S).group(1).replace("<\/", "</"))
+        self.assertEqual(len(data["timeline"]), len(BA.load_timeline()))
+        self.assertGreaterEqual(len(data["routes"]), 2)
+        for r in data["routes"]:
+            self.assertTrue(r["km"].startswith("約"))
+            self.assertGreaterEqual(r["legs"], r["unc"])
+
+    def test_four_tabs_and_when_entry_exist(self):
+        for tab in ("prep", "plan", "cmp", "map"):
+            self.assertIn(f'data-tab="{tab}"', TEXT)
+        self.assertIn('id="whenChips"', TEXT)
+        self.assertIn('id="sort"', TEXT)
+
+    def test_map_svg_ids_do_not_leak_into_the_page(self):
+        """地図SVGは <template> に入れ、画面に出すときに id を外す（他の要素と衝突させない）"""
+        self.assertIn('<template id="map-svg">', TEXT)
+        self.assertIn('svg.removeAttribute("id")', TEXT)
+
     def test_no_external_requests(self):
         self.assertEqual(re.findall(r"<script[^>]+src=|<link[^>]+href=\"https?:|@import|fetch\(|XMLHttpRequest", TEXT), [])
 
