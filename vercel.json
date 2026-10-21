@@ -15,7 +15,7 @@
     },
     {
       "src": "^/$",
-      "dest": "/app.html"
+      "dest": "/all.html"
     },
     {
       "src": "^/docs-all$",
