@@ -81,6 +81,7 @@
 | 生活費 | [ケープタウン冬服](../research/winter-clothing.md) | 持参と現地調達・価格調査 | [capetown.travel](https://www.capetown.travel/the-best-time-of-year-to-visit-cape-town/) | 2026-10-16 |
 | 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
 | 留学 | [第2か国留学（ケープタウン）](../research/second-school.md) | 6〜7月8週間の語学留学の候補と入国条件 | [uctlanguagecentre.com](https://uctlanguagecentre.com/)<br>[dha.gov.za](https://www.dha.gov.za/) | 2026-10-17 |
+| 留学 | [ケープタウン語学留学の学校選定（Deep Research）](../research/deep-research-report.md) | IH・Cape Studies・UCT・GHS の4校を予算枠・Business English・交流環境で比較（匿名モデル） | [ihcapetown.com](https://ihcapetown.com/courses/business-english/)<br>[capestudies.com](https://capestudies.com/courses/)<br>[uctlanguagecentre.com](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027) | 2026-10-21 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
 <!-- /AUTO:docs -->
