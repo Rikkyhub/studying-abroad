@@ -162,7 +162,8 @@ def build(root: Path = ROOT) -> str:
             data = re.search(r'<script type="application/json" id="map-data">.*?</script>', text, re.S)
             js = text[text.rfind("<script>"):]
             js = js[:js.rfind("</script>") + len("</script>")]
-            scripts.append(map_namespace(data.group(0), pfx))
+            if data:
+                scripts.append(map_namespace(data.group(0), pfx))
             scripts.append(map_namespace(js, pfx))
         else:
             main = prefix_ids(main, pfx)

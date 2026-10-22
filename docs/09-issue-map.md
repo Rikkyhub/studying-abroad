@@ -30,6 +30,7 @@
 | [バギオ（フィリピン語学留学）](../areas/baguio.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [世界地図（候補ルート）](../maps/world-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
 | [アフリカ地図（候補ルート）](../maps/africa-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
+| [アフリカ国別地図（国ごとのページへリンク）](../maps/africa-countries.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
 | [アフリカ周遊（5月）](../areas/africa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水](../research/africa-overland-7-9-countries.html) | [#44](https://github.com/Rikkyhub/studying-abroad/issues/44) | 調査中 | 2026-10-18 |
@@ -45,7 +46,20 @@
 | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
 | [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.html) | [#53](https://github.com/Rikkyhub/studying-abroad/issues/53) | 調査中 | 2026-10-20 |
 | [優先度2の準備タスク調査](../research/prep-priority2-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
+| [ケープタウン語学留学の学校選定（Deep Research）](../research/deep-research-report.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 調査中 | 2026-10-21 |
 | [予防接種・常備薬の一覧](../research/vaccines-and-medicines-checklist.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 調査中 | 2026-10-20 |
+| [南アフリカ（国別ページ）](../countries/south-africa.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [レソト（国別ページ）](../countries/lesotho.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [エスワティニ（国別ページ）](../countries/eswatini.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ナミビア（国別ページ）](../countries/namibia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ボツワナ（国別ページ）](../countries/botswana.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ジンバブエ（国別ページ）](../countries/zimbabwe.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ザンビア（国別ページ）](../countries/zambia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [モザンビーク（国別ページ）](../countries/mozambique.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [マダガスカル（国別ページ）](../countries/madagascar.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ケニア（国別ページ）](../countries/kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [タンザニア（国別ページ）](../countries/tanzania.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [エチオピア（国別ページ）](../countries/ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 
 ## タスクと Issue
 

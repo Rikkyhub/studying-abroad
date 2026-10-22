@@ -20,7 +20,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIRS = ["areas", "research", "docs", "blog"]
+SOURCE_DIRS = ["areas", "research", "countries", "docs", "blog"]
 JP_FONT = "Yu Gothic"
 MONO_FONT = "Consolas"
 PAGE_W = 11906 - 2 * 1134  # A4 幅 - 左右余白(twips)

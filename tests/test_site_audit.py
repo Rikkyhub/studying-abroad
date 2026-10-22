@@ -99,7 +99,7 @@ class PageListTests(unittest.TestCase):
         with (REPO / "data" / "pages.csv").open(encoding="utf-8", newline="") as f:
             listed = {r["path"] for r in csv.DictReader(f)}
         missing = []
-        for d in ("areas", "research", "docs", "blog"):
+        for d in ("areas", "research", "countries", "docs", "blog"):
             for md in sorted((REPO / d).glob("*.md")):
                 rel = md.relative_to(REPO).as_posix()
                 if rel not in self.EXCLUDED and rel[:-3] + ".html" not in listed:
