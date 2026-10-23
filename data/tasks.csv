@@ -3,7 +3,7 @@ T002,出発前,フィリピン入国用の有効な出国航空券を確保,推�
 T003,出発前,留学先学校に就学許可（SSP）・滞在延長の手続き範囲と費用を確認,推奨目安,出発90日前（推奨目安）。学校・代行業者の個別期限があればそちらを優先,90,未着手,1,本人,—,学校（または代行業者）に問い合わせる,https://immigration.gov.ph/services/special-study-permit/,https://github.com/Rikkyhub/studying-abroad/issues/2,2014年公開料金は現行ではない,baguio
 T004,出発前,南ア留学先の候補校と南ア大使館に8週間語学就学の必要資格を確認,推奨目安,出発90日前（推奨目安）,90,未着手,1,本人,—,在日南ア大使館・UCT ELC に問い合わせ文案を送る,https://dirco.gov.za/japan/immigration-visa-info/,https://github.com/Rikkyhub/studying-abroad/issues/2,旅行前の回答取得が必要,capetown
 T005,出発前,南ア入国時期ごとの再入国条件を確認,推奨目安,出発90日前（推奨目安）,90,未着手,1,本人,—,T004と同じ問い合わせで回答を得る,https://dirco.gov.za/japan/frequently-asked-questions/,https://github.com/Rikkyhub/studying-abroad/issues/2,90日自動リセットとみなさない,capetown
-T007,出発前,休職制度・税社保・住居と国内固定費の一般的な確認項目を整理,推奨目安,出発60日前（推奨目安）,60,未着手,1,本人,—,T-W02・T-W03・T-H01〜T-H06 に分割して管理,—,https://github.com/Rikkyhub/studying-abroad/issues/7,,common
+T007,出発前,休職制度・税社保・住居と国内固定費の一般的な確認項目を整理,推奨目安,出発60日前（推奨目安）,60,完了,1,本人,—,T-W02・T-W03・T-H01〜T-H06 に分割して管理,https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20120524.html,https://github.com/Rikkyhub/studying-abroad/issues/7,一般項目の整理と子タスクへの分解のみ完了（2026-10-23）。日本年金機構2026-05-21更新の保険者決定を確認。4〜6月無給の定時決定は従前標準報酬月額。個別の会社・自治体・住居・郵便手続はT-W02等で未完了。2027年の個別条件は要確認,common
 T008,計画,2都市の週末ダイビング交通と見積を取得,推奨目安,出発30日前（推奨目安）,30,未着手,2,本人,—,research/*-diving.md の候補ショップに空き・料金を確認,—,https://github.com/Rikkyhub/studying-abroad/issues/3,,baguio;capetown
 T009,計画,2都市の観光・雨天代替案を検証,推奨目安,出発30日前（推奨目安）,30,未着手,2,本人,—,research/*-sightseeing.md のモデルコースを日程に配置,—,https://github.com/Rikkyhub/studying-abroad/issues/4,,baguio;capetown
 T010,計画,ケープタウンの食材価格と衣類実売価格を確認,推奨目安,第2校の開始90日前（推奨目安）,-30,未着手,2,本人,—,research/food-and-living.md・winter-clothing.md の価格を渡航前に再確認,—,https://github.com/Rikkyhub/studying-abroad/issues/5,,capetown
