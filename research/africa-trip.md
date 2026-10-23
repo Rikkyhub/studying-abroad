@@ -60,7 +60,7 @@
 - 費用:
   - Acacia キャンプ USD 2,501（セール、通常 USD 3,335）[S]
   - 宿泊型 USD 4,276 [S]
-  - ナミビアのビザ 約1.5万円 [S（報道）]
+  - ナミビア査証の2025年公館案内はNAD 1,600＋3%（換算円額・2027年徴収額は未確定） [A（公館公式・2025年条件）]
 - Nomad「Cape Town → Victoria Falls」20日の2027年料金は、キャンプ R67,650（早割 R62,950）、宿泊型 R98,450 です（[Nomad](https://nomadafrica.co.za/tour/cape-town-to-victoria-falls/)）。ただし5月は北上方向（ケープタウン発）しかありません。
 
 ## 3. 入国条件（日本国籍・一般旅券）
@@ -75,7 +75,7 @@
 | ジンバブエ | 要（到着ビザ） | シングル USD 30／ダブル USD 45 | 記載なし | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html)、[eVisa](https://www.evisa.gov.zw/) |
 | ザンビア | 不要（2022-11〜） | 無料 | 90日 | [ザンビア入国管理](https://www.zambiaimmigration.gov.zm/visa/) |
 | KAZA UNIVISA | ジンバブエ・ザンビア共通 | **USD 50** | 30日 | [ザンビア入国管理](https://www.zambiaimmigration.gov.zm/kaza-univisa/)。カズングラ経由のボツワナ日帰りも可 |
-| ナミビア | **要（2025-04-01〜）**到着ビザ／eVisa | N$1,600（約1.5万円、報道・公式未確認） | 未確認 | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html)、[The Namibian](https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/) |
+| ナミビア | **要（2025-04-01〜）**到着ビザ／eVisa | NAD 1,600＋3%手数料（2025年3月公館公式、2027年未確認） | 申請滞在予定に応じ最大90日。旅券6か月以上・空白3ページ（2025年公館案内） | [在ナミビア日本大使館（2025-03-07）](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)、[外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html)、[The Namibian](https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/) |
 
 - 旅券は、訪問国の数だけ空白ページが必要です（南アだけで2ページ以上が推奨）。
 - **出発前に各国の公式情報で再確認**してください（タスク T-P05）。
