@@ -18,6 +18,10 @@
       "dest": "/all.html"
     },
     {
+      "src": "^/docs-all$",
+      "dest": "/all.html"
+    },
+    {
       "handle": "filesystem"
     }
   ]
