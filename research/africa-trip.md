@@ -13,6 +13,13 @@
 3. **黄熱**: エチオピア・ケニアはリスク国です。アディスアベバ経由で12時間以上乗り継ぐと、南アで証明書を求められます。ボツワナとエスワティニは、リスク国を経由しただけでも求める書き方になっています。
 4. **マラリア**: クルーガー、ソドワナ（ウムハニャクデ地区）、チョベ、オカバンゴ、ビクトリアの滝、モザンビーク全域にリスクがあります。ケープタウン、ガーデンルート、レソトはリスクなしとされています（[CDC](https://wwwnc.cdc.gov/travel/destinations/traveler/none/south-africa)）。
 
+### 2026-10-24 追加照合：周遊ルート比較の進捗（一般モデル）
+
+- 既存のA/B/Cモデルとmainに統合済みの[3ルート比較PR #52](https://github.com/Rikkyhub/studying-abroad/pull/52)は候補比較の着手証拠であり、**T-T02は調査進行中**。周遊ルートの決定、宿泊・ツアーの予約、支払を意味しない。
+- モザンビーク：在英公館は**2026-02-11**開始の新ETAプラットフォームを案内し、日本を含む査証免除対象国も**渡航前認証**を求める。一方、在日公館には**2023-05-16の事前登録一時停止注記**が残る。2026-10-24確認。公式：[在英公館](https://www.mozambiquehighcommission.org.uk/visa-section.html)／[在日公館](https://embamoc.jp/news/visa-waiver-program)。2027年のETA申請期限・手数料（通貨を含む）・陸路入国の運用は未確認。旧650 MZNを確定額にしない。
+- ザンビア入管の[KAZA UNIVISA公式説明](https://www.zambiaimmigration.gov.zm/kaza-univisa/)を2026-10-24再確認。**USD 50・最大30日**、ザンビア/ジンバブエの複数回入国と**Kazungula経由ボツワナ日帰り**に限定。ボツワナ宿泊・ナミビア入国の許可を代替しない。2027年の適用と各国境での発給可否・決済は未確認。
+- 次の実行可能な調査：候補A/B/Cを同じ出発地・同じ日数で並べ、KAZAの適用入国地点、モザンビークETA、実際に購入可能な2027年5月の接続便・総額を一次資料と運行事業者の予約画面で照合する。**未確認の運賃・宿泊・査証料金を0円で埋めない**。
+
 ## 2. ルート案（どれも未確定）
 
 各行の印は、**[S]＝出典のある金額**、**[E]＝推定**です。為替は 1USD＝158円、1ZAR＝9.6円 で換算しています。費用は 各地域ページの「費用の見積」（[バギオ](../areas/baguio.md)・[アフリカ周遊](../areas/africa.md)・[ケープタウン](../areas/capetown.md)） にまとめています。
@@ -24,7 +31,7 @@
 | 5/2〜3 | マニラ→ヨハネスブルグ。空港近く、またはローズバンク・サントンに泊まる（中心業務地区はレベル2なので避ける） |
 | 5/4〜10頃 | Acacia「Kruger, Eswatini & Durban」7日・キャンプ（出発日は未確認） |
 | 5/11〜17 | ダーバン→ソドワナ。オープンウォーター講習＋ファンダイブ（5/3から閑散期料金） |
-| 5/18〜20 | （任意）ポンタ・ド・オウロ（モザンビーク、入国料650MZN）または休養 |
+| 5/18〜20 | （任意）ポンタ・ド・オウロ（モザンビーク：査証免除でも渡航前eTAを要確認。650 MZNは2027年の確定費用と扱わない）または休養 |
 | 5/21 | ダーバン→ケープタウン（航空便） |
 | 5/22〜29 | ガーデンルート、ケープ半島 |
 
@@ -60,7 +67,7 @@
 - 費用:
   - Acacia キャンプ USD 2,501（セール、通常 USD 3,335）[S]
   - 宿泊型 USD 4,276 [S]
-  - ナミビアのビザ 約1.5万円 [S（報道）]
+  - ナミビア査証の2025年公館案内はNAD 1,600＋3%（換算円額・2027年徴収額は未確定） [A（公館公式・2025年条件）]
 - Nomad「Cape Town → Victoria Falls」20日の2027年料金は、キャンプ R67,650（早割 R62,950）、宿泊型 R98,450 です（[Nomad](https://nomadafrica.co.za/tour/cape-town-to-victoria-falls/)）。ただし5月は北上方向（ケープタウン発）しかありません。
 
 ## 3. 入国条件（日本国籍・一般旅券）
@@ -70,12 +77,12 @@
 | 南アフリカ | 不要 | 無料 | 90日 | [DHA](https://www.dha.gov.za/index.php/immigration-services/exempt-countries)、[外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html) |
 | エスワティニ | 不要 | 無料（陸路では道路税あり、額は未確認） | 30日 | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html) |
 | レソト | 不要 | 無料 | 3か月 | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html)。**出国・入国の両方のスタンプを必ず確認**（スタンプがなく出国時に逮捕された例あり） |
-| モザンビーク | 不要（2023-03-31〜） | 入国料 650MZN（約1,600円） | 30日（60日まで延長可） | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html)。旅券の残存180日以上 |
+| モザンビーク | 日本一般旅券の観光・商用30日は査証免除。ただし渡航前ETAが必要との2026年在英公館案内あり | 2027年のETA・国境徴収額は未確認（650 MZNを確定計上しない） | 原則30日、延長は申請・審査が必要 | [在英モザンビーク高等弁務官事務所（2026-02-11新プラットフォーム）](https://www.mozambiquehighcommission.org.uk/visa-section.html)／[在日モザンビーク大使館（2023年の事前登録停止注記が残存）](https://embamoc.jp/news/visa-waiver-program)。旅券残存6か月以上、宿泊証明等。2027年のETA手数料・申請期限・国境運用は未確認 |
 | ボツワナ | 不要 | 無料 | 記載なし | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_296.html)。旅券の残存6か月以上 |
 | ジンバブエ | 要（到着ビザ） | シングル USD 30／ダブル USD 45 | 記載なし | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html)、[eVisa](https://www.evisa.gov.zw/) |
 | ザンビア | 不要（2022-11〜） | 無料 | 90日 | [ザンビア入国管理](https://www.zambiaimmigration.gov.zm/visa/) |
 | KAZA UNIVISA | ジンバブエ・ザンビア共通 | **USD 50** | 30日 | [ザンビア入国管理](https://www.zambiaimmigration.gov.zm/kaza-univisa/)。カズングラ経由のボツワナ日帰りも可 |
-| ナミビア | **要（2025-04-01〜）**到着ビザ／eVisa | N$1,600（約1.5万円、報道・公式未確認） | 未確認 | [外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html)、[The Namibian](https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/) |
+| ナミビア | **要（2025-04-01〜）**到着ビザ／eVisa | NAD 1,600＋3%手数料（2025年3月公館公式、2027年未確認） | 申請滞在予定に応じ最大90日。旅券6か月以上・空白3ページ（2025年公館案内） | [在ナミビア日本大使館（2025-03-07）](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)、[外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html)、[The Namibian](https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/) |
 
 - 旅券は、訪問国の数だけ空白ページが必要です（南アだけで2ページ以上が推奨）。
 - **出発前に各国の公式情報で再確認**してください（タスク T-P05）。
@@ -156,7 +163,7 @@
 
 1. 5月の航空券の実勢価格。
 2. SANParks のクルーガー保全料（2026/27）。
-3. ナミビアの到着ビザ料金（公式）・滞在可能日数、エスワティニの道路税、マダガスカルの到着ビザ料金。
+3. ナミビア査証は2025年公館公表NAD 1,600＋3%を確認済み。2027年改定額・Ngoma国境の決済方法・滞在可能日数、モザンビークETAの2027年申請期限・手数料、エスワティニの道路税、マダガスカルの到着ビザ料金は未確認。
 4. Intercape・Greyhound・Baz Bus の運賃、レンタカーの料金。
 5. チョベ日帰りツアー、マウンのモコロ、ポンタ・ド・オウロのダイビング料金。
 6. 5月の水温、ジンベエザメ・マンタの時期。

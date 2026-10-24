@@ -19,18 +19,18 @@
 | P2 | 約12週（モデルでは85日）滞在するには、30日 → Visa Waiver（＋29日で計59日）→ 59日超の延長（1・2・6か月単位）が必要。59日超の滞在者は ACR I-Card（Tourist、白色カード）の対象 | 高 | BI Visa Waiver ページ、BI FAQ、外務省 |
 | P3 | BI公式サイトの手数料表は**「Fees are updated as of 06 March 2014」**のまま（Visa Waiver PHP 3,030、59日超の1か月延長〔成人・査証不要国〕PHP 4,400＋ACR I-Card USD 50、SSP PHP 5,240＋I-Card USD 50）。**2027年の適用額とはみなさない** | 高（掲載内容）／低（2027年適用） | BI各ページ |
 | P4 | 2026-10-09 のBI告知は**登録外国人の Annual Report 手数料案だけ**（対面 PHP 500＋LRF 10＋Express 1,000、オンライン PHP 500＋10＋1,500、掲載から30日間意見募集）。観光延長・SSPの手数料は対象外 | 高 | BI告知PDF（スキャン画像を目視確認） |
-| P5 | SSP は18歳未満または**非学位コース**の受講者に出す許可（PERMIT、査証ではない。一時訪問者査証の下で発行）。外務省も短期語学留学には SSP が必要と案内 | 高 | BI FAQ、外務省 |
+| P5 | SSP は18歳未満または**非学位コース**の受講者に出す許可（PERMITであり査証ではない）。**BIの2025年Citizen's Charterは英語プログラムをSSP対象に明記**。BIはSSPのオンライン申請を提供するが、滞在延長は別の手続き。学校による代行・入国資格・2027年の費用は未確認 | 高（一般制度）／未確認（2027年個別適用） | [BI FAQ](https://immigration.gov.ph/faqs/)、[BI 2025 Citizen's Charter](https://www.immigration.gov.ph/wp-content/uploads/2025/03/BUREAU-OF-IMMIGRATION-CITIZENS-CHARTER-2025-1ST-EDITION.pdf)、[BI eServices](https://e-services.immigration.gov.ph/) |
 | P6 | 学校の一般料金表（PINES、**2026年10月〜版**、エージェントサイト掲載）は SSP PHP 7,800、SSP I-CARD 4,500、ACR I-CARD 4,000、延長は滞在週数の区分別（9〜12週 11,150／13〜16週 15,390 など）。**BI公式額とは別物**（代行費等を含むとみられるが内訳は非公開）。区分の当てはめ・ACR I-CARD の要否は学校確認事項 | 中 | PINES料金表PDF |
-| P7 | eTravel は無料。外国人は**到着時に登録が必要**で、登録は**フィリピン到着前72時間（3日）以内**（公式FAQ原文: “may register within 72 hours (3 days) prior to your arrival into or departure from the Philippines”）。有料の代行サイトは公式ではない（前回「未確認」→今回FAQで確認） | 高 | eTravel FAQ |
+| P7 | eTravel は無料。外国人は**到着時に登録が必要**で、登録は**フィリピン到着前72時間（3日）以内**（2026-10-21 に公式FAQを再取得して同じ記述を確認）（公式FAQ原文: “may register within 72 hours (3 days) prior to your arrival into or departure from the Philippines”）。有料の代行サイトは公式ではない（前回「未確認」→今回FAQで確認） | 高 | eTravel FAQ |
 | P8 | 出国航空券は入国条件として政府が案内している。航空会社のチェックインで「30日以内の出国便」を求めるかは**未確認** | 高（入国条件）／未確認（航空会社運用） | 大使館、外務省。航空会社サイトは取得失敗 |
 | S1 | 南アは日本の一般旅券に90日の査証免除・査証料なし（DHA一覧「Issued on 09 December 2025」「SUBJECT TO CHANGE WITHOUT NOTICE」） | 高 | DHA Exempt Countries |
 | S2 | **査証免除入国で8週間の語学コースを受講できるかは確定扱いしない。** 大使館FAQの文言は「holiday / business purposes」。DHAは visitor's visa の目的に「study purposes」を挙げ、学校（UCT ELC）は90日未満なら visitor's visa で受講「may be eligible」と案内するが、**免除入国で語学就学してよいと明記した当局文言は見つからない** | 要確認 | 大使館FAQ、DHA、Immigration Act s11、UCT ELC |
 | S3 | **周辺国に出て南アへ再入国しても90日はリセットされない前提で計画する。** Immigration Regulations reg 11(5)（2018年統合版）: 免除で入国した人（南アと国境を接する国の居住者を除く）は再入国時に**同じ visa**で入国し、期限切れなら**7日以内**の新 visa になりうる。**居住国から到着した場合に限り**免除期間の新 visa を発給しうる | 中（条文は確認。**2024年の第2次・第3次改正後も同文かは未確認**） | Regulations 2014（2018更新版）PDF本文 |
 | S4 | visitor's visa は最長3か月、申請により更新は最長3か月（Act s11(1)(a)）。更新申請は規則・申請書上**期限の60日前まで**（学校は「30日前でも審査される場合がある」と案内）。政府手数料 R425（Gazette 55209、2026-08-17）。学校案内の VFS 経由の金額は R1,775（年度表記なし） | 高（期限・政府手数料）／中（R1,775 の内訳） | Act、Regulations、DHA Fees、UCT ELC |
 | S5 | 南アの ETA は 2026-08-12 に正式導入。大臣演説では**査証要国から段階的に義務化、査証免除国の旅行者は任意利用**。2027年に日本旅券へ義務化されるかは**未確認** | 中 | gov.za 演説（2026-08-12） |
-| S6 | 旅券: DHAは「空白1ページ以上・出国予定の30日後まで有効」、在日大使館（査証申請）は「Visa」表示の未使用2ページ以上、外務省は2ページ以上（搭乗拒否例あり）と周辺国分のページを推奨 | 高 | DHA、大使館、外務省 |
+| S6 | 旅券: 南ア内務省のImmigration Regulations（2018更新版）第2条は未使用2ページ以上・南ア出国予定日の30日後まで有効と規定。在日南ア大使館も未使用2ページ以上と案内。周辺国の要件は国別に確認（2026-10-24公式再確認、2027年要再確認） | 高 | DHA規則、在日南ア大使館、外務省 |
 | S7 | 黄熱: 南アは黄熱リスク国から入国、またはリスク国に12時間以上滞在・乗継した人に証明書を求める。周遊候補国（ナミビア、ボツワナ、ジンバブエ、ザンビア、モザンビーク、エスワティニ、レソト）は FORTH の一覧でリスク国ではないが、**エチオピア・ケニアはリスク国**（経由時注意） | 高 | 外務省、FORTH |
-| N1 | ナミビアは 2025-04-01 から日本人に観光査証が必要。観光局は到着時査証の対象に Japan を掲載（観光は90日）。**料金の公式値は未確認**（報道で N$1,600〜1,650） | 中（制度）／低（金額） | 外務省、Namibia Tourism Board、報道 |
+| N1 | ナミビアは 2025-04-01 から日本人に観光査証が必要。観光局は到着時査証の対象に Japan を掲載（観光は90日）。**在ナミビア日本大使館の2025-03-07案内で基本料NAD 1,600＋3%手数料を確認**（料金は毎年改定、2027年は未確認） | 中（制度）／低（金額） | 外務省、Namibia Tourism Board、報道 |
 
 ---
 
@@ -126,12 +126,12 @@
 | Study visa（在日大使館） | 手数料 4,300円（返金不可）、処理最大14営業日。書類: DHA-1738、残高証明3か月分、航空便、宿泊、医療報告 DHA-811、無犯罪証明、入学許可、学校の登録番号、Registrar/Principal の誓約書、医療保険等。2026-07-17 の Directive No.10（医療報告提出の一律免除）の本文は未確認 | [在日南ア大使館 Visa Info](https://dirco.gov.za/japan/immigration-visa-info/)、[DHA Notices](https://www.dha.gov.za/index.php/notices) | 公式 |
 | 資格の変更 | reg 9(5): visitor's visa 保持者は、例外（9(9)）を除き国内で資格変更を申請できない | Regulations（2018統合版） | 公式（法令） |
 | **再入国（reg 11(5)）** | 原文:「A person, other than a resident from a country with which the Republic shares a border, who is in possession of a visa issued on the basis of an exemption contemplated in section 10A(4) of the Act, shall upon his or her readmission to the Republic be admitted on the same visa, and where such a visa has expired, may be admitted on a new visa valid for a period not exceeding seven days: Provided that where that foreigner arrives at a port of entry from his or her country of residence, the new visa may be issued for a period not exceeding the period attached to the visa exemption.」 | Regulations（2018統合版）本文 | 公式（法令。改正後の現行性は下記） |
-| reg 11(5) の現行性 | 2018年以降の改正: **第2次改正**（GN R.4847、Gazette 50675、2024-05-20）、**第3次改正**（GN 5398、Gazette 51366、2024-10-09）。どちらも掲載PDFが画像のみで、本文を読み取れず **11(5) を変更したかは未確認**。2024-04-09 の大臣説明（改正の概要）は就労査証・リモートワーク査証・Trusted Employer 等を説明し、reg 11 や visitor's visa への言及はない。DHAが公開する統合版は2018年版のまま。**前回資料の「第3次改正は 11(4)(b) と 18 だけ」は今回再確認できず、根拠から外した** | [gov.za 第2次改正](https://www.gov.za/documents/notices/immigration-act-regulations-second-amendment-20-may-2024)、[DHA 第3次改正](https://www.dha.gov.za/index.php/notices/1825-third-amendment-immi-regulations-8-oct-2024)、[大臣説明 2024-04-09](https://www.gov.za/news/media-statements/minister-aaron-motsoaledi-media-briefing-amended-immigration-regulations-09) | 未確認 |
+| reg 11(5) の現行性 | 2018年以降の改正: **第2次改正**（GN R.4847、Gazette 50675、2024-05-20）、**第3次改正**（GN 5398、Gazette 51366、2024-10-09）。どちらも掲載PDFが画像のみで、本文を読み取れず **11(5) を変更したかは未確認**。2024-04-09 の大臣説明（改正の概要）は就労査証・リモートワーク査証・Trusted Employer 等を説明し、reg 11 や visitor's visa への言及はない。DHAが公開する統合版は2018年版のまま（**2026-10-20 に DHA の公式サイト `dha.gov.za` の「Immigration Regulations」リンクを再取得して確認**。リンク先は引き続き `ImmigrationRegulations2014-Updated2018-compressed.pdf` で、2024年の改正を反映した統合版は掲載されていない。同日の DHA Notices の最新は 2026-08-18 の「手数料規則の第1次改正」（Gazette No. 55209）で、reg 11(5) には触れていない）。**前回資料の「第3次改正は 11(4)(b) と 18 だけ」は今回再確認できず、根拠から外した** | [gov.za 第2次改正](https://www.gov.za/documents/notices/immigration-act-regulations-second-amendment-20-may-2024)、[DHA 第3次改正](https://www.dha.gov.za/index.php/notices/1825-third-amendment-immi-regulations-8-oct-2024)、[大臣説明 2024-04-09](https://www.gov.za/news/media-statements/minister-aaron-motsoaledi-media-briefing-amended-immigration-regulations-09) | 未確認 |
 | 周辺国の扱い | reg 11(5) の除外は「国境を接する国の**居住者**」で、訪問先の国ではない。日本居住の旅行者には当てはまらないと読める（本資料の条文解釈。当局確認前） | Regulations | 解釈 |
 | 延長（renewal） | 期限の60日前までに本人が申請（reg 9(5)(a) と更新申請書の注意書き）。政府手数料 R425（visitor's visa、更新を含む） | Regulations、[DHA Fees（UPDATED AUGUST 2026）](https://www.dha.gov.za/index.php/fees)、[Gazette 55209](https://www.dha.gov.za/images/gazettes/2026/55209-17-8-26.pdf) | 公式 |
 | R1,775 の内訳 | 政府手数料 R425 と VFS サービス料の合計と推測されるが**未確認**（VFS料金ページ取得失敗） | — | 未確認 |
 | ETA | 2026-08-12 正式導入。演説: 査証要国の短期滞在から段階的に義務化、「accessible on a voluntary basis to visa exempt travellers」。当初は OR Tambo・Cape Town・King Shaka・Lanseria の4空港。電子処理料 R500（DHA手数料表）。任意利用の利点として演説は「easy 90-day extension」に触れるが、手続の詳細は未確認 | [大臣演説 2026-08-12](https://www.gov.za/news/speeches/minister-leon-schreiber-launch-south-africa%E2%80%99s-electronic-travel-authorisation-12-aug)、[大統領演説 2026-08-12](https://www.gov.za/news/speeches/president-cyril-ramaphosa-launch-south-africa%E2%80%99s-electronic-travel-authorisation-12)、DHA Fees | 公式（日本への適用は未確認） |
-| 旅券 | DHA: 空白1ページ以上、出国予定の30日後まで有効。大使館（査証申請）: 「Visa」表示の未使用2ページ以上、帰国予定日の30日後まで有効。外務省: 2ページ以上（搭乗拒否例）、周辺国の分も必要 | DHA、大使館、外務省 | 公式 |
+| 旅券 | DHA規則（2018更新版）第2条：未使用2ページ以上、南ア出国予定日の30日後まで有効。在日大使館も未使用2ページ以上・出国後30日以上を案内。国ごとに要件が異なり、周辺国分は別途確認。2026-10-24照合、2027年再確認 | [DHA規則](https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf)・[在日大使館](https://dirco.gov.za/japan/immigration-visa-info/) | 公式（2018規則／2026-10-24閲覧） |
 | 入国時の書類 | 復路または第三国行きの航空券、十分な資金（残高証明・カード等） | DHA、外務省 | 公式 |
 | 黄熱 | リスク国から、またはリスク国に12時間以上滞在・乗継して入国する人に証明書。接種10日後から有効、生涯有効 | 外務省、[FORTH](https://www.forth.go.jp/useful/yellowfever.html) | 公式 |
 | 陸路国境 | 両国で出入国・税関手続を受ける。南アの出国スタンプなしで隣国に入り、拘束された日本人の例（特にレソト） | 外務省 | 公式 |
@@ -141,13 +141,15 @@
 
 | 国 | 査証 | 料金 | 滞在期間など | 出典 | 区分 |
 |---|---|---|---|---|---|
-| ナミビア | **2025-04-01 から必要**（外務省）。観光局は到着時査証の対象国に Japan を掲載（観光目的のみ、指定の空港・国境） | **公式値未確認**（観光局は内務省サイトを参照と案内。内務省サイトは取得失敗）。報道: N$1,600（2024-06-28） | 観光は90日（観光局）。観光以外は短期でも事前に査証（外務省） | [外務省（2025-07-01更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html)、[Namibia Tourism Board](https://visitnamibia.com.na/visa-information/)、[The Namibian 2024-06-28](https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/) | 公式（制度）／報道（金額） |
+| ナミビア | **2025-04-01 から必要**（外務省）。観光局は到着時査証の対象国に Japan を掲載（観光目的のみ、指定の空港・国境） | **2025年3月時点の公館公式案内：NAD 1,600＋3%手数料（単純計算NAD 1,648）**。2027年の実際の徴収額・決済条件は未確認 | 観光は90日（観光局）。観光以外は短期でも事前に査証（外務省） | [在ナミビア日本大使館（2025-03-07）](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)、[外務省（2025-07-01更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html)、[Namibia Tourism Board](https://visitnamibia.com.na/visa-information/)、[The Namibian 2024-06-28](https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/) | 公式（制度・2025年3月の料金）／2027年未確認 |
 | ボツワナ | 不要 | 0 | 旅券残存6か月以上。出国用の予約済航空券を求められる場合あり。最初の入国日から1年間に累計90日まで | [外務省（2025-06-17更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_296.html) | 公式 |
 | ジンバブエ | 到着時に取得可 | 一次 USD 30／二次 USD 45／数次 USD 55（入国管理事務所のみ）／KAZA USD 50（2026年6月現在） | 出国用航空券、資金。KAZA でザンビア往来・ボツワナ日帰り | [外務省（2026-07-13更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html) | 公式 |
 | ザンビア | 不要（2022-11-07 以降） | 0。KAZA UNIVISA USD 50 | 90日（入国時の記入日数を確認）。KAZA は12か月のうち最大30日、ザンビア・ジンバブエを複数回、Kazungula 経由のボツワナ日帰り可。Japan は対象国 | [外務省（2026-07-03更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_104.html)、[Zambia DoI KAZA](https://www.zambiaimmigration.gov.zm/kaza-univisa/) | 公式 |
 | モザンビーク | 免除（2023-03-31 以降）。入国時に手数料 | MZN 650（メティカル・米ドル現金またはカード） | 30日（現地延長で最長60日）。旅券残存180日以上、復路航空券、宿泊予約確認書 | [外務省（2025-06-18更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html) | 公式 |
-| エスワティニ | 30日以内なら不要 | 0 | 旅券残存3か月以上、未使用2ページ以上 | [外務省（2025-08-22更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html) | 公式（政府サイト未確認） |
-| レソト | 3か月以内なら不要（査証免除協定） | 0 | 旅券残存6か月以上、未使用2ページ以上。出国航空券・資金の提示を求められる場合あり | [外務省（2025-08-22更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html) | 公式 |
+| エスワティニ | 日本の一般旅券は短期観光の査証不要（政府のJapan=N一覧を2026-10-24照合） | 査証申請料なし（その他の入国・交通費は別） | 外務省は旅券残存3か月以上・空白2ページ以上。政府の別ページは空白欄を「2 (one)」と矛盾表記しており、2027年の現場運用は要確認 | [エスワティニ政府・国別一覧](https://www.gov.sz/index.php?id=314)、[政府Visa案内](https://www.gov.sz/index.php/services-sp-22242747/visa)、[外務省（2025-08-22更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html) | 政府一覧と外務省で査証免除を照合。政府サイトの一部表記に不一致あり |
+| レソト | 日本の一般旅券は査証不要（公館Japan=NOを2026-10-24照合） | 査証申請料なし（その他の入国・交通費は別） | 外務省は旅券残存6か月以上・空白2ページ以上、出国航空券・資金を求められる場合あり。2027年の国境運用は未確認 | [レソト在米大使館・国別一覧](https://www.lesothoemb-usa.gov.ls/visa/)、[外務省（2025-08-22更新）](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html) | 政府公館一覧と外務省で査証免除を照合 |
+
+**2026-10-24 追加検証（T-P05・研究段階のみ）**：エスワティニ政府の国別一覧（掲載年度の明記なし、2026-10-24確認）はJapan=N、レソト在米大使館の国別一覧（掲載年度の明記なし、同日確認）はJapan=NO。両国とも短期観光の**査証申請料は不要**と整理できるが、国境通過・移動費がゼロという意味ではない。エスワティニ政府の別ページは旅券空白欄を「2 (one)」と矛盾表記するため、空白2ページ以上を安全側の準備目安とし、**2027年の公式要件は再確認**。次の取得先は両国の移民当局・在日公館、実際の国境事務所。最終ルート、旅券実物、入国申請・予約は未確認／未実施。対象通貨：査証申請料は該当なし、交通・国境諸費用は未確認。
 
 ---
 
@@ -190,7 +192,7 @@
 | ケースB＋C | **要確認（試算上は成立）** | reg 11(5) の現行性・運用、学習資格 |
 | ケースA | **要確認（余裕小）** | 8月の南ア再入国は最大7日になる可能性 |
 | 「周辺国に出て90日リセット」 | **前提にしない** | reg 11(5)（2018年統合版） |
-| ナミビア周遊 | **可（有料査証）** | 公式料金・取得方法は未確認 |
+| ナミビア周遊 | **可（有料査証）** | 2025年公館案内はNAD 1,600＋3%手数料、オンライン・到着時・大使館申請の3方式。2027年条件は未確認 |
 | 南ア ETA | **未確認** | 2027年の日本旅券への適用 |
 
 ---
@@ -211,7 +213,7 @@
 - Study visa を事前取得する場合: 4,300円（在日大使館）。無犯罪証明等の書類費は未調査
 
 ### 周遊国（1回の入国あたり）
-- ナミビア: 公式値未確認（報道 N$1,600）
+- ナミビア: 在ナミビア日本大使館の2025年3月案内はNAD 1,600＋3%手数料（計算上NAD 1,648）。2027年の徴収額は未確認
 - ジンバブエ: USD 30〜55、KAZA USD 50（2026年6月現在）
 - モザンビーク: MZN 650
 - ボツワナ・ザンビア・エスワティニ・レソト: 0
@@ -226,12 +228,12 @@
 | U2 | 学校料金表の延長区分（85日の当てはめ、累計か段階ごとか） | 料金表に説明がない | 学校に確認（第7節） |
 | U3 | ACR I-CARD（PHP 4,000）が SSP I-CARD と別に必要か | 料金表に条件がない | 学校に確認 |
 | U4 | 2027年のBI手数料（観光延長・SSP） | 公式表は2014年版。2026-10 の告知は Annual Report のみ | 渡航直前に BI を再確認 |
-| U5 | SSP の有効期間・学校代行の範囲 | BI公式ページに記載なし | 学校・BI に確認 |
+| U5 | SSP の有効期間・学校代行とオンライン申請の担当・滞在延長との順序 | BI eServicesでSSPと観光滞在延長は別メニュー。学校代行・申請タイミング・2027年料金は未確認 | 学校・BIに、SSPと滞在延長の申請者・必要書類・費用・期限を確認 |
 | U6 | 査証免除入国で8週間の語学学習をしてよいか | 大使館FAQは holiday/business のみ。DHA・学校は study に触れるが、免除入国の明文がない | 在日南ア大使館と学校に確認 |
 | U7 | reg 11(5) が現行条文か | 第2次（2024-05-20）・第3次（2024-10-09）改正のPDFが画像のみで本文を読めない。DHA の統合版は2018年版 | 大使館に確認。テキスト版の官報・統合版を探す |
 | U8 | 再入国時に審査官が実際にどう付与するか | 法令と運用が一致するとは限らない | 大使館・学校に確認。入国スタンプを記録 |
 | U9 | R1,775 の内訳と延長の処理日数 | VFS 料金ページ取得失敗 | 学校・VFS に確認 |
-| U10 | ナミビア査証料の公式値と取得方法 | 内務省サイト（mhaiss.gov.na）は HTTP 468 | 駐日ナミビア大使館に確認。渡航直前に再確認 |
+| U10 | ナミビア査証料の2027年適用額とNgoma国境の決済条件 | 2025年公館公式：NAD 1,600＋3%・3申請方式。内務省ポータルは今回タイムアウト | [在ナミビア日本大使館（2025-03-07）](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)で2026-10-24確認。2027年の料金・陸路入国時の支払・許可港を内務省または駐日ナミビア大使館に再確認 |
 | U11 | エスワティニ・ボツワナ・ジンバブエ各政府サイトでの確認 | 前回、接続拒否・403。今回は外務省で代替 | 渡航直前に再確認 |
 | U12 | Directive No.10 of 2026（医療報告の免除）の本文 | Study visa を取る場合だけ関係 | 必要になったら取得 |
 | U13 | 南ア ETA の日本旅券への適用時期と、任意利用時の手続・効果 | 演説は「査証免除国は任意」とするのみ | 大使館に確認。渡航前に DHA を再確認 |
@@ -378,3 +380,8 @@
 6. **BI 2026-10-09 告知**: スキャン画像を目視し、Annual Report のみであることを再確認。
 7. **学校料金表**: 適用年度（2026年10月〜）と、本人の請求額ではない一般料金であることを明記。延長区分の解釈は引き続き未確認。
 8. 出国航空券: 個人の購入計画を削除し、一般的な選択肢の整理に留めた。
+
+
+### 2026-10-24｜ナミビア査証料の一次資料確認（2027年は未確定）
+- 在ナミビア日本国大使館の2025-03-07公表案内は、日本の一般旅券に2025-04-01以降の査証取得を求め、オンライン・指定国境での到着時・駐日公館の3方式、基本料 **NAD 1,600＋3%手数料**、最大90日（滞在予定に応じ決定）、旅券残存6か月以上・空白査証欄3ページ以上を案内。NAD 1,648は計算値であり、2027年の確定請求額ではない。[在ナミビア日本大使館](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)（2026-10-24再確認、資料適用時点2025年3月）。
+- **未確認**：2027年の改定料金・手数料、Ngoma国境でのVisa on Arrival対応・決済方法、陸路出国時の往復航空券条件。次の取得先：ナミビア内務省[公式申請ポータル](https://eservices.mhaiss.gov.na/visaonarrival)（今回タイムアウト）と駐日ナミビア大使館。フランスのナミビア公館の同一ページに新査証対象と旧「査証免除国」一覧が併記されており、旧免除一覧は2025年4月以降の判断根拠に使わない。

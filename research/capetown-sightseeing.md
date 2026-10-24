@@ -41,7 +41,7 @@
 | Two Oceans Aquarium | ②大人 280 | 年度表記なし（ショップデータ更新 2026-03-31） | — | 平日 9:30–18:00、週末・祝日・学校休暇 9:00–18:00 | 4.3km／7分（V&A） | ○ | ◎ | ◎ | [Maps](https://www.google.com/maps/search/?api=1&query=Two+Oceans+Aquarium) |
 | Zeitz MOCAA | ②350（Webtickets） | 2026-09-01〜 | 南ア・アフリカ国籍は窓口で R199 | 10:00–18:00（最終入場 17:30） | V&A内 | ○ | ◎ | ◎ | [Maps](https://www.google.com/maps/search/?api=1&query=Zeitz+MOCAA) |
 | Iziko South African Museum | ①100 | 2026-04-01〜 | Local 大人 R60 | 9:00–17:00（冬の土日 8:30–16:00 の記載あり） | 市中心部 | ○ | ◎ | ◎ | [Maps](https://www.google.com/maps/search/?api=1&query=Iziko+South+African+Museum) |
-| Robben Island | ①600（Non South Africans 大人、標準ツアー）。Walking Tour ①1,400（金〜日） | 年度表記なし | South Africans R400／R1,000 | 9:00／11:00／13:00／15:00発、約3.5時間。**欠航時の規定は未確認** | V&A | ◎ | △ | × | [Maps](https://www.google.com/maps/search/?api=1&query=Nelson+Mandela+Gateway+Robben+Island+ferry) |
+| Robben Island | ①600（Non South Africans 大人、標準ツアー）、子供(18歳未満) 310。Walking Tour ①1,400（金〜日） | 年度表記なし（公式ページ、2026-10-20 確認） | South Africans 大人 R400／子供 R210／Walking R1,000 | **5/1〜8/30（オフピーク）は 9:00／11:00／13:00 の3便**（15:00 便は 9/1〜4/30 のピーク期のみ。旧記載「9:00／11:00／13:00／15:00」から訂正）。約3.5時間。**欠航時は公式FAQで返金対象と確認（2026-10-22）。カード返金は通常7〜14営業日、別記の翌日以降EFT返金48時間との適用関係は未確認。自己都合取消は原則返金不可。変更は原則48時間前まで（手数料の可能性）** | V&A | ◎ | △ | × | [Maps](https://www.google.com/maps/search/?api=1&query=Nelson+Mandela+Gateway+Robben+Island+ferry) |
 | Old Biscuit Mill（Neighbourgoods Market） | 0（飲食別） | 現行掲示 | — | マーケット 土 9–15時、日 10–16時 | 4.3km／6分 | ○ | ◎ | ○ | [Maps](https://www.google.com/maps/search/?api=1&query=Old+Biscuit+Mill+Woodstock) |
 | Chapman's Peak Drive | ②通行料 68（普通車） | 現行掲示 | — | **2026-10-17 取得時点で「CLOSED」表示**。落石・強風で閉鎖あり | Hout Bay 19km／21分 | ◎ | × | × | [Maps](https://www.google.com/maps/search/?api=1&query=Chapman%27s+Peak+Drive) |
 | Muizenberg | 0 | — | — | サーフィンレッスン料金**未確認** | 27km／28分 | ○ | × | △ | [Maps](https://www.google.com/maps/search/?api=1&query=Muizenberg+Beach) |
@@ -96,7 +96,7 @@
 | 2027年のケーブルカー年次運休・冬の運行時間 | 未発表 |
 | ケーブルカー学生料金を語学学校の学生証で使えるか | 公式に条件記載なし（窓口のみ） |
 | Boulders の営業時間 | SANParks 現行ページが 403 |
-| Robben Island の欠航時規定・料金の有効年度 | サイトに記載なし |
+| Robben Island の2027年料金・返金方法別の処理期間 | 2026-10-22に[公式FAQ](https://www.robben-island.org.za/frequently-asked-questions/)で欠航返金・カード7〜14営業日を確認。FAQ末尾の翌日以降EFT返金48時間との関係と2027年適用は未確認。料金の適用年度は公式ページに記載なし |
 | 配車アプリ・ケープ半島ツアー・料理教室・サーフィンレッスンの料金 | 公式ページを特定できず |
 | Wine Tram の2027年料金・冬季運行日 | 2026-11-01 の値上げ後の額が未掲載 |
 | 風の統計 | SAWS 取得不可 |

@@ -1,7 +1,7 @@
 # 06 2カ国目の語学留学（2027年6〜7月）ケープタウン【検討中】
 
 - 情報収集日: 2026-10-16
-- 最終更新: 2026-10-17（リポジトリへ統合。詳細な入国条件は [visa-and-immigration.md](visa-and-immigration.md) が正本）
+- 最終更新: 2026-10-24（IH 2026授業・宿泊料金、2027適用不可の期間、UCT料金表の表示差を公式再照合。入国条件は [visa-and-immigration.md](visa-and-immigration.md) が正本）
 - **状態: 未確定。** 学校・日程・宿泊・費用はすべて検討段階です。ここに書いた金額は公式料金表に基づく**見積**で、確定ではありません。
 
 ## 1. 計画案
@@ -11,7 +11,7 @@
 | 目的 | フィリピンで伸ばした英語を、グループ授業・ネイティブ環境で実践する | 本人計画 |
 | 都市 | ケープタウン（南アフリカ） | 検討中 |
 | 期間 | 8週間。**2027年6〜7月**（毎週月曜開講に合わせて開始週を決める案。宿泊は前後1日程度を加える） | 検討中 |
-| 第一候補 | UCT English Language Centre（UCT ELC） | 検討中 |
+| 比較対象校 | UCT English Language Centre／Good Hope Studies／International House Cape Town | いずれも未選定 |
 | 宿泊 | ホームステイ（共用バス）またはレジデンス | 未確定 |
 | 帰国 | 2027年7月下旬にケープタウンを出発 | 未確定 |
 
@@ -50,9 +50,14 @@
 |---|---|---|---|---|---|---|
 | Good Hope Studies | 2027（EUR） | €2,680（20レッスン） | €3,680（30レッスン） | €260（朝夕食付）／€185（朝食のみ） | 入学金€60・宿泊手配€40・送迎片道€40 | [GHS 2027](https://www.ghs.co.za/fileadmin/user_upload/www.ghs.co.za/FILES/Downloads/GHS_Price_list_2027.pdf) |
 | International House Cape Town | 2026（USD） | $2,456（15時間） | $3,248（23時間） | $230（朝食付）／$280（2食付） | 登録$65・宿泊手配$45（送迎込み） | [IH 2026](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Pricelist.pdf) |
+| International House Cape Town（Business English） | 2026（USD、**2027年には適用未確認**） | — | **$3,248（23時間/週×8週、$406/週）** | Green Point 学生寮6人部屋・食事なし **$175/週**（8週 $1,400、別料金） | 登録$65・宿泊手配$45。教材は登録料に含む | [IH授業料2026](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Pricelist.pdf)／[IH宿泊2026](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Accommodation.pdf) |
 | Cape Town School of English | 年不明（ZAR） | 約R 13,300（午前のみ・2か月） | 約R 23,000（全日・2か月） | R 3,300 | 教材R 350 | [CTSE](https://ctenglish.co.za/prices/) |
 
 EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL・Lewis は料金を確認できませんでした。
+
+**IH Business English の内容・適用期間（2026-10-24公式再確認）**：IHの[コース案内](https://ihcapetown.com/courses/business-english/)は週23時間、会議・プレゼン・交渉・電話応対・ビジネス文書等を扱う。8週間の授業料 $406×8＝**USD 3,248**（2026料金、一般英語Intensiveと同額）。[公式約款](https://ihcapetown.com/terms-and-conditions/)では料金表の有効期間を **2025-11-01〜2026-10-31** と明記しているため、2027年料金として使用しない。学校の2027年見積・受講可能レベル・授業開講・査証区分は未確認。[ESPコース](https://ihcapetown.com/courses/english-for-specific-purposes/)のB1以上要件は**ESP固有**であり、Business English全体の要件と推定しない。宿泊を組み合わせる場合の計算例は Business授業料 $3,248＋Green Point学生寮6人部屋（食事なし）$175×8＋登録$65＋宿泊手配$45＝**USD 4,758**（2026公表価格からの試算、食費・保険・通学・為替・2027年改定を含まない）。2027年の価格と空室・授業は学校への正式照会が必要。
+
+**UCT ELC料金ページの表示上の留意点（2026-10-24）**：[2027年価格ページ](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027)にグループ授業の料金表が**2組**表示される。上段の8〜11週帯はStandard R5,540／Semi R6,570／Intensive R7,450、下段はR5,120／R6,070／R6,880で、両者の適用範囲の表示が明瞭でない。上記の2027見積は上段を採用した暫定モデルであり、申込前に学校へ該当表を確認する。
 
 ### 2-3. 生活費（ケープタウン）
 
