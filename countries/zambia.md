@@ -8,7 +8,7 @@
 
 ## 概要
 
-首都ルサカ、公用語英語、通貨クワチャ（以上は一般知識で、本調査では出典未取得）。5月は雨季明け〜乾季入り（気候は出典未取得）。ビクトリアの滝・KAZA UNIVISA の拠点としてジンバブエ側と組み合わせる想定。公園入場料の公式表は https://www.anzen.mofa.go.jp/https://www.zambiatourism.com/park-entry-fees/ （2025年版と明記、数値は今回未抽出）。
+首都ルサカ、公用語英語、通貨クワチャ（以上は一般知識で、本調査では出典未取得）。5月は雨季明け〜乾季入り（気候は出典未取得）。ビクトリアの滝・KAZA UNIVISA の拠点としてジンバブエ側と組み合わせる想定。公園入場料の公式表は https://www.zambiatourism.com/park-entry-fees/ （2025年版と明記、数値は今回未抽出）。
 
 ## 主な観光地
 
@@ -38,6 +38,7 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 - 査証免除（2022-11-07以降）。入国時に90日の滞在許可（外務省 2026-07-03更新）: https://www.anzen.mofa.go.jp/info/pcsafetymeasure_104.html
 - 90日超は滞在許可証をオンライン申請（同上）。
 - KAZA UNIVISA: USD 50、12か月のうち最大30日、ザンビア・ジンバブエ複数回、カズングラ経由でボツワナ日帰り可。Japan は対象（ザンビア入国管理局、現行ページ）: https://www.zambiaimmigration.gov.zm/kaza-univisa/
+- KAZAカード決済手数料: 法定USD 50＋管理手数料USD 0.50＝合計USD 50.50（ザンビア入管公式料金表、2026-10-25確認）。2027年の料金・発給可否は未確認: https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/
 - 取得場所（同ページ）: Kenneth Kaunda 空港（ルサカ）、Harry Mwanga Nkumbula 空港（リビングストン）、Victoria Falls 国境、Kazungula 国境、Harare 空港、Victoria Falls 空港。ザンビア側の4地点はオンライン申請も可。
 - 黄熱: 黄熱流行国から入国、または12時間以上乗継で証明書要求（外務省）。ザンビア自体はリスク国ではない（既存資料、FORTH再確認は未了）。
 - 旅券残存期間: 未確認（外務省ページで確認できず）。
@@ -60,6 +61,7 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 |---|---|---|---|
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_104.html | 公式 | 2026-10-20 | 2026-07-03更新 |
 | https://www.zambiaimmigration.gov.zm/kaza-univisa/ | 公式 | 2026-10-20 | 現行 |
+| https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/ | 公式（ザンビア入管料金表） | 2026-10-25 | 2026年掲載条件、2027年未確定 |
 | https://www.zambiatourism.com/park-entry-fees/ | 準公式（観光情報サイト） | 2026-10-20 | 2025（本文取得、数値未抽出） |
 | https://en.wikivoyage.org/wiki/Zambia | 準公式（Wikivoyage） | 2026-10-20 | 現行版（Climate/Other destinations/Eat節）（今回追加） |
 
