@@ -110,7 +110,7 @@
 | フィリピン | 警察・消防・救急 | 911 | 外務省 |
 | フィリピン | 診療救急（フィリピン赤十字） | 143 | 外務省 |
 | フィリピン | 在フィリピン日本国大使館 | 代表 02-8551-5710、領事班 02-8834-7508、邦人援護ホットライン 02-8551-5786 | 外務省 |
-| フィリピン | バギオ市警察・市防災局 | **未確認** | — |
+| フィリピン | バギオ市CDRRMO（市防災・緊急対応） | 緊急時：911（24時間）。運用・事務問い合わせ：(074) 661-1455（事務所は平日8:00〜17:00） | [市CDRRMO公式](https://www.cdrrmo.baguio.gov.ph/contact-us)（2026-10-24確認）。警察署直通・2027年の番号・国際ローミングからの接続は未確認 |
 | 南アフリカ | 警察 | 10111 | 外務省、Cape Town Tourism |
 | 南アフリカ | 救急・消防 | 10177 | 外務省、Cape Town Tourism |
 | 南アフリカ | 携帯からの緊急通報 | 112 | 外務省、Cape Town Tourism |
@@ -245,6 +245,7 @@ DAN Southern Africa の一時加入（Temporary Cover）は、DAN SA 地域内�
 | https://loadshedding.eskom.co.za/ | 公式（Eskom） | 確認日時点 | 現在 load shedding なし |
 | https://www.airports.co.za/airports/cape-town-international-airport/transport/public-transport | 公式（ACSA） | 確認日時点 | 認可交通、客引きに乗らない、Uber・Bolt |
 | https://web.archive.org/web/20251122162011/https://bghmc.doh.gov.ph/contact-us/ | 公式（アーカイブ） | 2025-11時点 | BGHMC の ER 番号 |
+| https://www.cdrrmo.baguio.gov.ph/contact-us | 公式（バギオ市CDRRMO） | 2026-10-24直接確認／サイトの適用年記載なし | 911の24時間緊急受付、CDRRMOの運用・事務電話、事務所の平日対応時間。2027年・ローミング接続は未確認 |
 | https://pcdh.ph/ | 公式 | 確認日時点 | Pines City Doctors' Hospital の住所・電話 |
 | https://www.mediclinic.co.za/en/cape-town/home.html | 公式 | 確認日時点 | 住所、ER 番号 |
 | https://www.mediclinic.co.za/en/constantiaberg/home.html | 公式 | 確認日時点 | 住所、ER 番号 |
