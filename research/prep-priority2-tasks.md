@@ -116,6 +116,13 @@
 - **進捗境界**：T-P02の「進行中」は**一般制度・申告手順の調査**のみ。本人のeTravel登録、税関申告、QR発行・提示、入国は**未実施**。出発日・旅券番号・氏名・QR等は公開しない。
 - **次の取得先**：本人が実際の便の到着時刻確定後、[eTravel公式入口](https://etravel.gov.ph/)と[公式FAQ](https://customs.etravel.gov.ph/frequently-asked-questions)で2027年の適用を確認し、到着前72時間以内に本人が登録する。出発空港・航空会社の搭乗時QR提示要件も再確認。金額は政府登録**PHP 0**のみ確認済みで、第三者代行費用は見積対象にしない。
 
+### 10. 日本→マニラ便の機内持込比較（T-F01／2026-10-26公式確認）
+
+- **Cebu Pacific公式（2026-09-15出発便から適用）**：5J便は頭上棚用1点（56×36×23cm以内）と座席下用1点（20×20×35cm以内）を合わせて**10kg以内**。Cebgo（DG）便は合計**7kg以内**。持込2点は条件内なら無料。公式：[Hand Carry Guidelines](https://help.cebupacificair.com/article/hand-carry-guidelines-272309)。
+- **Philippine Airlines公式（2026-10-26閲覧）**：機内持込本体は1点、**56×36×23cm以内・7kg以内**。規定された小型身の回り品を別に1点持ち込める。公式：[Carry-on baggage](https://www.philippineairlines.com/us/en/before-you-fly/baggage-information/baggage-allowance/baggage-allowance-fees/carry-on-baggage.html)。
+- **一次資料間の注意点**：Cebu Pacificの別ページ[GO Basic/GO Easy運賃バンドル案内](https://help.cebupacificair.com/article/cebu-pacific-fare-bundles-120434)は機内持込を7kgと記載しており、上記の**2026-09-15改定後の5J 10kg**と整合しない。最新の便番号（5J/DG）・予約時運賃条件を優先して航空会社に確認する。PALの7kgと混同しない。
+- **2027年未確認**：日本発の対象便・実際の空席/JPY総額・変更/取消条件・預け荷物・機材/運航・出国券条件。運賃・手荷物超過料金を確定額で記入しない。T-F01の「進行中」は**一般規定の比較だけ**であり、航空券の検索確定・予約・購入は未実施。次の取得先は各航空会社の予約画面の該当便・運賃規則と学校の入国書類案内。
+
 ## 調べていないもの（今回の対象外または取得できなかった）
 | タスク | 状況 |
 |---|---|
