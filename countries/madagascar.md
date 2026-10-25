@@ -15,9 +15,9 @@
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 公式URL |
 |---|---|---|---|---|---|
 | アンダシベ・マンタディア国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Andasibe-Mantadia+National+Park) | 歌うインドリ（Wikivoyage） | 未確認（公園機関サイトに接続不可） | 乾季入り | 未確認 |
-| イサロ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Isalo+National+Park) | Wikivoyageに主要地として掲載 | 未確認 | 乾季 | 未確認 |
+| イサロ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Isalo+National+Park) | 渓谷・天然プール・ハイキング。RN7経由でRanohiraへ（MNP公式） | 未確認（MNPの料金資料を要取得） | 5月の催行・アクセスは未確認 | https://parcs-madagascar.com/parc/isalo-3/（公式、2026-10-25確認） |
 | バオバブ街道（モロンダバ近郊） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Avenue+of+the+Baobabs+Morondava) | Wikivoyageに掲載 | 未確認 | 乾季 | 未確認 |
-| ツィンギ・ド・ベマラハ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tsingy+de+Bemaraha) | Wikivoyageに保護区として掲載 | 未確認 | 未確認 | 未確認 |
+| ツィンギ・ド・ベマラハ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tsingy+de+Bemaraha) | 吊り橋・石灰岩の渓谷。MNP公式のAndamozavakyは4km・徒歩約4時間、Ranotsaraは3km・約4〜6時間（公園内のみ） | 未確認（MNPの料金資料を要取得） | 5月の道路・開園・ガイド手配は未確認 | https://parcs-madagascar.com/en/parc/tsingy-de-bemaraha-2/（公式、2026-10-25確認） |
 | ラノマファナ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ranomafana+National+Park) | 熱帯雨林。首都南方、RN7沿い（Wikivoyage） | 未確認 | 未確認 | 未確認 |
 | ノシベ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nosy+Be+Madagascar) | 島のリゾート（Wikivoyage） | 未確認 | 乾季 | 未確認 |
 
@@ -51,7 +51,7 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 
 ## 未確認事項
 
-- 国立公園の入園料: 公園機関サイトに接続できなかった。
+- 国立公園の入園料: Madagascar National Parks（MNP）のイサロ・ベマラハ公式ページには料金資料へのリンクがあるが、料金表の金額・適用年は未取得。2027年料金・ガイド費・現地の道路と催行条件はMNPの料金資料および公園窓口/現地事業者で要確認。
 - 2027年の査証料金・到着空港の支払手段・オンラインeVisaの90日区分（政府ポータルと大使館に再確認）。
 - 実在店・価格: 公的ページなし。
 - 暫定政権下の最新の政治情勢（出発前に外務省で再確認）。
@@ -68,8 +68,10 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/madagascar | 公式 | 2026-10-20 | 現行 |
 | https://en.wikivoyage.org/wiki/Madagascar | 準公式 | 2026-10-20 | 2020年価格を含む |
 | https://www.madagascar-tourisme.com | 公式（観光局） | 2026-10-20 | - |
+| https://parcs-madagascar.com/parc/isalo-3/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点のアクセス・体験案内。2027年の料金・催行は未確認 |
+| https://parcs-madagascar.com/en/parc/tsingy-de-bemaraha-2/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点のコース所要時間。2027年の開園・交通・料金は未確認 |
 
 ## 調査ログ
 
 - 検索エンジン未使用。取得: 外務省 119（2種）、CDC madagascar、Wikivoyage、madagascar-tourisme.com。
-- 失敗: madagascarnationalparks.org、parcs-madagascar.com（接続不可）。
+- 過去の失敗: madagascarnationalparks.org、parcs-madagascar.com（2026-10-20時点に接続不可）。2026-10-25にparcs-madagascar.comのMNP公式イサロ・ベマラハページを再取得し、公式URL・体験・コース時間を補完。料金資料の金額と2027年の道路/開園状況は未取得。
