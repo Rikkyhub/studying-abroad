@@ -21,6 +21,10 @@
 | ラノマファナ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ranomafana+National+Park) | 熱帯雨林。首都南方、RN7沿い（Wikivoyage） | 未確認 | 未確認 | 未確認 |
 | ノシベ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nosy+Be+Madagascar) | 島のリゾート（Wikivoyage） | 未確認 | 乾季 | 未確認 |
 
+**北西部・ノシ・タニケリー海洋国立公園（Nosy Tanihely）**：Madagascar National Parks公式ではノシ・ベ南方約8.5km、島へのアクセスは船のみ（Hell Ville／Ambatoloaka等から）。スノーケリング・ボートダイビング（紹介水深12〜20m）が可能で、公式案内は通年アクセス可。ただし天候・当日の船便・海況・催行・ダイブ料金・入園料は未確認。ウミガメは公園の生息種であり遭遇保証ではない。2026-10-25確認：https://parcs-madagascar.com/parc/nosy-tanihely/ （MNP公式）。
+
+**東部・サント・マリー島の季節判断**：マダガスカル政府観光局（ONTM）はザトウクジラの一般的な観察季節を6〜9月と案内。5月のクジラ観察を前提にせず、7〜8月の島国別周遊案では候補価値が高い。ただし2027年の観察・船の運航・価格・天候は未確認で、必ず見られるわけではない。2026-10-25確認：https://madagascar-tourisme.com/fr/destination/sainte-marie/ （ONTM公式、掲載対象年の明記なし）。
+
 政府観光局 https://www.madagascar-tourisme.com は取得できたが、料金情報は確認できなかった。
 
 ## おすすめの食べ物
@@ -70,6 +74,8 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 | https://www.madagascar-tourisme.com | 公式（観光局） | 2026-10-20 | - |
 | https://parcs-madagascar.com/parc/isalo-3/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点のアクセス・体験案内。2027年の料金・催行は未確認 |
 | https://parcs-madagascar.com/en/parc/tsingy-de-bemaraha-2/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点のコース所要時間。2027年の開園・交通・料金は未確認 |
+| https://parcs-madagascar.com/parc/nosy-tanihely/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点の海洋公園アクセス・活動。2027年の海況・運行・料金は未確認 |
+| https://madagascar-tourisme.com/fr/destination/sainte-marie/ | ONTM（政府観光局） | 2026-10-25 | 一般的な6〜9月のクジラ観察季節。2027年の出現・催行は未確認 |
 
 ## 調査ログ
 
