@@ -19,12 +19,12 @@
 | 名称 | 場所・地図 | 見どころ | 料金（通貨・年度） | 5月・6〜7月の適性 | 出典 |
 |---|---|---|---|---|---|
 | テーブルマウンテン（ケーブルカー） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Table%20Mountain%20Aerial%20Cableway) | 市街と海を見下ろす山頂 | 往復 R475（オンライン）／R530（窓口）。学生 R320（窓口のみ、2026-07〜2027-06） | 強風・悪天候で運休。冬は年次メンテ休業がある（2026年は7/27〜8/9。2027年は未発表） | [公式](https://www.tablemountain.net/) |
-| ケープポイント | [検索リンク](https://www.google.com/maps/search/?api=1&query=Cape%20Point%20Cape%20Town) | 半島の南端、灯台と海岸線 | R515（SANParks 国際料金、2025-11〜2026-10） | 強風になりやすい。晴れた日向き | [SANParks 資料の整理](../research/capetown-sightseeing.md) |
-| ボルダーズビーチ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Boulders%20Beach%20Penguin%20Colony) | アフリカペンギンのコロニー | R245（同上） | 冬も見られる（個体数の保証はない） | 同上 |
+| ケープポイント | [検索リンク](https://www.google.com/maps/search/?api=1&query=Cape%20Point%20Cape%20Town) | 半島の南端、灯台と海岸線 | R592（SANParks公式・Cape of Good Hope標準料金、2026-11〜2027-10、改定可能） | 強風になりやすい。晴れた日向き | [SANParks 資料の整理](../research/capetown-sightseeing.md) |
+| ボルダーズビーチ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Boulders%20Beach%20Penguin%20Colony) | アフリカペンギンのコロニー | R282（SANParks公式・Boulders標準料金、2026-11〜2027-10、改定可能） | 冬も見られる（個体数の保証はない） | 同上 |
 | カーステンボッシュ植物園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kirstenbosch%20National%20Botanical%20Garden) | 山の斜面の植物園 | R270（観光局の2026年記事の標準大人料金） | 雨具が必要。雨天は短時間で切り上げる | [Cape Town Tourism](https://www.capetown.travel/100-things-to-do-in-winter-in-cape-town/) |
 | ツー・オーシャンズ水族館 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Two%20Oceans%20Aquarium%20Cape%20Town) | 雨の日の屋内の代替 | R280（2026年） | 雨天向き | [調査資料](../research/capetown-sightseeing.md) |
 | ツァイツ現代アフリカ美術館（Zeitz MOCAA） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Zeitz%20MOCAA%20Cape%20Town) | 現代アフリカ美術 | R350（2026年） | 雨天向き | 同上 |
-| クルーガー国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kruger%20National%20Park) | 大型動物のサファリ | 保全料 R535／日（2025年4月〜、Wikivoyage 経由。SANParks の公式ページは 403 で未確認） | 乾季の入り口で見やすい。**マラリアのリスク地域** | [Wikivoyage](https://en.wikivoyage.org/wiki/Kruger_National_Park) |
+| クルーガー国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kruger%20National%20Park) | 大型動物のサファリ | 保全料 R692／日（SANParks公式・外国人大人標準料金、2026-11〜2027-10、改定可能。ツアーへの包含未確認） | 乾季の入り口で見やすい。**マラリアのリスク地域** | [SANParks公式料金表](https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf) |
 | ソドワナ湾 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Sodwana%20Bay%20Diving) | ダイビング（5月は閑散期料金） | オープンウォーター講習 R6,360（閑散期、2026/27年）。1ダイブ R525 | 海況は自然条件次第。**マラリアのリスク地域** | [Coral Divers](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf) |
 
 ## おすすめの食べ物
@@ -82,11 +82,12 @@
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_122.html | 公式 | 2026-10-20 | 2025-04 ほか |
 | https://www.capetown.travel/100-things-to-do-in-winter-in-cape-town/ | 準公式（観光局） | 2026-10-17 | 2026 |
 | https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf | 事業者公式 | 2026-10-17 | 2026/27 |
-| https://en.wikivoyage.org/wiki/Kruger_National_Park | 準公式（Wikivoyage） | 2026-10-17 | 2025 |
+| https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf | SANParks公式（標準保全料・大人12歳以上） | 2026-10-27 | 2026-11-01〜2027-10-31（改定可能） |
 
 ## 調査ログ
 
 - 2026-10-20：既存の確認済み資料（ビザ・ケープタウン観光・ダイビング・食費・治安）の記述を、ここに再編集した。新しい取得は次のとおり。
   - 取得に成功：tablemountain.net（学生料金 R320、2026-07〜2027-06、窓口のみ）。外務省 南アフリカの安全対策基礎データ。Wikivoyage South Africa（料理の節）。
   - 失敗・未取得：SANParks の公式料金ページ（403）。クルーガーの保全料は 2025 年の値を Wikivoyage 経由で記載した。
-- 検索エンジンは使っていない（利用できなかったため）。各行の詳細な調査ログは、リンク先の資料の末尾にある。
+- 2026-10-27：SANParks公式2026/27年PDFを直接確認。クルーガーR692／日、Cape of Good Hope R592、Boulders R282（いずれも外国人大人標準料金、ZAR）。前回のWikivoyage経由の旧料金を訂正。公園料金とツアー料金の重複計上に注意。2027年の改定・ツアーへの包含は未確認。
+- 2026-10-20時点の検索環境では検索エンジンを利用できなかった。各行の詳細な調査ログは、リンク先の資料の末尾にある。

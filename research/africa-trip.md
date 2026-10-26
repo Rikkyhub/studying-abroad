@@ -103,7 +103,7 @@
 
 | 項目 | 料金 | 年 | 出典 |
 |---|---|---|---|
-| クルーガー国立公園 保全料（外国人大人） | R535／日 | 2025年4月〜（2026/27年は未確認） | [Wikivoyage](https://en.wikivoyage.org/wiki/Kruger_National_Park)（SANParks 公式は閲覧不可） |
+| クルーガー国立公園 保全料（外国人大人） | **R692／日** | **2026-11-01〜2027-10-31**（改定可能） | [SANParks公式料金表](https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf)（2026-10-27確認。12歳以上の標準保全料。ツアー料金への包含・日帰り事前予約料は別途確認） |
 | Viva Safaris 3日間（ヨハネスブルグ発） | R15,295 | 2027 | [Viva Safaris](https://www.vivasafaris.com/package/3-day-tremisana-masango-safari/)（保全料が含まれるかは未確認） |
 | Acacia Kruger Safari 4日 | USD 626（キャンプ）／764（宿泊型） | 2026-10 セール | [Acacia](https://www.acacia-africa.com/search.php) |
 | エトーシャ等 入園料（外国人大人） | N$280／日 | 2026-04〜 | [NWR](https://www.nwr.com.na/park-entrance-and-conservation-fees-2/) |
@@ -162,7 +162,7 @@
 ## 9. 未確認事項
 
 1. 5月の航空券の実勢価格。
-2. SANParks のクルーガー保全料（2026/27）。
+2. クルーガーの2026/27年保全料はSANParks公式でR692／日を確認済み。2027年の改定、ツアー代への包含、日帰り事前予約料は未確認。
 3. ナミビア査証は2025年公館公表NAD 1,600＋3%を確認済み。2027年改定額・Ngoma国境の決済方法・滞在可能日数、モザンビークETAの2027年申請期限・手数料、エスワティニの道路税、マダガスカルの到着ビザ料金は未確認。
 4. Intercape・Greyhound・Baz Bus の運賃、レンタカーの料金。
 5. チョベ日帰りツアー、マウンのモコロ、ポンタ・ド・オウロのダイビング料金。
