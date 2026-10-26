@@ -18,7 +18,7 @@
 | イサロ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Isalo+National+Park) | 渓谷・天然プール・ハイキング。RN7経由でRanohiraへ（MNP公式） | 未確認（MNPの料金資料を要取得） | 5月の催行・アクセスは未確認 | https://parcs-madagascar.com/parc/isalo-3/（公式、2026-10-25確認） |
 | バオバブ街道（モロンダバ近郊） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Avenue+of+the+Baobabs+Morondava) | Wikivoyageに掲載 | 未確認 | 乾季 | 未確認 |
 | ツィンギ・ド・ベマラハ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tsingy+de+Bemaraha) | 吊り橋・石灰岩の渓谷。MNP公式のAndamozavakyは4km・徒歩約4時間、Ranotsaraは3km・約4〜6時間（公園内のみ） | 未確認（MNPの料金資料を要取得） | 5月の道路・開園・ガイド手配は未確認 | https://parcs-madagascar.com/en/parc/tsingy-de-bemaraha-2/（公式、2026-10-25確認） |
-| ラノマファナ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ranomafana+National+Park) | 熱帯雨林。首都南方、RN7沿い（Wikivoyage） | 未確認 | 未確認 | 未確認 |
+| ラノマファナ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ranomafana+National+Park) | 熱帯雨林・キツネザル14種の生息地。フィアナランツォアから約67km、RN7/RN25経由、園内ガイド同行必須（MNP公式） | **公園入園料・ガイド料は未確認**。外国人の自治体税 **5,000 MGA/人** は別途必要との公式掲載（適用年不明） | 4〜11月が推奨時期、通年アクセス可との公式案内。2027年の道路・催行は未確認 | https://parcs-madagascar.com/parc/ranomafana/（MNP公式、2026-10-27確認） |
 | ノシベ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nosy+Be+Madagascar) | 島のリゾート（Wikivoyage） | 未確認 | 乾季 | 未確認 |
 
 **北西部・ノシ・タニケリー海洋国立公園（Nosy Tanihely）**：Madagascar National Parks公式ではノシ・ベ南方約8.5km、島へのアクセスは船のみ（Hell Ville／Ambatoloaka等から）。スノーケリング・ボートダイビング（紹介水深12〜20m）が可能で、公式案内は通年アクセス可。ただし天候・当日の船便・海況・催行・ダイブ料金・入園料は未確認。ウミガメは公園の生息種であり遭遇保証ではない。2026-10-25確認：https://parcs-madagascar.com/parc/nosy-tanihely/ （MNP公式）。
@@ -102,7 +102,7 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 
 ## 未確認事項
 
-- 国立公園の入園料: Madagascar National Parks（MNP）のイサロ・ベマラハ公式ページには料金資料へのリンクがあるが、料金表の金額・適用年は未取得。2027年料金・ガイド費・現地の道路と催行条件はMNPの料金資料および公園窓口/現地事業者で要確認。
+- 国立公園の入園料: Madagascar National Parks（MNP）のイサロ・ベマラハ・ラノマファナ公式ページには料金資料へのリンクがあるが、**各公園の入園料・ガイド料の金額と適用年は未取得**。ラノマファナの外国人自治体税5,000 MGA/人は別費目（公式掲載・適用年不明）として確認済みで、入園料と混同しない。2027年料金・現地の道路と催行条件はMNPの料金資料および公園窓口/現地事業者で要確認。
 - 2027年の査証料金・到着空港の支払手段・オンラインeVisaの90日区分（政府ポータルと大使館に再確認）。
 - 飲食店・料理の現行価格：一次資料未取得。ノシ・ベのダイビングは上記の2026年事業者料金のみ確認済み。
 - 暫定政権下の最新の政治情勢（出発前に外務省で再確認）。
@@ -120,6 +120,7 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 | https://en.wikivoyage.org/wiki/Madagascar | 準公式 | 2026-10-20 | 2020年価格を含む |
 | https://www.madagascar-tourisme.com | 公式（観光局） | 2026-10-20 | - |
 | https://parcs-madagascar.com/parc/isalo-3/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点のアクセス・体験案内。2027年の料金・催行は未確認 |
+| https://parcs-madagascar.com/parc/ranomafana/ | Madagascar National Parks（公園運営機関） | 2026-10-27 | 掲載年不明の外国人自治体税5,000 MGA/人、ガイド必須、4〜11月推奨・通年アクセス。公園入園料・ガイド料と2027年の適用は未確認 |
 | https://parcs-madagascar.com/en/parc/tsingy-de-bemaraha-2/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点のコース所要時間。2027年の開園・交通・料金は未確認 |
 | https://parcs-madagascar.com/parc/nosy-tanihely/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点の海洋公園アクセス・活動。2027年の海況・運行・料金は未確認 |
 | https://madagascar-tourisme.com/fr/destination/sainte-marie/ | ONTM（政府観光局） | 2026-10-25 | 一般的な6〜9月のクジラ観察季節。2027年の出現・催行は未確認 |
