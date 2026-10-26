@@ -14,7 +14,8 @@
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 公式URL |
 |---|---|---|---|---|---|
-| アンダシベ・マンタディア国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Andasibe-Mantadia+National+Park) | 歌うインドリ（Wikivoyage） | 未確認（公園機関サイトに接続不可） | 乾季入り | 未確認 |
+| アンダシベ・マンタディア国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Andasibe-Mantadia+National+Park) | MNP公式：インドリを含むキツネザル14種、首都から約140km・RN2経由Moramanga→Andasibe、認定ガイド同行必須 | 未確認（MNPの料金資料・現地ガイド見積を要取得） | MNP公式は通年アクセス、5〜10月を動物観察の適期と案内。2027年の道路・催行は未確認 | https://parcs-madagascar.com/parc/mantadia/（MNP公式、2026-10-27確認） |
+| アンカラナ特別保護区（北部） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ankarana+Special+Reserve) | 石灰岩ツィンギ・洞窟・吊り橋。MNP公式：Mahamasina入口はAmbilobeから約30km、Antsirananaから約108km。認定ガイド必須 | 未確認（MNP料金資料・現地ガイド/交通費を要取得） | **東側は通年、西側は7〜11月のみアクセス可との公式案内**。5月は西側を組み込まず、7〜8月は候補にできるが2027年開放は未確認 | https://parcs-madagascar.com/en/parc/ankarana-2/（MNP公式、2026-10-27確認） |
 | イサロ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Isalo+National+Park) | 渓谷・天然プール・ハイキング。RN7経由でRanohiraへ（MNP公式） | 未確認（MNPの料金資料を要取得） | 5月の催行・アクセスは未確認 | https://parcs-madagascar.com/parc/isalo-3/（公式、2026-10-25確認） |
 | バオバブ街道（モロンダバ近郊） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Avenue+of+the+Baobabs+Morondava) | Wikivoyageに掲載 | 未確認 | 乾季 | 未確認 |
 | ツィンギ・ド・ベマラハ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tsingy+de+Bemaraha) | 吊り橋・石灰岩の渓谷。MNP公式のAndamozavakyは4km・徒歩約4時間、Ranotsaraは3km・約4〜6時間（公園内のみ） | 未確認（MNPの料金資料を要取得） | 5月の道路・開園・ガイド手配は未確認 | https://parcs-madagascar.com/en/parc/tsingy-de-bemaraha-2/（公式、2026-10-25確認） |
