@@ -1,8 +1,8 @@
-# 04 フィリピン留学（2027年2〜4月）PINES International Academy／バギオ
+# 04 フィリピン語学留学の匿名費用モデル：PINES International Academy／バギオ
 
 - 情報収集日: 2026-10-16
 - 最終更新: 2026-10-17（リポジトリへ統合。詳細な入国条件は [visa-and-immigration.md](visa-and-immigration.md) が正本）
-- 区分の凡例: **見積**＝公式・準公式の料金表に基づく計算値／**未確認**＝根拠なし・要照合（各地域ページの費用の表と同じ区分）。公開用の匿名モデルで、個人の支払い・契約内容は載せない
+- 区分の凡例: **見積**＝公式・準公式の料金表に基づく計算値／**未確認**＝根拠なし・要照合（各地域ページの費用の表と同じ区分）。**以下は12週間の一般比較例であり、実在する個人の入退寮日・履修順・予約・支払いを表さない**。個人の支払い・契約内容は載せない
 
 > ⚠️ **2027年入学日カレンダーは学校公式サイトに掲載済み（2026-10-25確認）ですが、2027年版の現地費用料金表はまだ確認できていません。** 本資料の学校料金はすべて「2026年10月～」版です（PINES発行の日本語料金表をエージェントサイトで確認）。申込時は学校・紹介会社の最新版で確認してください。
 
@@ -10,11 +10,11 @@
 
 | 項目 | 内容 | 区分 |
 |---|---|---|
-| 目的 | 英語力の集中強化（マンツーマン中心）の一般モデル | 匿名モデル |
+| 目的 | マンツーマン中心の語学学習費を比較する一般モデル | モデル前提 |
 | 学校 | PINES International Academy（バギオ）。ESLコースはスピーキングキャンパス（旧メイン校）、3 Ignacio Villamor St., Brgy. Lualhati, Baguio City | 見積（エージェント情報） |
-| 入寮 | 2027年2月上旬（学校の開講週に合わせる） | 計画 |
-| 授業期間 | 2027年2〜4月、12週間 | 計画（終了時期は12週間からの概算） |
-| 退寮 | 2027年5月初旬 | 要照合 |
+| 入寮 | 個別日程は設定しない（学校の受入条件を別途確認） | 未確認 |
+| 授業期間 | 12週間の費用試算（暦日程なし） | モデル前提 |
+| 退寮 | 12週間のモデル終了後（実際の日付なし） | 未確認 |
 | コース | Power ESL5／Intensive ESL の公開内容を比較（個別の履修順序・配分は掲載しない） | 匿名モデル |
 | 部屋タイプ | モデルでは低予算＝6人部屋／標準＝2人部屋B／余裕＝1人部屋A | 見積の前提 |
 
@@ -77,7 +77,7 @@
 | SIM（Globe GoSURF299、30日） | PHP 299（2GB＋アプリ用10GB）〜 PHP 1,499 | [pinoyloads（ブログ・2026）](https://pinoyloads.com/globe-gosurf-promos)。公式サイトは閲覧不可 | 見積（非公式） |
 | マニラ→バギオ バス（Victory Liner 通常） | PHP 485〜500程度、4〜6時間 | [baguiobus.com（2025-11記事）](https://baguiobus.com/news/victory-liner-manila-baguio) | 見積（非公式） |
 | 同 First Class／Joy Bus | PHP 720〜800程度 | [bustickets.ph（年不明）](https://bustickets.ph/joy-bus-manila-to-baguio/) | 見積（非公式） |
-| 日本→マニラ 片道（2月） | 東京発LCC 約USD 140〜150、PAL 約USD 200、JAL 約USD 410 | [KAYAK（過去12か月の価格履歴）](https://www.kayak.com/flight-routes/Tokyo-TYO/Manila-Ninoy-Aquino-Intl-MNL) | 見積（参考） |
+| 日本→マニラ 片道（時期未設定） | 東京発LCC 約USD 140〜150、PAL 約USD 200、JAL 約USD 410 | [KAYAK（過去12か月の価格履歴）](https://www.kayak.com/flight-routes/Tokyo-TYO/Manila-Ninoy-Aquino-Intl-MNL) | 見積（参考） |
 | マニラ出国時の旅行税 | **対象外**（滞在1年未満の非移民外国人は免除） | [TIEZA](https://tieza.gov.ph/travel-tax/)、[免除要件PDF](https://tieza.gov.ph/wp-content/uploads/2024/09/Documentary-Requirements-for-Travel-Tax-Exemption-EDITED82724.pdf) | 確認済み（公式） |
 | NAIA 国際線ターミナル使用料 | PHP 950（2025-09-14 以降。航空券に含まれる場合あり） | [GMA News](https://www.gmanetwork.com/news/topstories/metro/956714/naia-terminal-fee-hike-starts-on-september-14-2025/story/) | 見積（報道） |
 
@@ -88,10 +88,10 @@
 | 査証免除 | 入国日から30日。入国時に30日の許可 | [外務省 安全対策基礎データ](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_013.html) |
 | 入国時に必要 | 有効な旅券、**eTravel 登録**（[etravel.gov.ph](https://etravel.gov.ph/)、無料。公式FAQは到着前72時間以内の登録を案内。到着日時が決まるまで日付は固定しない）、**フィリピン出国の航空券** | 同上 |
 | 旅券の残存期間 | 日本旅券は6か月未満でも入国可の扱いがあるが、搭乗・入国拒否の例があるため、外務省は**滞在日数＋6か月以上を強く推奨** | 同上 |
-| 語学学習 | 短期の語学学習には **SSP** が必要（学校が代行） | 同上 |
-| 30日超の滞在 | 学校がビザ延長を代行（費用は2-2）。59日を超えると ACR I-Card が必要 | [BI](https://immigration.gov.ph/visas/visa-waiver) |
-| 出国時のECC | 6か月以上の滞在で必要 → **約85日なので不要** | [BI FAQ](https://immigration.gov.ph/faqs/)、外務省 |
-| 在留届／たびレジ | 3か月以上は在留届、未満はたびレジ → **約85日なのでたびレジ**（日本出国日・フィリピン出国日によって3か月を超えるかを確認） | 外務省 |
+| 語学学習 | 英語の短期非学位課程は **SSP** の対象（BI 2025 Citizen's Charter）。学校の代行範囲・2027年条件は未確認 | [BI公式SSP](https://immigration.gov.ph/services/special-study-permit/)、[BI 2025 Charter](https://www.immigration.gov.ph/wp-content/uploads/2025/03/BUREAU-OF-IMMIGRATION-CITIZENS-CHARTER-2025-1ST-EDITION.pdf) |
+| 30日超の滞在 | SSPと滞在延長・Visa WaiverはBIの別サービス。学校の代行可否・必要書類・2027年の料金とカード条件は要確認 | [BI公式eServices](https://e-services.immigration.gov.ph/) |
+| 出国時のECC | 滞在資格・日数によって要否が異なる。実際の滞在日数と2027年のBI公式要件を照合 | [BI FAQ](https://immigration.gov.ph/faqs/) |
+| 在留届／たびレジ | 3か月以上の滞在は在留届、それ未満はたびレジを原則とし、実際の滞在日数・対象資格を確認。モデル上の日数から本人の届出を確定しない | 外務省 |
 
 > ⚠️ **出国用の航空券**: 入国時にフィリピン出国の航空券を求められます。5月のアフリカ行きを未手配のままだと、30日以内の出国便を求められる可能性があります。対応方法（アフリカ行きを先に購入する、学校の案内に従う等）を早めに決める → タスク T002。
 
@@ -117,17 +117,17 @@
 
 | 時期 | レベルテスト結果 | 授業・教師 | 気づき |
 |---|---|---|---|
-| 入学時（2月） |  |  |  |
+| 入学時 |  |  |  |
 | 4週目（モデル） |  |  |  |
 | 8週目 |  |  |  |
-| 修了時（4月末） |  |  |  |
+| 修了時 |  |  |  |
 
 ※ 本人の実体験のみを記入する。
 
 ## 7. 未確認事項（要照合）
 
 1. 部屋タイプごとの2027年適用料金（PH-01 の見積の前提）。
-2. 2027年2月入学に適用される料金表（2026年10月～版のままか）。
+2. 2027年の入学に適用される料金表（2026年10月～版のままか）。
 3. 滞在日数が84日を超えた場合のビザ延長区分（11,150 か 15,390 か）。
 4. 寮の清掃頻度、退寮日、延泊の可否。
 5. 入国時に求められる出国航空券の扱い（T002）。
