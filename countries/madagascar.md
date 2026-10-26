@@ -32,7 +32,9 @@
 | Tropical Diving | EUR 75 | **EUR 85** | EUR 166 | [公式2026料金表](https://tropical-diving.com/en/prices-diving-nosy-be/)：ボート最大6名。Tanikely海洋公園に潜る場合は別途40,000 MGA/人と掲載 |
 | Mada Scuba | EUR 75 | **EUR 85** | EUR 165 | [公式2026料金表](https://www.mada-scuba.com/tarifs/)：Tanikely海洋公園で別途40,000 MGA/人と掲載 |
 
-**料金差**：同じ「フル器材込み2本」は両者EUR 85で同額。4本はMada ScubaがEUR 1低いが、催行日・送迎・ダイブポイント・ボート費・保険・支払手数料の比較は未実施。Tanikelyの**40,000 MGAは事業者の掲載額**であり、MNP公園当局の2027年公式入園料を検証した値ではない。Tropical Divingの英語/仏語ページで40,000 MGAのEUR換算がそれぞれ10/8と不一致のため、**EUR換算額を予算に足さずMGAの原額で別建て**にする（[英語版](https://tropical-diving.com/en/prices-diving-nosy-be/)／[仏語版](https://tropical-diving.com/tarifs-plongee-nosybe/)）。
+**料金差**：同じ「フル器材込み2本」は両者EUR 85で同額。4本はMada ScubaがEUR 1低いが、催行日・送迎・ダイブポイント・ボート費・保険・支払手数料の比較は未実施。Tanikelyの**40,000 MGAは両事業者の掲載額**であり、[公園の運営サイト](https://www.nosytanihely.com/en/)にも**2024-01-01からの外国人成人入園料40,000 MGA**と明記されている（2026-10-26直接確認）。[Madagascar National Parksの公園紹介](https://parcs-madagascar.com/parc/nosy-tanihely/)がこの運営サイトを公式予約先としてリンクしており、単なる事業者の推定額ではない。ただし**2027年の適用額・ダイビング料金への包含・現地徴収方法は未確認**。Tropical Divingの英語/仏語ページで40,000 MGAのEUR換算がそれぞれ10/8と不一致のため、**EUR換算額を予算に足さずMGAの原額で別建て**にする（[英語版](https://tropical-diving.com/en/prices-diving-nosy-be/)／[仏語版](https://tropical-diving.com/tarifs-plongee-nosybe/)）。
+
+**公園運営情報の照合（2026-10-26）**：運営サイトは開園時間を07:00〜16:00と掲載（掲載年の明記なし）。入園券について同一ページ内に「オンラインのみ」と「オンラインまたはHell Villeの公園事務所」の両記述があり、[MNP紹介](https://parcs-madagascar.com/parc/nosy-tanihely/)もオンライン予約に言及するため、**現地窓口購入の可否は未確定**。また運営サイトは日焼け止め使用を禁止と記載する一方、MNP紹介は生分解性の日焼け止めの持参を勧めており、**適用ルールに矛盾がある**。2027年の予約方法・最新料金・使用可能な日焼け止めは公園運営者に確認する。入園料とダイビング代は重複計上せず、ショップ見積で包含範囲を確認する。
 
 **潜水後の移動制約**：[DANの公式飛行前待機ガイド](https://dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/)は、無減圧の単発ダイブ後12時間以上、同日複数本/複数日後18時間以上を最低目安とする。待機を延ばすほどリスクは低減し、陸路の高地移動にも注意が必要。比較モデルBでは**最終ダイブ→国内線/国際線を少なくとも18時間以上空ける（可能なら24時間以上の余裕を設ける）**計画上の制約を追加。これは航空券確定・医学的な安全保証ではない。
 
