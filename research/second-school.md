@@ -86,6 +86,17 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 
 ### 2-4. 帰国便（ケープタウン→東京 片道）
 
+**2026-10-26公式航空会社調査（T-F03・購入未実施）**
+
+| 公式事業者 | 2026-10-26に確認できたこと | 未確認／比較条件 |
+|---|---|---|
+| Emirates | [CPT→NRT](https://www.emirates.com/jp/english/destinations/cpt/nrt/flights-from-cape-town-to-tokyo-narita/) と [CPT→HND](https://www.emirates.com/jp/english/destinations/cpt/hnd/flights-from-cape-town-to-tokyo-haneda/) の公式運航検索ページに乗継便の例がある | 2027年7〜8月の希望日での片道総額、経由・乗継時間、機内/預入荷物、変更・取消条件、運航日 |
+| Ethiopian Airlines | [CPT→Tokyo公式運賃検索](https://www.ethiopianairlines.com/en-et/flights-from-cape-town-to-tokyo) がある | 取得したページでは具体便・運賃を確認できない。2027年の乗継・片道運賃・受託手荷物は未確認 |
+
+- **比較の順番**：第2校の終了日と、終了後に別の国へ立ち寄るかを確定 → CPT→NRT/HND（必要ならJNB発も）を**同一の片道日付・人数・荷物条件**で各社公式検索 → 総額と乗継/変更条件を比較 → 本人が購入判断。2026年の表示便を2027年の確定運航・予約可能便と扱わない。
+- 下記KAYAKの円価格と「7月は2番目に高い月」は集計時期・検索条件が不明な**旧参考値**。2027年7〜8月の価格根拠や予約判断には使用しない。公式検索で価格未取得のため**通貨別の2027年片道価格は未確認**。
+
+
 - KAYAK 日本版（期間を限らない参考値）: 最安 ¥79,285（カタール航空・ドーハ経由）、一般的な価格帯 ¥86,706〜¥111,961（[KAYAK](https://www.kayak.co.jp/flight-routes/Cape-Town-CPT/Tokyo-TYO)）。
 - 7月は1年で2番目に高い月です（[KAYAK US](https://www.kayak.com/flight-routes/Cape-Town-CPT/Tokyo-TYO)）。
 - 直行便はなく、ドーハ・ドバイ・アディスアベバ・シンガポール・香港を経由します。
@@ -145,7 +156,7 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 2. **2027年版ページ内**の表A・表Bのどちらが適用されるか（8週Standard＋ホームステイ＋送迎でR 8,610差）。学校へ適用時期・料金確定条件を確認する。
 3. ホームステイの食事条件・通学時間。
 4. 90日ルールと周辺国への出入国の関係（大使館に確認）。
-5. 7月下旬の帰国便の価格（2027年7月便はまだ販売前）。
+5. 2027年7〜8月の帰国便の片道総額・発売/空席・乗継・荷物条件（日付指定の公式検索は未実施）。
 6. MTN の料金、空港から市内への MyCiTi 運賃。
 
 ## 参考リンク
