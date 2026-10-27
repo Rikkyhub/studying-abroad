@@ -61,6 +61,8 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 
 [IH公式利用規約](https://ihcapetown.com/terms-and-conditions/)では、掲載料金表の適用期間を**2025-11-01〜2026-10-31**と記載。**2027年の授業・宿泊料金は未確定**であり、下記2026年USD価格を2027年の確定見積にしない。規約上は授業開始21日前までの全額支払い、修了証には80%以上の出席、祝日休校分は原則補講なし（プライベート授業は例外）、保険の証明は開始7日前までとされる。**2027年の規約改定と本人の申込・支払・保険加入は未確認**。南アの観光入国免除と語学就学の適格性は別途在日大使館/学校へ確認する。
 
+**2026-10-27｜IH校舎所在地とGreen Point宿泊モデルの区別（T-S02）**：[IH Cape Town公式サイト](https://ihcapetown.com/)および[2026年学校パンフレット](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed-1.pdf)は校舎所在地を **3rd Floor, 35 Wale Street, Cape Town 8001（中心市街地）** と案内。**Green PointをIHの校舎所在地として扱わない**。Green Point地区の宿泊施設を想定した通学は別地点間の移動であり、[MyCiTi公式経路検索](https://www.myciti.org.za/en/routes-stops/plan-your-journey/)で両地点の停留所・徒歩区間・乗継・実際の距離帯・授業時刻の安全性を確認してから運賃モデルに当てはめる。0〜5km／5〜10kmの前掲80乗車試算は**経路未確定の条件付きモデル**で、確定通学費ではない。**2027年の授業実施場所、交通ダイヤ・運賃・夜間安全性は未確認**。学校への所在地・教室・通学推奨手段の確認、本人の宿泊選択・申込は未実施。確認日：2026-10-27、通貨：ZAR（交通費は上記2026/27年参考値）。
+
 ### 2-2a. 宿泊の一次比較（T-S03、IH Cape Town 2026年参考条件）
 
 出典：[IH Cape Town 公式2026年宿泊料金表（USD）](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Accommodation.pdf)・[IH公式宿泊案内](https://ihcapetown.com/accommodation/)・[IH公式2026年パンフレット](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)（2026-10-26閲覧）。以下は**2026年表示の学生1名・週額の参考料金**。2027年6〜7月の料金・空室・部屋割り・食事・返金条件を保証しない。
