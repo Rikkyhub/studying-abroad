@@ -15,7 +15,7 @@
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 公式URL |
 |---|---|---|---|---|---|
 | トーフォ・ビーチ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tofo+Beach+Inhambane) | バックパッカー向け、ダイビング（Wikivoyage） | 既存資料: Peri-Peri Divers 1ダイブ 4,000MZN（2025-26価格表、器材込み、事業者PDF）。2027年は未確認 | ジンベエザメ・マンタは減少傾向で保証なし（MMF） | https://www.peri-peridivers.com |
-| ポンタ・ド・オウロ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ponta+do+Ouro+Mozambique) | ダイブスポット。南アから行きやすい（Wikivoyage） | 未確認 | 未確認 | 未確認 |
+| ポンタ・ド・オウロ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ponta+do+Ouro+Mozambique) | 南アKosi Bay国境に近い海洋保護区。サンゴ礁・ダイビング（ANAC公式） | ダイビング料金は未確認（国境送迎費は下記参照） | ANACは通年訪問可能と案内。5月の潜水催行・海況は未確認 | https://www.anac.gov.mz/en/parques/ponta-do-ouro/ |
 | モザンビーク島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ilha+de+Mocambique) | 1991年登録の世界遺産、旧首都（Wikivoyage） | 未確認 | 未確認 | 未確認 |
 | バザルト群島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Bazaruto+Archipelago) | 海洋公園、高級リゾート（Wikivoyage） | 未確認 | 未確認 | 未確認 |
 | ゴロンゴーザ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Gorongosa+National+Park) | 内戦後に大型動物が回復中 | 未確認（公式サイト403） | 未確認 | https://www.gorongosa.org（取得失敗） |
@@ -53,7 +53,7 @@ CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全
 
 ## 行き方・移動
 
-南アの国境（ポンタ・ド・オウロ側）やヨハネスブルグ・ダーバンからの空路／陸路（Wikivoyage）。費用は出典なしのため未確認。
+**2026-10-28一次確認（2027年の運行・料金は未確定）**：[ANAC公式](https://www.anac.gov.mz/en/parques/ponta-do-ouro/)と[マプト国立公園公式](https://parquemaputo.gov.mz/en/explore/how-to-get-there/)によると、南ア側Kosi Bay／Ponta do Ouro国境は通常08:00〜17:00、ヨハネスブルグから国境まで約673km・車で約7〜8時間（道路状況による推定）。Ponta do Ouroの宿周辺の砂道では4WDを強く推奨する一方、**マプト国立公園の陸域内は4WD必須**。町への全ルートで4WDが法的必須とは断定しない。[STRAB掲載の国境送迎事業者](https://strab.co.za/border-transfers/)はKosi Bay国境→Ponta do Ouroを**ZAR280/人・片道、最少2名**と表示（適用年不明）。単独旅行者の相乗り成立・最少2名分の請求・2027年料金・国境当日の運用・昼間の接続交通・宿までのアクセスは未確認。**JNBから同日で国境を越える案は17時閉門に余裕があるか確認するまで標準案にしない**。
 
 ## 未確認事項
 
@@ -69,6 +69,9 @@ CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html | 公式 | 2026-10-20 | 2025-06-18更新 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/mozambique | 公式 | 2026-10-20 | 現行 |
 | https://en.wikivoyage.org/wiki/Mozambique | 準公式 | 2026-10-20 | 年度不明 |
+| https://www.anac.gov.mz/en/parques/ponta-do-ouro/ | 公式（保護区管理当局） | 2026-10-28 | 掲載適用年不明、2027年要再確認 |
+| https://parquemaputo.gov.mz/en/explore/how-to-get-there/ | 公式（公園運営者） | 2026-10-28 | 掲載適用年不明、2027年要再確認 |
+| https://strab.co.za/border-transfers/ | 事業者掲載の送迎価格 | 2026-10-28 | ZAR、適用年不明、2027年要再確認 |
 
 ## 調査ログ
 
