@@ -23,7 +23,7 @@
 | 1 | 市内の主要施設の料金はバギオ市公式の予約サイト **Baguio VISITA** のAPIで確認できた（2026-10-17 取得）。Botanical Garden **110**、Mines View **20**、Tam-awan **60**、BenCab **200**、Igorot Stone Kingdom **100**、Sky Ranch **50**、Mirador **100**、他は **0**（PHP） | 公式。ただし**外国人／居住者の区分、学生割引の有無は表示なし** |
 | 2 | Botanical Garden の**住民無料措置**（BLISTT圏の住民対象、Ordinance No. 62 s.2025、6か月間）は **2026年1月末で終了**。そもそも旅行者には適用されない | 報道（Daily Tribune 2026-02-18）。金額の記載なし |
 | 3 | 2〜4月は乾季。PAGASA 平年値（1991–2020）で降雨日数（1mm以上）は **2月3日・3月5日・4月8日**、5月は18日。雷雨日数は2月1日・3月3日・4月9日 | 公式（PAGASA） |
-| 4 | **2027年の聖週間**は 3/21（枝の主日）〜3/28（復活祭）。[大統領府2026-09-11発表（Proclamation No. 1427）](https://pco.gov.ph/news_releases/pbbm-declares-2027-regular-and-special-holidays/)により3/25（聖木曜）・3/26（聖金曜）はregular holidays、3/27（聖土曜）はadditional special non-working day。学校の休講・補講、バスの特別運行、混雑状況は**未確認** | 日付は計算値。祝日は未確認 |
+| 4 | **2027年の聖週間**は 3/21（枝の主日）〜3/28（復活祭）。[フィリピン政府広報2026-09-11発表（Proclamation No. 1427）](https://pia.gov.ph/news/pbbm-declares-2027-regular-and-special-holidays)により3/25（聖木曜）・3/26（聖金曜）はregular holidays、3/27（聖土曜）はadditional special non-working day。学校の休講・補講、バスの特別運行、混雑状況は**未確認** | 祝日指定は政府一次資料で確認済み（2026-10-27）。聖週間の前後日程は暦による計算値。学校・交通の2027年実施条件は未確認 |
 | 5 | **Panagbenga（花祭り）2027 の日程は未発表**。公式サイト panagbenga.com は「Launching Soon」表示のまま。2026年の日程を2027年に当てはめない | 公式サイトで未発表を確認 |
 | 6 | 日帰りの現実的な範囲は**片道2時間以内（推計）**の市内・La Trinidad・Tuba・Mt. Ulap。Sagada・La Union は**1泊2日**、Banaue/Batad は**夜行利用で金曜夜発**が前提、Vigan は週末では非推奨 | 時間はOSRM推計。バス時刻の公式確認は Banaue（Ohayami 21:00）のみ |
 
