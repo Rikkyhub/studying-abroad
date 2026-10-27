@@ -85,10 +85,10 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 | MyCiTi バス カード | R 40 | [MyCiTi 公式](https://www.myciti.org.za/en/myconnect-fares/get-your-myconnect-card/) |
 | MyCiTi 運賃 0〜5km | ピーク R 19.50／オフピーク R 15.00 | [MyCiTi 公式](https://www.myciti.org.za/en/myconnect-fares/pay-as-you-go/) |
 | MyCiTi 月間パス | R 1,500 | [MyCiTi 公式](https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/) |
-
-**2026-10-27｜MyCiTi通学費の8週比較（2026/27年の参考料金・未予約）**：運営者の[2026-07-01運賃改定案内](https://www.myciti.org.za/en/contact/media-releases/fare-adjustments-2026/)と[月間パス公式案内](https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/)を照合。0〜5km・乗継による追加距離なし・平日20日/月×往復2回＝40乗車/月と仮定すると、Mover従量払いは**R600〜780/月**（Saver R15／Peak R19.50）、2か月80乗車で**R1,200〜1,560＋新規カードR40**。月間パスは**R1,500/月×2＝R3,000＋カードR40**で、この条件なら従量払いが**R1,440〜1,800安い**（計算値、交通手段の安全性・実際の通学経路を保証しない）。月間パスの損益分岐は、同じ単価だけで乗る場合、片道**Peak 77回/月超相当（77回でR1,501.50）**、Saver **100回/月で同額**。距離帯・時刻・経路・乗継条件で変わる。**運賃は毎年7月1日に改定され得るため、2027年6〜7月の8週間にこの単価を一律適用しない**。2027年7月以降の料金・実際の停留所と学校までの徒歩区間・運行時刻・通学安全性は未確認。最終的な通学手段は現地状況と学校回答を踏まえて判断する。
 | Vodacom データ | 1GB R 85／30GB R 699／100GB R 999 | [Vodacom 公式](https://www.vodacom.co.za/vodacom/shopping/data/data-for-your-smartphone)（有効期間は記載なし） |
 | Uber | 公式の料金表なし。アプリで見積 | — |
+
+**2026-10-27｜MyCiTi通学費の8週比較（2026/27年の参考料金・未予約）**：運営者の[2026-07-01運賃改定案内](https://www.myciti.org.za/en/contact/media-releases/fare-adjustments-2026/)と[月間パス公式案内](https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/)を照合。0〜5km・乗継による追加距離なし・平日20日/月×往復2回＝40乗車/月と仮定すると、Mover従量払いは**R600〜780/月**（Saver R15／Peak R19.50）、2か月80乗車で**R1,200〜1,560＋新規カードR40**。月間パスは**R1,500/月×2＝R3,000＋カードR40**で、この条件なら従量払いが**R1,440〜1,800安い**（計算値、交通手段の安全性・実際の通学経路を保証しない）。月間パスの損益分岐は、同じ単価だけで乗る場合、片道**Peak 77回/月で月間パスを上回る（R1,501.50）**、Saver **100回/月で同額**。距離帯・時刻・経路・乗継条件で変わる。**運賃は毎年7月1日に改定され得るため、2027年6〜7月の8週間にこの単価を一律適用しない**。2027年7月以降の料金・実際の停留所と学校までの徒歩区間・運行時刻・通学安全性は未確認。最終的な通学手段は現地状況と学校回答を踏まえて判断する。
 
 - ホームステイに食事が含まれるかで食費が大きく変わります。UCT ELC のホームステイの食事条件は**未確認**です。
 
