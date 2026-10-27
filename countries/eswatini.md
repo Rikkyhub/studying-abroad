@@ -12,15 +12,17 @@
 
 ## 主な観光地
 
-政府観光局サイトの施設一覧に地名が載っていることまで確認した。説明・料金ページは404または未取得。
+政府観光局の施設一覧に加え、Big Game Parks運営者の料金表を2026-10-28に直接確認。以下のZAR料金は掲載時点の参考値で、2027年の価格・営業・空席を保証しない。
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 公式URL |
 |---|---|---|---|---|---|
-| ムリランゲニ野生生物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mlilwane+Wildlife+Sanctuary+Eswatini) | 野生動物保護区（Wikivoyage） | 未確認 | 乾季 | https://www.thekingdomofeswatini.com（一覧に掲載） |
-| フラネ王立国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Hlane+Royal+National+Park) | 国内の国立公園（Wikivoyage） | 未確認 | 乾季 | 同上 |
+| ムリランゲニ野生生物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mlilwane+Wildlife+Sanctuary+Eswatini) | 野生動物保護区。1名から乗馬・セルフMTBが料金表に掲載 | 保全料ZAR 95/人・日＋乗馬1時間ZAR 430（最少1名）＝ZAR 525。セルフMTB1時間ZAR 185（最少1名）なら合計ZAR 280（いずれも単純合算） | 5月の営業・天候は要確認 | [Big Game Parks料金](https://biggameparks.org/rates) |
+| フラネ王立国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Hlane+Royal+National+Park) | 野生動物観察。Rhino Driveは最少2名 | 保全料ZAR 95/人・日＋Rhino Drive 1.5時間ZAR 390/人（最少2名）。1名だけで催行できるとは扱わない | 5月の営業・催行は要確認 | [Big Game Parks料金](https://biggameparks.org/rates) |
 | ムカヤ動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mkhaya+Game+Reserve+Eswatini) | 動物保護区（Wikivoyage） | 未確認 | 乾季 | 同上 |
 | マロロジャ自然保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Malolotja+Nature+Reserve) | 山岳の自然保護区（Wikivoyage） | 未確認 | 乾季 | 同上 |
 | マンテンガ自然保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mantenga+Nature+Reserve+Eswatini) | 文化村・滝（観光局一覧に掲載） | 未確認 | 未確認 | 同上 |
 | ングウェニャ・ガラス | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ngwenya+Glass+Eswatini) | ガラス工房（観光局一覧に掲載） | 未確認 | 未確認 | 同上 |
+
+**一人旅の実行条件（2026-10-28運営者一次確認）**：[Big Game Parks料金表](https://biggameparks.org/rates)では日帰り入園は06:00〜18:00、乗馬1時間とセルフMTB1時間は最少1名、HlaneのRhino Driveは最少2名。乗馬は[Chubeka Trails公式](https://biggameparks.org/properties/chubeka-trails)で初心者対応・通常1時間前までの予約・平地乗馬の体重上限95kgと案内。施設内支払は2026-07-01以降Visa/Mastercard/MTN MoMoのみ（現金不可）。料金表は12月1日〜翌11月30日単位と説明するが、**表の適用開始年は明記されておらず2027年5月料金ではない**。上記合算は保全料が別途必要との前提による参考額で、予約時に実額・包含・保険・送迎・営業・1名枠を確認する。予約・購入なし。
 
 ## おすすめの食べ物
 
@@ -46,7 +48,7 @@
 
 ## 未確認事項
 
-- 入場料: 各公園の料金ページが取得できなかった。
+- 入場料: Mlilwane・Hlaneの運営者掲載料金は確認済み（2026-10-28）。他公園・2027年の料金・保全料の包含・送迎・1名参加枠は未確認。
 - 実在店・価格: 公的ページなし。
 - 政府による査証案内の確認。
 
@@ -55,11 +57,13 @@
 | URL | 種別 | 確認日 | 適用年度 |
 |---|---|---|---|
 | https://www.thekingdomofeswatini.com | 公式（観光局） | 2026-10-20 | - |
+| https://biggameparks.org/rates | 公式（公園運営者の料金・最低人数・決済） | 2026-10-28 | 12月〜翌11月単位、開始年不明／2027年未確定 |
+| https://biggameparks.org/properties/chubeka-trails | 公式（乗馬運営者の条件） | 2026-10-28 | 2027年適用未確認 |
 | https://en.wikivoyage.org/wiki/Eswatini | 準公式 | 2026-10-20 | 年度不明 |
 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_281.html | 公式 | 2026-10-20 | 現行 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/eswatini | 公式 | 2026-10-20 | 現行 |
 
 ## 調査ログ
 
-- 検索エンジン未使用。取得: thekingdomofeswatini.com、外務省 281、CDC eswatini、Wikivoyage。
+- 2026-10-20初回は検索エンジン未使用。取得: thekingdomofeswatini.com、外務省 281、CDC eswatini、Wikivoyage。2026-10-28にBig Game Parks料金表・Chubeka Trailsの公式ページを直接再取得。
 - 失敗: thekingdomofeswatini.com/hlane-royal-national-park（404）、bgp.co.sz・bigfive.org.sz（接続不可）。
