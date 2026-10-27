@@ -102,7 +102,7 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 | 現地事業者／商品 | 公式掲載額 | 含有・追加条件 | 一次資料 |
 |---|---:|---|---|
 | Just Diving Mauritius／2 dives（1×2 tanks） | **MUR 5,175／人** | 器材込みと明記。Coin de Mire／Trou aux Bichesポイントは**MUR 575**の追加料金表示。ボート送迎・保険・2027年の実施条件は未確認 | https://justdivingmauritius.com/en/our-exploration-dives/ |
-| Just Diving Mauritius／4 dives（2×2 tanks） | **MUR 10,005／人** | 器材込みの4本パッケージ。2日分の2本セットとして掲載。指定ポイント追加料金の回数・適用は未確認。2027年価格ではない | https://justdivingmauritius.com/en/our-exploration-dives/ |
+| Just Diving Mauritius／4 dives（2×2 tanks） | **MUR 10,005／人** | 器材込みの4本パッケージ。2本×2回のパッケージ（実施日数は未確認）。指定ポイント追加料金の回数・適用は未確認。2027年価格ではない | https://justdivingmauritius.com/en/our-exploration-dives/ |
 | MyBase Diving／Trou-aux-Biches Safari（2 tank dives） | **MUR 6,650／人** | スナック・飲料を含むと明記。**MSDAライセンスMUR 300／2か月**を必須と記載。一方で「器材込み」と「器材レンタルMUR 300／本」を同一ページに併記し、Safariへの適用は不明 | https://mybasedivingmauritius.com/divers/ |
 
 **日程面の一次確認**：Just Divingの公式案内は午前2本の集合08:00、帰着12:30〜13:00を掲載。4本パッケージの2日連続実施・午後便・潜水後の飛行間隔は予約前に事業者と航空会社/ダイビング医学の推奨を照合する。MyBaseは4本の固定パッケージ料金を同ページに掲載していないため、2本料金×2を確定額として計上しない。確認日2026-10-28、料金の適用年度は不明。
