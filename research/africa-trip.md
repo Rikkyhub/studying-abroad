@@ -170,7 +170,7 @@
 5. チョベ日帰りツアー、マウンのモコロ、ポンタ・ド・オウロのダイビング料金。
 6. 5月の水温、ジンベエザメ・マンタの時期。
 7. Acacia の出発日・発着地・現地払い額。
-8. ビクトリアの滝ザンビア側の入場料（USD 10 か 20 か）。
+8. ビクトリアの滝ザンビア側の**見学ゲート入場料**：ザンビア政府官報の[2010年Statutory Instrument No. 6](https://media.zambialii.org/media/legislation/40346/source_file/a0178a883be51118/zm-act-si-2010-6-publication-document.pdf)は、NHCC管轄のEastern Cataract National Monument（Victoria Fallsを含む）の非ザンビア人大人を**USD 20／回**と記載（2010年の歴史的料金）。一方、[政府eRegistryの国立公園許可案内](https://www.businesslicenses.gov.zm/license/id/213)にはMosi-oa-Tunya国立公園の非居住者**USD 10**が掲載されるが、**公園許可とNHCC見学ゲートは別制度**であり、eRegistryの更新日・現行性は未確認。2025-10-28の[NHCC料金改定に関する報道](https://efficacynews.africa/2025/10/28/nhcc-reaches-agreement-on-revised-victoria-falls-entry-fees/)では2026-01-01から外国人USD 30への改定合意を伝えるが、NHCCの改定後**公式料金表を直接取得できていない**ため実施額は未確定。**2027年の入場料をUSD 10／20／30のいずれにも確定せず、予算には未確認費目として残す**。確認日2026-10-27、通貨USD、次の取得先：NHCCの現行ゲート料金表・Mosi-oa-Tunya現地窓口／運営ツアー会社の入場料包含条件。KAZA査証USD 50はこれらと別費目（[ザンビア入管公式](https://www.zambiaimmigration.gov.zm/kaza-univisa/)）。
 
 ## 10. 旅の記録（周遊中に記入）
 
