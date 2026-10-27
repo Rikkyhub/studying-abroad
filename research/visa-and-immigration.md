@@ -233,7 +233,7 @@
 | U7 | reg 11(5) が現行条文か | 第2次（2024-05-20）・第3次（2024-10-09）改正のPDFが画像のみで本文を読めない。DHA の統合版は2018年版 | 大使館に確認。テキスト版の官報・統合版を探す |
 | U8 | 再入国時に審査官が実際にどう付与するか | 法令と運用が一致するとは限らない | 大使館・学校に確認。入国スタンプを記録 |
 | U9 | R1,775 の内訳と延長の処理日数 | VFS 料金ページ取得失敗 | 学校・VFS に確認 |
-| U10 | ナミビアNgoma国境の2027年の実運用・査証料・決済 | [内務省Fact Sheet第4版（2025-05-28）](https://eservices.mhaiss.gov.na/form/FactSheetVisaRequirementstoNamibia.pdf)の受付地点一覧でNgomaはeVisa・到着時査証の双方に掲載。[内務省eServices](https://eservices.mhaiss.gov.na/visaonarrival)でJapanが対象国に掲載（2026-10-27確認）。2025年の参考料金NAD 1,600＋3%は2027年確定額ではない | [ナミビア内務省eServices](https://eservices.mhaiss.gov.na/visaonarrival)・Ngoma国境窓口・駐日ナミビア公館へ2027年の実際の受付時間、現地発給・事前eVisa要否、カード/現金、最終料金を照会。本人申請は未実施 |
+| U10 | ナミビアNgoma国境の2027年の実運用・査証料・決済 | [内務省Fact Sheet第4版（2025-05-28）](https://eservices.mhaiss.gov.na/form/FactSheetVisaRequirementstoNamibia.pdf)の受付地点一覧でNgomaはeVisa・到着時査証の双方に掲載。[内務省eServices](https://eservices.mhaiss.gov.na/visaonarrival)でJapanが対象国に掲載（2026-10-27確認）。2025年の参考料金NAD 1,600＋3%は2027年確定額ではない。[ボツワナ政府BOPAの2025-04-01発表](https://dailynews.gov.bw/news-detail/85576)ではSedudu–Ngomaの**チョベ国立公園内通過ゲート／B334通行ルート**が24時間運用となったが、**国際国境の出入国審査・査証発給が24時間になったという根拠ではない**。[ナミビア内務省の国境一覧](https://mhaiss.gov.na/es/entries)はNgomaの連絡先を掲載する一方、受付時刻は明示しない（2026-10-27確認）。2027年の国境通過可能時刻は未確認 | [ナミビア内務省eServices](https://eservices.mhaiss.gov.na/visaonarrival)・Ngoma国境窓口・駐日ナミビア公館へ2027年の実際の受付時間、現地発給・事前eVisa要否、カード/現金、最終料金を照会。本人申請は未実施 |
 | U11 | エスワティニ・ボツワナ・ジンバブエ各政府サイトでの確認 | 前回、接続拒否・403。今回は外務省で代替 | 渡航直前に再確認 |
 | U12 | Directive No.10 of 2026（医療報告の免除）の本文 | Study visa を取る場合だけ関係 | 必要になったら取得 |
 | U13 | 南ア ETA の日本旅券への適用時期と、任意利用時の手続・効果 | 演説は「査証免除国は任意」とするのみ | 大使館に確認。渡航前に DHA を再確認 |
