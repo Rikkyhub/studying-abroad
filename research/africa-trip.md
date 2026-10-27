@@ -84,7 +84,7 @@
 | KAZA UNIVISA | ジンバブエ・ザンビア共通 | **USD 50** | 30日 | [ザンビア入国管理](https://www.zambiaimmigration.gov.zm/kaza-univisa/)。カズングラ経由のボツワナ日帰りも可 |
 | ナミビア | **要（2025-04-01〜）**到着ビザ／eVisa | NAD 1,600＋3%手数料（2025年3月公館公式、2027年未確認） | 申請滞在予定に応じ最大90日。旅券6か月以上・空白3ページ（2025年公館案内） | [在ナミビア日本大使館（2025-03-07）](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)、[外務省](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html)、[The Namibian](https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/) |
 
-- 旅券は、訪問国の数だけ空白ページが必要です（南アだけで2ページ以上が推奨）。
+- 旅券の未使用査証欄は「訪問国数と同じ枚数」という一律条件ではない。2026-10-27確認：[在日南ア大使館](https://dirco.gov.za/japan/immigration-visa-info/)は査証申請の案内で**2ページ以上**、[在ナミビア日本大使館（2025-03-07）](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)は入国時に**3ページ以上**と記載。査証種別・再入国・他の訪問国で必要枚数が異なるため、国ごとに確認し、2027年の適用は再確認する（T-P05）。
 - **出発前に各国の公式情報で再確認**してください（タスク T-P05）。
 
 ## 4. 健康
