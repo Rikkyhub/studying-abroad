@@ -10,7 +10,7 @@
 
 1. **2026年10月時点の暫定試算ではルートAが比較的低予算**ですが、航空券・移動・宿・査証の同条件見積が揃っていません。A/B/Cの総額と60万円以内の実現性は**未検証**であり、2027年の確定価格ではありません。
 2. **6月からケープタウンで留学するなら、南アの「90日」に注意**が必要です。5月に南アへ入国すると、7月下旬の出国まで約83日になります。周辺国に出て再入国した期間の扱いについて、公式の記載は見つかっていません。詳しくは [second-school.md](second-school.md) の3を参照してください。
-3. **黄熱**: エチオピア・ケニアはリスク国です。アディスアベバ経由で12時間以上乗り継ぐと、南アで証明書を求められます。ボツワナとエスワティニは、リスク国を経由しただけでも求める書き方になっています。
+3. **黄熱**: エチオピア・ケニアはリスク国です。アディスアベバの空港で12時間を超えて乗り継ぐ場合は、南アで証明書を求められます。ボツワナとエスワティニは、リスク国を経由しただけでも求める書き方になっています。
 4. **マラリア**: クルーガー、ソドワナ（ウムハニャクデ地区）、チョベ、オカバンゴ、ビクトリアの滝、モザンビーク全域にリスクがあります。ケープタウン、ガーデンルート、レソトはリスクなしとされています（[CDC](https://wwwnc.cdc.gov/travel/destinations/traveler/none/south-africa)）。
 
 ### 2026-10-24 追加照合：周遊ルート比較の進捗（一般モデル）
@@ -138,7 +138,11 @@
 | Viva Safaris 3日間（ヨハネスブルグ発） | R15,295 | 2027 | [Viva Safaris](https://www.vivasafaris.com/package/3-day-tremisana-masango-safari/)（保全料が含まれるかは未確認） |
 | Acacia Kruger Safari 4日 | USD 626（キャンプ）／764（宿泊型） | 2026-10 セール | [Acacia](https://www.acacia-africa.com/search.php) |
 | エトーシャ等 入園料（外国人大人） | N$280／日 | 2026-04〜 | [NWR](https://www.nwr.com.na/park-entrance-and-conservation-fees-2/) |
-| チョベ国立公園 | P120／日 | 2023-03 | [Wikivoyage](https://en.wikivoyage.org/wiki/Chobe_National_Park) |
+| Chobezi チョベ3時間ゲームドライブ | **BWP 856／人** | 2026-10-29確認（適用年不記載） | [Chobezi運営者](https://chobezi.com/chobe-game-drive/) |
+| Chobezi チョベ日帰り（ゲームドライブ＋クルーズ各3時間） | **BWP 1,384／人、最少2名** | 2026-10-29確認（適用年不記載） | [Chobezi運営者](https://chobezi.com/chobe-day-trip-2/) |
+| チョベ国立公園 入園料（外国人・一般自走） | **BWP 270／人・日**（事業者の活動参加者は **BWP 190／人・日** と掲載） | 2026-10-29確認（2027年未確認） | [Chobe Safari Lodge運営者FAQ](https://www.chobesafarilodge.com/faq) |
+**チョベの比較条件（2026-10-29）**：Chobeziの日帰り料金は最少2名条件であり、1名参加の相乗り可否・請求額は未確認。入園料がツアー料金に含まれるかも商品ごとに確認する（別料金と断定して二重計上しない）。3時間ドライブと日帰りの内容は異なる。2027年5月の催行・実売価格は未確認。既存予算CSVのJPY30,000は未検証の仮置きであり、BWP掲載額と同一条件の確定見積ではない。予約・購入・問い合わせは未実施。
+
 | カサネ発 チョベ川クルーズ | 約 P320 | 年不明 | [Wikivoyage](https://en.wikivoyage.org/wiki/Kasane) |
 | ソドワナ Coral Divers：PADI オープンウォーター | R6,360（閑散期）／R7,430（中間期） | 2026-02〜2027-01 | [Coral Divers](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf) |
 | ソドワナ：1ダイブ／5本パック | R525／R2,365（閑散期） | 同上 | 同上 |
