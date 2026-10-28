@@ -57,7 +57,7 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 
 ### IH Cape Town Business English：main側の公式調査を統合（2026-10-26再確認）
 
-[IH公式Business English案内](https://ihcapetown.com/courses/business-english/)では**週23時間**、毎週月曜開始、会議・プレゼン・交渉・電話応対・ビジネスメール/報告書などを扱う。案内の構成はグループ授業、毎日のPSP（自主・支援学習）、月〜木のプライベートBusiness Englishを含む。**週23時間をすべてマンツーマンと解釈しない**。具体的な時間割、開講人数、2027年のBusinessコース実施・入学可能な英語レベルは学校確認待ち。ESPコースのB1要件をBusiness Englishの必須条件と推定しない。
+[IH公式Business English案内](https://ihcapetown.com/courses/business-english/)では**週23時間**、毎週月曜開始、会議・プレゼン・交渉・電話応対・ビジネスメール/報告書などを扱う。案内の構成はグループ授業、毎日のPSP（自主・支援学習）、月〜木のプライベートBusiness Englishを含む。**週23時間をすべてマンツーマンと解釈しない**。具体的な時間割、開講人数、2027年のBusinessコース実施・入学可能な英語レベルは学校確認待ち。**2026年公式パンフレット8ページにはBusiness English希望者の最低英語レベルB1が明記されている**（[IH Cape Town 2026 brochure](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)、2026-10-28直接確認）。これはESPのB1要件からの推定ではなくBusiness Englishの独立した掲載条件。2027年の適用、実際のクラス編成、レベル判定方法、入学時にB1未達の場合の変更可否は学校回答待ち。
 
 [IH公式利用規約](https://ihcapetown.com/terms-and-conditions/)では、掲載料金表の適用期間を**2025-11-01〜2026-10-31**と記載。**2027年の授業・宿泊料金は未確定**であり、下記2026年USD価格を2027年の確定見積にしない。規約上は授業開始21日前までの全額支払い、修了証には80%以上の出席、祝日休校分は原則補講なし（プライベート授業は例外）、保険の証明は開始7日前までとされる。**2027年の規約改定と本人の申込・支払・保険加入は未確認**。南アの観光入国免除と語学就学の適格性は別途在日大使館/学校へ確認する。
 
