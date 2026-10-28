@@ -44,8 +44,8 @@ class PublicDataTests(unittest.TestCase):
     def test_private_notion_links_in_generated_html_rejected_without_url_in_error(self):
         page_id = "a" * 32  # synthetic fixture, never a real page ID
         (self.root / "all.html").write_text(
-            f'<a href="https://www.notion.so/Travel-{page_id}">private</a>\\n'
-            f'<a href="https://app.notion.com/p/{page_id}">private</a>\\n',
+            f'<a href="https://www.notion.so/Travel-{page_id}">private</a>\n'
+            f'<a href="https://app.notion.com/p/{page_id}">private</a>\n',
             encoding="utf-8",
         )
         problems = check(self.root)
@@ -56,7 +56,7 @@ class PublicDataTests(unittest.TestCase):
 
     def test_plain_notion_mention_and_official_url_allowed(self):
         (self.root / "README.md").write_text(
-            "Keep Notion notes private; source: https://www.ppc.go.jp/personalinfo/tokumeikakouInfo/\\n",
+            "Keep Notion notes private; source: https://www.ppc.go.jp/personalinfo/tokumeikakouInfo/\n",
             encoding="utf-8",
         )
         self.assertEqual(check(self.root), [])
