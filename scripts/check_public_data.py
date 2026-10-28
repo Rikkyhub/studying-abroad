@@ -18,7 +18,7 @@ LEGACY_PERSONAL_FIELDS = {"paid_amount", "actual_amount", "payment_status", "pai
 PRIVATE_FUND_MARKERS = {"fund_savings", "fund_other", "資金", "預貯金", "預金残高"}
 # Detect direct links to identifiable Notion pages, without embedding private page IDs.
 NOTION_PAGE_LINK = re.compile(
-    r"https?://(?:[a-z0-9-]+\.)?(?:notion\.so|notion\.site|notion\.com)/[^\s<>\x27\"\)]*[0-9a-f]{32}",
+    r"https?://(?:[a-z0-9-]+\.)?(?:notion\.so|notion\.site|notion\.com)/[^\s<>\x27\"\)]*(?:[0-9a-f]{32}|[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12})",
     re.IGNORECASE,
 )
 
