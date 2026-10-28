@@ -29,7 +29,7 @@
 | S4 | visitor's visa は最長3か月、申請により更新は最長3か月（Act s11(1)(a)）。更新申請は規則・申請書上**期限の60日前まで**（学校は「30日前でも審査される場合がある」と案内）。政府手数料 R425（Gazette 55209、2026-08-17）。学校案内の VFS 経由の金額は R1,775（年度表記なし） | 高（期限・政府手数料）／中（R1,775 の内訳） | Act、Regulations、DHA Fees、UCT ELC |
 | S5 | 南アの ETA は 2026-08-12 に正式導入。大臣演説では**査証要国から段階的に義務化、査証免除国の旅行者は任意利用**。2026-10-25に[DHA公式ETAポータル](https://eta.dha.gov.za/)を直接確認：有効期間内の複数回渡航に利用可能とする一方、反復する長期滞在用ではない。**ETAの複数回渡航機能は、査証免除90日の再付与や語学就学許可を意味しない**。2027年の日本旅券への義務化・再入国時の残日数は**未確認** | 中（2026年掲載制度）／未確認（2027年） | DHA ETA公式（2026-10-25閲覧）、gov.za 演説（2026-08-12） |
 | S6 | 旅券: DHAは「空白1ページ以上・出国予定の30日後まで有効」、在日大使館（査証申請）は「Visa」表示の未使用2ページ以上、外務省は2ページ以上（搭乗拒否例あり）と周辺国分のページを推奨 | 高 | DHA、大使館、外務省 |
-| S7 | 黄熱: 南アは黄熱リスク国から入国、またはリスク国に12時間以上滞在・乗継した人に証明書を求める。周遊候補国（ナミビア、ボツワナ、ジンバブエ、ザンビア、モザンビーク、エスワティニ、レソト）は FORTH の一覧でリスク国ではないが、**エチオピア・ケニアはリスク国**（経由時注意） | 高 | 外務省、FORTH |
+| S7 | 黄熱: 南アは黄熱リスク国から入国、またはリスク国の空港で12時間を超えて乗り継いだ人に証明書を求める。周遊候補国（ナミビア、ボツワナ、ジンバブエ、ザンビア、モザンビーク、エスワティニ、レソト）は FORTH の一覧でリスク国ではないが、**エチオピア・ケニアはリスク国**（経由時注意） | 高 | 外務省、FORTH |
 | N1 | ナミビアは2025-04-01から日本旅券の短期観光に査証が必要。[内務省eServices](https://eservices.mhaiss.gov.na/visaonarrival)はJapanをVisa on Arrival対象に掲載。[内務省Fact Sheet第4版（2025-05-28）](https://eservices.mhaiss.gov.na/form/FactSheetVisaRequirementstoNamibia.pdf)は**Ngoma国境をeVisa・現地到着時査証の双方の受付対象**に列挙（2026-10-27確認）。2025年3月の[在ナミビア日本国大使館案内](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)は**NAD 1,600＋3%手数料**を掲載。 **旅券空白欄の公館案内が不一致**：[在日ナミビア大使館の領事案内](https://namibiatokyo.or.jp/jp/visa_consular_matter/)は「余白6ページ以上」（2026年の案内を含む掲載ページ、2026-10-27検索掲載内容で照合）、[在ナミビア日本大使館の2025-03-07案内](https://www.na.emb-japan.go.jp/itpr_ja/11_000001_00805.html)は「空白3ページ以上」。**2027年の入国時にどちらが適用されるか未確認**。2026-10-27の在日公館原ページ直接取得はタイムアウトしたため、6ページ記載は検索結果による一次サイトの間接確認。採用前にナミビア内務省・在日公館へ、入国地点・査証方式別の必要ページ数を照会する。**2027年のNgoma窓口稼働・発給可否・決済方法・改定料金・入国時間帯は未確認**。国境到着だけで査証取得を保証しない | 高（2025年公式掲載の対象国・受付地点）／未確認（2027年の現場運用・料金） | ナミビア内務省eServices、2025-05-28 Fact Sheet、在ナミビア日本国大使館（2026-10-27照合） |
 
 ---
@@ -133,7 +133,7 @@
 | ETA | 2026-08-12 正式導入。演説: 査証要国の短期滞在から段階的に義務化、「accessible on a voluntary basis to visa exempt travellers」。当初は OR Tambo・Cape Town・King Shaka・Lanseria の4空港。電子処理料 R500（DHA手数料表）。任意利用の利点として演説は「easy 90-day extension」に触れるが、手続の詳細は未確認 | [大臣演説 2026-08-12](https://www.gov.za/news/speeches/minister-leon-schreiber-launch-south-africa%E2%80%99s-electronic-travel-authorisation-12-aug)、[大統領演説 2026-08-12](https://www.gov.za/news/speeches/president-cyril-ramaphosa-launch-south-africa%E2%80%99s-electronic-travel-authorisation-12)、DHA Fees | 公式（日本への適用は未確認） |
 | 旅券 | DHA規則（2018更新版）第2条：未使用2ページ以上、南ア出国予定日の30日後まで有効。在日大使館も未使用2ページ以上・出国後30日以上を案内。国ごとに要件が異なり、周辺国分は別途確認。2026-10-24照合、2027年再確認 | [DHA規則](https://www.dha.gov.za/images/PDFs/ImmigrationRegulations2014-Updated2018-compressed.pdf)・[在日大使館](https://dirco.gov.za/japan/immigration-visa-info/) | 公式（2018規則／2026-10-24閲覧） |
 | 入国時の書類 | 復路または第三国行きの航空券、十分な資金（残高証明・カード等） | DHA、外務省 | 公式 |
-| 黄熱 | リスク国から、またはリスク国に12時間以上滞在・乗継して入国する人に証明書。接種10日後から有効、生涯有効 | 外務省、[FORTH](https://www.forth.go.jp/useful/yellowfever.html) | 公式 |
+| 黄熱 | リスク国から、またはリスク国の空港で12時間を超えて乗り継いで入国する人に証明書。接種10日後から有効、生涯有効 | 外務省、[FORTH](https://www.forth.go.jp/useful/yellowfever.html) | 公式 |
 | 陸路国境 | 両国で出入国・税関手続を受ける。南アの出国スタンプなしで隣国に入り、拘束された日本人の例（特にレソト） | 外務省 | 公式 |
 | 乗継 | 乗継エリアにとどまる人は transit visa 不要。主要空港で生体情報を取得 | 大使館FAQ、DHA | 公式 |
 
@@ -386,3 +386,6 @@
 - 在日南アフリカ大使館の[領事サービス](https://dirco.gov.za/japan/consular-services/)（2026-10-26直接閲覧、更新年月日の明示なし）は Study Visa の取扱いを **“universities & aviation schools”** と記載する。一方、同大使館の[Immigration–Visa Info](https://dirco.gov.za/japan/immigration-visa-info/)（同日閲覧、更新年月日の明示なし）は Study Visa の一般必要書類・申請料 **JPY 4,300**・審査目安 **最大14営業日**を案内する。**前者の窓口表記だけで民間語学学校へのStudy visa発給不可と断定しない**。逆に、後者の一般書類案内だけで短期語学就学が査証免除で許されるとも断定しない。
 - [南ア政府の高等教育機関登録案内](https://www.gov.za/services/services-residents/education-and-training/tertiary-education/register-tertiary-institution)は高等教育への留学生にstudy permit申請を案内するが、**民間語学学校での約8週間の受講可否を直接規定した資料ではない**。
 - **未確認**：2027年の日本旅券での8週間の一般英語受講の適法な入国区分、当該民間学校がStudy visa対象か、周遊後の再入国、書類・保険条件、2027年のJPY手数料と予約枠。**次の具体的取得先**：学校からコースの法的登録区分・短期就学資格の書面回答を取得し、在日南ア大使館査証担当へ学校名・期間・周遊入出国予定を提示して確認。購入・申請は未実施。観光90日免除と就学資格を混同しない。
+
+
+**2026-10-28｜南アの黄熱証明・乗継時間の境界を公式再照合**：[南ア政府保健省の2015年公表](https://www.gov.za/news/media-statements/health-reviews-yellow-fever-requirements-03-feb-2015)と[南ア在豪公館の現行案内](https://dirco.gov.za/canberra/yellow-fever/)は、黄熱リスク国からの入国、または黄熱リスク国の**空港で12時間を超える乗継（exceeding 12 hours）**を証明書要件としている。「12時間以上」や「リスク国での任意の滞在・乗継」を一律の時間条件として扱わない。エチオピア・ケニアは同公館の対象国一覧に掲載。**2027年の経路別要否・航空会社運用は未確認**。確認日：2026-10-28。接種・航空券購入・申請なし。
