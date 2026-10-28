@@ -134,6 +134,8 @@
 
 **チョベの比較条件（2026-10-29）**：Chobeziの日帰り料金は最少2名条件であり、1名参加の相乗り可否・請求額は未確認。入園料がツアー料金に含まれるかも商品ごとに確認する（別料金と断定して二重計上しない）。3時間ドライブと日帰りの内容は異なる。2027年5月の催行・実売価格は未確認。既存予算CSVのJPY30,000は未検証の仮置きであり、BWP掲載額と同一条件の確定見積ではない。予約・購入・問い合わせは未実施。
 
+**ダイビングの料金比較（2026-10-29、一般調査）**：[Coral Divers公式料金表](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-Resort-Rates.pdf)は**2026-02-01〜2027-01-31**有効。ソドワナ2 Mile Reefはローシーズン1本**ZAR525**（タンク・ウェイト込み）、5本**ZAR2,365**、フル器材レンタル**ZAR425/日**で、公園料・遠方リーフ追加料は別途。[Peri-Peri Divers公式料金表](https://www.peri-peridivers.com/pdf/peri-peri-divers-price-list-tofo.pdf)はトーフ1本**MZN3,400**（自己器材）／**MZN4,000**（全器材込み）、Ocean Safari **MZN3,600**（シュノーケル）、Reef Tax **MZN400/場所・週**、遠方リーフ追加**MZN400**と掲載。**Peri-PeriのPDFに適用年の記載なし**。2027年5月はCoralの掲載期間外。両社とも2027年実売・催行・必要資格/経験・水深・海況・送迎・1名参加は未確認。異通貨の単純比較や別料金の二重計上をしない。
+
 | 項目 | 料金 | 年 | 出典 |
 |---|---|---|---|
 | クルーガー国立公園 保全料（外国人大人） | **R692／日** | **2026-11-01〜2027-10-31**（改定可能） | [SANParks公式料金表](https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf)（2026-10-27確認。12歳以上の標準保全料。事前予約は保全料と別料金で、入園人数の上限がある（[SANParks日帰り公式案内](https://www.sanparks.org/parks/kruger/what-to-do/day-visits)、2026-10-27確認）。[2025/26公式料金表](https://www.sanparks.org/wp-content/uploads/2025/05/Tarrifs-2025-2026.pdf)の成人予約料R59は過去の参考額であり、2026/27の予約料は未確認。ツアー代への包含も未確認） |
@@ -145,9 +147,10 @@
 | チョベ国立公園 入園料（外国人・一般自走） | **BWP 270／人・日**（事業者の活動参加者は **BWP 190／人・日** と掲載） | 2026-10-29確認（2027年未確認） | [Chobe Safari Lodge運営者FAQ](https://www.chobesafarilodge.com/faq) |
 | カサネ発 チョベ川クルーズ | 約 P320 | 年不明 | [Wikivoyage](https://en.wikivoyage.org/wiki/Kasane) |
 | ソドワナ Coral Divers：PADI オープンウォーター | R6,360（閑散期）／R7,430（中間期） | 2026-02〜2027-01 | [Coral Divers](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-COURSES-Rates.pdf) |
-| ソドワナ：1ダイブ／5本パック | R525／R2,365（閑散期） | 同上 | 同上 |
-| トーフ Peri-Peri Divers：1ダイブ（器材込み） | 4,000MZN | 2025-26 | [Peri-Peri Divers](https://www.peri-peridivers.com/pdf/peri-peri-divers-price-list-tofo.pdf) |
-| トーフ：SSI オープンウォーター／オーシャンサファリ | 32,000MZN／3,600MZN | 同上 | 同上 |
+| ソドワナ Coral Divers：2 Mile 1本／5本パック（タンク・ウェイト込み） | ZAR525／ZAR2,365（ローシーズン、器材レンタルZAR425/日・公園料別） | 2026-02-01〜2027-01-31 | [Coral Divers公式料金表](https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-Resort-Rates.pdf) |
+| トーフ Peri-Peri Divers：1ダイブ（器材込み） | 4,000MZN | 適用年記載なし（2026-10-29確認） | [Peri-Peri Divers](https://www.peri-peridivers.com/pdf/peri-peri-divers-price-list-tofo.pdf) |
+| トーフ：SSI オープンウォーター／オーシャンサファリ（シュノーケル） | 32,000MZN／3,600MZN | 同上 | 同上 |
+| トーフ：1本（自己器材）／Reef Tax／遠方追加 | MZN3,400／MZN400（場所・週）／MZN400 | 適用年記載なし（2026-10-29確認） | [Peri-Peri Divers公式料金表](https://www.peri-peridivers.com/pdf/peri-peri-divers-price-list-tofo.pdf) |
 | ビクトリアの滝 ジンバブエ側 | USD 50 | 2021年掲載 | Wikivoyage（非公式） |
 | ビクトリアの滝 ザンビア側 | USD 10（公式）／USD 20（Wikivoyage）で**食い違い** | 2025 | [Zambia Tourism](https://www.zambiatourism.com/park-entry-fees/) |
 | ケープタウンのホステル（ドミトリー） | 約2,050〜6,160円／泊、平均約3,440円 | 2026-10 | [Hostelworld](https://www.hostelworld.com/hostels/africa/south-africa/cape-town/) |
