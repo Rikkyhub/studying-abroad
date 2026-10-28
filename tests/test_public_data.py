@@ -41,6 +41,26 @@ class PublicDataTests(unittest.TestCase):
         self.write("expenses.csv", ["id", "paid_jpy", "evidence"], [])
         self.assertEqual(len(check(self.root)), 2)
 
+    def test_private_notion_links_in_generated_html_rejected_without_url_in_error(self):
+        page_id = "a" * 32  # synthetic fixture, never a real page ID
+        (self.root / "all.html").write_text(
+            f'<a href="https://www.notion.so/Travel-{page_id}">private</a>\\n'
+            f'<a href="https://app.notion.com/p/{page_id}">private</a>\\n',
+            encoding="utf-8",
+        )
+        problems = check(self.root)
+        self.assertEqual(len(problems), 2)
+        self.assertIn("all.html:1", problems[0])
+        self.assertIn("all.html:2", problems[1])
+        self.assertTrue(all(page_id not in item for item in problems))
+
+    def test_plain_notion_mention_and_official_url_allowed(self):
+        (self.root / "README.md").write_text(
+            "Keep Notion notes private; source: https://www.ppc.go.jp/personalinfo/tokumeikakouInfo/\\n",
+            encoding="utf-8",
+        )
+        self.assertEqual(check(self.root), [])
+
     def test_personal_funding_row_rejected(self):
         self.write("funds.csv", ["id", "type", "name", "amount_jpy"],
                    [{"id": "fund_savings", "type": "資金", "name": "", "amount_jpy": ""}])
