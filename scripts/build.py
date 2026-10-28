@@ -87,10 +87,18 @@ def num(s):
     return float(s)
 
 
-def date(s):
+def date(s, month_end=False):
+    """YYYY-MM (公開モデル期間) または YYYY-MM-DD (出典確認日) を日付に変換する。"""
     s = (s or "").strip()
     if not s:
         return None
+    if re.fullmatch(r"\d{4}-\d{2}", s):
+        year, month = map(int, s.split("-"))
+        first = dt.date(year, month, 1)
+        if month_end:
+            next_month = first.replace(day=28) + dt.timedelta(days=4)
+            return next_month.replace(day=1) - dt.timedelta(days=1)
+        return first
     return dt.date.fromisoformat(s)
 
 
@@ -125,7 +133,7 @@ def month_key(d):
 
 def allocate(row):
     """費用を月へ按分する比率 {月キー: 比率}"""
-    ps, pe = date(row["period_start"]), date(row["period_end"])
+    ps, pe = date(row["period_start"]), date(row["period_end"], month_end=True)
     if ps and pe and pe >= ps:
         days = defaultdict(int)
         d = ps
@@ -251,8 +259,11 @@ def validate(expenses, tasks, articles, timeline, problems, funds=()):
         for k in ("period_start", "period_end", "due_date", "collected_on", "recheck_by"):
             try:
                 date(r[k])
+                if r[k] and k in ("collected_on", "recheck_by") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r[k]):
+                    raise ValueError("確認日は日単位が必要")
             except ValueError:
-                problems.append(f"{r['id']}: {k}「{r[k]}」は YYYY-MM-DD 形式にしてください")
+                fmt = "YYYY-MM または YYYY-MM-DD" if k in ("period_start", "period_end", "due_date") else "YYYY-MM-DD"
+                problems.append(f"{r['id']}: {k}「{r[k]}」は {fmt} 形式にしてください")
         for k in ("low_local", "std_local", "high_local"):
             try:
                 v = num(r[k])
