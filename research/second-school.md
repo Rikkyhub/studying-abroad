@@ -65,6 +65,10 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 
 **2026-10-27｜IH校舎所在地とGreen Point宿泊モデルの区別（T-S02）**：[IH Cape Town公式サイト](https://ihcapetown.com/)および[2026年学校パンフレット](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed-1.pdf)は校舎所在地を **3rd Floor, 35 Wale Street, Cape Town 8001（中心市街地）** と案内。**Green PointをIHの校舎所在地として扱わない**。Green Point地区の宿泊施設を想定した通学は別地点間の移動であり、[MyCiTi公式経路検索](https://www.myciti.org.za/en/routes-stops/plan-your-journey/)で両地点の停留所・徒歩区間・乗継・実際の距離帯・授業時刻の安全性を確認してから運賃モデルに当てはめる。0〜5km／5〜10kmの前掲80乗車試算は**経路未確定の条件付きモデル**で、確定通学費ではない。**2027年の授業実施場所、交通ダイヤ・運賃・夜間安全性は未確認**。学校への所在地・教室・通学推奨手段の確認、本人の宿泊選択・申込は未実施。確認日：2026-10-27、通貨：ZAR（交通費は上記2026/27年参考値）。
 
+**2026-10-28｜英語＋ボランティア（学校の任意プログラム）**：[IH Cape Town 2026年公式パンフレット pp.16–17](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)は「English & Volunteer」を平日午前の英語授業（例08:30〜12:45）と午後の活動（例13:00〜17:00）の組合せとして案内。Adventure Surf Club（子どものサーフィン・水泳等）とSports & Youth Development（子どものスポーツ支援）の2例を掲載し、学校から活動先への送迎を提供すると説明。2026年の紹介例であり、通常のBusiness Englishに無料で付く活動とは確認できない。
+
+**別商品・費用の区別**：同パンフレットp.18の「English first, then Volunteer」は授業の前後に参加する別商品で、宿泊・交通・食事・活動先への寄付等を賄う参加費が必要と明記。**金額・通貨の掲載は確認できず、2027年の実施日・空き・年齢/英語条件・安全管理・就学/ボランティア活動に必要な在留資格は未確認**。学校の2027年プログラム案内・正式見積と南ア当局の活動許可区分を取得するまで、費用0円・参加可能と扱わない。申込・支払・問い合わせは未実施。
+
 ### 2-2a. 宿泊の一次比較（T-S03、IH Cape Town 2026年参考条件）
 
 出典：[IH Cape Town 公式2026年宿泊料金表（USD）](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Accommodation.pdf)・[IH公式宿泊案内](https://ihcapetown.com/accommodation/)・[IH公式2026年パンフレット](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)（2026-10-26閲覧）。以下は**2026年表示の学生1名・週額の参考料金**。2027年6〜7月の料金・空室・部屋割り・食事・返金条件を保証しない。
