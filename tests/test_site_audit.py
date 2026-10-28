@@ -88,6 +88,29 @@ class PublicPageAuditTests(unittest.TestCase):
             self.assertIsNone(pat.search(text), f"{rel}: 日単位の日付が残っている")
 
 
+    def test_expense_model_dates_are_month_granular(self):
+        """公開予算は月単位。出典の確認日・再確認日は日単位を保持する。"""
+        with (REPO / "data" / "expenses.csv").open(encoding="utf-8", newline="") as f:
+            rows = list(csv.DictReader(f))
+        self.assertGreater(len(rows), 0)
+        for row in rows:
+            for key in ("period_start", "period_end", "due_date"):
+                if row[key]:
+                    self.assertRegex(row[key], r"^\d{4}-\d{2}$", f"{row['id']}: {key}")
+            for key in ("collected_on", "recheck_by"):
+                if row[key]:
+                    self.assertRegex(row[key], r"^\d{4}-\d{2}-\d{2}$", f"{row['id']}: {key}")
+
+    def test_month_granular_allocation_preserves_calendar_months(self):
+        import build
+        row = {"period_start": "2027-02", "period_end": "2027-04", "due_date": ""}
+        actual = build.allocate(row)
+        self.assertEqual(set(actual), {"2027-02", "2027-03", "2027-04"})
+        self.assertAlmostEqual(actual["2027-02"], 28 / 89)
+        self.assertAlmostEqual(actual["2027-03"], 31 / 89)
+        self.assertAlmostEqual(actual["2027-04"], 30 / 89)
+
+
 class PageListTests(unittest.TestCase):
     # pages.csv に載せないページ（理由つき）
     EXCLUDED = {
