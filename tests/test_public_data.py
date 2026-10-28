@@ -54,6 +54,22 @@ class PublicDataTests(unittest.TestCase):
         self.assertIn("all.html:2", problems[1])
         self.assertTrue(all(page_id not in item for item in problems))
 
+    def test_hyphenated_notion_page_links_rejected_without_id_in_error(self):
+        page_id = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"  # synthetic UUID
+        (self.root / "README.md").write_text(
+            f"[private](https://www.notion.so/Travel-{page_id})\\n",
+            encoding="utf-8",
+        )
+        (self.root / "all.html").write_text(
+            f'<a href="https://app.notion.com/p/{page_id}">private</a>\\n',
+            encoding="utf-8",
+        )
+        problems = check(self.root)
+        self.assertEqual(len(problems), 2)
+        self.assertTrue(any("README.md:1" in item for item in problems))
+        self.assertTrue(any("all.html:1" in item for item in problems))
+        self.assertTrue(all(page_id not in item for item in problems))
+
     def test_plain_notion_mention_and_official_url_allowed(self):
         (self.root / "README.md").write_text(
             "Keep Notion notes private; source: https://www.ppc.go.jp/personalinfo/tokumeikakouInfo/\n",
