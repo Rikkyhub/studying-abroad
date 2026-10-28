@@ -47,7 +47,7 @@
 | 6人部屋 | 570 | 4,730 |
 
 - 12週合計は公開料金表を使った仮想の授業料 USD 3,020 と寮費のモデル計算です。個別の履修コース・順序・期間を示すものではありません。登録料 USD 130 は含みません。
-- 平日3食は寮費に含まれます。週末の食事は1食 PHP 179（土曜朝食は無料、日曜朝食は PHP 100）。
+- 平日の食事は寮費に含まれます。PINES作成の[Meal Options資料](https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf)（2024年8月1日以降の申込者向け・2026-10-29確認）では、土曜朝食は無料、週末の申込制有料食は**土曜昼・日曜昼・日曜夜の最大3食**で各PHP179。**日曜朝食PHP100と土曜夕食を週末の学校提供食として計上した旧説明は誤り**。2027年の継続適用は学校確認待ち。
 - 洗濯は含まれません（洗濯＋乾燥 PHP 150、ポイントから差し引き）。
 - モデルの見積は [バギオのページ](../areas/baguio.md) の費用の表（PH-01：公開料金表からの計算）。個人の請求・支払額は公開リポジトリに書かない。
 
@@ -74,7 +74,7 @@
 
 | 項目 | 目安 | 根拠 | 区分 |
 |---|---|---|---|
-| 週末の食事・外食・日用品 | **信頼できる出典なし** | — | 未確認（金額未入力） |
+| 週末の寮食 | [学校作成Meal Options](https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf) | 1食PHP179・最大3食/週（4週PHP2,148、12週PHP6,444） | 2024年8月以降の申込者向け資料。2027年条件は未確認 |\n| 外食・日用品・週末外出 | **信頼できる出典なし** | — | 未確認（金額未入力、0円ではない） |
 | SIM（Globe GoSURF299、30日） | PHP 299（2GB＋アプリ用10GB）〜 PHP 1,499 | [pinoyloads（ブログ・2026）](https://pinoyloads.com/globe-gosurf-promos)。公式サイトは閲覧不可 | 見積（非公式） |
 | マニラ→バギオ バス（Victory Liner 通常） | PHP 485〜500程度、4〜6時間 | [baguiobus.com（2025-11記事）](https://baguiobus.com/news/victory-liner-manila-baguio) | 見積（非公式） |
 | 同 First Class／Joy Bus | PHP 720〜800程度 | [bustickets.ph（年不明）](https://bustickets.ph/joy-bus-manila-to-baguio/) | 見積（非公式） |
