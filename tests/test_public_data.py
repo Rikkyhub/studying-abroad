@@ -57,11 +57,11 @@ class PublicDataTests(unittest.TestCase):
     def test_hyphenated_notion_page_links_rejected_without_id_in_error(self):
         page_id = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"  # synthetic UUID
         (self.root / "README.md").write_text(
-            f"[private](https://www.notion.so/Travel-{page_id})\\n",
+            f"[private](https://www.notion.so/Travel-{page_id})\n",
             encoding="utf-8",
         )
         (self.root / "all.html").write_text(
-            f'<a href="https://app.notion.com/p/{page_id}">private</a>\\n',
+            f'<a href="https://app.notion.com/p/{page_id}">private</a>\n',
             encoding="utf-8",
         )
         problems = check(self.root)
