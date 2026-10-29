@@ -316,7 +316,7 @@
 | https://www.forth.go.jp/useful/yellowfever.html | 公式 | 国別データは WHO 2022年版 | 黄熱リスク国 |
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_143.html | 公式 | 2025-07-01更新 | ナミビア 2025-04-01 から査証必要 |
 | https://visitnamibia.com.na/visa-information/ | 準公式（観光局） | 年度表記なし | 到着時査証の対象に Japan、観光90日 |
-| https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/ | 報道 | 2024-06-28 | N$1,600 |
+| https://eservices.mhaiss.gov.na/form/FactSheetVisaRequirementstoNamibia.pdf | ナミビア内務省・一次資料 | 2025-05-28 第4版（2026-10-29照合） | 非アフリカ諸国の成人NAD 1,600。3%手数料は在ナミビア日本国大使館2025-03-07案内に基づく別項。2027年の改定・国境での徴収額は未確認 |
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_296.html | 公式 | 2025-06-17更新 | ボツワナ |
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html | 公式 | 2026-07-13更新（料金は2026年6月現在） | ジンバブエ |
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_104.html | 公式 | 2026-07-03更新 | ザンビア |
