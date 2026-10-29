@@ -33,7 +33,7 @@
 状態：`未着手` → `資料収集中` → `下書き` → `公開可能`（→ `公開済み`）
 
 <!-- AUTO:articles -->
-状態の集計: 未着手 6 ／ 資料収集中 19 ／ 下書き 0 ／ 公開可能 0 ／ 公開済み 0
+状態の集計: 未着手 5 ／ 資料収集中 20 ／ 下書き 0 ／ 公開可能 0 ／ 公開済み 0
 
 ### 留学準備
 
@@ -68,7 +68,7 @@
 | A17 | サファリツアーの種類と料金の目安 | 資料収集中 | research/africa-trip.md／https://chobezi.com/chobe-day-trip-2/／https://www.chobesafarilodge.com/faq | 2026-10-29運営者公式：Chobeziチョベ3時間ドライブBWP856/人・日帰りドライブ＋クルーズ各3時間BWP1384/人（最少2名）。Chobe Safari Lodgeは入園料BWP270/人日（事業者活動参加者BWP190）を案内。2027年適用・1名相乗り・入園料包含・実売は未確認。2023年WikivoyageのP120は旧値として研究正本を訂正。体験談ではない | — |
 | A18 | 南部アフリカのダイビングの種類と料金の目安 | 資料収集中 | research/africa-trip.md／https://coraldivers.co.za/wp-content/uploads/2025/08/Coral-2026-Resort-Rates.pdf／https://www.peri-peridivers.com/pdf/peri-peri-divers-price-list-tofo.pdf | 2026-10-29運営者一次資料：Coral Diversソドワナ2 Mile 1本ZAR525・5本ZAR2365・器材レンタルZAR425/日（2026-02〜2027-01有効、2027年5月は期間外）。Peri-Periトーフ1本MZN3400（自己器材）／MZN4000（全器材込み）、Ocean Safari MZN3600（シュノーケル）、Reef Tax MZN400/場所週、遠方追加MZN400（PDF適用年不明）。2027年実売・資格/水深・海況・1名参加・送迎は未確認。体験談ではない | — |
 | A19 | アフリカ周遊中の一般的な安全対策 | 資料収集中 | research/africa-trip.md（安全情報） | 外務省などの公開情報 | — |
-| A20 | 1か月のアフリカ周遊の費用モデルと節約方法 | 未着手 | docs/02-budget.md | 公開料金に基づく見積モデル | — |
+| A20 | 1か月のアフリカ周遊の費用モデルと節約方法 | 資料収集中 | docs/02-budget.md／[Chobeziドライブ](https://chobezi.com/chobe-game-drive/)／[クルーズ](https://chobezi.com/chobe-boat-cruise/)／[日帰り](https://chobezi.com/chobe-day-trip-2/)／[Intercape](https://www.intercape.co.za/cape-town-to-johannesburg-by-bus/) | 2026-10-29運営者一次資料：ドライブ/クルーズ各BWP856、セットBWP1384（最少2名）、掲載額差BWP328は同条件の節約保証ではない。IntercapeはCape Town→JNBのみZAR650から・18〜20時間。2027年実売・1名催行・入園料/送迎包含・逆方向は未確認。体験談ではない | — |
 
 ### 帰国後
 
