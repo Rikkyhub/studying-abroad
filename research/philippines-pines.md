@@ -75,7 +75,7 @@
 | 項目 | 目安 | 根拠 | 区分 |
 |---|---|---|---|
 | 週末の寮食 | [学校作成Meal Options](https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf) | 1食PHP179・最大3食/週（4週PHP2,148、12週PHP6,444） | 2024年8月以降の申込者向け資料。2027年条件は未確認 |\n| 外食・日用品・週末外出 | **信頼できる出典なし** | — | 未確認（金額未入力、0円ではない） |
-| SIM（Globe GoSURF299、30日） | PHP 299（2GB＋アプリ用10GB）〜 PHP 1,499 | [pinoyloads（ブログ・2026）](https://pinoyloads.com/globe-gosurf-promos)。公式サイトは閲覧不可 | 見積（非公式） |
+| SIM（Globe GoSURF・30日×3回の公開モデル） | PHP 299／999／1,299（30日・1回）。3回合計 PHP 897／2,997／3,897 | [Globe公式GoSURF](https://www.globe.com.ph/prepaid/gosurf)（2026-10-30確認）。一般データは2／10／15GB、アプリ専用10GBは別枠 | 見積（2026年公式料金、2027年未確定） |
 | マニラ→バギオ バス（Victory Liner 通常） | PHP 485〜500程度、4〜6時間 | [baguiobus.com（2025-11記事）](https://baguiobus.com/news/victory-liner-manila-baguio) | 見積（非公式） |
 | 同 First Class／Joy Bus | PHP 720〜800程度 | [bustickets.ph（年不明）](https://bustickets.ph/joy-bus-manila-to-baguio/) | 見積（非公式） |
 | 日本→マニラ 片道（時期未設定） | 東京発LCC 約USD 140〜150、PAL 約USD 200、JAL 約USD 410 | [KAYAK（過去12か月の価格履歴）](https://www.kayak.com/flight-routes/Tokyo-TYO/Manila-Ninoy-Aquino-Intl-MNL) | 見積（参考） |
@@ -101,7 +101,7 @@
 - **気候**: バギオは標高約1,500m で、マニラより涼しい。2〜4月は乾季。
 - **食事**: 平日3食付き（寮費込み）。週末は申込制（金曜17時締切）。
 - **洗濯**: 有料（ポイントから差し引き）。
-- **通信**: 現地SIM（Globe／Smart）または eSIM。公式料金は未確認。
+- **通信**: 現地SIM（Globe／Smart）またはeSIM。[Globe公式GoSURF](https://www.globe.com.ph/prepaid/gosurf)の30日プランは2026-10-30確認済み。2027年料金、SIM登録区分・30日失効時の延長、現地通信品質は未確認。
 - **体験記録**: 生活費・授業の様子は [blog/experience-log.md](../blog/experience-log.md) に日付ごとに記録する。
 
 ## 5. 安全・健康
@@ -132,7 +132,7 @@
 3. 滞在日数が84日を超えた場合のビザ延長区分（11,150 か 15,390 か）。
 4. 寮の清掃頻度、退寮日、延泊の可否。
 5. 入国時に求められる出国航空券の扱い（T002）。
-6. Globe／Smart の公式料金、マニラ→バギオのバスの公式運賃。
+6. Globe GoSURFの2026年公式料金は確認済み。2027年料金・SIM登録/延長条件・Smartの公式料金、マニラ→バギオのバス公式運賃は未確認。
 7. 週あたりの生活費（出典のある価格が見つかり次第見積に反映）。
 
 ## 参考リンク
