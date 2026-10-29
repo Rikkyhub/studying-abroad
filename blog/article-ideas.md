@@ -33,7 +33,7 @@
 状態：`未着手` → `資料収集中` → `下書き` → `公開可能`（→ `公開済み`）
 
 <!-- AUTO:articles -->
-状態の集計: 未着手 2 ／ 資料収集中 23 ／ 下書き 0 ／ 公開可能 0 ／ 公開済み 0
+状態の集計: 未着手 0 ／ 資料収集中 25 ／ 下書き 0 ／ 公開可能 0 ／ 公開済み 0
 
 ### 留学準備
 
@@ -77,8 +77,8 @@
 | A21 | 半年間の費用モデルの見直しポイント | 資料収集中 | docs/02-budget.md／data/expenses.csv／[日銀日次相場](https://www.boj.or.jp/statistics/market/forex/fxdaily/index.htm)／[JCB基準レート](https://www.jcb.jp/rate/jpy.html) | 2026-10-29一次確認：価格差・為替差・対象範囲差を区別する見積改訂手順を研究正本へ追加。日銀市場相場はカード実請求額ではない。2027年実売/為替/手数料は未確認。PH-08訂正後の予算AUTOは再生成待ち。体験談ではない | — |
 | A22 | 見積モデルの初版と更新版の差分の見方 | 資料収集中 | docs/02-budget.md／data/expenses.csv／https://www.boj.or.jp/statistics/market/forex/fxdaily/index.htm／https://www.jcb.jp/rate/jpy.html | 2026-10-29一次資料を再確認。行IDと版SHAを固定し計算訂正・数量/対象範囲・現地単価・為替・未入力を分離。PH-08旧PHP9792→訂正PHP6444（差PHP−3348）は旧版の対象外食事の誤計上を訂正したもので節約実績ではない。2027年料金・実際の請求レート・本人の実費は未確認。予算AUTOと生成HTMLは正式再生成待ち。体験談ではない | — |
 | A23 | 長期の海外経験を準備するときの一般的な考え方 | 資料収集中 | blog/experience-log.md／[JASSO準備](https://ryugaku.jasso.go.jp/faq/faq_planning.html)／[JASSO現地生活](https://ryugaku.jasso.go.jp/faq/faq_life.html) | 2026-10-29一次資料で目的・方法・語学目標・滞在資格・生活安全を整理。2027年の学校/国別条件と実体験は未確認 | — |
-| A24 | 長期留学の準備で起きやすい失敗と対策（一般論） | 未着手 | blog/experience-log.md | 公開情報・一般的な注意点 | — |
-| A25 | これから半年間の留学を考える人向けの準備ガイド | 未着手 | 全資料 | 公開情報に基づく一般的なガイド | — |
+| A24 | 長期留学の準備で起きやすい失敗と対策（一般論） | 資料収集中 | blog/experience-log.md／https://ryugaku.jasso.go.jp/oversea_info/basic/planning.html／https://ryugaku.jasso.go.jp/oversea_info/basic/agency.html | 2026-10-29 JASSO公式の準備工程（2026-04-10更新）・代理店契約注意（2025-07-31更新）を照合。目的・認定/入学・就学資格・料金/返金・保険/緊急対応・成果/就労の6リスクと対策を研究正本に整理。2027年の学校規約・国別入管・保険は未確認。学校・大使館/入管・保険会社の最新資料が次の取得先。体験談ではない | — |
+| A25 | これから半年間の留学を考える人向けの準備ガイド | 資料収集中 | blog/experience-log.md／https://ryugaku.jasso.go.jp/oversea_info/basic/planning.html／https://ryugaku.jasso.go.jp/faq/faq_life.html | 2026-10-29 JASSO公式の準備工程（2026-04-10更新）に基づく6段階ガイドを研究正本に追加。語学留学の約半年前準備は一般推奨で学校の締切ではない。2027年料金・査証・契約・実績は未確認。学校/当局/保険事業者の最新一次資料が必要。未体験 | — |
 
 <!-- /AUTO:articles -->
 
