@@ -33,7 +33,7 @@
 状態：`未着手` → `資料収集中` → `下書き` → `公開可能`（→ `公開済み`）
 
 <!-- AUTO:articles -->
-状態の集計: 未着手 4 ／ 資料収集中 21 ／ 下書き 0 ／ 公開可能 0 ／ 公開済み 0
+状態の集計: 未着手 3 ／ 資料収集中 22 ／ 下書き 0 ／ 公開可能 0 ／ 公開済み 0
 
 ### 留学準備
 
@@ -55,7 +55,7 @@
 | A09 | 語学学校の授業コース構成の例（一般論） | 資料収集中 | research/philippines-pines.md／https://pinesacademy.edu.ph/jpn/index | 公式掲載のPower ESL5（1対1×5）・Intensive ESL（1対1×5＋グループ×2）を2026-10-28照合。2027年開講・1コマ長・時間割・レベル編成は学校確認待ち。未体験を体験談にしない | — |
 | A10 | バギオの寮生活・食事・1か月の生活費の目安 | 資料収集中 | research/philippines-pines.md／https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf | 2026-10-29学校作成Meal Options資料（2024-08-01以降申込向け）を直接照合。平日食は寮費に含まれ、週末は土曜朝食無料・土曜昼/日曜昼/日曜夜の最大3食を各PHP179で金曜17時までに申請。4週の3食モデルPHP2148、12週PHP6444。日曜朝食PHP100・土曜夕食ありの旧記述は公式資料と不一致。2027年の制度/料金と外食・日用品・生活費総額は未確認。未体験を体験談にしない | — |
 | A11 | 12週間の語学留学で英語力はどう変わるか（一般論） | 資料収集中 | blog/experience-log.md／https://support.cambridgeenglish.org/hc/en-gb/articles/202838506-Guided-learning-hours／https://www.coe.int/en/web/common-european-framework-reference-languages | 2026-10-29一次確認：Cambridge EnglishはCEFR1段階上昇の指導付き学習を約200時間の参考値とする。欧州評議会CEFRは技能別の記述尺度。開始前・4週・8週・12週の同条件評価を一般モデルとして整理。2027年の学校評価・実授業時間・個人の上達は未確認。12週間での段階上昇を保証しない。体験談ではない | — |
-| A12 | 語学留学で起きやすい困りごとと対策（一般論） | 未着手 | blog/experience-log.md | 公開情報・一般的な注意点 | — |
+| A12 | 語学留学で起きやすい困りごとと対策（一般論） | 資料収集中 | blog/experience-log.md／[JASSO留学準備](https://ryugaku.jasso.go.jp/faq/faq_planning.html)／[JASSO現地生活](https://ryugaku.jasso.go.jp/faq/faq_life.html) | 2026-10-29公的資料で目標・寮・保険/医療・貴重品・滞在条件を整理。2027年学校固有規則・実際の経験は未確認 | — |
 | A13 | ケープタウンの語学学校の選び方（比較の観点） | 資料収集中 | research/second-school.md | UCT ELC公式2027年料金表は同一ページで8〜11週Standard週R5 540とR5 120が併記。IH公式2026年Webとパンフレットは個別授業表記が不一致。2027年の有効料金・授業形式・就学資格は学校と当局に要確認。未体験を体験談にしない | — |
 | A14 | フィリピンと南アフリカの語学留学の制度・費用の違い（公開情報） | 資料収集中 | research/philippines-pines.md／research/second-school.md／https://e-services.immigration.gov.ph/／https://dirco.gov.za/japan/immigration-visa-info/ | 2026-10-29政府一次確認：比入管eServicesは非学位・1年未満のSSPとVisa Waiver（29日）・観光滞在延長を別サービスとして案内。南ア在日大使館はStudy Visa申請書類・掲載手数料JPY4300を案内する一方、領事業務一覧は対象を大学・航空学校と表記。民間語学学校8週間の就学資格・2027年の料金/申請条件は未確定。学校/大使館/入管へ確認。体験談ではない | — |
 
