@@ -13,6 +13,12 @@
 3. **黄熱**: エチオピア・ケニアはリスク国です。アディスアベバの空港で12時間を超えて乗り継ぐ場合は、南アで証明書を求められます。ボツワナとエスワティニは、リスク国を経由しただけでも求める書き方になっています。
 4. **マラリア**: クルーガー、ソドワナ（ウムハニャクデ地区）、チョベ、オカバンゴ、ビクトリアの滝、モザンビーク全域にリスクがあります。ケープタウン、ガーデンルート、レソトはリスクなしとされています（[CDC](https://wwwnc.cdc.gov/travel/destinations/traveler/none/south-africa)）。
 
+### 2026-10-29 追加照合：Livingstone→Namibiaツアーの2027年候補日（調査版）
+
+- **8日・26SCOE8（Livingstone→Windhoek）**：[Acacia運営者公式](https://acacia-africa.com/tours/8day-chobe-and-okavango-delta-express-camping-26SCOE8)は方向・7朝食/7昼食/6夕食・任意Adventure Pass USD390を確認できる。一方、公式ページの取得可能な本文には2027年5月の出発日・確定販売価格が表示されない。[販売代理店Travel Networkの同一ツアーコード](https://travel-network.no/en/tours/8-day-chobe-okavango-delta-express-camping-1/)は2027-05-12→05-19、05-26→06-02の候補を掲載するが「On request」「Not available」等の表示を伴う。**代理店掲載日を運営者による催行・残席確定と扱わない**。代理店のNOK表示をUSDの公式見積に換算・置換しない。
+- **12日・26SDDE12（Livingstone→Swakopmund、Etosha追加）**：[Acacia運営者公式](https://acacia-africa.com/tours/desert-and-delta-express-southbound-18SDDE12)で方向・Etosha経由・11朝食/10昼食/9夕食・任意Adventure Pass USD390を確認。検索索引上は2027年5月12日→23日、5月26日→6月6日の候補とUSD1,756の掲載があるが、直接取得した公式ページでは同一日時・USD価格を検証できず、地域によりEUR表示もあるため**実売確定ではない**。8日版の単純な延長としてAF-03へ混ぜない。終了地がSwakopmundで、Cape Townへの移動は別途必要。
+- **接続・安全ゲート**：Windhoek→Cape TownのIntercapeバスは[事業者公式](https://www.intercape.co.za/)で日付指定検索が必要。2026年の第三者時刻情報は約21〜23時間で夜間走行を含むため、昼間移動のみの比較案には採用せず、飛行機/安全な途中宿泊を別見積とする。2027年5月の出発日・座席・乗継・航空運賃、Namibia査証、Pass包含と単独参加は未確認。予約・購入・問い合わせは未実施。一次資料・代理店を区別して2026-10-29確認。
+
 ### 2026-10-24 追加照合：周遊ルート比較の進捗（一般モデル）
 
 - 既存のA/B/Cモデルとmainに統合済みの[3ルート比較PR #52](https://github.com/Rikkyhub/studying-abroad/pull/52)は候補比較の着手証拠であり、**T-T02は調査進行中**。周遊ルートの決定、宿泊・ツアーの予約、支払を意味しない。
