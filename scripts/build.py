@@ -160,13 +160,9 @@ def compute(expenses, fx, problems):
             raw = {s: None for s in SCENARIOS}
         no_amount = all(v is None for v in raw.values())
         est = {s: None if raw[s] is None else raw[s] * rate for s in SCENARIOS}
-        # 標準だけが入力された行は低予算・余裕にも同額を使う（簡略入力）。
-        # 低予算または余裕だけが入力され標準が空の行は、標準を「未計上」とする（0円にも他シナリオの額にもしない）。
-        if est["std"] is not None:
-            if est["low"] is None:
-                est["low"] = est["std"]
-            if est["high"] is None:
-                est["high"] = est["std"]
+        # 空欄はどのシナリオでも「未計上」。他シナリオの金額を自動補完しない。
+        # 例: AF-04 の任意Adventure Passは標準プランのみ。低予算・余裕へ転用すると過大計上になる。
+        # 0はそのシナリオで追加購入しない等の明示的な0円で、空欄とは異なる。
         unpriced = [] if no_amount else [s for s in SCENARIOS if est[s] is None]
         out.append({**r, "rate": rate or 0, "est": est, "no_amount": no_amount, "unpriced": unpriced, "alloc": allocate(r)})
     return out
