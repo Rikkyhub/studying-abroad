@@ -23,6 +23,18 @@ NOTION_PAGE_LINK = re.compile(
 )
 
 
+# Official catalog/article identifiers are not personal phone or account numbers.
+# Only these narrowly defined public URL paths are exempt; other numbers are checked.
+OFFICIAL_CATALOG_URL = re.compile(
+    r"https://www\.muji\.com/jp/ja/store/cmdty/(?:detail/\d{13}(?!\d)|section/S\d{7}(?!\d))"
+    r"|https://support\.cambridgeenglish\.org/hc/en-gb/articles/\d{9}-[A-Za-z-]+"
+)
+
+
+def without_official_catalog_ids(value: str) -> str:
+    return OFFICIAL_CATALOG_URL.sub("[official-catalog-reference]", value)
+
+
 def check(root: Path) -> list[str]:
     """Report column locations, never values, to avoid CI log disclosure."""
     problems = []

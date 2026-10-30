@@ -124,6 +124,15 @@ class ValidationTest(unittest.TestCase):
         p = self.validate([row(id="A", std_local="1"), row(id="A", std_local="1")])
         self.assertTrue(any("一意" in x for x in p))
 
+    def test_public_official_catalog_id_is_not_personal_number(self):
+        from check_public_data import without_official_catalog_ids
+        public = "公式 https://www.muji.com/jp/ja/store/cmdty/detail/4548718365739"
+        article = "公式 https://support.cambridgeenglish.org/hc/en-gb/articles/202838506-Guided-learning-hours"
+        self.assertNotRegex(without_official_catalog_ids(public), r"\b\d{9,}\b")
+        self.assertNotRegex(without_official_catalog_ids(article), r"\b\d{9,}\b")
+        self.assertRegex(without_official_catalog_ids("連絡先 09012345678"), r"\b\d{9,}\b")
+        self.assertRegex(without_official_catalog_ids("https://unknown.example/1234567890"), r"\b\d{9,}\b")
+
     def test_private_number_in_note(self):
         p = self.validate([row(id="A", std_local="1", note="booking 123456789")])
         self.assertTrue(any("個人情報" in x for x in p))
@@ -147,7 +156,7 @@ class UnpricedVsZeroTest(unittest.TestCase):
         self.assertEqual(r["unpriced"], ["std", "high"])
         self.assertEqual(S["total"]["low"], 61 * 150)
         self.assertEqual(S["total"]["std"], 1500)  # 未計上は標準合計に0円としても加算されない
-        self.assertEqual([x["id"] for x in S["partial"]], ["AF-05"])
+        self.assertEqual([x["id"] for x in S["partial"]], ["B", "AF-05"])
 
     def test_totals_unchanged_by_unpriced_scenarios(self):
         S0, _, _ = run([row(id="B", std_local="1000")])

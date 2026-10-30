@@ -22,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import areas  # noqa: E402  地域別ページの AUTO ブロック
+from check_public_data import without_official_catalog_ids
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -302,7 +303,7 @@ def validate(expenses, tasks, articles, timeline, problems, funds=()):
             for col, v in r.items():
                 if col in ("source", "issue") or v.startswith("http"):
                     continue
-                if any(p.search(v) for p in PRIVATE_PATTERNS):
+                if any(p.search(without_official_catalog_ids(v)) for p in PRIVATE_PATTERNS):
                     problems.append(f"{name} {r.get('id', '')}:{col}: 番号・メール等の個人情報らしき値があります（公開リポジトリ）")
 
 
