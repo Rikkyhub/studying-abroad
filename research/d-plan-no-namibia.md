@@ -137,7 +137,7 @@ Sani Pass は経験者向け4×4領域（Issue引用。観光局ページは取�
 
 [CityLink公式運賃表](https://citylink.co.mz/bilhetes/)（2026-10-31確認、掲載適用開始年不明）はInhambane→Maputoの掲載運賃をMZN1,500、Johannesburg→MaputoをMZN2,400、Maputo→TeteをMZN4,500、Beira→TeteをMZN1,800、Tete→JohannesburgをMZN6,900と記載。Inhambane→MaputoはTofo発の直通便ではないため、Tofo→Inhambaneの移動費・時刻を別途確認する。運賃表の一般出発04:30はMaputo/Beira等についての記述で、Inhambane発時刻と読み替えない。運賃表の手荷物20kgと[CityLink旅客約款](https://citylink.co.mz/legal.html)の無料受託30kgは区別する。2027年5月の運行日・1名席・所要時間・日中到着・実売運賃は未確認。Tete→HarareなどZimbabwe直通便は当該運賃表で確認できない。
 
-[CityLink公式連絡先](https://citylink.co.mz/contactos/)（2026-10-31確認）ではInhambaneの拠点をTerminal Interprovincialと掲載。ただし乗車ホーム・発車時刻は未確認。[同社運賃表](https://citylink.co.mz/bilhetes/)はInhambane→Maputoの超過荷物単価を30 MZN/kgと掲載。手荷物20kgと約款上の無料受託30kgのどちらを超過判定の起点とするかは未確認。掲載適用年・2027年の条件も未確認。[Tofo Scuba公式FAQ](https://www.tofoscuba.com/faqs)のInhambane→Tofo送迎USD30は片方向の掲載例であり、Tofo→CityLink乗車拠点への逆方向の運行・料金・接続時間を保証しない。
+[CityLink公式連絡先](https://citylink.co.mz/contactos/)（2026-10-31確認）ではInhambaneの拠点をTerminal Interprovincialと掲載。ただし乗車ホーム・発車時刻は未確認。[同社運賃表](https://citylink.co.mz/bilhetes/)はInhambane→Maputoの超過荷物単価を30 MZN/kgと掲載。手荷物20kgと約款上の無料受託30kgのどちらを超過判定の起点とするかは未確認。掲載適用年・2027年の条件も未確認。[Tofo Scuba公式FAQ](https://www.tofoscuba.com/faqs)のInhambane→Tofo送迎USD30は片方向の掲載例であり、Tofo→CityLink乗車拠点への逆方向の運行・料金・接続時間を保証しない。 [CityLink公式運賃表](https://citylink.co.mz/bilhetes/)（2026-11-01確認）はターミナルの乗車券販売08:00〜19:00と夜間滞在可能との案内を掲載する一方、ページ上部は受付08:00〜17:00、下部は24時間サポートと記載している。窓口販売・問い合わせ受付・夜間待機の安全性は別条件であり、早朝便の前日購入可否は未確認。[Rainbow Tofo Transfer公式](https://rainbowtofotransfer.com/)（2026-11-01確認）はTofo向けInhambane Airport送迎を2,000 MZNと掲載するが、空港送迎の参考額でありTofo→CityLinkターミナルの運賃・乗車接続を示さない。2027年の適用条件、片道/往復・人数・荷物・早朝接続は未確認。
 
 ### 5.4 Mozambique→Zimbabwe 陸路
 
