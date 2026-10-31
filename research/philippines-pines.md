@@ -32,6 +32,7 @@
 | Intensive ESL | マンツーマン5コマ＋グループ2コマ | 1,020 | 同上 |
 
 - **学校公式の授業構成（2026-10-28確認、Web掲載の適用年度は不明）**：[PINES公式日本語コース案内](https://pinesacademy.edu.ph/jpn/index)は Power ESL 5/7 をマンツーマンのみ、Intensive ESL をマンツーマン5コマ＋グループ2コマと掲載。[公式CEFRカリキュラム](https://pinesacademy.edu.ph/eng/about_cefr)は入学時・月次・修了時の4技能テストを案内。上表の2026年10月～料金は学校直販の2027年確定料金ではない。**2027年の各コース開講、1コマの時間、実際の時間割、レベル別クラス編成は学校に要確認**。公式ページの直接閲覧は403のため検索エンジンが取得した公式ページ本文で照合（未検証点として明記）。
+- **2026-10-31学校公式英語ページの表記矛盾（要学校確認）**：[Power ESL 5/7](https://pinesacademy.edu.ph/eng/program_power_esl)は通常授業1対1×5/7、[Intensive ESL](https://pinesacademy.edu.ph/eng/program_intensive_esl)は本文で1対1×5＋4人制×2＝計7と説明する一方、構成表の見出しは「Regular Class (8)」と記載。**8コマ確約と扱わない**。両ページに朝1・夜2の選択授業枠があるが、参加条件・追加料金・2027年開講は未確認。2026-10-31時点で学校公式ページの検索取得本文を照合（直接アクセス403）。次の取得先：PINESの2027年正式時間割・学校回答。A09一般記事下書きは`blog/experience-log.md`、本人の履修・契約とは区別。
 - 2026-10-04 以降、ESL（Power ESL／Intensive ESL）は**スピーキングキャンパス**で実施。旧チャピス（IELTS）は同じ建物の4Fへ移転（[hub1234](https://www.hub1234.com/philippines/baguio/pines-main)、エージェント情報）。
 - 初回登録料 USD 130（日本で支払い。現地延長時は不要）。
 
