@@ -135,6 +135,8 @@ Sani Pass は経験者向け4×4領域（Issue引用。観光局ページは取�
 
 [Tofo Scuba FAQ](https://www.tofoscuba.com/faqs)（確認 2026-10-20、ページの著作権表記は2023）：Maputo から LAM の国内線で Inhambane へ飛び、Inhambane→Tofo のタクシー US$30 を手配できる。または Maputo の特定ホステル発 **午前5時**のバスで、Maputo 到着の翌日15時ごろ Tofo 着。5時発は夜明け前の出発になる点に注意。バスの運賃・現在の運行、LAM の運賃は**未確認**。
 
+[CityLink公式運賃表](https://citylink.co.mz/bilhetes/)（2026-10-31確認、掲載適用開始年不明）はInhambane→Maputoの掲載運賃をMZN1,500、Johannesburg→MaputoをMZN2,400、Maputo→TeteをMZN4,500、Beira→TeteをMZN1,800、Tete→JohannesburgをMZN6,900と記載。Inhambane→MaputoはTofo発の直通便ではないため、Tofo→Inhambaneの移動費・時刻を別途確認する。運賃表の一般出発04:30はMaputo/Beira等についての記述で、Inhambane発時刻と読み替えない。運賃表の手荷物20kgと[CityLink旅客約款](https://citylink.co.mz/legal.html)の無料受託30kgは区別する。2027年5月の運行日・1名席・所要時間・日中到着・実売運賃は未確認。Tete→HarareなどZimbabwe直通便は当該運賃表で確認できない。
+
 ### 5.4 Mozambique→Zimbabwe 陸路
 
 - 国境は存在する（Machipanda 等。Issue 引用の大使館リスト）が、**国境の存在 ≠ 予約できる国際交通**。Maputo→Mutare は参考で1,250km以上（Issue）。昼行の国際バス・シャトルを一次情報で確認できなかった。
