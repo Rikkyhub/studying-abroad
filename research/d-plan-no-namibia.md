@@ -139,7 +139,7 @@ Sani Pass は経験者向け4×4領域（Issue引用。観光局ページは取�
 
 [CityLink公式連絡先](https://citylink.co.mz/contactos/)（2026-10-31確認）ではInhambaneの拠点をTerminal Interprovincialと掲載。ただし乗車ホーム・発車時刻は未確認。[同社運賃表](https://citylink.co.mz/bilhetes/)はInhambane→Maputoの超過荷物単価を30 MZN/kgと掲載。手荷物20kgと約款上の無料受託30kgのどちらを超過判定の起点とするかは未確認。掲載適用年・2027年の条件も未確認。[Tofo Scuba公式FAQ](https://www.tofoscuba.com/faqs)のInhambane→Tofo送迎USD30は片方向の掲載例であり、Tofo→CityLink乗車拠点への逆方向の運行・料金・接続時間を保証しない。 [CityLink公式運賃表](https://citylink.co.mz/bilhetes/)（2026-11-01確認）はターミナルの乗車券販売08:00〜19:00と夜間滞在可能との案内を掲載する一方、ページ上部は受付08:00〜17:00、下部は24時間サポートと記載している。窓口販売・問い合わせ受付・夜間待機の安全性は別条件であり、早朝便の前日購入可否は未確認。[Rainbow Tofo Transfer公式](https://rainbowtofotransfer.com/)（2026-11-01確認）はTofo向けInhambane Airport送迎を2,000 MZNと掲載するが、空港送迎の参考額でありTofo→CityLinkターミナルの運賃・乗車接続を示さない。2027年の適用条件、片道/往復・人数・荷物・早朝接続は未確認。
 
-[CityLink公式・旅客輸送FAQ](https://citylink.co.mz/transporte-de-passageiros/)（2026-11-01確認）は乗車券の購入経路を公式サイト・ターミナル・認定代理店と案内する。ただしオンライン購入画面で当該便を実際に決済できるか、2027年のInhambane→Maputo便を前日までに予約できるかは未確認。[CityLink公式・貨物輸送料金表](https://citylink.co.mz/transporte-de-bens/)にはInhambane→Beira等の貨物運賃もあるが、旅客直通便や乗客用運賃の根拠には使わない。
+[CityLink公式・旅客輸送FAQ](https://citylink.co.mz/transporte-de-passageiros/)（2026-11-01確認）は乗車券の購入経路を公式サイト・ターミナル・認定代理店と案内する。ただしオンライン購入画面で当該便を実際に決済できるか、2027年のInhambane→Maputo便を前日までに予約できるかは未確認。[CityLink公式・貨物輸送料金表](https://citylink.co.mz/transporte-de-bens/)にはInhambane→Beira等の貨物運賃もあるが、旅客直通便や乗客用運賃の根拠には使わない。 [CityLink公式連絡先](https://citylink.co.mz/contactos/)（2026-11-01確認）はWhatsAppで旅行を予約する案内を掲載する。ただしInhambane→Maputo便の予約受付・前日購入・発車時刻・2027年5月の運行は未確認。次の取得先は同社の公式予約窓口。
 
 ### 5.4 Mozambique→Zimbabwe 陸路
 
