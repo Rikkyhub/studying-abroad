@@ -33,7 +33,7 @@
 状態：`未着手` → `資料収集中` → `下書き` → `公開可能`（→ `公開済み`）
 
 <!-- AUTO:articles -->
-状態の集計: 未着手 0 ／ 資料収集中 10 ／ 下書き 15 ／ 公開可能 0 ／ 公開済み 0
+状態の集計: 未着手 0 ／ 資料収集中 9 ／ 下書き 16 ／ 公開可能 0 ／ 公開済み 0
 
 ### 留学準備
 
@@ -46,7 +46,7 @@
 | A05 | 長期語学留学の準備と手続きチェックリスト（一般論） | 下書き | blog/experience-log.md／docs/03-preparation.md／data/tasks.csv／https://ryugaku.jasso.go.jp/oversea_info/basic/planning.html／https://ryugaku.jasso.go.jp/faq/faq_life.html | 2026-10-31 JASSO公式の2026-04-10更新準備工程と現地生活FAQを直接確認。目的・学校・入国資格・保険・宿泊・資金・安全・渡航後記録の6段階を一般向け下書きに整理。実際に必要だったという体験主張を削除。準備開始の約半年前は目安であり個別期限ではない。2027年の学校規約・査証・保険・料金・予約は未確認。学校最新版募集要項・大使館/入管・保険約款が次の取得先。生成HTML・CI・main未完了 | blog/experience-log.md |
 | A06 | 休職中の社会保険料・住民税はいくらかかるか | 資料収集中 | docs/03-preparation.md（税・社会保険） | 制度の一般的な計算式（個人の請求額は載せない） | — |
 | A07 | 半年・アジア＋アフリカの海外旅行保険の選び方 | 資料収集中 | docs/03-preparation.md（保険） | 保険の選び方の観点（個別契約の内容は載せない） | — |
-| A08 | アフリカ渡航前の予防接種と費用 | 資料収集中 | research/prep-priority1-tasks.md／https://www.forth.go.jp/keneki/tokyo/abroad/yellow-fever-vaccination/index.html／https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html | 2026-10-29一次資料：東京検疫所の黄熱接種証明込み17680円（収入印紙・予約制）と東京医大2026-06料金の黄熱18700円＋初診3201円を比較。A/B肝炎・破傷風・腸チフス・狂犬病の1回単価も確認。2027年料金・本人の接種要否・在庫・実経路は未確認。接種済みとしない | — |
+| A08 | アフリカ渡航前の予防接種と費用 | 下書き | blog/experience-log.md／research/prep-priority1-tasks.md／https://www.forth.go.jp/keneki/tokyo/abroad/yellow-fever-vaccination/index.html／https://hospinfo.tokyo-med.ac.jp/shinryo/tokou/cost.html／https://www.cdc.gov/yellow-fever/hcp/vaccine/ | 2026-10-31一次資料で黄熱料金2施設・証明書10日・同日接種の一般原則とYellow BookのMMR30日例外を下書き化。2027年料金・本人の接種歴・実経路・接種要否・在庫・医師判断は未確認。未接種・未予約 | blog/experience-log.md |
 
 ### 留学生活
 
