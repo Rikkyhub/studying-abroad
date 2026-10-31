@@ -22,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import areas  # noqa: E402  地域別ページの AUTO ブロック
+from check_public_data import without_official_catalog_ids
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -87,10 +88,18 @@ def num(s):
     return float(s)
 
 
-def date(s):
+def date(s, month_end=False):
+    """YYYY-MM (公開モデル期間) または YYYY-MM-DD (出典確認日) を日付に変換する。"""
     s = (s or "").strip()
     if not s:
         return None
+    if re.fullmatch(r"\d{4}-\d{2}", s):
+        year, month = map(int, s.split("-"))
+        first = dt.date(year, month, 1)
+        if month_end:
+            next_month = first.replace(day=28) + dt.timedelta(days=4)
+            return next_month.replace(day=1) - dt.timedelta(days=1)
+        return first
     return dt.date.fromisoformat(s)
 
 
@@ -125,7 +134,7 @@ def month_key(d):
 
 def allocate(row):
     """費用を月へ按分する比率 {月キー: 比率}"""
-    ps, pe = date(row["period_start"]), date(row["period_end"])
+    ps, pe = date(row["period_start"]), date(row["period_end"], month_end=True)
     if ps and pe and pe >= ps:
         days = defaultdict(int)
         d = ps
@@ -152,13 +161,9 @@ def compute(expenses, fx, problems):
             raw = {s: None for s in SCENARIOS}
         no_amount = all(v is None for v in raw.values())
         est = {s: None if raw[s] is None else raw[s] * rate for s in SCENARIOS}
-        # 標準だけが入力された行は低予算・余裕にも同額を使う（簡略入力）。
-        # 低予算または余裕だけが入力され標準が空の行は、標準を「未計上」とする（0円にも他シナリオの額にもしない）。
-        if est["std"] is not None:
-            if est["low"] is None:
-                est["low"] = est["std"]
-            if est["high"] is None:
-                est["high"] = est["std"]
+        # 空欄はどのシナリオでも「未計上」。他シナリオの金額を自動補完しない。
+        # 例: AF-04 の任意Adventure Passは標準プランのみ。低予算・余裕へ転用すると過大計上になる。
+        # 0はそのシナリオで追加購入しない等の明示的な0円で、空欄とは異なる。
         unpriced = [] if no_amount else [s for s in SCENARIOS if est[s] is None]
         out.append({**r, "rate": rate or 0, "est": est, "no_amount": no_amount, "unpriced": unpriced, "alloc": allocate(r)})
     return out
@@ -251,8 +256,11 @@ def validate(expenses, tasks, articles, timeline, problems, funds=()):
         for k in ("period_start", "period_end", "due_date", "collected_on", "recheck_by"):
             try:
                 date(r[k])
+                if r[k] and k in ("collected_on", "recheck_by") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r[k]):
+                    raise ValueError("確認日は日単位が必要")
             except ValueError:
-                problems.append(f"{r['id']}: {k}「{r[k]}」は YYYY-MM-DD 形式にしてください")
+                fmt = "YYYY-MM または YYYY-MM-DD" if k in ("period_start", "period_end", "due_date") else "YYYY-MM-DD"
+                problems.append(f"{r['id']}: {k}「{r[k]}」は {fmt} 形式にしてください")
         for k in ("low_local", "std_local", "high_local"):
             try:
                 v = num(r[k])
@@ -295,7 +303,7 @@ def validate(expenses, tasks, articles, timeline, problems, funds=()):
             for col, v in r.items():
                 if col in ("source", "issue") or v.startswith("http"):
                     continue
-                if any(p.search(v) for p in PRIVATE_PATTERNS):
+                if any(p.search(without_official_catalog_ids(v)) for p in PRIVATE_PATTERNS):
                     problems.append(f"{name} {r.get('id', '')}:{col}: 番号・メール等の個人情報らしき値があります（公開リポジトリ）")
 
 

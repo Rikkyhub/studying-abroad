@@ -1,6 +1,6 @@
 # ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替
 
-- 確認日：2026-10-17／[Issue #4](https://github.com/Rikkyhub/studying-abroad/issues/4)
+- 確認日：2026-10-17（初版）／2026-10-27（SANParks料金再照合）／[Issue #4](https://github.com/Rikkyhub/studying-abroad/issues/4)
 - 前提：**匿名モデルケース**（大人1名、平日は語学学校、週末の土日だけ動ける、運転しない場合も想定）。起点は**市中心部（Company's Garden 付近）**。個人の滞在先・学校は起点にしない。
 - 料金は**大人1名**、**現地通貨（ZAR）のまま**記載し、円換算はしない（[sources.md](sources.md) のとおり本資料では換算しない。参考レートは 各地域ページの「通貨と円換算」（[バギオ](../areas/baguio.md)・[アフリカ周遊](../areas/africa.md)・[ケープタウン](../areas/capetown.md)） にある）。
 - 「2027年」と書いていない料金・時間は**取得時点（2026年）の掲示値**。2027年6〜7月の価格・営業を保証しない。
@@ -14,14 +14,14 @@
 | 推計（OSRM） | OpenStreetMap の経路計算（車、渋滞・駐車・待ち時間なし）。**公式の所要時間ではない** |
 | 未確認 | 取得できなかった、または根拠がない |
 
-料金は3種類を分ける：①**国際（外国人・非居住者）料金**＝本資料の試算に使う値、②**一般料金**（区分のない施設）、③**南ア居住者・SADC・アフリカ国籍・南アの学生向け料金やキャンペーン**＝旅行者には適用しない。参考としてのみ記載し、試算には使わない。
+料金は3種類を分ける：①**国際（外国人・非居住者）料金**＝本資料の試算に使う値、②**一般料金**（区分のない施設）、③**南ア居住者・SADC・アフリカ国籍・南アの学生向け料金やキャンペーン**＝通常の査証免除旅行者には適用しない。DHA発行の有効なStudy／Work等の査証・許可がある場合はSANParksの証明要件を満たすか別途確認する。適用未確定のため標準試算には使わない。
 
 ## 1. 要点
 
 | # | 結論 | 根拠・確度 |
 |---|---|---|
-| 1 | **SANParks（Table Mountain NP）の保全料**は適用期間 **2025-11-01〜2026-10-31** の国際料金で Cape Point **R515**、Boulders **R245**、Newlands・Oudekraal **R200**。カードのみ。**2026-11以降（2027年6〜7月を含む期間）の料金表は未発表** | 公式（Wayback 2026-10-10 取得分。現行ページは 403） |
-| 2 | SANParks は、旅券に **Study／Work などの南アのビザ・許可**が貼付された外国人に南ア居住者料金を認める。**ビザ免除（短期滞在）で入国する場合は対象外**で国際料金。本資料は国際料金で試算 | 公式。適用は入国資格次第 |
+| 1 | **SANParks（Table Mountain NP）の保全料**は **2026-11-01〜2027-10-31** の外国人大人標準料金で Cape Point **R592**、Boulders **R282**、Newlands・Oudekraal **R230**。**2026-10-27公式PDF直接確認**。予告なく変更可能で、ツアー代・交通費は別 | [SANParks公式2026/27料金PDF](https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf) |
+| 2 | SANParksは外国旅券でも**南ア内務省発行の有効なStudy／Work等の査証・許可**（旅券貼付または認められる電子・認証写し）があれば南ア居住者料金を認めると案内。**語学学校の学生証だけでは資格を証明できず、査証免除での入国を割引対象とみなさない**。適用が確認できるまでは国際料金で試算 | [SANParks公式料金・証明条件](https://www.sanparks.org/travel/book/useful-information/rates-fees)（2026-10-27確認）。2027年の個別適用・実際の就学資格は未確認 |
 | 3 | **ケーブルカー**：大人往復 オンライン **R475**／窓口 **R530**（CMS更新 2026-08-17、有効期間の表記なし）。チケットは選択日から**7日間有効**で、オンライン購入分は期間内に返金・日付変更が可能 | 公式 |
 | 4 | **年次メンテナンス運休**：2026年は **7/27〜8/9**（公式発表）。**2027年の日程は未発表**。2026年の日付を2027年に当てはめない（例年7月末〜8月上旬との傾向は2025・2026年の2例のみ） | 公式（2026年分） |
 | 5 | 冬の雨：平年値（1991–2020、ケープタウン国際空港）で **6月 92.3mm・降雨日10.1日、7月 84.8mm・9.1日**（≥0.1mm）。週末2日のうち1日は雨の前提で雨天案を用意 | 二次（Wikipedia の気候表、出典 SAWS/NOAA）。風の統計は未確認 |
@@ -35,8 +35,8 @@
 | 候補地 | ①国際／②一般料金（ZAR） | 適用期間 | ③居住者等（参考・不使用） | 営業／条件 | 推計 | 晴 | 雨 | 強風 | 地図 |
 |---|---|---|---|---|---|---|---|---|---|
 | Table Mountain Aerial Cableway | ②往復 475（オンライン）／530（窓口）、片道 300／330。学生 320（窓口のみ） | 表記なし（CMS更新 2026-08-17） | SA Senior R130 | 強風・悪天候で運休。2026年は7/27〜8/9運休 | 4.6km／10分（下部駅付近まで） | ◎ | × | × | [Maps](https://www.google.com/maps/search/?api=1&query=Table+Mountain+Aerial+Cableway+Lower+Station) |
-| Cape Point | ①515 | 2025-11-01〜2026-10-31 | SA R110、SADC R225 | カードのみ、車1台ごとに支払い | 64km／71分 | ◎ | △ | △ | [Maps](https://www.google.com/maps/search/?api=1&query=Cape+Point+Table+Mountain+National+Park) |
-| Boulders（ペンギン） | ①245 | 同上 | SA R55、SADC R110 | カードのみ。営業時間**未確認** | 41km／44分 | ◎ | ○ | △ | [Maps](https://www.google.com/maps/search/?api=1&query=Boulders+Penguin+Colony) |
+| Cape Point | ①592 | 2026-11-01〜2027-10-31（変更可能） | SA R115、SADC R242（証明要） | カードのみ、車1台ごとに支払い | 64km／71分 | ◎ | △ | △ | [Maps](https://www.google.com/maps/search/?api=1&query=Cape+Point+Table+Mountain+National+Park) |
+| Boulders（ペンギン） | ①282 | 同上 | SA R57、SADC R118（証明要） | カードのみ。営業時間**未確認** | 41km／44分 | ◎ | ○ | △ | [Maps](https://www.google.com/maps/search/?api=1&query=Boulders+Penguin+Colony) |
 | Kirstenbosch 植物園 | ①270（アフリカ・SADC以外の大人） | 2026–2027 | SA居住者・SADC R110、アフリカ国籍 R150、南アの学生 R60 | 冬（4〜8月）8:00–18:00、温室 9:00–17:00。Webtickets のみ、現金不可 | 12km／15分 | ◎ | △（温室） | ○ | [Maps](https://www.google.com/maps/search/?api=1&query=Kirstenbosch+National+Botanical+Garden) |
 | Two Oceans Aquarium | ②大人 280 | 年度表記なし（ショップデータ更新 2026-03-31） | — | 平日 9:30–18:00、週末・祝日・学校休暇 9:00–18:00 | 4.3km／7分（V&A） | ○ | ◎ | ◎ | [Maps](https://www.google.com/maps/search/?api=1&query=Two+Oceans+Aquarium) |
 | Zeitz MOCAA | ②350（Webtickets） | 2026-09-01〜 | 南ア・アフリカ国籍は窓口で R199 | 10:00–18:00（最終入場 17:30） | V&A内 | ○ | ◎ | ◎ | [Maps](https://www.google.com/maps/search/?api=1&query=Zeitz+MOCAA) |
@@ -84,7 +84,7 @@
 
 - **晴天日**：ケーブルカー往復 475（オンライン）＋ Kirstenbosch 270 ＝ **745**（公式値の合計）。
 - **雨天日**：Two Oceans Aquarium 280 ＋ Zeitz MOCAA 350 ＋ Iziko SA Museum 100 ＝ **730**。交通は MyCiTi（カード 40＋1日パス 130＝170、公式）。
-- **半島（晴天・弱風）**：Cape Point 515 ＋ Boulders 245 ＝ **760**（2025-11〜2026-10 の料金。2027年は改定の可能性）。ツアー・配車料金は未確認。
+- **半島（晴天・弱風）**：Cape Point 592 ＋ Boulders 282 ＝ **874 ZAR**（外国人大人、2026-11〜2027-10公式掲載値。予告なく改定可能）。交通・ガイド・ツアー料金は未計上。DHA発行の有効な査証・許可による居住者料金適用は個別確認前のため使わない。
 - **1泊2日 Hermanus**：船 1,500（rack rate、年度表記なし）。交通・宿は未確認。
 - **Aquila 日帰り**：4x4終日 From 2,895 ＋ 送迎 From 1,180 ＝ **From 4,075**（送迎料金は2026-10-31まで有効）。
 
@@ -92,7 +92,7 @@
 
 | 項目 | 理由 |
 |---|---|
-| SANParks の 2026-11〜2027-10 料金 | 未発表（現行表は 2026-10-31 まで） |
+| SANParks 2026/27料金の追加改定・居住者料金適用 | 2026-10-27に公式PDFで標準額を確認済み。予告なき改定、DHA発行の有効なStudy等の査証・許可と証明書類、現地窓口での適用は未確認。学校の学生証のみで割引確定としない |
 | 2027年のケーブルカー年次運休・冬の運行時間 | 未発表 |
 | ケーブルカー学生料金を語学学校の学生証で使えるか | 公式に条件記載なし（窓口のみ） |
 | Boulders の営業時間 | SANParks 現行ページが 403 |
@@ -104,11 +104,12 @@
 
 **問い合わせ文案（送信していない）**
 - Table Mountain Aerial Cableway：*Could you tell me the 2027 annual maintenance closure dates and the June–July operating hours? Is the student rate available with a private language school student card?*
-- SANParks：*When will the conservation fees for 1 Nov 2026–31 Oct 2027 be published?*
+- SANParks：*For a foreign passport holder with a valid DHA-issued study visa/permit, which documents are accepted to claim the South African conservation rate at Cape Point and Boulders? Are the published 2026/27 rates still applicable?*
 - Robben Island Museum：*What is the refund/reschedule policy when ferries are cancelled due to weather?*
 
-## 7. 調査ログ（2026-10-17）
+## 7. 調査ログ（2026-10-17／2026-10-27更新）
 
+- **2026-10-27公式再照合**：[SANParks 2026/27保全料PDF](https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf) と[料金区分・証明条件](https://www.sanparks.org/travel/book/useful-information/rates-fees)を直接確認。適用2026-11-01〜2027-10-31、通貨ZAR・税込・予告なき改定可能。外国人大人Cape Point R592、Boulders R282、Newlands/Oudekraal R230。南ア居住者料金の適用にはDHA発行の有効な許可と指定証明が必要で、個別の就学資格・現地適用は未確認。旧2025/26料金・「2026/27未発表」の表示を更新。
 - **方針**：旧ブランチ（`origin/research/4-sightseeing`、2026-10-16〜17）の記述を出発点に、主要な料金・時間を公式サイトで再取得。個人の在籍予定・学校・起点・費用合計を削除し、起点を市中心部に変更。費用は入場料の公式値の合計だけを示し、推計の交通・飲食は合計に入れない形に改めた。
 - **検索**：旧調査では Brave・DuckDuckGo・Bing・Mojeek・Yahoo が captcha／429／無関係な結果で使えず。今回は検索エンジンを使わず公式ドメインに直接アクセス。
 - **取得成功（今回）**：`https://cms.tablemountain.net/api`（GraphQL：ticketTypes、maintenance／refund 検索）、`https://www.tablemountain.net/our-blog/table-mountain-aerial-cableway-announces-2026-annual-maintenance-shutdown-dates`（WebFetch）、`https://www.tablemountain.net/our-blog/how-does-table-mountain-cableways-ticketing-work`（WebFetch）、`http://web.archive.org/web/20261010190236/https://www.sanparks.org/parks/table-mountain/rates-entry-fees`、`https://www.sanbi.org/gardens/kirstenboch/visitor-information/information/`、`https://zeitzmocaa.museum/plan-your-visit/`、`https://www.iziko.org.za/visit/`、`https://www.robben-island.org.za/`、`https://www.aquarium.co.za/visit-us/plan-your-trip`、`https://shop.aquarium.co.za/`（埋め込みデータ）、`https://theoldbiscuitmill.co.za/visitor-info/`、`https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/`、`https://www.myciti.org.za/en/myconnect-fares/get-your-myconnect-card/`、`https://winetram.co.za/`、`https://www.chapmanspeakdrive.co.za/tariff/standard.html`、`https://aquilasafari.com/day-trip-safaris/`、`https://aquilasafari.com/transport/`、`https://www.hermanus-whale-cruises.co.za/trip.php`、`https://www.hermanus-whale-cruises.co.za/whales.php`、`https://en.wikipedia.org/w/index.php?title=Cape_Town&action=raw`、`https://router.project-osrm.org/table/v1/driving/...`。

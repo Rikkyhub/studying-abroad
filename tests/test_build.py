@@ -83,9 +83,11 @@ class TotalsTest(unittest.TestCase):
         S, _, _ = run([row(id="A", currency="USD", std_local="10")])
         self.assertEqual(S["total"]["std"], 1500)
 
-    def test_scenario_fallback(self):
-        S, _, _ = run([row(id="A", std_local="100")])
-        self.assertEqual(S["total"], {"low": 100, "std": 100, "high": 100})
+    def test_scenario_blanks_are_not_implicitly_filled(self):
+        S, computed, _ = run([row(id="A", std_local="100")])
+        self.assertEqual(S["total"], {"low": 0, "std": 100, "high": 0})
+        self.assertEqual(computed[0]["est"], {"low": None, "std": 100, "high": None})
+        self.assertEqual(computed[0]["unpriced"], ["low", "high"])
 
     def test_budget_difference(self):
         S, _, _ = run([row(id="A", std_local="2600000")])
@@ -122,6 +124,15 @@ class ValidationTest(unittest.TestCase):
         p = self.validate([row(id="A", std_local="1"), row(id="A", std_local="1")])
         self.assertTrue(any("一意" in x for x in p))
 
+    def test_public_official_catalog_id_is_not_personal_number(self):
+        from check_public_data import without_official_catalog_ids
+        public = "公式 https://www.muji.com/jp/ja/store/cmdty/detail/4548718365739"
+        article = "公式 https://support.cambridgeenglish.org/hc/en-gb/articles/202838506-Guided-learning-hours"
+        self.assertNotRegex(without_official_catalog_ids(public), r"\b\d{9,}\b")
+        self.assertNotRegex(without_official_catalog_ids(article), r"\b\d{9,}\b")
+        self.assertRegex(without_official_catalog_ids("連絡先 09012345678"), r"\b\d{9,}\b")
+        self.assertRegex(without_official_catalog_ids("https://unknown.example/1234567890"), r"\b\d{9,}\b")
+
     def test_private_number_in_note(self):
         p = self.validate([row(id="A", std_local="1", note="booking 123456789")])
         self.assertTrue(any("個人情報" in x for x in p))
@@ -143,15 +154,15 @@ class UnpricedVsZeroTest(unittest.TestCase):
         self.assertIsNone(r["est"]["std"])
         self.assertIsNone(r["est"]["high"])
         self.assertEqual(r["unpriced"], ["std", "high"])
-        self.assertEqual(S["total"]["low"], 1500 + 61 * 150)
+        self.assertEqual(S["total"]["low"], 61 * 150)
         self.assertEqual(S["total"]["std"], 1500)  # 未計上は標準合計に0円としても加算されない
-        self.assertEqual([x["id"] for x in S["partial"]], ["AF-05"])
+        self.assertEqual([x["id"] for x in S["partial"]], ["B", "AF-05"])
 
     def test_totals_unchanged_by_unpriced_scenarios(self):
         S0, _, _ = run([row(id="B", std_local="1000")])
         S1, _, _ = run([row(id="B", std_local="1000"), row(id="C", low_local="500")])
         self.assertEqual(S1["total"]["std"], S0["total"]["std"])
-        self.assertEqual(S1["total"]["low"], 1500)
+        self.assertEqual(S1["total"]["low"], 500)
         self.assertEqual(S1["by_cat"]["予備費"]["std"], S0["by_cat"]["予備費"]["std"])
 
     def test_explicit_zero_is_zero_yen(self):
@@ -186,6 +197,15 @@ class UnpricedVsZeroTest(unittest.TestCase):
     def test_af05_is_unpriced_in_repo_data(self):
         r = {x["id"]: x for x in build.read_csv("expenses.csv")}["AF-05"]
         self.assertEqual((r["std_local"], r["high_local"]), ("", ""))
+
+    def test_af04_optional_pass_is_only_in_standard_scenario(self):
+        r = {x["id"]: x for x in build.read_csv("expenses.csv")}["AF-04"]
+        self.assertEqual((r["low_local"], r["std_local"], r["high_local"]), ("", "390", ""))
+        _, computed, _ = run([r])
+        self.assertIsNone(computed[0]["est"]["low"])
+        self.assertEqual(computed[0]["est"]["std"], 390 * FX["USD"]["rate"])
+        self.assertIsNone(computed[0]["est"]["high"])
+        self.assertEqual(computed[0]["unpriced"], ["low", "high"])
 
 
 class TaskDeadlineTest(unittest.TestCase):

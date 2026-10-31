@@ -12,6 +12,7 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+from check_public_data import without_official_catalog_ids
 SCHEMAS = {
     "expenses.csv": ["id", "category", "country", "phase", "item", "payee", "period_start", "period_end", "due_date", "status",
                      "currency", "low_local", "std_local", "high_local", "source", "collected_on", "recheck_by", "issue", "note"],
@@ -105,9 +106,13 @@ def check(name, rows):
             v = row[col]
             if v:
                 try:
-                    dt.date.fromisoformat(v)
+                    if name == "expenses.csv" and col in {"period_start", "period_end", "due_date"} and re.fullmatch(r"\d{4}-\d{2}", v):
+                        year, month = map(int, v.split("-"))
+                        dt.date(year, month, 1)  # Public monthly model; no personal itinerary day.
+                    else:
+                        dt.date.fromisoformat(v)
                 except ValueError:
-                    ERRORS.append(f"{label}:{col}: date must be YYYY-MM-DD")
+                    ERRORS.append(f"{label}:{col}: date must be YYYY-MM or YYYY-MM-DD for expense periods; otherwise YYYY-MM-DD")
         for (fname, col), allowed in ENUMS.items():
             if fname == name and row[col] not in allowed:
                 ERRORS.append(f"{label}:{col}: unknown value {row[col]!r}（{'/'.join(sorted(allowed))}）")
@@ -131,7 +136,7 @@ def check(name, rows):
         for col, v in row.items():
             if col in ("source", "issue") or v.startswith("http"):
                 continue
-            if any(p.search(v) for p in PRIVATE):
+            if any(p.search(without_official_catalog_ids(v)) for p in PRIVATE):
                 # 値そのものは出力しない（CIログへの露出防止）
                 ERRORS.append(f"{label}:{col}: 個人情報らしき値（番号・メール・電話）。公開リポジトリには書かない")
 

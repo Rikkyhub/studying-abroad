@@ -30,6 +30,7 @@
 | [バギオ（フィリピン語学留学）](../areas/baguio.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [世界地図（候補ルート）](../maps/world-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
 | [アフリカ地図（候補ルート）](../maps/africa-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
+| [アフリカ国別地図（国ごとのページへリンク）](../maps/africa-countries.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
 | [アフリカ周遊（5月）](../areas/africa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水](../research/africa-overland-7-9-countries.html) | [#44](https://github.com/Rikkyhub/studying-abroad/issues/44) | 調査中 | 2026-10-18 |
@@ -45,55 +46,68 @@
 | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
 | [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.html) | [#53](https://github.com/Rikkyhub/studying-abroad/issues/53) | 調査中 | 2026-10-20 |
 | [優先度2の準備タスク調査](../research/prep-priority2-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
+| [ケープタウン語学留学の学校選定（Deep Research）](../research/deep-research-report.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 調査中 | 2026-10-21 |
 | [予防接種・常備薬の一覧](../research/vaccines-and-medicines-checklist.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 調査中 | 2026-10-20 |
+| [南アフリカ（国別ページ）](../countries/south-africa.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [レソト（国別ページ）](../countries/lesotho.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [エスワティニ（国別ページ）](../countries/eswatini.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ナミビア（国別ページ）](../countries/namibia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ボツワナ（国別ページ）](../countries/botswana.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ジンバブエ（国別ページ）](../countries/zimbabwe.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ザンビア（国別ページ）](../countries/zambia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [モザンビーク（国別ページ）](../countries/mozambique.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [マダガスカル（国別ページ）](../countries/madagascar.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ケニア（国別ページ）](../countries/kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [タンザニア（国別ページ）](../countries/tanzania.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [エチオピア（国別ページ）](../countries/ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 
 ## タスクと Issue
 
 | ID | 優先 | 作業 | Issue | 状態 |
 |---|---|---|---|---|
-| T002 | 1 | フィリピン入国用の有効な出国航空券を確保 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 未着手 |
-| T003 | 1 | 留学先学校に就学許可（SSP）・滞在延長の手続き範囲と費用を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 未着手 |
-| T004 | 1 | 南ア留学先の候補校と南ア大使館に8週間語学就学の必要資格を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 未着手 |
-| T005 | 1 | 南ア入国時期ごとの再入国条件を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 未着手 |
+| T002 | 1 | フィリピン入国用の有効な出国航空券を確保 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 進行中 |
+| T003 | 1 | 留学先学校に就学許可（SSP）・滞在延長の手続き範囲と費用を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 進行中 |
+| T004 | 1 | 南ア留学先の候補校と南ア大使館に8週間語学就学の必要資格を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 進行中 |
+| T005 | 1 | 南ア入国時期ごとの再入国条件を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 進行中 |
 | T007 | 1 | 休職制度・税社保・住居と国内固定費の一般的な確認項目を整理 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 完了 |
 | T008 | 2 | 2都市の週末ダイビング交通と見積を取得 | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 進行中 |
 | T009 | 2 | 2都市の観光・雨天代替案を検証 | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) | 進行中 |
 | T010 | 2 | ケープタウンの食材価格と衣類実売価格を確認 | [#5](https://github.com/Rikkyhub/studying-abroad/issues/5) | 進行中 |
 | T011 | 1 | 外務省危険情報と旅行保険・医療連絡先を確認 | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 進行中 |
 | T-W01 | 1 | 休職・長期休暇制度を利用する場合の規定・承認手続きを確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 要確認 |
-| T-W02 | 1 | 休職する場合の社会保険料（本人負担分）の支払方法を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-W03 | 1 | 住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-W04 | 2 | 休職前後の休暇・復職手続きの規定を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-W05 | 2 | 休職中の海外渡航・緊急連絡体制の規定を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-W06 | 2 | 業務の引継ぎ計画（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-H01 | 1 | 賃貸契約の解約予告期間・退去費用を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-W02 | 1 | 休職する場合の社会保険料（本人負担分）の支払方法を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-W03 | 1 | 住民税の扱い（特別徴収継続・立替か普通徴収切替か）を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-W04 | 2 | 休職前後の休暇・復職手続きの規定を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-W05 | 2 | 休職中の海外渡航・緊急連絡体制の規定を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-W06 | 2 | 業務の引継ぎ計画（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-H01 | 1 | 賃貸契約の解約予告期間・退去費用を確認（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-H02 | 1 | 住居を残す場合と退去する場合の費用を比較（該当する場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
-| T-H03 | 2 | 荷物の保管先を決定（実家・トランクルーム・宅配型収納） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-H03 | 2 | 荷物の保管先を決定（実家・トランクルーム・宅配型収納） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-H04 | 3 | 電気・ガス・水道・ネットの解約／休止 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-H05 | 3 | 郵便転送届（e転居）・重要書類の受取先を決める | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
-| T-H06 | 2 | 住民票：国外転出届（海外転出届）が必要かを住民登録のある自治体に確認 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 要確認 |
-| T-P01 | 1 | 訪問国別の旅券残存期間と未使用査証欄を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 未着手 |
-| T-P02 | 2 | フィリピン eTravel 登録 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 未着手 |
+| T-H06 | 2 | 住民票：国外転出届（海外転出届）が必要かを住民登録のある自治体に確認 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-P01 | 1 | 訪問国別の旅券残存期間と未使用査証欄を確認 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 進行中 |
+| T-P02 | 2 | フィリピン eTravel 登録 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 進行中 |
 | T-P05 | 2 | 周遊国のビザ要否・費用を確定 | [#2](https://github.com/Rikkyhub/studying-abroad/issues/2) | 進行中 |
-| T-F01 | 2 | 日本→マニラ（往路）を購入 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-F02 | 2 | マニラ→南部アフリカ（周遊開始時）を購入 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-F03 | 3 | ケープタウン→日本（帰国便）を購入 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-F01 | 2 | 日本→マニラ（往路）を購入 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-F02 | 2 | マニラ→南部アフリカ（周遊開始時）を購入 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-F03 | 3 | ケープタウン→日本（帰国便）を購入 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-I01 | 1 | 海外旅行保険（約180日・アジア＋アフリカ）の見積・加入 | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 進行中 |
 | T-I02 | 1 | トラベルクリニック受診・予防接種計画（A型・B型肝炎・破傷風・腸チフス・狂犬病） | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 進行中 |
 | T-I03 | 2 | 黄熱ワクチンの要否判断（経由地・訪問国次第） | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 進行中 |
 | T-I04 | 2 | マラリア予防薬の相談（クルーガー・チョベ・ビクトリア滝方面に行く場合） | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 進行中 |
-| T-I05 | 3 | 歯科検診・常備薬・処方薬（英文処方箋） | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 未着手 |
+| T-I05 | 3 | 歯科検診・常備薬・処方薬（英文処方箋） | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 進行中 |
 | T-I06 | 3 | 協会けんぽ海外療養費の一般制度・申請様式を調査 | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 完了 |
-| T-M01 | 2 | 海外用クレジットカード2枚以上・デビットカードの準備 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-M01 | 2 | 海外用クレジットカード2枚以上・デビットカードの準備 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-M02 | 2 | 日本の携帯番号の維持方法を決める（povo0円・ahamo等） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-M05 | 3 | ふるさと納税・年末調整・確定申告の要否を確認 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
-| T-S01 | 1 | 留学先学校の入学案内・現地費用の2027年版を確認 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-S01 | 1 | 留学先学校の入学案内・現地費用の2027年版を確認 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-S02 | 1 | 2校目（南ア）の学校・期間を比較して選ぶ | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
-| T-S03 | 2 | 2校目の宿泊（ホームステイ等）を手配 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-T01 | 2 | 外務省 たびレジ登録（フィリピン・アフリカ各国） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-S03 | 2 | 2校目の宿泊（ホームステイ等）を手配 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-T01 | 2 | 外務省 たびレジ登録（フィリピン・アフリカ各国） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
 | T-T02 | 1 | 5月の周遊ルート確定・宿・ツアー予約 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
-| T-T03 | 2 | 渡航中の経費は非公開で記録し、公開用の見積を更新 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-R01 | 3 | 帰国後の住居・荷物の受け取り | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-R02 | 2 | 復職手続き・休職中の社会保険料等の精算（休職した場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-R03 | 3 | 海外療養費の申請（使った場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
-| T-R04 | 3 | 見積モデルの振り返り・ブログ記事化 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未着手 |
+| T-T03 | 2 | 渡航中の経費は非公開で記録し、公開用の見積を更新 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-R01 | 3 | 帰国後の住居・荷物の受け取り | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-R02 | 2 | 復職手続き・休職中の社会保険料等の精算（休職した場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-R03 | 3 | 海外療養費の申請（使った場合） | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |
+| T-R04 | 3 | 見積モデルの振り返り・ブログ記事化 | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 進行中 |

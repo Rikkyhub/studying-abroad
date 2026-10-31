@@ -51,7 +51,7 @@ class AreaPageTests(unittest.TestCase):
         self.assertEqual(cells[-2:], ["未計上", "未計上"])
         self.assertNotRegex(cells[-3], r"^¥0$")
         # 金額未入力の行は全シナリオ「未計上」
-        line = next(ln for ln in read("areas/baguio.md").splitlines() if "現地の生活費" in ln and ln.startswith("|"))
+        line = next(ln for ln in read("areas/africa.md").splitlines() if "ツアー外の食費" in ln and ln.startswith("|"))
         self.assertEqual(line.count("未計上"), 3)
         self.assertNotIn("¥0 |", line)
 

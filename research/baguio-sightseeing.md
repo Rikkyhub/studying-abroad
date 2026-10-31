@@ -1,6 +1,6 @@
 # バギオ週末観光（2〜4月）と季節・雨天代替
 
-- 確認日：2026-10-17／[Issue #4](https://github.com/Rikkyhub/studying-abroad/issues/4)
+- 初回確認：2026-10-17／公式追補：2026-10-27／[Issue #4](https://github.com/Rikkyhub/studying-abroad/issues/4)
 - 前提：**匿名モデルケース**（大人1名、平日は語学学校、週末の土日だけ動ける）。起点はバギオ市中心部の **Burnham Park**（公開の観光地。個人の滞在先・学校は起点にしない）。
 - 料金は**大人1名・入場料のみ**（交通・飲食は別）。**現地通貨（PHP）のまま**記載し、円換算はしない（[sources.md](sources.md) のとおり本資料では換算しない。参考レートは 各地域ページの「通貨と円換算」（[バギオ](../areas/baguio.md)・[アフリカ周遊](../areas/africa.md)・[ケープタウン](../areas/capetown.md)） にある）。
 - 「2027年」と書いていない料金・時間は、すべて**取得時点（2026年）の掲示値**。2027年の価格・営業時間を保証しない。
@@ -23,8 +23,8 @@
 | 1 | 市内の主要施設の料金はバギオ市公式の予約サイト **Baguio VISITA** のAPIで確認できた（2026-10-17 取得）。Botanical Garden **110**、Mines View **20**、Tam-awan **60**、BenCab **200**、Igorot Stone Kingdom **100**、Sky Ranch **50**、Mirador **100**、他は **0**（PHP） | 公式。ただし**外国人／居住者の区分、学生割引の有無は表示なし** |
 | 2 | Botanical Garden の**住民無料措置**（BLISTT圏の住民対象、Ordinance No. 62 s.2025、6か月間）は **2026年1月末で終了**。そもそも旅行者には適用されない | 報道（Daily Tribune 2026-02-18）。金額の記載なし |
 | 3 | 2〜4月は乾季。PAGASA 平年値（1991–2020）で降雨日数（1mm以上）は **2月3日・3月5日・4月8日**、5月は18日。雷雨日数は2月1日・3月3日・4月9日 | 公式（PAGASA） |
-| 4 | **2027年の聖週間**は 3/21（枝の主日）〜3/28（復活祭）。聖木曜 3/25・聖金曜 3/26。バス・宿が混む。**2027年の祝日指定は大統領布告が未発表** | 日付は計算値。祝日は未確認 |
-| 5 | **Panagbenga（花祭り）2027 の日程は未発表**。公式サイト panagbenga.com は「Launching Soon」表示のまま。2026年の日程を2027年に当てはめない | 公式サイトで未発表を確認 |
+| 4 | **2027年の聖週間**は 3/21（枝の主日）〜3/28（復活祭）。[フィリピン政府広報2026-09-11発表（Proclamation No. 1427）](https://pia.gov.ph/news/pbbm-declares-2027-regular-and-special-holidays)により3/25（聖木曜）・3/26（聖金曜）はregular holidays、3/27（聖土曜）はadditional special non-working day。学校の休講・補講、バスの特別運行、混雑状況は**未確認** | 祝日指定は政府一次資料で確認済み（2026-10-27）。聖週間の前後日程は暦による計算値。学校・交通の2027年実施条件は未確認 |
+| 5 | **Panagbenga（花祭り）2027 の日程は未発表**。[主催者公式サイト](https://www.panagbengaflowerfestival.com/)は2026年カレンダーを掲載。2027年の公式日程は未掲載（2026-10-27確認）。2026年の日程を2027年に当てはめない | 公式サイトで未発表を確認 |
 | 6 | 日帰りの現実的な範囲は**片道2時間以内（推計）**の市内・La Trinidad・Tuba・Mt. Ulap。Sagada・La Union は**1泊2日**、Banaue/Batad は**夜行利用で金曜夜発**が前提、Vigan は週末では非推奨 | 時間はOSRM推計。バス時刻の公式確認は Banaue（Ohayami 21:00）のみ |
 
 ## 2. 市内（Baguio VISITA 公式データ）
@@ -64,11 +64,16 @@
 |---|---|---|---|---|---|---|
 | Mt. Ulap（Itogon） | 22km／約45分 | ジープニー・タクシー（運賃**未確認**） | 登録料・ガイド料**未確認** | ガイド要否も**未確認** | 日帰り可（料金要確認） | [Maps](https://www.google.com/maps/search/?api=1&query=Mt+Ulap+Ampucao+Itogon) |
 | Kabayan | 84km／約1.8時間 | バス・バン・ジープニー（口コミ） | 一部施設は寄付制（口コミ） | 未確認 | 日帰りは長い。1泊推奨 | [Maps](https://www.google.com/maps/search/?api=1&query=Kabayan+Benguet) |
-| La Union（San Juan） | 85km／約2時間 | バス・バン（運賃・時刻**未確認**） | サーフレッスン料金**未確認**（口コミの値は2010年で古く不採用） | 不要 | 日帰りまたは1泊2日 | [Maps](https://www.google.com/maps/search/?api=1&query=Urbiztondo+Beach+San+Juan+La+Union) |
+| La Union（San Juan） | 85km／約2時間 | バス・バン（運賃・時刻**未確認**） | 個別サーフレッスンの2027年料金は**未確認**。学校主催2025年ツアー例はバン＋昼食 PHP1,700／同条件＋1時間サーフ PHP2,300（下記） | 不要 | 日帰りまたは1泊2日 | [Maps](https://www.google.com/maps/search/?api=1&query=Urbiztondo+Beach+San+Juan+La+Union) |
 | Sagada | 140km／約2.9時間 | GL Trans／Lizardo Trans、6:00〜13:00に複数便、約6時間、**PHP220**、**聖金曜は1便のみ**（口コミ：Wikivoyage） | 登録・環境料 **100**（口コミ、2025年6月時点）、洞窟の連結ツアー 1名 **800**（口コミ、年度不明） | 到着後に町の観光案内所で登録。洞窟はガイド同行 | **1泊2日なら可** | [Maps](https://www.google.com/maps/search/?api=1&query=Sagada+Municipal+Tourism+Office) |
 | Mt. Pulag | Kabayan方面 | チャーター、またはツアー | **2026/2027年の入山料は公式で未確認** | DENR の許可・オリエンテーション・診断書が必要とする情報（口コミ、2015年） | ツアー利用の1泊2日。要確認事項が多い | [Maps](https://www.google.com/maps/search/?api=1&query=Mt+Pulag+DENR+Visitor+Center+Ambangeg) |
 | Banaue／Batad | 187km／約3.7時間 | **Ohayami Bus がバギオ（Governor Pack Rd）21:00発**（公式：Ifugao州） | 料金**未確認**（公式に記載なし） | Batad は徒歩 | **金曜夜発の夜行＋1泊**なら可 | [Maps](https://www.google.com/maps/search/?api=1&query=Batad+Rice+Terraces) |
 | Vigan | 230km／約4時間 | バス会社・運賃**未確認** | 未確認 | 不要 | 週末では非推奨 | [Maps](https://www.google.com/maps/search/?api=1&query=Calle+Crisologo+Vigan) |
+
+### San Juan（La Union）学校主催ツアーの過去実績（2025年の例）
+
+- [PINES公式サイトの2025-10-14掲載記事](https://pinesacademy.edu.ph/kor/index)は、学校主催San Juanツアーの**当時のパッケージ価格**として、A：PHP 1,700（バン移動・昼食・飲料）、B：PHP 2,300（Aに1時間のサーフィンレッスンを追加）を掲載。**差額PHP 600は当時のパッケージ差額であり、単独レッスンの市場価格ではない**。
+- 掲載記事の行程例は10:00出発・21:00バギオ帰着。これは**2025年の開催実績**で、2027年の催行・料金・参加条件・移動時間・門限適合を保証しない。学校のフロントに最新の募集日・人数・含有費用・帰着時刻を確認する。確認日：2026-10-27。通貨：PHP。
 
 - Victory Liner（公式）：オンライン予約は First Class・Royal Class のみ。**2026-10-17〜10-19 はQRコード式発券への移行でオンライン・事前予約を停止**（当日窓口販売は継続）との告知。2027年の予約方法は再確認する。
 
@@ -95,8 +100,9 @@
 
 | 期間 | 内容 | 2027年の扱い |
 |---|---|---|
-| 例年2月〜3月上旬 | Panagbenga（花祭り）。2026年の開催実績は報道あり | **未発表。2027年の開催日は確定していない** |
-| 2027-03-21〜28 | 聖週間（計算値） | 日付は確実。祝日指定は未発表 |
+| 例年2月〜3月上旬 | Panagbenga（花祭り）。[主催者公式](https://www.panagbengaflowerfestival.com/)は2026年カレンダーを掲載 | **2027年の開催日・パレード日は未発表**（2026-10-27確認） |
+| 2027-02-06 | 旧正月（Chinese New Year） | [Proclamation No. 1427](https://pco.gov.ph/news_releases/pbbm-declares-2027-regular-and-special-holidays/)で追加特別休日と指定。学校の授業・入寮・送迎、交通の運用は未確認 |
+| 2027-03-21〜28 | 聖週間（復活祭の日付は計算値） | [Proclamation No. 1427](https://pco.gov.ph/news_releases/pbbm-declares-2027-regular-and-special-holidays/)により3/25・3/26はregular holidays、3/27はadditional special non-working day。学校休講・補講、交通の特別運行は未確認 |
 
 **雨天代替**：BenCab Museum（200、屋内）、Tam-awan のギャラリー（60）、Ili-Likha（0）、Baguio Cathedral（0）、市場での食べ歩き（費用は推計）。
 
@@ -117,7 +123,7 @@
 | Mt. Pulag・Mt. Ulap の入山料・ガイド料・予約方法（2027年） | DENR関係サイトが 403／名前解決不可。公式ページ未発見 |
 | Sagada の公式料金 | 町の公式サイトが再構築中。口コミ値で代用 |
 | La Union・Vigan 行きのバス会社・運賃・時刻、Ohayami の運賃 | 公式時刻・運賃表を取得できず |
-| Panagbenga 2027、2027年の祝日 | 未発表 |
+| Panagbenga 2027、2/6旧正月・聖週間の学校休講・補講・特別交通運行 | 主催者公式は2026年カレンダーのみ掲載（2026-10-27確認）。国の2027年2/6・3/25〜27祝日区分はProclamation No. 1427で確認済み。学校・交通事業者の個別運用は未確認 |
 | タクシー公式運賃（LTFRB） | 未取得 |
 | 所属先の外泊・門限規則 | 個別に確認する事項（本資料には記載しない） |
 
@@ -129,6 +135,6 @@
 
 - **方針**：2026-10-16〜17 の旧ブランチ（`origin/research/4-sightseeing`）の記述を出発点に、主要な料金・時間を公式サイトで再取得。個人の滞在先・学校・費用合計は削除し、起点を公開の観光地に変更。
 - **検索クエリ（旧調査、2026-10-16〜17）**：「visita baguio park tickets entrance fee botanical garden」（Brave、成功）、「Baguio Botanical Garden entrance fee P100 tourists 2026 ordinance」（captcha）、「Mt Pulag entrance fee DENR 2026」系6種（Brave・DDG・Bing・Mojeek・Yahoo、すべて失敗）、「Panagbenga 2026 schedule grand street dance float parade」（captcha）。今回（2026-10-17）は検索エンジンを使わず公式ドメインに直接アクセス。
-- **取得成功（今回）**：`https://api-booking.baguio.visita.ph/api/parks`（curl、16件）、`https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/cad/CLIMATOLOGICAL%20NORMALS%20(1991-2020)/BAGUIO.pdf`（WebFetch で保存したPDFを読取）、`https://ifugao.gov.ph/getting-here/`、`https://mountainprovince.gov.ph/the-province/getting-here/`（バギオ発の具体情報なし）、`https://www.victoryliner.com/`、`https://panagbenga.com/`（Launching Soon）、`https://tribune.net.ph/2026/02/18/residents-now-must-pay-for-baguio-botanical-garden`（WebFetch）、`https://en.wikivoyage.org/w/index.php?title=Sagada&action=raw`、`https://router.project-osrm.org/table/v1/driving/...`（距離・時間）。
+- **取得成功（今回）**：`https://api-booking.baguio.visita.ph/api/parks`（curl、16件）、`https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/cad/CLIMATOLOGICAL%20NORMALS%20(1991-2020)/BAGUIO.pdf`（WebFetch で保存したPDFを読取）、`https://ifugao.gov.ph/getting-here/`、`https://mountainprovince.gov.ph/the-province/getting-here/`（バギオ発の具体情報なし）、`https://www.victoryliner.com/`、`https://panagbenga.com/`（旧調査時の未整備サイト。2026-10-27に[主催者公式](https://www.panagbengaflowerfestival.com/)を別途確認）、`https://tribune.net.ph/2026/02/18/residents-now-must-pay-for-baguio-botanical-garden`（WebFetch）、`https://en.wikivoyage.org/w/index.php?title=Sagada&action=raw`、`https://router.project-osrm.org/table/v1/driving/...`（距離・時間）。
 - **失敗**：PAGASA PDF の WebFetch 本文抽出（バイナリのため。保存PDFの読取で代替）。旧調査での失敗：newsinfo.inquirer.net・mb.com.ph・pia.gov.ph・bmb.gov.ph・car.denr.gov.ph/mt-pulag（403）、mtpulag.denr.gov.ph（DNS）、banaue.gov.ph・benguet.gov.ph（接続不可）、main.baguio.gov.ph（JavaScript で本文なし）、sagada.gov.ph（再構築中）。
 - **計算**：復活祭の日付（2027-03-28）は計算アルゴリズムによる。

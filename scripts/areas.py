@@ -266,6 +266,8 @@ def maps_block(root: Path):
     out = []
     if world and africa:
         out += ["- [世界地図（移動の全体像）](../maps/world-map.html)", "- [アフリカ地図（周遊ルート案）](../maps/africa-map.html)"]
+        if (root / "maps" / "africa-countries.html").exists():
+            out += ["- [アフリカ国別地図（国を押すと、その国の観光地・食べ物・ビザ・安全のページへ）](../maps/africa-countries.html)"]
     else:
         out += ["世界地図とアフリカ地図は別のPRで準備中で、このブランチにはまだありません。公開後にここへリンクを追加します。"]
     out += ["", "主要な空港・国境・国立公園の地図リンクは、上の「場所と地図」の表と [アフリカ周遊ルート比較（主要地点のGoogle Mapsリンク）](../research/africa-route-comparison.md) にあります。"]

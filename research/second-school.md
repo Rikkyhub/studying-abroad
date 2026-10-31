@@ -1,28 +1,28 @@
-# 06 2カ国目の語学留学（2027年6〜7月）ケープタウン【検討中】
+# 06 ケープタウン語学留学8週間の比較モデル【未確定】
 
 - 情報収集日: 2026-10-16
-- 最終更新: 2026-10-24（IH 2026授業・宿泊料金、2027適用不可の期間、UCT料金表の表示差を公式再照合。入国条件は [visa-and-immigration.md](visa-and-immigration.md) が正本）
+- 最終更新: 2026-10-17（リポジトリへ統合。詳細な入国条件は [visa-and-immigration.md](visa-and-immigration.md) が正本）
 - **状態: 未確定。** 学校・日程・宿泊・費用はすべて検討段階です。ここに書いた金額は公式料金表に基づく**見積**で、確定ではありません。
 
 ## 1. 計画案
 
 | 項目 | 案 | 状態 |
 |---|---|---|
-| 目的 | フィリピンで伸ばした英語を、グループ授業・ネイティブ環境で実践する | 本人計画 |
+| 目的 | グループ授業と実践英語の学習条件を比較する | 一般モデル |
 | 都市 | ケープタウン（南アフリカ） | 検討中 |
-| 期間 | 8週間。**2027年6〜7月**（毎週月曜開講に合わせて開始週を決める案。宿泊は前後1日程度を加える） | 検討中 |
-| 比較対象校 | UCT English Language Centre／Good Hope Studies／International House Cape Town | いずれも未選定 |
+| 期間 | 8週間（南半球の冬季を想定した一般モデル。開始週と宿泊日数は学校条件で調整） | モデル前提 |
+| 比較対象校 | UCT English Language Centre（UCT ELC） | 比較例 |
 | 宿泊 | ホームステイ（共用バス）またはレジデンス | 未確定 |
-| 帰国 | 2027年7月下旬にケープタウンを出発 | 未確定 |
+| 終了時期 | 8週間の受講終了後に移動する仮定（暦日程なし） | モデル前提 |
 
 - UCT ELC は**毎週月曜開講**なので、開始日は月曜に合わせる案です（[UCT ELC 予約案内](https://uctlanguagecentre.com/enroll/booking-and-payment/booking-information)）。
-- 6月中旬の祝日（Youth Day）は授業が振替なしです（GHS・IH の料金表に記載）。
+- **2027年6月16日（水）はYouth Dayの南ア全国祝日**（[南ア政府の2027年祝日一覧](https://www.gov.za/about-sa/public-holidays)、2026-10-25確認）。学校ごとの休校・振替の有無は別条件であり、UCT ELCの2027年休校カレンダーは未確認。GHS・IHの授業規定をUCTへ自動適用しない。
 
 ## 2. 費用（見積）
 
 ### 2-1. UCT ELC（**2027年版**公式料金表、ZAR）
 
-出典: [UCT ELC Price List 2027](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027)（「2027年開始のコース・宿泊」に適用）
+出典: [UCT ELC Price List 2027](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027)（2026-10-25直接確認）。**同じ2027年ページ内に異なる料金表が2組併記されているため、以下は上段の「表A」に基づく条件付き試算であり、2027年の確定見積ではない。**
 
 | 項目 | 週額（8〜11週の料金帯） | 8週 | 円換算（1ZAR＝9.59円） |
 |---|---|---|---|
@@ -42,7 +42,8 @@
   - Standard＋ホームステイ（共用バス）＋登録料＋送迎片道＝**R 84,870（約81.4万円）**
   - Intensive に替えると **R 100,150（約96.0万円）**
 - 1クラス最大15人、1レッスン50分、6レベル。
-- 2026年版のページには、ラベルのない料金が2組載っています。2027年版の数値を採用しましたが、学校への確認を推奨します（elc@uct.ac.za）。
+- **2027年版ページそのものに2組の料金表がある**（上段と下段に適用時期の区別なし）。8〜11週の週額は、表A／表Bの順にStandard **R 5,540／R 5,120**、Semi-Intensive **R 6,570／R 6,070**、Intensive **R 7,450／R 6,880**。ホームステイ共用バスは **R 4,850／R 4,200**、空港片道送迎は **R 750／R 700**。登録料は両表R 1,000。
+- **8週の同条件比較（ZAR、単純計算）**：Standard＋ホームステイ共用バス＋登録料＋片道送迎は**表A R 84,870／表B R 76,260（差R 8,610）**。Intensiveで同条件なら**表A R 100,150／表B R 90,340（差R 9,810）**。為替・保険・通学費等は含まない。どちらが有効かを学校へ書面で確認するまでは、表Aだけを正式価格と扱わない。2027年の変更可能性も残る。
 
 ### 2-2. 参考：他校の公式料金（学校選びの参考。比較が目的ではありません）
 
@@ -50,14 +51,37 @@
 |---|---|---|---|---|---|---|
 | Good Hope Studies | 2027（EUR） | €2,680（20レッスン） | €3,680（30レッスン） | €260（朝夕食付）／€185（朝食のみ） | 入学金€60・宿泊手配€40・送迎片道€40 | [GHS 2027](https://www.ghs.co.za/fileadmin/user_upload/www.ghs.co.za/FILES/Downloads/GHS_Price_list_2027.pdf) |
 | International House Cape Town | 2026（USD） | $2,456（15時間） | $3,248（23時間） | $230（朝食付）／$280（2食付） | 登録$65・宿泊手配$45（送迎込み） | [IH 2026](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Pricelist.pdf) |
-| International House Cape Town（Business English） | 2026（USD、**2027年には適用未確認**） | — | **$3,248（23時間/週×8週、$406/週）** | Green Point 学生寮6人部屋・食事なし **$175/週**（8週 $1,400、別料金） | 登録$65・宿泊手配$45。教材は登録料に含む | [IH授業料2026](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Pricelist.pdf)／[IH宿泊2026](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Accommodation.pdf) |
 | Cape Town School of English | 年不明（ZAR） | 約R 13,300（午前のみ・2か月） | 約R 23,000（全日・2か月） | R 3,300 | 教材R 350 | [CTSE](https://ctenglish.co.za/prices/) |
 
 EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL・Lewis は料金を確認できませんでした。
 
-**IH Business English の内容・適用期間（2026-10-24公式再確認）**：IHの[コース案内](https://ihcapetown.com/courses/business-english/)は週23時間、会議・プレゼン・交渉・電話応対・ビジネス文書等を扱う。8週間の授業料 $406×8＝**USD 3,248**（2026料金、一般英語Intensiveと同額）。[公式約款](https://ihcapetown.com/terms-and-conditions/)では料金表の有効期間を **2025-11-01〜2026-10-31** と明記しているため、2027年料金として使用しない。学校の2027年見積・受講可能レベル・授業開講・査証区分は未確認。[ESPコース](https://ihcapetown.com/courses/english-for-specific-purposes/)のB1以上要件は**ESP固有**であり、Business English全体の要件と推定しない。宿泊を組み合わせる場合の計算例は Business授業料 $3,248＋Green Point学生寮6人部屋（食事なし）$175×8＋登録$65＋宿泊手配$45＝**USD 4,758**（2026公表価格からの試算、食費・保険・通学・為替・2027年改定を含まない）。2027年の価格と空室・授業は学校への正式照会が必要。
+### IH Cape Town Business English：main側の公式調査を統合（2026-10-26再確認）
 
-**UCT ELC料金ページの表示上の留意点（2026-10-24）**：[2027年価格ページ](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027)にグループ授業の料金表が**2組**表示される。上段の8〜11週帯はStandard R5,540／Semi R6,570／Intensive R7,450、下段はR5,120／R6,070／R6,880で、両者の適用範囲の表示が明瞭でない。上記の2027見積は上段を採用した暫定モデルであり、申込前に学校へ該当表を確認する。
+[IH公式Business English案内](https://ihcapetown.com/courses/business-english/)では**週23時間**、毎週月曜開始、会議・プレゼン・交渉・電話応対・ビジネスメール/報告書などを扱う。**公式資料間で授業形式に不一致**：[Business English公式Web](https://ihcapetown.com/courses/business-english/)は月〜木の「2 Hours Private Business English」と記載する一方、[2026年公式パンフレット8ページ](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)は同じ時間帯を「2 hours focus lessons (Mon.-Thurs.)」と記載し、個別授業とは明記していない（2026-10-28両資料直接確認）。毎日のPSPは別枠の自主・支援学習（教員対学習者1:6）。**週23時間全体、または月〜木の8時間が確実にマンツーマンとは判断しない**。具体的な時間割、開講人数、2027年のBusinessコース実施・入学可能な英語レベルは学校確認待ち。**2026年公式パンフレット8ページにはBusiness English希望者の最低英語レベルB1が明記されている**（[IH Cape Town 2026 brochure](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)、2026-10-28直接確認）。これはESPのB1要件からの推定ではなくBusiness Englishの独立した掲載条件。2027年の適用、実際のクラス編成、レベル判定方法、入学時にB1未達の場合の変更可否は学校回答待ち。
+
+**2026-10-28｜PSPの教師配置を公式確認**：[IH公式Personal Study Programme](https://ihcapetown.com/courses/personal-study-programme/)は英語コースに1日1時間のPSPを含むと説明し、教員対学習者の比率を**1:6**と掲載。PSPは個人学習またはグループ学習に教師が助言する時間であり、**1日1時間のマンツーマン授業を保証するものではない**。Business English公式コース案内の「1日1時間PSP」とも整合（[公式コース](https://ihcapetown.com/courses/business-english/)）。2027年の実施形式・個別指導時間・開講人数は未確認。
+
+[IH公式利用規約](https://ihcapetown.com/terms-and-conditions/)では、掲載料金表の適用期間を**2025-11-01〜2026-10-31**と記載。**2027年の授業・宿泊料金は未確定**であり、下記2026年USD価格を2027年の確定見積にしない。規約上は授業開始21日前までの全額支払い、修了証には80%以上の出席、祝日休校分は原則補講なし（プライベート授業は例外）、保険の証明は開始7日前までとされる。**2027年の規約改定と本人の申込・支払・保険加入は未確認**。南アの観光入国免除と語学就学の適格性は別途在日大使館/学校へ確認する。
+
+**2026-10-27｜IH校舎所在地とGreen Point宿泊モデルの区別（T-S02）**：[IH Cape Town公式サイト](https://ihcapetown.com/)および[2026年学校パンフレット](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed-1.pdf)は校舎所在地を **3rd Floor, 35 Wale Street, Cape Town 8001（中心市街地）** と案内。**Green PointをIHの校舎所在地として扱わない**。Green Point地区の宿泊施設を想定した通学は別地点間の移動であり、[MyCiTi公式経路検索](https://www.myciti.org.za/en/routes-stops/plan-your-journey/)で両地点の停留所・徒歩区間・乗継・実際の距離帯・授業時刻の安全性を確認してから運賃モデルに当てはめる。0〜5km／5〜10kmの前掲80乗車試算は**経路未確定の条件付きモデル**で、確定通学費ではない。**2027年の授業実施場所、交通ダイヤ・運賃・夜間安全性は未確認**。学校への所在地・教室・通学推奨手段の確認、本人の宿泊選択・申込は未実施。確認日：2026-10-27、通貨：ZAR（交通費は上記2026/27年参考値）。
+
+**2026-10-28｜英語＋ボランティア（学校の任意プログラム）**：[IH Cape Town 2026年公式パンフレット pp.16–17](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)は「English & Volunteer」を平日午前の英語授業（例08:30〜12:45）と午後の活動（例13:00〜17:00）の組合せとして案内。Adventure Surf Club（子どものサーフィン・水泳等）とSports & Youth Development（子どものスポーツ支援）の2例を掲載し、学校から活動先への送迎を提供すると説明。2026年の紹介例であり、通常のBusiness Englishに無料で付く活動とは確認できない。
+
+**別商品・費用の区別**：同パンフレットp.18の「English first, then Volunteer」は授業の前後に参加する別商品で、宿泊・交通・食事・活動先への寄付等を賄う参加費が必要と明記。**金額・通貨の掲載は確認できず、2027年の実施日・空き・年齢/英語条件・安全管理・就学/ボランティア活動に必要な在留資格は未確認**。学校の2027年プログラム案内・正式見積と南ア当局の活動許可区分を取得するまで、費用0円・参加可能と扱わない。申込・支払・問い合わせは未実施。
+
+### 2-2a. 宿泊の一次比較（T-S03、IH Cape Town 2026年参考条件）
+
+出典：[IH Cape Town 公式2026年宿泊料金表（USD）](https://ihcapetown.com/wp-content/uploads/2026/01/2026-English-USD-Accommodation.pdf)・[IH公式宿泊案内](https://ihcapetown.com/accommodation/)・[IH公式2026年パンフレット](https://ihcapetown.com/wp-content/uploads/2026/01/2026-Brochure-Low-Res_compressed.pdf)（2026-10-26閲覧）。以下は**2026年表示の学生1名・週額の参考料金**。2027年6〜7月の料金・空室・部屋割り・食事・返金条件を保証しない。
+
+| 学校提供の宿泊候補 | 2026年表示週額（USD） | 含まれる条件（学校資料） | 未確認事項 |
+|---|---:|---|---|
+| Student Apartment Single | $285 | 専用バス・簡易キッチン。建物にWi-Fi・ランドリー設備の案内あり | 2027年料金・ランドリー実費・空室 |
+| Student Apartment Executive Studio | $305 | 専用バス・簡易キッチン | 2027年料金・空室 |
+| Homestay Single（共用バス・朝食） | $240 | 朝食付き（Bed & Breakfast） | 通学時間・家庭ごとの設備・2027年料金 |
+| Homestay Single（共用バス・朝夕食） | $295 | Half Board | 食事の具体的内容・2027年料金 |
+
+- **比較・次の実行可能な一手**：学校提供宿泊と自力手配の宿泊候補について、2027年の週額総額・手配料・デポジット・キャンセル・チェックイン/アウト・食事・通学安全性・ランドリー・部屋の人数を同じ条件で照合する。宿泊先と学校の確定後、正式見積を取得する。予約・支払・問い合わせは未実施。
+- 2026年版の金額を2027年確定価格として予算CSVに計上しない。これは**手配そのものの完了ではなく、T-S03の一般比較調査着手**である。
 
 ### 2-3. 生活費（ケープタウン）
 
@@ -72,9 +96,29 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 | Vodacom データ | 1GB R 85／30GB R 699／100GB R 999 | [Vodacom 公式](https://www.vodacom.co.za/vodacom/shopping/data/data-for-your-smartphone)（有効期間は記載なし） |
 | Uber | 公式の料金表なし。アプリで見積 | — |
 
+**2026-10-27｜MyCiTi通学費の8週比較（2026/27年の参考料金・未予約）**：運営者の[2026-07-01運賃改定案内](https://www.myciti.org.za/en/contact/media-releases/fare-adjustments-2026/)と[月間パス公式案内](https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/)を照合。0〜5km・乗継による追加距離なし・平日20日/月×往復2回＝40乗車/月と仮定すると、Mover従量払いは**R600〜780/月**（Saver R15／Peak R19.50）、2か月80乗車で**R1,200〜1,560＋新規カードR40**。月間パスは**R1,500/月×2＝R3,000＋カードR40**で、この条件なら従量払いが**R1,440〜1,800安い**（計算値、交通手段の安全性・実際の通学経路を保証しない）。**距離帯が5〜10kmの場合**は2026/27公式Mover片道Saver R19.50／Peak R25.50なので、同じ80乗車モデルでは**R1,560〜2,040＋カードR40**、2か月パスとの差は**R960〜1,440**で従量払いが安い（2026/27参考額）。Peakは平日06:45〜08:00・16:15〜17:30に乗車を開始した場合で、その他はSaver。公式案内では45分以内の乗継は通算距離に基づく1運賃となるが、乗継地点・実距離は未確認（[MyCiTi従量払い公式](https://www.myciti.org.za/en/myconnect-fares/pay-as-you-go/)）。**月間パスの損益分岐（R1,500／1か月、片道単価一定のモデル）**：0〜5kmではSaver **100乗車で同額、101乗車から従量払いが高い**／Peak **77乗車から従量払いが高い**。5〜10kmではSaver **77乗車から**／Peak **59乗車から**従量払いが高い。通学以外の乗車も含めて判断する。**月間パスは購入月末までではなく初回タップによる有効化から1か月**（例：6月12日有効化→7月11日まで）で、2か月連続購入も可能（[MyCiTi月間パス公式](https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/)）。**2026年8月11日からオンラインで月間パスをチャージ可能**だが、公式案内ではバス上の有効化に最大24時間かかる場合があり、駅の端末での有効化が推奨される。旧型EMVカードでは月間パスを使えない（[MyCiTi公式2026-08-11発表](https://www.myciti.org.za/en/contact/media-releases/monthly-pass-now-available-online/)）。2026-10-27確認。2027年のカード仕様・運賃・運行は未確認。**運賃は毎年7月1日に改定され得るため、2027年6〜7月の8週間にこの単価を一律適用しない**。2027年7月以降の料金・実際の停留所と学校までの徒歩区間・運行時刻・通学安全性は未確認。最終的な通学手段は現地状況と学校回答を踏まえて判断する。
+
 - ホームステイに食事が含まれるかで食費が大きく変わります。UCT ELC のホームステイの食事条件は**未確認**です。
 
+### 2-5. テーブルマウンテン往復ケーブルカー（2027年6月に1回乗る公開モデル）
+
+- **公式料金の適用期間：2026-07-01〜2027-06-30**。2026-10-29に[Table Mountain Aerial Cableway公式料金](https://www.tablemountain.net/plan-your-visit/ticket-prices/)と[学生特典の公式条件](https://www.tablemountain.net/plan-your-visit/student-special)を直接確認。
+- 一般大人往復：オンライン **ZAR 475**、現地窓口 **ZAR 530**。18歳以上で**有効な学生証を提示できる国内・海外学生**は窓口で往復 **ZAR 320**（オンライン不可）。一般オンラインとの差額 **ZAR 155** は条件付きの価格差であり、学校から学生証が発行されるとは限らない。
+- `data/expenses.csv` の SC-09 は「2027年6月の往復乗車1回」だけの費用モデルとして、低＝学生窓口320／標準＝一般オンライン475／余裕＝一般窓口530 ZAR。その他の週末観光・現地交通は含まない。**7月2027の新年度運賃、学生証の発行可否、悪天候による運休は未確認**。料金改定・営業日は渡航前に公式サイトで再確認し、購入や予約は本人判断。
+- [公式アクセス案内](https://www.tablemountain.net/plan-your-visit/getting-here)はMyCiTi 106/107系統からKloof Nek側で降り無料シャトルに接続する一般案内を掲載。**2027年の時刻・乗継・安全性は未確認**で、交通費はSC-09に加算しない。
+
 ### 2-4. 帰国便（ケープタウン→東京 片道）
+
+**2026-10-26公式航空会社調査（T-F03・購入未実施）**
+
+| 公式事業者 | 2026-10-26に確認できたこと | 未確認／比較条件 |
+|---|---|---|
+| Emirates | [CPT→NRT](https://www.emirates.com/jp/english/destinations/cpt/nrt/flights-from-cape-town-to-tokyo-narita/) と [CPT→HND](https://www.emirates.com/jp/english/destinations/cpt/hnd/flights-from-cape-town-to-tokyo-haneda/) の公式運航検索ページに乗継便の例がある | 2027年7〜8月の希望日での片道総額、経由・乗継時間、機内/預入荷物、変更・取消条件、運航日 |
+| Ethiopian Airlines | [CPT→Tokyo公式運賃検索](https://www.ethiopianairlines.com/en-et/flights-from-cape-town-to-tokyo) がある | 取得したページでは具体便・運賃を確認できない。2027年の乗継・片道運賃・受託手荷物は未確認 |
+
+- **比較の順番**：第2校の終了日と、終了後に別の国へ立ち寄るかを確定 → CPT→NRT/HND（必要ならJNB発も）を**同一の片道日付・人数・荷物条件**で各社公式検索 → 総額と乗継/変更条件を比較 → 本人が購入判断。2026年の表示便を2027年の確定運航・予約可能便と扱わない。
+- 下記KAYAKの円価格と「7月は2番目に高い月」は集計時期・検索条件が不明な**旧参考値**。2027年7〜8月の価格根拠や予約判断には使用しない。公式検索で価格未取得のため**通貨別の2027年片道価格は未確認**。
+
 
 - KAYAK 日本版（期間を限らない参考値）: 最安 ¥79,285（カタール航空・ドーハ経由）、一般的な価格帯 ¥86,706〜¥111,961（[KAYAK](https://www.kayak.co.jp/flight-routes/Cape-Town-CPT/Tokyo-TYO)）。
 - 7月は1年で2番目に高い月です（[KAYAK US](https://www.kayak.com/flight-routes/Cape-Town-CPT/Tokyo-TYO)）。
@@ -132,10 +176,10 @@ EC Cape Town は「€345／週〜」のみ確認（年不明）。Kaplan・LAL�
 ## 7. 未確認事項
 
 1. UCT ELC の2027年の休校日と、6月の開講日の一覧。
-2. 2026年版ページにある2組の料金のどちらが正しいか。
+2. **2027年版ページ内**の表A・表Bのどちらが適用されるか（8週Standard＋ホームステイ＋送迎でR 8,610差）。学校へ適用時期・料金確定条件を確認する。
 3. ホームステイの食事条件・通学時間。
 4. 90日ルールと周辺国への出入国の関係（大使館に確認）。
-5. 7月下旬の帰国便の価格（2027年7月便はまだ販売前）。
+5. 2027年7〜8月の帰国便の片道総額・発売/空席・乗継・荷物条件（日付指定の公式検索は未実施）。
 6. MTN の料金、空港から市内への MyCiTi 運賃。
 
 ## 参考リンク
