@@ -178,7 +178,7 @@
 | トーフ Peri-Peri Divers：1ダイブ（器材込み） | 4,000MZN | 適用年記載なし（2026-10-29確認） | [Peri-Peri Divers](https://www.peri-peridivers.com/pdf/peri-peri-divers-price-list-tofo.pdf) |
 | トーフ：SSI オープンウォーター／オーシャンサファリ（シュノーケル） | 32,000MZN／3,600MZN | 同上 | 同上 |
 | トーフ：1本（自己器材）／Reef Tax／遠方追加 | MZN3,400／MZN400（場所・週）／MZN400 | 適用年記載なし（2026-10-29確認） | [Peri-Peri Divers公式料金表](https://www.peri-peridivers.com/pdf/peri-peri-divers-price-list-tofo.pdf) |
-| ビクトリアの滝 ジンバブエ側（Rainforest main gate） | USD 58（外国人一般入場、2026年掲載） | 2026-02-16公表／2027年未確認 | [Zambia TourismによるZimParks料金改定案内](https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/)（ZimParks 2026年PDFは2026-10-29直接取得404、検索抽出のみ） |
+| ビクトリアの滝 ジンバブエ側（Rainforest main gate） | USD 58（外国人一般入場、2026年掲載） | 2026-02-16公表／2027年未確認 | [Zambia TourismによるZimParks料金改定案内](https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/)（[ZimParks公式2026年料金表](https://www.zimparks.org.zw/media/2026/02/De-Gazetted-Tariff-2026.pdf) p.12を2026-11-01直接照合。VIP USD174・Moonlight USD116は別区分。2027年未確定） |
 | ビクトリアの滝 ザンビア側（NHCC見学ゲート） | **未確認**（Mosi-oa-Tunya国立公園USD 10と混同しない） | 2027年未確認 | [Zambia Tourismの2025年国立公園料金](https://www.zambiatourism.com/park-entry-fees/)／本書§9のNHCC見学ゲート料金検証 |
 | ケープタウンのホステル（ドミトリー） | 約2,050〜6,160円／泊、平均約3,440円 | 2026-10 | [Hostelworld](https://www.hostelworld.com/hostels/africa/south-africa/cape-town/) |
 
