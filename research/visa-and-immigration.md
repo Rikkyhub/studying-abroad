@@ -387,6 +387,7 @@
 
 - 在日南アフリカ大使館の[領事サービス](https://dirco.gov.za/japan/consular-services/)（2026-10-26直接閲覧、更新年月日の明示なし）は Study Visa の取扱いを **“universities & aviation schools”** と記載する。一方、同大使館の[Immigration–Visa Info](https://dirco.gov.za/japan/immigration-visa-info/)（同日閲覧、更新年月日の明示なし）は Study Visa の一般必要書類・申請料 **JPY 4,300**・審査目安 **最大14営業日**を案内する。**前者の窓口表記だけで民間語学学校へのStudy visa発給不可と断定しない**。逆に、後者の一般書類案内だけで短期語学就学が査証免除で許されるとも断定しない。
 - [南ア政府の高等教育機関登録案内](https://www.gov.za/services/services-residents/education-and-training/tertiary-education/register-tertiary-institution)は高等教育への留学生にstudy permit申請を案内するが、**民間語学学校での約8週間の受講可否を直接規定した資料ではない**。
+- **2026-11-01追加｜短期就学と査証免除の区別**：[在韓南ア大使館の公式査証案内](https://southafrica-embassy.or.kr/eng/visa/visas.php)はSection 11(1)のVisitor’s Visaの用途に「3か月以内の就学」を列挙する一方、査証免除訪問の目的として通過・観光・休暇・会議・商談等を挙げ、それ以外の目的は渡航前の査証申請が必要と説明する。[在日南ア大使館FAQ](https://dirco.gov.za/japan/frequently-asked-questions/)は日本旅券の90日査証免除を休暇・商用目的と説明する。**短期就学がVisitor’s Visaの対象でも、日本旅券の査証免除で民間語学学校へ通える証明ではない**。両公館の一般掲載を2026-11-01に直接照合（適用年の明示なし）。**2027年の適用・学校の受入資格・事前Visitor’s Visaの要否は未確認**。次の取得先は学校の正式受入書と在日南ア大使館査証担当の書面回答。申請・問い合わせ・予約は未実施。
 - **未確認**：2027年の日本旅券での8週間の一般英語受講の適法な入国区分、当該民間学校がStudy visa対象か、周遊後の再入国、書類・保険条件、2027年のJPY手数料と予約枠。**次の具体的取得先**：学校からコースの法的登録区分・短期就学資格の書面回答を取得し、在日南ア大使館査証担当へ学校名・期間・周遊入出国予定を提示して確認。購入・申請は未実施。観光90日免除と就学資格を混同しない。
 
 
