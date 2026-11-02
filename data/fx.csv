@@ -1,0 +1,4 @@
+currency,name_ja,unit,region,jpy_per_unit,rate_date,rate_kind,source
+PHP,フィリピン・ペソ,₱,フィリピン,2.53,2026-10-16,MUFG 対顧客外国為替相場 仲値(TTM),https://www.murc-kawasesouba.jp/fx/index.php
+ZAR,南アフリカ・ランド,R,南アフリカ,9.59,2026-10-16,MUFG 対顧客外国為替相場 仲値(TTM),https://www.murc-kawasesouba.jp/fx/index.php
+USD,米ドル,$,フィリピン・アフリカ（価格がドル建ての項目）,158.19,2026-10-16,MUFG 対顧客外国為替相場 仲値(TTM),https://www.murc-kawasesouba.jp/fx/index.php
