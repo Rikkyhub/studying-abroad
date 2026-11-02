@@ -15,7 +15,7 @@ C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,1,MNL
 C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,2,KUL,DAR,flight,候補,Y,MNL→DAR等の運賃は未取得。タンザニアは日本旅券でビザ免除対象外（VOA/eVisa USD50）
 C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,3,DAR,LUN,flight,候補,Y,Air Tanzania/Zambia Airways。参考最安 約42869円（乗継・Issue記載・非保証）。陸路TAZARA等は未確認。夜行の陸路は非推奨
 C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,4,LUN,LIVINGSTONE,overland,候補,Y,ルサカからリビングストンへの移動手段は資料に記載なし（航空に置換可）
-C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,5,LIVINGSTONE,VICFALLS,overland,候補,N,橋の国境。KAZA UNIVISA USD50/30日（FCDO記載）。国境の閉鎖・混雑に注意
+C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,5,LIVINGSTONE,VICFALLS,overland,候補,N,橋を越境する候補。日本旅券のザンビア入国は査証免除（ザンビア入管 https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ 2026-11-03確認）。ジンバブエ入管の公式FAQでは日本は到着時査証取得のCategory B（https://evisa.gov.zw/faq.html 2026-11-03確認）。KAZA UNIVISAは両国周遊向けの別制度で全員の必須費用としない。2027年の査証額・国境運用・昼間の交通・実際の取得条件は未確認。次は両国入管と交通事業者の最新公式案内
 C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,6,VICFALLS,CHOBE,overland,候補,N,カズングラ国境経由（ボツワナ）。運賃・所要は未確認。野生動物・国境の渋滞に注意
 C,陸路主体で国数を稼ぐ周遊（タンザニアから南アへ）,7,CHOBE,JNB,overland,候補,Y,ボツワナ→南アは陸路/航空とされ運賃・便は未確認（直線で例示）。昼間移動を原則とし未確認区間は航空に置換
 D,島を巡る案（マダガスカル・モーリシャス・セーシェル）,1,MNL,SIN,flight,候補,Y,アジア乗継地は未選定（資料の例示から仮置き）。運賃は未確認
@@ -32,7 +32,7 @@ F,S2 南部アフリカ周遊（Issue #38 の第一候補）,2,KUL,JNB,flight,�
 F,S2 南部アフリカ周遊（Issue #38 の第一候補）,3,JNB,MLILWANE,overland,候補,N,エスワティニへJNBから乗合バスで往復（運行会社の公開時刻表で確認、2026-10時点）。直線で例示。入国条件は要確認
 F,S2 南部アフリカ周遊（Issue #38 の第一候補）,4,MLILWANE,JNB,overland,候補,N,JNBへ戻る（同じ乗合バス）。JNBを再経由するため最適ではない可能性。直線で例示
 F,S2 南部アフリカ周遊（Issue #38 の第一候補）,5,JNB,VICFALLS,flight,候補,Y,"JNB→VFAの空路。参考最安 約23,700円（別日・非保証）。2027年の運航は未確認"
-F,S2 南部アフリカ周遊（Issue #38 の第一候補）,6,VICFALLS,LIVINGSTONE,overland,候補,Y,橋の国境（KAZA UNIVISA USD50/30日）。移動時刻は未検証
+F,S2 南部アフリカ周遊（Issue #38 の第一候補）,6,VICFALLS,LIVINGSTONE,overland,候補,Y,橋でジンバブエからザンビアへ越境する候補。日本旅券はザンビア側査証免除だがジンバブエ側は到着時査証取得対象（ザンビア入管 https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ ／ジンバブエ入管 https://evisa.gov.zw/faq.html 2026-11-03確認）。KAZA USD50を自動的な必須費用にしない。2027年の国境開庁・交通時刻・所要・実際の査証額は未確認。次は両国入管と越境送迎事業者の最新公式案内
 F,S2 南部アフリカ周遊（Issue #38 の第一候補）,7,LIVINGSTONE,CHOBE,overland,候補,Y,カズングラ国境経由でボツワナ（カサネ）へ。陸路の時刻・運賃は未確認。直線で例示
 F,S2 南部アフリカ周遊（Issue #38 の第一候補）,8,CHOBE,MAUN,overland,候補,Y,カサネ→マウンの公共交通の時刻・乗換は未検証。直線で例示
 F,S2 南部アフリカ周遊（Issue #38 の第一候補）,9,MAUN,CPT,flight,候補,Y,"MUB→CPT。参考最安 約48,700円（別日・非保証）。日付は含めない。2027年の運航は未確認"
