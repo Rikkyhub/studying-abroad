@@ -210,7 +210,7 @@ Tofo の2ダイブ：[Tofo Scuba 料金](https://www.tofoscuba.com/prices)（確
 
 | 項目 | 何が足りないか |
 |---|---|
-| 2027年5月の航空 | JNB↔マセル、Maputo→JNB、JNB→VFA、Kasane→JNB→CPT の運航・運賃（flightconnections 等は JavaScript 描画で取得不可） |
+| 2027年5月の航空 | JNB↔マセル、Maputo→JNB、JNB→VFA、Kasane→JNB→CPT の運航・運賃は未確認。別経路LVI→CPTは[Proflight公式時刻表](https://proflight-zambia.com/flights/flights-from-livingstone/)が2027年5月1日〜6月23日の月曜P0050（08:40→11:40）・金曜P0054（12:05→15:05）を掲載（2026-11-02確認）。[同社手荷物規則](https://proflight-zambia.com/planning/baggage/)は国際線無料受託30kg・機内持込5kg、ザンビア発超過受託は事前15kgあたりUSD60・空港USD6/kgと掲載（2026-11-02確認、2027年の適用未確認）。LVIとVFAは別空港。座席・運賃・国境送迎・当該券種の手荷物条件は未確認。 |
 | エスワティニ→Maputo | TransMagnific の個別手配の日時・料金（問合せが必要。問合せの送信は承認が要る） |
 | Maputo→Tofo | 5時発バスの運賃・現在の運行、LAM 国内線の運賃 |
 | レソト | visitlesotho.org.ls の本文（接続失敗）、危険レベル表示、マセル→Semonkong の交通と運賃、バス事業者の時刻表 |
