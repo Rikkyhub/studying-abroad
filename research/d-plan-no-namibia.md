@@ -157,7 +157,7 @@ Sani Pass は経験者向け4×4領域（Issue引用。観光局ページは取�
 | ジンバブエ | 空港・国境で取得可。シングル30ドル、二次45ドル、数次55ドル、KAZA 50ドル（2026年6月現在）。シングル30ドル＝**4,746円**（式：30×158.19） | [MOFA ジンバブエ](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html)（更新2026-07-13）、2026-10-20 |
 | レソト | 3か月以内は査証免除 | 4.2 |
 | ザンビア | 日本旅券は査証免除対象。空路入国には有効な帰国航空券、陸路・水路入国には滞在・出国に十分な資金が必要。Victoria Falls国境は観光案内で2025-11-19から24時間運用と掲載。ただし夜間移動の安全性・2027年の実運用・入国許可は未確認 | [ザンビア入管の免除国一覧](https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/)／[Zambia Tourismの国境案内](https://www.zambiatourism.com/vic-falls-border-post-now-open-24-hours/)、2026-11-02確認。2027年の個別条件は未確認 |
-| ボツワナ | 日本旅券の一般観光入国は査証免除。旅券残存は予定滞在期間＋6か月以上。初回入国から12か月間の累計滞在は90日まで。2027年の適用・Kazungulaの単独旅行者向け昼行接続は未確認。KAZAのボツワナ日帰り特例を通常入国条件と混同しない | [在日ボツワナ大使館](https://www.botswanaembassy.or.jp/visa.php?La=E)／[在ボツワナ日本国大使館](https://www.botswana.emb-japan.go.jp/itpr_ja/ryoji_tokou.html)、2026-11-02確認（2027年未確定） |
+| ボツワナ | 日本旅券の一般観光入国は査証免除。旅券残存は予定滞在期間＋6か月以上。初回入国から12か月間の累計滞在は90日まで。Kazungula橋OSBPは2026-04-01に24時間化予定だったが、2026-04-14のボツワナ政府続報でシステム調整遅延により延期・開始日未定（従来06:00〜22:00）。2027年の実際の開庁時間・単独旅行者向け昼行接続は未確認。KAZAのボツワナ日帰り特例を通常入国条件と混同しない | [在日ボツワナ大使館](https://www.botswanaembassy.or.jp/visa.php?La=E)／[在ボツワナ日本国大使館](https://www.botswana.emb-japan.go.jp/itpr_ja/ryoji_tokou.html)／[ボツワナ政府2026-03-23予定](https://dailynews.gov.bw/news-detail/90675)／[同2026-04-14延期](https://dailynews.gov.bw/news-detail/91004)、2026-11-03確認（2027年未確定） |
 
 ---
 
