@@ -218,7 +218,7 @@ Tofo の2ダイブ：[Tofo Scuba 料金](https://www.tofoscuba.com/prices)（確
 | Intercape | 公式ページが 403。Maputo→JNB のバスの時刻・運賃は**未確認**（#52 の「約10時間級・US$44前後」は参考値のまま） |
 | モザンビーク入国 | MOFA（査証免除・650メティカル）と政府 eVisa（ETA）の食い違い。在京大使館で確認 |
 | Avis Safari | モザンビーク経由ジンバブエ行きの書面承認、レンタル本体料金、Budget の条件 |
-| ザンビア・ボツワナ | 国境シャトル（Livingstone↔Kasane）の事業者・時刻・料金 |
+| ザンビア・ボツワナ | 送迎事業者の掲載例：[SavannahLink公式](https://savannahlink.com/transfers)はLivingstone→Kasane片道USD100/人・最少2名・約2時間（適用年不明）。[Muwuyu公式](https://muwuyuafricatravel.com/)の2025年表はLivingstone Town→Kasane AirportラックUSD97/人・最少2名。2026-11-03確認。1名乗車可否・定時便・2027年料金・国境所要は未確認。次は両社の単独客取扱いと正式見積を確認 |
 
 ## 10. 検索ログ（2026-10-20）
 
