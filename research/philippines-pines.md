@@ -87,7 +87,8 @@
 
 | 項目 | 目安 | 根拠 | 区分 |
 |---|---|---|---|
-| 週末の寮食 | [学校作成Meal Options](https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf) | 1食PHP179・最大3食/週（4週PHP2,148、12週PHP6,444） | 2024年8月以降の申込者向け資料。2027年条件は未確認 |\n| 外食・日用品・週末外出 | **外食の一例のみ：PHP2,136／4,272／6,408（12週）** | [foodpanda掲載のJollibee SM Baguio店舗メニュー](https://www.foodpanda.ph/restaurant/t1uk/jollibee-sm-baguio)（2026-10-30確認）：Chickenjoy＋Jolly Spaghetti Solo PHP178 × 週1／2／3回 × 12週 | **部分見積・行全体は未確認**。配達料・手数料・日用品・交際費・交通・2027年料金・店頭価格・実際の購入回数は未確認。PH-08の寮食と重複しない追加外食のみを仮定。 |
+| 週末の寮食 | [学校作成Meal Options](https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf) | 1食PHP179・最大3食/週（4週PHP2,148、12週PHP6,444） | 2024年8月以降の申込者向け資料。2027年条件は未確認 |
+| 外食・日用品・週末外出 | **外食の一例のみ：PHP2,136／4,272／6,408（12週）** | [foodpanda掲載のJollibee SM Baguio店舗メニュー](https://www.foodpanda.ph/restaurant/t1uk/jollibee-sm-baguio)（2026-10-30確認）：Chickenjoy＋Jolly Spaghetti Solo PHP178 × 週1／2／3回 × 12週 | **部分見積・行全体は未確認**。配達料・手数料・日用品・交際費・交通・2027年料金・店頭価格・実際の購入回数は未確認。PH-08の寮食と重複しない追加外食のみを仮定。 |
 | SIM（Globe GoSURF・30日×3回の公開モデル） | PHP 299／999／1,299（30日・1回）。3回合計 PHP 897／2,997／3,897 | [Globe公式GoSURF](https://www.globe.com.ph/prepaid/gosurf)（2026-10-30確認）。一般データは2／10／15GB、アプリ専用10GBは別枠 | 見積（2026年公式料金、2027年未確定） |
 | マニラ→バギオ バス（Victory Liner 通常） | PHP 485〜500程度、4〜6時間 | [baguiobus.com（2025-11記事）](https://baguiobus.com/news/victory-liner-manila-baguio) | 見積（非公式） |
 | 同 First Class／Joy Bus | PHP 720〜800程度 | [bustickets.ph（年不明）](https://bustickets.ph/joy-bus-manila-to-baguio/) | 見積（非公式） |
