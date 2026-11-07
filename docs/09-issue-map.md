@@ -60,6 +60,10 @@
 | [ケニア（国別ページ）](../countries/kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 | [タンザニア（国別ページ）](../countries/tanzania.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 | [エチオピア（国別ページ）](../countries/ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [ウガンダ（国別ページ）](../countries/uganda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ルワンダ（国別ページ）](../countries/rwanda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [マラウイ（国別ページ）](../countries/malawi.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [アフリカ13か国の比較（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [エチオピア 国別深掘り](../research/country-ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [マダガスカル 国別深掘り](../research/country-madagascar.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [ケニア 国別深掘り](../research/country-kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
