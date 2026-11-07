@@ -60,6 +60,19 @@
 | [ケニア（国別ページ）](../countries/kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 | [タンザニア（国別ページ）](../countries/tanzania.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
 | [エチオピア（国別ページ）](../countries/ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-10-20 |
+| [エチオピア 国別深掘り](../research/country-ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [マダガスカル 国別深掘り](../research/country-madagascar.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ケニア 国別深掘り](../research/country-kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ジンバブエ 国別深掘り](../research/country-zimbabwe.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [タンザニア 国別深掘り](../research/country-tanzania.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ボツワナ 国別深掘り](../research/country-botswana.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [モザンビーク 国別深掘り](../research/country-mozambique.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ザンビア 国別深掘り](../research/country-zambia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [レソト 国別深掘り](../research/country-lesotho.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [エスワティニ 国別深掘り](../research/country-eswatini.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ウガンダ 国別深掘り](../research/country-uganda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ルワンダ 国別深掘り](../research/country-rwanda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [マラウイ 国別深掘り](../research/country-malawi.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 
 ## タスクと Issue
 
