@@ -582,7 +582,7 @@ def timeline_cards(root: Path = ROOT) -> str:
     return carousel(cards, "旅程")
 
 
-FLIGHT_IDS = ("PH-11", "AF-01", "AF-02", "AF-17", "AF-18", "SC-08")  # expenses.csv の長距離航空券（日本発着・日本〜現地の区間）
+FLIGHT_IDS = ("PH-11", "PH-12", "AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21", "SC-08")  # 国際線・国内線。バス・現地交通・査証は除外
 
 
 def budget_cards(root: Path = ROOT) -> str:
@@ -629,7 +629,7 @@ def budget_cards(root: Path = ROOT) -> str:
     flight_items = "".join(
         f'<li>{esc(r["item"])}：{esc(build.yen(r["est"]["std"]) if r["est"]["std"] is not None else "未計上")}</li>'
         for r in rows if r["id"] in FLIGHT_IDS)
-    flight = split_card("飛行機代", "flight", "日本発着の長距離航空券（モデル）。")
+    flight = split_card("飛行機代", "flight", "日本発着・アフリカ域内の航空券（国内線を含む）。バス・現地交通・査証は別計上。")
     flight = flight.replace("</div>", f'<ul class="facts">{flight_items}</ul></div>', 1)
 
     cards = [
@@ -638,8 +638,9 @@ def budget_cards(root: Path = ROOT) -> str:
         card("見積合計（標準）", build.yen(tot["std"]),
              f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
              f'実費ではありません。{unpriced}'),
+        card("5月周遊合計（航空券＋現地費）", build.yen(S["africa_total"]), f'目標 {build.man(S["budget_africa"])}（総予算の内数）。AF-航空券とAF-現地費を各1回合算した未完成の参考小計。空欄費目は含まず、60万円達成の判断は保留。'),
         split_card("フィリピン（バギオ）", "baguio", "航空券を除く現地費用。"),
-        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く費用。配分目標は {build.man(S["budget_africa"])}（総予算の内数）。マダガスカル先行＋ビクトリアの滝周辺への組み替え中（Issue #77）で、現地費用はまだ入力していないため、この金額は完成値ではなく大きく増えます。'),
+        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く現地費用。現地バス・越境・ビザ・滝・サファリ等を含む。配分目標 {build.man(S["budget_africa"])} は航空券も合わせた総額で照合する（Issue #80）。未入力項目は0円ではありません。'),
         split_card("南アフリカ（ケープタウン）", "capetown", "航空券を除く現地費用。"),
         split_card("アフリカ周遊（8月）", "africa-aug", "航空券を除く費用。"),
         flight,

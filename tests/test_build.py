@@ -205,11 +205,14 @@ class UnpricedVsZeroTest(unittest.TestCase):
         self.assertEqual(computed[0]["unpriced"], ["low", "high"])
 
     def test_may_redesign_rows_without_amount_stay_unpriced(self):
-        """Issue #77 の新5月案：日別の費用を調べるまで、マダガスカル・VFA周辺の現地費用は金額未入力（0円にしない）"""
+        """Issue #77/#80 の新5月案：公式の料金が取れていない現地費用・国内線・一時帰国便は金額未入力（0円にしない）。
+        航空券の国際線（AF-01/02/17/18/21）は検索参考額を入れた未確認の行で、金額が入っていても状態は『未確認』のまま"""
         rows = {x["id"]: x for x in build.read_csv("expenses.csv")}
-        # AF-19（リビングストンの滝以外の観光）は準公式のUSD目安を入れた。AF-20（チョベ日帰り）はBWP建てで円換算できず空欄
-        for rid in ("AF-14", "AF-15", "AF-16", "AF-17", "AF-18", "AF-20"):
+        for rid in ("AF-14", "AF-15", "AF-16", "AF-20", "AF-22", "PH-12"):
             self.assertEqual((rows[rid]["low_local"], rows[rid]["std_local"], rows[rid]["high_local"]), ("", "", ""), rid)
+            self.assertEqual(rows[rid]["status"], "未確認", rid)
+        for rid in ("AF-01", "AF-02", "AF-17", "AF-18", "AF-21"):
+            self.assertNotEqual(rows[rid]["std_local"], "", rid)
             self.assertEqual(rows[rid]["status"], "未確認", rid)
 
 
