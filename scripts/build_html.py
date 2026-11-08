@@ -108,6 +108,45 @@ def slug(text: str, used: dict) -> str:
     return s if n == 0 else f"{s}-{n}"
 
 
+def collapse_long(html_str: str, limit: int = 120, head: int = 70) -> str:
+    """長い文は先頭だけを見せ、全文は開いて読めるようにする（段階的な表示）。短い文はそのまま"""
+    plain = html.unescape(re.sub(r"<[^>]+>", "", html_str)).strip()
+    if len(plain) <= limit:
+        return html_str
+    return (f'<details class="more"><summary>{html.escape(plain[:head].rstrip())}…<span class="hint">（全文を開く）</span></summary>'
+            f'<div class="full">{html_str}</div></details>')
+
+
+def fold_sections(body: str, min_chars: int = 600) -> str:
+    """長い調査ページ：h2 の節ごとに開閉できるようにする。最初の長い節だけ開いておく"""
+    parts = re.split(r'(?=<h2 id=)', body)
+    out, opened, n = [parts[0]], False, 0
+    for p in parts[1:]:
+        m = re.match(r'(<h2 id="[^"]+">.*?</h2>)(.*)$', p, re.S)
+        if m and len(re.sub(r"<[^>]+>", "", m.group(2))) > min_chars:
+            op = "" if opened else " open"
+            opened, n = True, n + 1
+            out.append(f'<details class="sec"{op}><summary>{m.group(1)}</summary>{m.group(2)}</details>')
+        else:
+            out.append(p)
+    res = "".join(out)
+    if n >= 2:
+        res = ('<p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> '
+               '<button type="button" data-sec="close">すべての節を閉じる</button></p>\n') + res
+    return res
+
+
+SECTION_SCRIPT = """<script>
+(function(){
+function openFor(el){for(var d=el&&el.closest?el.closest("details"):null;d;d=d.parentElement&&d.parentElement.closest("details")){d.open=true}}
+function fromHash(){if(location.hash.length>1){var el=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(el){openFor(el);el.scrollIntoView()}}}
+document.querySelectorAll("[data-sec]").forEach(function(b){b.addEventListener("click",function(){
+ var open=b.getAttribute("data-sec")==="open";document.querySelectorAll("details.sec").forEach(function(d){d.open=open})})});
+window.addEventListener("hashchange",fromHash);fromHash();
+})();
+</script>"""
+
+
 def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
     """Markdown -> (title, body_html, toc)"""
     md = re.sub(r"<!--.*?-->", "", md, flags=re.S)
@@ -170,10 +209,17 @@ def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
             def cell(tag, c, k):
                 a = aligns[k] if k < len(aligns) else ""
                 st = f' class="{"n" if a == "right" else "c"}"' if a else ""
-                return f"<{tag}{st}>{inline(c)}</{tag}>"
+                if tag == "td" and k < len(head):
+                    st += f' data-label="{html.escape(re.sub(r"<[^>]+>|\*\*", "", head[k]).replace("&lt;br&gt;", " ").strip(), quote=True)}"'  # 携帯幅のカード表示で列名を出す
+                body_html = inline(c)
+                if tag == "td" and k > 0 and a != "right":  # 先頭列（項目名）と数値列は畳まない
+                    body_html = collapse_long(body_html, limit=160, head=80)
+                return f"<{tag}{st}>{body_html}</{tag}>"
             thead = "<tr>" + "".join(cell("th", c, k) for k, c in enumerate(head)) + "</tr>"
             tbody = "".join("<tr>" + "".join(cell("td", c, k) for k, c in enumerate(r)) + "</tr>" for r in rows)
-            out.append(f'<div class="scroll"><table><thead>{thead}</thead><tbody>{tbody}</tbody></table></div>')
+            is_cost = head[:1] == ["項目"] and "低予算" in head and "標準" in head and "余裕" in head
+            tattr = ' class="cost" data-cost' if is_cost else ""  # 費用表：要否の列は JS が足す（保存先はそのブラウザだけ）
+            out.append(f'<div class="scroll"><table{tattr}><thead>{thead}</thead><tbody>{tbody}</tbody></table></div>')
             continue
         if s.startswith(">"):
             flush()
@@ -224,11 +270,100 @@ def list_block(lines: list[str], i: int) -> str:
             done = m.group(1) != " "
             text_html = f'<span class="check{" done" if done else ""}" aria-label="{"完了" if done else "未完了"}"></span>{inline(m.group(2))}'
         else:
-            text_html = inline(text)
+            text_html = collapse_long(inline(text))
         html_out.append(f"<li>{text_html}")
     while stack:
         html_out.append(f"</li></{stack.pop()[1]}>")
     return "".join(html_out).replace("<ul></li>", "<ul>").replace("<ol></li>", "<ol>")
+
+
+# ---------------------------------------------------------------- 費用表の「要否」判定（ブラウザ内だけ）
+COST_TRIAGE_SCRIPT = """<script>
+(function(){
+var KEY="cost-triage-v1",store={};
+try{store=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){store={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+function hash(s){var h=5381;for(var i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return (h>>>0).toString(36)}
+function yen(t){var m=(t||"").replace(/[,\\s]/g,"").match(/¥(-?\\d+)/);return m?parseInt(m[1],10):null}
+function fmt(n){return "¥"+Math.round(n).toLocaleString("ja-JP")}
+function idb(){return new Promise(function(res,rej){var q=indexedDB.open("cost-triage-dir",1);q.onupgradeneeded=function(){q.result.createObjectStore("h")};q.onsuccess=function(){res(q.result)};q.onerror=function(){rej(q.error)}})}
+function getDir(){return idb().then(function(db){return new Promise(function(res){var g=db.transaction("h").objectStore("h").get("dir");g.onsuccess=function(){res(g.result||null)};g.onerror=function(){res(null)}})}).then(function(h){
+ function ask(){return window.showDirectoryPicker({id:"cost-triage",mode:"readwrite"}).then(function(d){return idb().then(function(db){db.transaction("h","readwrite").objectStore("h").put(d,"dir");return d})})}
+ if(!h)return ask();
+ return h.queryPermission({mode:"readwrite"}).then(function(p){return p==="granted"?h:h.requestPermission({mode:"readwrite"}).then(function(q){return q==="granted"?h:ask()})})})}
+var STATES=[["","未判断"],["need","必要"],["skip","不要"],["hold","保留"]];
+document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
+ var page=location.pathname.split("/").pop()||"index";
+ var head=tb.tHead.rows[0],cols={};
+ Array.prototype.forEach.call(head.cells,function(c,i){cols[c.textContent.trim().replace(/（.*$/,"")]=i});
+ var iLow=cols["低予算"],iStd=cols["標準"],iHigh=cols["余裕"];
+ if(iStd==null)return;
+ ["要否","メモ"].forEach(function(t){var th=document.createElement("th");th.textContent=t;th.className="tri";head.appendChild(th)});
+ var rows=[];
+ Array.prototype.forEach.call(tb.tBodies[0].rows,function(tr){
+  var first=tr.cells[0].textContent.trim(),isItem=/^(見積|未確認)$/.test((tr.cells[1]||{}).textContent.trim());
+  var td1=document.createElement("td"),td2=document.createElement("td");td1.className=td2.className="tri";
+  td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
+  tr.appendChild(td1);tr.appendChild(td2);
+  if(!isItem){tr.classList.add("sub");return}
+  var key=page+":"+hash(first.replace(/\\s*出典$/,"")),st=store[key]||{};
+  var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
+  STATES.forEach(function(s){var o=document.createElement("option");o.value=s[0];o.textContent=s[1];sel.appendChild(o)});
+  sel.value=st.s||"";
+  var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
+  td1.appendChild(sel);td2.appendChild(memo);
+  var r={tr:tr,sel:sel,name:first.replace(/\\s*出典$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  rows.push(r);
+  function upd(){store[key]={s:sel.value,m:memo.value};if(!sel.value&&!memo.value)delete store[key];save();paint()}
+  sel.addEventListener("change",upd);memo.addEventListener("input",upd);
+ });
+ var box=document.createElement("div");box.className="triage";
+ box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
+ tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
+ var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
+ function paint(){
+  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0];
+  rows.forEach(function(r){
+   var s=r.sel.value;cnt[s]++;
+   r.tr.classList.toggle("skip",s==="skip");r.tr.classList.toggle("hold",s==="hold");
+   r.tr.hidden=s==="skip"&&hide.checked;
+   for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
+  });
+  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+   '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
+ }
+ hide.addEventListener("change",paint);
+ box.querySelector(".tri-reset").addEventListener("click",function(){
+  if(!confirm("この表の判断とメモをすべて消します。よろしいですか？"))return;
+  rows.forEach(function(r){r.sel.value="";var m=r.tr.querySelector("input[type=text]");m.value="";delete store[page+":"+hash(r.name)]});save();paint()});
+ box.querySelector(".tri-send").addEventListener("click",function(ev){
+  var lab={need:"必要",skip:"不要",hold:"保留"},items=[];
+  rows.forEach(function(r){var s=r.sel.value,m=r.tr.querySelector("input[type=text]").value;
+   items.push({item:r.name,decision:s?lab[s]:"未判断",memo:m,std_yen:r.v[1]})});
+  var fname="cost-triage-"+page.replace(/\.html$/,"")+".json";
+  var data={schema:"cost-triage-v1",page:page,exported_at:new Date().toISOString(),note:"個人の判断。リポジトリにコミットしないこと。",items:items};
+  var text=JSON.stringify(data,null,2),btn=ev.target,orig=btn.textContent;
+  function msg(t){btn.textContent=t;setTimeout(function(){btn.textContent=orig},4000)}
+  function download(){var bl=new Blob([text],{type:"application/json"}),a=document.createElement("a");
+   a.href=URL.createObjectURL(bl);a.download=fname;document.body.appendChild(a);a.click();a.remove();
+   setTimeout(function(){URL.revokeObjectURL(a.href)},1000);msg("ダウンロードしました。triage フォルダへ移してください")}
+  if(!window.showDirectoryPicker){download();return}
+  getDir().then(function(dir){return dir.getFileHandle(fname,{create:true}).then(function(fh){return fh.createWritable()}).then(function(w){return w.write(text).then(function(){return w.close()})})})
+   .then(function(){msg("triage フォルダに保存しました（Claudeが確認します）")})
+   .catch(function(e){if(e&&e.name==="AbortError")return;download()});
+ });
+ box.querySelector(".tri-copy").addEventListener("click",function(ev){
+  var lab={need:"必要",skip:"不要",hold:"保留"},out=[];
+  rows.forEach(function(r){var s=r.sel.value,m=r.tr.querySelector("input[type=text]").value;if(s||m)out.push("["+(lab[s]||"未判断")+"] "+r.name+(m?" — "+m:""))});
+  var text=out.length?out.join("\\n"):"（判断はまだありません）",b=ev.target;
+  function done(){var o=b.textContent;b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(done,function(){prompt("コピーしてください",text)});
+  else prompt("コピーしてください",text);
+ });
+ paint();
+});
+})();
+</script>"""
 
 
 # ---------------------------------------------------------------- page
@@ -266,6 +401,12 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     title, body, toc = convert(md)
     title = title or path.stem
     rel = path.relative_to(root).as_posix()
+    if path.parent.name == "research":
+        body = fold_sections(body)
+    if 'class="sec"' in body:
+        body += "\n" + SECTION_SCRIPT
+    if "data-cost" in body:
+        body += "\n" + COST_TRIAGE_SCRIPT
     toc_html = ""
     heads = [(a, t) for lv, a, t in toc if lv == 2]
     if len(heads) >= 3:
@@ -295,6 +436,10 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         md = issue_map_markdown(root)
         out[mp] = md
         out[mp.with_suffix(".html")] = render_text(md, mp, root)
+        qp = root / "docs" / QA_MD
+        qmd = qa_markdown(root)
+        out[qp] = qmd
+        out[qp.with_suffix(".html")] = render_text(qmd, qp, root)
     if all((root / DATA_DIR / f).exists() for f in ("tasks.csv", "pages.csv", "timeline.csv", "places.csv", "fx.csv")):
         out[root / "index.html"] = index_page(root)
     return out
@@ -305,7 +450,7 @@ DONE_STATUS = ("完了", "不要")
 PAGE_STATUS = {"researching": "調査中", "ready": "整理済", "draft": "作成中"}
 FX_SOURCE_NOTE = ("参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が"
                   "加わるため、実際に受け取る額・支払う額とは一致しません。")
-REGION_PAGES = [("baguio", "バギオ"), ("africa", "アフリカ周遊"), ("capetown", "ケープタウン"), ("common", "日本国内・保険・共通")]
+REGION_PAGES = [("baguio", "バギオ"), ("africa", "アフリカ周遊（5月）"), ("africa-aug", "アフリカ周遊（8月）"), ("capetown", "ケープタウン"), ("common", "日本国内・保険・共通")]
 
 
 def csv_records(path: Path) -> list[dict]:
@@ -332,7 +477,9 @@ def table(headers: list[str], rows: list[list[str]], num: tuple = (), widths: li
     cols = "".join(f'<col style="width:{w}%">' for w in widths) if widths else ""
     colgroup = f"<colgroup>{cols}</colgroup>" if cols else ""
     th = "".join(f'<th{" class=n" if k in num else ""}>{h}</th>' for k, h in enumerate(headers))
-    tr = "".join("<tr>" + "".join(f'<td{" class=n" if k in num else ""}>{c}</td>' for k, c in enumerate(r)) + "</tr>"
+    def _label(k):
+        return f' data-label="{html.escape(re.sub(r"<[^>]+>", "", headers[k]), quote=True)}"' if k < len(headers) else ""
+    tr = "".join("<tr>" + "".join(f'<td{" class=n" if k in num else ""}{_label(k)}>{c}</td>' for k, c in enumerate(r)) + "</tr>"
                  for r in rows)
     return f'<div class="scroll"><table>{colgroup}<thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
@@ -374,6 +521,13 @@ def card_link(href: str, inner: str) -> str:
     return f'<a class="card link" href="{esc(href)}">{inner}<span class="go">ページを見る</span></a>'
 
 
+def carousel(cards: list[str], label: str) -> str:
+    """カードを横並びのカルーセルにする。JavaScript が無効でも横スクロールで全件読める（前後ボタンは JS が有効なときだけ表示）"""
+    return (f'<div class="carousel" data-carousel><button type="button" class="car-btn prev" aria-label="前のカード" hidden>‹</button>'
+            f'<div class="car-track" tabindex="0" role="region" aria-label="{esc(label)}">' + "".join(cards) + '</div>'
+            '<button type="button" class="car-btn next" aria-label="次のカード" hidden>›</button></div>')
+
+
 def region_cards(root: Path = ROOT) -> str:
     """地域別の入口カード（3地域＋共通）。時期と状態は timeline.csv、確認事項の件数は tasks.csv の region 列から"""
     timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
@@ -390,7 +544,7 @@ def region_cards(root: Path = ROOT) -> str:
         cards.append(card_link(f"areas/{key}.html",
                                f'<p class="eyebrow">{period}</p><h3>{esc(label)}</h3>'
                                f'<p class="sub">{status}</p><p class="sub">確認事項 <span class="n">{n}</span>件</p>'))
-    return '<div class="grid">' + "".join(cards) + "</div>"
+    return carousel(cards, "地域別")
 
 
 def timeline_cards(root: Path = ROOT) -> str:
@@ -402,7 +556,10 @@ def timeline_cards(root: Path = ROOT) -> str:
         cards.append(card_link(f"areas/{key}.html",
                                f'<p class="eyebrow">{esc(r["period"])}</p><h3>{esc(r["title"])}</h3>'
                                f'<p class="status">{esc(r["status"])}</p><p class="sub">{esc(r["summary"])}</p>'))
-    return '<div class="grid">' + "".join(cards) + "</div>"
+    return carousel(cards, "旅程")
+
+
+FLIGHT_IDS = ("PH-11", "AF-01", "SC-08")  # expenses.csv の長距離航空券（日本発着・日本〜現地の区間）
 
 
 def budget_cards(root: Path = ROOT) -> str:
@@ -414,23 +571,61 @@ def budget_cards(root: Path = ROOT) -> str:
     tot = S["total"]
     n_na, n_part = len(S["no_amount"]), len(S["partial"])
 
-    def card(label, value, note):
-        return (f'<div class="card"><p class="eyebrow">{esc(label)}</p><p class="val">{esc(value)}</p>'
-                f'<p class="sub">{note}</p></div>')
+    def card(label, value, note, href=None):
+        inner = f'<p class="eyebrow">{esc(label)}</p><p class="val">{esc(value)}</p><p class="sub">{note}</p>'
+        return card_link(href, inner) if href else f'<div class="card">{inner}</div>'
 
     unpriced = f'金額が入っていない {n_na} 件' + (f'と一部だけ未入力の {n_part} 件' if n_part else "") + \
         'は未計上です（0円ではなく、合計に含まれていません）。'
+    rows = build.load_model()[1]
+    import areas  # 地域の対応表（phase 列 → 地域）
+
+    def group_of(r):
+        if r["id"] in FLIGHT_IDS:
+            return "flight"
+        return areas.PHASE_REGION.get(r["phase"], "common")
+
+    def range_text(rs):
+        priced = [r for r in rs if not r["no_amount"]]
+        if not priced:
+            return None
+        t = {s: sum(r["est"][s] or 0.0 for r in priced) for s in ("low", "std", "high")}
+        return t
+
+    def split_card(label, key, note):
+        rs = [r for r in rows if group_of(r) == key]
+        t = range_text(rs)
+        miss = [r for r in rs if r["no_amount"] or r["unpriced"]]
+        miss_txt = f'金額が未入力・一部未入力の項目 {len(miss)} 件は未計上です。' if miss else ""
+        href = f"areas/{key}.html" if key in dict(REGION_PAGES) else None  # 飛行機代は専用ページがない（費用は各地域ページ）
+        if t is None:
+            return card(label, "未計上", f'{esc(note)}金額が入っている項目がまだありません（0円ではありません）。', href)
+        return card(label, build.yen(t["std"]),
+                    f'{esc(note)}標準の見積。低予算 {esc(build.yen(t["low"]))} 〜 余裕 {esc(build.yen(t["high"]))}。{miss_txt}', href)
+
+    flight_items = "".join(
+        f'<li>{esc(r["item"])}：{esc(build.yen(r["est"]["std"]) if r["est"]["std"] is not None else "未計上")}</li>'
+        for r in rows if r["id"] in FLIGHT_IDS)
+    flight = split_card("飛行機代", "flight", "日本発着の長距離航空券（モデル）。")
+    flight = flight.replace("</div>", f'<ul class="facts">{flight_items}</ul></div>', 1)
+
     cards = [
         card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標です。実費ではありません。"),
         card("上限予算", build.man(S["budget_cap"]), "モデルの上限です。実費ではありません。"),
-        card("5月アフリカ周遊の目安", build.man(S["budget_africa"]), "総予算の内数のモデル配分です。実費ではありません。"),
         card("見積合計（標準）", build.yen(tot["std"]),
              f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
              f'実費ではありません。{unpriced}'),
+        split_card("フィリピン（バギオ）", "baguio", "航空券を除く現地費用。"),
+        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く費用。配分目標は {build.man(S["budget_africa"])}（総予算の内数）。'),
+        split_card("南アフリカ（ケープタウン）", "capetown", "航空券を除く現地費用。"),
+        split_card("アフリカ周遊（8月）", "africa-aug", "航空券を除く費用。"),
+        flight,
+        split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用。"),
     ]
     return ('<p class="sec-lead">表示している金額はすべて公開料金などに基づくモデルの目標・見積で、実際の支払額ではありません。'
+            '地域ごとに分け、飛行機代は別枠にしています。カードは横にスクロール（または左右ボタン）で見られます。'
             '内訳は各地域のページ、計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
-            '<div class="grid">' + "".join(cards) + "</div>")
+            + carousel(cards, "予算の全体像"))
 
 
 def now_block(root: Path = ROOT) -> str:
@@ -446,7 +641,8 @@ def now_block(root: Path = ROOT) -> str:
              f"調査中の資料：{len(researching)}件"]
     if no_rate:
         facts.append("円換算レートが未確認の通貨：" + "、".join(no_rate))
-    return ('<div class="card wide"><p class="sub">一般的な最優先の確認項目です（匿名モデル。個人の進捗ではありません）。期限は出発日などを基準にした相対的な目安です。</p>\n'
+    return ('<div class="card wide"><p class="sub"><a href="docs/10-qa.html"><strong>確認待ち（QA）の一覧を見る</strong></a>：AIが調べ切れなかった費用・本人の確認が要ることをまとめています。</p>\n'
+            '<p class="sub">一般的な最優先の確認項目です（匿名モデル。個人の進捗ではありません）。期限は出発日などを基準にした相対的な目安です。</p>\n'
             f'<ol class="todo">{items}</ol>\n<ul class="facts">' + "".join(f"<li>{esc(f)}</li>" for f in facts) + "</ul></div>")
 
 
@@ -479,7 +675,7 @@ def fx_summary(root: Path = ROOT) -> str:
     if dates:
         links = " ／ ".join(f'<a href="{esc(s)}" target="_blank" rel="noopener">{esc(urlparse(s).netloc)}</a>' for s in srcs)
         head = f'<p class="sec-lead">レート日：{esc(dates[-1])}（取得元：{links}）。{esc(FX_SOURCE_NOTE)}</p>'
-    return head + '<div class="grid">' + "".join(cards) + "</div>\n" + fx_json(root)
+    return head + carousel(cards, "通貨") + "\n" + fx_json(root)
 
 
 def docs_summary(root: Path = ROOT) -> str:
@@ -489,7 +685,8 @@ def docs_summary(root: Path = ROOT) -> str:
         if r["area"] in ("地域別", "運用"):
             continue
         rows.append([esc(r["area"]), f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>', ref_links(r["refs"])])
-    return '<div class="card wide">' + table(["分野", "資料", "参考（一次情報）"], rows, widths=[16, 34, 50]) + "</div>"
+    return (f'<details class="fold"><summary>資料一覧を開く（{len(rows)}件）</summary>'
+            '<div class="card wide">' + table(["分野", "資料", "参考（一次情報）"], rows, widths=[16, 34, 50]) + "</div></details>")
 
 
 INDEX_FX_SCRIPT = """<script>
@@ -512,7 +709,21 @@ form.hidden=false;upd();
 })();
 </script>"""
 
-INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ内の移動"><strong class="here">トップ</strong><a href="#budget">予算の全体像</a><a href="#plan">旅程</a><a href="#areas">地域別</a><a href="#now">いま何をするか</a><a href="#fx">通貨と円換算</a><a href="#docs">資料一覧</a></nav></div></header>
+INDEX_CAROUSEL_SCRIPT = """<script>
+(function(){
+document.querySelectorAll("[data-carousel]").forEach(function(c){
+ var t=c.querySelector(".car-track"),p=c.querySelector(".prev"),n=c.querySelector(".next");
+ function step(){var k=t.firstElementChild;return k?k.getBoundingClientRect().width+20:300}
+ function upd(){p.disabled=t.scrollLeft<=2;n.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-2;
+  var more=t.scrollWidth>t.clientWidth+2;p.hidden=n.hidden=!more}
+ p.addEventListener("click",function(){t.scrollBy({left:-step()})});
+ n.addEventListener("click",function(){t.scrollBy({left:step()})});
+ t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize",upd);upd();
+});
+})();
+</script>"""
+
+INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ内の移動"><strong class="here">トップ</strong><a href="#budget">予算の全体像</a><a href="#plan">旅程</a><a href="#areas">地域別</a><a href="#now">いま何をするか</a><a href="docs/10-qa.html">確認待ち</a><a href="#fx">通貨と円換算</a><a href="#docs">資料一覧</a></nav></div></header>
 <main class="wrap top">
 <h1>2027 留学・アフリカ周遊 計画メモ</h1>
 <p class="lead">2027年2〜7月に、フィリピン・バギオの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学を一つの旅程として整理するための計画メモです。公開してよい一般の料金・制度・調査だけを匿名のモデルとして載せ、地域ごとに費用・確認事項・資料・地図を見られます。</p>
@@ -562,7 +773,7 @@ def index_page(root: Path = ROOT) -> str:
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY
     for k, v in (("budget", budget_cards(root)), ("timeline", timeline_cards(root)), ("regions", region_cards(root)),("now", now_block(root)), ("fx", fx_summary(root)),
-                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT)):
+                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
 
@@ -581,6 +792,69 @@ def issue_map_markdown(root: Path = ROOT) -> str:
     out += ["", "## タスクと Issue", "", "| ID | 優先 | 作業 | Issue | 状態 |", "|---|---|---|---|---|"]
     for r in csv_records(root / DATA_DIR / "tasks.csv"):
         out.append(f"| {r['id']} | {r['priority']} | {r['task']} | {issue_cell(r['issue'])} | {r['status']} |")
+    return "\n".join(out) + "\n"
+
+
+QA_MD = "10-qa.md"
+QA_HEAD = re.compile(r"^##+\s+.*(未確認|残課題).*$", re.M)
+
+
+def qa_markdown(root: Path = ROOT) -> str:
+    """確認待ち（QA）。AI が調べ切れなかった・本人の確認が要るものを、CSV と調査資料から自動で集める。
+    個人の回答や進捗は書かない（回答は非公開のNotionで管理し、ここは質問の一覧だけ）"""
+    if root != ROOT:
+        return "# 確認待ち（QA）\n"
+    import areas
+    import build
+    S, rows, tasks = build.load_model()[:3]
+    label = dict(REGION_PAGES)
+    out = ["# 確認待ち（QA）", "",
+           "AI が公開情報だけでは調べ切れなかったこと、人が確認しないと決まらないことの一覧です。"
+           "この表は質問の一覧で、回答・実際の金額・個人の事情は書きません（回答は非公開のNotionで管理し、"
+           "分かったことは調査資料に反映します）。このページは `py scripts/build_all.py` が自動で作ります。", "",
+           "## 1. 費用の見積で確認が要るもの", "",
+           "区分が「未確認」（出典なし・推定、または条件付きの部分見積）と、金額が未入力の項目です。"
+           "合計には、入力済みの金額だけが入っています。", "",
+           "| 項目 | 地域 | 状態 | 何が分かっていないか |", "|---|---|---|---|"]
+    n = 0
+    for r in rows:
+        if r["status"] != "未確認" and not r["no_amount"]:
+            continue
+        n += 1
+        key = areas.PHASE_REGION.get(r["phase"], "common")
+        state = "金額未入力" if r["no_amount"] else "推定・部分見積"
+        note = re.sub(r"\s+", " ", r["note"]).strip()
+        sents = [s for s in re.split(r"(?<=[。])", note) if s.strip()]
+        gaps = [s.strip() for s in sents if "未確認" in s or "未入力" in s or "未計上" in s or "次" in s[:2]]
+        note = "".join(gaps) or note  # 「未確認」を含む文を優先（確認日や出典の説明より、分かっていない点を先に）
+        note = (note[:140] + "…") if len(note) > 140 else (note or "出典・金額の確認が必要")
+        out.append(f"| {r['id']} {r['item']} | [{label.get(key, key)}](../areas/{key}.html) | {state} | {note.replace('|', '／')} |")
+    if not n:
+        out.append("| （なし） | － | － | － |")
+    out += ["", "## 2. 最優先の確認事項（未完了）", "",
+            "優先度1で、完了・不要になっていない作業です。着手が早いものから並べています。", "",
+            "| 作業 | 地域 | 期限（目安） | 状態 | 次の一歩 |", "|---|---|---|---|---|"]
+    key = lambda t: (-int(t["lead_days"] or 0), t["id"])
+    todo = sorted((t for t in tasks if t["priority"] == "1" and t["status"] not in DONE_STATUS), key=key)
+    for t in todo:
+        regs = "・".join(f"[{label[k]}](../areas/{k}.html)" for k in t["region"].split(";") if k in label) or "共通"
+        nxt = re.sub(r"\s+", " ", t["next_action"]).strip()
+        nxt = (nxt[:120] + "…") if len(nxt) > 120 else nxt
+        out.append(f"| {t['task']} | {regs} | {t['deadline_note'].split('。')[0]} | {t['status']} | {nxt.replace('|', '／')} |")
+    if not todo:
+        out.append("| （なし） | － | － | － | － |")
+    out += ["", "## 3. 調査資料ごとの「未確認事項」", "",
+            "各資料の末尾にある未確認・残課題の節への入口です（件数は、その節の行数の目安）。", "",
+            "| 資料 | 節 |", "|---|---|"]
+    for r in sorted_pages(root):
+        p = root / r["path"].replace(".html", ".md")
+        if not p.exists() or not r["path"].startswith("research/"):
+            continue
+        text = p.read_text(encoding="utf-8")
+        heads = [m.group(0).lstrip("#").strip() for m in QA_HEAD.finditer(text)]
+        if not heads:
+            continue
+        out.append(f"| [{r['title']}](../{r['path']}) | " + "<br>".join(h.replace("|", "／") for h in heads[:3]) + " |")
     return "\n".join(out) + "\n"
 
 
@@ -683,9 +957,56 @@ dl.kv div:last-child{border-bottom:0}
 dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 .card .scroll{margin:0;border-top:0}
 .card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
+details.more{margin:0} details.more>summary{cursor:pointer;list-style:none;color:var(--ink)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more .hint{color:var(--link);font-size:.82rem;margin-left:4px;white-space:nowrap}
+details.more[open]>summary{font-weight:700;margin-bottom:4px} details.more[open]>summary .hint{display:none}
+details.more>.full{padding:6px 0 4px 12px;box-shadow:inset 2px 0 0 var(--line)}
+details.sec{margin:10px 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+details.sec>summary{cursor:pointer;padding:10px 14px;list-style:none}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::before{content:"\\25B8";float:left;margin:2px 8px 0 0;color:var(--muted);transition:transform .2s}
+details.sec[open]>summary::before{transform:rotate(90deg)}
+details.sec>summary h2{display:inline;margin:0;padding:0;border:0;font-size:1.15rem}
+details.sec>:not(summary){margin-left:14px;margin-right:14px} details.sec>.scroll{margin-left:14px;margin-right:14px}
+details.sec[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px}
+details.sec>:last-child{margin-bottom:14px}
+.sec-tools{margin:8px 0} .sec-tools button{font:inherit;font-size:.88rem;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:6px}
+.triage{margin:12px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:.92rem}
+.triage .big{font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
+.triage .muted,.triage .tri-note{color:var(--muted);font-size:.85rem}
+.triage button{font:inherit;font-size:.88rem;padding:4px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
+.triage .tri-hide{display:inline-block;margin:6px 12px 0 0}
+th.tri,td.tri{min-width:7em;white-space:nowrap}
+td.tri select,td.tri input[type=text]{font:inherit;font-size:.88rem;max-width:11em;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+td.tri input[type=text]{width:11em}
+tr.skip td:not(.tri){text-decoration:line-through;opacity:.5}
+tr.hold td:not(.tri){opacity:.75}
+tr[hidden]{display:none}
+.carousel{position:relative}
+.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 4px 32px;-webkit-overflow-scrolling:touch}
+.car-track>.card{flex:0 0 min(300px,80%);scroll-snap-align:start}
+.car-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.car-btn.prev{left:-12px} .car-btn.next{right:-12px} .car-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.car-btn[disabled]{opacity:.35;cursor:default}
+details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);list-style:none}
+details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\\25B8";display:inline-block;margin-right:8px;transition:transform .2s}
+details.fold[open]>summary::before{transform:rotate(90deg)}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 @media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:640px){
+.scroll{overflow-x:visible;border-top:0;border-bottom:0}
+.scroll table:has(td[data-label]){min-width:0;display:block}
+.scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
+.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.scroll table:has(td[data-label]) td{display:block;padding:8px 12px;border-bottom:1px solid var(--line);background:none!important;min-width:0;text-align:left}
+.scroll table:has(td[data-label]) td:last-child{border-bottom:0}
+.scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
+.scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
+}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 """
 

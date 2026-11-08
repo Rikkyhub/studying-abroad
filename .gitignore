@@ -14,3 +14,8 @@ exports/
 # Agent worktrees and local Claude state (skills in .claude/skills are tracked)
 .claude/worktrees/
 .claude/settings.local.json
+
+# 費用表の「要否」判断のエクスポート（個人の判断。コミットしない）
+cost-triage-*.json
+triage/*
+!triage/README.md
