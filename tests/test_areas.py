@@ -44,12 +44,8 @@ class AreaPageTests(unittest.TestCase):
         for r in rows:
             if r["unpriced"]:
                 self.assertIn("未計上", areas.cost_block(rows, areas.PHASE_REGION[r["phase"]]))
-        # 金額未入力の行（Issue #77 の新5月案：マダガスカル）は、全シナリオ「未計上」で ¥0 と書かない
-        line = next(ln for ln in read("areas/africa.md").splitlines() if "マダガスカルの観光" in ln and ln.startswith("|"))
-        self.assertEqual(line.count("未計上"), 3)
-        self.assertNotIn("¥0 |", line)
-        # 金額未入力の食費の行も全シナリオ「未計上」
-        line = next(ln for ln in read("areas/africa.md").splitlines() if "食費（マダガスカル" in ln and ln.startswith("|"))
+        # 金額未入力の行（Issue #77/#80 の新5月案：マダガスカル国内線）は、全シナリオ「未計上」で ¥0 と書かない
+        line = next(ln for ln in read("areas/africa.md").splitlines() if "マダガスカル国内線" in ln and ln.startswith("|"))
         self.assertEqual(line.count("未計上"), 3)
         self.assertNotIn("¥0 |", line)
 

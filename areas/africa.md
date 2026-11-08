@@ -65,24 +65,28 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | モーリシャス↔アンタナナリボ 往復航空券（マダガスカル観光後にMRUへ戻る）（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥90,700 | ¥90,700 | ¥90,700 |
 | KAZA UNIVISA（ジンバブエ・ザンビア。ボツワナは日帰りまで）（入国管理（現地払い）） [出典](https://www.zambiaimmigration.gov.zm/kaza-univisa/) | 見積 | USD 50 | ¥7,910 | ¥7,910 | ¥7,910 |
 | ビクトリアの滝 入場料（ジンバブエ側＋ザンビア側）（ZimParks／Zambia Tourism） [出典](https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/) | 未確認 | USD 58 | ¥9,175 | ¥9,175 | ¥9,175 |
-| 食費（マダガスカル・ビクトリアの滝周辺。ツアー外の分） [出典](https://github.com/Rikkyhub/studying-abroad/issues/77) | 未確認 | － | 未計上 | 未計上 | 未計上 |
-| 現地交通（ビクトリアの滝周辺の送迎・越境・タクシー）（未定） [出典](https://github.com/Rikkyhub/studying-abroad/issues/77) | 未確認 | － | 未計上 | 未計上 | 未計上 |
-| マダガスカルの観光（キツネザル・バオバブ。ツィンギ除外）7〜8日／10日／12日（未定） [出典](https://github.com/Rikkyhub/studying-abroad/issues/77) | 未確認 | － | 未計上 | 未計上 | 未計上 |
-| マダガスカルの宿泊・食事（未定） [出典](https://github.com/Rikkyhub/studying-abroad/issues/77) | 未確認 | － | 未計上 | 未計上 | 未計上 |
+| 35日間の食費（地域別単価×日数）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥44,800 | ¥64,000 | ¥97,700 |
+| VFA・Livingstone・Kasane間の日中送迎（区間数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥7,500 | ¥15,000 | ¥24,000 |
+| マダガスカル自然観光とガイド（回数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥15,000 | ¥24,000 | ¥36,000 |
+| マダガスカル宿泊費（食費はAF-11）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥26,000 | ¥39,000 | ¥65,000 |
 | マダガスカル国内線：アンタナナリボ↔モロンダバ（往復・曜日要確認）（未定） [出典](https://www.flight.info/MD702) | 未確認 | － | 未計上 | 未計上 | 未計上 |
 | モーリシャス→ヨハネスブルグ 片道直行便（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥55,000 | ¥55,000 | ¥55,000 |
 | ヨハネスブルグ→ビクトリアフォールズ 片道直行便（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥26,000 | ¥26,000 | ¥26,000 |
 | リビングストンの滝以外の観光（ザンビア側の滝・サンセットクルーズ・博物館・夜間入場。任意のアクティビティ）（未定） [出典](https://en.wikivoyage.org/wiki/Livingstone) | 未確認 | USD 110 | ¥10,282 | ¥17,401 | ¥44,293 |
-| チョベ国立公園の日帰りサファリ（ドライブ＋クルーズ、リビングストン／ビクトリアフォールズから）（Chobezi（候補）） [出典](https://chobezi.com/chobe-day-trip-2/) | 未確認 | － | 未計上 | 未計上 | 未計上 |
+| チョベのサファリ・ボート（回数×仮単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥16,000 | ¥24,000 | ¥40,000 |
 | ビクトリアフォールズ→ケープタウン 片道（直行/経由比較）（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥47,000 | ¥47,000 | ¥47,000 |
-| マダガスカル国内陸路（アンタナナリボ↔アンダシベ・モロンダバ周辺）（手配未定） [出典](https://www.gov.uk/foreign-travel-advice/madagascar/safety-and-security) | 未確認 | － | 未計上 | 未計上 | 未計上 |
-| **小計：公開価格表からの匿名の見積（見積と未確認の合計）** | － | － | **¥321,067** | **¥328,185** | **¥355,078** |
+| マダガスカル日中の道路移動（回数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥13,000 | ¥27,000 | ¥48,000 |
+| モーリシャス宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥21,000 | ¥30,000 | ¥42,000 |
+| ヨハネスブルグ宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥9,000 | ¥12,000 | ¥18,000 |
+| VFA・Livingstone・Kasane宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥31,500 | ¥40,500 | ¥72,000 |
+| ケープタウン入学前宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥14,000 | ¥20,000 | ¥32,000 |
+| **小計：公開価格表からの匿名の見積（見積と未確認の合計）** | － | － | **¥518,867** | **¥623,685** | **¥829,778** |
 | うち 見積（出典あり） | － | － | ¥7,910 | ¥7,910 | ¥7,910 |
-| うち 未確認（出典なし・推定） | － | － | ¥313,157 | ¥320,276 | ¥347,168 |
+| うち 未確認（出典なし・推定） | － | － | ¥510,957 | ¥615,776 | ¥821,868 |
 
 金額は公開価格表からの**匿名の見積**です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して合計しています（円未満は四捨五入）。区分の「未確認」は出典なしの推定または金額未入力で、見積と区別して表示しています。
 
-**未計上（合計に含まれない項目）**：AF-11 食費（マダガスカル・ビクトリアの滝周辺。ツアー外の分）（すべて未計上）、AF-12 現地交通（ビクトリアの滝周辺の送迎・越境・タクシー）（すべて未計上）、AF-14 マダガスカルの観光（キツネザル・バオバブ。ツィンギ除外）7〜8日／10日／12日（すべて未計上）、AF-15 マダガスカルの宿泊・食事（すべて未計上）、AF-16 マダガスカル国内線：アンタナナリボ↔モロンダバ（往復・曜日要確認）（すべて未計上）、AF-20 チョベ国立公園の日帰りサファリ（ドライブ＋クルーズ、リビングストン／ビクトリアフォールズから）（すべて未計上）、AF-22 マダガスカル国内陸路（アンタナナリボ↔アンダシベ・モロンダバ周辺）（すべて未計上）。「未計上」は金額が入っていないことを示し、0円ではありません。
+**未計上（合計に含まれない項目）**：AF-16 マダガスカル国内線：アンタナナリボ↔モロンダバ（往復・曜日要確認）（すべて未計上）。「未計上」は金額が入っていないことを示し、0円ではありません。
 
 **前提と備考**
 
@@ -90,17 +94,21 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 - AF-02：Skyscanner 2026-11-08取得の2027年5月往復直行便の月間参考値およそ90200〜91228円。約90700円を比較用に仮置き。実際の出発・復路曜日、滞在日数、手荷物込み条件・2027年の販売額は未確認。以前の片道50000円から往復へ仕様変更し二重計上しない。 ／ 2026-11-08追記（PR #79）：東京→ムンバイ→モーリシャスの5月1日検索は72,270円、5月3日は約74,000円（Issue #46、利用者申告）。AF-01の75,000円は検索参考額
 - AF-06：ザンビア入国管理局（2026-11-08確認）：日本は対象国、USD50、12か月のうち最大30日、ザンビアとジンバブエを複数回往来できる。ボツワナはカズングラ国境経由の日帰りまで（チョベで宿泊する場合は別の入国手続き）。ビクトリアの滝周辺は5月の新案（Issue #77）の必須Aなので、全シナリオ同額。旧案の『低予算ルートでは不要（0円）』は外した。2027年の料金・条件は未確認 ／ main 側の一次照合（2026-11-02）: KAZA基本USD50、カード決済時の総額USD50.50（手数料USD0.50）は別条件 https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/ 。日本はザンビア単独入国の査証免除対象 https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ だが、KAZAはザンビアとジンバブエの両国往来用の任意の選択肢。日本旅券のザンビア単独査証料USD50を自動加算しない。2027年のKAZA価格・取得地点・ジンバブエ側の査証要件・決済方法・渡航条件は未確認。次：ザンビア入管最新料金/免除一覧とジンバブエ入管公式案内、実際の入国順に照らして再計算。
 - AF-07：標準/余裕のUSD58は2026-02-16公表のジンバブエ側Rainforest main gate外国人料金のみ（Zambia TourismがZimParks改定を報告）で、両岸合計ではない。ザンビア側NHCC Eastern Cataract見学ゲート料金は未確認。Zambia Tourism掲載2025年Mosi-oa-Tunya国立公園USD10は別制度で、滝見学ゲート料金の根拠に転用しない。低ルート0は両岸訪問なしのモデル。USD58は確認できた部分の下限で、ザンビア側料金・移動・ガイド・査証は別途必要となりうるため行全体を未確認へ訂正。2027年の料金・包含条件は未確認。次の取得先：ZimParks現行料金、NHCC公式のEastern Cataractゲート料金、運営ツアーの入場料包含条件。ZimParks 2026年PDFの直接取得は2026-10-29時点404（検索抽出のみ）。購入・予約なし。2026-10-30運営者一次照合：Livingstone Island公式 https://livingstoneisland.com/rates-and-info は徒歩ツアーのNHCC入口別料金USD20を掲載。ただし2025年の2026年USD30改定合意報道と矛盾し、NHCC当局の現行料金表未取得のため一般見学・2027年額は未確認。運営者は5月1〜31日原則休止（例外あり）と案内。5月の島ツアーを確定旅程にしない。AF-07のUSD58はジンバブエ側のみ、ザンビア側は未計上。次：NHCC現行ゲート料金表と2027年運営者告知。 低ルート0は旧案の『両岸訪問なし』を前提にした値で、新案（ビクトリアの滝周辺が必須）には合わない。低予算もジンバブエ側USD58を下限として計上。 ／ main 側の追記: ではない。ザンビア側NHCC Eastern Cataract見学ゲート料金は未確認。Zambia Tourism掲載2025年Mosi-oa-Tunya国立公園USD10は別制度で、滝見学ゲート料金の根拠に転用しない。低ルート0は両岸訪問なしのモデル。USD58は確認できた部分の下限で、ザンビア側料金・移動・ガイド・査証は別途必要となりうるため行全体を未確認へ訂正。2027年の料金・包含条件は未確認。次の取得先：ZimParks現行料金、NHCC公式のEastern Cataractゲート料金、運営ツアーの入場料包含条件。2026-11-01 ZimParks公式2026年料金表Conservation Fees（p.12）を別公開経路/media/2026/02から直接確認。Rainforest Main gateのInternational Day visitors USD58/人、VIP USD174・Moonlight USD116は別料金。旧/wp-content/uploads/2026/02経路は404。2027年料金ではない。購入・予約なし。2026-10-30運営者一次照合：Livingstone Island公式 https://livingstoneisland.com/rates-and-info は徒歩ツアーのNHCC入口別料金USD20を掲載。ただし2025年の2026年USD30改定合意報道と矛盾し、NHCC当局の現行料金表未取得のため一般見学・2027年額は未確認。運営者は5月1〜31日原則休止（例外あり）と案内。5月の島ツアーを確定旅程にしない。AF-07のUSD58はジンバブエ側のみ、ザンビア側は未計上。次：NHCC現行ゲート料金表と2027年運営者告知。
-- AF-11：金額未入力（0円ではない）。Issue #77 の組み替えで、旧案（ナミビア経由のツアー）前提の食費を外した。マダガスカル（宿泊と食事の公式な目安はなし。hotely定食約3,000MGAはWikivoyage 2020年）とビクトリアの滝周辺で、日数モデルごとに算出する。ツアーに含まれる食事は、事業者の公式な包含条件を確認してから差し引く
-- AF-12：金額未入力（0円ではない）。旧案（モザンビーク送迎・南ア長距離バス）の値を外した。ビクトリアの滝・リビングストン・カズングラ（チョベ）の間の送迎・国境越え・タクシーを日数モデルごとに算出する。マダガスカル国内の移動は AF-16。越境は日中のみで、夜間移動は計画に入れない
-- AF-14：金額未入力（0円ではない）。日数は7〜8日／10日（暫定基準）／12日を比較する。ツィンギ・ド・ベマラハは経由・入園・移動・費用のいずれにも入れない。入園料はMGA建て（65,000／55,000／45,000 MGA、等級別）で、MGAは公式の円換算レートがなく円に換算できない。ガイド料と公園ごとの等級は未確認。運転手付き車の目安はEUR60/日（準公式）。詳細は research/madagascar-day-models-and-vfa-to-cpt.md、research/country-madagascar.md
-- AF-15：金額未入力（0円ではない）。日数モデル（7〜8日／10日／12日）ごとに算出する。宿・食事の掲載はMGA建て（準公式Wikivoyage：首都のドミトリー45,000MGA、モロンダバ30,000〜60,000MGA、2014〜2023年混在）で、MGAは公式の円換算レートがなく円に換算できない。2027年の料金は未確認。詳細は research/madagascar-day-models-and-vfa-to-cpt.md
+- AF-11：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
+- AF-12：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
+- AF-14：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
+- AF-15：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
 - AF-16：国内線を陸路交通から分離し飛行機代へ計上。2027年5月の公開ダイヤは曜日候補のみ、対象日席・税込往復運賃未取得。陸路はAF-22。空欄は0円ではない。 ／ 2026-11-08追記（PR #79）：アンタナナリボ⇄モロンダバはMadagascar Airlinesが毎日運航・約1時間（準公式Wikivoyage、2026年8月更新の表記）。運賃は公式・準公式とも取得できず未確認（公式サイトは403）。陸路の乗合タクシーは英国政府が避けるよう助言。詳細は research/madagascar-day-models-and-vfa-to-cpt.md
 - AF-17：2026-11-08 Skyscanner 2027年5月月間参考の直行片道約46006〜55168円から55000円を感度分析用に仮置き。利用者提示の往復85000円はJNB→VFAへ進む旅程では復路未利用となり得るため代替比較のみ。荷物、同日接続、実売未確認。
 - AF-18：利用者提示の26000円とSkyscanner月間参考約23078〜26880円（2027年5月、別日）に整合する比較用仮置き。2027年対象日実売・手荷物・別発券接続未確認。旧Madagascar→VFA空路の行をルート変更で再利用し旧値は計上しない。 ／ 2026-11-08追記（PR #79）：ルサカ・リビングストン側の路線は research/madagascar-day-models-and-vfa-to-cpt.md を参照。JNB→VFAの運航曜日・実売は未確認
 - AF-19：準公式（Wikivoyage Livingstone、2026-11-08確認、一部2021〜2023年）のUSD目安を積み上げた推計。低予算（5日案）＝ザンビア側の滝20＋サンセットクルーズ45＝65／標準（7日案）＝滝20＋クルーズ60（45〜75の中央）＋博物館5＋満月夜間入場25＝110／余裕（9日案）＝滝20＋クルーズ75＋博物館5＋夜間25＋任意でラフティング155＝280。ジンバブエ側の滝はAF-07、KAZA UNIVISAはAF-06に別計上。宿・食事・タクシーは含まない（日別の幅が大きい）。5月の水量の多い時期はラフティングの催行可否が未確認。島ツアー（リビングストン島）は5月は期待しない。事業者の公式料金と2027年の価格は未確認。詳細は research/victoria-falls-chobe-livingstone-model.md
-- AF-20：金額未入力（0円ではない）。事業者の掲載はBWP建て：日帰りセット BWP 1,384／人（2名から、10時間、昼食・国境からの送迎込み）、ドライブ単体 BWP 856、クルーズ単体 BWP 856（別々で計 BWP 1,712）。ボツワナ・プラは三菱UFJ銀行の対顧客相場の一覧になく（2026-11-06確認）、公式の円換算レートがないため円に換算していない。入園料・国境手数料の包含、1名参加の最低請求額、リビングストンからの送迎は未確認。USDの見積を事業者から取り、そのUSD額を入れる。詳細は research/victoria-falls-chobe-livingstone-model.md
+- AF-20：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
 - AF-21：2026-11-08 Skyscanner 2027年5月月間参考約44743〜47067円。6月初旬の希望日については未検証のため47000円は条件付き仮置き。VFAからの片道運賃・乗継・荷物条件を確認する。 ／ 2026-11-08追記（PR #79）：リビングストン（LVI）発ケープタウン行きの直行をProflight公式で確認。2027年5月は月曜のみP0 050（08:40→11:40、5/1〜6/23）と金曜P0 054（12:05→15:05）。往復運賃の例US$563〜（過去1週間の予約例・片道ではない）。手荷物は国際線無料受託30kg。VFA（ジンバブエ側）発の直行は確認できず。VFA→CPTの47,000円と、LVI発の直行のどちらを採用するかは未確定。詳細は research/madagascar-day-models-and-vfa-to-cpt.md
-- AF-22：AF-16の国内線費とは別。日中に認可ツアー/宿手配の移動を検証。夜行長距離タクシーブルースはFCDO安全情報から除外。現地陸路費は航空券と混ぜず、未取得＝0円ではない。
+- AF-22：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
+- AF-23：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
+- AF-24：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
+- AF-25：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
+- AF-26：フェルミ推定（数量×単価）の入力正本は research/africa-budget-fermi.md。2027年実売・市場平均ではなく仮の価格。二重計上を確認。
 <!-- /AUTO:cost -->
 
 ## 4. 資料
@@ -123,6 +131,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [ビクトリアの滝周辺のモデルルート：チョベサファリとリビングストン滞在](../research/victoria-falls-chobe-livingstone-model.md) | チョベ日帰り・宿泊、リビングストンの滝以外の過ごし方、5/7/9日の日別モデルと料金（USD建て）。BWP・ZMWは円換算不可 | [chobezi.com](https://chobezi.com/chobe-day-trip-2/)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Livingstone)<br>[zambiaimmigration.gov.zm](https://www.zambiaimmigration.gov.zm/kaza-univisa/) | 2026-11-08 |
 | アフリカ | [マダガスカルの日数モデルの費用の枠と、ビクトリアの滝周辺→ケープタウンの空路](../research/madagascar-day-models-and-vfa-to-cpt.md) | Proflight公式でLVI→CPT直行（2027年5月は月曜・金曜）を確認。マダガスカルは国内線運賃が未確認、MGAが円換算不可（Issue #77） | [proflight-zambia.com](https://proflight-zambia.com/flights/flights-from-livingstone/)<br>[flyairlink.com](https://flyairlink.com/network)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Morondava) | 2026-11-08 |
 | 運用 | [Issue #77 の調べ残し：定期確認の依頼票](../research/77-open-research-requests.md) | 公式情報で取れなかった26項目（為替・運賃・入園料・入国要件など）を、ChatGPTの定期確認で調べてIssueにコメントしてもらうための票 | － | 2026-11-08 |
+| 費用 | [5月アフリカ周遊：数量×仮単価の予算表](../research/africa-budget-fermi.md) | 泊数・日数・回数と仮単価から積み上げる5月の予算の編集元（Markdown）。正式見積に置き換えるまでの仮定（Issue #80） | － | 2026-11-08 |
 | アフリカ | [5月アフリカ周遊3ルートの比較](../research/may-three-routes-comparison.md) | ケニア・タンザニア経由／JNB北側先行／JNB南側先行の日別表・費用式・入国条件の検証（調査版） | [flyairlink.com](https://www.flyairlink.com/sites/default/files/files/Schedule-June.pdf)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html)<br>[evisa.gov.mz](https://www.evisa.gov.mz/) | 2026-10-20 |
 | アフリカ | [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.md) | MNL発・CPT着の東アフリカ/Namibia/Eswatini+Mozambique 3案の比較基準資料（匿名モデル） | － | 2026-10-19 |
 | アフリカ | [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.md) | JNB→レソト/エスワティニ/モザンビーク→ジンバブエのD1〜D4順序・交通・安全・レンタカー可否の検証（調査版） | [transmagnific.com](https://transmagnific.com/schedule.php)<br>[avis.co.za](https://www.avis.co.za/safari-rental/Terms-and-Conditions)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html) | 2026-10-20 |

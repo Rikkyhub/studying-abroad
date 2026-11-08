@@ -45,6 +45,7 @@
 | [ビクトリアの滝周辺のモデルルート：チョベサファリとリビングストン滞在](../research/victoria-falls-chobe-livingstone-model.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-08 |
 | [マダガスカルの日数モデルの費用の枠と、ビクトリアの滝周辺→ケープタウンの空路](../research/madagascar-day-models-and-vfa-to-cpt.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-08 |
 | [Issue #77 の調べ残し：定期確認の依頼票](../research/77-open-research-requests.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-08 |
+| [5月アフリカ周遊：数量×仮単価の予算表](../research/africa-budget-fermi.html) | [#80](https://github.com/Rikkyhub/studying-abroad/issues/80) | 作成中 | 2026-11-08 |
 | [優先度1の準備タスク調査](../research/prep-priority1-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
 | [長期留学＋周遊の保険（カード90日・期間の穴）](../research/long-stay-insurance.html) | [#49](https://github.com/Rikkyhub/studying-abroad/issues/49) | 調査中 | 2026-10-19 |
 | [5月アフリカ周遊3ルートの比較](../research/may-three-routes-comparison.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-20 |
