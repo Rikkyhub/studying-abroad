@@ -207,7 +207,8 @@ class UnpricedVsZeroTest(unittest.TestCase):
     def test_may_redesign_rows_without_amount_stay_unpriced(self):
         """Issue #77 の新5月案：日別の費用を調べるまで、マダガスカル・VFA周辺の現地費用は金額未入力（0円にしない）"""
         rows = {x["id"]: x for x in build.read_csv("expenses.csv")}
-        for rid in ("AF-14", "AF-15", "AF-16", "AF-17", "AF-18", "AF-19"):
+        # AF-19（リビングストンの滝以外の観光）は準公式のUSD目安を入れた。AF-20（チョベ日帰り）はBWP建てで円換算できず空欄
+        for rid in ("AF-14", "AF-15", "AF-16", "AF-17", "AF-18", "AF-20"):
             self.assertEqual((rows[rid]["low_local"], rows[rid]["std_local"], rows[rid]["high_local"]), ("", "", ""), rid)
             self.assertEqual(rows[rid]["status"], "未確認", rid)
 
