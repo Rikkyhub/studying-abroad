@@ -26,7 +26,7 @@ CATEGORIES = {
     "AF-26": ("宿泊", "寮・ホームステイ・宿泊", "南アフリカ", "ケープタウン入学前宿泊（泊数×単価）", "2027-06"),
 }
 SCENARIOS = ("low", "std", "high")
-HEADINGS = ("ID", "区分", "対象・費目", "数量", "単位", "節約単価", "標準単価", "余裕単価")
+HEADINGS = ("ID", "区分", "国・地域", "対象・費目", "数量", "単位", "節約単価", "標準単価", "余裕単価")
 
 
 def _number(value, row):
@@ -52,7 +52,9 @@ def read_assumptions(root=ROOT):
             continue
         if len(cells) != len(HEADINGS):
             raise ValueError(f"Fermi Markdown: {len(cells)} cells, expected {len(HEADINGS)}: {line}")
-        expense_id, kind, segment, q, unit, low, std, high = cells
+        expense_id, kind, country, segment, q, unit, low, std, high = cells
+        if not country:
+            raise ValueError(f"Fermi Markdown: missing country for {expense_id}")
         if expense_id not in CATEGORIES:
             raise ValueError(f"Fermi Markdown: unknown ID {expense_id}")
         if kind != CATEGORIES[expense_id][0]:
@@ -63,12 +65,12 @@ def read_assumptions(root=ROOT):
         prices = [_number(v, line) for v in (low, std, high)]
         if not quantity or any(v < 0 for v in prices) or prices != sorted(prices):
             raise ValueError(f"Fermi Markdown: invalid quantity / price order {expense_id}")
-        entries.append({"id": expense_id, "kind": kind, "segment": segment,
+        entries.append({"id": expense_id, "kind": kind, "country": country, "segment": segment,
                         "quantity": quantity, "unit": unit, "prices": prices})
     if not entries or set(CATEGORIES).difference({x["id"] for x in entries}):
         raise ValueError("Fermi Markdown: missing budget estimates")
     # A source table with the exact same country/segment more than once could double-count.
-    keys = [(x["id"], x["segment"]) for x in entries]
+    keys = [(x["id"], x["country"], x["segment"]) for x in entries]
     if len(set(keys)) != len(keys):
         raise ValueError("Fermi Markdown: duplicated ID+segment")
     return entries
@@ -140,4 +142,34 @@ def render_summary_md(root=ROOT):
         "航空券・ビザ・滝の入場料・国内線などは別費目で、ここには含まれません。" +
         "仮単価は市場平均や実売の保証ではありません。",
     ]
+    # Country budgets are read from the SAME source rows; no duplicate input.
+    country_totals = {}
+    for entry in entries:
+        name = entry["country"]
+        row = country_totals.setdefault(name, {"nights": 0, "days": 0,
+                                              "lodging": [0, 0, 0], "food": [0, 0, 0],
+                                              "other": [0, 0, 0]})
+        if entry["unit"] == "泊":
+            row["nights"] += entry["quantity"]
+        if entry["kind"] == "食費" and entry["unit"] == "日":
+            row["days"] += entry["quantity"]
+        bucket = "lodging" if entry["kind"] == "宿泊" else ("food" if entry["kind"] == "食費" else "other")
+        for j in range(3):
+            row[bucket][j] += entry["quantity"] * entry["prices"][j]
+    lines += ["", "### 国・地域別の内訳（同じMarkdownの編集表から自動計算）", "",
+              "| 国・地域 | 泊数 | 食費日数 | 宿泊（標準） | 食費（標準） | 移動・観光等（標準） | 計（標準） |",
+              "|---|---:|---:|---:|---:|---:|---:|"]
+    for name, row in country_totals.items():
+        lodging = row["lodging"][1]
+        food = row["food"][1]
+        other = row["other"][1]
+        lines.append(f"| {name} | {row['nights']}泊 | {row['days']}日 | "
+                     f"¥{lodging:,} | ¥{food:,} | ¥{other:,} | ¥{lodging + food + other:,} |")
+    for j in range(3):
+        country_sum = sum(sum(row[part][j] for part in ("lodging", "food", "other"))
+                          for row in country_totals.values())
+        if country_sum != all_totals[j]:
+            raise ValueError("May country estimate totals do not reconcile")
+    lines += ["", "国境間シャトルは「国境・越境共通」、搭乗日の食費は「国際移動」に分けています。"
+              "この配分は旅程が変われば要修正で、各国の価格平均や実際の販売額ではありません。"]
     return "\n".join(lines)
