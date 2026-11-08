@@ -833,7 +833,7 @@ ROUTE_TABLE_HTML = (
     '<div class="route" data-route>'
     '<p class="route-pre"><span class="lbl">既存の案から始める：</span><span class="presets"></span></p>'
     '<p class="route-desc" aria-live="polite"></p>'
-    '<div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th>移動</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead>'
+    '<div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th title="現地での1日あたりの宿・食・移動の目安（円）">1日単価</th><th>移動</th><th title="この区間の航空券・移動費（円）">移動費</th><th>小計</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead>'
     '<tbody></tbody></table></div>'
     '<p class="route-bar"><button type="button" class="r-add">＋ 行を追加</button> '
     '<button type="button" class="r-send">Claudeに送る（triage/route.json）</button> '
@@ -842,6 +842,7 @@ ROUTE_TABLE_HTML = (
     '<button type="button" class="r-reset">すべて消す</button></p>'
     '<p class="route-sum" aria-live="polite"></p>'
     '<p class="route-days dim" aria-live="polite"></p>'
+    '<p class="route-cost dim" aria-live="polite"></p>'
     '<label class="route-ask">Claudeへの依頼（任意）<textarea rows="2" placeholder="例：この順番で費用と日数を調べ直して／ケニアを外した案も比べて"></textarea></label></div>')
 ROUTE_SCRIPT = """<script>
 (function(){
@@ -849,7 +850,7 @@ var KEY="route-builder-v2",root=document.querySelector("[data-route]");if(!root)
 var tb=root.querySelector("tbody"),sum=root.querySelector(".route-sum"),desc=root.querySelector(".route-desc"),ask=root.querySelector("textarea");
 var PRESETS=@@PRESETS@@, PLACES=@@PLACES@@, TOTAL=194;
 var MOVES=["","飛行機","陸路","バス","電車","船","車","徒歩"];
-var COLS=[["place","滞在地","例 バギオ"],["country","国","例 フィリピン"],["when","時期","例 2〜4月"],["days","日数","例 12週"],["move","移動",""],["memo","メモ",""]];
+var COLS=[["place","滞在地","例 バギオ"],["country","国","例 フィリピン"],["when","時期","例 2〜4月"],["days","日数","例 12週"],["unit","1日単価","例 5000"],["move","移動",""],["fare","移動費","例 50000"],["sub","小計",""],["memo","メモ",""]];
 var st={rows:[],preset:"",ask:""},undo=[];
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
@@ -861,6 +862,10 @@ if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="
 /* 日数の読み取り：12週/8週/10日/3か月/2ヶ月/1年 などを日に換算（読めなければ 0） */
 function toDays(t){t=(t||"").replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)});var m=t.match(/(\\d+(?:\\.\\d+)?)\\s*(週間|週|日間|日|か月|ヶ月|カ月|ヵ月|月|年)?/);if(!m)return 0;var n=parseFloat(m[1]),u=m[2]||"日";
  return Math.round(/週/.test(u)?n*7:/年/.test(u)?n*365:/月/.test(u)?n*30:n)}
+/* 金額の読み取り：5,000 / 5000円 / ¥5000 / 5万 などを円に換算（読めなければ 0）。空欄は 0 */
+function toYen(t){t=(t||"").replace(/[０-９，]/g,function(c){return c==="，"?"":String.fromCharCode(c.charCodeAt(0)-65248)}).replace(/[,\\s円¥￥]/g,"");var m=t.match(/^(\\d+(?:\\.\\d+)?)(万|千)?/);if(!m)return 0;var n=parseFloat(m[1]);return Math.round(m[2]==="万"?n*10000:m[2]==="千"?n*1000:n)}
+function rowSub(r){return toDays(r.days)*toYen(r.unit)+toYen(r.fare)}
+function yenfmt(n){return n?"¥"+n.toLocaleString("ja-JP"):"－"}
 /* 滞在地の候補（datalist）。選ぶと国と移動の既定が入る */
 var dl=document.createElement("datalist");dl.id="route-places";PLACES.forEach(function(p){var op=document.createElement("option");op.value=p.name;op.label=p.country;dl.appendChild(op)});document.body.appendChild(dl);
 function byName(n){return PLACES.filter(function(p){return p.name===n})[0]}
@@ -869,8 +874,9 @@ PRESETS.forEach(function(c){var b=document.createElement("button");b.type="butto
  b.addEventListener("click",function(){if(st.rows.length&&!confirm("いまの入力を案"+c.id+"で置き換えます（「元に戻す」で戻せます）。よろしいですか？"))return;loadPreset(c.id)});pre.appendChild(b)});
 var ub=root.querySelector(".r-undo");
 ub.addEventListener("click",function(){var u=undo.pop();if(!u)return;st=JSON.parse(u.s);save();build();ub.disabled=!undo.length;ub.textContent=undo.length?"元に戻す（"+undo[undo.length-1].label+"）":"元に戻す"});
-function fixed(label){var tr=document.createElement("tr");tr.className="fix";tr.innerHTML='<td></td><td colspan="8"><strong>'+label+'</strong></td>';return tr}
+function fixed(label){var tr=document.createElement("tr");tr.className="fix";tr.innerHTML='<td></td><td colspan="11"><strong>'+label+'</strong></td>';return tr}
 function mkInput(r,c,tr){var td=document.createElement("td");td.setAttribute("data-label",c[1]);var key=c[0];
+ if(key==="sub"){td.className="n sub";td.textContent=yenfmt(rowSub(r));return td}
  if(key==="move"){var sel=document.createElement("select");sel.setAttribute("aria-label","移動");
   var list=MOVES.slice();if(r.move&&list.indexOf(r.move)<0)list.push(r.move);
   list.forEach(function(m){var o=document.createElement("option");o.value=m;o.textContent=m||"（未選択）";sel.appendChild(o)});sel.value=r.move||"";
@@ -879,6 +885,7 @@ function mkInput(r,c,tr){var td=document.createElement("td");td.setAttribute("da
  if(key==="place")inp.setAttribute("list","route-places");
  inp.addEventListener("input",function(){r[key]=inp.value;
   if(key==="place"){var p=byName(inp.value);if(p){if(!r.country){r.country=p.country;var ci=tr.children[2].children[0];if(ci)ci.value=p.country}}}
+  if(key==="days"||key==="unit"||key==="fare"){var sc=tr.querySelector("td.sub");if(sc)sc.textContent=yenfmt(rowSub(r))}
   save();paint()});
  inp.addEventListener("change",function(){if(key==="days")paint()});
  td.appendChild(inp);return td}
@@ -917,6 +924,10 @@ function paint(){var n=names(),k=st.rows.filter(function(r){return r.research}).
  var dd=root.querySelector(".route-days");
  if(days||unread){var diff=TOTAL-days;dd.textContent="日数の合計："+days+"日／全体"+TOTAL+"日"+(diff>=0?"（あと"+diff+"日）":"（"+(-diff)+"日超過）")+(unread?"　※読めない日数が"+unread+"行あります（例：12週、10日、2か月）":"");dd.className="route-days"+(diff<0?" over":"")}
  else{dd.textContent="日数を入れると、全体"+TOTAL+"日に対する合計が出ます（例：12週、10日、2か月）";dd.className="route-days dim"}
+ var air=st.rows.reduce(function(a,r){return a+toYen(r.fare)},0),ground=st.rows.reduce(function(a,r){return a+toDays(r.days)*toYen(r.unit)},0);
+ var cc=root.querySelector(".route-cost");
+ if(air||ground){var all=air+ground,left=600000-all;cc.textContent="費用の合計：移動費 "+yenfmt(air)+" ＋ 現地費（日数×1日単価）"+yenfmt(ground)+" ＝ "+yenfmt(all)+"（目標60万円に対して"+(left>=0?"あと "+yenfmt(left):"超過 "+yenfmt(-left))+"）";cc.className="route-cost"+(left<0?" over":"")}
+ else{cc.textContent="1日単価と移動費を入れると、区間ごとの小計と合計が出ます（空欄は0円ではなく未入力）";cc.className="route-cost dim"}
  ub.disabled=!undo.length}
 ask.addEventListener("input",function(){st.ask=ask.value;save()});
 root.querySelector(".r-add").addEventListener("click",function(){snap("行の追加");st.rows.push({});save();build();var l=tb.querySelectorAll("tr:not(.fix) td:nth-child(2) input");if(l.length)l[l.length-1].focus()});
@@ -1233,6 +1244,8 @@ details.sec>:last-child{margin-bottom:14px}
 .route-t td.chk{text-align:center}.route-t td.chk input{width:auto;min-width:0;transform:scale(1.25)}
 .route-ask{display:block;margin:12px 0 4px;font-weight:700;font-size:.9rem}
 .route-ask textarea{display:block;width:100%;margin-top:4px;font:inherit;font-size:.92rem;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.route-cost{font-size:.92rem;margin:2px 0 8px;font-weight:700}.route-cost.dim{color:var(--muted);font-weight:400}.route-cost.over{color:#b3261e}
+.route-t td.sub{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
 .route-days{font-size:.92rem;margin:2px 0 8px}.route-days.dim{color:var(--muted)}.route-days.over{color:#b3261e;font-weight:700}
 .route-t td select{width:100%;min-width:5.5em;font:inherit;font-size:.9rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 .route-bar button:disabled{opacity:.45;cursor:default}
