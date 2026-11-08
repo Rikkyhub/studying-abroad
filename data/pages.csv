@@ -73,3 +73,4 @@ P72,research,アフリカ,ルワンダ（国別ページ）,観光地・おす�
 P73,research,アフリカ,マラウイ（国別ページ）,観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり）,countries/malawi.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,314,2026-11-08,,africa
 P75,research,アフリカ,アフリカ周遊（8月）の国別シーズン比較,8月の南部・東部アフリカ。乾季の最盛期にあたる国の見どころ・費用・混雑（調査版）,research/africa-august-comparison.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,400,2026-11-08,,africa-aug
 P77,plan,運用,確認待ち（QA）,AIが調べ切れなかった費用・本人の確認が要ることの一覧（CSVから自動生成）,docs/10-qa.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,415,2026-11-08,,
+P78,plan,運用,モデルルート作成,日本→滞在地→日本の骨組みを自分で入力して作る画面（入力はブラウザ内、triage/ に保存）,docs/11-route-builder.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,416,2026-11-08,,

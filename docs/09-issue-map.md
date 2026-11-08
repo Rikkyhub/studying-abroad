@@ -80,6 +80,7 @@
 | [ルワンダ 国別深掘り](../research/country-rwanda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [マラウイ 国別深掘り](../research/country-malawi.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [確認待ち（QA）](../docs/10-qa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-11-08 |
+| [モデルルート作成](../docs/11-route-builder.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-08 |
 
 ## タスクと Issue
 

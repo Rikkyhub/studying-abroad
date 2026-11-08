@@ -19,3 +19,6 @@ exports/
 cost-triage-*.json
 triage/*
 !triage/README.md
+
+# ブレインストーミング用の一時画面
+.superpowers/
