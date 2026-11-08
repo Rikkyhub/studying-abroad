@@ -240,3 +240,4 @@ Wikivoyage（年不明）の記述：タンザニア北部は二峰性で、短�
 - 取得成功：tanzaniaparks.go.tz（料金表なし）、gov.uk tanzania の entry-requirements と health、Wikivoyage の Serengeti / Ngorongoro / Tarangire / Manyara / Kilimanjaro / Zanzibar / Arusha、Wikipedia Zanzibar（気候）。
 - 取得失敗：ngorongoro-crater.go.tz（DNS不可）、kilimanjaroparks.com（DNS不可）、anzen.mofa.go.jp の pcwideinfo_2026C043 と pcinfectionspothazardinfo_2026T043（403）、travelhealthpro.org.uk の country/218（Taiwanのページが返り無関係）。
 - 検索語なしで確認した項目：5月の天候、大移動の位置はWikivoyageの一般記述のみ。公式の月別情報は未取得。
+- 再試行（2回目・2026-11-08）：tanzaniaparks.go.tz のトップは HTTP 200 だが、ページは JavaScript 描画で、HTML 内のリンクは `/awards-recognitions`、`/tanapa-go`（アプリの案内）、アプリストアのみ。料金表・PDFへのリンクは見つからなかった。推測した `/national-parks` と `/tariffs` は 404。ngorongoro-crater.go.tz は DNS 解決不可のまま。TANAPA の公式料金は**引き続き未確認**。問い合わせ先（info@tanzaniaparks.go.tz）の記載はあるが、外部への送信は行わない。
