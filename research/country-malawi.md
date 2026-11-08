@@ -135,11 +135,11 @@
 
 | 項目 | 金額・通貨 | 条件・年度 | 出典（区分） | 状態 |
 |---|---|---|---|---|
-| eVisa 単一入国 | USD 75 | オンライン、Visa/Mastercardのみ。国籍別の記載なし、不返金 | https://www.immigration.gov.mw/visa/visa-fees/ （公式、2026-11-08確認） | 確認済み（日本旅券への適用は未確認） |
-| eVisa トランジット | USD 50 | 同上。通過滞在は7日 | 同上＋types-of-malawi-visa | 確認済み |
-| 複数入国 6か月／12か月 | USD 150／USD 250 | 同上 | 同上 | 確認済み |
+| eVisa 単一入国 | USD 75（入管局ページ）／USD 50（eVisaポータルFAQ） | オンライン、Visa/Mastercardのみ、USD払い、不返金。処理は3営業日。**同じ公式2サイトで金額が食い違う** | https://www.immigration.gov.mw/visa/visa-fees/ ／ https://evisa.gov.mw/Faq （公式、2026-11-08確認） | 料金は**未確定**（どちらが現行か未確認） |
+| eVisa トランジット | USD 50 | 同上。通過滞在は7日（両サイトで一致） | 同上＋types-of-malawi-visa | 確認済み |
+| 複数入国 6か月／12か月 | USD 150／USD 250 | 同上（両サイトで一致） | 同上 | 確認済み |
 | 到着時ビザ（単一） | USD 50 | 英国旅券向けの記載。現金USD推奨 | https://www.gov.uk/foreign-travel-advice/malawi/entry-requirements （公式、2026-11-08確認） | 日本旅券は**未確認** |
-| 日本国籍の査証免除の有無 | — | 日本の扱いは移民局ページに記載なし | — | **未確認** |
+| 日本国籍の扱い | **カテゴリー2（到着ビザ取得可）** | 2026-02-24付の公告で、カテゴリー2の国籍者は全指定入国地点で到着ビザを取得できる。日本は「Category Two Countries」一覧の79番。**事前申請は推奨**（処理時間と入国手続の短縮のため）。カテゴリー1（エチオピア、インド、中国、トルコ等47か国）は事前の査証または事前許可が必須 | https://evisa.gov.mw/ （マラウイ電子ビザ公式ポータル、2026-11-08確認）。一覧PDF https://evisa.gov.mw/PDFs/CategoryTwoCountries.pdf ・ https://evisa.gov.mw/PDFs/CategoryOneCountries.pdf | 確認済み（公告の有効期間・到着ビザの料金は未確認） |
 | 宿（ドミ） | USD 10〜15/泊 | 年度不明 | Wikivoyage （準公式） | 参考 |
 | 宿（中級） | USD 30〜80/泊（部屋） | 年度不明 | Wikivoyage | 参考 |
 | 宿（高級離島等） | Mumbo島 USD 275 | 食事付き、年度不明 | Wikivoyage | 参考 |
@@ -194,7 +194,7 @@
 
 ## 10. 未確認事項
 
-- 日本国籍のビザ扱い（免除／到着時／eVisa）と料金。移民局は国籍別記載なし。2026年に日本人対象の制度変更があるとのIssue記載は公式で確認できず（既存資料）。
+- eVisa 単一入国の料金（移民局ページ USD 75 と eVisa ポータル FAQ USD 50 で食い違い）と、日本国籍が到着ビザで払う額（公告は料金を記載せず）。日本の扱い自体は、公式ポータルの公告とカテゴリー2の一覧で「到着ビザ取得可」と確認できた。2026年に日本人対象の制度変更があるとのIssue記載は公式で確認できず（既存資料）。
 - 外務省の危険レベルとマラウイ情勢（403）。
 - 燃料不足の最新度合い、停電の最新状況。
 - 公園公式料金（リウォンデ、マジェテ、ヴワザ、ムランジェ、ゾンバ）。African Parks 各ページは403。
@@ -230,3 +230,4 @@
 - 取得成功：immigration.gov.mw（トップ・visa-fees・types-of-malawi-visa）、gov.uk FCDO（トップ・entry-requirements・safety-and-security・health）、malawitourism.com、Wikivoyage（Malawi, Lake_Malawi, Cape_Maclear, Nkhata_Bay, Liwonde_National_Park, Mount_Mulanje, Lilongwe, Blantyre）、Wikipedia Lake_Malawi。
 - 失敗：外務省 anzen.mofa.go.jp（403、複数URL）、mofa.go.jp/area/malawi（403）、africanparks.org（Liwonde／Majete、403）、TravelHealthPro（別国のページが返り、マラウイを取得できず）、visa.immigration.gov.mw（名前解決不可）、Wikipedia Malawi_kwacha（404）、Wikivoyage Mulanje_Massif（404）。
 - 学び：Wikivoyageの料金は年度不明のため全て「参考」扱い。Vwazaは取得資料に記載なし。
+- 再取得（2回目・2026-11-08）：immigration.gov.mw の visa-fees／types-of-malawi-visa／apply-for-visa と、evisa.gov.mw の トップ・Faq・Services・VisaAssistance を取得。2026-02-24付の公告（到着ビザ：カテゴリー2は取得可、カテゴリー1は事前査証）を確認し、`/PDFs/CategoryTwoCountries.pdf`（79. Japan）と `/PDFs/CategoryOneCountries.pdf`（47か国）を `pdftotext` で読み取った。公告ページの `/CategoryTwoCountries.pdf` 等の直下URLは404で、実際の保存先は `/PDFs/` だった。
