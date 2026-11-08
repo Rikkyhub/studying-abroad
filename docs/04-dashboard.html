@@ -76,9 +76,30 @@ dl.kv div:last-child{border-bottom:0}
 dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 .card .scroll{margin:0;border-top:0}
 .card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
+.carousel{position:relative}
+.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 4px 32px;-webkit-overflow-scrolling:touch}
+.car-track>.card{flex:0 0 min(300px,80%);scroll-snap-align:start}
+.car-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.car-btn.prev{left:-12px} .car-btn.next{right:-12px} .car-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.car-btn[disabled]{opacity:.35;cursor:default}
+details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);list-style:none}
+details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\25B8";display:inline-block;margin-right:8px;transition:transform .2s}
+details.fold[open]>summary::before{transform:rotate(90deg)}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 @media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:640px){
+.scroll{overflow-x:visible;border-top:0;border-bottom:0}
+.scroll table:has(td[data-label]){min-width:0;display:block}
+.scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
+.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.scroll table:has(td[data-label]) td{display:block;padding:8px 12px;border-bottom:1px solid var(--line);background:none!important;min-width:0;text-align:left}
+.scroll table:has(td[data-label]) td:last-child{border-bottom:0}
+.scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
+.scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
+}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 </style></head><body>
 <header class="bar"><div class="wrap"><nav aria-label="ページ間の移動"><a href="../index.html">トップ</a><a href="../areas/baguio.html">バギオ</a><a href="../areas/africa.html">アフリカ周遊（5月）</a><a href="../areas/africa-aug.html">アフリカ周遊（8月）</a><a href="../areas/capetown.html">ケープタウン</a><a href="../areas/common.html">日本国内・保険・共通</a><a href="../maps/world-map.html">ルート地図</a><a href="#all-pages">全ページ</a></nav></div></header>
@@ -92,9 +113,9 @@ dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 py scripts/build_all.py --check  # 生成物が元データと一致するか検証（CIで実行）</code></pre>
 <p>Linux/macOS では <code>py</code> の代わりに <code>python3</code> を使います。</p>
 <h2 id="手で書くもの生成されるもの">手で書くもの・生成されるもの</h2>
-<div class="scroll"><table><thead><tr><th>種類</th><th>例</th><th>扱い</th></tr></thead><tbody><tr><td>手で編集する Markdown</td><td><code>areas/*.md</code> の導入文・見出し、<code>docs/*.md</code>、<code>research/*.md</code>、<code>blog/*.md</code></td><td>正本。ここを直す</td></tr><tr><td>自動生成のブロック</td><td>Markdown 内の `<code> 〜 </code>` の間</td><td><code>scripts/build.py</code> が作り直す。手で直しても上書きされる</td></tr><tr><td>生成されるHTML</td><td><code>index.html</code>、<code>areas/*.html</code>、<code>research/*.html</code> など全 <code>*.html</code></td><td>手で編集しない。Markdown から生成</td></tr><tr><td>Word</td><td><code>exports/</code>（コミットしない）</td><td><code>py scripts/export.py docx</code>（地域別ページも対象）</td></tr><tr><td>内部入力（CSV）</td><td><code>data/*.csv</code></td><td>費用・タスク・日程・資料・場所・為替の元データ。生成スクリプトだけが読む</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>種類</th><th>例</th><th>扱い</th></tr></thead><tbody><tr><td data-label="種類">手で編集する Markdown</td><td data-label="例"><code>areas/*.md</code> の導入文・見出し、<code>docs/*.md</code>、<code>research/*.md</code>、<code>blog/*.md</code></td><td data-label="扱い">正本。ここを直す</td></tr><tr><td data-label="種類">自動生成のブロック</td><td data-label="例">Markdown 内の `<code> 〜 </code>` の間</td><td data-label="扱い"><code>scripts/build.py</code> が作り直す。手で直しても上書きされる</td></tr><tr><td data-label="種類">生成されるHTML</td><td data-label="例"><code>index.html</code>、<code>areas/*.html</code>、<code>research/*.html</code> など全 <code>*.html</code></td><td data-label="扱い">手で編集しない。Markdown から生成</td></tr><tr><td data-label="種類">Word</td><td data-label="例"><code>exports/</code>（コミットしない）</td><td data-label="扱い"><code>py scripts/export.py docx</code>（地域別ページも対象）</td></tr><tr><td data-label="種類">内部入力（CSV）</td><td data-label="例"><code>data/*.csv</code></td><td data-label="扱い">費用・タスク・日程・資料・場所・為替の元データ。生成スクリプトだけが読む</td></tr></tbody></table></div>
 <h2 id="生成の流れ2段階順序固定">生成の流れ（2段階・順序固定）</h2>
-<div class="scroll"><table><thead><tr><th>順</th><th>スクリプト</th><th>読むもの</th><th>書くもの</th></tr></thead><tbody><tr><td>1</td><td><code>scripts/build.py</code>（地域別の表は <code>scripts/areas.py</code>）</td><td><code>data/*.csv</code> と <code>research/africa-route-comparison.md</code> の表</td><td><code>README.md</code>・<code>docs/01〜03</code>・<code>blog/article-ideas.md</code>・<code>areas/*.md</code> の AUTO ブロック</td></tr><tr><td>2</td><td><code>scripts/build_html.py</code></td><td>上記の Markdown と <code>data/*.csv</code></td><td><code>areas/</code>・<code>research/</code>・<code>docs/</code>・<code>blog/</code> の <code>*.html</code>、<code>docs/09-issue-map.*</code>、<code>index.html</code></td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>順</th><th>スクリプト</th><th>読むもの</th><th>書くもの</th></tr></thead><tbody><tr><td data-label="順">1</td><td data-label="スクリプト"><code>scripts/build.py</code>（地域別の表は <code>scripts/areas.py</code>）</td><td data-label="読むもの"><code>data/*.csv</code> と <code>research/africa-route-comparison.md</code> の表</td><td data-label="書くもの"><code>README.md</code>・<code>docs/01〜03</code>・<code>blog/article-ideas.md</code>・<code>areas/*.md</code> の AUTO ブロック</td></tr><tr><td data-label="順">2</td><td data-label="スクリプト"><code>scripts/build_html.py</code></td><td data-label="読むもの">上記の Markdown と <code>data/*.csv</code></td><td data-label="書くもの"><code>areas/</code>・<code>research/</code>・<code>docs/</code>・<code>blog/</code> の <code>*.html</code>、<code>docs/09-issue-map.*</code>、<code>index.html</code></td></tr></tbody></table></div>
 <p>順序が逆だと HTML が AUTO ブロック更新前の内容になります。何度実行しても同じ結果になります（テストで確認）。</p>
 <h2 id="地域別ページの構成">地域別ページの構成</h2>
 <p>各ページは次の順です：(1) 概要と時期（モデル） (2) いまの確認事項（優先度つき・相対期限・期限の種類） (3) 費用の見積（低予算/標準/余裕、小計つき） (4) 資料（参考リンクを表内に） (5) 場所と地図（Google マップ） (6) 通貨と円換算。アフリカ周遊にはルート案の表と地図の節があります（<code>maps/world-map.html</code>・<code>maps/africa-map.html</code> が存在するときだけリンクします）。</p>

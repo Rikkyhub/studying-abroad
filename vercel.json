@@ -15,10 +15,10 @@
     },
     {
       "src": "^/$",
-      "dest": "/all.html"
+      "dest": "/index.html"
     },
     {
-      "src": "^/docs-all$",
+      "src": "^/(all|docs-all)$",
       "dest": "/all.html"
     },
     {
