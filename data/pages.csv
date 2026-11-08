@@ -24,6 +24,7 @@ P24,plan,運用,HTML・Word への変換,Markdownを正本にHTML/Wordを作る�
 P25,plan,運用,AI・別PC向け引き継ぎ,別のAI・PCで作業を引き継ぐ手順,docs/08-handoff.html,,ready,110,,,
 P26,plan,地域別,バギオ（フィリピン語学留学）,語学学校の12週モデル・費用・資料・場所,areas/baguio.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,110,2026-10-17,,
 P27,plan,地域別,アフリカ周遊（5月）,約1か月の周遊モデル・ルート案・費用・資料,areas/africa.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,120,2026-10-17,,
+P76,plan,地域別,アフリカ周遊（8月）,留学後の追加周遊モデル・シーズン比較・費用（未計上）・資料,areas/africa-aug.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,125,2026-11-08,,
 P28,plan,地域別,ケープタウン（第2か国留学）,8週間の語学留学モデル・費用・資料・場所,areas/capetown.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,130,2026-10-17,,
 P29,plan,地域別,日本国内・保険・共通,出発前後の共通手続き・保険・共通費用,areas/common.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,140,2026-10-17,,
 P30,research,アフリカ,南部アフリカ各国の日数・費用・体験の多様性,5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先）,research/southern-africa-countries.html,https://github.com/Rikkyhub/studying-abroad/issues/38,researching,140,2026-10-18,https://biggameparks.org/rates;https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/;https://www.anac.gov.mz/en/parques/ponta-do-ouro/,africa
@@ -53,3 +54,22 @@ P53,research,アフリカ,ケニア（国別ページ）,ナイロビ起点の�
 P54,research,アフリカ,タンザニア（国別ページ）,セレンゲティ・ンゴロンゴロ・ザンジバル。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版）,countries/tanzania.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,310,2026-10-20,,africa
 P55,research,アフリカ,エチオピア（国別ページ）,アディスアベバ空港での乗継のみ（北部は渡航を避ける勧告）。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版）,countries/ethiopia.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,311,2026-10-20,,africa
 P56,research,留学,ケープタウン語学留学の学校選定（Deep Research）,IH・Cape Studies・UCT・GHS の4校を予算枠・Business English・交流環境で比較（匿名モデル）,research/deep-research-report.html,https://github.com/Rikkyhub/studying-abroad/issues/7,researching,170,2026-10-21,https://ihcapetown.com/courses/business-english/;https://capestudies.com/courses/;https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027,capetown
+P57,research,アフリカ,エチオピア 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-ethiopia.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,400,2026-11-08,,africa
+P58,research,アフリカ,マダガスカル 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-madagascar.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,401,2026-11-08,,africa
+P59,research,アフリカ,ケニア 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-kenya.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,402,2026-11-08,,africa
+P60,research,アフリカ,ジンバブエ 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-zimbabwe.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,403,2026-11-08,,africa
+P61,research,アフリカ,タンザニア 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-tanzania.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,404,2026-11-08,,africa
+P62,research,アフリカ,ボツワナ 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-botswana.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,405,2026-11-08,,africa
+P63,research,アフリカ,モザンビーク 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-mozambique.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,406,2026-11-08,,africa
+P64,research,アフリカ,ザンビア 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-zambia.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,407,2026-11-08,,africa
+P65,research,アフリカ,レソト 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-lesotho.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,408,2026-11-08,,africa
+P66,research,アフリカ,エスワティニ 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-eswatini.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,409,2026-11-08,,africa
+P67,research,アフリカ,ウガンダ 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-uganda.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,410,2026-11-08,,africa
+P68,research,アフリカ,ルワンダ 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-rwanda.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,411,2026-11-08,,africa
+P69,research,アフリカ,マラウイ 国別深掘り,最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり）,research/country-malawi.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,412,2026-11-08,,africa
+P70,research,アフリカ,アフリカ13か国の比較（日数・シーズン・費用・コスパ・タイパ）,13か国の最適日数・5月の適性・費用目安・星評価・並べ方の案・旅程に響く未確認事項（調査版）,research/africa-13-countries-comparison.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,399,2026-11-08,,africa
+P71,research,アフリカ,ウガンダ（国別ページ）,観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり）,countries/uganda.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,312,2026-11-08,,africa
+P72,research,アフリカ,ルワンダ（国別ページ）,観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり）,countries/rwanda.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,313,2026-11-08,,africa
+P73,research,アフリカ,マラウイ（国別ページ）,観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり）,countries/malawi.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,314,2026-11-08,,africa
+P75,research,アフリカ,アフリカ周遊（8月）の国別シーズン比較,8月の南部・東部アフリカ。乾季の最盛期にあたる国の見どころ・費用・混雑（調査版）,research/africa-august-comparison.html,https://github.com/Rikkyhub/studying-abroad/issues/1,researching,400,2026-11-08,,africa-aug
+P77,plan,運用,確認待ち（QA）,AIが調べ切れなかった費用・本人の確認が要ることの一覧（CSVから自動生成）,docs/10-qa.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,415,2026-11-08,,
