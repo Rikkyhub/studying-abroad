@@ -42,6 +42,13 @@ gh auth login        # アカウント: Rikkyhub
 - MDの数量や価格を変更→`python3 -m unittest discover -s tests`→`python3 scripts/build_all.py`→`python3 scripts/build_all.py --check`→公開データ・リンク・CI・レビューを通す。変更後の集計が画面の「飛行機代」「アフリカ現地費」「5月合計」へ分かれているか確認。
 - **現時点で完全Markdown化されたのはこのフェルミ予算表のみ**。その他の古いCSVは既存のビルダーが使っているので、全面移行のパーサ/テスト・バックフィルが完了するまで削除しない。
 
+### 5月・8月の国別滞在費
+
+- 5月：`research/africa-budget-fermi.md`の国別表で泊数・食費日数・3段階の仮単価を編集。国別内訳は同じ表から自動生成。
+- 8月：`research/africa-august-comparison.md`の`AUGBUDGET`表に、案・国・泊数・食費日数・3段階の1泊/1日仮単価を記載。国は自由に追加できるが、**同じ案・国の重複行を作らない**。`予算へ反映する案：未定`ならシナリオを比較するだけで全体予算に加算せず、案A等を選べばその案の宿と食費のみ`scripts/august_budget.py`が追加する。
+- 5月の航空券・ビザ・現地体験の既存データと、8月の未確認航空券・サファリ・ビザは別計算。食事・車両・宿がパッケージ込みの場合は重複を修正。標準仮単価が現地の平均値ではないことを明記。
+- `python3 -m unittest discover -s tests`、`scripts/build_all.py`、`validate_data.py`、`check_public_data.py`、`check_links.py`、`scripts/build_all.py --check`、PR exact HEAD CIで確認。PR #82は生成物同期を扱うため、#82が完了してから今回の生成物を再同期して独立レビュー。
+
 ## 5. 既存のレガシーCSVデータ変更タスク（費用の全面移行は未了）
 1. `feat/<issue>-<slug>` ブランチを作る。
 2. `data/tasks.csv` / `data/expenses.csv` を編集。費用は**調査価格・匿名モデル**のみ。金額は `low_local`/`std_local`/`high_local`（見積）で、区分は `見積`（出典あり）か `未確認`。
