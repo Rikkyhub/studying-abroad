@@ -543,6 +543,10 @@ def load_model():
         _META[r["key"]] = r["value"]
     fx = load_fx()
     expenses = read_csv("expenses.csv")
+    # For May travel, editable Markdown is the sole Fermi-estimate input.
+    # Apply in memory; do not modify or require any extra user-managed CSV.
+    from fermi_budget import apply_to_expenses
+    expenses = apply_to_expenses(expenses, ROOT)
     tasks = read_csv("tasks.csv")
     articles = read_csv("articles.csv")
     timeline = read_csv("timeline.csv")
