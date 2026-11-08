@@ -171,3 +171,4 @@
 - Wikivoyage Makgadikgadi_and_Nxai_Pan_National_Parks、Kazungula 等：一部404（別名ページで代替）。
 - 公式の観光局・DWNPは、既存調査（countries/botswana.md）で接続失敗済みのため今回は再試行せず。
 - 再取得（2回目・2026-11-08）：ザンビア入国管理局の KAZA UNIVISA ページ（公式）で、ボツワナはカズングラ経由の日帰りに限ることを確認。ボツワナ政府のビザページ（gov.bw/travel/visas）は「certificate has expired」で取得できなかった。
+- 洗い直し（4回目・2026-11-09）：ボツワナ観光機構（BTO）の公式サイトのトップと `/explore/*` の公園ページ（チョベ、モレミ、オカバンゴ・デルタ、中央カラハリ、ムクガディカディ、ヌザイ・パンなど）を、ブラウザ風の User-Agent で再取得した。公園の説明のみで料金の金額（BWP・USD）の記載はなく、サイトマップ（/sitemap.xml）は404、料金の専用ページ（/travel-info/park-fees）も404。野生生物・国立公園局（dwnp.gov.bw）と環境・観光省（mewt.gov.bw）は引き続き接続できない。公園料金の公式表は**未確認のまま**で、チョベの BWP 120（2023年3月、Wikivoyage）が最新の手がかり。

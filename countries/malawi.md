@@ -22,7 +22,7 @@
 | ンカタベイ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nkhata%20Bay%20Malawi) | 北部の湾。淡水ダイビング | シングルダイブ USD 50〜、オープンウォーター講習 USD 400（年度不明） | 月別の透明度は未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （準公式） |
 | リウォンデ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Liwonde%20National%20Park) | シレ川沿い。カバ・ゾウ、ボートサファリ | 日帰り入園 USD 25（国際訪問者・成人）、車両 USD 4／日（年度不明）。公式は403で未取得 | 乾季は動物が川に集まる（Wikivoyage） | https://en.wikivoyage.org/wiki/Liwonde_National_Park （準公式） |
 | ムランジェ山 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mount%20Mulanje%20Malawi) | 最高峰Sapitwa 3,002m。山小屋・ポーター | 山小屋・ガイド料は未確認 | 乾季でトレッキング適期と推計 | https://en.wikivoyage.org/wiki/Mount_Mulanje （準公式） |
-| マジェテ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Majete%20Wildlife%20Reserve) | ブランタイヤ近郊。観光局はBig 5と案内 | 未確認（African Parks は403） | 未確認 | https://www.malawitourism.com/ （公式） |
+| マジェテ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Majete%20Wildlife%20Reserve) | ブランタイヤ近郊。観光局はBig 5と案内 | 公園入場料（1人1日、2027年の公式料金）：国際の大人 USD 33、7〜12歳 USD 16.50、0〜6歳 無料。SADC・外国人居住者の大人 USD 17。車両 USD 6／台／日。ゲームドライブ USD 35、日没のゲームドライブ USD 40（出典：https://visitmajete.org/wp-content/uploads/sites/2/2026/09/Majete-Park-Fees-Activities-2027.pdf 、African Parks 運営の公式料金表、2026-11-09確認） | 未確認 | https://www.malawitourism.com/ （公式） |
 | リコマ島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Likoma%20Island%20Malawi) | 水中生物、モザンビークへの裏口。公共フェリーは週1〜2回 | 未確認 | フェリー運行日は流動的 | https://en.wikivoyage.org/wiki/Lake_Malawi （準公式） |
 
 ## おすすめの食べ物
@@ -61,7 +61,7 @@
 
 - 日本国籍のビザ扱いと料金。外務省の危険レベル。
 - 燃料不足と停電の最新状況。
-- 公園の公式料金（リウォンデ、マジェテ、ヴワザ、ムランジェ、ゾンバ）。African Parks のページは403。
+- 公園の公式料金（リウォンデ、ヴワザ、ムランジェ、ゾンバ）。マジェテは2027年の公式料金表で確認済み。リウォンデの公式サイトに料金表は見つからなかった。
 - 5月の湖の透明度・水温・ダイビング条件。
 - 国際線・国内線の運賃、2027年5月の運航。
 - Mbeya〜マラウイ、マラウイ〜ザンビアの実時刻・運行会社。
