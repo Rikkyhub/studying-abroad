@@ -857,7 +857,7 @@ function snap(label){undo.push({label:label,s:JSON.stringify(st)});if(undo.lengt
 function conv(x){return {place:x.place,country:x.country,move:x.move,memo:x.memo||""}}
 function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];if(!c)return;
  snap("案の切替");st.preset=id;st.rows=c.stops.slice(1).map(conv);st.first=c.stops[0];save();build()}
-if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="F"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
+if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="G"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
 /* 日数の読み取り：12週/8週/10日/3か月/2ヶ月/1年 などを日に換算（読めなければ 0） */
 function toDays(t){t=(t||"").replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)});var m=t.match(/(\\d+(?:\\.\\d+)?)\\s*(週間|週|日間|日|か月|ヶ月|カ月|ヵ月|月|年)?/);if(!m)return 0;var n=parseFloat(m[1]),u=m[2]||"日";
  return Math.round(/週/.test(u)?n*7:/年/.test(u)?n*365:/月/.test(u)?n*30:n)}
