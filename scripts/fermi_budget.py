@@ -112,3 +112,32 @@ def apply_to_expenses(expenses, root=ROOT):
                     "collected_on": "2026-11-09", "recheck_by": "2027-04-01",
                     **{f"{s}_local": str(values[i]) for i, s in enumerate(SCENARIOS)}})
     return expenses
+
+
+def render_summary_md(root=ROOT):
+    """Render a derived total table into the Markdown AUTO block (not an input)."""
+    entries = read_assumptions(root)
+    groups = ("宿泊", "食費", "現地交通", "観光", "サファリ")
+    rows = []
+    all_totals = [0, 0, 0]
+    for kind in groups:
+        selected = [x for x in entries if x["kind"] == kind]
+        q = sum(x["quantity"] for x in selected)
+        units = {x["unit"] for x in selected}
+        unit = next(iter(units)) if len(units) == 1 else "件"
+        values = [sum(x["quantity"] * x["prices"][i] for x in selected) for i in range(3)]
+        all_totals = [a + b for a, b in zip(all_totals, values)]
+        rows.append(f"| {kind} | {q}{unit} | " +
+                    " | ".join(f"¥{x:,}" for x in values) + " |")
+    lines = [
+        "| 費目 | 数量 | 低予算 | 標準 | 余裕 |",
+        "|---|---:|---:|---:|---:|",
+        *rows,
+        "| **フェルミ予算小計** | — | " +
+        " | ".join(f"**¥{x:,}**" for x in all_totals) + " |",
+        "",
+        "この表は上の編集テーブルの数量と単価から自動計算されています。" +
+        "航空券・ビザ・滝の入場料・国内線などは別費目で、ここには含まれません。" +
+        "仮単価は市場平均や実売の保証ではありません。",
+    ]
+    return "\n".join(lines)
