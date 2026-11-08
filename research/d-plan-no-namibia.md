@@ -135,6 +135,12 @@ Sani Pass は経験者向け4×4領域（Issue引用。観光局ページは取�
 
 [Tofo Scuba FAQ](https://www.tofoscuba.com/faqs)（確認 2026-10-20、ページの著作権表記は2023）：Maputo から LAM の国内線で Inhambane へ飛び、Inhambane→Tofo のタクシー US$30 を手配できる。または Maputo の特定ホステル発 **午前5時**のバスで、Maputo 到着の翌日15時ごろ Tofo 着。5時発は夜明け前の出発になる点に注意。バスの運賃・現在の運行、LAM の運賃は**未確認**。
 
+[CityLink公式運賃表](https://citylink.co.mz/bilhetes/)（2026-10-31確認、掲載適用開始年不明）はInhambane→Maputoの掲載運賃をMZN1,500、Johannesburg→MaputoをMZN2,400、Maputo→TeteをMZN4,500、Beira→TeteをMZN1,800、Tete→JohannesburgをMZN6,900と記載。Inhambane→MaputoはTofo発の直通便ではないため、Tofo→Inhambaneの移動費・時刻を別途確認する。運賃表の一般出発04:30はMaputo/Beira等についての記述で、Inhambane発時刻と読み替えない。運賃表の手荷物20kgと[CityLink旅客約款](https://citylink.co.mz/legal.html)の無料受託30kgは区別する。2027年5月の運行日・1名席・所要時間・日中到着・実売運賃は未確認。Tete→HarareなどZimbabwe直通便は当該運賃表で確認できない。
+
+[CityLink公式連絡先](https://citylink.co.mz/contactos/)（2026-10-31確認）ではInhambaneの拠点をTerminal Interprovincialと掲載。ただし乗車ホーム・発車時刻は未確認。[同社運賃表](https://citylink.co.mz/bilhetes/)はInhambane→Maputoの超過荷物単価を30 MZN/kgと掲載。手荷物20kgと約款上の無料受託30kgのどちらを超過判定の起点とするかは未確認。掲載適用年・2027年の条件も未確認。[Tofo Scuba公式FAQ](https://www.tofoscuba.com/faqs)のInhambane→Tofo送迎USD30は片方向の掲載例であり、Tofo→CityLink乗車拠点への逆方向の運行・料金・接続時間を保証しない。 [CityLink公式運賃表](https://citylink.co.mz/bilhetes/)（2026-11-01確認）はターミナルの乗車券販売08:00〜19:00と夜間滞在可能との案内を掲載する一方、ページ上部は受付08:00〜17:00、下部は24時間サポートと記載している。窓口販売・問い合わせ受付・夜間待機の安全性は別条件であり、早朝便の前日購入可否は未確認。[Rainbow Tofo Transfer公式](https://rainbowtofotransfer.com/)（2026-11-01確認）はTofo向けInhambane Airport送迎を2,000 MZNと掲載するが、空港送迎の参考額でありTofo→CityLinkターミナルの運賃・乗車接続を示さない。2027年の適用条件、片道/往復・人数・荷物・早朝接続は未確認。
+
+[CityLink公式・旅客輸送FAQ](https://citylink.co.mz/transporte-de-passageiros/)（2026-11-01確認）は乗車券の購入経路を公式サイト・ターミナル・認定代理店と案内する。ただしオンライン購入画面で当該便を実際に決済できるか、2027年のInhambane→Maputo便を前日までに予約できるかは未確認。[CityLink公式・貨物輸送料金表](https://citylink.co.mz/transporte-de-bens/)にはInhambane→Beira等の貨物運賃もあるが、旅客直通便や乗客用運賃の根拠には使わない。 [CityLink公式連絡先](https://citylink.co.mz/contactos/)（2026-11-01確認）はWhatsAppで旅行を予約する案内を掲載する。ただしInhambane→Maputo便の予約受付・前日購入・発車時刻・2027年5月の運行は未確認。次の取得先は同社の公式予約窓口。 [CityLink旅客約款](https://citylink.co.mz/legal.html)（2026-11-02直接確認、掲載条件の適用開始年不明）によると、出発前日12:00までの取消は返金対象・同期限の変更は30日以内の再予約なら追加料金なし。前日12:00〜17:00の取消は返金なし、30日以内の変更には運賃の50%を追加。乗り遅れ時も相応の理由がある場合は30日以内の再予約に運賃50%の追加料金が必要。運行会社都合の取消は全額返金。前日17:00以降の取消条件・2027年の適用は未確認。なお[CityLink公式旅客FAQ](https://citylink.co.mz/transporte-de-passageiros/)（2026-11-03再確認）は「出発24時間前まで」の取消・返金と記載する一方、[公式旅客約款§5](https://citylink.co.mz/legal.html)は「出発前日12:00まで」と記載し、出発時刻によって締切が一致しない。2027年の適用優先順位・券種別条件は未確認のため、予約前に発券画面と事業者の書面条件を確認する。
+
 ### 5.4 Mozambique→Zimbabwe 陸路
 
 - 国境は存在する（Machipanda 等。Issue 引用の大使館リスト）が、**国境の存在 ≠ 予約できる国際交通**。Maputo→Mutare は参考で1,250km以上（Issue）。昼行の国際バス・シャトルを一次情報で確認できなかった。
@@ -148,9 +154,10 @@ Sani Pass は経験者向け4×4領域（Issue引用。観光局ページは取�
 |---|---|---|
 | エスワティニ | 30日以内は査証不要（#51 資料が引用した MOFA。更新2025-08-22） | MOFA、2026-10-20 |
 | モザンビーク | MOFA は「2023-03-31から日本国籍は査証免除対象で、入国時に650メティカルを支払う」「残存有効期間180日以上・復路航空券・宿泊予約確認書が必要」と記載（更新2025-06-18）。#51 資料が読んだ政府 eVisa ポータルは日本を ETA 対象（30日）と表示しており、**出典同士が食い違う** | [MOFA](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html)、2026-10-20。ETA料金・陸路国境での扱いは**未確認** |
-| ジンバブエ | 空港・国境で取得可。シングル30ドル、二次45ドル、数次55ドル、KAZA 50ドル（2026年6月現在）。シングル30ドル＝**4,746円**（式：30×158.19） | [MOFA ジンバブエ](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html)（更新2026-07-13）、2026-10-20 |
+| ジンバブエ | 空港・国境で取得可。シングル30ドル、二次45ドル、数次55ドル、KAZA 50ドル（2026年6月現在）。シングル30ドル＝**4,746円**（式：30×158.19）。日本旅券は入管公式FAQで事前査証不要・到着時有料査証のCategory B。入国申告はオンラインで事前入力可能。航空会社FAQは紙申告廃止とオンライン事前入力を案内するが、入管FAQは紙廃止の開始日・義務化を明記していないため、2027年の必要手続は要再確認。 | [MOFA ジンバブエ](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html)（更新2026-07-13）、2026-10-20／[ジンバブエ入管公式FAQ](https://www.evisa.gov.zw/faq.html)／[Airlink公式FAQ](https://www.flyairlink.com/need-help/faq)（2026-11-03照合、2027年未確定） |
 | レソト | 3か月以内は査証免除 | 4.2 |
-| ザンビア・ボツワナ | 本資料では調べていない（#38 を参照） | **未確認** |
+| ザンビア | 日本旅券は査証免除対象。空路入国には有効な帰国航空券、陸路・水路入国には滞在・出国に十分な資金が必要。Victoria Falls国境は観光案内で2025-11-19から24時間運用と掲載。ただし夜間移動の安全性・2027年の実運用・入国許可は未確認 | [ザンビア入管の免除国一覧](https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/)／[Zambia Tourismの国境案内](https://www.zambiatourism.com/vic-falls-border-post-now-open-24-hours/)、2026-11-02確認。2027年の個別条件は未確認 |
+| ボツワナ | 日本旅券の一般観光入国は査証免除。旅券残存は予定滞在期間＋6か月以上。初回入国から12か月間の累計滞在は90日まで。Kazungula橋OSBPは2026-04-01に24時間化予定だったが、2026-04-14のボツワナ政府続報でシステム調整遅延により延期・開始日未定（従来06:00〜22:00）。2027年の実際の開庁時間・単独旅行者向け昼行接続は未確認。KAZAのボツワナ日帰り特例を通常入国条件と混同しない | [在日ボツワナ大使館](https://www.botswanaembassy.or.jp/visa.php?La=E)／[在ボツワナ日本国大使館](https://www.botswana.emb-japan.go.jp/itpr_ja/ryoji_tokou.html)／[ボツワナ政府2026-03-23予定](https://dailynews.gov.bw/news-detail/90675)／[同2026-04-14延期](https://dailynews.gov.bw/news-detail/91004)、2026-11-03確認（2027年未確定） |
 
 ---
 
@@ -204,14 +211,14 @@ Tofo の2ダイブ：[Tofo Scuba 料金](https://www.tofoscuba.com/prices)（確
 
 | 項目 | 何が足りないか |
 |---|---|
-| 2027年5月の航空 | JNB↔マセル、Maputo→JNB、JNB→VFA、Kasane→JNB→CPT の運航・運賃（flightconnections 等は JavaScript 描画で取得不可） |
+| 2027年5月の航空 | JNB↔マセル、Maputo→JNB、JNB→VFA、Kasane→JNB→CPT の運航・運賃は未確認。別経路LVI→CPTは[Proflight公式時刻表](https://proflight-zambia.com/flights/flights-from-livingstone/)が2027年5月1日〜6月23日の月曜P0050（08:40→11:40）・金曜P0054（12:05→15:05）を掲載（2026-11-02確認）。[同社手荷物規則](https://proflight-zambia.com/planning/baggage/)は国際線無料受託30kg・機内持込5kg、ザンビア発超過受託は事前15kgあたりUSD60・空港USD6/kgと掲載（2026-11-02確認、2027年の適用未確認）。LVIとVFAは別空港。座席・運賃・国境送迎・当該券種の手荷物条件は未確認。 |
 | エスワティニ→Maputo | TransMagnific の個別手配の日時・料金（問合せが必要。問合せの送信は承認が要る） |
 | Maputo→Tofo | 5時発バスの運賃・現在の運行、LAM 国内線の運賃 |
 | レソト | visitlesotho.org.ls の本文（接続失敗）、危険レベル表示、マセル→Semonkong の交通と運賃、バス事業者の時刻表 |
 | Intercape | 公式ページが 403。Maputo→JNB のバスの時刻・運賃は**未確認**（#52 の「約10時間級・US$44前後」は参考値のまま） |
 | モザンビーク入国 | MOFA（査証免除・650メティカル）と政府 eVisa（ETA）の食い違い。在京大使館で確認 |
 | Avis Safari | モザンビーク経由ジンバブエ行きの書面承認、レンタル本体料金、Budget の条件 |
-| ザンビア・ボツワナ | 国境シャトル（Livingstone↔Kasane）の事業者・時刻・料金 |
+| ザンビア・ボツワナ | 送迎事業者の掲載例：[SavannahLink公式](https://savannahlink.com/transfers)はLivingstone→Kasane片道USD100/人・最少2名・約2時間（適用年不明）。[Muwuyu公式](https://muwuyuafricatravel.com/)の2025年表はLivingstone Town→Kasane AirportラックUSD97/人・最少2名。2026-11-03確認。1名乗車可否・定時便・2027年料金・国境所要は未確認。次は両社の単独客取扱いと正式見積を確認 |
 
 ## 10. 検索ログ（2026-10-20）
 
@@ -227,6 +234,7 @@ Tofo の2ダイブ：[Tofo Scuba 料金](https://www.tofoscuba.com/prices)（確
 | greyhound.co.za / citybug.co.za | トップページのみ取得。該当路線の記載を確認できず |
 | flyairlink.com Schedule-June.pdf | 取得できた（#51 資料が読んだ2024年6月版）。本資料は #51 の読取りを引用し、PDF本文の再抽出はしていない |
 | Web検索 | ツールの制約で実行できず（一次情報の直接取得のみ） |
+| ザンビア入管・Zambia Tourism（2026-11-02追加照合） | 入管の日本旅券査証免除・空路帰国航空券・陸路資金条件を確認。観光案内はVictoria Falls国境の2025-11-19からの24時間運用を掲載。2027年の入国許可・夜間安全・ボツワナ接続は未確認 |
 
 ## 公開データの確認
 
