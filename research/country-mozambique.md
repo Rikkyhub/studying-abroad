@@ -217,3 +217,4 @@
 - 取得失敗：peri-peridivers /diving-tofo-beach/（404）、Wikivoyage Tofo・Ponta_do_Ouro（404）、外務省危険情報ページ（403）、CDC（404）。
 - 未取得で空欄にした項目：Tofo月別の生物出現、5月の水温・視界、2027年の運賃・便、日本向け査証料金。
 - 再取得（2回目・2026-11-08）：evisa.gov.mz（「The official portal of The Mozambique National Immigration Service」と自称）の tourist-visa.html を取得し、観光ビザは30/60/90日、電子ビザの有効期間2か月、申請は渡航の3〜5日前を推奨、と確認。料金欄は「975MXN」で通貨が不整合のため未採用。駐英高等弁務官事務所（mozambiquehighcommission.org.uk/visa-section.html）で、新プラットフォームが2026-02-11に開始し、旧プラットフォームは廃止、査証免除国は30日（延長30日）で事前認証が必要、料金と処理時間の記載はなし、と確認。
+- 洗い直し（4回目・2026-11-09）：外務省の `pcinfectionspothazardinfo_123.html` を通常の取得で読み、カーボデルガード州（ペンバ市を除く）・ナンプラ州メンバ郡・エラーティ郡はレベル3、ペンバ市・ニアッサ州メクーラ郡はレベル2、マプトを含むその他はレベル1（『引き下げ』、2025-07-04発出）と確認した。

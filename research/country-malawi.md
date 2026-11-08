@@ -171,7 +171,7 @@
 ## 9. 安全・健康
 
 ### 外務省
-- 危険レベル：**未確認**。外務省海外安全ホームページ（anzen.mofa.go.jp）が今回の取得でHTTP 403のため、マラウイのレベルを取得できなかった。既存資料 africa-overland-7-9-countries.md は2026-07-03更新・警告区分なしと記載（既存資料からの転記、本調査では再取得できず）。
+- 危険レベル（公式、2026-10-06発出・2026-11-09確認）：**全土レベル1（十分注意）**。理由は、窃盗・ひったくり・建造物侵入などの軽犯罪（日本人の被害の大半はリロングウェとブランタイヤ）、デモの暴徒化、慢性的な電力不足で街灯が消える中の置き石による車の停止・襲撃。夜間の外出は避ける。出典：https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_120.html （外務省 海外安全ホームページ、公式、2026-11-09確認）。旧記載（取得できなかった）：既存資料 africa-overland-7-9-countries.md は2026-07-03更新・警告区分なしと記載（既存資料からの転記、本調査では再取得できず）。
 - 出発直前に外務省ページで再確認すること。
 
 ### 英国FCDO（参考、2026-11-08確認、20 Oct 2026更新）
@@ -195,7 +195,7 @@
 ## 10. 未確認事項
 
 - eVisa 単一入国の料金（移民局ページ USD 75 と eVisa ポータル FAQ USD 50 で食い違い）と、日本国籍が到着ビザで払う額（公告は料金を記載せず）。日本の扱い自体は、公式ポータルの公告とカテゴリー2の一覧で「到着ビザ取得可」と確認できた。2026年に日本人対象の制度変更があるとのIssue記載は公式で確認できず（既存資料）。
-- 外務省の危険レベルとマラウイ情勢（403）。
+- マラウイ情勢の2027年時点の変化（外務省の危険レベルは2026-10-06発出で全土レベル1と確認済み）。
 - 燃料不足の最新度合い、停電の最新状況。
 - 公園公式料金（リウォンデ、マジェテ、ヴワザ、ムランジェ、ゾンバ）。African Parks 各ページは403。
 - Wikivoyageの宿泊・ダイビング料金の適用年度。
@@ -231,3 +231,4 @@
 - 失敗：外務省 anzen.mofa.go.jp（403、複数URL）、mofa.go.jp/area/malawi（403）、africanparks.org（Liwonde／Majete、403）、TravelHealthPro（別国のページが返り、マラウイを取得できず）、visa.immigration.gov.mw（名前解決不可）、Wikipedia Malawi_kwacha（404）、Wikivoyage Mulanje_Massif（404）。
 - 学び：Wikivoyageの料金は年度不明のため全て「参考」扱い。Vwazaは取得資料に記載なし。
 - 再取得（2回目・2026-11-08）：immigration.gov.mw の visa-fees／types-of-malawi-visa／apply-for-visa と、evisa.gov.mw の トップ・Faq・Services・VisaAssistance を取得。2026-02-24付の公告（到着ビザ：カテゴリー2は取得可、カテゴリー1は事前査証）を確認し、`/PDFs/CategoryTwoCountries.pdf`（79. Japan）と `/PDFs/CategoryOneCountries.pdf`（47か国）を `pdftotext` で読み取った。公告ページの `/CategoryTwoCountries.pdf` 等の直下URLは404で、実際の保存先は `/PDFs/` だった。
+- 洗い直し（2026-11-09）：外務省 海外安全ホームページの `pcinfectionspothazardinfo_120.html` を通常の取得で読み、危険レベルを確認した（これまで403で『取得不可』としていた記載を更新）。

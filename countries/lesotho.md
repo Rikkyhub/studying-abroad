@@ -32,7 +32,7 @@ Wikivoyage Lesotho の「Eat」は具体的な郷土料理名を挙げておら�
 
 ## 安全・健康
 
-外務省: 危険情報は出ていない（今回再取得で確認、ページ更新日2025-08-22）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_130.html マラリア・黄熱は存在しない（Wikivoyage）。FORTH上も黄熱リスク国ではない（既存資料）。HIV罹患率が高い（Wikivoyage、年度不明）。マセルの夜間の独り歩きは危険（Wikivoyage）。CDC個別ページは未取得。
+外務省: **危険情報は出ていない**（2026-11-09に再取得して確認。『現在、危険情報は出ておりません』『現在、感染症危険情報は出ておりません』）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_130.html マラリア・黄熱は存在しない（Wikivoyage）。FORTH上も黄熱リスク国ではない（既存資料）。HIV罹患率が高い（Wikivoyage、年度不明）。マセルの夜間の独り歩きは危険（Wikivoyage）。CDC個別ページは未取得。
 
 ## 行き方・移動
 
