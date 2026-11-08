@@ -171,5 +171,6 @@ def render_summary_md(root=ROOT):
         if country_sum != all_totals[j]:
             raise ValueError("May country estimate totals do not reconcile")
     lines += ["", "国境間シャトルは「国境・越境共通」、搭乗日の食費は「国際移動」に分けています。"
-              "この配分は旅程が変われば要修正で、各国の価格平均や実際の販売額ではありません。"]
+              "この配分は旅程が変われば要修正で、各国の価格平均や実際の販売額ではありません。"
+              "国別表には航空券、既存の別途査証・滝入場/任意観光等の費用を含まないため、各国の総旅行費ではありません。"]
     return "\n".join(lines)
