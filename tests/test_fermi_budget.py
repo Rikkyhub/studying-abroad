@@ -1,74 +1,60 @@
 # -*- coding: utf-8 -*-
-"""Fermi budget input consistency: quantities x hypothetical JPY unit prices.
-
-Public estimates only. This does not validate that the assumed unit prices are
-market rates or that the travel schedule/booking is possible.
-"""
+"""Editable Markdown must be the only source for 35-day estimated unit costs."""
 import csv
 import unittest
-from collections import defaultdict
 from pathlib import Path
+from scripts import fermi_budget
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSUMPTIONS = ROOT / "data" / "fermi_assumptions.csv"
-EXPENSES = ROOT / "data" / "expenses.csv"
-SCENARIOS = ("low", "std", "high")
 
 
-def read_csv(path):
-    with path.open(encoding="utf-8-sig", newline="") as handle:
+def legacy_expenses():
+    with (ROOT / "data" / "expenses.csv").open(encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
 
 
-def calculate():
-    totals = defaultdict(lambda: dict.fromkeys(SCENARIOS, 0))
-    for entry in read_csv(ASSUMPTIONS):
-        quantity = int(entry["quantity"])
-        if quantity <= 0:
-            raise ValueError(f"{entry['expense_id']}: quantity must be positive")
-        for scenario in SCENARIOS:
-            unit_price = int(entry[f"{scenario}_unit_jpy"])
-            if unit_price < 0:
-                raise ValueError(f"{entry['expense_id']}: unit price must be nonnegative")
-            totals[entry["expense_id"]][scenario] += quantity * unit_price
-    return totals
+class MarkdownBudgetTest(unittest.TestCase):
+    def test_md_quantities_and_unit_prices_reconcile(self):
+        entries = fermi_budget.read_assumptions(ROOT)
+        self.assertEqual(sum(x["quantity"] for x in entries if x["unit"] == "泊"), 34)
+        self.assertEqual(sum(x["quantity"] for x in entries if x["kind"] == "食費"), 35)
+        totals = fermi_budget.aggregate(ROOT)
+        self.assertEqual(sum(x[1] for x in totals.values()), 295500)
+        self.assertEqual(totals["AF-15"][1], 13 * 3000)
+        for values in totals.values():
+            self.assertLessEqual(values[0], values[1])
+            self.assertLessEqual(values[1], values[2])
 
+    def test_md_in_memory_overlay_without_editing_csv(self):
+        old = legacy_expenses()
+        unmodified = [(r["id"], r.get("std_local", "")) for r in old]
+        result = fermi_budget.apply_to_expenses([dict(x) for x in old], ROOT)
+        self.assertEqual(unmodified, [(r["id"], r.get("std_local", "")) for r in old])
+        by_id = {x["id"]: x for x in result}
+        totals = fermi_budget.aggregate(ROOT)
+        self.assertEqual(set(totals).difference(by_id), set())
+        for expense_id, amounts in totals.items():
+            self.assertEqual(by_id[expense_id]["status"], "未確認")
+            self.assertEqual(by_id[expense_id]["currency"], "JPY")
+            self.assertEqual(
+                [int(by_id[expense_id][f"{s}_local"]) for s in ("low", "std", "high")], amounts)
+        self.assertEqual(by_id["AF-15"]["category"], "寮・ホームステイ・宿泊")
+        self.assertEqual(by_id["AF-11"]["category"], "食費・日常生活費")
+        self.assertEqual(by_id["AF-20"]["category"], "観光・ツアー・ダイビング")
+        self.assertEqual(by_id["AF-22"]["category"], "現地交通費")
+        self.assertEqual(by_id["AF-16"]["category"], "航空券・長距離移動")
+        self.assertEqual(by_id["AF-19"]["currency"], "USD")
+        self.assertEqual(len(result), len(old) + 4)
 
-class FermiBudgetTest(unittest.TestCase):
-    def test_expense_rows_reconcile_with_quantity_times_unit_price(self):
-        totals = calculate()
-        expenses = {row["id"]: row for row in read_csv(EXPENSES)}
-        self.assertEqual(set(totals).difference(expenses), set())
-        for expense_id, scenarios in totals.items():
-            expense = expenses[expense_id]
-            self.assertEqual(expense["currency"], "JPY", expense_id)
-            self.assertEqual(expense["status"], "未確認", expense_id)
-            for scenario, expected in scenarios.items():
-                with self.subTest(id=expense_id, scenario=scenario):
-                    self.assertEqual(int(expense[f"{scenario}_local"]), expected)
-        self.assertGreater(sum(v["std"] for v in totals.values()), 0)
-
-    def test_35_days_and_34_nights_are_accounted_for_once(self):
-        entries = read_csv(ASSUMPTIONS)
-        self.assertEqual(sum(int(r["quantity"]) for r in entries
-                             if r["unit"] == "泊"), 34)
-        self.assertEqual(sum(int(r["quantity"]) for r in entries
-                             if r["cost_kind"] == "食費" and r["unit"] == "日"), 35)
-
-    def test_separate_food_lodging_and_surface_transport(self):
-        expenses = {row["id"]: row for row in read_csv(EXPENSES)}
-        self.assertEqual(expenses["AF-11"]["category"], "食費・日常生活費")
-        self.assertEqual(expenses["AF-15"]["category"], "寮・ホームステイ・宿泊")
-        self.assertEqual(expenses["AF-16"]["category"], "航空券・長距離移動")
-        self.assertEqual(expenses["AF-22"]["category"], "現地交通費")
-        self.assertEqual(sum(1 for x in read_csv(ASSUMPTIONS)
-                             if x["expense_id"] == "AF-15"), 1)
-
-    def test_scenarios_are_ordered(self):
-        for expense_id, scenarios in calculate().items():
-            with self.subTest(id=expense_id):
-                self.assertLessEqual(scenarios["low"], scenarios["std"])
-                self.assertLessEqual(scenarios["std"], scenarios["high"])
+    def test_reject_double_priced_rows(self):
+        old = legacy_expenses()
+        source = [dict(x) for x in old]
+        for row in source:
+            if row["id"] == "AF-11":
+                row["std_local"] = "100"
+                break
+        with self.assertRaisesRegex(ValueError, "double-count"):
+            fermi_budget.apply_to_expenses(source, ROOT)
 
 
 if __name__ == "__main__":
