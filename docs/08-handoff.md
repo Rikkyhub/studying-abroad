@@ -35,7 +35,14 @@ gh auth login        # アカウント: Rikkyhub
 6. 個人情報が入っていないか見直す。
 7. 検証コマンドを流し、PRを出す（第6節）。
 
-## 5. データ変更タスクの流れ（CSV は生成用の内部入力。読者向けページではない）
+## 5-0. フェルミ推定はMarkdownから編集（2026-11-09より）
+
+- **宿泊・食費・陸路・観光の仮単価×数量は[`research/africa-budget-fermi.md`](../research/africa-budget-fermi.md)のみを編集する。** 新しい仮単価用CSVを作らず、`data/expenses.csv`の対応する金額欄にも同じ数値を転記しない。
+- `scripts/fermi_budget.py`がMarkdownから算出し、`scripts/build.py`のメモリ内で従来の集計へ加算。既存CSVで同じIDに値があれば二重計上としてビルド失敗。追加費目はMarkdownの表とスクリプトの費目メタデータをそろえる。
+- MDの数量や価格を変更→`python3 -m unittest discover -s tests`→`python3 scripts/build_all.py`→`python3 scripts/build_all.py --check`→公開データ・リンク・CI・レビューを通す。変更後の集計が画面の「飛行機代」「アフリカ現地費」「5月合計」へ分かれているか確認。
+- **現時点で完全Markdown化されたのはこのフェルミ予算表のみ**。その他の古いCSVは既存のビルダーが使っているので、全面移行のパーサ/テスト・バックフィルが完了するまで削除しない。
+
+## 5. 既存のレガシーCSVデータ変更タスク（費用の全面移行は未了）
 1. `feat/<issue>-<slug>` ブランチを作る。
 2. `data/tasks.csv` / `data/expenses.csv` を編集。費用は**調査価格・匿名モデル**のみ。金額は `low_local`/`std_local`/`high_local`（見積）で、区分は `見積`（出典あり）か `未確認`。
 3. 禁止列(`paid_jpy`, `evidence`, `receipt` 等)や個人の支払い値を入れない。`py scripts/check_public_data.py` で確認。
