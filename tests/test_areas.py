@@ -48,8 +48,8 @@ class AreaPageTests(unittest.TestCase):
         line = next(ln for ln in read("areas/africa.md").splitlines() if "マダガスカルの観光" in ln and ln.startswith("|"))
         self.assertEqual(line.count("未計上"), 3)
         self.assertNotIn("¥0 |", line)
-        # 金額未入力の行は全シナリオ「未計上」
-        line = next(ln for ln in read("areas/africa.md").splitlines() if "ツアー外の食費" in ln and ln.startswith("|"))
+        # 金額未入力の食費の行も全シナリオ「未計上」
+        line = next(ln for ln in read("areas/africa.md").splitlines() if "食費（マダガスカル" in ln and ln.startswith("|"))
         self.assertEqual(line.count("未計上"), 3)
         self.assertNotIn("¥0 |", line)
 
