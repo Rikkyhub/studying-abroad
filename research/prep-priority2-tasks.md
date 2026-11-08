@@ -134,11 +134,11 @@
 
 | 対象 | 確認できた一般制度 | 公式一次資料・確認日・適用時期 | 2027年・本人の未確認点 |
 |---|---|---|---|
-| eTravel登録 | **無料（PHP 0）**、政府公式入口は `etravel.gov.ph`。入国前**72時間以内**に登録し、QRコードを保存または印刷して搭乗時に提示する。専用アプリのダウンロードは必須ではない。偽の有料登録サイトに注意。 | [eTravel政府公式FAQ](https://customs.etravel.gov.ph/frequently-asked-questions)／[政府公式入口](https://etravel.gov.ph/)（2026-10-25閲覧、FAQの適用年度明記なし） | 実際の到着日時、本人の登録・QR取得、2027年の画面・適用条件は未確認。 |
+| eTravel登録 | **無料（PHP 0）**、政府公式入口は `etravel.gov.ph`。公式FAQは渡航前**72時間以内**の登録を案内する一方、入管Advisoryは**少なくとも72時間前**と案内しており、登録時期が一致しない（2026-11-01確認、2027年未確定）。登録後のQRコードを保存または印刷して搭乗時に提示する。専用アプリのダウンロードは必須ではない。偽の有料登録サイトに注意。 | [eTravel政府公式FAQ](https://customs.etravel.gov.ph/frequently-asked-questions)／[政府公式入口](https://etravel.gov.ph/)／[フィリピン入管Advisory](https://immigration.gov.ph/advisory-etravel-registration/)（2026-11-01確認、2027年適用未確認） | 実際の到着日時、本人の登録・QR取得、2027年の画面・適用条件は未確認。 |
 | 税関申告・到着レーン | 2026年1月のフィリピン税関旅行者ガイドは、eTravel内で税関の携行品申告（CDBF）を提出しQRを生成すると案内。**Green LaneのQRスキャンは2025-08-14から一時停止**だが、eTravel登録自体が免除されたわけではない。申告対象者・Red LaneのQRスキャンは継続。 | [フィリピン税関2026年旅行者ガイド](https://customs.gov.ph/wp-content/uploads/2026/01/ESSENTIAL-GUIDE-FOR-TRAVELERS.pdf)（2026年1月版、2026-10-25閲覧）／[税関の2025-10-14案内](https://customs.gov.ph/guidelines-on-qr-code-scanning-at-customs-lanes/) | 2027年のGreen/Red Lane運用、当日の申告要否・検査・持込品は未確認。Green Laneのスキャン省略を「QR不要」「申告不要」と解釈しない。 |
 
 - **進捗境界**：T-P02の「進行中」は**一般制度・申告手順の調査**のみ。本人のeTravel登録、税関申告、QR発行・提示、入国は**未実施**。出発日・旅券番号・氏名・QR等は公開しない。
-- **次の取得先**：本人が実際の便の到着時刻確定後、[eTravel公式入口](https://etravel.gov.ph/)と[公式FAQ](https://customs.etravel.gov.ph/frequently-asked-questions)で2027年の適用を確認し、到着前72時間以内に本人が登録する。出発空港・航空会社の搭乗時QR提示要件も再確認。金額は政府登録**PHP 0**のみ確認済みで、第三者代行費用は見積対象にしない。
+- **次の取得先**：本人が実際の便の到着時刻確定後、[eTravel公式入口](https://etravel.gov.ph/)と[公式FAQ](https://customs.etravel.gov.ph/frequently-asked-questions)で2027年の適用を確認し、公式案内の相違と登録画面の受付可能期間を再確認したうえで本人が登録する。出発空港・航空会社の搭乗時QR提示要件も再確認。金額は政府登録**PHP 0**のみ確認済みで、第三者代行費用は見積対象にしない。
 
 ### 10. 日本→マニラ便の機内持込比較（T-F01／2026-10-26公式確認）
 
