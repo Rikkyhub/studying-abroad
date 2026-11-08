@@ -305,7 +305,7 @@ DONE_STATUS = ("完了", "不要")
 PAGE_STATUS = {"researching": "調査中", "ready": "整理済", "draft": "作成中"}
 FX_SOURCE_NOTE = ("参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が"
                   "加わるため、実際に受け取る額・支払う額とは一致しません。")
-REGION_PAGES = [("baguio", "バギオ"), ("africa", "アフリカ周遊"), ("capetown", "ケープタウン"), ("common", "日本国内・保険・共通")]
+REGION_PAGES = [("baguio", "バギオ"), ("africa", "アフリカ周遊（5月）"), ("africa-aug", "アフリカ周遊（8月）"), ("capetown", "ケープタウン"), ("common", "日本国内・保険・共通")]
 
 
 def csv_records(path: Path) -> list[dict]:

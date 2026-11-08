@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """地域別ページ（areas/*.md）の AUTO ブロックを作る関数群（依存は標準ライブラリのみ）。
 
-- 地域は baguio（バギオ）・africa（アフリカ周遊）・capetown（ケープタウン）・common（日本国内・保険・共通）。
+- 地域は baguio（バギオ）・africa（アフリカ周遊・5月）・africa-aug（アフリカ周遊・8月）・capetown（ケープタウン）・common（日本国内・保険・共通）。
 - 費用は data/expenses.csv の phase 列から地域へ対応づける（PHASE_REGION）。
 - tasks.csv・timeline.csv・pages.csv の region 列は ';' 区切りで複数地域を書ける（空欄は地域に属さない）。
 - 返すのはすべて Markdown の文字列。build.py が AUTO ブロックへ埋め、build_html.py が HTML にする。
@@ -17,14 +17,15 @@ from urllib.parse import quote_plus, urlparse
 
 REGION_LABEL = OrderedDict([
     ("baguio", "バギオ"),
-    ("africa", "アフリカ周遊"),
+    ("africa", "アフリカ周遊（5月）"),
+    ("africa-aug", "アフリカ周遊（8月）"),
     ("capetown", "ケープタウン"),
     ("common", "日本国内・保険・共通"),
 ])
 REGION_FILE = {k: f"areas/{k}.md" for k in REGION_LABEL}
 # expenses.csv の phase 列 -> 地域
-PHASE_REGION = {"フィリピン": "baguio", "アフリカ周遊": "africa", "2校目": "capetown", "8月": "capetown", "共通・日本": "common"}
-REGION_CURRENCIES = {"baguio": ["PHP", "USD"], "africa": ["ZAR", "USD"], "capetown": ["ZAR"], "common": []}
+PHASE_REGION = {"フィリピン": "baguio", "アフリカ周遊": "africa", "アフリカ周遊（8月）": "africa-aug", "2校目": "capetown", "8月": "capetown", "共通・日本": "common"}
+REGION_CURRENCIES = {"baguio": ["PHP", "USD"], "africa": ["ZAR", "USD"], "africa-aug": ["ZAR", "USD"], "capetown": ["ZAR"], "common": []}
 SCEN = OrderedDict([("low", "低予算"), ("std", "標準"), ("high", "余裕")])
 DONE = ("完了", "不要")
 KIND_LABEL = {"school": "学校", "sightseeing": "観光", "diving": "ダイビング", "airport": "空港", "hospital": "病院", "other": "その他"}
@@ -283,7 +284,7 @@ def all_blocks(region, *, rows, tasks, timeline, pages, places, fx_records, root
         "places": places_block(places, region),
         "fx": fx_block(fx_records, region),
     }
-    if region == "africa":
+    if region in ("africa", "africa-aug"):
         b["routes"] = routes_block(root)
         b["maps"] = maps_block(root)
     return b
