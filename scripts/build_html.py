@@ -463,6 +463,10 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         rmd = route_markdown(root)
         out[rp] = rmd
         out[rp.with_suffix(".html")] = render_text(rmd, rp, root)
+        fp = root / "docs" / FLIGHTS_MD
+        fmd = flights_markdown(root)
+        out[fp] = fmd
+        out[fp.with_suffix(".html")] = render_text(fmd, fp, root)
     if all((root / DATA_DIR / f).exists() for f in ("tasks.csv", "pages.csv", "timeline.csv", "places.csv", "fx.csv")):
         out[root / "index.html"] = index_page(root)
     return out
@@ -615,16 +619,18 @@ def budget_cards(root: Path = ROOT) -> str:
         t = {s: sum(r["est"][s] or 0.0 for r in priced) for s in ("low", "std", "high")}
         return t
 
-    def split_card(label, key, note):
+    def split_card(label, key, note, href=None):
+        """カードは 見出し・標準の金額・一言・低〜余裕の幅・詳細ページへのリンク だけにする。長い注記や行ごとの内訳は載せない"""
         rs = [r for r in rows if group_of(r) == key]
         t = range_text(rs)
         miss = [r for r in rs if r["no_amount"] or r["unpriced"]]
-        miss_txt = f'金額が未入力・一部未入力の項目 {len(miss)} 件は未計上です。' if miss else ""
-        href = f"areas/{key}.html" if key in dict(REGION_PAGES) else None  # 飛行機代は専用ページがない（費用は各地域ページ）
+        miss_txt = f' <span class="muted">未計上 {len(miss)}件</span>' if miss else ""
+        if href is None:
+            href = f"areas/{key}.html" if key in dict(REGION_PAGES) else None
         if t is None:
-            return card(label, "未計上", f'{esc(note)}金額が入っている項目がまだありません（0円ではありません）。', href)
-        return card(label, build.yen(t["std"]),
-                    f'{esc(note)}標準の見積。低予算 {esc(build.yen(t["low"]))} 〜 余裕 {esc(build.yen(t["high"]))}。{miss_txt}', href)
+            return card(label, "未計上", esc(note), href)
+        rng = f'低 {esc(build.yen(t["low"]))} 〜 余 {esc(build.yen(t["high"]))}'
+        return card(label, build.yen(t["std"]), f'{esc(note)}<br><span class="muted">{rng}</span>{miss_txt}', href)
 
     # 5月の総額＝『飛行機代』カードのうち AF- の航空券 ＋『アフリカ周遊（5月）』カードの現地費。
     # 独立した合計カードにはせず（二重に足されて見えるため）、内訳として注記する。各行は1回だけ数える
@@ -633,31 +639,25 @@ def budget_cards(root: Path = ROOT) -> str:
     af_air = sum(_std(r) for r in rows if r["id"].startswith("AF-") and r["id"] in FLIGHT_IDS and not r["no_amount"])
     af_ground = sum(_std(r) for r in rows if r["id"].startswith("AF-") and r["id"] not in FLIGHT_IDS and not r["no_amount"])
     may_total = af_air + af_ground
-    may_note = (f'5月の総額（標準）＝航空券 {build.yen(af_air)}（下の「飛行機代」の内数）＋ 現地費 {build.yen(af_ground)}（このカード） '
-                f'＝ {build.yen(may_total)}。目標 {build.man(S["budget_africa"])}（総予算の内数）。空欄の費目は含まず、達成判定は保留。')
 
-    flight_items = "".join(
-        f'<li>{esc(r["item"])}：{esc(build.yen(r["est"]["std"]) if r["est"]["std"] is not None else "未計上")}</li>'
-        for r in rows if r["id"] in FLIGHT_IDS)
-    flight = split_card("飛行機代", "flight", f'フィリピン・5月の周遊・ケープタウン→日本の航空券（国内線を含む）。うち5月の周遊分（AF-）は {build.yen(af_air)} で、5月の総額の内数。バス・現地交通・査証は別計上。')
-    flight = flight.replace("</div>", f'<ul class="facts">{flight_items}</ul></div>', 1)
+    # 行ごとの内訳は載せず、詳細ページ（飛行機代は専用ページ）へのリンクにする
+    flight = split_card("飛行機代", "flight", "全ての航空券（国内線を含む）", href="docs/12-flights.html")
 
     cards = [
-        card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標です。実費ではありません。"),
-        card("上限予算", build.man(S["budget_cap"]), "モデルの上限です。実費ではありません。"),
+        card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標"),
+        card("上限予算", build.man(S["budget_cap"]), "モデルの上限"),
         card("見積合計（標準）", build.yen(tot["std"]),
-             f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
-             f'実費ではありません。{unpriced}'),
-        split_card("フィリピン（バギオ）", "baguio", "航空券を除く現地費用。"),
-        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く現地費用（バス・越境・ビザ・滝・サファリ・宿・食費）。{may_note}'),
-        split_card("南アフリカ（ケープタウン）", "capetown", "航空券を除く現地費用。"),
-        split_card("アフリカ周遊（8月）", "africa-aug", "航空券を除く費用。"),
+             f'低 {esc(build.yen(tot["low"]))} 〜 余 {esc(build.yen(tot["high"]))}<br><span class="muted">未計上 {n_na + n_part}件は含まず、0円ではない</span>',
+             "docs/02-budget.html"),
+        split_card("フィリピン（バギオ）", "baguio", "現地費（航空券を除く）"),
+        split_card("アフリカ周遊（5月）", "africa", f'現地費（航空券を除く）。航空券と合わせた5月の総額は {build.yen(may_total)}'),
+        split_card("南アフリカ（ケープタウン）", "capetown", "現地費（航空券を除く）"),
+        split_card("アフリカ周遊（8月）", "africa-aug", "現地費（航空券を除く）。国は未定"),
         flight,
-        split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用。"),
+        split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用"),
     ]
-    return ('<p class="sec-lead">表示している金額はすべて公開料金などに基づくモデルの目標・見積で、実際の支払額ではありません。'
-            '地域ごとに分け、飛行機代は別枠にしています。カードは横にスクロール（または左右ボタン）で見られます。'
-            '内訳は各地域のページ、計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
+    return ('<p class="sec-lead">金額はすべて公開料金などに基づく<strong>モデルの見積</strong>で、実費ではありません。'
+            '各カードを開くと内訳があります。空欄は「未計上」で、0円ではありません。計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
             + carousel(cards, "予算の全体像"))
 
 
@@ -989,6 +989,61 @@ def route_markdown(root: Path = ROOT) -> str:
         "- 「＋行を追加」で滞在地を増やします。▲▼で順番を入れ替え、×で削除します。",
         "- 先頭の「日本（出発）」と末尾の「日本（帰国）」は固定です。",
         "- 費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。", ""]) + "\n"
+
+
+FLIGHTS_MD = "12-flights.md"
+FLIGHT_GROUPS = [
+    ("フィリピン", ("PH-11", "PH-12")),
+    ("5月の周遊（日本→モーリシャス→マダガスカル→ビクトリアの滝周辺→ケープタウン）", ("AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21")),
+    ("帰国", ("SC-08",)),
+]
+
+
+def flights_markdown(root: Path = ROOT) -> str:
+    """飛行機代の内訳。トップのカードには金額だけを載せ、行ごとの内訳はここに置く。CSV から自動生成（手で編集しない）"""
+    if root != ROOT:
+        return "# 飛行機代の内訳\n"
+    import build
+    rows = {r["id"]: r for r in build.load_model()[1]}
+
+    def cell(r, k):
+        if r["no_amount"]:
+            return "未計上"
+        v = r["est"][k]
+        return "未計上" if v is None else build.yen(v)
+
+    out = ["# 飛行機代の内訳", "",
+           "トップの「飛行機代」カードの内訳です。金額は検索サイトの参考値や予算枠で、公式の運賃でも購入できる保証でもありません。"
+           "空欄は未取得で、0円ではありません。このページは `py scripts/build_all.py` が `data/expenses.csv` から自動で作ります。", ""]
+    total = {"low": 0.0, "std": 0.0, "high": 0.0}
+    n = 0
+    for title, ids in FLIGHT_GROUPS:
+        part = [rows[i] for i in ids if i in rows]
+        if not part:
+            continue
+        n += 1
+        out += [f"## {n}. {title}", "", "| 区間 | 低予算 | 標準 | 余裕 | 状態 |", "|---|---:|---:|---:|---|"]
+        sub = {"low": 0.0, "std": 0.0, "high": 0.0}
+        for r in part:
+            out.append(f"| {r['item']} | {cell(r, 'low')} | {cell(r, 'std')} | {cell(r, 'high')} | {r['status']} |")
+            if not r["no_amount"]:
+                for k in sub:
+                    sub[k] += r["est"][k] or 0.0
+        for k in total:
+            total[k] += sub[k]
+        out.append(f"| 小計 | {build.yen(sub['low'])} | {build.yen(sub['std'])} | {build.yen(sub['high'])} | |")
+        out.append("")
+    out += ["## 全体", "",
+            f"| 飛行機代の合計 | 低予算 {build.yen(total['low'])} | 標準 {build.yen(total['std'])} | 余裕 {build.yen(total['high'])} |",
+            "|---|---|---|---|", "",
+            "5月の周遊の航空券は、トップの「アフリカ周遊（5月）」の総額の内数です（現地費と足して5月の総額）。各行は1回だけ数えています。", "",
+            "## 備考（行ごと）", ""]
+    for i in [x for _, ids in FLIGHT_GROUPS for x in ids]:
+        r = rows.get(i)
+        if r and r["note"]:
+            note = re.sub(r"\s+", " ", r["note"]).strip()
+            out.append(f"- {r['id']}：{note}")
+    return "\n".join(out) + "\n"
 
 
 QA_MD = "10-qa.md"
