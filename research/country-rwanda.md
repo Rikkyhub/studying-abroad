@@ -122,7 +122,7 @@
 
 | 項目 | 金額 | 年度・条件・出典 |
 |---|---|---|
-| ゴリラ許可証 | **USD 1,500／人** | Wikivoyage掲載の2025年値（準公式）。RDB公式は未取得。2027年は未確認 |
+| ゴリラ許可証 | **USD 1,500／人／日** | https://visitrwanda.com/interests/gorilla-tracking/ （公式、2026-11-08確認）。年度の記載なし。許可証は1日96枚、1群8人、収益の10%を地域へ。Wikivoyage（2025年値）と一致。2027年は未確認 |
 | ゴールデンモンキー | USD 100 | 同上（2025年値） |
 | フォッシー墓所ハイク／ビソケ登山 | USD 75／USD 75 | 同上 |
 | アカゲラ入園 | USD 100（1日or1泊）／150（2泊）／200（3泊） | 公式、年度表記なし、通年同額 |
@@ -197,3 +197,4 @@
 - 取得（200）：Wikivoyage Rwanda／Volcanoes National Park／Nyungwe Forest National Park／Kigali、visitrwanda.com（トップ、practical-information、facts/immigration-visas・health・weather、destinations/volcanoes-national-park）、akageranationalpark.org、visitnyungwe.org、migration.gov.rw（special arrangement）、gov.uk FCDO Rwanda（本体・entry-requirements・health）、rdb.rw（トップ）。
 - 失敗：visitrwanda.com/gorilla-trekking/ と /interests/gorilla-trekking/（404）、migration.gov.rw/our-services/visa（404）、rdb.rw/tourism-conservation/（404）、visitrwandabookings.rdb.rw（空応答）、anzen.mofa.go.jp の Rwanda 安全・感染症ページ（403）、mofa.go.jp 査証ページ（403）、cdc.gov（404）、irembo.gov.rw（情報なし）、WHO DON一覧（結果なし）。
 - WebSearch は環境エラーで使用不可（検索エンジン未使用）。
+- 再取得（2回目・2026-11-08）：visitrwanda.com/interests/gorilla-tracking/ を取得し、公式の記載として「許可証は1人1日 USD 1,500」「1日96枚」「1群8人」「収益の10%を地域へ還元」を確認した。予約は https://visitrwandabookings.rdb.rw/rdbportal/web/rdb/home（予約サイト）。割引制度・2027年の額・年度の記載は見つからず未確認のまま。

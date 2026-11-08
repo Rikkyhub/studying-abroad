@@ -3,7 +3,7 @@
 - 確認日：2026-11-08（出典ごとの確認日は各行に記載）
 - この国での予定：2027年5月のアフリカ周遊の候補国。旅程は未確定で、このページは調べた事実と一般向けモデルの整理です（予約や確定ではありません）。個人の支払い・予約・旅券情報は含みません（[公開データ方針](../docs/05-public-data-policy.md)）。
 - 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・CDCなど公的/共同編集の情報、**一般**＝一般知識（出典未取得）、**推計**＝上記に基づく見積り。
-- 重要な制約：UWA（ウガンダ野生生物公社）の**公式料金表PDFは本文を読み取れなかった**（画像埋め込み。取得できたPDFの表題は「2022-2023」で、リンク名は「July 2024-June 2026」）。このため**ゴリラ許可証の公式料金・低需要期割引・2027年料金はすべて未確認**。準公式（Wikivoyage）の値のみ参考として記す。書式は [countries/kenya.md](../countries/kenya.md) と [research/africa-route-comparison.md](africa-route-comparison.md) に合わせた。
+- 公式料金表：UWA「Conservation Tariff July 2024 - June 2026」（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、公式、2026-11-08に `pdftotext -raw` で読み取り）。前版で「画像で読めない」としたのは誤りで、文字データを持つPDFだった。**有効期間は2026年6月まで**で、2027年5月の料金は表にない（2027年の額は未確認）。表は「料金は予告なく変更されることがある」と明記。書式は [countries/kenya.md](../countries/kenya.md) と [research/africa-route-comparison.md](africa-route-comparison.md) に合わせた。
 - 本調査ではWebSearch（検索エンジン）が利用できず、公式サイト・Wikivoyage・CDCの直接取得のみ。外務省 海外安全ホームページは HTTP 403 で取得不可。
 
 ## 0. 結論（先に）
@@ -74,7 +74,7 @@
 | キバレ | 「真の乾季はない」。雨期は8〜11月と3〜5月、4月が最多。12〜2月がチンパン向き、6〜7月は比較的乾く | Kibale Forest 記事（準公式） |
 | マーチソン | 雨のピークは4〜5月と8〜10月。1月と年央は乾きやすい | https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park （準公式） |
 | **2027年5月の適性** | **雨季の終盤。ゴリラ・チンパンジーは可能だが、泥濘で体力負担が大きく、4WD必須（推計）。マーチソンは雨のピークの一つ。** | 上記より推計 |
-| 許可証の低需要期割引 | 過去に低需要期（4〜5月・11月）の割引制度が存在したとの記憶はあるが、**2027年の有無・額は未確認**（一般知識、出典未取得）。UWAの2024〜2026年料金表は画像のため読み取り不可 | 未確認 |
+| 許可証の低需要期割引 | 公式料金表（2024年7月〜2026年6月）に**低需要期の割引の記載はない**。割引の有無は2027年分の表が出るまで未確認 | 公式（有効期間外の表） |
 
 ## 4. 無駄な動きのない効率ルート
 
@@ -89,14 +89,16 @@
 
 | 項目 | 金額 | 通貨 | 適用年 | 対象 | 出典（区分・確認日） |
 |---|---|---|---|---|---|
-| ゴリラ許可証（ブウィンディ/ムガヒンガ） | 800 | USD | 2024年（Wikivoyage記載日 2024-01/04）。2027年は**未確認** | 外国人非居住者 | https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park ほか（準公式・2026-11-08）。2023-09時点は USD 700（Uganda記事） |
-| ゴリラ許可証（外国人居住者） | 700 | USD | 同上 | 居住者 | 同上（準公式） |
-| チンパンジー・トレッキング（キバレ） | 250 | USD | 年度不明 | 外国人非居住者 | Kibale Forest 記事（準公式・2026-11-08） |
-| キバレ入園料 | 30 | USD | 年度不明 | 外国人非居住者 | 同上 |
-| ゴールデンモンキー（ムガヒンガ） | 90 | USD | 年度不明 | 非居住者 | Mgahinga 記事（準公式） |
-| 火山ハイク（ムガヒンガ） | 80 | USD | 年度不明 | 非居住者 | 同上 |
-| マーチソン入園料 | 45 | USD | 年度不明（1日） | 非居住者 | Murchison 記事（準公式） |
-| クイーンエリザベス入園料 | 未確認（Wikivoyageの記載は2009年で古く採用しない） | — | — | — | — |
+| ゴリラ許可証（ブウィンディ/ムガヒンガ） | 800 | USD | UWA公式料金表 2024-07〜2026-06。2027年は**未確認** | 外国人非居住者（FNR）。ガイド料・当日の入園料・地域貢献金を含む | https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park ほか（準公式・2026-11-08）。2023-09時点は USD 700（Uganda記事） |
+| ゴリラ許可証（外国人居住者・FR） | 700 | USD | 同上 | 居住者 | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08） |
+| ゴリラ許可証（ゴリラ・ハビチュエーション体験） | 1,500 | USD | 同上 | 外国人非居住者 | 同上 |
+| チンパンジー・トレッキング（キバレ） | 250 | USD | 2024-07〜2026-06 | 外国人非居住者 | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08）。ガイド料と**キバレの入園料を含む** |
+| チンパンジー・トレッキング（キャンブーラ渓谷・QENP） | 100 | USD | 同上 | 外国人非居住者 | 同上。入園料は別 |
+| 入園料（カテゴリーA：キバレ・ブウィンディ・ムガヒンガ・クイーンエリザベス・キデポ・ムブロ湖） | 40（子ども20） | USD | 2024-07〜2026-06 | 外国人非居住者・1日（24時間） | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08）。Wikivoyageの30は旧値 |
+| ゴールデンモンキー・トラッキング（ムガヒンガ） | 60 | USD | 2024-07〜2026-06 | 外国人非居住者 | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08）。入園料は別。Wikivoyageの90は旧値 |
+| 火山登山（ムガヒンガ） | 100 | USD | 2024-07〜2026-06 | 外国人非居住者 | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08）。Wikivoyageの80は旧値 |
+| マーチソンフォールズ入園料（カテゴリーA+） | 45（子ども25） | USD | 2024-07〜2026-06 | 外国人非居住者・1日 | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08） |
+| クイーンエリザベス入園料（カテゴリーA） | 40（子ども20） | USD | 2024-07〜2026-06 | 外国人非居住者・1日 | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08） |
 | ジンジャ：ナイル源流入場 | 30,000 | UGX | 2023年5月更新 | 非居住者 | Jinja 記事（準公式） |
 | ジンジャ：ラフティング（終日クラス5） | 約140 | USD | 2026 | 1人 | 同上 |
 | eVisa（単回入国・90日） | 51 | USD | 2026年時点の記載 | 日本旅券 | https://en.wikivoyage.org/wiki/Uganda （準公式）。公式 https://visas.immigration.go.ug/ は本文取得不可で**未確認** |
@@ -106,7 +108,7 @@
 | 空港〜カンパラ | 75,000〜80,000（専用車）／Airport Express バス USD 30以上 | UGX / USD | 年度不明 | — | Kampala 記事（準公式） |
 | ツアー代（4WD+ガイド+宿の包括料金） | **未確認** | — | — | — | 出典を取得していない |
 
-**許可証のみの合計（推計・準公式額）**：7日モデルでゴリラ USD 800＋チンパンジー USD 250＝USD 1,050（1人）。宿・交通・ツアー代は未確認のため合計しない。
+**許可証のみの合計（UWA公式表の2024〜2026年値）**：7日モデルでゴリラ USD 800＋チンパンジー USD 250＝USD 1,050（1人）。ゴリラ許可証はガイド料・入園料・地域貢献金込み、チンパンジー（キバレ）はガイド料と入園料込み。2027年の額は未確認。宿・交通・ツアー代は未確認のため合計しない。
 
 ## 6. コスパ評価（推計）
 
@@ -134,8 +136,9 @@
 
 ## 9. 未確認事項
 
-- UWAの公式料金表（2027年のゴリラ許可証額、低需要期割引の有無・期間）。料金表PDFは画像のため読み取れず。
-- ゴリラ許可証の予約開始時期・キャンセル規定（公式Booking Termsは内容なし）。
+- 2027年のUWA料金（公式表の有効期間は2026年6月まで）と、低需要期割引の有無。公式表には割引の記載がない。
+- UWAの料金表は「予告なく変更されることがある」と明記している。
+- ゴリラ許可証の予約開始時期・キャンセル規定。料金表の罰則欄に「再予約の遅延は許可証料の25%」「別の場所での追跡は50%」の記載があるが、取消の返金条件は未確認。
 - 外務省の危険レベル（取得不可）、eVisa公式の最新料金、エボラの2027年時点の状況。
 - 国内線の運賃・時刻、ツアー代、宿の個別料金（2027年）。
 - ルワンダ経由ルート、タンザニア接続の実際の所要・費用。
@@ -166,3 +169,4 @@
 - 取得成功：Wikivoyage（Uganda, Bwindi, Mgahinga, Kibale Forest, Murchison, Queen Elizabeth, Jinja, Kampala）、CDC Uganda、ugandawildlife.org の visitor-guide／gorilla-tracking／booking-terms。
 - 取得失敗：外務省 anzen.mofa.go.jp（403、2URL）、UWA料金PDF（画像のみで本文なし）、UWA tariff類推URL（404）、visas.immigration.go.ug（本文なし）、Wikivoyage Kibale_National_Park（404）、Volcanoes_National_Park_(Rwanda)（404）。
 - 未実施：ルワンダ/タンザニア/ケニア側の接続運賃、ツアー会社の価格（民間情報は未取得）。
+- 再取得（2回目・2026-11-08）：ugandawildlife.org/visitor-guide/ のHTMLから `UWA-Conservation-Tariff-July-2024-June-2026.pdf` のリンクを特定し、ダウンロードして `pdftotext -raw` で読み取った。前回の「画像で読めない」は、取得ツール（WebFetch）側の制約で、PDF自体は文字データを持っていた。料金（ゴリラ・チンパンジー・入園料・ゴールデンモンキー・火山登山）を公式値へ置換し、Wikivoyageの旧値との差を表に注記した。

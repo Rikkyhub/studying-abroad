@@ -5,6 +5,7 @@
 - 確認日：2026-11-08（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
 - 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・CDCなど、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 料金のうち、ゴリラ・チンパンジー・入園料・ゴールデンモンキー・火山登山は、UWAの公式料金表（2024年7月〜2026年6月）の値。**2027年5月は表の有効期間外で未確認**。
 - 詳細（日数別モデルコース・月別シーズン・費用・コスパ/タイパ）は [ウガンダ 国別深掘り](../research/country-uganda.md)。
 
 ## 概要
@@ -18,11 +19,11 @@
 
 | 名称 | 場所・Google Maps 検索リンク | 見どころ | 入場料や体験料（通貨・年度・対象） | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| ブウィンディ原生国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Bwindi%20Impenetrable%20National%20Park) | マウンテンゴリラ。許可証と同じ地区に宿泊が必要 | ゴリラ許可証 USD 800（外国人非居住者、Wikivoyage記載の2024年値）。2027年は未確認 | 雨でトレイルが厳しい。許可証は取りやすい可能性 | https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park （準公式） |
-| ムガヒンガ・ゴリラ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mgahinga%20Gorilla%20National%20Park) | ゴリラ、ゴールデンモンキー、火山ハイク | ゴールデンモンキー USD 90、火山ハイク USD 80（非居住者、年度不明） | 未確認 | https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park （準公式） |
-| キバレ森林国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kibale%20National%20Park) | チンパンジー・トレッキング | チンパンジー USD 250、入園料 USD 30（非居住者、年度不明） | 3〜5月は道がぬかるみ4WD推奨 | https://en.wikivoyage.org/wiki/Kibale_Forest_National_Park （準公式） |
-| クイーンエリザベス国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Queen%20Elizabeth%20National%20Park) | カジンガ水路のボートサファリ、木登りライオン | 未確認（Wikivoyageの記載は2009年で採用せず） | 未確認 | https://en.wikivoyage.org/wiki/Queen_Elizabeth_National_Park （準公式） |
-| マーチソンフォールズ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Murchison%20Falls%20National%20Park) | 滝へのボート、ハシビロコウ | 入園料 USD 45／日（非居住者、年度不明） | 未確認 | https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park （準公式） |
+| ブウィンディ原生国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Bwindi%20Impenetrable%20National%20Park) | マウンテンゴリラ。許可証と同じ地区に宿泊が必要 | ゴリラ許可証 USD 800（外国人非居住者。ガイド料・入園料・地域貢献金込み、UWA公式料金表 2024-07〜2026-06）。2027年は未確認 | 雨でトレイルが厳しい。許可証は取りやすい可能性（Wikivoyage） | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
+| ムガヒンガ・ゴリラ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mgahinga%20Gorilla%20National%20Park) | ゴリラ、ゴールデンモンキー、火山ハイク | ゴールデンモンキー USD 60、火山登山 USD 100（外国人非居住者、UWA公式料金表 2024-07〜2026-06。入園料は別） | 未確認 | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
+| キバレ森林国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kibale%20National%20Park) | チンパンジー・トレッキング | チンパンジー・トレッキング USD 250（ガイド料と入園料を含む、外国人非居住者、UWA公式料金表 2024-07〜2026-06） | 3〜5月は道がぬかるみ4WD推奨（Wikivoyage） | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
+| クイーンエリザベス国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Queen%20Elizabeth%20National%20Park) | カジンガ水路のボートサファリ、木登りライオン | 入園料 USD 40／日（外国人非居住者、UWA公式料金表 2024-07〜2026-06）。キャンブーラ渓谷のチンパンジー USD 100 | 未確認 | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
+| マーチソンフォールズ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Murchison%20Falls%20National%20Park) | 滝へのボート、ハシビロコウ | 入園料 USD 45／日（外国人非居住者、UWA公式料金表 2024-07〜2026-06） | 未確認 | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
 | ジンジャ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Jinja%20Uganda) | ナイル川源流、ラフティング | 源流入場 UGX 30,000（2023年5月更新）、ラフティング終日 約USD 140（2026） | 未確認 | https://en.wikivoyage.org/wiki/Jinja （準公式） |
 
 ## おすすめの食べ物
@@ -60,7 +61,7 @@
 
 ## 未確認事項
 
-- UWA（ウガンダ野生生物公社）の公式料金表（2027年のゴリラ許可証額、低需要期割引）。料金表PDFは画像で読み取れなかった。
+- 2027年のUWA料金（公式表の有効期間は2026年6月まで）と、低需要期割引の有無（公式表には記載なし）。
 - 外務省の危険レベル、eVisa公式の最新料金、エボラの2027年5月時点の状況。
 - 国内線の運賃・時刻、ツアー代、宿の個別料金。
 - ルワンダ経由ルート、タンザニア接続の所要・費用。
@@ -72,7 +73,7 @@
 |---|---|---|---|
 | https://en.wikivoyage.org/wiki/Uganda ほか上記各ページ | 準公式 | 2026-11-08 | 現行版（価格は年度が混在） |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/uganda | 準公式 | 2026-11-08 | 2025-04-23更新 |
-| https://www.ugandawildlife.org/safari-activities/gorilla-tracking | 公式 | 2026-11-08 | 料金記載なし |
+| https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf | 公式 | 2026-11-08 | 2024-07〜2026-06 |
 
 ## 調査ログ
 

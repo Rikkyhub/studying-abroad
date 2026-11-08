@@ -19,7 +19,7 @@
 
 | 名称 | 場所・Google Maps 検索リンク | 見どころ | 入場料や体験料（通貨・年度・対象） | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| 火山国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Volcanoes%20National%20Park%20Rwanda) | 山岳ゴリラ（滞在1時間、15歳以上）、ゴールデンモンキー | ゴリラ許可証 USD 1,500／人（Wikivoyage掲載の2025年値）。RDB公式は未取得 | 道はぬかるむが、ゴリラの出現は通年 | https://en.wikivoyage.org/wiki/Volcanoes_National_Park （準公式） |
+| 火山国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Volcanoes%20National%20Park%20Rwanda) | 山岳ゴリラ（滞在1時間、15歳以上）、ゴールデンモンキー | ゴリラ許可証 USD 1,500／人／日（visitrwanda.com 公式、年度の記載なし。Wikivoyageの2025年値と一致） | 道はぬかるむが、ゴリラの出現は通年 | https://en.wikivoyage.org/wiki/Volcanoes_National_Park （準公式） |
 | キガリ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kigali%20Genocide%20Memorial) | ジェノサイド記念館、カフェ、市場 | 記念館は無料または寄付。大統領宮殿博物館 RWF 6,000（Wikivoyage、2026-11-08確認） | 屋内中心で雨に強い | https://en.wikivoyage.org/wiki/Kigali （準公式） |
 | ニュングウェの森国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nyungwe%20Forest%20National%20Park) | 山地林、チンパンジー、キャノピーウォーク | 現行料金は未確認（公式サイトに価格なし） | 道が滑る、夜は冷える | https://www.visitnyungwe.org/ （公式） |
 | アカゲラ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Akagera%20National%20Park) | Big 5、ボートサファリ | 入園 USD 100（1日or1泊）／150（2泊）／200（3泊）（公式、年度表記なし、通年同額） | 公式は料金が季節で変わらないと明記 | https://www.akageranationalpark.org/ （公式） |
