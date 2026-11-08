@@ -117,15 +117,28 @@ def collapse_long(html_str: str, limit: int = 120, head: int = 70) -> str:
             f'<div class="full">{html_str}</div></details>')
 
 
-def fold_sections(body: str, min_chars: int = 600) -> str:
-    """長い調査ページ：h2 の節ごとに開閉できるようにする。最初の長い節だけ開いておく"""
+def fold_notes(body: str, keep: int = 2) -> str:
+    """「前提と備考」直後の長い箇条書きは、先頭 keep 件だけ見せて残りを開閉にする"""
+    def repl(m):
+        items = re.findall(r"<li>.*?</li>", m.group(2), re.S)
+        if len(items) <= keep:
+            return m.group(0)
+        head, rest = "".join(items[:keep]), "".join(items[keep:])
+        return (m.group(1) + f"<ul>{head}</ul>"
+                f'<details class="more notes"><summary>残り {len(items) - keep} 件の前提・備考を開く</summary><ul>{rest}</ul></details>')
+    return re.sub(r"(<p><strong>前提と備考</strong></p>\s*)<ul>(.*?)</ul>", repl, body, flags=re.S)
+
+
+def fold_sections(body: str, min_chars: int = 600, open_key: str = "") -> str:
+    """長いページ：h2 の節ごとに開閉できるようにする。open_key を含む見出しの節（なければ最初の長い節）だけ開いておく"""
     parts = re.split(r'(?=<h2 id=)', body)
     out, opened, n = [parts[0]], False, 0
     for p in parts[1:]:
         m = re.match(r'(<h2 id="[^"]+">.*?</h2>)(.*)$', p, re.S)
         if m and len(re.sub(r"<[^>]+>", "", m.group(2))) > min_chars:
-            op = "" if opened else " open"
-            opened, n = True, n + 1
+            want = (open_key in m.group(1)) if open_key else not opened
+            op = " open" if want and not opened else ""
+            opened, n = opened or want, n + 1
             out.append(f'<details class="sec"{op}><summary>{m.group(1)}</summary>{m.group(2)}</details>')
         else:
             out.append(p)
@@ -340,7 +353,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   var lab={need:"必要",skip:"不要",hold:"保留"},items=[];
   rows.forEach(function(r){var s=r.sel.value,m=r.tr.querySelector("input[type=text]").value;
    items.push({item:r.name,decision:s?lab[s]:"未判断",memo:m,std_yen:r.v[1]})});
-  var fname="cost-triage-"+page.replace(/\.html$/,"")+".json";
+  var fname="cost-triage-"+page.replace(/\\.html$/,"")+".json";
   var data={schema:"cost-triage-v1",page:page,exported_at:new Date().toISOString(),note:"個人の判断。リポジトリにコミットしないこと。",items:items};
   var text=JSON.stringify(data,null,2),btn=ev.target,orig=btn.textContent;
   function msg(t){btn.textContent=t;setTimeout(function(){btn.textContent=orig},4000)}
@@ -376,12 +389,13 @@ def nav(root: Path, current: Path) -> str:
             cur = ' aria-current="page"' if f == current else ""
             links.append(f'<a href="../{d}/{f.stem}.html"{cur}>{html.escape(page_title(f))}</a>')
         if links:
-            parts.append(f'<div><div class="g">{label}</div>{"".join(links)}</div>')
+            has_cur = any("aria-current" in x for x in links)
+            parts.append(f'<details class="g-fold"{" open" if has_cur else ""}><summary>{label}（{len(links)}）</summary>{"".join(links)}</details>')
         if d == "areas":
             here = f"{current.parent.name}/{current.name}"
             cur = ' aria-current="page"'
             maps = "".join(f'<a href="../maps/{n}.html"{cur if here == f"maps/{n}.html" else ""}>{t}</a>' for n, t in MAP_PAGES)
-            parts.append(f'<div><div class="g">{MAP_GROUP}</div>{maps}</div>')
+            parts.append(f'<details class="g-fold"{" open" if here.startswith("maps/") else ""}><summary>{MAP_GROUP}（{len(MAP_PAGES)}）</summary>{maps}</details>')
     return "".join(parts)
 
 
@@ -401,10 +415,15 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     title, body, toc = convert(md)
     title = title or path.stem
     rel = path.relative_to(root).as_posix()
-    if path.parent.name == "research":
-        body = fold_sections(body)
+    if path.parent.name in ("research", "areas"):
+        body = fold_sections(fold_notes(body), min_chars=400 if path.parent.name == "areas" else 600,
+                             open_key="費用の見積" if path.parent.name == "areas" else "")
     if 'class="sec"' in body:
         body += "\n" + SECTION_SCRIPT
+    if "@@ROUTE-TABLE@@" in md:
+        body = body.replace("@@ROUTE-TABLE@@", ROUTE_TABLE_HTML)
+    if "data-route" in body:
+        body += "\n" + ROUTE_SCRIPT.replace("@@PRESETS@@", route_presets(root)).replace("@@PLACES@@", route_places(root))
     if "data-cost" in body:
         body += "\n" + COST_TRIAGE_SCRIPT
     toc_html = ""
@@ -440,6 +459,10 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         qmd = qa_markdown(root)
         out[qp] = qmd
         out[qp.with_suffix(".html")] = render_text(qmd, qp, root)
+        rp = root / "docs" / ROUTE_MD
+        rmd = route_markdown(root)
+        out[rp] = rmd
+        out[rp.with_suffix(".html")] = render_text(rmd, rp, root)
     if all((root / DATA_DIR / f).exists() for f in ("tasks.csv", "pages.csv", "timeline.csv", "places.csv", "fx.csv")):
         out[root / "index.html"] = index_page(root)
     return out
@@ -559,7 +582,7 @@ def timeline_cards(root: Path = ROOT) -> str:
     return carousel(cards, "旅程")
 
 
-FLIGHT_IDS = ("PH-11", "AF-01", "SC-08")  # expenses.csv の長距離航空券（日本発着・日本〜現地の区間）
+FLIGHT_IDS = ("PH-11", "AF-01", "AF-02", "AF-17", "AF-18", "SC-08")  # expenses.csv の長距離航空券（日本発着・日本〜現地の区間）
 
 
 def budget_cards(root: Path = ROOT) -> str:
@@ -616,7 +639,7 @@ def budget_cards(root: Path = ROOT) -> str:
              f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
              f'実費ではありません。{unpriced}'),
         split_card("フィリピン（バギオ）", "baguio", "航空券を除く現地費用。"),
-        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く費用。配分目標は {build.man(S["budget_africa"])}（総予算の内数）。'),
+        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く費用。配分目標は {build.man(S["budget_africa"])}（総予算の内数）。マダガスカル先行＋ビクトリアの滝周辺への組み替え中（Issue #77）で、現地費用はまだ入力していないため、この金額は完成値ではなく大きく増えます。'),
         split_card("南アフリカ（ケープタウン）", "capetown", "航空券を除く現地費用。"),
         split_card("アフリカ周遊（8月）", "africa-aug", "航空券を除く費用。"),
         flight,
@@ -723,7 +746,7 @@ document.querySelectorAll("[data-carousel]").forEach(function(c){
 })();
 </script>"""
 
-INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ内の移動"><strong class="here">トップ</strong><a href="#budget">予算の全体像</a><a href="#plan">旅程</a><a href="#areas">地域別</a><a href="#now">いま何をするか</a><a href="docs/10-qa.html">確認待ち</a><a href="#fx">通貨と円換算</a><a href="#docs">資料一覧</a></nav></div></header>
+INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ内の移動"><strong class="here">トップ</strong><a href="#budget">予算の全体像</a><a href="#plan">旅程</a><a href="#areas">地域別</a><a href="#now">いま何をするか</a><a href="docs/10-qa.html">確認待ち</a><a href="docs/11-route-builder.html">ルート作成</a><a href="#fx">通貨と円換算</a><a href="#docs">資料一覧</a></nav></div></header>
 <main class="wrap top">
 <h1>2027 留学・アフリカ周遊 計画メモ</h1>
 <p class="lead">2027年2〜7月に、フィリピン・バギオの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学を一つの旅程として整理するための計画メモです。公開してよい一般の料金・制度・調査だけを匿名のモデルとして載せ、地域ごとに費用・確認事項・資料・地図を見られます。</p>
@@ -793,6 +816,169 @@ def issue_map_markdown(root: Path = ROOT) -> str:
     for r in csv_records(root / DATA_DIR / "tasks.csv"):
         out.append(f"| {r['id']} | {r['priority']} | {r['task']} | {issue_cell(r['issue'])} | {r['status']} |")
     return "\n".join(out) + "\n"
+
+
+ROUTE_MD = "11-route-builder.md"
+ROUTE_TABLE_HTML = (
+    '<div class="route" data-route>'
+    '<p class="route-pre"><span class="lbl">既存の案から始める：</span><span class="presets"></span></p>'
+    '<p class="route-desc" aria-live="polite"></p>'
+    '<div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th>移動</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead>'
+    '<tbody></tbody></table></div>'
+    '<p class="route-bar"><button type="button" class="r-add">＋ 行を追加</button> '
+    '<button type="button" class="r-send">Claudeに送る（triage/route.json）</button> '
+    '<button type="button" class="r-copy">文章でコピー</button> '
+    '<button type="button" class="r-undo" disabled>元に戻す</button> '
+    '<button type="button" class="r-reset">すべて消す</button></p>'
+    '<p class="route-sum" aria-live="polite"></p>'
+    '<p class="route-days dim" aria-live="polite"></p>'
+    '<label class="route-ask">Claudeへの依頼（任意）<textarea rows="2" placeholder="例：この順番で費用と日数を調べ直して／ケニアを外した案も比べて"></textarea></label></div>')
+ROUTE_SCRIPT = """<script>
+(function(){
+var KEY="route-builder-v2",root=document.querySelector("[data-route]");if(!root)return;
+var tb=root.querySelector("tbody"),sum=root.querySelector(".route-sum"),desc=root.querySelector(".route-desc"),ask=root.querySelector("textarea");
+var PRESETS=@@PRESETS@@, PLACES=@@PLACES@@, TOTAL=194;
+var MOVES=["","飛行機","陸路","バス","電車","船","車","徒歩"];
+var COLS=[["place","滞在地","例 バギオ"],["country","国","例 フィリピン"],["when","時期","例 2〜4月"],["days","日数","例 12週"],["move","移動",""],["memo","メモ",""]];
+var st={rows:[],preset:"",ask:""},undo=[];
+try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function snap(label){undo.push({label:label,s:JSON.stringify(st)});if(undo.length>30)undo.shift();ub.disabled=false;ub.textContent="元に戻す（"+label+"）"}
+function conv(x){return {place:x.place,country:x.country,move:x.move,memo:x.memo||""}}
+function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];if(!c)return;
+ snap("案の切替");st.preset=id;st.rows=c.stops.slice(1).map(conv);st.first=c.stops[0];save();build()}
+if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="F"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
+/* 日数の読み取り：12週/8週/10日/3か月/2ヶ月/1年 などを日に換算（読めなければ 0） */
+function toDays(t){t=(t||"").replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)});var m=t.match(/(\\d+(?:\\.\\d+)?)\\s*(週間|週|日間|日|か月|ヶ月|カ月|ヵ月|月|年)?/);if(!m)return 0;var n=parseFloat(m[1]),u=m[2]||"日";
+ return Math.round(/週/.test(u)?n*7:/年/.test(u)?n*365:/月/.test(u)?n*30:n)}
+/* 滞在地の候補（datalist）。選ぶと国と移動の既定が入る */
+var dl=document.createElement("datalist");dl.id="route-places";PLACES.forEach(function(p){var op=document.createElement("option");op.value=p.name;op.label=p.country;dl.appendChild(op)});document.body.appendChild(dl);
+function byName(n){return PLACES.filter(function(p){return p.name===n})[0]}
+var pre=root.querySelector(".presets");
+PRESETS.forEach(function(c){var b=document.createElement("button");b.type="button";b.className="pre-btn";b.setAttribute("data-id",c.id);b.textContent="案"+c.id;b.title=c.name;
+ b.addEventListener("click",function(){if(st.rows.length&&!confirm("いまの入力を案"+c.id+"で置き換えます（「元に戻す」で戻せます）。よろしいですか？"))return;loadPreset(c.id)});pre.appendChild(b)});
+var ub=root.querySelector(".r-undo");
+ub.addEventListener("click",function(){var u=undo.pop();if(!u)return;st=JSON.parse(u.s);save();build();ub.disabled=!undo.length;ub.textContent=undo.length?"元に戻す（"+undo[undo.length-1].label+"）":"元に戻す"});
+function fixed(label){var tr=document.createElement("tr");tr.className="fix";tr.innerHTML='<td></td><td colspan="8"><strong>'+label+'</strong></td>';return tr}
+function mkInput(r,c,tr){var td=document.createElement("td");td.setAttribute("data-label",c[1]);var key=c[0];
+ if(key==="move"){var sel=document.createElement("select");sel.setAttribute("aria-label","移動");
+  var list=MOVES.slice();if(r.move&&list.indexOf(r.move)<0)list.push(r.move);
+  list.forEach(function(m){var o=document.createElement("option");o.value=m;o.textContent=m||"（未選択）";sel.appendChild(o)});sel.value=r.move||"";
+  sel.addEventListener("change",function(){r.move=sel.value;save();paint()});td.appendChild(sel);return td}
+ var inp=document.createElement("input");inp.type="text";inp.value=r[key]||"";inp.placeholder=c[2];inp.setAttribute("aria-label",c[1]);
+ if(key==="place")inp.setAttribute("list","route-places");
+ inp.addEventListener("input",function(){r[key]=inp.value;
+  if(key==="place"){var p=byName(inp.value);if(p){if(!r.country){r.country=p.country;var ci=tr.children[2].children[0];if(ci)ci.value=p.country}}}
+  save();paint()});
+ inp.addEventListener("change",function(){if(key==="days")paint()});
+ td.appendChild(inp);return td}
+function build(){
+ tb.innerHTML="";
+ var first=st.first&&st.first.place?st.first.place:"";
+ tb.appendChild(fixed("日本（出発）"+(first?" → "+first+"（"+(st.first.country||"")+"）から始まる案":"")));
+ st.rows.forEach(function(r,i){
+  var tr=document.createElement("tr");tr.innerHTML='<td class="n">'+(i+1)+'</td>';
+  COLS.forEach(function(c){tr.appendChild(mkInput(r,c,tr))});
+  var tc=document.createElement("td");tc.className="chk";tc.setAttribute("data-label","調べる");
+  var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!r.research;cb.setAttribute("aria-label","この行をClaudeに調べ直してもらう");
+  cb.addEventListener("change",function(){r.research=cb.checked;save();paint()});tc.appendChild(cb);tr.appendChild(tc);
+  var op=document.createElement("td");op.className="ops";
+  [["▲","上へ"],["▼","下へ"],["＋","この下に追加"],["⧉","この行を複製"],["×","削除"]].forEach(function(b){var bt=document.createElement("button");bt.type="button";bt.textContent=b[0];bt.title=b[1];bt.setAttribute("aria-label",b[1]);
+   bt.addEventListener("click",function(){
+    snap(b[1]);
+    if(b[0]==="×"){st.rows.splice(i,1)}
+    else if(b[0]==="＋"){st.rows.splice(i+1,0,{})}
+    else if(b[0]==="⧉"){st.rows.splice(i+1,0,JSON.parse(JSON.stringify(r)))}
+    else{var j=i+(b[0]==="▲"?-1:1);if(j<0||j>=st.rows.length){undo.pop();return}var t=st.rows[i];st.rows[i]=st.rows[j];st.rows[j]=t}
+    save();build()});op.appendChild(bt)});
+  tr.appendChild(op);tb.appendChild(tr)});
+ tb.appendChild(fixed("日本（帰国）"));
+ Array.prototype.forEach.call(pre.children,function(b){b.classList.toggle("on",b.getAttribute("data-id")===st.preset)});
+ var c=PRESETS.filter(function(p){return p.id===st.preset})[0];
+ desc.textContent=c?"案"+c.id+"：「"+c.name+"」を読み込み済み（地図・ルート比較と同じ案。以下は自由に書き換えられます）":"";
+ ask.value=st.ask||"";paint();
+}
+function names(){return st.rows.map(function(r){return (r.place||"").trim()}).filter(Boolean)}
+function paint(){var n=names(),k=st.rows.filter(function(r){return r.research}).length;
+ var days=st.rows.reduce(function(a,r){return a+toDays(r.days)},0),unread=st.rows.filter(function(r){return (r.days||"").trim()&&!toDays(r.days)}).length;
+ var line="日本 → "+(n.length?n.join(" → ")+" → ":"")+"日本";
+ if(k)line+="　（調べ直し希望："+k+"行）";
+ sum.textContent=line;
+ var dd=root.querySelector(".route-days");
+ if(days||unread){var diff=TOTAL-days;dd.textContent="日数の合計："+days+"日／全体"+TOTAL+"日"+(diff>=0?"（あと"+diff+"日）":"（"+(-diff)+"日超過）")+(unread?"　※読めない日数が"+unread+"行あります（例：12週、10日、2か月）":"");dd.className="route-days"+(diff<0?" over":"")}
+ else{dd.textContent="日数を入れると、全体"+TOTAL+"日に対する合計が出ます（例：12週、10日、2か月）";dd.className="route-days dim"}
+ ub.disabled=!undo.length}
+ask.addEventListener("input",function(){st.ask=ask.value;save()});
+root.querySelector(".r-add").addEventListener("click",function(){snap("行の追加");st.rows.push({});save();build();var l=tb.querySelectorAll("tr:not(.fix) td:nth-child(2) input");if(l.length)l[l.length-1].focus()});
+root.querySelector(".r-reset").addEventListener("click",function(){if(!confirm("入力したルートをすべて消します（「元に戻す」で戻せます）。よろしいですか？"))return;snap("すべて消す");st={rows:[],preset:"",ask:""};save();build()});
+function payload(){return {schema:"route-builder-v2",exported_at:new Date().toISOString(),note:"個人のルート案。リポジトリにコミットしないこと。",base_preset:st.preset||"",request:st.ask||"",
+ total_days_entered:st.rows.reduce(function(a,r){return a+toDays(r.days)},0),
+ route:["日本（出発）"].concat(st.rows.map(function(r){return r.place||""})).concat(["日本（帰国）"]),
+ stops:st.rows.map(function(r,i){return {order:i+1,place:r.place||"",country:r.country||"",when:r.when||"",days:r.days||"",move:r.move||"",memo:r.memo||"",research:!!r.research}})}}
+root.querySelector(".r-copy").addEventListener("click",function(ev){
+ var t=payload().stops.map(function(s){return s.order+". "+(s.place||"（未入力）")+[s.country,s.when,s.days,s.move].filter(Boolean).map(function(x){return " / "+x}).join("")+(s.memo?" — "+s.memo:"")+(s.research?"　【調べ直し】":"")}).join("\\n");
+ t="日本（出発）\\n"+t+"\\n日本（帰国）"+(st.ask?"\\n\\n依頼："+st.ask:"");var b=ev.target,o=b.textContent;
+ function done(){b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,function(){prompt("コピーしてください",t)});else prompt("コピーしてください",t)});
+function idb(){return new Promise(function(res,rej){var q=indexedDB.open("cost-triage-dir",1);q.onupgradeneeded=function(){q.result.createObjectStore("h")};q.onsuccess=function(){res(q.result)};q.onerror=function(){rej(q.error)}})}
+function getDir(){return idb().then(function(db){return new Promise(function(res){var g=db.transaction("h").objectStore("h").get("dir");g.onsuccess=function(){res(g.result||null)};g.onerror=function(){res(null)}})}).then(function(h){
+ function askDir(){return window.showDirectoryPicker({id:"cost-triage",mode:"readwrite"}).then(function(d){return idb().then(function(db){db.transaction("h","readwrite").objectStore("h").put(d,"dir");return d})})}
+ if(!h)return askDir();
+ return h.queryPermission({mode:"readwrite"}).then(function(p){return p==="granted"?h:h.requestPermission({mode:"readwrite"}).then(function(q){return q==="granted"?h:askDir()})})})}
+root.querySelector(".r-send").addEventListener("click",function(ev){
+ var text=JSON.stringify(payload(),null,2),btn=ev.target,orig=btn.textContent;
+ function msg(t){btn.textContent=t;setTimeout(function(){btn.textContent=orig},4000)}
+ function download(){var bl=new Blob([text],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(bl);a.download="route.json";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);msg("ダウンロードしました。triage フォルダへ移してください")}
+ if(!window.showDirectoryPicker){download();return}
+ getDir().then(function(dir){return dir.getFileHandle("route.json",{create:true}).then(function(fh){return fh.createWritable()}).then(function(w){return w.write(text).then(function(){return w.close()})})})
+  .then(function(){msg("triage フォルダに保存しました（Claudeが確認します）")}).catch(function(e){if(e&&e.name==="AbortError")return;download()});
+});
+build();
+})();
+</script>"""
+
+
+MODE_JA = {"flight": "飛行機", "overland": "陸路"}
+
+
+def route_presets(root: Path = ROOT) -> str:
+    """data/routes.csv と route_points.csv から、地図と同じ A〜F の案を作る（JSON）。滞在地は到着点を順に並べる"""
+    pts = {r["id"]: r for r in csv_records(root / DATA_DIR / "route_points.csv")}
+    cases: dict = {}
+    for r in sorted(csv_records(root / DATA_DIR / "routes.csv"), key=lambda r: (r["route_id"], int(r["seq"] or 0))):
+        c = cases.setdefault(r["route_id"], {"id": r["route_id"], "name": r["route_name_ja"], "stops": []})
+        if not c["stops"]:
+            f = pts.get(r["from_point"], {})
+            c["stops"].append({"place": f.get("name_ja", r["from_point"]), "country": f.get("country", ""), "move": "出発地"})
+        t = pts.get(r["to_point"], {})
+        note = "未確認" if r["unconfirmed"] == "Y" else ""
+        c["stops"].append({"place": t.get("name_ja", r["to_point"]), "country": t.get("country", ""),
+                           "move": MODE_JA.get(r["mode"], r["mode"]), "memo": note, "status": r["status"]})
+    out = [cases[k] for k in sorted(cases)]
+    return json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def route_places(root: Path = ROOT) -> str:
+    """滞在地の入力候補（route_points.csv の地点名と国）。JSON"""
+    out = [{"name": r["name_ja"], "country": r["country"]}
+           for r in csv_records(root / DATA_DIR / "route_points.csv") if r["name_ja"]]
+    return json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def route_markdown(root: Path = ROOT) -> str:
+    """モデルルート作成。入力は閲覧者のブラウザ内の表（data-route）。公開されるのは説明文だけで、入力した滞在地は載らない"""
+    return "\n".join([
+        "# モデルルート作成", "",
+        "「日本 → 滞在地 → … → 日本」の骨組みを、自分で入力して作る画面です。まず滞在地の名前だけを入れ、時期・日数・移動・メモは"
+        "決まったものから足していけます。空欄のままでも構いません。", "",
+        "入力はこのブラウザに自動で残ります。「Claudeに送る」を押すと、リポジトリの `triage/` フォルダに `route.json` として保存します"
+        "（最初の1回だけフォルダを選びます。Chrome・Edge向け）。このフォルダの中身は公開されません。", "",
+        "## 1. ルートの表", "",
+        "@@ROUTE-TABLE@@", "",
+        "## 2. 使い方", "",
+        "- 「＋行を追加」で滞在地を増やします。▲▼で順番を入れ替え、×で削除します。",
+        "- 先頭の「日本（出発）」と末尾の「日本（帰国）」は固定です。",
+        "- 費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。", ""]) + "\n"
 
 
 QA_MD = "10-qa.md"
@@ -931,6 +1117,9 @@ article,h1,p,li{overflow-wrap:anywhere}
 .crumb{margin:18px 0 0;color:var(--muted);font-size:.9rem}
 nav.all{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 28px;margin:14px 0;font-size:.94rem}
 nav.all .g{font-weight:700;color:var(--muted);margin-top:8px} nav.all a{display:block;padding:1px 0}
+nav.all details.g-fold{align-self:start} nav.all details.g-fold>summary{cursor:pointer;font-weight:700;color:var(--muted);padding:2px 0}
+nav.all details.g-fold[open]>summary{margin-bottom:2px}
+details.more.notes{margin:4px 0 8px}
 nav.all a[aria-current]{font-weight:700;color:var(--ink)}
 main.page{padding-bottom:24px}
 body.home{background:var(--page)} body.home header.bar{background:var(--page)}
@@ -972,6 +1161,21 @@ details.sec>:not(summary){margin-left:14px;margin-right:14px} details.sec>.scrol
 details.sec[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px}
 details.sec>:last-child{margin-bottom:14px}
 .sec-tools{margin:8px 0} .sec-tools button{font:inherit;font-size:.88rem;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:6px}
+.route-pre{margin:8px 0 2px}.route-pre .lbl{font-weight:700;margin-right:6px}
+.route-pre .pre-btn{font:inherit;font-size:.88rem;padding:4px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;margin:2px 4px 2px 0}
+.route-pre .pre-btn.on{background:var(--link);border-color:var(--link);color:#fff}
+.route-desc{color:var(--muted);font-size:.88rem;margin:2px 0 8px}
+.route-t td.chk{text-align:center}.route-t td.chk input{width:auto;min-width:0;transform:scale(1.25)}
+.route-ask{display:block;margin:12px 0 4px;font-weight:700;font-size:.9rem}
+.route-ask textarea{display:block;width:100%;margin-top:4px;font:inherit;font-size:.92rem;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.route-days{font-size:.92rem;margin:2px 0 8px}.route-days.dim{color:var(--muted)}.route-days.over{color:#b3261e;font-weight:700}
+.route-t td select{width:100%;min-width:5.5em;font:inherit;font-size:.9rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.route-bar button:disabled{opacity:.45;cursor:default}
+.route-t td input{width:100%;min-width:6em;font:inherit;font-size:.9rem;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.route-t tr.fix td{background:color-mix(in srgb,var(--link) 10%,transparent);text-align:center}
+.route-t td.ops{white-space:nowrap}.route-t td.ops button{font:inherit;font-size:.8rem;padding:2px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:3px}
+.route-bar button{font:inherit;font-size:.9rem;padding:5px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
+.route-sum{font-weight:700;margin:10px 0}
 .triage{margin:12px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:.92rem}
 .triage .big{font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
 .triage .muted,.triage .tri-note{color:var(--muted);font-size:.85rem}
