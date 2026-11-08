@@ -524,6 +524,13 @@ def render_all(S, rows, tasks, articles, timeline, fx, problems):
     }
     for key, b in blocks.items():
         out[TARGETS[key]] = apply_auto(TARGETS[key].read_text(encoding="utf-8").replace("\r\n", "\n"), b)
+    # The visible Fermi summary is derived from the same editable Markdown table.
+    # AUTO output is never used as the estimation input.
+    from fermi_budget import SOURCE as FERMI_SOURCE, render_summary_md
+    fermi_path = ROOT / FERMI_SOURCE
+    out[fermi_path] = apply_auto(
+        fermi_path.read_text(encoding="utf-8").replace("\r\n", "\n"),
+        {"fermi_summary": render_summary_md(ROOT)})
     # 地域別ページ（areas/*.md）。手書きの導入文はそのまま、AUTO ブロックだけを作り直す
     pages, places, fx_records = read_csv("pages.csv"), read_csv("places.csv"), read_csv("fx.csv")
     for region in areas.REGION_LABEL:
