@@ -223,11 +223,18 @@ class TaskDeadlineTest(unittest.TestCase):
             self.assertIsNone(re.search(r"\d{4}-\d{2}-\d{2}", t["deadline_note"]), t["id"])
             self.assertIn(t["deadline_kind"], build.DEADLINE_KINDS, t["id"])
 
-    def test_etravel_is_72h_before_arrival(self):
+    def test_etravel_deadline_records_conflicting_official_guidance(self):
+        """Official FAQ and immigration advisory disagree; do not publish a fixed 2027 deadline."""
         t = {x["id"]: x for x in self.tasks()}["T-P02"]
         self.assertEqual(t["deadline_kind"], "公式期限")
-        self.assertIn("到着前72時間", t["deadline_note"])
-        self.assertNotIn("出発72時間", t["next_action"] + t["note"] + t["task"])
+        self.assertIn("公式案内が不一致", t["deadline_note"])
+        self.assertIn("2027年未確定", t["deadline_note"])
+        self.assertIn("公式FAQ", t["next_action"])
+        self.assertIn("入管Advisory", t["next_action"])
+        self.assertIn("受付可能期間", t["next_action"])
+        self.assertIn("少なくとも72時間前", t["note"])
+        self.assertNotIn("到着前72時間以内に無料登録", t["next_action"])
+        self.assertEqual(t["source"], "https://etravel.gov.ph/")
 
     def test_validate_rejects_calendar_date_deadline(self):
         t = {"id": "X", "priority": "1", "status": "未着手", "deadline_kind": "公式期限",
