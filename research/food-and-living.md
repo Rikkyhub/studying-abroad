@@ -209,3 +209,32 @@ WebSearch はこの環境では使えなかった（API エラー）。そのた
 | 200 | https://api.nandos.co.za/api/v2/pack/menu/default（WebFetch では名前と価格を対応付けられず、curl で取得して商品IDで照合） |
 | 200 | https://www.mrd.com/help/faqs（WebFetch） |
 | 未実施 | Uber Eats、Sixty60、Spur・Ocean Basket ほかのメニュー、外務省の安全情報、バギオのスーパー（時間の都合で今回は再取得していない） |
+
+---
+
+## 8. 追補（2026-11-08）：ケープタウンの予算（SC-01〜05・SC-08）の根拠を取り直した
+
+予算の見積が弱かったため、UCT ELC（候補校）の公式ページと生活費の根拠を見直した。**匿名モデルで、特定個人の支払額ではない。**
+
+| 項目 | 確認結果 | 出典・状態 |
+|---|---|---|
+| 授業料・宿泊の2027年料金 | 同じ[2027年料金表](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027)に**2組の表**があり値が違う。Standard週額は表A R5,540／表B R5,120、ホームステイ（共用バス）は表A R4,850／表B R4,200、12週以上は別料金。**理由はページにない**。予算は高い表Aで計上（8週で表Bより約R8,600高い）。教材費は授業料に含まれる。保険・ビザの料金はこのページに記載なし | 確認済み（どちらが有効かは**未確認**） |
+| ホームステイの食事 | [公式ホームステイページ](https://uctlanguagecentre.com/experience/accommodation/homestay)：**朝食と夕食が付く**（昼食・軽食は自己負担）。週末の扱い・Wi-Fiは記載なし。自炊はキッチンの利用が限定的 | 確認済み |
+| Yellow House | [公式ページ](https://uctlanguagecentre.com/experience/accommodation/yellow-house)：**自炊**（共用キッチン完備）、各部屋にWi-Fi、学校まで徒歩約15分、バス・トイレ共用 | 確認済み |
+| 旧生活費 SC-05（Numbeo の単身月額R11,971×2か月） | Numbeo は利用者投稿の推定で、ページ自身に「低すぎる」との読者コメントがある（2026-11-06更新・122人・1,515件）。**宿泊が食事付きか自炊かで食費が大きく変わるのに区別がなく、根拠として弱い** | 不採用 |
+| 新しい食費モデル | 8週（56日）の食費だけ。低＝Yellow House自炊 R743×8＝R5,944（第4章）／標準＝ホームステイで昼食のみ Nando's R110×56＝R6,160／余裕＝同 R129×56＝R7,224。**洗面用品・娯楽・衣類などの雑費は出典がなく含めていない** | 推計（前提は2026年の表示価格、2027年は未確認） |
+| ケープタウン→日本（SC-08） | [KAYAK](https://www.kayak.co.jp/flight-routes/Cape-Town-CPT/Tokyo-TYO)：片道の一般的な価格帯 86,466〜117,899円、最安80,421円（12月出発の例）。**7月の個別価格はページにない**。標準は帯の中央値102,183円（計算値） | KAYAKの検索履歴に基づく参考値（航空会社の公式運賃ではない） |
+
+**未確認のまま残るもの**：UCTの有効な料金表（A/B）、ホームステイの週末の食事、昼食の実費（Nando's 1チェーンで代表）、雑費、市内交通のうちMyCiTi以外、2027年6〜7月の運賃。UCTへの問い合わせ文案は作っていない（送信はしない）。
+
+### 調査ログ（2026-11-08）
+
+| 取得 | 内容 |
+|---|---|
+| uctlanguagecentre.com price-list-2027 | 成功。料金表が2組併記 |
+| uctlanguagecentre.com /experience/accommodation/homestay ・ /yellow-house | 成功。食事・キッチン・Wi-Fi |
+| uctlanguagecentre.com /accommodation ・ booking-information | 成功。食事の詳細なし／デポジット25%・残額は開始前 |
+| uctlanguagecentre.com /enroll/visa-information ・ insurance-and-travel | 404（URL変更の可能性）。保険・ビザの要件は**未確認** |
+| numbeo.com Cape-Town | 成功。R12,007（2026-11-06更新、読者コメントに「低すぎる」） |
+| kayak.co.jp Cape-Town→Tokyo | 成功。7月の価格はなし |
+| gov.za public-holidays、WebSearch | 接続拒否／この環境では使えなかった |
