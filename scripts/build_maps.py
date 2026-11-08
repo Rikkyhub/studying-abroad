@@ -38,9 +38,10 @@ ROUTE_COLORS = {
     "D": ("#A5498A", "#E7A6CE"),
     "E": ("#8A6D00", "#F2C94C"),
     "F": ("#3B3B3B", "#D9D9D9"),
+    "G": ("#9B1D20", "#F2A1A3"),
 }
-BADGE_SHAPE = {"A": "circle", "B": "square", "C": "diamond", "D": "triangle", "E": "hexagon", "F": "pentagon"}
-ROUTE_SHORT = {"A": "ナイロビ起点", "B": "ADD乗継→マダガスカル", "C": "陸路主体", "D": "島めぐり", "E": "ケニア→マダガスカル", "F": "S2 南部アフリカ周遊"}
+BADGE_SHAPE = {"A": "circle", "B": "square", "C": "diamond", "D": "triangle", "E": "hexagon", "F": "pentagon", "G": "star"}
+ROUTE_SHORT = {"A": "ナイロビ起点", "B": "ADD乗継→マダガスカル", "C": "陸路主体", "D": "島めぐり", "E": "ケニア→マダガスカル", "F": "S2 南部アフリカ周遊", "G": "MRU経由→マダガスカル→VFA"}
 # 行き先として色を付ける国（ISO 3166-1 numeric）
 VISIT = {"404", "834", "450", "894", "716", "072", "710", "480", "690", "608", "748"}
 CAUTION = "231"  # エチオピア
@@ -508,6 +509,10 @@ def badge_svg(shape, x, y, letter):
         g = f'<path d="M{f1(x)} {f1(y - r - 1.5)}L{f1(x + r + 1.5)} {f1(y)}L{f1(x)} {f1(y + r + 1.5)}L{f1(x - r - 1.5)} {f1(y)}Z"/>'
     elif shape == "triangle":
         g = f'<path d="M{f1(x)} {f1(y - r - 1.5)}L{f1(x + r + 1.8)} {f1(y + r)}L{f1(x - r - 1.8)} {f1(y + r)}Z"/>'
+    elif shape == "star":
+        pts = [(x + ((r + 2.2) if k % 2 == 0 else (r - 1.8)) * math.cos(math.radians(-90 + 36 * k)),
+                y + ((r + 2.2) if k % 2 == 0 else (r - 1.8)) * math.sin(math.radians(-90 + 36 * k))) for k in range(10)]
+        g = f'<path d="{poly_d(pts)}"/>'
     elif shape == "pentagon":
         pts = [(x + (r + 1.4) * math.cos(math.radians(-90 + 72 * k)), y + (r + 1.4) * math.sin(math.radians(-90 + 72 * k))) for k in range(5)]
         g = f'<path d="{poly_d(pts)}"/>'
@@ -869,7 +874,7 @@ def legend_html():
         ('<svg viewBox="0 0 54 16" aria-hidden="true"><rect x="2" y="2" width="50" height="12" fill="var(--visit)" stroke="var(--border)"/></svg>', "薄い緑：候補ルートの行き先の国"),
     ]
     return '<div class="legend">' + "".join(f"<div>{i}<span>{t}</span></div>" for i, t in items) + "</div>" + \
-        '<p class="muted">ルートは色と、区間の中央のバッジの形・文字（A 丸／B 四角／C ひし形／D 三角／E 六角形／F 五角形）で区別します。同じ区間を通るルートは少しずらして描いています。</p>'
+        '<p class="muted">ルートは色と、区間の中央のバッジの形・文字（A 丸／B 四角／C ひし形／D 三角／E 六角形／F 五角形／G 星）で区別します。同じ区間を通るルートは少しずらして描いています。</p>'
 
 
 def build_page(kind, points, routes, world_geo, africa_geo):

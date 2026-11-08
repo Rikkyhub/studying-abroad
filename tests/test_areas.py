@@ -44,12 +44,10 @@ class AreaPageTests(unittest.TestCase):
         for r in rows:
             if r["unpriced"]:
                 self.assertIn("未計上", areas.cost_block(rows, areas.PHASE_REGION[r["phase"]]))
-        # AF-05: 標準・余裕は未計上のまま。行の標準・余裕の円セルが「未計上」
-        md = read("areas/africa.md")
-        line = next(ln for ln in md.splitlines() if ln.startswith("| ソドワナ"))
-        cells = [c.strip() for c in line.strip("|").split("|")]
-        self.assertEqual(cells[-2:], ["未計上", "未計上"])
-        self.assertNotRegex(cells[-3], r"^¥0$")
+        # 金額未入力の行（Issue #77 の新5月案：マダガスカル）は、全シナリオ「未計上」で ¥0 と書かない
+        line = next(ln for ln in read("areas/africa.md").splitlines() if "マダガスカルの観光" in ln and ln.startswith("|"))
+        self.assertEqual(line.count("未計上"), 3)
+        self.assertNotIn("¥0 |", line)
         # 金額未入力の行は全シナリオ「未計上」
         line = next(ln for ln in read("areas/africa.md").splitlines() if "ツアー外の食費" in ln and ln.startswith("|"))
         self.assertEqual(line.count("未計上"), 3)

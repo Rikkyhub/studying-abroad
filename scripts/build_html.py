@@ -582,7 +582,7 @@ def timeline_cards(root: Path = ROOT) -> str:
     return carousel(cards, "旅程")
 
 
-FLIGHT_IDS = ("PH-11", "AF-01", "SC-08")  # expenses.csv の長距離航空券（日本発着・日本〜現地の区間）
+FLIGHT_IDS = ("PH-11", "AF-01", "AF-02", "AF-17", "AF-18", "SC-08")  # expenses.csv の長距離航空券（日本発着・日本〜現地の区間）
 
 
 def budget_cards(root: Path = ROOT) -> str:
@@ -639,7 +639,7 @@ def budget_cards(root: Path = ROOT) -> str:
              f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
              f'実費ではありません。{unpriced}'),
         split_card("フィリピン（バギオ）", "baguio", "航空券を除く現地費用。"),
-        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く費用。配分目標は {build.man(S["budget_africa"])}（総予算の内数）。'),
+        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く費用。配分目標は {build.man(S["budget_africa"])}（総予算の内数）。マダガスカル先行＋ビクトリアの滝周辺への組み替え中（Issue #77）で、現地費用はまだ入力していないため、この金額は完成値ではなく大きく増えます。'),
         split_card("南アフリカ（ケープタウン）", "capetown", "航空券を除く現地費用。"),
         split_card("アフリカ周遊（8月）", "africa-aug", "航空券を除く費用。"),
         flight,
