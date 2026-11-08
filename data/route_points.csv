@@ -24,3 +24,4 @@ MRU,モーリシャス,Mauritius Sir Seewoosagur Ramgoolam International Airport
 SEZ,セーシェル,Seychelles International Airport,SEZ,セーシェル,-4.6743,55.5218,airport,接続・費用は未確認（ルートD）,Seychelles International Airport,dot,b,N,,,,,,
 BOM,ムンバイ,Chhatrapati Shivaji Maharaj International Airport,BOM,インド,19.0896,72.8656,airport,Issue #77 の利用者申告ルート（東京→ムンバイ→モーリシャス）の乗継地。入国要否・乗継条件は未確認,Mumbai Airport India,t,none,Y,,,,,,
 NRT,東京,Tokyo (Narita/Haneda),TYO,日本,35.7720,140.3929,airport,Issue #77 の案Gの出発地。空港（成田/羽田）は未選定,Narita International Airport Japan,t,none,Y,,,,,,
+KASANE,カサネ,Kasane,BBK,ボツワナ,-17.8000,25.1500,city,チョベ国立公園の拠点。宿泊する場合は KAZA UNIVISA の範囲外（ボツワナは日帰りまで）,Kasane Botswana,none,r,Y,,,,,,
