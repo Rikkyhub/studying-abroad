@@ -43,6 +43,7 @@ gh auth login        # アカウント: Rikkyhub
 5. `index.html` と `areas/*.html` は静的HTMLなので、ブラウザで直接開いて確認する（`file://` で表示できる）。表が横にはみ出していないか、1100px幅と400px幅の両方で見る。
 
 ## 6. HTML・DOCXの再生成
+- **既存PRで生成物が未同期の場合**：新規PRを増やさず、まずそのPRの実ブランチと現行HEADを取得する。`scripts/build_all.py` が正式生成器であり、`scripts/build.py` → `scripts/build_html.py` の順に実行する。`blog/article-ideas.md`・対応HTML・`all.html`を手作業で個別修正せず、生成器実行後の差分を確認する。`scripts/build_all.py --check` は**変更後の同一HEAD**で実行し、古いCI結果を転用しない。公開情報の確認と独立人間レビューが済むまでマージしない。
 - 正本はMarkdown（費用などの数値の元データは内部入力のCSV）。HTMLなどの生成物は手で直さない。
 - `py scripts/build_all.py`（`build.py` → `build_html.py` の順）。CIは `py scripts/build_all.py --check` で最新かを確認する。
 - Word出力は `py scripts/export_docx.py`（[07-export.md](07-export.md)）。コミットしない。
