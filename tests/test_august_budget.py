@@ -30,16 +30,16 @@ class MayAndAugustBudgetTest(unittest.TestCase):
     def test_undecided_august_looks_at_each_route_without_adding_to_global_budget(self):
         active, rows, budgets = august_budget.calculate(ROOT)
         self.assertEqual(active, "未定")
-        self.assertEqual(set(budgets), {"A", "B", "C", "D"})
+        self.assertEqual(set(budgets), {"A", "B", "C", "D", "E"})
         self.assertEqual({case: value["nights"] for case, value in budgets.items()},
-                         {"A": 18, "B": 16, "C": 14, "D": 10})
-        expected = {"A": 82500, "B": 73500, "C": 64500, "D": 46500}
+                         {"A": 17, "B": 15, "C": 14, "D": 10, "E": 15})
+        expected = {"A": 78000, "B": 69000, "C": 64500, "D": 46500, "E": 69000}
         self.assertEqual({case: value["lodging"][1] + value["food"][1]
                           for case, value in budgets.items()}, expected)
         before = expenses()
         after = august_budget.apply_to_expenses([dict(x) for x in before], ROOT)
         self.assertEqual(len(after), len(before))
-        self.assertIn("¥82,500", august_budget.render_summary_md(ROOT))
+        self.assertIn("¥78,000", august_budget.render_summary_md(ROOT))
         self.assertIn("未定のため候補の費用は総予算へ一切加算", august_budget.render_summary_md(ROOT))
 
     def test_only_selected_august_route_adds_lodging_and_food(self):
@@ -58,7 +58,7 @@ class MayAndAugustBudgetTest(unittest.TestCase):
             self.assertEqual(len(new), 5)
             self.assertTrue(all(row["phase"] == "アフリカ周遊（8月）" for row in new))
             self.assertTrue(all(row["status"] == "未確認" for row in new))
-            self.assertEqual(sum(int(row["std_local"]) for row in new), 82500)
+            self.assertEqual(sum(int(row["std_local"]) for row in new), 78000)
             self.assertEqual(sum(int(row["std_local"]) for row in new),
                              budgets["A"]["lodging"][1] + budgets["A"]["food"][1])
             self.assertEqual(len({x["id"] for x in result}), len(result))
