@@ -34,6 +34,7 @@
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
 | [アフリカ周遊（5月）](../areas/africa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水](../research/africa-overland-7-9-countries.html) | [#44](https://github.com/Rikkyhub/studying-abroad/issues/44) | 調査中 | 2026-10-18 |
+| [アフリカ周遊（8月）](../areas/africa-aug.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-08 |
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
 | [ケープタウン（第2か国留学）](../areas/capetown.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
@@ -65,6 +66,7 @@
 | [マラウイ（国別ページ）](../countries/malawi.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [アフリカ13か国の比較（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [エチオピア 国別深掘り](../research/country-ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [アフリカ周遊（8月）の国別シーズン比較](../research/africa-august-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [マダガスカル 国別深掘り](../research/country-madagascar.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [ケニア 国別深掘り](../research/country-kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [ジンバブエ 国別深掘り](../research/country-zimbabwe.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |

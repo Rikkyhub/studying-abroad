@@ -50,7 +50,7 @@ ENUMS = {
     ("funds.csv", "type"): {"予算"},
     ("pages.csv", "group"): {"research", "plan"},
     ("pages.csv", "status"): {"researching", "ready", "draft"},
-    ("places.csv", "area"): {"baguio", "capetown", "africa", "other"},
+    ("places.csv", "area"): {"baguio", "capetown", "africa", "africa-aug", "other"},
     ("route_points.csv", "kind"): {"airport", "city", "park", "border", "sea"},
     ("route_points.csv", "provisional"): {"Y", "N"},
     ("routes.csv", "mode"): {"flight", "overland", "ferry", "sea"},
@@ -198,15 +198,15 @@ def main():
     for n, row in loaded["expenses.csv"]:
         if row["currency"] and row["currency"] not in fx:
             ERRORS.append(f"expenses.csv:{n}: currency {row['currency']} has no rate in fx.csv")
-    regions = {"baguio", "africa", "capetown", "common"}
+    regions = {"baguio", "africa", "africa-aug", "capetown", "common"}
     for name in ("tasks.csv", "timeline.csv", "pages.csv"):
         for n, row in loaded[name]:
             for rg in filter(None, (x.strip() for x in row["region"].split(";"))):
                 if rg not in regions:
-                    ERRORS.append(f"{name}:{n}: region {rg!r} は baguio/africa/capetown/common（; 区切り）のいずれか")
+                    ERRORS.append(f"{name}:{n}: region {rg!r} は baguio/africa/africa-aug/capetown/common（; 区切り）のいずれか")
             if name == "tasks.csv" and not row["region"]:
                 ERRORS.append(f"{name}:{n}: region が空です（地域別ページへの割り当て。共通なら common）")
-    phases = {"フィリピン", "アフリカ周遊", "2校目", "8月", "共通・日本"}
+    phases = {"フィリピン", "アフリカ周遊", "アフリカ周遊（8月）", "2校目", "8月", "共通・日本"}
     for n, row in loaded["expenses.csv"]:
         if row["phase"] not in phases:
             ERRORS.append(f"expenses.csv:{n}: phase {row['phase']!r} が地域に対応づけられていません（scripts/areas.py の PHASE_REGION）")
