@@ -22,6 +22,12 @@
 5. 必要に応じて `docs/` と `research/`（`docs/08-handoff.md` に手順の詳細）
 6. 地域別ページ `areas/*.md`（読者向け）。元データは内部入力 `data/*.csv`（保守者のみ）
 
+## 2026-11-09追記：5月フェルミ予算の入力ルール
+
+- **数量×仮単価の編集正本**：`research/africa-budget-fermi.md`。ユーザーが確認できるMarkdown表に全仮定を置き、新しい`data/fermi_assumptions.csv`等は作らない。
+- `scripts/fermi_budget.py`はMarkdownを読み、既存のレガシー `data/expenses.csv` と**ビルド時のメモリ内で合算**する。手書きCSVに再転記せず、既に金額がある行への上書き・二重計上は検証エラーにする。
+- フェルミ表の変更後は`scripts/build_all.py`で公式生成・全テスト・公開データ検査。**mainの既存CSVは全面移行完了ではなく残置**。海外航空券等の旧入力方式を勝手に破壊しない。
+
 ## 正本と生成物
 | 種別 | 扱い |
 |---|---|
