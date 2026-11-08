@@ -181,7 +181,7 @@
 | 保険 | 渡航回避地域に入ると保険が無効になる可能性（FCDO）。ダイビング保険（DAN等）は**未確認** | |
 
 ## 未確認事項（直前に再確認）
-1. 日本旅券のETA/eVisa料金・処理日数・要否（公式ポータルに金額なし）。
+1. 日本旅券のETA/eVisa料金・処理日数。公式ポータル（evisa.gov.mz）の観光ビザページに「eVisa Fee 975MXN」と表示されるが、MXN（メキシコ・ペソ）はモザンビークの通貨（MZN）や他の想定通貨と整合せず、**表記の誤りの可能性があるため金額として採用しない**（再確認が必要）。駐英高等弁務官事務所のページには eVisa/ETA の料金・処理時間の記載がない。要否は、2026-02-11開始の新プラットフォームで日本を含む査証免除国も事前認証（ETA）が必要と案内されている点が確認できた。
 2. Peri-Peri 2027年価格表（PDF取得不可）、Gozo Azul 2027年料金。
 3. 5月のジンベエ・マンタ・ザトウクジラの出現確率（月別データ取得できず）。
 4. 外務省危険情報の現行版（本回は403で再取得失敗）。
@@ -216,3 +216,4 @@
 - 取得成功：evisa.gov.mz、gozo-azul（料金）、peri-peridivers（トップ・price-list・FAQ）、marinemegafauna.org/whale-sharks（月別データなし）、FCDO 3ページ、Wikivoyage（Mozambique・Maputo・Inhambane・Vilanculos）。
 - 取得失敗：peri-peridivers /diving-tofo-beach/（404）、Wikivoyage Tofo・Ponta_do_Ouro（404）、外務省危険情報ページ（403）、CDC（404）。
 - 未取得で空欄にした項目：Tofo月別の生物出現、5月の水温・視界、2027年の運賃・便、日本向け査証料金。
+- 再取得（2回目・2026-11-08）：evisa.gov.mz（「The official portal of The Mozambique National Immigration Service」と自称）の tourist-visa.html を取得し、観光ビザは30/60/90日、電子ビザの有効期間2か月、申請は渡航の3〜5日前を推奨、と確認。料金欄は「975MXN」で通貨が不整合のため未採用。駐英高等弁務官事務所（mozambiquehighcommission.org.uk/visa-section.html）で、新プラットフォームが2026-02-11に開始し、旧プラットフォームは廃止、査証免除国は30日（延長30日）で事前認証が必要、料金と処理時間の記載はなし、と確認。

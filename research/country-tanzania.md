@@ -241,3 +241,4 @@ Wikivoyage（年不明）の記述：タンザニア北部は二峰性で、短�
 - 取得失敗：ngorongoro-crater.go.tz（DNS不可）、kilimanjaroparks.com（DNS不可）、anzen.mofa.go.jp の pcwideinfo_2026C043 と pcinfectionspothazardinfo_2026T043（403）、travelhealthpro.org.uk の country/218（Taiwanのページが返り無関係）。
 - 検索語なしで確認した項目：5月の天候、大移動の位置はWikivoyageの一般記述のみ。公式の月別情報は未取得。
 - 再試行（2回目・2026-11-08）：tanzaniaparks.go.tz のトップは HTTP 200 だが、ページは JavaScript 描画で、HTML 内のリンクは `/awards-recognitions`、`/tanapa-go`（アプリの案内）、アプリストアのみ。料金表・PDFへのリンクは見つからなかった。推測した `/national-parks` と `/tariffs` は 404。ngorongoro-crater.go.tz は DNS 解決不可のまま。TANAPA の公式料金は**引き続き未確認**。問い合わせ先（info@tanzaniaparks.go.tz）の記載はあるが、外部への送信は行わない。
+- 再試行（3回目・2026-11-08）：tanzaniaparks.go.tz のページ内JavaScriptに書かれた公開の読み取りAPI（`/api/national-parks`、`/api/activities`、`/api/tourism-attractions`）を取得した。公園25件の一覧（セレンゲティ、ンゴロンゴロ以外の北部圏を含む）と活動29件の説明は得られたが、**料金のフィールドは無い**。活動の説明には「料金は TANAPA の料金構造に従い随時見直される」（パラグライダー）との文言があるだけで金額は無い。`/sitemap.xml` は404、ngorongorocrater.go.tz は接続不可のまま。TANAPAの公式料金は**引き続き未確認**。
