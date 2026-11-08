@@ -194,18 +194,22 @@ class UnpricedVsZeroTest(unittest.TestCase):
         for r in build.read_csv("expenses.csv"):
             self.assertEqual(build.suspicious_zero(r), [], r["id"])
 
-    def test_af05_is_unpriced_in_repo_data(self):
-        r = {x["id"]: x for x in build.read_csv("expenses.csv")}["AF-05"]
-        self.assertEqual((r["std_local"], r["high_local"]), ("", ""))
-
-    def test_af04_optional_pass_is_only_in_standard_scenario(self):
-        r = {x["id"]: x for x in build.read_csv("expenses.csv")}["AF-04"]
-        self.assertEqual((r["low_local"], r["std_local"], r["high_local"]), ("", "390", ""))
+    def test_blank_scenarios_are_unpriced_not_zero(self):
+        """標準だけ金額がある行（旧 AF-04 型）：低予算・余裕は空欄＝未計上で、他シナリオへ転用しない。
+        旧 AF-04/05（ナミビア経由の旧5月案）は Issue #77 の組み替えで外れたため、合成行で性質を確かめる"""
+        r = row(id="X-04", currency="USD", low_local="", std_local="390", high_local="")
         _, computed, _ = run([r])
         self.assertIsNone(computed[0]["est"]["low"])
         self.assertEqual(computed[0]["est"]["std"], 390 * FX["USD"]["rate"])
         self.assertIsNone(computed[0]["est"]["high"])
         self.assertEqual(computed[0]["unpriced"], ["low", "high"])
+
+    def test_may_redesign_rows_without_amount_stay_unpriced(self):
+        """Issue #77 の新5月案：日別の費用を調べるまで、マダガスカル・VFA周辺の現地費用は金額未入力（0円にしない）"""
+        rows = {x["id"]: x for x in build.read_csv("expenses.csv")}
+        for rid in ("AF-14", "AF-15", "AF-16", "AF-17", "AF-18", "AF-19"):
+            self.assertEqual((rows[rid]["low_local"], rows[rid]["std_local"], rows[rid]["high_local"]), ("", "", ""), rid)
+            self.assertEqual(rows[rid]["status"], "未確認", rid)
 
 
 class TaskDeadlineTest(unittest.TestCase):

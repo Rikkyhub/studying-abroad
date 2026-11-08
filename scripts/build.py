@@ -162,7 +162,7 @@ def compute(expenses, fx, problems):
         no_amount = all(v is None for v in raw.values())
         est = {s: None if raw[s] is None else raw[s] * rate for s in SCENARIOS}
         # 空欄はどのシナリオでも「未計上」。他シナリオの金額を自動補完しない。
-        # 例: AF-04 の任意Adventure Passは標準プランのみ。低予算・余裕へ転用すると過大計上になる。
+        # 例: 標準プランだけに付く任意オプションの行は、低予算・余裕へ転用すると過大計上になる。
         # 0はそのシナリオで追加購入しない等の明示的な0円で、空欄とは異なる。
         unpriced = [] if no_amount else [s for s in SCENARIOS if est[s] is None]
         out.append({**r, "rate": rate or 0, "est": est, "no_amount": no_amount, "unpriced": unpriced, "alloc": allocate(r)})

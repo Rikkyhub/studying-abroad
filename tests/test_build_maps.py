@@ -81,7 +81,7 @@ class RouteDataTests(unittest.TestCase):
             self.assertIn(r["from_point"], self.points)
             self.assertIn(r["to_point"], self.points)
             by.setdefault(r["route_id"], []).append(r)
-        self.assertEqual(sorted(by), ["A", "B", "C", "D", "E", "F"])
+        self.assertEqual(sorted(by), ["A", "B", "C", "D", "E", "F", "G"])
         for rid, legs in by.items():
             legs.sort(key=lambda r: int(r["seq"]))
             self.assertEqual([int(r["seq"]) for r in legs], list(range(1, len(legs) + 1)), rid)
@@ -89,12 +89,13 @@ class RouteDataTests(unittest.TestCase):
                 self.assertEqual(a["to_point"], b["from_point"], f"{rid}-{b['seq']}")
 
     def test_routes_start_in_manila_and_end_as_researched(self):
-        ends = {"A": "CPT", "B": "CPT", "C": "JNB", "D": "TNR", "E": "CPT", "F": "CPT"}  # Dは「マダガスカルのみB/Eで扱う」。南アには繋げない
+        ends = {"A": "CPT", "B": "CPT", "C": "JNB", "D": "TNR", "E": "CPT", "F": "CPT", "G": "CPT"}  # Dは「マダガスカルのみB/Eで扱う」。南アには繋げない
+        starts = {"G": "NRT"}  # 案Gは Issue #77 の指定で東京発（A〜Fはマニラ発）
         for rid, end in ends.items():
             legs = sorted((r for r in self.legs if r["route_id"] == rid), key=lambda r: int(r["seq"]))
-            self.assertEqual(legs[0]["from_point"], "MNL")
+            self.assertEqual(legs[0]["from_point"], starts.get(rid, "MNL"))
             self.assertEqual(legs[-1]["to_point"], end)
-        for rid in "ABCEF":
+        for rid in "ABCEFG":
             last = [r for r in self.legs if r["route_id"] == rid][-1]
             self.assertEqual(self.points[last["to_point"]]["country"], "南アフリカ")
 
