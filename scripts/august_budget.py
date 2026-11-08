@@ -9,7 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path("research/africa-budget-august.md")
+SOURCE = Path("research/africa-august-comparison.md")
 START = "<!-- AUGBUDGET:START -->"
 END = "<!-- AUGBUDGET:END -->"
 EXPECTED_COLUMNS = ("案", "国・地域", "泊数", "食費日数", "宿泊節約単価",
