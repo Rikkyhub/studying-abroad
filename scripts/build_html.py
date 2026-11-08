@@ -170,6 +170,8 @@ def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
             def cell(tag, c, k):
                 a = aligns[k] if k < len(aligns) else ""
                 st = f' class="{"n" if a == "right" else "c"}"' if a else ""
+                if tag == "td" and k < len(head):
+                    st += f' data-label="{html.escape(re.sub(r"<[^>]+>|\*\*", "", head[k]).replace("&lt;br&gt;", " ").strip(), quote=True)}"'  # 携帯幅のカード表示で列名を出す
                 return f"<{tag}{st}>{inline(c)}</{tag}>"
             thead = "<tr>" + "".join(cell("th", c, k) for k, c in enumerate(head)) + "</tr>"
             tbody = "".join("<tr>" + "".join(cell("td", c, k) for k, c in enumerate(r)) + "</tr>" for r in rows)
@@ -332,7 +334,9 @@ def table(headers: list[str], rows: list[list[str]], num: tuple = (), widths: li
     cols = "".join(f'<col style="width:{w}%">' for w in widths) if widths else ""
     colgroup = f"<colgroup>{cols}</colgroup>" if cols else ""
     th = "".join(f'<th{" class=n" if k in num else ""}>{h}</th>' for k, h in enumerate(headers))
-    tr = "".join("<tr>" + "".join(f'<td{" class=n" if k in num else ""}>{c}</td>' for k, c in enumerate(r)) + "</tr>"
+    def _label(k):
+        return f' data-label="{html.escape(re.sub(r"<[^>]+>", "", headers[k]), quote=True)}"' if k < len(headers) else ""
+    tr = "".join("<tr>" + "".join(f'<td{" class=n" if k in num else ""}{_label(k)}>{c}</td>' for k, c in enumerate(r)) + "</tr>"
                  for r in rows)
     return f'<div class="scroll"><table>{colgroup}<thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
@@ -374,6 +378,13 @@ def card_link(href: str, inner: str) -> str:
     return f'<a class="card link" href="{esc(href)}">{inner}<span class="go">ページを見る</span></a>'
 
 
+def carousel(cards: list[str], label: str) -> str:
+    """カードを横並びのカルーセルにする。JavaScript が無効でも横スクロールで全件読める（前後ボタンは JS が有効なときだけ表示）"""
+    return (f'<div class="carousel" data-carousel><button type="button" class="car-btn prev" aria-label="前のカード" hidden>‹</button>'
+            f'<div class="car-track" tabindex="0" role="region" aria-label="{esc(label)}">' + "".join(cards) + '</div>'
+            '<button type="button" class="car-btn next" aria-label="次のカード" hidden>›</button></div>')
+
+
 def region_cards(root: Path = ROOT) -> str:
     """地域別の入口カード（3地域＋共通）。時期と状態は timeline.csv、確認事項の件数は tasks.csv の region 列から"""
     timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
@@ -390,7 +401,7 @@ def region_cards(root: Path = ROOT) -> str:
         cards.append(card_link(f"areas/{key}.html",
                                f'<p class="eyebrow">{period}</p><h3>{esc(label)}</h3>'
                                f'<p class="sub">{status}</p><p class="sub">確認事項 <span class="n">{n}</span>件</p>'))
-    return '<div class="grid">' + "".join(cards) + "</div>"
+    return carousel(cards, "地域別")
 
 
 def timeline_cards(root: Path = ROOT) -> str:
@@ -402,7 +413,10 @@ def timeline_cards(root: Path = ROOT) -> str:
         cards.append(card_link(f"areas/{key}.html",
                                f'<p class="eyebrow">{esc(r["period"])}</p><h3>{esc(r["title"])}</h3>'
                                f'<p class="status">{esc(r["status"])}</p><p class="sub">{esc(r["summary"])}</p>'))
-    return '<div class="grid">' + "".join(cards) + "</div>"
+    return carousel(cards, "旅程")
+
+
+FLIGHT_IDS = ("PH-11", "AF-01", "SC-08")  # expenses.csv の長距離航空券（日本発着・日本〜現地の区間）
 
 
 def budget_cards(root: Path = ROOT) -> str:
@@ -420,17 +434,54 @@ def budget_cards(root: Path = ROOT) -> str:
 
     unpriced = f'金額が入っていない {n_na} 件' + (f'と一部だけ未入力の {n_part} 件' if n_part else "") + \
         'は未計上です（0円ではなく、合計に含まれていません）。'
+    rows = build.load_model()[1]
+    import areas  # 地域の対応表（phase 列 → 地域）
+
+    def group_of(r):
+        if r["id"] in FLIGHT_IDS:
+            return "flight"
+        return areas.PHASE_REGION.get(r["phase"], "common")
+
+    def range_text(rs):
+        priced = [r for r in rs if not r["no_amount"]]
+        if not priced:
+            return None
+        t = {s: sum(r["est"][s] or 0.0 for r in priced) for s in ("low", "std", "high")}
+        return t
+
+    def split_card(label, key, note):
+        rs = [r for r in rows if group_of(r) == key]
+        t = range_text(rs)
+        miss = [r for r in rs if r["no_amount"] or r["unpriced"]]
+        miss_txt = f'金額が未入力・一部未入力の項目 {len(miss)} 件は未計上です。' if miss else ""
+        if t is None:
+            return card(label, "未計上", f'{esc(note)}金額が入っている項目がまだありません（0円ではありません）。')
+        return card(label, build.yen(t["std"]),
+                    f'{esc(note)}標準の見積。低予算 {esc(build.yen(t["low"]))} 〜 余裕 {esc(build.yen(t["high"]))}。{miss_txt}')
+
+    flight_items = "".join(
+        f'<li>{esc(r["item"])}：{esc(build.yen(r["est"]["std"]) if r["est"]["std"] is not None else "未計上")}</li>'
+        for r in rows if r["id"] in FLIGHT_IDS)
+    flight = split_card("飛行機代", "flight", "日本発着の長距離航空券（モデル）。")
+    flight = flight.replace("</div>", f'<ul class="facts">{flight_items}</ul></div>', 1)
+
     cards = [
         card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標です。実費ではありません。"),
         card("上限予算", build.man(S["budget_cap"]), "モデルの上限です。実費ではありません。"),
-        card("5月アフリカ周遊の目安", build.man(S["budget_africa"]), "総予算の内数のモデル配分です。実費ではありません。"),
         card("見積合計（標準）", build.yen(tot["std"]),
              f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
              f'実費ではありません。{unpriced}'),
+        split_card("フィリピン（バギオ）", "baguio", "航空券を除く現地費用。"),
+        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く費用。配分目標は {build.man(S["budget_africa"])}（総予算の内数）。'),
+        split_card("南アフリカ（ケープタウン）", "capetown", "航空券を除く現地費用。"),
+        split_card("アフリカ周遊（8月）", "africa-aug", "航空券を除く費用。"),
+        flight,
+        split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用。"),
     ]
     return ('<p class="sec-lead">表示している金額はすべて公開料金などに基づくモデルの目標・見積で、実際の支払額ではありません。'
+            '地域ごとに分け、飛行機代は別枠にしています。カードは横にスクロール（または左右ボタン）で見られます。'
             '内訳は各地域のページ、計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
-            '<div class="grid">' + "".join(cards) + "</div>")
+            + carousel(cards, "予算の全体像"))
 
 
 def now_block(root: Path = ROOT) -> str:
@@ -479,7 +530,7 @@ def fx_summary(root: Path = ROOT) -> str:
     if dates:
         links = " ／ ".join(f'<a href="{esc(s)}" target="_blank" rel="noopener">{esc(urlparse(s).netloc)}</a>' for s in srcs)
         head = f'<p class="sec-lead">レート日：{esc(dates[-1])}（取得元：{links}）。{esc(FX_SOURCE_NOTE)}</p>'
-    return head + '<div class="grid">' + "".join(cards) + "</div>\n" + fx_json(root)
+    return head + carousel(cards, "通貨") + "\n" + fx_json(root)
 
 
 def docs_summary(root: Path = ROOT) -> str:
@@ -489,7 +540,8 @@ def docs_summary(root: Path = ROOT) -> str:
         if r["area"] in ("地域別", "運用"):
             continue
         rows.append([esc(r["area"]), f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>', ref_links(r["refs"])])
-    return '<div class="card wide">' + table(["分野", "資料", "参考（一次情報）"], rows, widths=[16, 34, 50]) + "</div>"
+    return (f'<details class="fold"><summary>資料一覧を開く（{len(rows)}件）</summary>'
+            '<div class="card wide">' + table(["分野", "資料", "参考（一次情報）"], rows, widths=[16, 34, 50]) + "</div></details>")
 
 
 INDEX_FX_SCRIPT = """<script>
@@ -509,6 +561,20 @@ function upd(){
 }
 [sel,loc,jpy].forEach(function(e){e.addEventListener("input",upd)});
 form.hidden=false;upd();
+})();
+</script>"""
+
+INDEX_CAROUSEL_SCRIPT = """<script>
+(function(){
+document.querySelectorAll("[data-carousel]").forEach(function(c){
+ var t=c.querySelector(".car-track"),p=c.querySelector(".prev"),n=c.querySelector(".next");
+ function step(){var k=t.firstElementChild;return k?k.getBoundingClientRect().width+20:300}
+ function upd(){p.disabled=t.scrollLeft<=2;n.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-2;
+  var more=t.scrollWidth>t.clientWidth+2;p.hidden=n.hidden=!more}
+ p.addEventListener("click",function(){t.scrollBy({left:-step()})});
+ n.addEventListener("click",function(){t.scrollBy({left:step()})});
+ t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize",upd);upd();
+});
 })();
 </script>"""
 
@@ -562,7 +628,7 @@ def index_page(root: Path = ROOT) -> str:
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY
     for k, v in (("budget", budget_cards(root)), ("timeline", timeline_cards(root)), ("regions", region_cards(root)),("now", now_block(root)), ("fx", fx_summary(root)),
-                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT)):
+                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
 
@@ -683,9 +749,30 @@ dl.kv div:last-child{border-bottom:0}
 dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 .card .scroll{margin:0;border-top:0}
 .card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
+.carousel{position:relative}
+.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 4px 32px;-webkit-overflow-scrolling:touch}
+.car-track>.card{flex:0 0 min(300px,80%);scroll-snap-align:start}
+.car-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.car-btn.prev{left:-12px} .car-btn.next{right:-12px} .car-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.car-btn[disabled]{opacity:.35;cursor:default}
+details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);list-style:none}
+details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\\25B8";display:inline-block;margin-right:8px;transition:transform .2s}
+details.fold[open]>summary::before{transform:rotate(90deg)}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 @media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:640px){
+.scroll{overflow-x:visible;border-top:0;border-bottom:0}
+.scroll table:has(td[data-label]){min-width:0;display:block}
+.scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
+.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.scroll table:has(td[data-label]) td{display:block;padding:8px 12px;border-bottom:1px solid var(--line);background:none!important;min-width:0;text-align:left}
+.scroll table:has(td[data-label]) td:last-child{border-bottom:0}
+.scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
+.scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
+}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 """
 

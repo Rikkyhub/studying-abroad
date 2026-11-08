@@ -29,7 +29,7 @@ class BlockTests(unittest.TestCase):
         title, body, toc = convert("# 題\n\n## 表\n\n| a | b |\n|---|---:|\n| 1 | 2 |\n")
         self.assertEqual(title, "題")
         self.assertEqual(toc[0][2], "表")
-        self.assertIn('<td class="n">2</td>', body)
+        self.assertIn('<td class="n" data-label="b">2</td>', body)  # data-label は携帯幅のカード表示で列名を出すため
 
     def test_nested_list_and_checkbox(self):
         _, body, _ = convert("- 親\n  - 子\n- [x] 済\n")
@@ -68,11 +68,11 @@ class IndexTests(unittest.TestCase):
         self.assertEqual(self.index, outputs()[ROOT / "index.html"])
 
     def test_index_is_short_and_links_every_area(self):
-        for k in ("baguio", "africa", "capetown", "common"):
+        for k in ("baguio", "africa", "africa-aug", "capetown", "common"):
             self.assertIn(f'href="areas/{k}.html"', self.index)
         import re
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
-        self.assertLess(len(self.index), 33000)  # 全ページ一覧の増加に合わせて調整（#58）
+        self.assertLess(len(self.index), 42000)  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。トップは / で開くため軽さを保つ
 
     def test_tables_have_headers(self):
         import re
@@ -87,7 +87,9 @@ class IndexTests(unittest.TestCase):
     def test_budget_cards_are_model_and_never_zero_for_unpriced(self):
         import re
         sec = self.index.split('<h2 id="budget">')[1].split("<h2 id=")[0]
-        for label in ("目標総予算", "上限予算", "5月アフリカ周遊の目安", "見積合計（標準）"):
+        # 8月は金額なしで「未計上」と出る
+        for label in ("目標総予算", "上限予算", "見積合計（標準）", "フィリピン（バギオ）", "アフリカ周遊（5月）",
+                      "南アフリカ（ケープタウン）", "アフリカ周遊（8月）", "飛行機代"):
             self.assertIn(label, sec)
         self.assertIn("モデル", sec)
         self.assertIn("実費ではありません", sec)

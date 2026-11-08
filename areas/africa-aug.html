@@ -76,9 +76,30 @@ dl.kv div:last-child{border-bottom:0}
 dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 .card .scroll{margin:0;border-top:0}
 .card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
+.carousel{position:relative}
+.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 4px 32px;-webkit-overflow-scrolling:touch}
+.car-track>.card{flex:0 0 min(300px,80%);scroll-snap-align:start}
+.car-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.car-btn.prev{left:-12px} .car-btn.next{right:-12px} .car-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.car-btn[disabled]{opacity:.35;cursor:default}
+details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);list-style:none}
+details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\25B8";display:inline-block;margin-right:8px;transition:transform .2s}
+details.fold[open]>summary::before{transform:rotate(90deg)}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 @media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:640px){
+.scroll{overflow-x:visible;border-top:0;border-bottom:0}
+.scroll table:has(td[data-label]){min-width:0;display:block}
+.scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
+.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.scroll table:has(td[data-label]) td{display:block;padding:8px 12px;border-bottom:1px solid var(--line);background:none!important;min-width:0;text-align:left}
+.scroll table:has(td[data-label]) td:last-child{border-bottom:0}
+.scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
+.scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
+}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 </style></head><body>
 <header class="bar"><div class="wrap"><nav aria-label="ページ間の移動"><a href="../index.html">トップ</a><a href="../areas/baguio.html">バギオ</a><a href="../areas/africa.html">アフリカ周遊（5月）</a><a href="../areas/africa-aug.html" aria-current="page">アフリカ周遊（8月）</a><a href="../areas/capetown.html">ケープタウン</a><a href="../areas/common.html">日本国内・保険・共通</a><a href="../maps/world-map.html">ルート地図</a><a href="#all-pages">全ページ</a></nav></div></header>
@@ -93,27 +114,27 @@ dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 <p>5月との主な違い（各国レポートの記載から。確度は各レポートを参照）:</p>
 <ul><li><strong>ビクトリアの滝</strong>：ザンビアのレポートでは、デビルズプールは5月は閉鎖の可能性が高く、Wikivoyage の開始時期は7月以降とあります。8月に入れるかは、2027年の水位次第で<strong>未確認</strong>です。</li><li><strong>ケニアの大移動</strong>：5月は対象外ですが、準公式の記載では6〜9月が時期にあたります（マサイマラ方面）。8月は選択肢に入る可能性があります。</li><li><strong>レソト</strong>：6〜8月がスキー期（出典によって6〜9月）です。8月は冬の後半にあたり、防寒と道路状況の確認が必要です。</li><li><strong>エスワティニ</strong>：6〜8月は乾季の本番と推定されています。伝統行事 Umhlanga は2027年8月下旬〜9月上旬の見込みで、日取りは<strong>未確定</strong>です。</li><li>8月はサファリの高需要期と考えられますが、宿・ツアー・許可証の価格や混雑が5月と比べてどう変わるかは<strong>未確認</strong>です。</li></ul>
 <p>国別の事実は <a href="../research/africa-13-countries-comparison.html">アフリカ13か国の比較</a> と、各国レポートにあります。8月向けの比較は <a href="../research/africa-august-comparison.html">アフリカ周遊（8月）の国別シーズン比較</a>（調査中）にまとめます。</p>
-<div class="scroll"><table><thead><tr><th>時期（モデル）</th><th>内容</th><th>状態</th><th>概要</th></tr></thead><tbody><tr><td>2027年8月</td><td><strong>アフリカ周遊（8月）・帰国</strong></td><td>検討中（モデル）</td><td>留学後の追加周遊と日本帰国を想定。5月とはシーズンと目的が違う。南ア再入国条件は最優先で検証。</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>時期（モデル）</th><th>内容</th><th>状態</th><th>概要</th></tr></thead><tbody><tr><td data-label="時期（モデル）">2027年8月</td><td data-label="内容"><strong>アフリカ周遊（8月）・帰国</strong></td><td data-label="状態">検討中（モデル）</td><td data-label="概要">留学後の追加周遊と日本帰国を想定。5月とはシーズンと目的が違う。南ア再入国条件は最優先で検証。</td></tr></tbody></table></div>
 <h3 id="ルート案未確定">ルート案（未確定）</h3>
-<div class="scroll"><table><thead><tr><th>ID</th><th>経路（案）</th><th>終点</th><th>備考</th></tr></thead><tbody><tr><td>A</td><td>MNL → アジア乗継（BKK/KUL/SIN等）→ NBO → ケニア/タンザニア → 南ア</td><td>JNB/CPT</td><td>乗継都市は未選定</td></tr><tr><td>B</td><td>MNL → 乗継 → ADD（空港乗継のみ）→ TNR → JNB → CPT</td><td>CPT</td><td>エチオピア北部は対象外</td></tr><tr><td>C</td><td>東アフリカ（DAR）→ ザンビア → ジンバブエ → ボツワナ → 南ア</td><td>JNB</td><td>陸路/航空の混成</td></tr><tr><td>D</td><td>モーリシャス / セーシェル / マダガスカル</td><td>—</td><td>マダガスカル以外は接続未確認</td></tr><tr><td>E</td><td>MNL → 乗継 → NBO → TNR（Kenya Airways）→ JNB</td><td>JNB/CPT</td><td>ADDを避ける</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>ID</th><th>経路（案）</th><th>終点</th><th>備考</th></tr></thead><tbody><tr><td data-label="ID">A</td><td data-label="経路（案）">MNL → アジア乗継（BKK/KUL/SIN等）→ NBO → ケニア/タンザニア → 南ア</td><td data-label="終点">JNB/CPT</td><td data-label="備考">乗継都市は未選定</td></tr><tr><td data-label="ID">B</td><td data-label="経路（案）">MNL → 乗継 → ADD（空港乗継のみ）→ TNR → JNB → CPT</td><td data-label="終点">CPT</td><td data-label="備考">エチオピア北部は対象外</td></tr><tr><td data-label="ID">C</td><td data-label="経路（案）">東アフリカ（DAR）→ ザンビア → ジンバブエ → ボツワナ → 南ア</td><td data-label="終点">JNB</td><td data-label="備考">陸路/航空の混成</td></tr><tr><td data-label="ID">D</td><td data-label="経路（案）">モーリシャス / セーシェル / マダガスカル</td><td data-label="終点">—</td><td data-label="備考">マダガスカル以外は接続未確認</td></tr><tr><td data-label="ID">E</td><td data-label="経路（案）">MNL → 乗継 → NBO → TNR（Kenya Airways）→ JNB</td><td data-label="終点">JNB/CPT</td><td data-label="備考">ADDを避ける</td></tr></tbody></table></div>
 <p>MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝アンタナナリボ、JNB＝ヨハネスブルグ、CPT＝ケープタウン、DAR＝ダルエスサラーム。どれも未確定の案です。区間別の比較・入国条件・危険情報・価格モデルは <a href="../research/africa-route-comparison.html">アフリカ周遊ルート比較</a> にあります。</p>
 <h2 id="2-いまの確認事項">2. いまの確認事項</h2>
 <p>この地域に対応する未完了の確認事項はありません。</p>
 <h2 id="3-費用の見積">3. 費用の見積</h2>
 <p>「未計上」は金額が入っていないことを示し、0円ではありません。8月の追加周遊は実施するかどうかが未定のため、金額は入っていません。</p>
-<div class="scroll"><table><thead><tr><th>項目</th><th>区分</th><th>現地通貨（標準）</th><th class="n">低予算</th><th class="n">標準</th><th class="n">余裕</th></tr></thead><tbody><tr><td>7月末〜8月の追加観光（任意・未計画）</td><td>未確認</td><td>－</td><td class="n">未計上</td><td class="n">未計上</td><td class="n">未計上</td></tr><tr><td><strong>小計：公開価格表からの匿名の見積（見積と未確認の合計）</strong></td><td>－</td><td>－</td><td class="n"><strong>未計上</strong></td><td class="n"><strong>未計上</strong></td><td class="n"><strong>未計上</strong></td></tr><tr><td>うち 見積（出典あり）</td><td>－</td><td>－</td><td class="n">－</td><td class="n">－</td><td class="n">－</td></tr><tr><td>うち 未確認（出典なし・推定）</td><td>－</td><td>－</td><td class="n">－</td><td class="n">－</td><td class="n">－</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>項目</th><th>区分</th><th>現地通貨（標準）</th><th class="n">低予算</th><th class="n">標準</th><th class="n">余裕</th></tr></thead><tbody><tr><td data-label="項目">7月末〜8月の追加観光（任意・未計画）</td><td data-label="区分">未確認</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">未計上</td><td class="n" data-label="標準">未計上</td><td class="n" data-label="余裕">未計上</td></tr><tr><td data-label="項目"><strong>小計：公開価格表からの匿名の見積（見積と未確認の合計）</strong></td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算"><strong>未計上</strong></td><td class="n" data-label="標準"><strong>未計上</strong></td><td class="n" data-label="余裕"><strong>未計上</strong></td></tr><tr><td data-label="項目">うち 見積（出典あり）</td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">－</td><td class="n" data-label="標準">－</td><td class="n" data-label="余裕">－</td></tr><tr><td data-label="項目">うち 未確認（出典なし・推定）</td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">－</td><td class="n" data-label="標準">－</td><td class="n" data-label="余裕">－</td></tr></tbody></table></div>
 <p>金額は公開価格表からの<strong>匿名の見積</strong>です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して合計しています（円未満は四捨五入）。区分の「未確認」は出典なしの推定または金額未入力で、見積と区別して表示しています。</p>
 <p><strong>未計上（合計に含まれない項目）</strong>：AU-01 7月末〜8月の追加観光（任意・未計画）（すべて未計上）。「未計上」は金額が入っていないことを示し、0円ではありません。</p>
 <p><strong>前提と備考</strong></p>
 <ul><li>AU-01：Issue #7 の対象。実施するか・行き先・期間が未定のため金額未入力（0円ではない）。南ア滞在日数（Issue #2）と帰国日程の制約あり</li></ul>
 <h2 id="4-資料">4. 資料</h2>
-<div class="scroll"><table><thead><tr><th>分野</th><th>資料</th><th>内容</th><th>参考（一次情報）</th><th>最終確認日</th></tr></thead><tbody><tr><td>アフリカ</td><td><a href="../research/africa-august-comparison.html">アフリカ周遊（8月）の国別シーズン比較</a></td><td>8月の南部・東部アフリカ。乾季の最盛期にあたる国の見どころ・費用・混雑（調査版）</td><td>－</td><td>2026-11-08</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>分野</th><th>資料</th><th>内容</th><th>参考（一次情報）</th><th>最終確認日</th></tr></thead><tbody><tr><td data-label="分野">アフリカ</td><td data-label="資料"><a href="../research/africa-august-comparison.html">アフリカ周遊（8月）の国別シーズン比較</a></td><td data-label="内容">8月の南部・東部アフリカ。乾季の最盛期にあたる国の見どころ・費用・混雑（調査版）</td><td data-label="参考（一次情報）">－</td><td data-label="最終確認日">2026-11-08</td></tr></tbody></table></div>
 <p>「参考」は各資料が根拠にした公式・一次情報へのリンクです。</p>
 <h2 id="5-場所と地図">5. 場所と地図</h2>
 <p>この地域に登録された場所はありません。</p>
 <h2 id="6-通貨と円換算">6. 通貨と円換算</h2>
 <p>訪問国ごとに通貨が異なり、このリポジトリで参考レートを持っているのは下の通貨だけです。ほかの通貨は、資料の中で現地通貨のまま記載しています。</p>
-<div class="scroll"><table><thead><tr><th>通貨</th><th class="n">1単位＝円</th><th class="n">100単位＝円</th><th class="n">1万円＝現地通貨</th><th>レート日・出典</th></tr></thead><tbody><tr><td>南アフリカ・ランド（ZAR）</td><td class="n">9.59</td><td class="n">959</td><td class="n">1,042.75</td><td>2026-10-16　<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">murc-kawasesouba.jp</a></td></tr><tr><td>米ドル（USD）</td><td class="n">158.19</td><td class="n">15,819</td><td class="n">63.22</td><td>2026-10-16　<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">murc-kawasesouba.jp</a></td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>通貨</th><th class="n">1単位＝円</th><th class="n">100単位＝円</th><th class="n">1万円＝現地通貨</th><th>レート日・出典</th></tr></thead><tbody><tr><td data-label="通貨">南アフリカ・ランド（ZAR）</td><td class="n" data-label="1単位＝円">9.59</td><td class="n" data-label="100単位＝円">959</td><td class="n" data-label="1万円＝現地通貨">1,042.75</td><td data-label="レート日・出典">2026-10-16　<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">murc-kawasesouba.jp</a></td></tr><tr><td data-label="通貨">米ドル（USD）</td><td class="n" data-label="1単位＝円">158.19</td><td class="n" data-label="100単位＝円">15,819</td><td class="n" data-label="1万円＝現地通貨">63.22</td><td data-label="レート日・出典">2026-10-16　<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">murc-kawasesouba.jp</a></td></tr></tbody></table></div>
 <p>参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が加わるため、実際に受け取る額・支払う額とは一致しません。通貨が違う金額は、換算前に足し合わせていません。</p>
 <h2 id="7-地図">7. 地図</h2>
 <ul><li><a href="../maps/world-map.html">世界地図（移動の全体像）</a></li><li><a href="../maps/africa-map.html">アフリカ地図（周遊ルート案）</a></li><li><a href="../maps/africa-countries.html">アフリカ国別地図（国を押すと、その国の観光地・食べ物・ビザ・安全のページへ）</a></li></ul>

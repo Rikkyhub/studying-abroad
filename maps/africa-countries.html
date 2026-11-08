@@ -76,9 +76,30 @@ dl.kv div:last-child{border-bottom:0}
 dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 .card .scroll{margin:0;border-top:0}
 .card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
+.carousel{position:relative}
+.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 4px 32px;-webkit-overflow-scrolling:touch}
+.car-track>.card{flex:0 0 min(300px,80%);scroll-snap-align:start}
+.car-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.car-btn.prev{left:-12px} .car-btn.next{right:-12px} .car-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.car-btn[disabled]{opacity:.35;cursor:default}
+details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);list-style:none}
+details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\25B8";display:inline-block;margin-right:8px;transition:transform .2s}
+details.fold[open]>summary::before{transform:rotate(90deg)}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 @media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:640px){
+.scroll{overflow-x:visible;border-top:0;border-bottom:0}
+.scroll table:has(td[data-label]){min-width:0;display:block}
+.scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
+.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.scroll table:has(td[data-label]) td{display:block;padding:8px 12px;border-bottom:1px solid var(--line);background:none!important;min-width:0;text-align:left}
+.scroll table:has(td[data-label]) td:last-child{border-bottom:0}
+.scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
+.scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
+}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 
 :root{--sea:#e6eef3;--land:#f4f1e8;--border:#b9b4a4;--grat:#cdd8df;--k1:#d9e6f2;--k1s:#0072B2;--k2:#f3e3d3;--k2s:#B84A00;--k3:#d8eee5;--k3s:#007A5A;--k4:#efdcea;--k4s:#A5498A;--soon:#ececec}
