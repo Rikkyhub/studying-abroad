@@ -74,6 +74,33 @@
 上記は仮の宿泊＋食費だけの試算。航空券・現地交通・ビザ・サファリ・保険・予備費は別途必要で、2027年の市場平均・実売価格を示しません。
 <!-- /AUTO:august_country_summary -->
 
+### 2027年8月：5つのルート候補（具体化用の旅程骨組み）
+
+**出発地はCape Townの留学終了後、最終到着地は日本。候補を同時に実行するものではない。** 目安として約10〜18日で観光・移動を配置し、**長距離の帰国便に1〜2日と予備日を残す**。下記の宿泊数は仮のモデル。航空券の運航曜日・乗継・荷物・最終到着日は未照合。5月周遊で訪問する国（Madagascar・Zimbabwe・Zambia・Botswana）と目的を重複させないことを優先する。
+
+| 案 | 移動順序（航空/陸路は要調査） | 観光・滞在配分の例 | 日程上の焦点 | 先に確かめるべき費用 |
+|---|---|---|---|---|
+| **A 東アフリカ2国サファリ** | CPT→（JNB経由等）Nairobi→Maasai Mara→Nairobi→Arusha→Serengeti/Ngorongoro→Zanzibar/Dar→日本 | Kenya **8泊**（Nairobi 3・Mara 3・乗継2）、Tanzania **9泊**（Arusha 2・Serengeti/Ngorongoro 4・Zanzibar 3）、移動食費1日、計**17泊/18食費日** | Maasai MaraとTanzaniaでサファリ2回を想定。国境の車両変更や長距離区間、サファリの連続日数を要確認 | CPT→NBO / Kenya↔Tanzania / ZNZ等→日本、Maasai Mara入域＋Serengeti/Ngorongoro入域、乗合サファリ1名料金 |
+| **B ゴリラ・湖・文化** | CPT→（JNB経由等）Entebbe→Jinja/Queen Elizabeth→Bwindi→Kigali→Volcanoes／Lake Kivu→日本 | Uganda **8泊**（Kampala/Jinja 2・Queen Elizabeth 2・Bwindi 4）、Rwanda **7泊**（Kigali 3・Volcanoes 2・Lake Kivu 2）、移動食費1日、計**15泊/16食費日** | Gorilla trekkingはUgandaかRwandaで**1回だけ**を比較。2回実施・2国での重複購入を前提にしない | Permitの外国人料金/空き（Ugandaは2024〜26年公開額USD800の例、Rwandaは現行USD1,500）、移動車、CPT→EBBとKGL→日本 |
+| **C 海・ダイビング・文化** | CPT→Maputo→Tofo／Vilankulo等（南部のみ）→Maputo→Eswatini（Hlane/Mlilwane）→JNB→日本 | Mozambique **7泊**（Maputo 2・海岸5）、Eswatini **7泊**（Mbabane/Ezulwini 3・保護区4）、移動食費1日、計**14泊/15食費日** | ダイビング1〜2日と文化、南部の保護区。遠距離を日中に移動し、実行不能なら海岸の1拠点に絞る | CPT→Maputo、海岸への国内線/日中バス、Maputo↔Eswatiniシャトル、JNB→日本、Moza事前登録/査証条件 |
+| **D 南アフリカ国内周遊** | CPT→Garden Route→Addo→（Gqeberha→JNB空路）→Kruger→JNB→日本 | South Africa **10泊**（Garden Route 3・Addo 2・Kruger/Hazyview 4・JNB空港周辺1）、移動食費1日、計**10泊/11食費日** | 1か国で国際移動を減らす対照案。約10泊なので、他案と滞在日数が違う。夜間長距離運転をしない | 国内線・レンタカー/乗合・Kruger乗合ゲームドライブ・宿泊、帰国航空券 |
+| **E ナミビア砂漠と野生動物** | CPT→Windhoek→Sossusvlei→Swakopmund/Walvis Bay→Etosha→Windhoek→（JNB等経由）日本 | Namibia **15泊**（Windhoek 2・Sossusvlei 3・Swakopmund 3・Etosha 5・車移動予備2）、移動食費1日、計**15泊/16食費日** | 砂漠・星空・Etosha水場のサファリ。少人数ツアーと日中のみのセルフドライブを比較（1人の長距離運転の負担にも注意） | CPT→WDH・WDH→日本、ツアー/レンタカー+保険+燃料、Etosha入場、**日本旅券でもナミビア査証** |
+
+**候補別に予約の締切・費用の違いを検証すること**：
+- **A**：8月は動物の大移動を狙える時期だが、遭遇・マラ川渡河は保証されない。ケニアeTA、タンザニアビザ、Masai MaraとSerengetiの**公園料金・車両・ガイド・宿**を一式比較。高額な宿やサファリが予算を左右する。根拠：[Magical Kenya](https://webmail.magicalkenya.com/default.nsf/features1/BB4BC3735EF6D65F43257457002CC68F?l=1&opendocument=)、[在ケニア日本国大使館eTA](https://www.ke.emb-japan.go.jp/itpr_ja/11_000001_01152.html)、[在タンザニア日本国大使館](https://www.tz.emb-japan.go.jp/itpr_ja/consulate.html)。
+- **B**：Ugandaのゴリラ許可証は[UWA公式の2024〜2026年料金表](https://ugandawildlife.org/wp-content/uploads/2024/01/CHANGES-IN-UWA-CONSERVATION-TARIFF.pdf)で外国人非居住者USD800の例、[UWAの購入ルール](https://ugandawildlife.org/wp-content/uploads/2024/08/Advisory-on-purchase-guidelines.pdf)では外国人非居住者は正規認可ツアー事業者経由。Rwandaは[Visit Rwanda公式](https://visitrwanda.com/interests/gorilla-tracking/)でUSD1,500の記載。**2027年料金と空きは未確認**。ゴリラ観察は任意オプションで、1回を選択して比較する。
+- **C**：[駐日モザンビーク大使館](https://embamoc.jp/visas)の日本人の観光用査証免除・オンライン事前登録・必要書類の案内は文面中に例外・旧記述が混在するため、**2027年の実運用を公式窓口で要再確認**。海のコンディション・ダイビング・安全な日中移動の正式催行を確認。
+- **D**：Kruger、Addo、Garden Routeの距離が大きく、10泊では移動比率が高い可能性がある。国内線で部分短縮し、地上移動は日中、宿の取消条件を確認。総費用が安いという判断は**航空券比較前には不可**。
+- **E**：[ナミビア観光局](https://visitnamibia.com.na/faq/)はEtosha等で5〜10月を野生動物観察に適した乾季とし、公的交通は限定的と説明。[駐日ナミビア大使館](https://namibiatokyo.or.jp/jp/visa_consular_matter/)によると日本の一般旅券も2025年4月以降ビザが必要（到着時取得の対象）。**2027年の申請・料金を再確認**。旅程に含む公園・地域のマラリア/黄熱条件は別途検証。
+
+### 比較する金額の単位（5案共通）
+
+**宿泊＝泊数×宿代、食費＝日数×食費**。現在全候補同じ仮単価（標準は1泊3,000円／1日1,500円）なので、この小計は**主に日数の違い**を示し、各国の実際の物価差・総旅行費の優劣は示さない。
+
+各案に別途「CPT→入口国の国際線」「訪問国内・国またぎの飛行機」「日本帰国便」「査証/eTA」「シャトル/交通」「サファリ・ゴリラ許可証・ダイビング等」「旅程遅延予備費」を見積り、**全航空券を飛行機代、バス・査証・観光を現地費**に計上する。未取得は0円にしない。
+
+**次の採否ゲート**：①帰国便を含めた実移動日数、②一人で参加できるサファリ・許可証の正式金額、③各国の2027年入国条件、④航空券＋宿食＋現地費を足した総額、⑤5月と重複しない体験価値。最低3案を最終候補に残し、候補国の追加・入替は客観条件で決める。
+
 ### 別枠で必ず加算・確認するもの
 
 | 区分 | 現状 | 計上上のルール |
