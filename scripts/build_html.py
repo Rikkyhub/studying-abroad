@@ -855,7 +855,7 @@ var st={rows:[],preset:"",ask:""},undo=[];
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function snap(label){undo.push({label:label,s:JSON.stringify(st)});if(undo.length>30)undo.shift();ub.disabled=false;ub.textContent="元に戻す（"+label+"）"}
-function conv(x){return {place:x.place,country:x.country,move:x.move,memo:x.memo||""}}
+function conv(x){var r={place:x.place,country:x.country,move:x.move,memo:x.memo||""};if(x.fare){r.fare=x.fare;r.fareSrc=x.fare_src||""}return r}
 function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];if(!c)return;
  snap("案の切替");st.preset=id;st.rows=c.stops.slice(1).map(conv);st.first=c.stops[0];save();build()}
 if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="G"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
@@ -926,7 +926,7 @@ function paint(){var n=names(),k=st.rows.filter(function(r){return r.research}).
  else{dd.textContent="日数を入れると、全体"+TOTAL+"日に対する合計が出ます（例：12週、10日、2か月）";dd.className="route-days dim"}
  var air=st.rows.reduce(function(a,r){return a+toYen(r.fare)},0),ground=st.rows.reduce(function(a,r){return a+toDays(r.days)*toYen(r.unit)},0);
  var cc=root.querySelector(".route-cost");
- if(air||ground){var all=air+ground,left=600000-all;cc.textContent="費用の合計：移動費 "+yenfmt(air)+" ＋ 現地費（日数×1日単価）"+yenfmt(ground)+" ＝ "+yenfmt(all)+"（目標60万円に対して"+(left>=0?"あと "+yenfmt(left):"超過 "+yenfmt(-left))+"）";cc.className="route-cost"+(left<0?" over":"")}
+ if(air||ground){var all=air+ground,left=600000-all;cc.textContent="費用の合計：移動費 "+yenfmt(air)+" ＋ 現地費（日数×1日単価）"+(ground?yenfmt(ground):"未入力")+" ＝ "+yenfmt(all)+(ground?"":"（現地費を除く）")+"（目標60万円に対して"+(left>=0?"あと "+yenfmt(left):"超過 "+yenfmt(-left))+"）";cc.className="route-cost"+(left<0?" over":"")}
  else{cc.textContent="1日単価と移動費を入れると、区間ごとの小計と合計が出ます（空欄は0円ではなく未入力）";cc.className="route-cost dim"}
  ub.disabled=!undo.length}
 ask.addEventListener("input",function(){st.ask=ask.value;save()});
@@ -962,9 +962,22 @@ build();
 MODE_JA = {"flight": "飛行機", "overland": "陸路"}
 
 
+# 案の区間 → expenses.csv の航空券の行（移動費の自動入力用）。金額は expenses.csv の標準値を使い、ここには数字を持たない。
+# 往復の行（AF-02）は往路の区間に入れ、復路の区間には入れない（二重に数えない）
+LEG_FARE_IDS = {"G": {1: "AF-01", 3: "AF-02", 5: "AF-17", 6: "AF-18", 10: "AF-21"}}
+
+
 def route_presets(root: Path = ROOT) -> str:
-    """data/routes.csv と route_points.csv から、地図と同じ A〜F の案を作る（JSON）。滞在地は到着点を順に並べる"""
+    """data/routes.csv と route_points.csv から、地図と同じ案（A〜H）を作る（JSON）。滞在地は到着点を順に並べる。
+    案の区間に対応する航空券の標準値（data/expenses.csv）があれば、移動費の初期値（fare）として入れる"""
     pts = {r["id"]: r for r in csv_records(root / DATA_DIR / "route_points.csv")}
+    fares = {}
+    exp = root / DATA_DIR / "expenses.csv"
+    if exp.exists():
+        for r in csv_records(exp):
+            v = num(r.get("std_local", ""))
+            if v and (r.get("currency") or "JPY") == "JPY":
+                fares[r["id"]] = int(v)
     cases: dict = {}
     for r in sorted(csv_records(root / DATA_DIR / "routes.csv"), key=lambda r: (r["route_id"], int(r["seq"] or 0))):
         c = cases.setdefault(r["route_id"], {"id": r["route_id"], "name": r["route_name_ja"], "stops": []})
@@ -973,8 +986,13 @@ def route_presets(root: Path = ROOT) -> str:
             c["stops"].append({"place": f.get("name_ja", r["from_point"]), "country": f.get("country", ""), "move": "出発地"})
         t = pts.get(r["to_point"], {})
         note = "未確認" if r["unconfirmed"] == "Y" else ""
-        c["stops"].append({"place": t.get("name_ja", r["to_point"]), "country": t.get("country", ""),
-                           "move": MODE_JA.get(r["mode"], r["mode"]), "memo": note, "status": r["status"]})
+        stop = {"place": t.get("name_ja", r["to_point"]), "country": t.get("country", ""),
+                "move": MODE_JA.get(r["mode"], r["mode"]), "memo": note, "status": r["status"]}
+        fid = LEG_FARE_IDS.get(r["route_id"], {}).get(int(r["seq"] or 0))
+        if fid and fid in fares:
+            stop["fare"] = str(fares[fid])
+            stop["fare_src"] = fid
+        c["stops"].append(stop)
     out = [cases[k] for k in sorted(cases)]
     return json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
