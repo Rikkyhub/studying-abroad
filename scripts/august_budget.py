@@ -143,7 +143,7 @@ def apply_to_expenses(expenses, root=ROOT):
                 "source": "https://github.com/Rikkyhub/studying-abroad/issues/83",
                 "issue": "https://github.com/Rikkyhub/studying-abroad/issues/83",
                 "collected_on": "2026-11-09", "recheck_by": "2027-07-01",
-                "note": "research/africa-budget-august.mdの宿泊・食費仮単価。" +
+                "note": "research/africa-august-comparison.mdの宿泊・食費仮単価。" +
                         "2027年の正式価格・平均額ではなく、航空券・観光・ビザ等は別費目。",
                 **{f"{s}_local": str(quantity * prices[j])
                    for j, s in enumerate(SCENARIOS)},
