@@ -319,15 +319,16 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
   if(!isItem){tr.classList.add("sub");return}
-  var key=page+":"+hash(first.replace(/\\s*出典$/,"")),st=store[key]||{};
+  var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
+  var key=rid?"id:"+rid:page+":"+hash(first.replace(/\\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
   STATES.forEach(function(s){var o=document.createElement("option");o.value=s[0];o.textContent=s[1];sel.appendChild(o)});
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,name:first.replace(/\\s*出典$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\\s*出典$/,"").replace(/\\s*[A-Z]{2}-\\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
-  function upd(){store[key]={s:sel.value,m:memo.value};if(!sel.value&&!memo.value)delete store[key];save();paint()}
+  function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
  });
  var box=document.createElement("div");box.className="triage";
@@ -342,7 +343,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
    r.tr.hidden=s==="skip"&&hide.checked;
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -463,6 +464,10 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         rmd = route_markdown(root)
         out[rp] = rmd
         out[rp.with_suffix(".html")] = render_text(rmd, rp, root)
+        fp = root / "docs" / FLIGHTS_MD
+        fmd = flights_markdown(root)
+        out[fp] = fmd
+        out[fp.with_suffix(".html")] = render_text(fmd, fp, root)
     if all((root / DATA_DIR / f).exists() for f in ("tasks.csv", "pages.csv", "timeline.csv", "places.csv", "fx.csv")):
         out[root / "index.html"] = index_page(root)
     return out
@@ -615,16 +620,18 @@ def budget_cards(root: Path = ROOT) -> str:
         t = {s: sum(r["est"][s] or 0.0 for r in priced) for s in ("low", "std", "high")}
         return t
 
-    def split_card(label, key, note):
+    def split_card(label, key, note, href=None):
+        """カードは 見出し・標準の金額・一言・低〜余裕の幅・詳細ページへのリンク だけにする。長い注記や行ごとの内訳は載せない"""
         rs = [r for r in rows if group_of(r) == key]
         t = range_text(rs)
         miss = [r for r in rs if r["no_amount"] or r["unpriced"]]
-        miss_txt = f'金額が未入力・一部未入力の項目 {len(miss)} 件は未計上です。' if miss else ""
-        href = f"areas/{key}.html" if key in dict(REGION_PAGES) else None  # 飛行機代は専用ページがない（費用は各地域ページ）
+        miss_txt = f' <span class="muted">未計上 {len(miss)}件</span>' if miss else ""
+        if href is None:
+            href = f"areas/{key}.html" if key in dict(REGION_PAGES) else None
         if t is None:
-            return card(label, "未計上", f'{esc(note)}金額が入っている項目がまだありません（0円ではありません）。', href)
-        return card(label, build.yen(t["std"]),
-                    f'{esc(note)}標準の見積。低予算 {esc(build.yen(t["low"]))} 〜 余裕 {esc(build.yen(t["high"]))}。{miss_txt}', href)
+            return card(label, "未計上", esc(note), href)
+        rng = f'低 {esc(build.yen(t["low"]))} 〜 余 {esc(build.yen(t["high"]))}'
+        return card(label, build.yen(t["std"]), f'{esc(note)}<br><span class="muted">{rng}</span>{miss_txt}', href)
 
     # 5月の総額＝『飛行機代』カードのうち AF- の航空券 ＋『アフリカ周遊（5月）』カードの現地費。
     # 独立した合計カードにはせず（二重に足されて見えるため）、内訳として注記する。各行は1回だけ数える
@@ -633,31 +640,26 @@ def budget_cards(root: Path = ROOT) -> str:
     af_air = sum(_std(r) for r in rows if r["id"].startswith("AF-") and r["id"] in FLIGHT_IDS and not r["no_amount"])
     af_ground = sum(_std(r) for r in rows if r["id"].startswith("AF-") and r["id"] not in FLIGHT_IDS and not r["no_amount"])
     may_total = af_air + af_ground
-    may_note = (f'5月の総額（標準）＝航空券 {build.yen(af_air)}（下の「飛行機代」の内数）＋ 現地費 {build.yen(af_ground)}（このカード） '
-                f'＝ {build.yen(may_total)}。目標 {build.man(S["budget_africa"])}（総予算の内数）。空欄の費目は含まず、達成判定は保留。')
 
-    flight_items = "".join(
-        f'<li>{esc(r["item"])}：{esc(build.yen(r["est"]["std"]) if r["est"]["std"] is not None else "未計上")}</li>'
-        for r in rows if r["id"] in FLIGHT_IDS)
-    flight = split_card("飛行機代", "flight", f'フィリピン・5月の周遊・ケープタウン→日本の航空券（国内線を含む）。うち5月の周遊分（AF-）は {build.yen(af_air)} で、5月の総額の内数。バス・現地交通・査証は別計上。')
-    flight = flight.replace("</div>", f'<ul class="facts">{flight_items}</ul></div>', 1)
+    # 行ごとの内訳は載せず、詳細ページ（飛行機代は専用ページ）へのリンクにする
+    flight = split_card("飛行機代", "flight", "全ての航空券（国内線を含む）", href="docs/12-flights.html")
 
     cards = [
-        card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標です。実費ではありません。"),
-        card("上限予算", build.man(S["budget_cap"]), "モデルの上限です。実費ではありません。"),
+        card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標"),
+        card("上限予算", build.man(S["budget_cap"]), "モデルの上限"),
         card("見積合計（標準）", build.yen(tot["std"]),
-             f'低予算 {esc(build.yen(tot["low"]))} 〜 余裕 {esc(build.yen(tot["high"]))}。公開価格などに基づくモデルの見積で、'
-             f'実費ではありません。{unpriced}'),
-        split_card("フィリピン（バギオ）", "baguio", "航空券を除く現地費用。"),
-        split_card("アフリカ周遊（5月）", "africa", f'航空券を除く現地費用（バス・越境・ビザ・滝・サファリ・宿・食費）。{may_note}'),
-        split_card("南アフリカ（ケープタウン）", "capetown", "航空券を除く現地費用。"),
-        split_card("アフリカ周遊（8月）", "africa-aug", "航空券を除く費用。"),
+             f'低 {esc(build.yen(tot["low"]))} 〜 余 {esc(build.yen(tot["high"]))}<br><span class="muted">未計上 {n_na + n_part}件は含まず、0円ではない</span>'
+             f'<span class="tri-top" data-total="{int(round(tot["std"]))}" hidden></span>',
+             "docs/02-budget.html"),
+        split_card("フィリピン（バギオ）", "baguio", "現地費（航空券を除く）"),
+        split_card("アフリカ周遊（5月）", "africa", f'現地費（航空券を除く）。航空券と合わせた5月の総額は {build.yen(may_total)}'),
+        split_card("南アフリカ（ケープタウン）", "capetown", "現地費（航空券を除く）"),
+        split_card("アフリカ周遊（8月）", "africa-aug", "現地費（航空券を除く）。国は未定"),
         flight,
-        split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用。"),
+        split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用"),
     ]
-    return ('<p class="sec-lead">表示している金額はすべて公開料金などに基づくモデルの目標・見積で、実際の支払額ではありません。'
-            '地域ごとに分け、飛行機代は別枠にしています。カードは横にスクロール（または左右ボタン）で見られます。'
-            '内訳は各地域のページ、計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
+    return ('<p class="sec-lead">金額はすべて公開料金などに基づく<strong>モデルの見積</strong>で、実費ではありません。'
+            '各カードを開くと内訳があります。空欄は「未計上」で、0円ではありません。計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
             + carousel(cards, "予算の全体像"))
 
 
@@ -742,6 +744,29 @@ form.hidden=false;upd();
 })();
 </script>"""
 
+INDEX_TRIAGE_SCRIPT = """<script>
+(function(){
+var el=document.querySelector(".tri-top");if(!el)return;
+var store={};try{store=JSON.parse(localStorage.getItem("cost-triage-v1")||"{}")}catch(e){return}
+var skip=0,hold=0,nSkip=0,nHold=0,noval=0;
+Object.keys(store).forEach(function(k){
+ if(k.indexOf("id:")!==0)return;var o=store[k];if(!o||!o.s)return;
+ var std=o.v&&o.v[1];
+ if(o.s==="skip"){nSkip++;if(std==null)noval++;else skip+=std}
+ else if(o.s==="hold"){nHold++;if(std!=null)hold+=std}
+});
+if(!nSkip&&!nHold)return;
+var total=parseInt(el.getAttribute("data-total"),10)||0;
+function f(n){return "¥"+Math.round(n).toLocaleString("ja-JP")}
+var t=document.createElement("span");t.className="tri-top-line";
+var line="<br><strong>あなたの判断を反映</strong>：";
+if(nSkip)line+="不要 "+nSkip+"件（"+f(skip)+"）を除くと "+f(total-skip);else line+="不要の判断はまだありません（合計 "+f(total)+"）";
+if(nHold)line+="／保留 "+nHold+"件（"+f(hold)+"）を含む";
+if(noval)line+="／金額が読み取れない不要 "+noval+"件は引けていません";
+t.innerHTML=line;el.parentNode.insertBefore(t,el);
+})();
+</script>"""
+
 INDEX_CAROUSEL_SCRIPT = """<script>
 (function(){
 document.querySelectorAll("[data-carousel]").forEach(function(c){
@@ -806,7 +831,7 @@ def index_page(root: Path = ROOT) -> str:
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY
     for k, v in (("budget", budget_cards(root)), ("timeline", timeline_cards(root)), ("regions", region_cards(root)),("now", now_block(root)), ("fx", fx_summary(root)),
-                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT)):
+                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
 
@@ -833,15 +858,17 @@ ROUTE_TABLE_HTML = (
     '<div class="route" data-route>'
     '<p class="route-pre"><span class="lbl">既存の案から始める：</span><span class="presets"></span></p>'
     '<p class="route-desc" aria-live="polite"></p>'
-    '<div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th>移動</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead>'
+    '<div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th title="現地での1日あたりの宿・食・移動の目安（円）">1日単価</th><th>移動</th><th title="この区間の航空券・移動費（円）">移動費</th><th>小計</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead>'
     '<tbody></tbody></table></div>'
     '<p class="route-bar"><button type="button" class="r-add">＋ 行を追加</button> '
     '<button type="button" class="r-send">Claudeに送る（triage/route.json）</button> '
     '<button type="button" class="r-copy">文章でコピー</button> '
+    '<button type="button" class="r-md" title="research/africa-budget-fermi.md の編集表に貼れる形（数量×単価）でコピー">予算表の行をコピー</button> '
     '<button type="button" class="r-undo" disabled>元に戻す</button> '
     '<button type="button" class="r-reset">すべて消す</button></p>'
     '<p class="route-sum" aria-live="polite"></p>'
     '<p class="route-days dim" aria-live="polite"></p>'
+    '<p class="route-cost dim" aria-live="polite"></p>'
     '<label class="route-ask">Claudeへの依頼（任意）<textarea rows="2" placeholder="例：この順番で費用と日数を調べ直して／ケニアを外した案も比べて"></textarea></label></div>')
 ROUTE_SCRIPT = """<script>
 (function(){
@@ -849,18 +876,22 @@ var KEY="route-builder-v2",root=document.querySelector("[data-route]");if(!root)
 var tb=root.querySelector("tbody"),sum=root.querySelector(".route-sum"),desc=root.querySelector(".route-desc"),ask=root.querySelector("textarea");
 var PRESETS=@@PRESETS@@, PLACES=@@PLACES@@, TOTAL=194;
 var MOVES=["","飛行機","陸路","バス","電車","船","車","徒歩"];
-var COLS=[["place","滞在地","例 バギオ"],["country","国","例 フィリピン"],["when","時期","例 2〜4月"],["days","日数","例 12週"],["move","移動",""],["memo","メモ",""]];
+var COLS=[["place","滞在地","例 バギオ"],["country","国","例 フィリピン"],["when","時期","例 2〜4月"],["days","日数","例 12週"],["unit","1日単価","例 5000"],["move","移動",""],["fare","移動費","例 50000"],["sub","小計",""],["memo","メモ",""]];
 var st={rows:[],preset:"",ask:""},undo=[];
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function snap(label){undo.push({label:label,s:JSON.stringify(st)});if(undo.length>30)undo.shift();ub.disabled=false;ub.textContent="元に戻す（"+label+"）"}
-function conv(x){return {place:x.place,country:x.country,move:x.move,memo:x.memo||""}}
+function conv(x){var r={place:x.place,country:x.country,move:x.move,memo:x.memo||""};if(x.fare){r.fare=x.fare;r.fareSrc=x.fare_src||""}return r}
 function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];if(!c)return;
  snap("案の切替");st.preset=id;st.rows=c.stops.slice(1).map(conv);st.first=c.stops[0];save();build()}
-if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="F"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
+if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="G"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
 /* 日数の読み取り：12週/8週/10日/3か月/2ヶ月/1年 などを日に換算（読めなければ 0） */
 function toDays(t){t=(t||"").replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)});var m=t.match(/(\\d+(?:\\.\\d+)?)\\s*(週間|週|日間|日|か月|ヶ月|カ月|ヵ月|月|年)?/);if(!m)return 0;var n=parseFloat(m[1]),u=m[2]||"日";
  return Math.round(/週/.test(u)?n*7:/年/.test(u)?n*365:/月/.test(u)?n*30:n)}
+/* 金額の読み取り：5,000 / 5000円 / ¥5000 / 5万 などを円に換算（読めなければ 0）。空欄は 0 */
+function toYen(t){t=(t||"").replace(/[０-９，]/g,function(c){return c==="，"?"":String.fromCharCode(c.charCodeAt(0)-65248)}).replace(/[,\\s円¥￥]/g,"");var m=t.match(/^(\\d+(?:\\.\\d+)?)(万|千)?/);if(!m)return 0;var n=parseFloat(m[1]);return Math.round(m[2]==="万"?n*10000:m[2]==="千"?n*1000:n)}
+function rowSub(r){return toDays(r.days)*toYen(r.unit)+toYen(r.fare)}
+function yenfmt(n){return n?"¥"+n.toLocaleString("ja-JP"):"－"}
 /* 滞在地の候補（datalist）。選ぶと国と移動の既定が入る */
 var dl=document.createElement("datalist");dl.id="route-places";PLACES.forEach(function(p){var op=document.createElement("option");op.value=p.name;op.label=p.country;dl.appendChild(op)});document.body.appendChild(dl);
 function byName(n){return PLACES.filter(function(p){return p.name===n})[0]}
@@ -869,8 +900,9 @@ PRESETS.forEach(function(c){var b=document.createElement("button");b.type="butto
  b.addEventListener("click",function(){if(st.rows.length&&!confirm("いまの入力を案"+c.id+"で置き換えます（「元に戻す」で戻せます）。よろしいですか？"))return;loadPreset(c.id)});pre.appendChild(b)});
 var ub=root.querySelector(".r-undo");
 ub.addEventListener("click",function(){var u=undo.pop();if(!u)return;st=JSON.parse(u.s);save();build();ub.disabled=!undo.length;ub.textContent=undo.length?"元に戻す（"+undo[undo.length-1].label+"）":"元に戻す"});
-function fixed(label){var tr=document.createElement("tr");tr.className="fix";tr.innerHTML='<td></td><td colspan="8"><strong>'+label+'</strong></td>';return tr}
+function fixed(label){var tr=document.createElement("tr");tr.className="fix";tr.innerHTML='<td></td><td colspan="11"><strong>'+label+'</strong></td>';return tr}
 function mkInput(r,c,tr){var td=document.createElement("td");td.setAttribute("data-label",c[1]);var key=c[0];
+ if(key==="sub"){td.className="n sub";td.textContent=yenfmt(rowSub(r));return td}
  if(key==="move"){var sel=document.createElement("select");sel.setAttribute("aria-label","移動");
   var list=MOVES.slice();if(r.move&&list.indexOf(r.move)<0)list.push(r.move);
   list.forEach(function(m){var o=document.createElement("option");o.value=m;o.textContent=m||"（未選択）";sel.appendChild(o)});sel.value=r.move||"";
@@ -879,6 +911,7 @@ function mkInput(r,c,tr){var td=document.createElement("td");td.setAttribute("da
  if(key==="place")inp.setAttribute("list","route-places");
  inp.addEventListener("input",function(){r[key]=inp.value;
   if(key==="place"){var p=byName(inp.value);if(p){if(!r.country){r.country=p.country;var ci=tr.children[2].children[0];if(ci)ci.value=p.country}}}
+  if(key==="days"||key==="unit"||key==="fare"){var sc=tr.querySelector("td.sub");if(sc)sc.textContent=yenfmt(rowSub(r))}
   save();paint()});
  inp.addEventListener("change",function(){if(key==="days")paint()});
  td.appendChild(inp);return td}
@@ -917,6 +950,10 @@ function paint(){var n=names(),k=st.rows.filter(function(r){return r.research}).
  var dd=root.querySelector(".route-days");
  if(days||unread){var diff=TOTAL-days;dd.textContent="日数の合計："+days+"日／全体"+TOTAL+"日"+(diff>=0?"（あと"+diff+"日）":"（"+(-diff)+"日超過）")+(unread?"　※読めない日数が"+unread+"行あります（例：12週、10日、2か月）":"");dd.className="route-days"+(diff<0?" over":"")}
  else{dd.textContent="日数を入れると、全体"+TOTAL+"日に対する合計が出ます（例：12週、10日、2か月）";dd.className="route-days dim"}
+ var air=st.rows.reduce(function(a,r){return a+toYen(r.fare)},0),ground=st.rows.reduce(function(a,r){return a+toDays(r.days)*toYen(r.unit)},0);
+ var cc=root.querySelector(".route-cost");
+ if(air||ground){var all=air+ground,left=600000-all;cc.textContent="費用の合計：移動費 "+yenfmt(air)+" ＋ 現地費（日数×1日単価）"+(ground?yenfmt(ground):"未入力")+" ＝ "+yenfmt(all)+(ground?"":"（現地費を除く）")+"（目標60万円に対して"+(left>=0?"あと "+yenfmt(left):"超過 "+yenfmt(-left))+"）";cc.className="route-cost"+(left<0?" over":"")}
+ else{cc.textContent="1日単価と移動費を入れると、区間ごとの小計と合計が出ます（空欄は0円ではなく未入力）";cc.className="route-cost dim"}
  ub.disabled=!undo.length}
 ask.addEventListener("input",function(){st.ask=ask.value;save()});
 root.querySelector(".r-add").addEventListener("click",function(){snap("行の追加");st.rows.push({});save();build();var l=tb.querySelectorAll("tr:not(.fix) td:nth-child(2) input");if(l.length)l[l.length-1].focus()});
@@ -928,6 +965,20 @@ function payload(){return {schema:"route-builder-v2",exported_at:new Date().toIS
 root.querySelector(".r-copy").addEventListener("click",function(ev){
  var t=payload().stops.map(function(s){return s.order+". "+(s.place||"（未入力）")+[s.country,s.when,s.days,s.move].filter(Boolean).map(function(x){return " / "+x}).join("")+(s.memo?" — "+s.memo:"")+(s.research?"　【調べ直し】":"")}).join("\\n");
  t="日本（出発）\\n"+t+"\\n日本（帰国）"+(st.ask?"\\n\\n依頼："+st.ask:"");var b=ev.target,o=b.textContent;
+ function done(){b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,function(){prompt("コピーしてください",t)});else prompt("コピーしてください",t)});
+root.querySelector(".r-md").addEventListener("click",function(ev){
+ function comma(n){return n.toLocaleString("ja-JP")}
+ var lines=[];
+ st.rows.forEach(function(r){
+  var d=toDays(r.days),u=toYen(r.unit);
+  if(d&&u){lines.push("| AF-?? | 現地費 | "+(r.place||"（未入力）")+"（"+(r.country||"")+"） | "+d+" | 日 | "+comma(u)+" | "+comma(u)+" | "+comma(u)+" |")}
+ });
+ var fares=st.rows.filter(function(r){return toYen(r.fare)}).map(function(r){return "- "+(r.place||"（未入力）")+"へ："+comma(toYen(r.fare))+"円（"+(r.move||"移動")+"）"});
+ var t=lines.length?"| ID | 区分 | 対象・費目 | 数量 | 単位 | 節約単価 | 標準単価 | 余裕単価 |\\n|---|---|---|---:|---|---:|---:|---:|\\n"+lines.join("\\n"):"（日数と1日単価が入った区間がありません）";
+ if(fares.length)t+="\\n\\n航空券・移動費（飛行機代は data/expenses.csv の行で管理。ここは貼らない）：\\n"+fares.join("\\n");
+ t+="\\n\\n※ 単価は1日あたりの宿・食・移動の合計の目安。AF-?? を行IDに直し、宿泊・食費・交通に分けるときは単価を分けて貼ってください。";
+ var b=ev.target,o=b.textContent;
  function done(){b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,function(){prompt("コピーしてください",t)});else prompt("コピーしてください",t)});
 function idb(){return new Promise(function(res,rej){var q=indexedDB.open("cost-triage-dir",1);q.onupgradeneeded=function(){q.result.createObjectStore("h")};q.onsuccess=function(){res(q.result)};q.onerror=function(){rej(q.error)}})}
@@ -951,9 +1002,22 @@ build();
 MODE_JA = {"flight": "飛行機", "overland": "陸路"}
 
 
+# 案の区間 → expenses.csv の航空券の行（移動費の自動入力用）。金額は expenses.csv の標準値を使い、ここには数字を持たない。
+# 往復の行（AF-02）は往路の区間に入れ、復路の区間には入れない（二重に数えない）
+LEG_FARE_IDS = {"G": {1: "AF-01", 3: "AF-02", 5: "AF-17", 6: "AF-18", 10: "AF-21"}}
+
+
 def route_presets(root: Path = ROOT) -> str:
-    """data/routes.csv と route_points.csv から、地図と同じ A〜F の案を作る（JSON）。滞在地は到着点を順に並べる"""
+    """data/routes.csv と route_points.csv から、地図と同じ案（A〜H）を作る（JSON）。滞在地は到着点を順に並べる。
+    案の区間に対応する航空券の標準値（data/expenses.csv）があれば、移動費の初期値（fare）として入れる"""
     pts = {r["id"]: r for r in csv_records(root / DATA_DIR / "route_points.csv")}
+    fares = {}
+    exp = root / DATA_DIR / "expenses.csv"
+    if exp.exists():
+        for r in csv_records(exp):
+            v = num(r.get("std_local", ""))
+            if v and (r.get("currency") or "JPY") == "JPY":
+                fares[r["id"]] = int(v)
     cases: dict = {}
     for r in sorted(csv_records(root / DATA_DIR / "routes.csv"), key=lambda r: (r["route_id"], int(r["seq"] or 0))):
         c = cases.setdefault(r["route_id"], {"id": r["route_id"], "name": r["route_name_ja"], "stops": []})
@@ -962,8 +1026,13 @@ def route_presets(root: Path = ROOT) -> str:
             c["stops"].append({"place": f.get("name_ja", r["from_point"]), "country": f.get("country", ""), "move": "出発地"})
         t = pts.get(r["to_point"], {})
         note = "未確認" if r["unconfirmed"] == "Y" else ""
-        c["stops"].append({"place": t.get("name_ja", r["to_point"]), "country": t.get("country", ""),
-                           "move": MODE_JA.get(r["mode"], r["mode"]), "memo": note, "status": r["status"]})
+        stop = {"place": t.get("name_ja", r["to_point"]), "country": t.get("country", ""),
+                "move": MODE_JA.get(r["mode"], r["mode"]), "memo": note, "status": r["status"]}
+        fid = LEG_FARE_IDS.get(r["route_id"], {}).get(int(r["seq"] or 0))
+        if fid and fid in fares:
+            stop["fare"] = str(fares[fid])
+            stop["fare_src"] = fid
+        c["stops"].append(stop)
     out = [cases[k] for k in sorted(cases)]
     return json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
@@ -989,6 +1058,61 @@ def route_markdown(root: Path = ROOT) -> str:
         "- 「＋行を追加」で滞在地を増やします。▲▼で順番を入れ替え、×で削除します。",
         "- 先頭の「日本（出発）」と末尾の「日本（帰国）」は固定です。",
         "- 費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。", ""]) + "\n"
+
+
+FLIGHTS_MD = "12-flights.md"
+FLIGHT_GROUPS = [
+    ("フィリピン", ("PH-11", "PH-12")),
+    ("5月の周遊（日本→モーリシャス→マダガスカル→ビクトリアの滝周辺→ケープタウン）", ("AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21")),
+    ("帰国", ("SC-08",)),
+]
+
+
+def flights_markdown(root: Path = ROOT) -> str:
+    """飛行機代の内訳。トップのカードには金額だけを載せ、行ごとの内訳はここに置く。CSV から自動生成（手で編集しない）"""
+    if root != ROOT:
+        return "# 飛行機代の内訳\n"
+    import build
+    rows = {r["id"]: r for r in build.load_model()[1]}
+
+    def cell(r, k):
+        if r["no_amount"]:
+            return "未計上"
+        v = r["est"][k]
+        return "未計上" if v is None else build.yen(v)
+
+    out = ["# 飛行機代の内訳", "",
+           "トップの「飛行機代」カードの内訳です。金額は検索サイトの参考値や予算枠で、公式の運賃でも購入できる保証でもありません。"
+           "空欄は未取得で、0円ではありません。このページは `py scripts/build_all.py` が `data/expenses.csv` から自動で作ります。", ""]
+    total = {"low": 0.0, "std": 0.0, "high": 0.0}
+    n = 0
+    for title, ids in FLIGHT_GROUPS:
+        part = [rows[i] for i in ids if i in rows]
+        if not part:
+            continue
+        n += 1
+        out += [f"## {n}. {title}", "", "| 区間 | 低予算 | 標準 | 余裕 | 状態 |", "|---|---:|---:|---:|---|"]
+        sub = {"low": 0.0, "std": 0.0, "high": 0.0}
+        for r in part:
+            out.append(f"| {r['item']} | {cell(r, 'low')} | {cell(r, 'std')} | {cell(r, 'high')} | {r['status']} |")
+            if not r["no_amount"]:
+                for k in sub:
+                    sub[k] += r["est"][k] or 0.0
+        for k in total:
+            total[k] += sub[k]
+        out.append(f"| 小計 | {build.yen(sub['low'])} | {build.yen(sub['std'])} | {build.yen(sub['high'])} | |")
+        out.append("")
+    out += ["## 全体", "",
+            f"| 飛行機代の合計 | 低予算 {build.yen(total['low'])} | 標準 {build.yen(total['std'])} | 余裕 {build.yen(total['high'])} |",
+            "|---|---|---|---|", "",
+            "5月の周遊の航空券は、トップの「アフリカ周遊（5月）」の総額の内数です（現地費と足して5月の総額）。各行は1回だけ数えています。", "",
+            "## 備考（行ごと）", ""]
+    for i in [x for _, ids in FLIGHT_GROUPS for x in ids]:
+        r = rows.get(i)
+        if r and r["note"]:
+            note = re.sub(r"\s+", " ", r["note"]).strip()
+            out.append(f"- {r['id']}：{note}")
+    return "\n".join(out) + "\n"
 
 
 QA_MD = "10-qa.md"
@@ -1178,6 +1302,8 @@ details.sec>:last-child{margin-bottom:14px}
 .route-t td.chk{text-align:center}.route-t td.chk input{width:auto;min-width:0;transform:scale(1.25)}
 .route-ask{display:block;margin:12px 0 4px;font-weight:700;font-size:.9rem}
 .route-ask textarea{display:block;width:100%;margin-top:4px;font:inherit;font-size:.92rem;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.route-cost{font-size:.92rem;margin:2px 0 8px;font-weight:700}.route-cost.dim{color:var(--muted);font-weight:400}.route-cost.over{color:#b3261e}
+.route-t td.sub{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
 .route-days{font-size:.92rem;margin:2px 0 8px}.route-days.dim{color:var(--muted)}.route-days.over{color:#b3261e;font-weight:700}
 .route-t td select{width:100%;min-width:5.5em;font:inherit;font-size:.9rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 .route-bar button:disabled{opacity:.45;cursor:default}
@@ -1224,6 +1350,40 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 """
 
+# トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
+PAGE_CSS_EXTRA = """@media(max-width:640px){
+.route-t tr.fix{display:block;border:0;background:color-mix(in srgb,var(--link) 10%,transparent)!important;margin:0 0 8px}
+.route-t tr.fix td{display:block;padding:6px 12px;border:0;text-align:left}
+.route-t tr.fix td:empty{display:none}
+.route-t tr.fix td::before{display:none}
+.route-t tbody tr:not(.fix){display:grid!important;grid-template-columns:1fr 1fr;gap:0 10px;padding:6px 10px}
+.route-t tbody tr:not(.fix) td{border:0!important;padding:4px 0!important}
+.route-t tbody tr:not(.fix) td:first-child{grid-column:1/-1;font-weight:700;padding:2px 0!important}
+.route-t td[data-label="滞在地"],.route-t td[data-label="メモ"],.route-t td.ops{grid-column:1/-1}
+.route-t td::before{margin-bottom:0!important}
+.route-t td input[type=text],.route-t td select{max-width:none!important;width:100%}
+.triage .tri-sum .big{display:block;font-size:1.5rem;margin:2px 0}
+.triage .tri-sum strong{display:block}
+.triage{padding:10px 12px}
+}
+@media(max-width:640px){
+table.cost tbody tr:not(.sub){display:grid!important;grid-template-columns:repeat(3,1fr);gap:0 8px;padding:6px 10px}
+table.cost tbody tr:not(.sub) td{border:0!important;padding:4px 0!important;min-width:0}
+table.cost tbody tr:not(.sub) td:first-child{grid-column:1/-1;font-weight:700;border-bottom:1px solid var(--line)!important;padding-bottom:6px!important;margin-bottom:2px}
+table.cost td[data-label="区分"],table.cost td[data-label^="現地通貨"]{grid-column:span 3;display:inline-block}
+table.cost td[data-label="区分"]{grid-column:1/2}
+table.cost td[data-label^="現地通貨"]{grid-column:2/4}
+table.cost td[data-label="低予算"],table.cost td[data-label="標準"],table.cost td[data-label="余裕"]{text-align:right!important}
+table.cost td[data-label="要否"],table.cost td[data-label="メモ"]{grid-column:span 3}
+table.cost td[data-label="要否"]{grid-column:1/2}
+table.cost td[data-label="メモ"]{grid-column:2/4}
+table.cost td input[type=text],table.cost td select{max-width:none!important;width:100%}
+table.cost tr.sub{display:block;padding:6px 10px}
+table.cost tr.sub td{display:inline-block;padding:2px 8px 2px 0!important;border:0!important}
+}
+"""
+
+
 PAGE = """<!doctype html>
 @@mark@@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1269,7 +1429,7 @@ def bar(prefix: str, current: str = "") -> str:
 
 
 def page_html(**kw) -> str:
-    kw["css"] = BASE_CSS
+    kw["css"] = BASE_CSS + PAGE_CSS_EXTRA
     return re.sub(r"@@(\w+)@@", lambda m: kw[m.group(1)], PAGE)
 
 

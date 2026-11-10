@@ -163,6 +163,7 @@ def cost_block(rows, region):
         item = r["item"] + (f"（{r['payee']}）" if r["payee"] and r["payee"] != "—" else "")
         if r["source"].startswith("http"):
             item += f" [出典]({safe_url(r['source'])})"
+        item += f" `{r['id']}`"  # 行ID（要否の判断をページをまたいで結びつけるための印。HTMLでは小さな表示になる）
         body.append([item, r["status"], _local(r)] + [yen(r["est"][s]) for s in SCEN])
     t = region_totals(rows, region)
     for label, key in (("**小計：公開価格表からの匿名の見積（見積と未確認の合計）**", "all"), ("うち 見積（出典あり）", "見積"), ("うち 未確認（出典なし・推定）", "未確認")):
