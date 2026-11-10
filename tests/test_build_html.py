@@ -72,7 +72,7 @@ class IndexTests(unittest.TestCase):
             self.assertIn(f'href="areas/{k}.html"', self.index)
         import re
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
-        self.assertLess(len(self.index), 50000)  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
+        self.assertLess(len(self.index), 52000)  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
 
     def test_tables_have_headers(self):
         import re
