@@ -181,3 +181,4 @@
 - 取得失敗：外務省 anzen.mofa.go.jp（403）、在マダガスカル日本国大使館（403）、Air Madagascar公式（403）。WHO Disease Outbreak News一覧（内容なし）。
 - 未取得：Kenya Airways、Air Mauritius、Ethiopian、Airlinkの現行時刻表。ペストの公式な流行期。国内線運賃。
 - 外部送信・予約・問い合わせ：未実施。
+- 洗い直し（2026-11-10）：Air Madagascar の公式サイト airmadagascar.com は、ブラウザ風の User-Agent で取得できた（これまで403と記載）。`/en/our-destinations` に、国際線としてモーリシャス（MRU）、国内線としてモロンダバ（MOQ）・トリアラ（TLE）・サント・マリー島（SMS）・ノシ・ベなどが載ることを確認した。便数・所要時間・運賃・時刻表は記載がなく、国内線の運賃と5月の運航日は**未確認のまま**。予約画面（動的）の中でのみ表示されると見られ、検索・予約は行っていない。

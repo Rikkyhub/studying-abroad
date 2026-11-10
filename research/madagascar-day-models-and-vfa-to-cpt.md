@@ -124,3 +124,4 @@
 | kayak.co.jp（VFA→CPT） | 404 |
 | murc-kawasesouba.jp | MGA・BWP・ZMW・MUR は一覧になし |
 | WebSearch | この環境では使えなかった |
+- 再確認（2026-11-10）：Proflight Zambia の公式サイト proflight-zambia.com の `/flights/flights-from-livingstone/` と `/flights/flights-to-cape-town/` の時刻表を再取得し、本書 2.1 の表と**一致**することを確認した。P0 050（月・水・土 08:40→11:40）は 2027-05-01〜06-23 だけ月曜のみ、P0 054（金 12:05→15:05）は 2026-12-11 から無期限。ルサカ発（P0 050 07:15→11:40、P0 054 10:40→15:05）も同じ曜日で、『その他の曜日は、ヨハネスブルグ経由の提携（flySafair・SAA・Cemair）』と公式に記載。変更は発生していない。
