@@ -10,6 +10,10 @@
 
 首都ルサカ、公用語英語、通貨クワチャ（以上は一般知識で、本調査では出典未取得）。5月は雨季明け〜乾季入り（気候は出典未取得）。ビクトリアの滝・KAZA UNIVISA の拠点としてジンバブエ側と組み合わせる想定。公園入場料の公式表（2025年版、国際訪問者：Mosi-oa-Tunya USD 10、South Luangwa・Lower Zambezi USD 25、Kafue USD 20 など。https://www.zambiatourism.com/park-entry-fees/ 、2026-11-09確認、2027年は未確認）。旧記載：（2025年版と明記、数値は今回未抽出）。
 
+## おおよその位置の地図
+
+@@COUNTRY-MAP@@
+
 ## 主な観光地
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 出典URL（区分） |

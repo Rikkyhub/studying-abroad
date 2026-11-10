@@ -28,6 +28,7 @@ SCHEMAS = {
                          "world_pos", "africa_pos", "provisional",
                          "label_dx", "label_dy", "label_anchor", "world_label_dx", "world_label_dy", "world_label_anchor"],
     "routes.csv": ["route_id", "route_name_ja", "seq", "from_point", "to_point", "mode", "status", "unconfirmed", "note"],
+    "country_places.csv": ["slug", "id", "name_ja", "name_en", "kind", "lat", "lon", "source_url", "note"],
 }
 NUMERIC = {
     "expenses.csv": ["low_local", "std_local", "high_local"],
@@ -54,6 +55,7 @@ ENUMS = {
     ("route_points.csv", "kind"): {"airport", "city", "park", "border", "sea"},
     ("route_points.csv", "provisional"): {"Y", "N"},
     ("routes.csv", "mode"): {"flight", "overland", "ferry", "sea"},
+    ("country_places.csv", "kind"): {"city", "park", "lake", "falls", "coast", "site"},
     ("routes.csv", "status"): {"候補", "空港乗継のみ", "非推奨"},
     ("routes.csv", "unconfirmed"): {"Y", "N"},
 }
@@ -74,7 +76,7 @@ def load(name):
         ERRORS.append(f"{name}: required columns are missing: {missing}")
         return []
     out, seen = [], set()
-    key = {"fx.csv": "currency", "meta.csv": "key", "routes.csv": "_leg"}.get(name, "id")
+    key = {"fx.csv": "currency", "meta.csv": "key", "routes.csv": "_leg", "country_places.csv": "_place"}.get(name, "id")
     for n, values in enumerate(rows, 2):
         if not any(v.strip() for v in values):
             continue
@@ -82,7 +84,7 @@ def load(name):
             ERRORS.append(f"{name}:{n}: CSV column count mismatch ({len(values)} != {len(header)}). セル内の半角カンマを確認")
             continue
         row = {h: v.strip() for h, v in zip(header, values)}
-        k = (row["route_id"] + "-" + row["seq"]) if key == "_leg" else row.get(key, "")
+        k = (row["route_id"] + "-" + row["seq"]) if key == "_leg" else (row["slug"] + "/" + row["id"]) if key == "_place" else row.get(key, "")
         if not k or k in seen:
             ERRORS.append(f"{name}:{n}: missing/duplicate {key} {k!r}")
         seen.add(k)
@@ -250,6 +252,16 @@ def main():
             if not row["rate_date"] or not row["rate_kind"] or not HTTP_URL.match(row["source"]):
                 ERRORS.append(f"{label}: a rate needs rate_date, rate_kind and an http(s) source")
     check_routes(loaded["route_points.csv"], loaded["routes.csv"])
+    for n, row in loaded["country_places.csv"]:
+        label = f"country_places.csv:{n}"
+        for col, lim in (("lat", 90), ("lon", 180)):
+            try:
+                if not -lim <= float(row[col]) <= lim:
+                    raise ValueError
+            except ValueError:
+                ERRORS.append(f"{label}:{col}: must be a number in -{lim}..{lim}")
+        if not row["name_ja"] or not HTTP_URL.match(row["source_url"]):
+            ERRORS.append(f"{label}: name_ja and an http(s) source_url are required")
     if ERRORS:
         for err in ERRORS:
             print("ERROR:", err, file=sys.stderr)

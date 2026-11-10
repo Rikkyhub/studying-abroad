@@ -10,6 +10,10 @@
 
 インド洋の島国。首都ポートルイス、通貨はモーリシャス・ルピー（MUR。公式の円換算レートが取れないため円換算しない）。空港コードはMRU。マダガスカルの東方にあり、Air Mauritiusが首都アンタナナリボ（TNR）へ直行便を案内している（[countries/madagascar.md](madagascar.md) の接続の節）。5月の周遊では、マダガスカルへの乗継点、または2〜4日の観光先として検討中。国数に数えるのは**入国して観光する場合だけ**（空港での乗継のみは数えない。[research/may-madagascar-vfa-redesign.md](../research/may-madagascar-vfa-redesign.md)）。
 
+## おおよその位置の地図
+
+@@COUNTRY-MAP@@
+
 ## 主な観光地
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 公式URL |
