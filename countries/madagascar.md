@@ -64,7 +64,7 @@
 
 ## 安全・健康
 
-外務省危険情報（2025-11-26発出、今回再取得）: 国全体でレベル1（十分注意）。デモ・道路封鎖の可能性、強盗・スリ・ひったくり、身代金目的の誘拐が多発。感染症危険情報は出ていない。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_119.html
+外務省危険情報（2025-11-26発出、2026-11-09に公式ページで再確認、https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_119.html （外務省 海外安全ホームページ、公式、2026-11-09確認））: 国全体でレベル1（十分注意）。デモ・道路封鎖の可能性、強盗・スリ・ひったくり、身代金目的の誘拐が多発。感染症危険情報は出ていない。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_119.html
 CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/travel/destinations/traveler/none/madagascar
 
 ## 行き方・移動

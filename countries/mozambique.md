@@ -48,7 +48,7 @@
 
 ## 安全・健康
 
-外務省危険情報（2025-07-04発出、今回再取得）: カーボデルガード州（ペンバ市を除く）とナンプラ州メンバ郡・エラーティ郡はレベル3（渡航中止勧告）、ペンバ市とニアッサ州メクーラ郡はレベル2、首都マプトを含むその他はレベル1（引き下げ）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html
+外務省危険情報（2025-07-04発出、2026-11-09に公式ページで再確認、https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html （外務省 海外安全ホームページ、公式、2026-11-09確認））: カーボデルガード州（ペンバ市を除く）とナンプラ州メンバ郡・エラーティ郡はレベル3（渡航中止勧告）、ペンバ市とニアッサ州メクーラ郡はレベル2、首都マプトを含むその他はレベル1（引き下げ）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html
 CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全域）。https://wwwnc.cdc.gov/travel/destinations/traveler/none/mozambique
 
 ## 行き方・移動
