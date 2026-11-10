@@ -20,7 +20,7 @@
 | カツェ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Katse+Dam+Lesotho) | ダムとポニートレッキング（Wikivoyage） | 未確認 | 未確認 | 未確認 |
 | セハバテベ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Sehlabathebe+National+Park) | 遠隔の山岳保護区。岩絵・滝・ハイキング（Wikivoyage） | 未確認 | 未確認 | 未確認 |
 | モリヤ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Morija+Museum+Lesotho) | 博物館、恐竜の足跡（Wikivoyage） | 未確認 | 未確認 | 未確認 |
-| アフリスキー | [検索リンク](https://www.google.com/maps/search/?api=1&query=Afriski+Mountain+Resort) | スキー場。スキー期は6〜9月、夏は山岳アクティビティ（Wikivoyage） | 未確認 | 5月はスキー期の前 | 未確認 |
+| アフリスキー | [検索リンク](https://www.google.com/maps/search/?api=1&query=Afriski+Mountain+Resort) | スキー場。スキー期は6〜9月、夏は山岳アクティビティ（Wikivoyage） | スノーパス（リフト・ゲレンデ必須）2026年冬：1日 M650、2日 M975、3日 M1,365、4日 M1,690、5日 M1,950。ヘルメット M100。レッスン付き初心者1日 M1,450（Afriski公式の2026年冬の料金表。『M』はロティと読めるが通貨の明記なし。2027年は未確認） | 5月はスキー期の前。T-バーのリフトは風速47km/h超で停止、返金なし | https://afriski.africa/winter-activities/ （公式、2026-11-10確認） |
 
 ## おすすめの食べ物
 
@@ -32,7 +32,7 @@ Wikivoyage Lesotho の「Eat」は具体的な郷土料理名を挙げておら�
 
 ## 安全・健康
 
-外務省: 危険情報は出ていない（今回再取得で確認、ページ更新日2025-08-22）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_130.html マラリア・黄熱は存在しない（Wikivoyage）。FORTH上も黄熱リスク国ではない（既存資料）。HIV罹患率が高い（Wikivoyage、年度不明）。マセルの夜間の独り歩きは危険（Wikivoyage）。CDC個別ページは未取得。
+外務省: **危険情報は出ていない**（2026-11-09に再取得して確認。『現在、危険情報は出ておりません』『現在、感染症危険情報は出ておりません』）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_130.html マラリア・黄熱は存在しない（Wikivoyage）。FORTH上も黄熱リスク国ではない（既存資料）。HIV罹患率が高い（Wikivoyage、年度不明）。マセルの夜間の独り歩きは危険（Wikivoyage）。CDC個別ページは未取得。
 
 ## 行き方・移動
 
@@ -40,7 +40,7 @@ Wikivoyage Lesotho の「Eat」は具体的な郷土料理名を挙げておら�
 
 ## 未確認事項
 
-- 入場料・体験料: 観光局サイトに接続できなかった。
+- 入場料・体験料: 観光局サイトに接続できなかった。Afriski のスノーパス等は公式の2026年冬の料金表で確認できた（2027年は未確認）。マリバマツォ・ロッジの宿泊・活動も公式PDFで確認済み。
 - 料理: 出典で料理名を確認できなかった。
 - ビザ本文の再検証、CDCの個別ページ。
 

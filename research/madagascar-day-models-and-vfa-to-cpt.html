@@ -148,6 +148,9 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 }
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 @media(max-width:640px){
+nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+nav.toc .label{grid-column:1/-1}
+nav.toc a{display:block;padding:4px 0;line-height:1.45;overflow-wrap:anywhere}
 .route-t tr.fix{display:block;border:0;background:color-mix(in srgb,var(--link) 10%,transparent)!important;margin:0 0 8px}
 .route-t tr.fix td{display:block;padding:6px 12px;border:0;text-align:left}
 .route-t tr.fix td:empty{display:none}
@@ -217,8 +220,9 @@ table.cost tr.sub td{display:inline-block;padding:2px 8px 2px 0!important;border
 <hr>
 <h2 id="5-未確認次の取得先">5. 未確認（次の取得先）</h2>
 <div class="scroll"><table><thead><tr><th>#</th><th>項目</th><th>次の取得先</th></tr></thead><tbody><tr><td data-label="#">1</td><td data-label="項目">MGA・BWP・ZMW の円換算レート</td><td data-label="次の取得先">銀行の相場に載らない通貨の公的な参考レート</td></tr><tr><td data-label="#">2</td><td data-label="項目">Madagascar Airlines の国内線運賃（TNR⇄MOQ ほか）</td><td data-label="次の取得先">公式サイト（403で取得不可）。旅行会社の見積</td></tr><tr><td data-label="#">3</td><td data-label="項目">アンダシベ・マンタディアのガイド料・入園料の等級</td><td data-label="次の取得先">MNPの料金資料（画像／PDF）</td></tr><tr><td data-label="#">4</td><td data-label="項目">LVI→CPT の片道運賃と座席、変更取消条件</td><td data-label="次の取得先">Proflight の予約画面</td></tr><tr><td data-label="#">5</td><td data-label="項目">VFA→CPT・カサネ→CPT の直行の有無</td><td data-label="次の取得先">Airlink の予約画面</td></tr><tr><td data-label="#">6</td><td data-label="項目">2027年5月の月曜・金曜便の実際の運航と、ケープタウン到着日の余裕</td><td data-label="次の取得先">Proflight の予約画面</td></tr></tbody></table></div>
-<h2 id="6-調査ログ2026-11-08">6. 調査ログ（2026-11-08）</h2>
+<details class="sec"><summary><h2 id="6-調査ログ2026-11-08">6. 調査ログ（2026-11-08）</h2></summary>
 <div class="scroll"><table><thead><tr><th>取得先</th><th>結果</th></tr></thead><tbody><tr><td data-label="取得先">proflight-zambia.com（リビングストン発・ルサカ発・手荷物）</td><td data-label="結果">成功。LVI→CPT の曜日・時刻・運航期間、往復運賃の目安、手荷物規則</td></tr><tr><td data-label="取得先">flyairlink.com（トップ、/network）</td><td data-label="結果">成功。就航先に VFA・LVI・BBK・MUB・CPT・JNB。路線ペアの記載なし</td></tr><tr><td data-label="取得先">en.wikivoyage.org（Morondava、Antananarivo）</td><td data-label="結果">成功。空路は毎日・約1時間（運賃なし）、陸路55,000Ar、宿・食事の価格</td></tr><tr><td data-label="取得先">airmadagascar.com</td><td data-label="結果">403。国内線運賃は未取得</td></tr><tr><td data-label="取得先">kayak.co.jp（VFA→CPT）</td><td data-label="結果">404</td></tr><tr><td data-label="取得先">murc-kawasesouba.jp</td><td data-label="結果">MGA・BWP・ZMW・MUR は一覧になし</td></tr><tr><td data-label="取得先">WebSearch</td><td data-label="結果">この環境では使えなかった</td></tr></tbody></table></div>
+<ul><li><details class="more"><summary>再確認（2026-11-10）：Proflight Zambia の公式サイト proflight-zambia.com の /flight…<span class="hint">（全文を開く）</span></summary><div class="full">再確認（2026-11-10）：Proflight Zambia の公式サイト proflight-zambia.com の <code>/flights/flights-from-livingstone/</code> と <code>/flights/flights-to-cape-town/</code> の時刻表を再取得し、本書 2.1 の表と<strong>一致</strong>することを確認した。P0 050（月・水・土 08:40→11:40）は 2027-05-01〜06-23 だけ月曜のみ、P0 054（金 12:05→15:05）は 2026-12-11 から無期限。ルサカ発（P0 050 07:15→11:40、P0 054 10:40→15:05）も同じ曜日で、『その他の曜日は、ヨハネスブルグ経由の提携（flySafair・SAA・Cemair）』と公式に記載。変更は発生していない。</div></details></li></ul></details>
 <script>
 (function(){
 function openFor(el){for(var d=el&&el.closest?el.closest("details"):null;d;d=d.parentElement&&d.parentElement.closest("details")){d.open=true}}

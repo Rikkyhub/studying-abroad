@@ -42,7 +42,7 @@
 
 ## 安全・健康
 
-外務省: 危険情報は出ていない（今回再取得で確認）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_281.html CDC: 一部地域でマラリア予防薬を推奨（地域は地図参照、本回は精査せず）。https://wwwnc.cdc.gov/travel/destinations/traveler/none/eswatini
+外務省: **危険情報は出ていない**（2026-11-09に公式ページで再確認。『現在、危険情報は出ておりません』『現在、感染症危険情報は出ておりません』）。https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_281.html CDC: 一部地域でマラリア予防薬を推奨（地域は地図参照、本回は精査せず）。https://wwwnc.cdc.gov/travel/destinations/traveler/none/eswatini
 
 ## 行き方・移動
 

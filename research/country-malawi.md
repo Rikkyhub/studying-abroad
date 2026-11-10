@@ -36,7 +36,7 @@
 | リコマ島／チズムル島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Likoma%20Island%20Malawi) | 水中生物で知られ、モザンビークへの裏口。公共フェリーは週1〜2回 | 未確認 | フェリー運行日は流動的 | https://en.wikivoyage.org/wiki/Lake_Malawi （準公式） |
 | カンデ／チンテチェ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kande%20Beach%20Malawi) | カンデ・ビーチ（ンカタベイ南約40 km）：キャンプ USD 5、ドミ USD 10、シャレー USD 25〜50。乗馬。チンテチェは情報なし | 左記（Wikivoyage、年度不明） | 未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （準公式） |
 | リウォンデ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Liwonde%20National%20Park) | 550 km²、シレ川沿い。カバ・ゾウ・魚鷲。ボートサファリ、4WDゲームドライブ、ウォーキング | 日帰り入園 USD 25（国際訪問者・成人）／USD 12（子ども）／車両 USD 4/日。年度不明（Wikivoyage）。**公式（African Parks）は403で取得不可**。ロッジ泊は料金込みの旨 | 乾季は動物が川に集まり良い（Wikivoyage）。5月は乾季入りで適性は高いと推計。乾季初期は草丈が高い可能性は未確認 | https://en.wikivoyage.org/wiki/Liwonde_National_Park （準公式） |
-| マジェテ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Majete%20Wildlife%20Reserve) | ブランタイヤ近郊。Wikivoyageは項目名のみ。観光局は「ビッグ5」と案内 | **未確認**（African Parks 403） | 未確認 | https://www.malawitourism.com/ （公式） |
+| マジェテ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Majete%20Wildlife%20Reserve) | ブランタイヤ近郊。Wikivoyageは項目名のみ。観光局は「ビッグ5」と案内 | **2027年の公式料金（USD）**：公園入場料（1人1日）＝国際／アフリカ他国の大人 **33**、7〜12歳 16.50、0〜6歳 無料。SADC・外国人居住者の大人 17、7〜12歳 9。マラウイ国民の大人 6。車両入場料 6／台／日（全車）。ゲームドライブ 35（国際）、日没のゲームドライブ 40、ガイド付き歩行 88（2〜3時間、4〜8人）、川のボート（季節により）、ホップオン・ガイド（自車に同乗）、スカウト（ガイド同行の係員）半日 30／全日 50 | 未確認 | https://visitmajete.org/wp-content/uploads/sites/2/2026/09/Majete-Park-Fees-Activities-2027.pdf （マジェテ野生動物保護区＝African Parks 運営、公式、『Park Fees & Activities 2027』。2026-11-09に pdftotext で読み取り）。観光局は『ビッグ5』と案内（https://www.malawitourism.com/ ） |
 | ヴワザ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Vwaza%20Marsh%20Wildlife%20Reserve) | 北部。今回取得した資料に記載なし | **未確認** | 未確認 | （出典なし） |
 | ムランジェ山（Mulanje） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mount%20Mulanje%20Malawi) | 最高峰Sapitwa 3,002 m（技術的登攀なし、強度は高い）。山小屋、ガイド・ポーター手配（InfoMulanje／Likhubula Forestry Station） | 山小屋・ガイド料は**未確認**。麓の宿 MWK 35,000/泊（Hiker's Nest・個室・朝食付き、年度不明、Wikivoyage） | 乾季でトレッキング適期と推計。確認できる気候記載なし | https://en.wikivoyage.org/wiki/Mount_Mulanje （準公式） |
 | ゾンバ高原 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Zomba%20Plateau%20Malawi) | 旧植民地首都の背後の高原。ハイキング、展望 | **未確認** | 未確認 | https://en.wikivoyage.org/wiki/Malawi （準公式） |
@@ -171,7 +171,7 @@
 ## 9. 安全・健康
 
 ### 外務省
-- 危険レベル：**未確認**。外務省海外安全ホームページ（anzen.mofa.go.jp）が今回の取得でHTTP 403のため、マラウイのレベルを取得できなかった。既存資料 africa-overland-7-9-countries.md は2026-07-03更新・警告区分なしと記載（既存資料からの転記、本調査では再取得できず）。
+- 危険レベル（公式、2026-10-06発出・2026-11-09確認）：**全土レベル1（十分注意）**。理由は、窃盗・ひったくり・建造物侵入などの軽犯罪（日本人の被害の大半はリロングウェとブランタイヤ）、デモの暴徒化、慢性的な電力不足で街灯が消える中の置き石による車の停止・襲撃。夜間の外出は避ける。出典：https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_120.html （外務省 海外安全ホームページ、公式、2026-11-09確認）。旧記載（取得できなかった）：既存資料 africa-overland-7-9-countries.md は2026-07-03更新・警告区分なしと記載（既存資料からの転記、本調査では再取得できず）。
 - 出発直前に外務省ページで再確認すること。
 
 ### 英国FCDO（参考、2026-11-08確認、20 Oct 2026更新）
@@ -195,9 +195,9 @@
 ## 10. 未確認事項
 
 - eVisa 単一入国の料金（入管局ページ USD 75、eVisaポータルFAQと観光局のビザガイドが USD 50で、USD 50が優勢。入管局のページが古い可能性があるが未確認）と、日本国籍が到着ビザで払う額（公告は料金を記載せず）。日本の扱い自体は、公式ポータルの公告とカテゴリー2の一覧で「到着ビザ取得可」と確認できた。2026年に日本人対象の制度変更があるとのIssue記載は公式で確認できず（既存資料）。
-- 外務省の危険レベルとマラウイ情勢（403）。
+- マラウイ情勢の2027年時点の変化（外務省の危険レベルは2026-10-06発出で全土レベル1と確認済み）。
 - 燃料不足の最新度合い、停電の最新状況。
-- 公園公式料金（リウォンデ、マジェテ、ヴワザ、ムランジェ、ゾンバ）。African Parks 各ページは403。
+- 公園公式料金（リウォンデ、ヴワザ、ムランジェ、ゾンバ）。マジェテは2027年の公式料金表で確認済み（USD 33/人/日）。リウォンデの公式サイト（visitliwonde.org）は日帰りページに金額がなく、料金表PDFも見つからなかった。
 - Wikivoyageの宿泊・ダイビング料金の適用年度。
 - 5月のマラウイ湖の透明度・水温・ダイビング条件。
 - 国際線・国内線の運賃と2027年5月の運航。
@@ -232,3 +232,5 @@
 - 学び：Wikivoyageの料金は年度不明のため全て「参考」扱い。Vwazaは取得資料に記載なし。
 - 再取得（2回目・2026-11-08）：immigration.gov.mw の visa-fees／types-of-malawi-visa／apply-for-visa と、evisa.gov.mw の トップ・Faq・Services・VisaAssistance を取得。2026-02-24付の公告（到着ビザ：カテゴリー2は取得可、カテゴリー1は事前査証）を確認し、`/PDFs/CategoryTwoCountries.pdf`（79. Japan）と `/PDFs/CategoryOneCountries.pdf`（47か国）を `pdftotext` で読み取った。公告ページの `/CategoryTwoCountries.pdf` 等の直下URLは404で、実際の保存先は `/PDFs/` だった。
 - 再確認（3回目・2026-11-09）：マラウイ観光局の公式サイトのうち `/visa-guide/` を WebFetch で取得（https://www.malawitourism.com/visa-guide/ （マラウイ観光局、公式、2026-11-09確認））。eVisa の料金は、トランジット USD 50（7日）、単一入国 USD 50（発行から3か月以内に使用）、複数入国 6か月 USD 150／12か月 USD 250。到着時ビザの料金は記載なし。『2026年1月2日から、ほとんどの国籍にビザが必要。2024年に導入した免除は廃止』との記載を確認。日本が到着時ビザの対象かの記載は本ページにはなく、『Visas On Arrival List』『Visas in Advance List』という Dropbox 上の文書へのリンクだけがあり、本書では開いていない（既存の evisa.gov.mw の PDF で、日本はカテゴリー2＝到着ビザ可と確認済み）。`/experiences/wildlife/` には公園の料金の記載がなく、liwondenationalpark.com は『Independent Guides』の独立サイトのため公式として扱わない。African Parks のページは引き続き403。
+- 洗い直し（4回目・2026-11-09）：African Parks のページ（africanparks.org/the-parks/liwonde・majete）は、ブラウザ風の User-Agent と Referer を付けると200で取得できた（これまで403）。公式の訪問者サイト visitmajete.org の『Day Visitors』ページに『Download 2027 Rates』のリンクがあり、`Majete-Park-Fees-Activities-2027.pdf` を取得して `pdftotext -raw` で読み取った（上の表）。リウォンデの visitliwonde.org は『Day Visitors』に自走・ガイド・開園時間（6:00〜18:00）の記載はあるが料金の金額なし。公開のメディア一覧にも公園料金のPDFはなく、チムワラ・キャンプなど宿の料金表（2023〜2025年）だけだった。Liwonde の入園料 USD 25 は引き続き Wikivoyage（年度不明）のまま。
+- 洗い直し（2026-11-09）：外務省 海外安全ホームページの `pcinfectionspothazardinfo_120.html` を通常の取得で読み、危険レベルを確認した（これまで403で『取得不可』としていた記載を更新）。

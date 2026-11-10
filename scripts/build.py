@@ -531,6 +531,12 @@ def render_all(S, rows, tasks, articles, timeline, fx, problems):
     out[fermi_path] = apply_auto(
         fermi_path.read_text(encoding="utf-8").replace("\r\n", "\n"),
         {"fermi_summary": render_summary_md(ROOT)})
+    # The August comparison is generated even while no route is selected.
+    from august_budget import SOURCE as AUGUST_SOURCE, render_summary_md as render_august
+    aug_path = ROOT / AUGUST_SOURCE
+    out[aug_path] = apply_auto(
+        aug_path.read_text(encoding="utf-8").replace("\r\n", "\n"),
+        {"august_country_summary": render_august(ROOT)})
     # 地域別ページ（areas/*.md）。手書きの導入文はそのまま、AUTO ブロックだけを作り直す
     pages, places, fx_records = read_csv("pages.csv"), read_csv("places.csv"), read_csv("fx.csv")
     for region in areas.REGION_LABEL:
@@ -554,6 +560,10 @@ def load_model():
     # Apply in memory; do not modify or require any extra user-managed CSV.
     from fermi_budget import apply_to_expenses
     expenses = apply_to_expenses(expenses, ROOT)
+    # August Markdown lists alternative routes. Only a named selected route
+    # enters the global budget, so alternatives never accumulate together.
+    from august_budget import apply_to_expenses as apply_august
+    expenses = apply_august(expenses, ROOT)
     tasks = read_csv("tasks.csv")
     articles = read_csv("articles.csv")
     timeline = read_csv("timeline.csv")

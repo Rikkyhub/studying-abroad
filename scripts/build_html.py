@@ -222,7 +222,7 @@ def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
             def cell(tag, c, k):
                 a = aligns[k] if k < len(aligns) else ""
                 st = f' class="{"n" if a == "right" else "c"}"' if a else ""
-                if tag == "td" and k < len(head):
+                if tag == "td" and k < len(head) and head[:1] != ["費用区分"]:  # 費用区分の小計表（4列・数字だけ）は携帯でも表のまま
                     st += f' data-label="{html.escape(re.sub(r"<[^>]+>|\*\*", "", head[k]).replace("&lt;br&gt;", " ").strip(), quote=True)}"'  # 携帯幅のカード表示で列名を出す
                 body_html = inline(c)
                 if tag == "td" and k > 0 and a != "right":  # 先頭列（項目名）と数値列は畳まない
@@ -1371,6 +1371,9 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 
 # トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
 PAGE_CSS_EXTRA = """@media(max-width:640px){
+nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+nav.toc .label{grid-column:1/-1}
+nav.toc a{display:block;padding:4px 0;line-height:1.45;overflow-wrap:anywhere}
 .route-t tr.fix{display:block;border:0;background:color-mix(in srgb,var(--link) 10%,transparent)!important;margin:0 0 8px}
 .route-t tr.fix td{display:block;padding:6px 12px;border:0;text-align:left}
 .route-t tr.fix td:empty{display:none}
