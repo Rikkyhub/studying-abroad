@@ -1,12 +1,14 @@
 # D案（ナミビアなし）：JNB→レソト／エスワティニ／モザンビーク→ジンバブエ陸路周遊の検証（Issue #53）
 
+> **過去の比較案（参考）**：5月の周遊は、現在は「案G」（日本→ムンバイ→モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウン）が最新の方針です。この資料は案Gより前の比較で、**そのまま使わないでください**。最新の費用は [航空券・費用](../docs/12-flights.md)、ルートは [ルート作成](../docs/11-route-builder.md) を見てください。
+
 **調査日・確認日：2026-10-20 / 想定：2027年5月、日本の一般旅券、1名、マニラ(MNL)発の匿名モデル（28〜35日、CPT着）。** Issue [#53](https://github.com/Rikkyhub/studying-abroad/issues/53)（関連 #51 #23 #38 #44 #2 #7 #8 #49）。
 
 > **調査版であり、予約・購入・確定旅程ではない。** 日付は使わず **Day N**（Day 1 = MNL発）の相対日だけで書く。予算の60万円は匿名モデルの枠であって個人の確定予算ではない（[公開データ方針](../docs/05-public-data-policy.md)）。2026年の掲載内容を2027年の確定値とは扱わない。
 >
 > ラベル：**確認済み**＝公式・運営者ページを確認日に取得して読めた事実 / **推計**＝式を併記した見積り / **未確認**＝取得できなかった・裏付けがない（0円や推測値で埋めない）。
 >
-> 比較の基準は2つの別資料（本ブランチの時点で main に未収録のため文字だけで示す）：Issue #51 の3ルート比較（may-three-routes-comparison.md。Airlink 2024年6月版時刻表の読取りを含む）と、PR #52 の Deep Research 資料（africa-2027-may-three-route-deep-research.md。改善C＝研究参考40〜52万円）。両者は出発地・日数の条件が違うため、金額は混ぜずに「差分」で扱う。既存資料：[southern-africa-countries.md](southern-africa-countries.md)（#38）、[safety-and-health.md](safety-and-health.md)、[visa-and-immigration.md](visa-and-immigration.md)。
+> 比較の基準は2つの別資料（本ブランチの時点で main に未収録のため文字だけで示す）：Issue #51 の3ルート比較（archive-may-three-routes-comparison.md。Airlink 2024年6月版時刻表の読取りを含む）と、PR #52 の Deep Research 資料（archive-africa-2027-may-three-route-deep-research.md。改善C＝研究参考40〜52万円）。両者は出発地・日数の条件が違うため、金額は混ぜずに「差分」で扱う。既存資料：[southern-africa-countries.md](southern-africa-countries.md)（#38）、[safety-and-health.md](safety-and-health.md)、[visa-and-immigration.md](visa-and-immigration.md)。
 
 ---
 

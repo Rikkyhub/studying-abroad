@@ -195,7 +195,7 @@
 | 余裕 | 1人部屋Aの料金。ビザ延長が上の料金区分になる場合 | ルートC：19日間のオーバーランド | Intensive コース＋ホームステイ（専用バス） | 狂犬病・黄熱も接種 |
 
 ルートと学校の詳細:
-- [research/africa-trip.md](../research/africa-trip.md)
+- [research/archive-africa-trip.md](../research/archive-africa-trip.md)
 - [research/second-school.md](../research/second-school.md)
 - [research/philippines-pines.md](../research/philippines-pines.md)
 
