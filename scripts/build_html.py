@@ -426,7 +426,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     if "@@DAY-PLANNER@@" in md:
         body = body.replace("@@DAY-PLANNER@@", PLANNER_HTML)
     if "data-planner" in body:
-        body += "\n" + PLANNER_SCRIPT.replace("@@PRESETS@@", route_presets(root)).replace("@@HINTS@@", planner_hints())
+        body += "\n" + PLANNER_SCRIPT.replace("@@PRESETS@@", route_presets(root)).replace("@@HINTS@@", planner_hints()).replace("@@DAILY@@", planner_daily_costs(root))
     if "data-route" in body:
         body += "\n" + ROUTE_SCRIPT.replace("@@PRESETS@@", route_presets(root)).replace("@@PLACES@@", route_places(root))
     if "data-cost" in body:
@@ -1101,9 +1101,28 @@ def planner_markdown() -> str:
         "移動日を泊数とは別に数えたいときは「移動日」の列に入れます。",
         "- 「確定」にチェックを付けた行は、案を切り替えても残ります。まだ決まっていない場所は「仮」のままにします。",
         "- 一番下に残り日数が出ます。マイナスなら期間に収まっていません。",
+        "- 泊数に国別の1日単価（宿泊＋食費）を掛けた概算を、合計と比較表に出します。単価は[5月アフリカ周遊：数量×仮単価の予算表](../research/africa-budget-fermi.md)の仮定で、実売価格ではありません。航空券・入場料・ツアー代・ビザは含みません。表にない国（ケニアなど）は概算から除きます。",
         "- 日程を組んだら、下の「パターンを保存して比べる」で名前を付けて保存します。保存したパターンは経路・使った日数・残り日数・最終日が一覧で並び、いつでも読み込めます（このブラウザの中だけに残ります。最大12個）。",
         "- 国の欄に国名（例：ケニア、ザンビア）を入れると、泊数の下に比較表の「最適日数（推計）」が目安として出ます。推計であり、確定ではありません。",
         "- 日数の目安は、国ごとの最適日数（比較表）を参照。ここに出る数字は計算結果であり、予約や確定した予定ではありません。", ""]) + "\n"
+
+
+def planner_daily_costs(root: Path = ROOT) -> str:
+    """国名 -> [節約, 標準, 余裕]（1日あたりの宿泊＋食費・円）の JSON。正本は research/africa-budget-fermi.md の編集表。
+    数値は持たず、ビルド時に表から読む。表にない国（ケニアなど）は含めない＝画面では『単価未設定』として概算から除く"""
+    import fermi_budget
+    per: dict = {}
+    for e in fermi_budget.read_assumptions(root):
+        if e["kind"] not in ("宿泊", "食費") or e["unit"] not in ("泊", "日"):
+            continue
+        d = per.setdefault(e["country"], {"宿泊": None, "食費": None})
+        d[e["kind"]] = e["prices"]
+    out = {}
+    for country, d in per.items():
+        if d["宿泊"] and d["食費"]:
+            out[country] = [a + b for a, b in zip(d["宿泊"], d["食費"])]
+    # フェルミ表の国名は『ジンバブエ（Victoria Falls）』のような表記を含むため、国名の部分だけを鍵にする
+    return json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
 def planner_hints() -> str:
@@ -1127,7 +1146,7 @@ PLANNER_HTML = (
     '<h3 class="pl-h">パターンを保存して比べる</h3>'
     '<p class="route-bar"><input type="text" class="pl-name" placeholder="パターンの名前（例：A 滝を長く）" aria-label="パターンの名前"> '
     '<button type="button" class="pl-save">今の日程をパターンとして保存</button></p>'
-    '<div class="scroll"><table class="pl-cmp"><thead><tr><th>パターン</th><th>経路</th><th>使った日数</th><th>残り</th><th>最終日</th><th>操作</th></tr></thead>'
+    '<div class="scroll"><table class="pl-cmp"><thead><tr><th>パターン</th><th>経路</th><th>使った日数</th><th>残り</th><th>最終日</th><th title="泊数×国別の1日単価（宿泊＋食費・標準）。航空券・入場料・ツアーは含まない">宿＋食の概算（標準）</th><th>操作</th></tr></thead>'
     '<tbody></tbody></table></div>'
     '<p class="pl-cmp-empty dim">まだ保存したパターンはありません。日程を組んだら名前を付けて保存すると、ここに並んで残り日数を比べられます。</p></div>')
 
@@ -1136,7 +1155,7 @@ PLANNER_SCRIPT = """<script>
 var KEY="day-planner-v1",root=document.querySelector("[data-planner]");if(!root)return;
 var tb=root.querySelector("tbody"),sumEl=root.querySelector(".pl-sum"),desc=root.querySelector(".route-desc"),totEl=root.querySelector(".pl-total");
 var elS=root.querySelector(".pl-start"),elE=root.querySelector(".pl-end");
-var PRESETS=@@PRESETS@@, HINTS=@@HINTS@@;
+var PRESETS=@@PRESETS@@, HINTS=@@HINTS@@, DAILY=@@DAILY@@;
 var st={start:"2027-05-03",end:"2027-06-06",preset:"",rows:[],pats:[]};
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
@@ -1191,6 +1210,14 @@ function calc(rows,sStr,eStr){
  var total=Math.round((e-s)/DAY),cur=s,used=0;
  rows.forEach(function(r){cur+=(num(r.travel)+num(r.nights))*DAY;used+=num(r.nights)+num(r.travel)});
  return {total:total,used:used,left:total-used,last:cur}}
+function cost(rows){
+ var t=[0,0,0],miss=[];
+ rows.forEach(function(r){var n=num(r.nights);if(!n)return;
+  var c=(r.country||"").trim(),d=DAILY[c]||DAILY[c.replace(/（.*$/,"")];
+  if(!d){if(c&&miss.indexOf(c)<0)miss.push(c);return}
+  for(var k=0;k<3;k++)t[k]+=n*d[k]});
+ return {t:t,miss:miss}}
+function yen(n){return "¥"+Math.round(n).toLocaleString("ja-JP")}
 function route(rows){return rows.map(function(r){return (r.place||"").replace(/（仮）/g,"").trim()}).filter(Boolean).join(" → ")}
 var cmpBody=root.querySelector(".pl-cmp tbody"),cmpEmpty=root.querySelector(".pl-cmp-empty"),cmpWrap=root.querySelector(".pl-cmp").parentNode;
 function paintCmp(){
@@ -1202,6 +1229,8 @@ function paintCmp(){
   td(c?c.used+"日":"－","使った日数");
   var l=td(c?(c.left>=0?c.left+"日":"超過 "+(-c.left)+"日"):"－","残り");if(c&&c.left<0)l.className="over";
   td(c?fmt(c.last):"－","最終日");
+  var cc=cost(p.rows),ct=td(cc.t[1]?yen(cc.t[1])+(cc.miss.length?"＋α":""):"－","宿＋食の概算（標準）");
+  if(cc.miss.length)ct.title="単価がない国は除いています："+cc.miss.join("、");
   var op=document.createElement("td");op.className="ops";op.setAttribute("data-label","操作");
   [["読込","このパターンを今の日程に読み込む"],["×","削除"]].forEach(function(b){var bt=document.createElement("button");bt.type="button";bt.textContent=b[0];bt.title=b[1];bt.setAttribute("aria-label",b[1]);
    bt.addEventListener("click",function(){
@@ -1228,6 +1257,9 @@ function paint(){
  var fixedDays=st.rows.reduce(function(a,r){return a+(r.fixed?num(r.nights)+num(r.travel):0)},0);
  var line="使った日数："+used+"／全体"+total+"（確定 "+fixedDays+" ＋ 仮 "+(used-fixedDays)+"）　";
  line+=left>=0?"残り："+left+"日（"+fmt(cur)+" 以降に使える）":"超過："+(-left)+"日（"+fmt(e)+"までに収まっていません）";
+
+ var cs=cost(st.rows);
+ if(cs.t[1]){line+="　宿＋食の概算（標準）："+yen(cs.t[1])+"（節約 "+yen(cs.t[0])+"〜余裕 "+yen(cs.t[2])+"）";if(cs.miss.length)line+="　※単価がない国は除外："+cs.miss.join("、")}
  sumEl.textContent=line;sumEl.className="pl-sum"+(left<0?" over":"")}
 root.querySelector(".pl-save").addEventListener("click",function(){
  var nm=root.querySelector(".pl-name"),name=(nm.value||"").trim()||("パターン"+(st.pats.length+1));
