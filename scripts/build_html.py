@@ -222,7 +222,7 @@ def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
             def cell(tag, c, k):
                 a = aligns[k] if k < len(aligns) else ""
                 st = f' class="{"n" if a == "right" else "c"}"' if a else ""
-                if tag == "td" and k < len(head):
+                if tag == "td" and k < len(head) and head[:1] != ["費用区分"]:  # 費用区分の小計表（4列・数字だけ）は携帯でも表のまま
                     st += f' data-label="{html.escape(re.sub(r"<[^>]+>|\*\*", "", head[k]).replace("&lt;br&gt;", " ").strip(), quote=True)}"'  # 携帯幅のカード表示で列名を出す
                 body_html = inline(c)
                 if tag == "td" and k > 0 and a != "right":  # 先頭列（項目名）と数値列は畳まない

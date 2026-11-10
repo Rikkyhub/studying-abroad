@@ -28,6 +28,20 @@ PHASE_REGION = {"フィリピン": "baguio", "アフリカ周遊": "africa", "�
 REGION_CURRENCIES = {"baguio": ["PHP", "USD"], "africa": ["ZAR", "USD"], "africa-aug": ["ZAR", "USD"], "capetown": ["ZAR"], "common": []}
 SCEN = OrderedDict([("low", "低予算"), ("std", "標準"), ("high", "余裕")])
 DONE = ("完了", "不要")
+# 費用の見せ方の区分（expenses.csv の category は変えず、表示のときだけこの6区分にまとめる）
+COST_GROUPS = ["交通費（飛行機）", "交通費（飛行機以外）", "食費", "宿泊費", "ツアー代（チケット代）", "その他"]
+CATEGORY_GROUP = {
+    "航空券・長距離移動": "交通費（飛行機）",
+    "現地交通費": "交通費（飛行機以外）",
+    "食費・日常生活費": "食費",
+    "寮・ホームステイ・宿泊": "宿泊費",
+    "観光・ツアー・ダイビング": "ツアー代（チケット代）",
+}
+
+
+def cost_group(category):
+    """費目（category）を6つの費用区分へ。対応表にないもの（授業料・ビザ・保険・通信など）は「その他」"""
+    return CATEGORY_GROUP.get(category, "その他")
 KIND_LABEL = {"school": "学校", "sightseeing": "観光", "diving": "ダイビング", "airport": "空港", "hospital": "病院", "other": "その他"}
 MAPS_URL = "https://www.google.com/maps/search/?api=1&query="
 FX_NOTE = ("参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が"
@@ -154,33 +168,50 @@ def _local(r):
     return "－"
 
 
+def group_table(rs):
+    """費用区分ごとの小計（円換算済み。金額のない行は含めない）。区分内の全行が未計上なら「未計上」"""
+    tot = {g: dict.fromkeys(SCEN) for g in COST_GROUPS}
+    for r in rs:
+        if r["no_amount"]:
+            continue
+        g = cost_group(r["category"])
+        for s in SCEN:
+            if r["est"][s] is not None:
+                tot[g][s] = (tot[g][s] or 0.0) + r["est"][s]
+    body = [[g] + [yen(tot[g][s]) for s in SCEN] for g in COST_GROUPS if any(tot[g][s] is not None for s in SCEN)]
+    return "**費用区分ごとの小計**（下の表の「費用区分」列と同じ分け方）\n\n" + md_table(["費用区分", "低予算", "標準", "余裕"], body, aligns=["l", "r", "r", "r"])
+
+
 def cost_block(rows, region):
     rs = region_rows(rows, region)
     if not rs:
         return "この地域に計上された費用はありません。"
     body = []
+    rs = sorted(rs, key=lambda r: COST_GROUPS.index(cost_group(r["category"])))  # 区分の順（同じ区分の中は元の並び）
     for r in rs:
         item = r["item"] + (f"（{r['payee']}）" if r["payee"] and r["payee"] != "—" else "")
         if r["source"].startswith("http"):
             item += f" [出典]({safe_url(r['source'])})"
         item += f" `{r['id']}`"  # 行ID（要否の判断をページをまたいで結びつけるための印。HTMLでは小さな表示になる）
-        body.append([item, r["status"], _local(r)] + [yen(r["est"][s]) for s in SCEN])
+        body.append([item, r["status"], cost_group(r["category"]), _local(r)] + [yen(r["est"][s]) for s in SCEN])
     t = region_totals(rows, region)
     for label, key in (("**小計：公開価格表からの匿名の見積（見積と未確認の合計）**", "all"), ("うち 見積（出典あり）", "見積"), ("うち 未確認（出典なし・推定）", "未確認")):
-        body.append([label, "－", "－"] + [(f"**{yen(t[key][s])}**" if key == "all" else ("－" if t[key][s] is None else yen(t[key][s]))) for s in SCEN])
+        body.append([label, "－", "－", "－"] + [(f"**{yen(t[key][s])}**" if key == "all" else ("－" if t[key][s] is None else yen(t[key][s]))) for s in SCEN])
     # 航空券と現地費の内訳（小計に1回だけ含まれる。トップの「飛行機代」「アフリカ周遊（5月）」カードと同じ分け方）
     air = [r for r in rs if r["category"].startswith("航空券") and not r["no_amount"]]
     if air and len(air) < len([r for r in rs if not r["no_amount"]]):
         a_std = sum(r["est"]["std"] or 0.0 for r in air)
         g_std = sum(r["est"]["std"] or 0.0 for r in rs if not r["no_amount"] and not r["category"].startswith("航空券"))
-        body.append([f"　内訳（標準）：航空券 {yen(a_std)}（トップの「飛行機代」の内数）＋ 航空券以外の現地費 {yen(g_std)}", "－", "－", "－", "－", "－"])
+        body.append([f"　内訳（標準）：航空券 {yen(a_std)}（トップの「飛行機代」の内数）＋ 航空券以外の現地費 {yen(g_std)}", "－", "－", "－", "－", "－", "－"])
     out = ["**低予算・標準・余裕の違い**（同じ旅の3つの見積。行ごとの中身は下の「前提と備考」を参照）",
            "",
            "- **低予算**：同じ内容のまま、安い選択肢で節約した場合（相部屋、公共バス、自炊など）",
            "- **標準**：無理のない普通の選択（個室、シャトル、外食と自炊の併用など）。**合計・予算判定はこの列**",
            "- **余裕**：快適さや時間を優先し、予備を見込んだ場合（1人部屋、送迎つき、外食中心など）",
            "",
-           md_table(["項目", "区分", "現地通貨（標準）", "低予算", "標準", "余裕"], body, aligns=["l", "l", "l", "r", "r", "r"]),
+           group_table(rs),
+           "",
+           md_table(["項目", "区分", "費用区分", "現地通貨（標準）", "低予算", "標準", "余裕"], body, aligns=["l", "l", "l", "l", "r", "r", "r"]),
            "",
            "金額は公開価格表からの**匿名の見積**です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して"
            "合計しています（円未満は四捨五入）。区分の「未確認」は出典なしの推定または金額未入力で、見積と区別して表示しています。"]
