@@ -863,6 +863,7 @@ ROUTE_TABLE_HTML = (
     '<p class="route-bar"><button type="button" class="r-add">＋ 行を追加</button> '
     '<button type="button" class="r-send">Claudeに送る（triage/route.json）</button> '
     '<button type="button" class="r-copy">文章でコピー</button> '
+    '<button type="button" class="r-md" title="research/africa-budget-fermi.md の編集表に貼れる形（数量×単価）でコピー">予算表の行をコピー</button> '
     '<button type="button" class="r-undo" disabled>元に戻す</button> '
     '<button type="button" class="r-reset">すべて消す</button></p>'
     '<p class="route-sum" aria-live="polite"></p>'
@@ -964,6 +965,20 @@ function payload(){return {schema:"route-builder-v2",exported_at:new Date().toIS
 root.querySelector(".r-copy").addEventListener("click",function(ev){
  var t=payload().stops.map(function(s){return s.order+". "+(s.place||"（未入力）")+[s.country,s.when,s.days,s.move].filter(Boolean).map(function(x){return " / "+x}).join("")+(s.memo?" — "+s.memo:"")+(s.research?"　【調べ直し】":"")}).join("\\n");
  t="日本（出発）\\n"+t+"\\n日本（帰国）"+(st.ask?"\\n\\n依頼："+st.ask:"");var b=ev.target,o=b.textContent;
+ function done(){b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,function(){prompt("コピーしてください",t)});else prompt("コピーしてください",t)});
+root.querySelector(".r-md").addEventListener("click",function(ev){
+ function comma(n){return n.toLocaleString("ja-JP")}
+ var lines=[];
+ st.rows.forEach(function(r){
+  var d=toDays(r.days),u=toYen(r.unit);
+  if(d&&u){lines.push("| AF-?? | 現地費 | "+(r.place||"（未入力）")+"（"+(r.country||"")+"） | "+d+" | 日 | "+comma(u)+" | "+comma(u)+" | "+comma(u)+" |")}
+ });
+ var fares=st.rows.filter(function(r){return toYen(r.fare)}).map(function(r){return "- "+(r.place||"（未入力）")+"へ："+comma(toYen(r.fare))+"円（"+(r.move||"移動")+"）"});
+ var t=lines.length?"| ID | 区分 | 対象・費目 | 数量 | 単位 | 節約単価 | 標準単価 | 余裕単価 |\\n|---|---|---|---:|---|---:|---:|---:|\\n"+lines.join("\\n"):"（日数と1日単価が入った区間がありません）";
+ if(fares.length)t+="\\n\\n航空券・移動費（飛行機代は data/expenses.csv の行で管理。ここは貼らない）：\\n"+fares.join("\\n");
+ t+="\\n\\n※ 単価は1日あたりの宿・食・移動の合計の目安。AF-?? を行IDに直し、宿泊・食費・交通に分けるときは単価を分けて貼ってください。";
+ var b=ev.target,o=b.textContent;
  function done(){b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,function(){prompt("コピーしてください",t)});else prompt("コピーしてください",t)});
 function idb(){return new Promise(function(res,rej){var q=indexedDB.open("cost-triage-dir",1);q.onupgradeneeded=function(){q.result.createObjectStore("h")};q.onsuccess=function(){res(q.result)};q.onerror=function(){rej(q.error)}})}

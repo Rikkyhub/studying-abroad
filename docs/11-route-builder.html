@@ -187,7 +187,7 @@ table.cost tr.sub td{display:inline-block;padding:2px 8px 2px 0!important;border
 <p>「日本 → 滞在地 → … → 日本」の骨組みを、自分で入力して作る画面です。まず滞在地の名前だけを入れ、時期・日数・移動・メモは決まったものから足していけます。空欄のままでも構いません。</p>
 <p>入力はこのブラウザに自動で残ります。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに <code>route.json</code> として保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。このフォルダの中身は公開されません。</p>
 <h2 id="1-ルートの表">1. ルートの表</h2>
-<p><div class="route" data-route><p class="route-pre"><span class="lbl">既存の案から始める：</span><span class="presets"></span></p><p class="route-desc" aria-live="polite"></p><div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th title="現地での1日あたりの宿・食・移動の目安（円）">1日単価</th><th>移動</th><th title="この区間の航空券・移動費（円）">移動費</th><th>小計</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead><tbody></tbody></table></div><p class="route-bar"><button type="button" class="r-add">＋ 行を追加</button> <button type="button" class="r-send">Claudeに送る（triage/route.json）</button> <button type="button" class="r-copy">文章でコピー</button> <button type="button" class="r-undo" disabled>元に戻す</button> <button type="button" class="r-reset">すべて消す</button></p><p class="route-sum" aria-live="polite"></p><p class="route-days dim" aria-live="polite"></p><p class="route-cost dim" aria-live="polite"></p><label class="route-ask">Claudeへの依頼（任意）<textarea rows="2" placeholder="例：この順番で費用と日数を調べ直して／ケニアを外した案も比べて"></textarea></label></div></p>
+<p><div class="route" data-route><p class="route-pre"><span class="lbl">既存の案から始める：</span><span class="presets"></span></p><p class="route-desc" aria-live="polite"></p><div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th title="現地での1日あたりの宿・食・移動の目安（円）">1日単価</th><th>移動</th><th title="この区間の航空券・移動費（円）">移動費</th><th>小計</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead><tbody></tbody></table></div><p class="route-bar"><button type="button" class="r-add">＋ 行を追加</button> <button type="button" class="r-send">Claudeに送る（triage/route.json）</button> <button type="button" class="r-copy">文章でコピー</button> <button type="button" class="r-md" title="research/africa-budget-fermi.md の編集表に貼れる形（数量×単価）でコピー">予算表の行をコピー</button> <button type="button" class="r-undo" disabled>元に戻す</button> <button type="button" class="r-reset">すべて消す</button></p><p class="route-sum" aria-live="polite"></p><p class="route-days dim" aria-live="polite"></p><p class="route-cost dim" aria-live="polite"></p><label class="route-ask">Claudeへの依頼（任意）<textarea rows="2" placeholder="例：この順番で費用と日数を調べ直して／ケニアを外した案も比べて"></textarea></label></div></p>
 <h2 id="2-使い方">2. 使い方</h2>
 <ul><li>「＋行を追加」で滞在地を増やします。▲▼で順番を入れ替え、×で削除します。</li><li>先頭の「日本（出発）」と末尾の「日本（帰国）」は固定です。</li><li>費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。</li></ul>
 <script>
@@ -285,6 +285,20 @@ function payload(){return {schema:"route-builder-v2",exported_at:new Date().toIS
 root.querySelector(".r-copy").addEventListener("click",function(ev){
  var t=payload().stops.map(function(s){return s.order+". "+(s.place||"（未入力）")+[s.country,s.when,s.days,s.move].filter(Boolean).map(function(x){return " / "+x}).join("")+(s.memo?" — "+s.memo:"")+(s.research?"　【調べ直し】":"")}).join("\n");
  t="日本（出発）\n"+t+"\n日本（帰国）"+(st.ask?"\n\n依頼："+st.ask:"");var b=ev.target,o=b.textContent;
+ function done(){b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,function(){prompt("コピーしてください",t)});else prompt("コピーしてください",t)});
+root.querySelector(".r-md").addEventListener("click",function(ev){
+ function comma(n){return n.toLocaleString("ja-JP")}
+ var lines=[];
+ st.rows.forEach(function(r){
+  var d=toDays(r.days),u=toYen(r.unit);
+  if(d&&u){lines.push("| AF-?? | 現地費 | "+(r.place||"（未入力）")+"（"+(r.country||"")+"） | "+d+" | 日 | "+comma(u)+" | "+comma(u)+" | "+comma(u)+" |")}
+ });
+ var fares=st.rows.filter(function(r){return toYen(r.fare)}).map(function(r){return "- "+(r.place||"（未入力）")+"へ："+comma(toYen(r.fare))+"円（"+(r.move||"移動")+"）"});
+ var t=lines.length?"| ID | 区分 | 対象・費目 | 数量 | 単位 | 節約単価 | 標準単価 | 余裕単価 |\n|---|---|---|---:|---|---:|---:|---:|\n"+lines.join("\n"):"（日数と1日単価が入った区間がありません）";
+ if(fares.length)t+="\n\n航空券・移動費（飛行機代は data/expenses.csv の行で管理。ここは貼らない）：\n"+fares.join("\n");
+ t+="\n\n※ 単価は1日あたりの宿・食・移動の合計の目安。AF-?? を行IDに直し、宿泊・食費・交通に分けるときは単価を分けて貼ってください。";
+ var b=ev.target,o=b.textContent;
  function done(){b.textContent="コピーしました";setTimeout(function(){b.textContent=o},1500)}
  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,function(){prompt("コピーしてください",t)});else prompt("コピーしてください",t)});
 function idb(){return new Promise(function(res,rej){var q=indexedDB.open("cost-triage-dir",1);q.onupgradeneeded=function(){q.result.createObjectStore("h")};q.onsuccess=function(){res(q.result)};q.onerror=function(){rej(q.error)}})}
