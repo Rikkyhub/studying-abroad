@@ -14,7 +14,7 @@
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| ビクトリアの滝（ジンバブエ側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+National+Park+Zimbabwe) | ジンバブエ西端の観光地。バンジー(橋から111m)の記述あり（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式）, https://www.zimparks.org（公式・トップのみ） |
+| ビクトリアの滝（ジンバブエ側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+National+Park+Zimbabwe) | ジンバブエ西端の観光地。バンジー(橋から111m)の記述あり（Wikivoyage） | 入園（日帰り、国際訪問者）USD 58（ジンバブエ国立公園・野生動物管理局の公式2026年料金表 https://www.zimparks.org.zw/media/2026/02/De-Gazetted-Tariff-2026.pdf 、2026-11-08確認）。2027年は未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式）, https://www.zimparks.org（公式・トップのみ） |
 | ワンゲ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Hwange+National+Park) | 100種超の動物・400種超の鳥、象3万頭超（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
 | マナ・プールズ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mana+Pools+National+Park) | 世界遺産。象・カバ・ライオン等、350種超の鳥（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
 | マトボ（マトポス）国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Matobo+National+Park) | 奇岩とサンの洞窟壁画。2003年世界遺産（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
