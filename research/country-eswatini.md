@@ -162,3 +162,4 @@
 - 取得成功：Wikivoyage Eswatini、観光局トップ・イベントカレンダー・ビザガイド、Big Game Parksの料金表、CDC、FCDOの2ページ。
 - 取得失敗：外務省 pcinfectionspothazardinfo_281（403）。FCDOの親ページは警告ページのみで本文なし。
 - 確認できなかった事項：マプト/ヨハネスブルグ路線の運賃、国境営業時間、マルクンドゥ/ヘラ保護区の公式ページ。
+- 洗い直し（5回目・2026-11-10）：エスワティニとの国境の営業時間を、南アフリカ側の公式な情報源で探した。南ア歳入庁（SARS）の『Border Posts』ページ（https://www.sars.gov.za/customs-and-excise/customs-offices-and-contacts/border-posts/ 、公式）は、国境の一覧と所在地のみで**営業時間の記載がない**。エスワティニとの国境として、Golela（KwaZulu-Natal州、ポンゴラ）、Jeppes Reef（ムプマランガ州、ションゲ・ミッション）、Mahamba（同、ピート・レティーフ）、Mananga（同、コマティポート）、Nerston（同、アムステルダム）、Oshoek（同、エルメロ）の6か所が載る。電話窓口は SARS 0800 007277、内務省 0800 601190、警察 08600 10111。エスワティニ側の歳入庁・政府のサイトは接続できず、**国境の営業時間は引き続き未確認**。
