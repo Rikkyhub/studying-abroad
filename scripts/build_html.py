@@ -887,6 +887,7 @@ var MOVES=["","飛行機","陸路","バス","電車","船","車","徒歩"];
 var COLS=[["place","滞在地","例 バギオ"],["country","国","例 フィリピン"],["when","時期","例 2〜4月"],["days","日数","例 12週"],["unit","1日単価","例 5000"],["move","移動",""],["fare","移動費","例 50000"],["sub","小計",""],["memo","メモ",""]];
 var st={rows:[],preset:"",ask:""},undo=[];
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
+if(!Array.isArray(st.pats))st.pats=[];
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function snap(label){undo.push({label:label,s:JSON.stringify(st)});if(undo.length>30)undo.shift();ub.disabled=false;ub.textContent="元に戻す（"+label+"）"}
 function conv(x){var r={place:x.place,country:x.country,move:x.move,memo:x.memo||""};if(x.fare){r.fare=x.fare;r.fareSrc=x.fare_src||""}return r}
@@ -1002,7 +1003,7 @@ root.querySelector(".r-send").addEventListener("click",function(ev){
  getDir().then(function(dir){return dir.getFileHandle("route.json",{create:true}).then(function(fh){return fh.createWritable()}).then(function(w){return w.write(text).then(function(){return w.close()})})})
   .then(function(){msg("triage フォルダに保存しました（Claudeが確認します）")}).catch(function(e){if(e&&e.name==="AbortError")return;download()});
 });
-build();
+build();paintCmp();
 })();
 </script>"""
 
@@ -1100,6 +1101,7 @@ def planner_markdown() -> str:
         "移動日を泊数とは別に数えたいときは「移動日」の列に入れます。",
         "- 「確定」にチェックを付けた行は、案を切り替えても残ります。まだ決まっていない場所は「仮」のままにします。",
         "- 一番下に残り日数が出ます。マイナスなら期間に収まっていません。",
+        "- 日程を組んだら、下の「パターンを保存して比べる」で名前を付けて保存します。保存したパターンは経路・使った日数・残り日数・最終日が一覧で並び、いつでも読み込めます（このブラウザの中だけに残ります。最大12個）。",
         "- 国の欄に国名（例：ケニア、ザンビア）を入れると、泊数の下に比較表の「最適日数（推計）」が目安として出ます。推計であり、確定ではありません。",
         "- 日数の目安は、国ごとの最適日数（比較表）を参照。ここに出る数字は計算結果であり、予約や確定した予定ではありません。", ""]) + "\n"
 
@@ -1121,7 +1123,13 @@ PLANNER_HTML = (
     '<p class="route-bar"><button type="button" class="pl-add">＋ 行を追加</button> '
     '<button type="button" class="pl-fix">マダガスカルまで確定にする</button> '
     '<button type="button" class="pl-reset">すべて消す</button></p>'
-    '<p class="pl-sum" aria-live="polite"></p></div>')
+    '<p class="pl-sum" aria-live="polite"></p>'
+    '<h3 class="pl-h">パターンを保存して比べる</h3>'
+    '<p class="route-bar"><input type="text" class="pl-name" placeholder="パターンの名前（例：A 滝を長く）" aria-label="パターンの名前"> '
+    '<button type="button" class="pl-save">今の日程をパターンとして保存</button></p>'
+    '<div class="scroll"><table class="pl-cmp"><thead><tr><th>パターン</th><th>経路</th><th>使った日数</th><th>残り</th><th>最終日</th><th>操作</th></tr></thead>'
+    '<tbody></tbody></table></div>'
+    '<p class="pl-cmp-empty dim">まだ保存したパターンはありません。日程を組んだら名前を付けて保存すると、ここに並んで残り日数を比べられます。</p></div>')
 
 PLANNER_SCRIPT = """<script>
 (function(){
@@ -1129,7 +1137,7 @@ var KEY="day-planner-v1",root=document.querySelector("[data-planner]");if(!root)
 var tb=root.querySelector("tbody"),sumEl=root.querySelector(".pl-sum"),desc=root.querySelector(".route-desc"),totEl=root.querySelector(".pl-total");
 var elS=root.querySelector(".pl-start"),elE=root.querySelector(".pl-end");
 var PRESETS=@@PRESETS@@, HINTS=@@HINTS@@;
-var st={start:"2027-05-03",end:"2027-06-06",preset:"",rows:[]};
+var st={start:"2027-05-03",end:"2027-06-06",preset:"",rows:[],pats:[]};
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function toD(s){var m=(s||"").match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);return m?Date.UTC(+m[1],+m[2]-1,+m[3]):NaN}
@@ -1178,6 +1186,30 @@ function build(){
  var c=PRESETS.filter(function(p){return p.id===st.preset})[0];
  desc.textContent=c?"案"+c.id+"：「"+c.name+"」の順序を読み込み済み（確定にした行は残しています。日数は入っていません）":"";
  elS.value=st.start;elE.value=st.end;paint()}
+function calc(rows,sStr,eStr){
+ var s=toD(sStr),e=toD(eStr);if(isNaN(s)||isNaN(e)||e<s)return null;
+ var total=Math.round((e-s)/DAY),cur=s,used=0;
+ rows.forEach(function(r){cur+=(num(r.travel)+num(r.nights))*DAY;used+=num(r.nights)+num(r.travel)});
+ return {total:total,used:used,left:total-used,last:cur}}
+function route(rows){return rows.map(function(r){return (r.place||"").replace(/（仮）/g,"").trim()}).filter(Boolean).join(" → ")}
+var cmpBody=root.querySelector(".pl-cmp tbody"),cmpEmpty=root.querySelector(".pl-cmp-empty"),cmpWrap=root.querySelector(".pl-cmp").parentNode;
+function paintCmp(){
+ cmpBody.innerHTML="";
+ st.pats.forEach(function(p,i){
+  var c=calc(p.rows,p.start,p.end),tr=document.createElement("tr");
+  function td(t,l){var x=document.createElement("td");x.textContent=t;x.setAttribute("data-label",l);tr.appendChild(x);return x}
+  td(p.name,"パターン");td(route(p.rows),"経路");
+  td(c?c.used+"日":"－","使った日数");
+  var l=td(c?(c.left>=0?c.left+"日":"超過 "+(-c.left)+"日"):"－","残り");if(c&&c.left<0)l.className="over";
+  td(c?fmt(c.last):"－","最終日");
+  var op=document.createElement("td");op.className="ops";op.setAttribute("data-label","操作");
+  [["読込","このパターンを今の日程に読み込む"],["×","削除"]].forEach(function(b){var bt=document.createElement("button");bt.type="button";bt.textContent=b[0];bt.title=b[1];bt.setAttribute("aria-label",b[1]);
+   bt.addEventListener("click",function(){
+    if(b[0]==="×"){if(!confirm("パターン「"+p.name+"」を削除します。よろしいですか？"))return;st.pats.splice(i,1);save();paintCmp();return}
+    if(st.rows.some(function(r){return r.nights||r.place})&&!confirm("今の日程を「"+p.name+"」で置き換えます（保存していない内容は消えます）。よろしいですか？"))return;
+    st.rows=JSON.parse(JSON.stringify(p.rows));st.start=p.start;st.end=p.end;st.preset="";save();build()});op.appendChild(bt)});
+  tr.appendChild(op);cmpBody.appendChild(tr)});
+ cmpWrap.style.display=st.pats.length?"":"none";cmpEmpty.style.display=st.pats.length?"none":""}
 function paint(){
  var s=toD(st.start),e=toD(st.end);
  if(isNaN(s)||isNaN(e)||e<s){totEl.textContent="期間を入れてください（終了日は開始日以降）";sumEl.textContent="";return}
@@ -1197,6 +1229,11 @@ function paint(){
  var line="使った日数："+used+"／全体"+total+"（確定 "+fixedDays+" ＋ 仮 "+(used-fixedDays)+"）　";
  line+=left>=0?"残り："+left+"日（"+fmt(cur)+" 以降に使える）":"超過："+(-left)+"日（"+fmt(e)+"までに収まっていません）";
  sumEl.textContent=line;sumEl.className="pl-sum"+(left<0?" over":"")}
+root.querySelector(".pl-save").addEventListener("click",function(){
+ var nm=root.querySelector(".pl-name"),name=(nm.value||"").trim()||("パターン"+(st.pats.length+1));
+ if(!st.rows.some(function(r){return r.nights||r.place})){alert("保存する日程がありません。");return}
+ if(st.pats.length>=12){alert("保存できるのは12個までです。不要なパターンを削除してください。");return}
+ st.pats.push({name:name,start:st.start,end:st.end,rows:JSON.parse(JSON.stringify(st.rows))});nm.value="";save();paintCmp()});
 elS.addEventListener("change",function(){st.start=elS.value;save();paint()});
 elE.addEventListener("change",function(){st.end=elE.value;save();paint()});
 root.querySelector(".pl-add").addEventListener("click",function(){st.rows.push(blank());save();build()});
@@ -1521,7 +1558,7 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 # トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
 PAGE_CSS_EXTRA = """.pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
 .pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
-.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
+.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-h{margin:26px 0 6px}.pl-name{min-width:14em;max-width:100%}.pl-cmp td.over{color:#b3261e;font-weight:700}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
 @media(max-width:640px){
 nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
 nav.toc .label{grid-column:1/-1}
