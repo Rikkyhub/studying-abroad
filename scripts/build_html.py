@@ -1318,6 +1318,27 @@ def open_request_map(root: Path = ROOT) -> dict:
     return out
 
 
+QA_ANSWERS = "research/references/qa-answers-2026-11-11.md"
+
+
+def qa_answer_map(root: Path = ROOT) -> dict:
+    """回答台帳（research/references/qa-answers-*.md）の費用26件の表から {費用行ID: 判定} を作る。
+    QA ページに『いまの回答状況』を自動で出すため（手で書き写さない）。判定は台帳の3列目で、末尾の依頼番号は除く"""
+    src = root / QA_ANSWERS
+    out: dict = {}
+    if not src.exists():
+        return out
+    for line in src.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"^\|\s*\*\*((?:AF|SC|CM|PH|AU)-\d+)\*\*[^|]*\|[^|]*\|([^|]*)\|\s*$", line)
+        if not m:
+            continue
+        verdict = m.group(2).replace("**", "").strip()
+        verdict = re.split(r"／\s*R-\d", verdict)[0].strip()
+        verdict = verdict.split("。")[0].strip()  # 「。」以降は次の一歩の説明なので判定には含めない
+        out[m.group(1)] = verdict.replace("|", "／")
+    return out
+
+
 QA_MD = "10-qa.md"
 QA_HEAD = re.compile(r"^##+\s+.*(未確認|残課題).*$", re.M)
 
@@ -1337,9 +1358,11 @@ def qa_markdown(root: Path = ROOT) -> str:
            "分かったことは調査資料に反映します）。このページは `py scripts/build_all.py` が自動で作ります。", "",
            "## 1. 費用の見積で確認が要るもの", "",
            "区分が「未確認」（出典なし・推定、または条件付きの部分見積）と、金額が未入力の項目です。"
-           "合計には、入力済みの金額だけが入っています。", "",
-           "| 項目 | 地域 | 状態 | 何が分かっていないか | 調べる依頼 |", "|---|---|---|---|---|"]
+           "合計には、入力済みの金額だけが入っています。"
+           "「回答状況」は[回答台帳](https://github.com/Rikkyhub/studying-abroad/blob/main/research/references/qa-answers-2026-11-11.md)の判定です（一般条件の確認であり、2027年の実売・本人への適用の確定ではありません）。", "",
+           "| 項目 | 地域 | 状態 | 何が分かっていないか | 回答状況（2026-11-11） | 調べる依頼 |", "|---|---|---|---|---|---|"]
     reqs = open_request_map(root)
+    answers = qa_answer_map(root)
     n = 0
     for r in rows:
         if r["status"] != "未確認" and not r["no_amount"]:
@@ -1353,9 +1376,9 @@ def qa_markdown(root: Path = ROOT) -> str:
         note = "".join(gaps) or note  # 「未確認」を含む文を優先（確認日や出典の説明より、分かっていない点を先に）
         note = (note[:140] + "…") if len(note) > 140 else (note or "出典・金額の確認が必要")
         rq = "・".join(reqs.get(r["id"], [])) or "－"
-        out.append(f"| {r['id']} {r['item']} | [{label.get(key, key)}](../areas/{key}.html) | {state} | {note.replace('|', '／')} | {rq} |")
+        out.append(f"| {r['id']} {r['item']} | [{label.get(key, key)}](../areas/{key}.html) | {state} | {note.replace('|', '／')} | {answers.get(r['id'], '－')} | {rq} |")
     if not n:
-        out.append("| （なし） | － | － | － |")
+        out.append("| （なし） | － | － | － | － | － |")
     out += ["", "## 2. 最優先の確認事項（未完了）", "",
             "優先度1で、完了・不要になっていない作業です。着手が早いものから並べています。", "",
             "| 作業 | 地域 | 期限（目安） | 状態 | 次の一歩 |", "|---|---|---|---|---|"]
