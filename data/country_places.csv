@@ -1,0 +1,110 @@
+slug,id,name_ja,name_en,kind,lat,lon,source_url,note
+kenya,nairobi,ナイロビ,Nairobi,city,-1.283,36.817,https://en.wikivoyage.org/wiki/Nairobi,首都
+kenya,amboseli,アンボセリ国立公園,Amboseli National Park,park,-2.641,37.248,https://en.wikivoyage.org/wiki/Amboseli_National_Park,
+kenya,nakuru,ナクル湖国立公園,Lake Nakuru National Park,park,-0.367,36.083,https://en.wikivoyage.org/wiki/Lake_Nakuru_National_Park,
+kenya,tsavo-east,ツァボ東国立公園,Tsavo East National Park,park,-2.779,38.772,https://en.wikivoyage.org/wiki/Tsavo_East_National_Park,
+kenya,hells-gate,ヘルズゲート国立公園,Hell's Gate National Park,park,-0.908,36.329,https://en.wikivoyage.org/wiki/Hell%27s_Gate_National_Park,
+kenya,maasai-mara,マサイマラ,Maasai Mara National Reserve,park,-1.400,35.144,https://en.wikivoyage.org/wiki/Maasai_Mara_National_Reserve,
+kenya,diani,ディアニビーチ,Diani Beach,coast,-4.297,39.578,https://en.wikivoyage.org/wiki/Diani_Beach,
+kenya,mombasa,モンバサ,Mombasa,city,-4.050,39.667,https://en.wikivoyage.org/wiki/Mombasa,沿岸の拠点
+tanzania,dar-es-salaam,ダルエスサラーム,Dar es Salaam,city,-6.800,39.283,https://en.wikivoyage.org/wiki/Dar_es_Salaam,最大の都市
+tanzania,arusha,アルーシャ,Arusha,city,-3.367,36.691,https://en.wikivoyage.org/wiki/Arusha,北部サファリの拠点
+tanzania,serengeti,セレンゲティ国立公園,Serengeti National Park,park,-2.333,34.567,https://en.wikivoyage.org/wiki/Serengeti_National_Park,
+tanzania,ngorongoro,ンゴロンゴロ自然保護区,Ngorongoro Conservation Area,park,-3.209,35.463,https://en.wikivoyage.org/wiki/Ngorongoro_Conservation_Area,
+tanzania,tarangire,タランギレ国立公園,Tarangire National Park,park,-3.833,36.000,https://en.wikivoyage.org/wiki/Tarangire_National_Park,
+tanzania,manyara,マニャラ湖国立公園,Lake Manyara National Park,park,-3.500,35.833,https://en.wikivoyage.org/wiki/Lake_Manyara_National_Park,
+tanzania,stone-town,ザンジバル(ストーンタウン),Stone Town,city,-6.167,39.183,https://en.wikivoyage.org/wiki/Stone_Town,
+tanzania,ruaha,ルアハ国立公園,Ruaha National Park,park,-7.531,34.637,https://en.wikivoyage.org/wiki/Ruaha_National_Park,南部
+uganda,entebbe,エンテベ,Entebbe,city,0.050,32.460,https://en.wikivoyage.org/wiki/Entebbe,国際空港のある町
+uganda,kampala,カンパラ,Kampala,city,0.300,32.633,https://en.wikivoyage.org/wiki/Kampala,首都
+uganda,bwindi,ブウィンディ原生国立公園,Bwindi Impenetrable National Park,park,-1.050,29.717,https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park,
+uganda,mgahinga,ムガヒンガ・ゴリラ国立公園,Mgahinga Gorilla National Park,park,-1.367,29.650,https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park,
+uganda,kibale,キバレ森林国立公園,Kibale Forest National Park,park,0.500,30.400,https://en.wikivoyage.org/wiki/Kibale_Forest_National_Park,
+uganda,queen-elizabeth,クイーンエリザベス国立公園,Queen Elizabeth National Park,park,-0.200,30.000,https://en.wikivoyage.org/wiki/Queen_Elizabeth_National_Park,
+uganda,murchison,マーチソンフォールズ国立公園,Murchison Falls National Park,park,2.250,31.800,https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park,
+uganda,jinja,ジンジャ,Jinja,city,0.424,33.204,https://en.wikivoyage.org/wiki/Jinja,
+rwanda,kigali,キガリ,Kigali,city,-1.969,30.061,https://en.wikivoyage.org/wiki/Kigali,首都
+rwanda,volcanoes,火山国立公園,Volcanoes National Park,park,-1.483,29.533,https://en.wikivoyage.org/wiki/Volcanoes_National_Park,
+rwanda,nyungwe,ニュングウェの森国立公園,Nyungwe National Park,park,-2.490,29.293,https://en.wikivoyage.org/wiki/Nyungwe_National_Park,
+rwanda,akagera,アカゲラ国立公園,Akagera National Park,park,-1.645,30.685,https://en.wikivoyage.org/wiki/Akagera_National_Park,
+rwanda,gisenyi,ギセニ(キブ湖畔),Gisenyi,lake,-1.700,29.250,https://en.wikivoyage.org/wiki/Gisenyi,キブ湖の湖畔の町
+rwanda,kibuye,キブイェ(キブ湖畔),Kibuye,lake,-2.050,29.350,https://en.wikivoyage.org/wiki/Kibuye,キブ湖の湖畔の町
+malawi,lilongwe,リロングウェ,Lilongwe,city,-13.983,33.783,https://en.wikivoyage.org/wiki/Lilongwe,首都
+malawi,cape-maclear,ケープマクレア,Cape Maclear,lake,-14.017,34.850,https://en.wikivoyage.org/wiki/Cape_Maclear,
+malawi,nkhata-bay,ンカタベイ,Nkhata Bay,lake,-11.600,34.300,https://en.wikivoyage.org/wiki/Nkhata_Bay,
+malawi,liwonde,リウォンデ国立公園,Liwonde National Park,park,-14.833,35.333,https://en.wikivoyage.org/wiki/Liwonde_National_Park,
+malawi,mulanje,ムランジェ山,Mount Mulanje,site,-15.950,35.594,https://en.wikivoyage.org/wiki/Mount_Mulanje,
+malawi,majete,マジェテ野生動物保護区,Majete Wildlife Reserve,park,-15.910,34.743,https://en.wikivoyage.org/wiki/Majete_Wildlife_Reserve,
+malawi,likoma,リコマ島,Likoma Island,lake,-12.067,34.733,https://en.wikivoyage.org/wiki/Likoma_Island,
+zambia,lusaka,ルサカ,Lusaka,city,-15.417,28.283,https://en.wikivoyage.org/wiki/Lusaka,首都
+zambia,livingstone,リビングストン,Livingstone,city,-17.850,25.867,https://en.wikivoyage.org/wiki/Livingstone,ビクトリアの滝のザンビア側の拠点
+zambia,south-luangwa,South Luangwa国立公園,South Luangwa National Park,park,-13.000,31.500,https://en.wikivoyage.org/wiki/South_Luangwa_National_Park,
+zambia,lower-zambezi,Lower Zambezi国立公園,Lower Zambezi National Park,park,-15.750,29.333,https://en.wikivoyage.org/wiki/Lower_Zambezi_National_Park,
+zambia,kafue,Kafue国立公園,Kafue National Park,park,-15.280,25.700,https://en.wikivoyage.org/wiki/Kafue_National_Park,
+zimbabwe,harare,ハラレ,Harare,city,-17.829,31.054,https://en.wikivoyage.org/wiki/Harare,首都
+zimbabwe,victoria-falls,ビクトリアの滝(ジンバブエ側),Victoria Falls,falls,-17.933,25.833,https://en.wikivoyage.org/wiki/Victoria_Falls,
+zimbabwe,hwange,ワンゲ国立公園,Hwange National Park,park,-18.735,26.955,https://en.wikivoyage.org/wiki/Hwange_National_Park,
+zimbabwe,mana-pools,マナ・プールズ国立公園,Mana Pools National Park,park,-15.800,29.720,https://en.wikivoyage.org/wiki/Mana_Pools_National_Park,
+zimbabwe,matobo,マトボ国立公園,Matobo National Park,park,-20.499,28.632,https://en.wikivoyage.org/wiki/Matobo_National_Park,
+zimbabwe,great-zimbabwe,グレート・ジンバブエ遺跡,Great Zimbabwe,site,-20.273,30.934,https://en.wikivoyage.org/wiki/Great_Zimbabwe,
+zimbabwe,kariba,カリバ(カリバ湖畔),Kariba,lake,-16.517,28.800,https://en.wikivoyage.org/wiki/Kariba,カリバ湖の町
+zimbabwe,gonarezhou,ゴナレゾウ国立公園,Gonarezhou National Park,park,-21.667,31.667,https://en.wikivoyage.org/wiki/Gonarezhou_National_Park,
+botswana,gaborone,ハボローネ,Gaborone,city,-24.658,25.912,https://en.wikivoyage.org/wiki/Gaborone,首都
+botswana,maun,マウン,Maun,city,-19.994,23.418,https://en.wikivoyage.org/wiki/Maun,オカバンゴ方面の拠点
+botswana,kasane,カサネ,Kasane,city,-17.796,25.153,https://en.wikivoyage.org/wiki/Kasane,チョベ方面の拠点
+botswana,chobe,チョベ国立公園,Chobe National Park,park,-18.667,24.500,https://en.wikivoyage.org/wiki/Chobe_National_Park,
+botswana,okavango,オカバンゴ・デルタ,Okavango Delta,site,-19.000,23.000,https://en.wikivoyage.org/wiki/Okavango_Delta,
+botswana,ckgr,セントラル・カラハリ猟区,Central Kalahari Game Reserve,park,-21.890,23.756,https://en.wikivoyage.org/wiki/Central_Kalahari_Game_Reserve,
+botswana,nxai-pan,ンザイ・パン国立公園,Nxai Pan National Park,park,-20.042,24.769,https://en.wikivoyage.org/wiki/Nxai_Pan_National_Park,
+botswana,gweta,グウェタ,Gweta,city,-20.183,25.233,https://en.wikivoyage.org/wiki/Gweta,マカディカディ・パンの拠点
+botswana,tsodilo,ツォディロ・ヒルズ,Tsodilo,site,-18.772,21.754,https://en.wikivoyage.org/wiki/Tsodilo,
+mozambique,maputo,マプト,Maputo,city,-25.966,32.589,https://en.wikivoyage.org/wiki/Maputo,首都
+mozambique,inhambane,イニャンバネ,Inhambane,city,-23.867,35.383,https://en.wikivoyage.org/wiki/Inhambane,
+mozambique,tofo,トーフォ・ビーチ,Tofo Beach,coast,-23.856,35.533,https://en.wikivoyage.org/wiki/Tofo_Beach,
+mozambique,bazaruto,バザルト群島,Bazaruto Archipelago,coast,-21.633,35.500,https://en.wikivoyage.org/wiki/Bazaruto_Archipelago,
+mozambique,gorongosa,ゴロンゴーザ国立公園,Gorongosa National Park,park,-18.766,34.500,https://en.wikivoyage.org/wiki/Gorongosa_National_Park,
+mozambique,beira,ベイラ,Beira,city,-19.833,34.850,https://en.wikivoyage.org/wiki/Beira,ゴロンゴーザ方面の玄関都市
+eswatini,mbabane,ムババーネ,Mbabane,city,-26.321,31.162,https://en.wikivoyage.org/wiki/Mbabane,首都(行政)
+eswatini,manzini,マンジニ,Manzini,city,-26.483,31.367,https://en.wikivoyage.org/wiki/Manzini,主要都市
+eswatini,mlilwane,ムリランゲニ野生生物保護区,Mlilwane Wildlife Sanctuary,park,-26.498,31.186,https://en.wikivoyage.org/wiki/Mlilwane_Wildlife_Sanctuary,
+eswatini,hlane,フラネ王立国立公園,Hlane Royal National Park,park,-26.250,31.880,https://en.wikivoyage.org/wiki/Hlane_Royal_National_Park,
+eswatini,mkhaya,ムカヤ動物保護区,Mkhaya Game Reserve,park,-26.625,31.738,https://en.wikivoyage.org/wiki/Mkhaya_Game_Reserve,
+eswatini,malolotja,マロロジャ自然保護区,Malolotja Nature Reserve,park,-26.098,31.099,https://en.wikivoyage.org/wiki/Malolotja_Nature_Reserve,
+lesotho,maseru,マセル,Maseru,city,-29.310,27.480,https://en.wikivoyage.org/wiki/Maseru,首都
+lesotho,morija,モリヤ,Morija,site,-29.633,27.500,https://en.wikivoyage.org/wiki/Morija,
+lesotho,semonkong,セモンコン,Semonkong,falls,-29.843,28.050,https://en.wikivoyage.org/wiki/Semonkong,マレツニャネ滝
+lesotho,katse,カツェ,Katse (Khatse),site,-29.335,28.487,https://en.wikivoyage.org/wiki/Khatse,
+lesotho,sehlabathebe,セハバテベ国立公園,Sehlabathebe National Park,park,-29.495,29.213,https://en.wikivoyage.org/wiki/Sehlabathebe_National_Park,
+madagascar,antananarivo,アンタナナリボ,Antananarivo,city,-18.910,47.520,https://en.wikivoyage.org/wiki/Antananarivo,首都
+madagascar,andasibe,アンダシベ・マンタディア国立公園,Andasibe-Mantadia National Park,park,-18.830,48.450,https://en.wikivoyage.org/wiki/Andasibe-Mantadia_National_Park,
+madagascar,isalo,イサロ国立公園,Isalo National Park,park,-22.558,45.400,https://en.wikivoyage.org/wiki/Isalo_National_Park,
+madagascar,morondava,モロンダバ(バオバブ街道近郊),Morondava,coast,-20.285,44.318,https://en.wikivoyage.org/wiki/Morondava,バオバブ街道の拠点
+madagascar,bemaraha,ツィンギ・ド・ベマラハ,Tsingy de Bemaraha Reserve,park,-18.667,44.750,https://en.wikivoyage.org/wiki/Tsingy_de_Bemaraha_Reserve,
+madagascar,ranomafana,ラノマファナ国立公園,Ranomafana National Park,park,-21.217,47.417,https://en.wikivoyage.org/wiki/Ranomafana_National_Park,
+madagascar,nosy-be,ノシベ,Nosy Be,coast,-13.333,48.250,https://en.wikivoyage.org/wiki/Nosy_Be,
+madagascar,antsiranana,アンツィラナナ(ディエゴ・スアレス),Antsiranana,city,-12.278,49.292,https://en.wikivoyage.org/wiki/Antsiranana,北部の拠点
+ethiopia,addis-ababa,アディスアベバ,Addis Ababa,city,9.010,38.761,https://en.wikivoyage.org/wiki/Addis_Ababa,首都
+ethiopia,lalibela,ラリベラ,Lalibela,site,12.033,39.033,https://en.wikivoyage.org/wiki/Lalibela,
+ethiopia,axum,アクスム,Axum,site,14.117,38.733,https://en.wikivoyage.org/wiki/Axum,
+ethiopia,gondar,ゴンダール,Gondar,site,12.600,37.467,https://en.wikivoyage.org/wiki/Gondar,
+south-africa,cape-town,ケープタウン,Cape Town,city,-33.933,18.467,https://en.wikivoyage.org/wiki/Cape_Town,
+south-africa,table-mountain,テーブルマウンテン,Table Mountain National Park,park,-33.967,18.425,https://en.wikivoyage.org/wiki/Table_Mountain_National_Park,
+south-africa,cape-peninsula,ケープ半島,Cape Peninsula,coast,-34.037,18.464,https://en.wikivoyage.org/wiki/Cape_Peninsula,
+south-africa,simons-town,サイモンズタウン,Simon's Town,coast,-34.192,18.438,https://en.wikivoyage.org/wiki/Simon%27s_Town,
+south-africa,johannesburg,ヨハネスブルグ,Johannesburg,city,-26.167,28.033,https://en.wikivoyage.org/wiki/Johannesburg,
+south-africa,kruger,クルーガー国立公園,Kruger National Park,park,-24.000,31.667,https://en.wikivoyage.org/wiki/Kruger_National_Park,
+south-africa,sodwana,ソドワナ湾,Sodwana Bay,coast,-27.533,32.683,https://en.wikivoyage.org/wiki/Sodwana_Bay,ダイビング
+mauritius,port-louis,ポートルイス,Port Louis,city,-20.167,57.500,https://en.wikivoyage.org/wiki/Port_Louis,首都
+mauritius,flic-en-flac,フリック・アン・フラック,Flic en Flac,coast,-20.282,57.370,https://en.wikivoyage.org/wiki/Flic_en_Flac,ダイビング
+mauritius,blue-bay,ブルーベイ,Blue Bay,coast,-20.441,57.719,https://en.wikivoyage.org/wiki/Blue_Bay,
+mauritius,chamarel,シャマレル,Chamarel,site,-20.417,57.383,https://en.wikivoyage.org/wiki/Chamarel,七色の大地・滝・ラム工場
+mauritius,le-morne,ル・モンヌ,Le Morne Brabant,site,-20.452,57.328,https://en.wikivoyage.org/wiki/Le_Morne_Brabant,世界遺産
+namibia,windhoek,ウィントフック,Windhoek,city,-22.570,17.084,https://en.wikivoyage.org/wiki/Windhoek,首都
+namibia,etosha,エトーシャ国立公園,Etosha National Park,park,-18.785,16.264,https://en.wikivoyage.org/wiki/Etosha_National_Park,
+namibia,sossusvlei,ソススフレイ,Sossusvlei,site,-24.733,15.367,https://en.wikivoyage.org/wiki/Sossusvlei,ナミブ砂漠
+namibia,fish-river,フィッシュリバー・キャニオン,Fish River Canyon,site,-27.719,17.579,https://en.wikivoyage.org/wiki/Fish_River_Canyon,
+namibia,skeleton-coast,スケルトン・コースト,Skeleton Coast,coast,-19.190,12.720,https://en.wikivoyage.org/wiki/Skeleton_Coast,
+namibia,spitzkoppe,スピッツコッペ,Spitzkoppe,site,-21.825,15.194,https://en.wikivoyage.org/wiki/Spitzkoppe,
+namibia,waterberg,ウォーターベルグ台地公園,Waterberg Plateau Park,park,-20.417,17.217,https://en.wikivoyage.org/wiki/Waterberg_Plateau_Park,
+namibia,swakopmund,スワコプムント,Swakopmund,coast,-22.683,14.533,https://en.wikivoyage.org/wiki/Swakopmund,
+namibia,luderitz,リューデリッツ,Lüderitz,coast,-26.648,15.158,https://en.wikivoyage.org/wiki/L%C3%BCderitz,

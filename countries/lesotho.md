@@ -10,6 +10,10 @@
 
 首都マセル、通貨ロティ（LSL。ランドも使われる、Wikivoyage）。公用語は英語・ソト語（一般知識、本回出典未取得）。Wikivoyage: 雨季は10〜4月、冬（5〜9月）は夜間に氷点下になり、暖房のない家が多い。5月は乾季入りで、高地は冷え込む時期。出典: [Wikivoyage](https://en.wikivoyage.org/wiki/Lesotho)（準公式）。
 
+## おおよその位置の地図
+
+@@COUNTRY-MAP@@
+
 ## 主な観光地
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 公式URL |

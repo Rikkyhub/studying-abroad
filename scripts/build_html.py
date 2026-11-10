@@ -421,6 +421,9 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
                              open_key="費用の見積" if path.parent.name == "areas" else "")
     if 'class="sec"' in body:
         body += "\n" + SECTION_SCRIPT
+    if "@@COUNTRY-MAP@@" in md:
+        import build_country_maps
+        body = body.replace("@@COUNTRY-MAP@@", "<style>" + build_country_maps.CSS + "</style>" + build_country_maps.render(path.stem, root))
     if "@@ROUTE-TABLE@@" in md:
         body = body.replace("@@ROUTE-TABLE@@", ROUTE_TABLE_HTML)
     if "@@DAY-PLANNER@@" in md:
