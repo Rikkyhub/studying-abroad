@@ -56,6 +56,97 @@
       }
     },
     {
+      "src": "^/research/country-lesotho(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/lesotho.html"
+      }
+    },
+    {
+      "src": "^/research/country-eswatini(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/eswatini.html"
+      }
+    },
+    {
+      "src": "^/research/country-botswana(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/botswana.html"
+      }
+    },
+    {
+      "src": "^/research/country-zimbabwe(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/zimbabwe.html"
+      }
+    },
+    {
+      "src": "^/research/country-zambia(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/zambia.html"
+      }
+    },
+    {
+      "src": "^/research/country-mozambique(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/mozambique.html"
+      }
+    },
+    {
+      "src": "^/research/country-madagascar(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/madagascar.html"
+      }
+    },
+    {
+      "src": "^/research/country-kenya(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/kenya.html"
+      }
+    },
+    {
+      "src": "^/research/country-tanzania(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/tanzania.html"
+      }
+    },
+    {
+      "src": "^/research/country-ethiopia(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/ethiopia.html"
+      }
+    },
+    {
+      "src": "^/research/country-uganda(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/uganda.html"
+      }
+    },
+    {
+      "src": "^/research/country-rwanda(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/rwanda.html"
+      }
+    },
+    {
+      "src": "^/research/country-malawi(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/countries/malawi.html"
+      }
+    },
+    {
       "src": "^/$",
       "dest": "/index.html"
     },
