@@ -38,21 +38,22 @@
 <!-- AUTO:cost -->
 | 項目 | 区分 | 現地通貨（標準） | 低予算 | 標準 | 余裕 |
 |---|---|---|---:|---:|---:|
-| PINES 授業料・寮費・登録料（12週・公開料金表からの計算）（PINES） [出典](https://philschools.jp/pricelist/pines.pdf) | 見積 | USD 5,670 | ¥768,803 | ¥896,937 | ¥1,091,511 |
-| SSP（特別就学許可）＋SSP I-CARD（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) | 見積 | PHP 12,300 | ¥31,119 | ¥31,119 | ¥31,119 |
-| ビザ延長（9〜12週の区分）（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) | 見積 | PHP 11,150 | ¥28,209 | ¥28,209 | ¥38,937 |
-| 寮の光熱費（電気・水道）12週（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) | 見積 | PHP 9,000 | ¥22,770 | ¥22,770 | ¥22,770 |
-| 教材（ポイントから差し引き）12週（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) | 見積 | PHP 3,300 | ¥8,349 | ¥8,349 | ¥8,349 |
-| 洗濯・ID等（ポイントの残り）（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) | 見積 | PHP 8,700 | ¥22,011 | ¥22,011 | ¥22,011 |
-| マニラ空港→バギオ（学校ピックアップまたはバス）（PINES／Victory Liner） [出典](https://philschools.jp/pricelist/pines.pdf) | 見積 | PHP 3,000 | ¥1,265 | ¥7,590 | ¥7,590 |
-| 週末の寮の食事（12週分）（PINES（現地払い）） [出典](https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf) | 見積 | PHP 6,444 | ¥10,869 | ¥16,303 | ¥16,303 |
-| 現地の生活費（外食・日用品・交際費・週末の外出） [出典](https://www.foodpanda.ph/restaurant/t1uk/jollibee-sm-baguio) | 未確認 | PHP 4,272 | ¥5,404 | ¥10,808 | ¥16,212 |
-| 現地SIM（Globe GoSURF30日×3回・公開モデル）（Globe Telecom） [出典](https://www.globe.com.ph/prepaid/gosurf) | 見積 | PHP 2,997 | ¥2,269 | ¥7,582 | ¥9,859 |
-| 日本⇄フィリピン（マニラ）往復航空券（航空会社（未定）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/7) | 未確認 | 円建て | ¥50,000 | ¥50,000 | ¥50,000 |
-| マニラ→日本（一時帰国）片道（航空会社（未定）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | － | 未計上 | 未計上 | 未計上 |
+| PINES 授業料・寮費・登録料（12週・公開料金表からの計算）（PINES） [出典](https://philschools.jp/pricelist/pines.pdf) `PH-01` | 見積 | USD 5,670 | ¥768,803 | ¥896,937 | ¥1,091,511 |
+| SSP（特別就学許可）＋SSP I-CARD（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) `PH-02` | 見積 | PHP 12,300 | ¥31,119 | ¥31,119 | ¥31,119 |
+| ビザ延長（9〜12週の区分）（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) `PH-03` | 見積 | PHP 11,150 | ¥28,209 | ¥28,209 | ¥38,937 |
+| 寮の光熱費（電気・水道）12週（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) `PH-04` | 見積 | PHP 9,000 | ¥22,770 | ¥22,770 | ¥22,770 |
+| 教材（ポイントから差し引き）12週（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) `PH-05` | 見積 | PHP 3,300 | ¥8,349 | ¥8,349 | ¥8,349 |
+| 洗濯・ID等（ポイントの残り）（PINES（現地払い）） [出典](https://philschools.jp/pricelist/pines.pdf) `PH-06` | 見積 | PHP 8,700 | ¥22,011 | ¥22,011 | ¥22,011 |
+| マニラ空港→バギオ（学校ピックアップまたはバス）（PINES／Victory Liner） [出典](https://philschools.jp/pricelist/pines.pdf) `PH-07` | 見積 | PHP 3,000 | ¥1,265 | ¥7,590 | ¥7,590 |
+| 週末の寮の食事（12週分）（PINES（現地払い）） [出典](https://matchingenglish.com/wp-content/uploads/2025/10/PINES-MEAL-OPTIONS.pdf) `PH-08` | 見積 | PHP 6,444 | ¥10,869 | ¥16,303 | ¥16,303 |
+| 現地の生活費（外食・日用品・交際費・週末の外出） [出典](https://www.foodpanda.ph/restaurant/t1uk/jollibee-sm-baguio) `PH-09` | 未確認 | PHP 4,272 | ¥5,404 | ¥10,808 | ¥16,212 |
+| 現地SIM（Globe GoSURF30日×3回・公開モデル）（Globe Telecom） [出典](https://www.globe.com.ph/prepaid/gosurf) `PH-10` | 見積 | PHP 2,997 | ¥2,269 | ¥7,582 | ¥9,859 |
+| 日本⇄フィリピン（マニラ）往復航空券（航空会社（未定）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/7) `PH-11` | 未確認 | 円建て | ¥50,000 | ¥50,000 | ¥50,000 |
+| マニラ→日本（一時帰国）片道（航空会社（未定）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `PH-12` | 未確認 | － | 未計上 | 未計上 | 未計上 |
 | **小計：公開価格表からの匿名の見積（見積と未確認の合計）** | － | － | **¥951,069** | **¥1,101,680** | **¥1,314,662** |
 | うち 見積（出典あり） | － | － | ¥895,665 | ¥1,040,872 | ¥1,248,449 |
 | うち 未確認（出典なし・推定） | － | － | ¥55,404 | ¥60,808 | ¥66,212 |
+| 　内訳（標準）：航空券 ¥50,000（トップの「飛行機代」の内数）＋ 航空券以外の現地費 ¥1,051,680 | － | － | － | － | － |
 
 金額は公開価格表からの**匿名の見積**です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して合計しています（円未満は四捨五入）。区分の「未確認」は出典なしの推定または金額未入力で、見積と区別して表示しています。
 

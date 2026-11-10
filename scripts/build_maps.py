@@ -42,6 +42,7 @@ ROUTE_COLORS = {
     "H": ("#1B7A8C", "#9AD9E6"),
 }
 BADGE_SHAPE = {"A": "circle", "B": "square", "C": "diamond", "D": "triangle", "E": "hexagon", "F": "pentagon", "G": "star", "H": "cross"}
+MAIN_ROUTE = "G"  # 現在の本命。地図の初期表示で前面に出す（他の案は選択で見られる履歴・比較用）
 ROUTE_SHORT = {"A": "ナイロビ起点", "B": "ADD乗継→マダガスカル", "C": "陸路主体", "D": "島めぐり", "E": "ケニア→マダガスカル", "F": "S2 南部アフリカ周遊", "G": "MRU経由→マダガスカル→VFA", "H": "VFA周辺 拠点型"}
 # 行き先として色を付ける国（ISO 3166-1 numeric）
 VISIT = {"404", "834", "450", "894", "716", "072", "710", "480", "690", "608", "748"}
@@ -784,6 +785,8 @@ svg#map.zoomed{touch-action:none;cursor:grab}
 .leg.r-A{--c:var(--rA)} .leg.r-B{--c:var(--rB)} .leg.r-C{--c:var(--rC)} .leg.r-D{--c:var(--rD)} .leg.r-E{--c:var(--rE)} .leg.r-F{--c:var(--rF)}
 .leg .ln{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .leg .hit{fill:none;stroke:transparent;stroke-width:14}
+svg:not(.solo) .leg:not(.r-G) .ln{opacity:.45}
+svg:not(.solo) .leg.r-G .ln{stroke-width:3.4}
 .leg.m-overland .ln{stroke-width:2.8}
 .leg.m-ferry .ln,.leg.m-sea .ln{stroke-dasharray:9 5}
 .leg.unc .ln{stroke-dasharray:.1 5.2;stroke-width:2.6}
@@ -826,6 +829,7 @@ JS = r"""(function(){
 var D=JSON.parse(document.getElementById('map-data').textContent);
 var svg=document.getElementById('map'),detail=document.getElementById('detail'),body=document.getElementById('tbody'),head=document.getElementById('thead');
 var W=+svg.dataset.w,H=+svg.dataset.h,vb={x:0,y:0,w:W,h:H},sel='all',legs={},pts={};
+var INIT=(document.querySelector('input[name=rt]:checked')||{}).value||'all';
 D.legs.forEach(function(l){legs[l.id]=l});D.points.forEach(function(p){pts[p.id]=p});
 function el(t,txt,cls){var e=document.createElement(t);if(txt!=null)e.textContent=txt;if(cls)e.className=cls;return e}
 function link(txt,url){var a=el('a',txt);a.href=url;a.target='_blank';a.rel='noopener';return a}
@@ -863,7 +867,7 @@ svg.addEventListener('pointermove',function(e){if(!drag)return;var k=vb.w/svg.ge
 svg.addEventListener('pointerup',function(){drag=null});svg.addEventListener('pointercancel',function(){drag=null});
 window.addEventListener('resize',setVB);
 if(svg.getBoundingClientRect().width<640&&svg.dataset.focus){var f=svg.dataset.focus.split(' ').map(Number);vb={x:f[0],y:f[1],w:f[2],h:f[3]}}
-setVB();apply('all');var hm=/^#route-([A-Z])$/.exec(location.hash);if(hm&&document.querySelector('input[name=rt][value='+hm[1]+']'))pick(hm[1]);
+setVB();apply(INIT);var hm=/^#route-([A-Z])$/.exec(location.hash);if(hm&&document.querySelector('input[name=rt][value='+hm[1]+']'))pick(hm[1]);
 })();"""
 
 
@@ -908,11 +912,15 @@ def build_page(kind, points, routes, world_geo, africa_geo):
                          "routes": " ".join(sorted(used.get(pid, ()))), "url": maps_link(p["maps_query"])})
     data = json.dumps({"legs": data_legs, "routes": data_routes, "points": data_pts}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
-    radios = ['<label><input type="radio" name="rt" value="all" checked><span>すべて<span class="tot">全ルートを重ねて表示</span></span></label>']
-    for rid in sorted(routes):
+    def _radio(rid):
         rt = routes[rid]
-        radios.append(f'<label><input type="radio" name="rt" value="{rid}"><span><span class="rb {rid}">{rid}</span>{html.escape(rt["name"])}'
-                      f'<span class="tot">直線距離の合計 {km_text(rt["km"])}（参考）</span></span></label>')
+        main = rid == MAIN_ROUTE
+        mark = '<span class="tot">本命のルート（初期表示）</span>' if main else ""
+        return (f'<label><input type="radio" name="rt" value="{rid}"{" checked" if main else ""}><span><span class="rb {rid}">{rid}</span>{html.escape(rt["name"])}'
+                f'{mark}<span class="tot">直線距離の合計 {km_text(rt["km"])}（参考）</span></span></label>')
+    order = ([MAIN_ROUTE] if MAIN_ROUTE in routes else []) + [r for r in sorted(routes) if r != MAIN_ROUTE]
+    radios = [_radio(rid) for rid in order]
+    radios.append('<label><input type="radio" name="rt" value="all"' + ('' if MAIN_ROUTE in routes else ' checked') + '><span>すべて<span class="tot">全ルートを重ねて表示（過去の比較用）</span></span></label>')
     other = ("africa-map.html", "アフリカ地図") if world else ("world-map.html", "世界地図")
     here = "世界地図" if world else "アフリカ地図"
     off_note = ("" if world else '<p class="muted">アジア発の区間は図の外（東）にあります。線が図の端から入る所に「○○方面」と表示し、区間の一覧は下の表で確認できます。</p>')

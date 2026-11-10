@@ -37,16 +37,17 @@
 <!-- AUTO:cost -->
 | 項目 | 区分 | 現地通貨（標準） | 低予算 | 標準 | 余裕 |
 |---|---|---|---:|---:|---:|
-| 学校＋宿泊 8週（代理店パッケージの例：IH Cape Town＋never@home Green Point）（留学代理店（比較検討中）） | 未確認 | 円建て | ¥479,000 | ¥479,000 | ¥510,000 |
-| ケープタウンの昼食・自炊の食費 8週（食費のみ。洗面用品・娯楽・衣類などの雑費は含まない） [出典](https://uctlanguagecentre.com/experience/accommodation/homestay) | 見積 | ZAR 6,160 | ¥57,003 | ¥59,074 | ¥69,278 |
-| MyCiTi バス 月間パス×2＋カード（City of Cape Town） [出典](https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/) | 見積 | ZAR 3,040 | ¥29,154 | ¥29,154 | ¥29,154 |
-| Vodacom プリペイドデータ（30GB×2）（Vodacom） [出典](https://www.vodacom.co.za/vodacom/shopping/data/data-for-your-smartphone) | 見積 | ZAR 1,398 | ¥13,407 | ¥13,407 | ¥13,407 |
-| ケープタウン→日本 片道（航空会社（未定）） [出典](https://www.kayak.co.jp/flight-routes/Cape-Town-CPT/Tokyo-TYO) | 見積 | 円建て | ¥86,466 | ¥102,183 | ¥117,899 |
-| テーブルマウンテン往復ケーブルカー1回（2027年6月の一般モデル）（Table Mountain Aerial Cableway） [出典](https://www.tablemountain.net/plan-your-visit/ticket-prices/) | 見積 | ZAR 475 | ¥3,069 | ¥4,555 | ¥5,083 |
-| 南アフリカのツアー予算（ホエールウォッチングとサファリ）（未定） | 未確認 | 円建て | ¥100,000 | ¥100,000 | ¥100,000 |
+| 学校＋宿泊 8週（代理店パッケージの例：IH Cape Town＋never@home Green Point）（留学代理店（比較検討中）） `SC-10` | 未確認 | 円建て | ¥479,000 | ¥479,000 | ¥510,000 |
+| ケープタウンの昼食・自炊の食費 8週（食費のみ。洗面用品・娯楽・衣類などの雑費は含まない） [出典](https://uctlanguagecentre.com/experience/accommodation/homestay) `SC-05` | 見積 | ZAR 6,160 | ¥57,003 | ¥59,074 | ¥69,278 |
+| MyCiTi バス 月間パス×2＋カード（City of Cape Town） [出典](https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/) `SC-06` | 見積 | ZAR 3,040 | ¥29,154 | ¥29,154 | ¥29,154 |
+| Vodacom プリペイドデータ（30GB×2）（Vodacom） [出典](https://www.vodacom.co.za/vodacom/shopping/data/data-for-your-smartphone) `SC-07` | 見積 | ZAR 1,398 | ¥13,407 | ¥13,407 | ¥13,407 |
+| ケープタウン→日本 片道（航空会社（未定）） [出典](https://www.kayak.co.jp/flight-routes/Cape-Town-CPT/Tokyo-TYO) `SC-08` | 見積 | 円建て | ¥86,466 | ¥102,183 | ¥117,899 |
+| テーブルマウンテン往復ケーブルカー1回（2027年6月の一般モデル）（Table Mountain Aerial Cableway） [出典](https://www.tablemountain.net/plan-your-visit/ticket-prices/) `SC-09` | 見積 | ZAR 475 | ¥3,069 | ¥4,555 | ¥5,083 |
+| 南アフリカのツアー予算（ホエールウォッチングとサファリ）（未定） `SC-11` | 未確認 | 円建て | ¥100,000 | ¥100,000 | ¥100,000 |
 | **小計：公開価格表からの匿名の見積（見積と未確認の合計）** | － | － | **¥768,098** | **¥787,373** | **¥844,820** |
 | うち 見積（出典あり） | － | － | ¥189,098 | ¥208,373 | ¥234,820 |
 | うち 未確認（出典なし・推定） | － | － | ¥579,000 | ¥579,000 | ¥610,000 |
+| 　内訳（標準）：航空券 ¥102,183（トップの「飛行機代」の内数）＋ 航空券以外の現地費 ¥685,190 | － | － | － | － | － |
 
 金額は公開価格表からの**匿名の見積**です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して合計しています（円未満は四捨五入）。区分の「未確認」は出典なしの推定または金額未入力で、見積と区別して表示しています。
 

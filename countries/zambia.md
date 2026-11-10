@@ -8,13 +8,13 @@
 
 ## 概要
 
-首都ルサカ、公用語英語、通貨クワチャ（以上は一般知識で、本調査では出典未取得）。5月は雨季明け〜乾季入り（気候は出典未取得）。ビクトリアの滝・KAZA UNIVISA の拠点としてジンバブエ側と組み合わせる想定。公園入場料の公式表は https://www.zambiatourism.com/park-entry-fees/ （2025年版と明記、数値は今回未抽出）。
+首都ルサカ、公用語英語、通貨クワチャ（以上は一般知識で、本調査では出典未取得）。5月は雨季明け〜乾季入り（気候は出典未取得）。ビクトリアの滝・KAZA UNIVISA の拠点としてジンバブエ側と組み合わせる想定。公園入場料の公式表（2025年版、国際訪問者：Mosi-oa-Tunya USD 10、South Luangwa・Lower Zambezi USD 25、Kafue USD 20 など。https://www.zambiatourism.com/park-entry-fees/ 、2026-11-09確認、2027年は未確認）。旧記載：（2025年版と明記、数値は今回未抽出）。
 
 ## 主な観光地
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| Mosi-oa-Tunya / ビクトリアの滝（ザンビア側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+Livingstone+Zambia) | 世界最大級の滝。リビングストンが拠点（Wikivoyage Zambia） | 未確認（zambiatourism.com の料金表は2025年版だが数値抽出失敗。既存資料USD10/20は未解消） | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | https://www.zambiatourism.com/park-entry-fees/（準公式）, [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
+| Mosi-oa-Tunya / ビクトリアの滝（ザンビア側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+Livingstone+Zambia) | 世界最大級の滝。リビングストンが拠点（Wikivoyage Zambia） | 入場 USD 10／人／日（国際訪問者、公式表の2025年版。SADC・居住者 USD 5、5〜13歳は50%、5歳未満は無料）。Wikivoyageの USD 20 は旧値 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | https://www.zambiatourism.com/park-entry-fees/（準公式）, [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
 | South Luangwa 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=South+Luangwa+National+Park) | アフリカ有数のサファリ地（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate）。ただし同記事は雨季(12〜4月)に多くのロッジが閉まると記載。5月の営業状況は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
 | Lower Zambezi 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lower+Zambezi+National+Park) | 元大統領専用の猟区、大衆観光のない原生地（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
 | Kafue 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kafue+National+Park) | 国内最大の国立公園（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |

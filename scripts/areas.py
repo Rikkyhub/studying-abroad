@@ -163,10 +163,17 @@ def cost_block(rows, region):
         item = r["item"] + (f"（{r['payee']}）" if r["payee"] and r["payee"] != "—" else "")
         if r["source"].startswith("http"):
             item += f" [出典]({safe_url(r['source'])})"
+        item += f" `{r['id']}`"  # 行ID（要否の判断をページをまたいで結びつけるための印。HTMLでは小さな表示になる）
         body.append([item, r["status"], _local(r)] + [yen(r["est"][s]) for s in SCEN])
     t = region_totals(rows, region)
     for label, key in (("**小計：公開価格表からの匿名の見積（見積と未確認の合計）**", "all"), ("うち 見積（出典あり）", "見積"), ("うち 未確認（出典なし・推定）", "未確認")):
         body.append([label, "－", "－"] + [(f"**{yen(t[key][s])}**" if key == "all" else ("－" if t[key][s] is None else yen(t[key][s]))) for s in SCEN])
+    # 航空券と現地費の内訳（小計に1回だけ含まれる。トップの「飛行機代」「アフリカ周遊（5月）」カードと同じ分け方）
+    air = [r for r in rs if r["category"].startswith("航空券") and not r["no_amount"]]
+    if air and len(air) < len([r for r in rs if not r["no_amount"]]):
+        a_std = sum(r["est"]["std"] or 0.0 for r in air)
+        g_std = sum(r["est"]["std"] or 0.0 for r in rs if not r["no_amount"] and not r["category"].startswith("航空券"))
+        body.append([f"　内訳（標準）：航空券 {yen(a_std)}（トップの「飛行機代」の内数）＋ 航空券以外の現地費 {yen(g_std)}", "－", "－", "－", "－", "－"])
     out = [md_table(["項目", "区分", "現地通貨（標準）", "低予算", "標準", "余裕"], body, aligns=["l", "l", "l", "r", "r", "r"]),
            "",
            "金額は公開価格表からの**匿名の見積**です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して"
