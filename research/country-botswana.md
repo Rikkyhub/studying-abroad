@@ -171,3 +171,4 @@
 - Wikivoyage Makgadikgadi_and_Nxai_Pan_National_Parks、Kazungula 等：一部404（別名ページで代替）。
 - 公式の観光局・DWNPは、既存調査（countries/botswana.md）で接続失敗済みのため今回は再試行せず。
 - 再取得（2回目・2026-11-08）：ザンビア入国管理局の KAZA UNIVISA ページ（公式）で、ボツワナはカズングラ経由の日帰りに限ることを確認。ボツワナ政府のビザページ（gov.bw/travel/visas）は「certificate has expired」で取得できなかった。
+- 洗い直し（5回目・2026-11-10）：ボツワナ観光機構（BTO）の `/travel-info/general-information` と `/index.php/travel-information` を取得したが、公園料金の記載はなかった（銃器の持込みなどの一般案内のみ）。環境・観光省（gov.bw 配下、moenr.gov.bw）、野生生物・国立公園局（dwnp.gov.bw、parksbotswana.com）は接続できず。公園料金の公式表は**引き続き未確認**。
