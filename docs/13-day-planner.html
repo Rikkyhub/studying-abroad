@@ -214,7 +214,13 @@ function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];i
  var keep=st.rows.filter(function(r){return r.fixed});
  var rest=c.stops.slice(1).filter(function(x){return !keep.some(function(k){return k.place===x.place})}).map(function(x){return blank(x.place,x.country)});
  st.preset=id;st.rows=keep.concat(rest);save();build()}
-if(!st.rows.length){st.rows=[{place:"モーリシャス（仮）",country:"モーリシャス",nights:"4",travel:"",fixed:false,memo:""},{place:"アンタナナリボ（仮）",country:"マダガスカル",nights:"10",travel:"",fixed:false,memo:""}]}
+if(!st.rows.length){st.rows=[
+{place:"モーリシャス（仮）",country:"モーリシャス",nights:"4",travel:"",fixed:true,memo:"仮：乗継を含め4泊"},
+{place:"アンタナナリボ（仮）",country:"マダガスカル",nights:"10",travel:"",fixed:true,memo:"暫定基準10日（7〜8日／12日と比較中）"},
+{place:"ヨハネスブルグ",country:"南アフリカ",nights:"0",travel:"",fixed:false,memo:"乗継。1泊にするか要検討"},
+{place:"ビクトリアフォールズ／リビングストン",country:"ジンバブエ",nights:"3",travel:"",fixed:false,memo:"滝2〜3泊（目安）"},
+{place:"チョベ",country:"ボツワナ",nights:"2",travel:"",fixed:false,memo:"日帰り or 宿泊（目安2〜3泊）"},
+{place:"リビングストン",country:"ザンビア",nights:"2",travel:"",fixed:false,memo:"ケープタウンへの直行便の出発地"}]}
 var pre=root.querySelector(".presets");
 PRESETS.forEach(function(c){var b=document.createElement("button");b.type="button";b.className="pre-btn";b.setAttribute("data-id",c.id);b.textContent="案"+c.id;b.title=c.name;
  b.addEventListener("click",function(){if(st.rows.some(function(r){return !r.fixed&&(r.nights||r.place)})&&!confirm("確定にしていない行を案"+c.id+"の順序で置き換えます。よろしいですか？"))return;loadPreset(c.id)});pre.appendChild(b)});
