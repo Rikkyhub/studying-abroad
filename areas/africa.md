@@ -151,6 +151,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [ウガンダ（国別ページ）](../countries/uganda.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） | － | 2026-11-08 |
 | アフリカ | [ルワンダ（国別ページ）](../countries/rwanda.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） | － | 2026-11-08 |
 | アフリカ | [マラウイ（国別ページ）](../countries/malawi.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） | － | 2026-11-08 |
+| アフリカ | [モーリシャス（国別ページ）](../countries/mauritius.html) | 5月周遊の乗継・観光候補。ダイビング・航空券の既存調査を整理（査証・安全などは未確認） | [tourismauthority.mu](https://www.tourismauthority.mu/fr/licensee-lists/)<br>[airmauritius.com](https://www.airmauritius.com/flights/en/flights-to-antananarivo) | 2026-11-10 |
 | アフリカ | [アフリカ13か国の比較（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.md) | 13か国の最適日数・5月の適性・費用目安・星評価・並べ方の案・旅程に響く未確認事項（調査版） | － | 2026-11-08 |
 | アフリカ | [エチオピア 国別深掘り](../research/country-ethiopia.md) | 最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり） | － | 2026-11-08 |
 | アフリカ | [マダガスカル 国別深掘り](../research/country-madagascar.md) | 最適日数・モデルコース・季節・効率ルート・費用・コスパ/タイパ・安全（調査版・公式未確認あり） | － | 2026-11-08 |

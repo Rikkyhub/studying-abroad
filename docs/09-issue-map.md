@@ -69,6 +69,7 @@
 | [ウガンダ（国別ページ）](../countries/uganda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [ルワンダ（国別ページ）](../countries/rwanda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [マラウイ（国別ページ）](../countries/malawi.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [モーリシャス（国別ページ）](../countries/mauritius.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-10 |
 | [アフリカ13か国の比較（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [エチオピア 国別深掘り](../research/country-ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [アフリカ周遊（8月）の国別シーズン比較](../research/africa-august-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
