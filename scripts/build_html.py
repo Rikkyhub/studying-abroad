@@ -423,6 +423,10 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         body += "\n" + SECTION_SCRIPT
     if "@@ROUTE-TABLE@@" in md:
         body = body.replace("@@ROUTE-TABLE@@", ROUTE_TABLE_HTML)
+    if "@@DAY-PLANNER@@" in md:
+        body = body.replace("@@DAY-PLANNER@@", PLANNER_HTML)
+    if "data-planner" in body:
+        body += "\n" + PLANNER_SCRIPT.replace("@@PRESETS@@", route_presets(root))
     if "data-route" in body:
         body += "\n" + ROUTE_SCRIPT.replace("@@PRESETS@@", route_presets(root)).replace("@@PLACES@@", route_places(root))
     if "data-cost" in body:
@@ -464,6 +468,10 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         rmd = route_markdown(root)
         out[rp] = rmd
         out[rp.with_suffix(".html")] = render_text(rmd, rp, root)
+        dp = root / "docs" / PLANNER_MD
+        dmd = planner_markdown()
+        out[dp] = dmd
+        out[dp.with_suffix(".html")] = render_text(dmd, dp, root)
         fp = root / "docs" / FLIGHTS_MD
         fmd = flights_markdown(root)
         out[fp] = fmd
@@ -1060,6 +1068,120 @@ def route_markdown(root: Path = ROOT) -> str:
         "- 費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。", ""]) + "\n"
 
 
+PLANNER_MD = "13-day-planner.md"
+
+
+def planner_markdown() -> str:
+    """日程プランナー。入力はブラウザ内の表（data-planner）。公開されるのは説明文だけ"""
+    return "\n".join([
+        "# 日程プランナー（日数の割り振り）", "",
+        "期間（例：5/3〜6/6）を、どの国・町に何日ずつ使うかを入れて、残り日数を見ながら予定を組む画面です。"
+        "最初の区間（例：モーリシャス、マダガスカル）を決めると、その後に使える日数が自動で出ます。", "",
+        "入力はこのブラウザに自動で残り、公開されません。案A〜Hは、地図・ルート比較と同じ順序の骨組みです"
+        "（日数は入っていません。国別の目安は[13か国の比較表](../research/africa-13-countries-comparison.md)を参照）。", "",
+        "## 1. 日程の表", "",
+        "@@DAY-PLANNER@@", "",
+        "## 2. 使い方", "",
+        "- 上の「期間」で開始日と終了日を入れます（初期値は5/3〜6/6。年は2027年）。",
+        "- 各行に泊数（その場所に泊まる夜の数）を入れると、到着日と出発日が自動で並びます。"
+        "移動日を泊数とは別に数えたいときは「移動日」の列に入れます。",
+        "- 「確定」にチェックを付けた行は、案を切り替えても残ります。まだ決まっていない場所は「仮」のままにします。",
+        "- 一番下に残り日数が出ます。マイナスなら期間に収まっていません。",
+        "- 日数の目安は、国ごとの最適日数（比較表）を参照。ここに出る数字は計算結果であり、予約や確定した予定ではありません。", ""]) + "\n"
+
+
+PLANNER_HTML = (
+    '<div class="planner" data-planner>'
+    '<p class="pl-range"><label>開始日 <input type="date" class="pl-start" aria-label="開始日"></label> '
+    '<label>終了日 <input type="date" class="pl-end" aria-label="終了日"></label> '
+    '<span class="pl-total" aria-live="polite"></span></p>'
+    '<p class="route-pre"><span class="lbl">案の順序から始める：</span><span class="presets"></span></p>'
+    '<p class="route-desc" aria-live="polite"></p>'
+    '<div class="scroll"><table class="route-t pl-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>泊数</th><th>移動日</th>'
+    '<th>到着</th><th>出発</th><th>確定</th><th>メモ</th><th>操作</th></tr></thead><tbody></tbody></table></div>'
+    '<p class="route-bar"><button type="button" class="pl-add">＋ 行を追加</button> '
+    '<button type="button" class="pl-fix">マダガスカルまで確定にする</button> '
+    '<button type="button" class="pl-reset">すべて消す</button></p>'
+    '<p class="pl-sum" aria-live="polite"></p></div>')
+
+PLANNER_SCRIPT = """<script>
+(function(){
+var KEY="day-planner-v1",root=document.querySelector("[data-planner]");if(!root)return;
+var tb=root.querySelector("tbody"),sumEl=root.querySelector(".pl-sum"),desc=root.querySelector(".route-desc"),totEl=root.querySelector(".pl-total");
+var elS=root.querySelector(".pl-start"),elE=root.querySelector(".pl-end");
+var PRESETS=@@PRESETS@@;
+var st={start:"2027-05-03",end:"2027-06-06",preset:"",rows:[]};
+try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function toD(s){var m=(s||"").match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);return m?Date.UTC(+m[1],+m[2]-1,+m[3]):NaN}
+function fmt(t){var d=new Date(t);return (d.getUTCMonth()+1)+"/"+d.getUTCDate()}
+function num(x){var n=parseInt(String(x||"").replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)}),10);return isNaN(n)||n<0?0:n}
+var DAY=86400000;
+function blank(p,c){return {place:p||"",country:c||"",nights:"",travel:"",fixed:false,memo:""}}
+function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];if(!c)return;
+ var keep=st.rows.filter(function(r){return r.fixed});
+ var rest=c.stops.slice(1).filter(function(x){return !keep.some(function(k){return k.place===x.place})}).map(function(x){return blank(x.place,x.country)});
+ st.preset=id;st.rows=keep.concat(rest);save();build()}
+if(!st.rows.length){st.rows=[{place:"モーリシャス（仮）",country:"モーリシャス",nights:"4",travel:"",fixed:false,memo:""},{place:"アンタナナリボ（仮）",country:"マダガスカル",nights:"10",travel:"",fixed:false,memo:""}]}
+var pre=root.querySelector(".presets");
+PRESETS.forEach(function(c){var b=document.createElement("button");b.type="button";b.className="pre-btn";b.setAttribute("data-id",c.id);b.textContent="案"+c.id;b.title=c.name;
+ b.addEventListener("click",function(){if(st.rows.some(function(r){return !r.fixed&&(r.nights||r.place)})&&!confirm("確定にしていない行を案"+c.id+"の順序で置き換えます。よろしいですか？"))return;loadPreset(c.id)});pre.appendChild(b)});
+function field(r,key,label,ph){var td=document.createElement("td");td.setAttribute("data-label",label);
+ var i=document.createElement("input");i.type="text";i.value=r[key]||"";i.placeholder=ph;i.setAttribute("aria-label",label);
+ if(key==="nights"||key==="travel")i.inputMode="numeric";
+ i.addEventListener("input",function(){r[key]=i.value;save();paint()});td.appendChild(i);return td}
+function build(){
+ tb.innerHTML="";
+ st.rows.forEach(function(r,i){
+  var tr=document.createElement("tr");
+  var n=document.createElement("td");n.className="n";n.textContent=i+1;tr.appendChild(n);
+  tr.appendChild(field(r,"place","滞在地","例 モーリシャス"));tr.appendChild(field(r,"country","国","例 モーリシャス"));
+  tr.appendChild(field(r,"nights","泊数","例 4"));tr.appendChild(field(r,"travel","移動日","例 1"));
+  var a=document.createElement("td");a.className="pl-a";a.setAttribute("data-label","到着");tr.appendChild(a);
+  var d=document.createElement("td");d.className="pl-d";d.setAttribute("data-label","出発");tr.appendChild(d);
+  var f=document.createElement("td");f.className="chk";f.setAttribute("data-label","確定");
+  var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!r.fixed;cb.setAttribute("aria-label","この行を確定にする");
+  cb.addEventListener("change",function(){r.fixed=cb.checked;save();paint()});f.appendChild(cb);tr.appendChild(f);
+  tr.appendChild(field(r,"memo","メモ","例 未確認：便の曜日"));
+  var op=document.createElement("td");op.className="ops";
+  [["▲","上へ"],["▼","下へ"],["×","削除"]].forEach(function(b){var bt=document.createElement("button");bt.type="button";bt.textContent=b[0];bt.title=b[1];bt.setAttribute("aria-label",b[1]);
+   bt.addEventListener("click",function(){
+    if(b[0]==="×"){st.rows.splice(i,1)}else{var j=i+(b[0]==="▲"?-1:1);if(j<0||j>=st.rows.length)return;var t=st.rows[i];st.rows[i]=st.rows[j];st.rows[j]=t}
+    save();build()});op.appendChild(bt)});
+  tr.appendChild(op);tb.appendChild(tr)});
+ Array.prototype.forEach.call(pre.children,function(b){b.classList.toggle("on",b.getAttribute("data-id")===st.preset)});
+ var c=PRESETS.filter(function(p){return p.id===st.preset})[0];
+ desc.textContent=c?"案"+c.id+"：「"+c.name+"」の順序を読み込み済み（確定にした行は残しています。日数は入っていません）":"";
+ elS.value=st.start;elE.value=st.end;paint()}
+function paint(){
+ var s=toD(st.start),e=toD(st.end);
+ if(isNaN(s)||isNaN(e)||e<s){totEl.textContent="期間を入れてください（終了日は開始日以降）";sumEl.textContent="";return}
+ var total=Math.round((e-s)/DAY),cur=s,used=0,rows=tb.rows;
+ totEl.textContent="期間："+fmt(s)+"〜"+fmt(e)+"（"+total+"泊"+(total+1)+"日）";
+ st.rows.forEach(function(r,i){
+  var n=num(r.nights),t=num(r.travel),tr=rows[i];if(!tr)return;
+  var arr=cur+t*DAY,dep=arr+n*DAY,has=n||t||(r.place||"").trim();
+  tr.querySelector(".pl-a").textContent=has?fmt(arr):"";
+  tr.querySelector(".pl-d").textContent=has?fmt(dep):"";
+  tr.setAttribute("data-fixed",r.fixed?"1":"0");
+  cur=dep;used+=n+t});
+ var left=total-used;
+ var fixedDays=st.rows.reduce(function(a,r){return a+(r.fixed?num(r.nights)+num(r.travel):0)},0);
+ var line="使った日数："+used+"／全体"+total+"（確定 "+fixedDays+" ＋ 仮 "+(used-fixedDays)+"）　";
+ line+=left>=0?"残り："+left+"日（"+fmt(cur)+" 以降に使える）":"超過："+(-left)+"日（"+fmt(e)+"までに収まっていません）";
+ sumEl.textContent=line;sumEl.className="pl-sum"+(left<0?" over":"")}
+elS.addEventListener("change",function(){st.start=elS.value;save();paint()});
+elE.addEventListener("change",function(){st.end=elE.value;save();paint()});
+root.querySelector(".pl-add").addEventListener("click",function(){st.rows.push(blank());save();build()});
+root.querySelector(".pl-fix").addEventListener("click",function(){var k=-1;st.rows.forEach(function(r,i){if(/マダガスカル|アンタナナリボ/.test((r.country||"")+(r.place||"")))k=i});
+ if(k<0){alert("マダガスカルの行がまだありません。国か滞在地に「マダガスカル」を入れてください。");return}
+ for(var i=0;i<=k;i++)st.rows[i].fixed=true;save();paint()});
+root.querySelector(".pl-reset").addEventListener("click",function(){if(!confirm("入力した日程をすべて消します。よろしいですか？"))return;st={start:st.start,end:st.end,preset:"",rows:[]};save();build()});
+build();
+})();
+</script>"""
+
+
 FLIGHTS_MD = "12-flights.md"
 FLIGHT_GROUPS = [
     ("フィリピン", ("PH-11", "PH-12")),
@@ -1370,7 +1492,10 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 """
 
 # トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
-PAGE_CSS_EXTRA = """@media(max-width:640px){
+PAGE_CSS_EXTRA = """.pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
+.pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
+.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}
+@media(max-width:640px){
 nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
 nav.toc .label{grid-column:1/-1}
 nav.toc a{display:block;padding:4px 0;line-height:1.45;overflow-wrap:anywhere}
