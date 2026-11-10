@@ -135,7 +135,7 @@
 
 | 項目 | 金額・通貨 | 条件・年度 | 出典（区分） | 状態 |
 |---|---|---|---|---|
-| eVisa 単一入国 | USD 75（入管局ページ）／USD 50（eVisaポータルFAQ） | オンライン、Visa/Mastercardのみ、USD払い、不返金。処理は3営業日。**同じ公式2サイトで金額が食い違う** | https://www.immigration.gov.mw/visa/visa-fees/ ／ https://evisa.gov.mw/Faq （公式、2026-11-08確認） | 料金は**未確定**（どちらが現行か未確認） |
+| eVisa 単一入国 | USD 75（入管局ページ）／USD 50（eVisaポータルFAQ・観光局のビザガイド） | オンライン、Visa/Mastercardのみ、USD払い、不返金。処理は3営業日。単一入国は発行から3か月以内に使用。**公式3か所のうち2か所（eVisaポータル、観光局）が USD 50、入管局のページだけが USD 75**。観光局は『2026年1月2日から、ほとんどの国籍にビザが必要になった。2024年に導入した免除措置は廃止』と記載 | https://www.immigration.gov.mw/visa/visa-fees/ ／ https://evisa.gov.mw/Faq （公式、2026-11-08確認） | 料金は**未確定**（どちらが現行か未確認） |
 | eVisa トランジット | USD 50 | 同上。通過滞在は7日（両サイトで一致） | 同上＋types-of-malawi-visa | 確認済み |
 | 複数入国 6か月／12か月 | USD 150／USD 250 | 同上（両サイトで一致） | 同上 | 確認済み |
 | 到着時ビザ（単一） | USD 50 | 英国旅券向けの記載。現金USD推奨 | https://www.gov.uk/foreign-travel-advice/malawi/entry-requirements （公式、2026-11-08確認） | 日本旅券は**未確認** |
@@ -194,7 +194,7 @@
 
 ## 10. 未確認事項
 
-- eVisa 単一入国の料金（移民局ページ USD 75 と eVisa ポータル FAQ USD 50 で食い違い）と、日本国籍が到着ビザで払う額（公告は料金を記載せず）。日本の扱い自体は、公式ポータルの公告とカテゴリー2の一覧で「到着ビザ取得可」と確認できた。2026年に日本人対象の制度変更があるとのIssue記載は公式で確認できず（既存資料）。
+- eVisa 単一入国の料金（入管局ページ USD 75、eVisaポータルFAQと観光局のビザガイドが USD 50で、USD 50が優勢。入管局のページが古い可能性があるが未確認）と、日本国籍が到着ビザで払う額（公告は料金を記載せず）。日本の扱い自体は、公式ポータルの公告とカテゴリー2の一覧で「到着ビザ取得可」と確認できた。2026年に日本人対象の制度変更があるとのIssue記載は公式で確認できず（既存資料）。
 - 外務省の危険レベルとマラウイ情勢（403）。
 - 燃料不足の最新度合い、停電の最新状況。
 - 公園公式料金（リウォンデ、マジェテ、ヴワザ、ムランジェ、ゾンバ）。African Parks 各ページは403。
@@ -231,3 +231,4 @@
 - 失敗：外務省 anzen.mofa.go.jp（403、複数URL）、mofa.go.jp/area/malawi（403）、africanparks.org（Liwonde／Majete、403）、TravelHealthPro（別国のページが返り、マラウイを取得できず）、visa.immigration.gov.mw（名前解決不可）、Wikipedia Malawi_kwacha（404）、Wikivoyage Mulanje_Massif（404）。
 - 学び：Wikivoyageの料金は年度不明のため全て「参考」扱い。Vwazaは取得資料に記載なし。
 - 再取得（2回目・2026-11-08）：immigration.gov.mw の visa-fees／types-of-malawi-visa／apply-for-visa と、evisa.gov.mw の トップ・Faq・Services・VisaAssistance を取得。2026-02-24付の公告（到着ビザ：カテゴリー2は取得可、カテゴリー1は事前査証）を確認し、`/PDFs/CategoryTwoCountries.pdf`（79. Japan）と `/PDFs/CategoryOneCountries.pdf`（47か国）を `pdftotext` で読み取った。公告ページの `/CategoryTwoCountries.pdf` 等の直下URLは404で、実際の保存先は `/PDFs/` だった。
+- 再確認（3回目・2026-11-09）：マラウイ観光局の公式サイトのうち `/visa-guide/` を WebFetch で取得（https://www.malawitourism.com/visa-guide/ （マラウイ観光局、公式、2026-11-09確認））。eVisa の料金は、トランジット USD 50（7日）、単一入国 USD 50（発行から3か月以内に使用）、複数入国 6か月 USD 150／12か月 USD 250。到着時ビザの料金は記載なし。『2026年1月2日から、ほとんどの国籍にビザが必要。2024年に導入した免除は廃止』との記載を確認。日本が到着時ビザの対象かの記載は本ページにはなく、『Visas On Arrival List』『Visas in Advance List』という Dropbox 上の文書へのリンクだけがあり、本書では開いていない（既存の evisa.gov.mw の PDF で、日本はカテゴリー2＝到着ビザ可と確認済み）。`/experiences/wildlife/` には公園の料金の記載がなく、liwondenationalpark.com は『Independent Guides』の独立サイトのため公式として扱わない。African Parks のページは引き続き403。
