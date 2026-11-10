@@ -173,3 +173,4 @@
 - 再取得（2回目・2026-11-08）：ザンビア入国管理局の KAZA UNIVISA ページ（公式）で、ボツワナはカズングラ経由の日帰りに限ることを確認。ボツワナ政府のビザページ（gov.bw/travel/visas）は「certificate has expired」で取得できなかった。
 - 洗い直し（4回目・2026-11-09）：ボツワナ観光機構（BTO）の公式サイトのトップと `/explore/*` の公園ページ（チョベ、モレミ、オカバンゴ・デルタ、中央カラハリ、ムクガディカディ、ヌザイ・パンなど）を、ブラウザ風の User-Agent で再取得した。公園の説明のみで料金の金額（BWP・USD）の記載はなく、サイトマップ（/sitemap.xml）は404、料金の専用ページ（/travel-info/park-fees）も404。野生生物・国立公園局（dwnp.gov.bw）と環境・観光省（mewt.gov.bw）は引き続き接続できない。公園料金の公式表は**未確認のまま**で、チョベの BWP 120（2023年3月、Wikivoyage）が最新の手がかり。
 - 洗い直し（2026-11-09）：外務省 海外安全ホームページの `pcinfectionspothazardinfo_296.html` を通常の取得で読み、危険レベルを確認した。危険情報は出ていない。
+- 洗い直し（5回目・2026-11-10）：ボツワナ観光機構（BTO）の `/travel-info/general-information` と `/index.php/travel-information` を取得したが、公園料金の記載はなかった（銃器の持込みなどの一般案内のみ）。環境・観光省（gov.bw 配下、moenr.gov.bw）、野生生物・国立公園局（dwnp.gov.bw、parksbotswana.com）は接続できず。公園料金の公式表は**引き続き未確認**。
