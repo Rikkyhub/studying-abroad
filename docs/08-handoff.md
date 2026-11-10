@@ -2,6 +2,21 @@
 
 別のAI（Claude Code、Codex等）や別のPCで作業を引き継ぐための手順。要点は [AGENTS.md](../AGENTS.md)、ここはその詳細版。
 
+## 0. ページとファイルの置き場所（早見表）
+
+| 置き場所 | 何が入っているか | 編集してよいか |
+|---|---|---|
+| `index.html` / `all.html` / `app.html` | トップ・全ページ1枚版・アプリ版 | **生成物**（手で直さない） |
+| `areas/*.md` | 地域別ページ（バギオ・アフリカ5月・8月・ケープタウン・共通）。費用表の表示先 | 本文は編集可。費用表は `data/expenses.csv` から自動 |
+| `countries/*.md` | アフリカの国別ページ（観光地・ビザ・安全）。国別地図の行き先 | 編集可。国を足すときは `data/countries.csv` と `data/pages.csv` も |
+| `research/*.md` | 現地調査の正本。**現行**の5月案は案G（`may-madagascar-vfa-redesign.md` ほか） | 編集可 |
+| `research/archive-*.md` | **過去の比較案**（案Gより前の3ルート比較・D案・旧仮旅程など）。参考用で、最新の方針ではない | 原則そのまま。新しい情報は現行の資料へ |
+| `research/references/` | 回答台帳・引用資料など。HTMLにしない補助資料 | 編集可 |
+| `docs/` | 計画・費用・運用。`10-qa` `11-route-builder` `12-flights` `13-day-planner` `09-issue-map` は**自動生成** | 自動生成の6本は手で直さない |
+| `data/*.csv` | 生成器の内部入力（読者にはリンクしない） | 編集可 |
+| `triage/` | 非公開の判断置き場（README以外は公開しない） | 公開しない |
+| `study-abroad-2027/` | 別の作業用のフォルダ（このサイトの対象外・未コミット） | 触らない |
+
 ## 1. セットアップ
 ```
 git clone https://github.com/Rikkyhub/studying-abroad.git

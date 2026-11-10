@@ -519,4 +519,4 @@ S2を例にした並びで、日付ではなく Day N の目安。
 
 **ラベル：実施した取得の記録＝確認済み**
 
-ケニア（ナイロビ）に立ち寄る任意案は別資料 [kenya-nairobi-short-stay.md](kenya-nairobi-short-stay.md)（Issue #42）。本資料のシナリオには含めず、国際線は別建て。
+ケニア（ナイロビ）に立ち寄る任意案は別資料 [archive-kenya-nairobi-short-stay.md](archive-kenya-nairobi-short-stay.md)（Issue #42）。本資料のシナリオには含めず、国際線は別建て。

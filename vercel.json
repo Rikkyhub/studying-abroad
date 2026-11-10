@@ -14,6 +14,48 @@
       "continue": true
     },
     {
+      "src": "^/research/africa-trip(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/research/archive-africa-trip.html"
+      }
+    },
+    {
+      "src": "^/research/may-three-routes-comparison(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/research/archive-may-three-routes-comparison.html"
+      }
+    },
+    {
+      "src": "^/research/africa-2027-may-three-route-deep-research(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/research/archive-africa-2027-may-three-route-deep-research.html"
+      }
+    },
+    {
+      "src": "^/research/d-plan-no-namibia(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/research/archive-d-plan-no-namibia.html"
+      }
+    },
+    {
+      "src": "^/research/may-itinerary-nbo-to-cpt(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/research/archive-may-itinerary-nbo-to-cpt.html"
+      }
+    },
+    {
+      "src": "^/research/kenya-nairobi-short-stay(\\.html)?$",
+      "status": 308,
+      "headers": {
+        "Location": "/research/archive-kenya-nairobi-short-stay.html"
+      }
+    },
+    {
       "src": "^/$",
       "dest": "/index.html"
     },
