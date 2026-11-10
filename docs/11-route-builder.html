@@ -149,7 +149,7 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 .pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
 .pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
-.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}
+.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
 @media(max-width:640px){
 nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
 nav.toc .label{grid-column:1/-1}
@@ -195,7 +195,7 @@ table.cost tr.sub td{display:inline-block;padding:2px 8px 2px 0!important;border
 <h2 id="1-ルートの表">1. ルートの表</h2>
 <p><div class="route" data-route><p class="route-pre"><span class="lbl">既存の案から始める：</span><span class="presets"></span></p><p class="route-desc" aria-live="polite"></p><div class="scroll"><table class="route-t"><thead><tr><th>#</th><th>滞在地</th><th>国</th><th>時期</th><th>日数</th><th title="現地での1日あたりの宿・食・移動の目安（円）">1日単価</th><th>移動</th><th title="この区間の航空券・移動費（円）">移動費</th><th>小計</th><th>メモ</th><th title="Claudeに調べ直してほしい行">調べる</th><th>操作</th></tr></thead><tbody></tbody></table></div><p class="route-bar"><button type="button" class="r-add">＋ 行を追加</button> <button type="button" class="r-send">Claudeに送る（triage/route.json）</button> <button type="button" class="r-copy">文章でコピー</button> <button type="button" class="r-md" title="research/africa-budget-fermi.md の編集表に貼れる形（数量×単価）でコピー">予算表の行をコピー</button> <button type="button" class="r-undo" disabled>元に戻す</button> <button type="button" class="r-reset">すべて消す</button></p><p class="route-sum" aria-live="polite"></p><p class="route-days dim" aria-live="polite"></p><p class="route-cost dim" aria-live="polite"></p><label class="route-ask">Claudeへの依頼（任意）<textarea rows="2" placeholder="例：この順番で費用と日数を調べ直して／ケニアを外した案も比べて"></textarea></label></div></p>
 <h2 id="2-使い方">2. 使い方</h2>
-<ul><li>「＋行を追加」で滞在地を増やします。▲▼で順番を入れ替え、×で削除します。</li><li>先頭の「日本（出発）」と末尾の「日本（帰国）」は固定です。</li><li>費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。</li></ul>
+<ul><li>「＋行を追加」で滞在地を増やします。▲▼で順番を入れ替え、×で削除します。</li><li>先頭の「日本（出発）」と末尾の「日本（帰国）」は固定です。</li><li>期間を国・町ごとの泊数に割り振って残り日数を見たいときは、<a href="13-day-planner.html">日程プランナー</a> を使います。</li><li>費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。</li></ul>
 <script>
 (function(){
 var KEY="route-builder-v2",root=document.querySelector("[data-route]");if(!root)return;

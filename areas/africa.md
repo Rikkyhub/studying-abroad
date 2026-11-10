@@ -13,7 +13,7 @@
 
 詳細と比較表の枠は [5月の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国](../research/may-madagascar-vfa-redesign.md)。旧案（ケニア・タンザニア縦断、ナミビア経由など）は履歴として [3ルート比較](../research/may-three-routes-comparison.md) と [ルート比較](../research/africa-route-comparison.md) に残しています。**旧案を最新の採用案とはみなしません。**
 
-ルートは [モデルルート作成](../docs/11-route-builder.md) で「案G」を読み込んで、日数や順番を触れます。
+ルートは [モデルルート作成](../docs/11-route-builder.md) で「案G」を読み込んで、日数や順番を触れます。期間（5/3〜6/6）を国・町ごとの泊数に割り振って残り日数を見たいときは、[日程プランナー](../docs/13-day-planner.md) を使います。
 
 <!-- AUTO:timeline -->
 | 時期（モデル） | 内容 | 状態 | 概要 |
