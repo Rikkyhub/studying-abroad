@@ -426,7 +426,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     if "@@DAY-PLANNER@@" in md:
         body = body.replace("@@DAY-PLANNER@@", PLANNER_HTML)
     if "data-planner" in body:
-        body += "\n" + PLANNER_SCRIPT.replace("@@PRESETS@@", route_presets(root))
+        body += "\n" + PLANNER_SCRIPT.replace("@@PRESETS@@", route_presets(root)).replace("@@HINTS@@", planner_hints())
     if "data-route" in body:
         body += "\n" + ROUTE_SCRIPT.replace("@@PRESETS@@", route_presets(root)).replace("@@PLACES@@", route_places(root))
     if "data-cost" in body:
@@ -1065,10 +1065,23 @@ def route_markdown(root: Path = ROOT) -> str:
         "## 2. 使い方", "",
         "- 「＋行を追加」で滞在地を増やします。▲▼で順番を入れ替え、×で削除します。",
         "- 先頭の「日本（出発）」と末尾の「日本（帰国）」は固定です。",
+        "- 期間を国・町ごとの泊数に割り振って残り日数を見たいときは、[日程プランナー](13-day-planner.md) を使います。",
         "- 費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。", ""]) + "\n"
 
 
 PLANNER_MD = "13-day-planner.md"
+# 国ごとの最適日数の目安（research/africa-13-countries-comparison.md の『最適日数（推計）』列の要約。推計であり確定ではない）
+# キー＝route_points.csv の国名。値＝(目安の泊数の下限, 上限, 説明)
+STAY_HINTS = {
+    "ケニア": (5, 7, "ナイロビ起点で5〜7日"),
+    "タンザニア": (8, 10, "北部サファリ4〜5日＋ザンジバル3〜4泊"),
+    "ザンビア": (2, 3, "リビングストン2〜3泊（ジンバブエ側を足すなら+1泊）"),
+    "ジンバブエ": (2, 3, "滝2〜3泊"),
+    "ボツワナ": (2, 3, "カサネ・チョベ2〜3泊（オカバンゴまで入れて4〜5泊が上限）"),
+    "エスワティニ": (2, 3, "2泊3日（野生動物重視なら3〜4日）"),
+    "マダガスカル": (7, 10, "1地域で7〜10日、2地域なら14日"),
+    "エチオピア": (0, 1, "乗継のみ0日、ストップオーバー1泊"),
+}
 
 
 def planner_markdown() -> str:
@@ -1087,7 +1100,13 @@ def planner_markdown() -> str:
         "移動日を泊数とは別に数えたいときは「移動日」の列に入れます。",
         "- 「確定」にチェックを付けた行は、案を切り替えても残ります。まだ決まっていない場所は「仮」のままにします。",
         "- 一番下に残り日数が出ます。マイナスなら期間に収まっていません。",
+        "- 国の欄に国名（例：ケニア、ザンビア）を入れると、泊数の下に比較表の「最適日数（推計）」が目安として出ます。推計であり、確定ではありません。",
         "- 日数の目安は、国ごとの最適日数（比較表）を参照。ここに出る数字は計算結果であり、予約や確定した予定ではありません。", ""]) + "\n"
+
+
+def planner_hints() -> str:
+    """国名 -> [下限, 上限, 説明]（JSON）。プランナーの泊数の下に『目安』として出す"""
+    return json.dumps({k: list(v) for k, v in STAY_HINTS.items()}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\/")
 
 
 PLANNER_HTML = (
@@ -1109,7 +1128,7 @@ PLANNER_SCRIPT = """<script>
 var KEY="day-planner-v1",root=document.querySelector("[data-planner]");if(!root)return;
 var tb=root.querySelector("tbody"),sumEl=root.querySelector(".pl-sum"),desc=root.querySelector(".route-desc"),totEl=root.querySelector(".pl-total");
 var elS=root.querySelector(".pl-start"),elE=root.querySelector(".pl-end");
-var PRESETS=@@PRESETS@@;
+var PRESETS=@@PRESETS@@, HINTS=@@HINTS@@;
 var st={start:"2027-05-03",end:"2027-06-06",preset:"",rows:[]};
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
@@ -1136,7 +1155,7 @@ function build(){
   var tr=document.createElement("tr");
   var n=document.createElement("td");n.className="n";n.textContent=i+1;tr.appendChild(n);
   tr.appendChild(field(r,"place","滞在地","例 モーリシャス"));tr.appendChild(field(r,"country","国","例 モーリシャス"));
-  tr.appendChild(field(r,"nights","泊数","例 4"));tr.appendChild(field(r,"travel","移動日","例 1"));
+  var nt=field(r,"nights","泊数","例 4");var hint=document.createElement("small");hint.className="pl-hint";nt.appendChild(hint);tr.appendChild(nt);tr.appendChild(field(r,"travel","移動日","例 1"));
   var a=document.createElement("td");a.className="pl-a";a.setAttribute("data-label","到着");tr.appendChild(a);
   var d=document.createElement("td");d.className="pl-d";d.setAttribute("data-label","出発");tr.appendChild(d);
   var f=document.createElement("td");f.className="chk";f.setAttribute("data-label","確定");
@@ -1164,6 +1183,8 @@ function paint(){
   tr.querySelector(".pl-a").textContent=has?fmt(arr):"";
   tr.querySelector(".pl-d").textContent=has?fmt(dep):"";
   tr.setAttribute("data-fixed",r.fixed?"1":"0");
+  var h=HINTS[(r.country||"").trim()],he=tr.querySelector(".pl-hint");
+  if(he){he.textContent=h?"目安 "+(h[0]===h[1]?h[0]:h[0]+"〜"+h[1])+"泊":"";he.title=h?h[2]+"（推計）":""}
   cur=dep;used+=n+t});
  var left=total-used;
  var fixedDays=st.rows.reduce(function(a,r){return a+(r.fixed?num(r.nights)+num(r.travel):0)},0);
@@ -1494,7 +1515,7 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 # トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
 PAGE_CSS_EXTRA = """.pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
 .pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
-.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}
+.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
 @media(max-width:640px){
 nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
 nav.toc .label{grid-column:1/-1}
