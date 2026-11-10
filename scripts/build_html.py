@@ -1115,6 +1115,23 @@ def flights_markdown(root: Path = ROOT) -> str:
     return "\n".join(out) + "\n"
 
 
+def open_request_map(root: Path = ROOT) -> dict:
+    """research/77-open-research-requests.md の依頼一覧から {費用行ID: [R-xx,…]} を作る。
+    QA ページに『この行は依頼票の R-xx で調べる』を自動で出すため（手で対応を書かない）"""
+    src = root / "research" / "77-open-research-requests.md"
+    out: dict = {}
+    if not src.exists():
+        return out
+    for line in src.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"^\|\s*(R-\d+)\s*\|(.*)\|\s*$", line)
+        if not m:
+            continue
+        cells = [c.strip() for c in m.group(2).split("|")]
+        for rid in re.findall(r"(?:AF|SC|CM|PH|AU)-\d+", cells[-1] if cells else ""):
+            out.setdefault(rid, []).append(m.group(1))
+    return out
+
+
 QA_MD = "10-qa.md"
 QA_HEAD = re.compile(r"^##+\s+.*(未確認|残課題).*$", re.M)
 
@@ -1135,7 +1152,8 @@ def qa_markdown(root: Path = ROOT) -> str:
            "## 1. 費用の見積で確認が要るもの", "",
            "区分が「未確認」（出典なし・推定、または条件付きの部分見積）と、金額が未入力の項目です。"
            "合計には、入力済みの金額だけが入っています。", "",
-           "| 項目 | 地域 | 状態 | 何が分かっていないか |", "|---|---|---|---|"]
+           "| 項目 | 地域 | 状態 | 何が分かっていないか | 調べる依頼 |", "|---|---|---|---|---|"]
+    reqs = open_request_map(root)
     n = 0
     for r in rows:
         if r["status"] != "未確認" and not r["no_amount"]:
@@ -1148,7 +1166,8 @@ def qa_markdown(root: Path = ROOT) -> str:
         gaps = [s.strip() for s in sents if "未確認" in s or "未入力" in s or "未計上" in s or "次" in s[:2]]
         note = "".join(gaps) or note  # 「未確認」を含む文を優先（確認日や出典の説明より、分かっていない点を先に）
         note = (note[:140] + "…") if len(note) > 140 else (note or "出典・金額の確認が必要")
-        out.append(f"| {r['id']} {r['item']} | [{label.get(key, key)}](../areas/{key}.html) | {state} | {note.replace('|', '／')} |")
+        rq = "・".join(reqs.get(r["id"], [])) or "－"
+        out.append(f"| {r['id']} {r['item']} | [{label.get(key, key)}](../areas/{key}.html) | {state} | {note.replace('|', '／')} | {rq} |")
     if not n:
         out.append("| （なし） | － | － | － |")
     out += ["", "## 2. 最優先の確認事項（未完了）", "",
