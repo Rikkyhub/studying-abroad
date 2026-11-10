@@ -149,7 +149,7 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 .pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
 .pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
-.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
+.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-h{margin:26px 0 6px}.pl-name{min-width:14em;max-width:100%}.pl-cmp td.over{color:#b3261e;font-weight:700}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
 @media(max-width:640px){
 nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
 nav.toc .label{grid-column:1/-1}
@@ -205,6 +205,7 @@ var MOVES=["","飛行機","陸路","バス","電車","船","車","徒歩"];
 var COLS=[["place","滞在地","例 バギオ"],["country","国","例 フィリピン"],["when","時期","例 2〜4月"],["days","日数","例 12週"],["unit","1日単価","例 5000"],["move","移動",""],["fare","移動費","例 50000"],["sub","小計",""],["memo","メモ",""]];
 var st={rows:[],preset:"",ask:""},undo=[];
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
+if(!Array.isArray(st.pats))st.pats=[];
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function snap(label){undo.push({label:label,s:JSON.stringify(st)});if(undo.length>30)undo.shift();ub.disabled=false;ub.textContent="元に戻す（"+label+"）"}
 function conv(x){var r={place:x.place,country:x.country,move:x.move,memo:x.memo||""};if(x.fare){r.fare=x.fare;r.fareSrc=x.fare_src||""}return r}
@@ -320,7 +321,7 @@ root.querySelector(".r-send").addEventListener("click",function(ev){
  getDir().then(function(dir){return dir.getFileHandle("route.json",{create:true}).then(function(fh){return fh.createWritable()}).then(function(w){return w.write(text).then(function(){return w.close()})})})
   .then(function(){msg("triage フォルダに保存しました（Claudeが確認します）")}).catch(function(e){if(e&&e.name==="AbortError")return;download()});
 });
-build();
+build();paintCmp();
 })();
 </script>
 </article>
