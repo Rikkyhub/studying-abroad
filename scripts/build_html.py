@@ -343,7 +343,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
    r.tr.hidden=s==="skip"&&hide.checked;
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -1335,6 +1335,40 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 @media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
 """
 
+# トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
+PAGE_CSS_EXTRA = """@media(max-width:640px){
+.route-t tr.fix{display:block;border:0;background:color-mix(in srgb,var(--link) 10%,transparent)!important;margin:0 0 8px}
+.route-t tr.fix td{display:block;padding:6px 12px;border:0;text-align:left}
+.route-t tr.fix td:empty{display:none}
+.route-t tr.fix td::before{display:none}
+.route-t tbody tr:not(.fix){display:grid!important;grid-template-columns:1fr 1fr;gap:0 10px;padding:6px 10px}
+.route-t tbody tr:not(.fix) td{border:0!important;padding:4px 0!important}
+.route-t tbody tr:not(.fix) td:first-child{grid-column:1/-1;font-weight:700;padding:2px 0!important}
+.route-t td[data-label="滞在地"],.route-t td[data-label="メモ"],.route-t td.ops{grid-column:1/-1}
+.route-t td::before{margin-bottom:0!important}
+.route-t td input[type=text],.route-t td select{max-width:none!important;width:100%}
+.triage .tri-sum .big{display:block;font-size:1.5rem;margin:2px 0}
+.triage .tri-sum strong{display:block}
+.triage{padding:10px 12px}
+}
+@media(max-width:640px){
+table.cost tbody tr:not(.sub){display:grid!important;grid-template-columns:repeat(3,1fr);gap:0 8px;padding:6px 10px}
+table.cost tbody tr:not(.sub) td{border:0!important;padding:4px 0!important;min-width:0}
+table.cost tbody tr:not(.sub) td:first-child{grid-column:1/-1;font-weight:700;border-bottom:1px solid var(--line)!important;padding-bottom:6px!important;margin-bottom:2px}
+table.cost td[data-label="区分"],table.cost td[data-label^="現地通貨"]{grid-column:span 3;display:inline-block}
+table.cost td[data-label="区分"]{grid-column:1/2}
+table.cost td[data-label^="現地通貨"]{grid-column:2/4}
+table.cost td[data-label="低予算"],table.cost td[data-label="標準"],table.cost td[data-label="余裕"]{text-align:right!important}
+table.cost td[data-label="要否"],table.cost td[data-label="メモ"]{grid-column:span 3}
+table.cost td[data-label="要否"]{grid-column:1/2}
+table.cost td[data-label="メモ"]{grid-column:2/4}
+table.cost td input[type=text],table.cost td select{max-width:none!important;width:100%}
+table.cost tr.sub{display:block;padding:6px 10px}
+table.cost tr.sub td{display:inline-block;padding:2px 8px 2px 0!important;border:0!important}
+}
+"""
+
+
 PAGE = """<!doctype html>
 @@mark@@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1380,7 +1414,7 @@ def bar(prefix: str, current: str = "") -> str:
 
 
 def page_html(**kw) -> str:
-    kw["css"] = BASE_CSS
+    kw["css"] = BASE_CSS + PAGE_CSS_EXTRA
     return re.sub(r"@@(\w+)@@", lambda m: kw[m.group(1)], PAGE)
 
 

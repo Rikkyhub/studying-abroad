@@ -379,7 +379,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
    r.tr.hidden=s==="skip"&&hide.checked;
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -519,7 +519,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
    r.tr.hidden=s==="skip"&&hide.checked;
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -651,7 +651,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
    r.tr.hidden=s==="skip"&&hide.checked;
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -782,7 +782,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
    r.tr.hidden=s==="skip"&&hide.checked;
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -904,7 +904,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
    r.tr.hidden=s==="skip"&&hide.checked;
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計</strong>（標準） <span class="big">'+fmt(tot[1])+'</span>　低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+
+  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
