@@ -58,7 +58,7 @@ class MayAndAugustBudgetTest(unittest.TestCase):
             self.assertEqual(len(new), 5)
             self.assertTrue(all(row["phase"] == "アフリカ周遊（8月）" for row in new))
             self.assertTrue(all(row["status"] == "未確認" for row in new))
-            self.assertTrue(all(str(august_budget.SOURCE) in row["note"] for row in new))
+            self.assertTrue(all(august_budget.SOURCE.as_posix() in row["note"] for row in new))
             self.assertEqual(sum(int(row["std_local"]) for row in new), 78000)
             self.assertEqual(sum(int(row["std_local"]) for row in new),
                              budgets["A"]["lodging"][1] + budgets["A"]["food"][1])
