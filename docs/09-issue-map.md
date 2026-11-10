@@ -25,7 +25,7 @@
 | [公開データ方針](../docs/05-public-data-policy.html) | [#16](https://github.com/Rikkyhub/studying-abroad/issues/16) | 整理済 | － |
 | [フィリピン留学（PINES）](../research/philippines-pines.html) | － | 調査中 | 2026-10-17 |
 | [HTML・Word への変換](../docs/07-export.html) | － | 整理済 | － |
-| [5月アフリカ周遊（案）](../research/africa-trip.html) | － | 調査中 | 2026-10-17 |
+| [【過去案】5月アフリカ周遊（案）](../research/archive-africa-trip.html) | － | 調査中 | 2026-10-17 |
 | [AI・別PC向け引き継ぎ](../docs/08-handoff.html) | － | 整理済 | － |
 | [バギオ（フィリピン語学留学）](../areas/baguio.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [世界地図（候補ルート）](../maps/world-map.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-18 |
@@ -39,8 +39,8 @@
 | [ケープタウン（第2か国留学）](../areas/capetown.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [南部アフリカ各国の日数・費用・体験の多様性](../research/southern-africa-countries.html) | [#38](https://github.com/Rikkyhub/studying-abroad/issues/38) | 調査中 | 2026-10-18 |
-| [ケニア・ナイロビ短期滞在モデル](../research/kenya-nairobi-short-stay.html) | [#42](https://github.com/Rikkyhub/studying-abroad/issues/42) | 調査中 | 2026-10-18 |
-| [5月仮旅程（MNL→NBO→CPT）の実現性](../research/may-itinerary-nbo-to-cpt.html) | [#47](https://github.com/Rikkyhub/studying-abroad/issues/47) | 調査中 | 2026-10-19 |
+| [【過去案】ケニア・ナイロビ短期滞在モデル](../research/archive-kenya-nairobi-short-stay.html) | [#42](https://github.com/Rikkyhub/studying-abroad/issues/42) | 調査中 | 2026-10-18 |
+| [【過去案】5月仮旅程（MNL→NBO→CPT）の実現性](../research/archive-may-itinerary-nbo-to-cpt.html) | [#47](https://github.com/Rikkyhub/studying-abroad/issues/47) | 調査中 | 2026-10-19 |
 | [5月の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国（骨組み）](../research/may-madagascar-vfa-redesign.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-08 |
 | [ビクトリアの滝周辺のモデルルート：チョベサファリとリビングストン滞在](../research/victoria-falls-chobe-livingstone-model.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-08 |
 | [マダガスカルの日数モデルの費用の枠と、ビクトリアの滝周辺→ケープタウンの空路](../research/madagascar-day-models-and-vfa-to-cpt.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-08 |
@@ -48,9 +48,9 @@
 | [5月アフリカ周遊：数量×仮単価の予算表](../research/africa-budget-fermi.html) | [#80](https://github.com/Rikkyhub/studying-abroad/issues/80) | 作成中 | 2026-11-08 |
 | [優先度1の準備タスク調査](../research/prep-priority1-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
 | [長期留学＋周遊の保険（カード90日・期間の穴）](../research/long-stay-insurance.html) | [#49](https://github.com/Rikkyhub/studying-abroad/issues/49) | 調査中 | 2026-10-19 |
-| [5月アフリカ周遊3ルートの比較](../research/may-three-routes-comparison.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-20 |
-| [5月アフリカ周遊3ルート（Deep Research比較）](../research/africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
-| [D案（ナミビアなし）の陸路周遊検証](../research/d-plan-no-namibia.html) | [#53](https://github.com/Rikkyhub/studying-abroad/issues/53) | 調査中 | 2026-10-20 |
+| [【過去案】5月アフリカ周遊3ルートの比較](../research/archive-may-three-routes-comparison.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-20 |
+| [【過去案】5月アフリカ周遊3ルート（Deep Research比較）](../research/archive-africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
+| [【過去案】D案（ナミビアなし）の陸路周遊検証](../research/archive-d-plan-no-namibia.html) | [#53](https://github.com/Rikkyhub/studying-abroad/issues/53) | 調査中 | 2026-10-20 |
 | [優先度2の準備タスク調査](../research/prep-priority2-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
 | [ケープタウン語学留学の学校選定（Deep Research）](../research/deep-research-report.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 調査中 | 2026-10-21 |
 | [予防接種・常備薬の一覧](../research/vaccines-and-medicines-checklist.html) | [#8](https://github.com/Rikkyhub/studying-abroad/issues/8) | 調査中 | 2026-10-20 |

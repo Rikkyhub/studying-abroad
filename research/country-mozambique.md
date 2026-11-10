@@ -92,7 +92,7 @@
 | 南ア（JNB）→マプト | 空路（SAA/Airlink/LAM）または陸路N4でLebombo/Ressano Garcia。国境で非公式の「補助者」に注意 | Wikivoyage Maputo。**2027年の便・時刻は未確認** |
 | 南ア（Kosi Bay）→ポンタ | 国境 08:00〜17:00、国境から宿は砂道4WD推奨。送迎 ZAR280/人（片道・最少2名、適用年不明） | ANAC、STRAB（既存資料） |
 | エスワティニ→マプト | マンジーニ〜マプト約186km。ミニバンで約4時間（ナマーシャ国境、ビザ込み） | Wikivoyage Maputo。エスワティニ側の運行**未確認** |
-| マラウイ・ジンバブエ・タンザニアとの直通 | ジンバブエ・ザンビア・マラウイ・南アは30日査証免除国（eVisaポータル掲載）。**モザンビーク経由の陸路横断は不確実（既存調査：Mozambique→Zimbabwe陸路は採用せず、MPUT→JNB→VFへ戻す）** | https://evisa.gov.mz/ ；[africa-2027-may-three-route-deep-research.md](africa-2027-may-three-route-deep-research.md) |
+| マラウイ・ジンバブエ・タンザニアとの直通 | ジンバブエ・ザンビア・マラウイ・南アは30日査証免除国（eVisaポータル掲載）。**モザンビーク経由の陸路横断は不確実（既存調査：Mozambique→Zimbabwe陸路は採用せず、MPUT→JNB→VFへ戻す）** | https://evisa.gov.mz/ ；[archive-africa-2027-may-three-route-deep-research.md](archive-africa-2027-may-three-route-deep-research.md) |
 | タンザニア（ダルエスサラーム）・ナイロビ→ペンバ | ペンバ行きの空路はあるが（Wikivoyage）、ペンバ周辺は外務省レベル2・FCDOは不要不急渡航回避。**使わない** | |
 | マプト→ケープタウン | 空路（週2〜4便と掲載元で差、既存資料）。**2027年は未確認** | |
 
@@ -209,7 +209,7 @@
 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html | 公式（外務省） | 2026-10-20（既存資料） | 2025-07-04発出 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/mozambique | 公式（CDC） | 2026-10-20（既存資料） | 現行 |
 | https://dan.org/health-medicine/health-resource/health-safety-guidelines/guidelines-for-flying-after-diving/ | 公式（DAN） | 2026-10-18（既存資料） | 現行 |
-| [africa-overland-7-9-countries.md](africa-overland-7-9-countries.md) / [africa-2027-may-three-route-deep-research.md](africa-2027-may-three-route-deep-research.md) / [../countries/mozambique.md](../countries/mozambique.md) | 内部資料 | 2026-11-08 | — |
+| [africa-overland-7-9-countries.md](africa-overland-7-9-countries.md) / [archive-africa-2027-may-three-route-deep-research.md](archive-africa-2027-may-three-route-deep-research.md) / [../countries/mozambique.md](../countries/mozambique.md) | 内部資料 | 2026-11-08 | — |
 
 ## 検索ログ
 - WebSearch：3件実行したがいずれもツール側エラー（検索機能が使えない）。検索結果は得られず。

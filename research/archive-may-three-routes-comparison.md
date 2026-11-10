@@ -1,12 +1,14 @@
 # 5月アフリカ周遊3ルートの比較：ケニア・タンザニア経由／JNB北側先行／JNB南側先行（調査版）
 
+> **過去の比較案（参考）**：5月の周遊は、現在は「案G」（日本→ムンバイ→モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウン）が最新の方針です。この資料は案Gより前の比較で、**そのまま使わないでください**。最新の費用は [航空券・費用](../docs/12-flights.md)、ルートは [ルート作成](../docs/11-route-builder.md) を見てください。
+
 **調査日：2026-10-20 / 想定：2027年5月・34日間、日本の一般旅券、1名、バックパック旅の匿名モデル。** Issue [#51](https://github.com/Rikkyhub/studying-abroad/issues/51)（関連 #2, #23, #38, #44, #47, #49, #53）。
 
 - **一般化した匿名モデルであり、予約・購入・確定旅程ではない。** 日付は使わず、**Day 1 = 東京出発日**の相対日数だけで書く。個人の事情・契約・支払い・予約は記載しない（[公開データ方針](../docs/05-public-data-policy.md)）。
 - ラベル：**確認済み(URL, 確認日)**＝公式・運営者ページを確認日に取得して読めた事実 / **推計(式)**＝式を併記した見積り / **未確認**＝取得できなかった・裏付けがない（0円や推測値で埋めない）。2026年の掲載内容を2027年の確定値とは扱わない。
 - 固定モデル：34日間／Day 34 までに（目標は Day 33〜34 以内）ケープタウン(CPT)着／日本→アフリカ最初の国際線は**予算の仮置き10万円を3案で同額**（実売運賃ではない）／南アフリカでの語学学校の授業料・宿泊と留学後の帰国費用は本資料の周遊費に含めない（二重計上を避ける）。
 - Issue #51 の本文は旧版と新版（マニラ発・60万円枠の別条件）が混在している。**本資料は「34日・東京発」側の差分比較**であり、Deep Research 側（マニラ発・28〜35日）の金額とは条件が違うため混ぜない。Issue #53（Namibiaなし案D）の順位・金額も流用しない。
-- 既存資料：[africa-route-comparison.md](africa-route-comparison.md)（#23）、[southern-africa-countries.md](southern-africa-countries.md)（#38）、[kenya-nairobi-short-stay.md](kenya-nairobi-short-stay.md)（#42）、[visa-and-immigration.md](visa-and-immigration.md)（#2）、[safety-and-health.md](safety-and-health.md)。関連PR（まだ main にない）の資料は文字だけで示す：may-itinerary-nbo-to-cpt.md（#47）、africa-overland-7-9-countries.md（#44）、long-stay-insurance.md（#49）。
+- 既存資料：[africa-route-comparison.md](africa-route-comparison.md)（#23）、[southern-africa-countries.md](southern-africa-countries.md)（#38）、[archive-kenya-nairobi-short-stay.md](archive-kenya-nairobi-short-stay.md)（#42）、[visa-and-immigration.md](visa-and-immigration.md)（#2）、[safety-and-health.md](safety-and-health.md)。関連PR（まだ main にない）の資料は文字だけで示す：archive-may-itinerary-nbo-to-cpt.md（#47）、africa-overland-7-9-countries.md（#44）、long-stay-insurance.md（#49）。
 
 ---
 
@@ -58,7 +60,7 @@ Issue 本文の食い違い：Issue は A の強みの欄で「ナミビアを�
 | Day | 場所 | 手段 | 所要 | 国境・入国 | 宿泊 | 観光 | 状態 |
 |---|---|---|---|---|---|---|---|
 | 1 | 東京発 | 国際線（予算仮置き10万円） | 未確認 | - | 機内/乗継 | - | 候補（運賃未確認） |
-| 2〜5 | ナイロビ（ケニア） | 到着 | 4日（Day 2〜5） | ケニア入国（eTA。[kenya-nairobi-short-stay.md](kenya-nairobi-short-stay.md)） | 3〜4泊 | 市内・半日サファリ | 候補 |
+| 2〜5 | ナイロビ（ケニア） | 到着 | 4日（Day 2〜5） | ケニア入国（eTA。[archive-kenya-nairobi-short-stay.md](archive-kenya-nairobi-short-stay.md)） | 3〜4泊 | 市内・半日サファリ | 候補 |
 | 6〜12 | タンザニア（アルーシャ/ンゴロンゴロ等） | NBO→タンザニアは空路/陸路 | 7日（Day 6〜12） | タンザニア入国 | 6〜7泊 | サファリ（北側チョベと重複しない内容に絞る） | 区間は未確認 |
 | 13 | タンザニア→VFA方面 | 空路（乗継の可能性が高い） | 未確認 | 出国 | 1泊 | 移動日 | **未確認**（直行は未確認） |
 | 14〜21 | VFA→ザンビア→ボツワナ→ナミビア | 陸路・国境（3.4） | 8日（Day 14〜21） | 4か国の入出国 | 7泊 | 滝・チョベ | 候補 |
@@ -271,7 +273,7 @@ Issueの前提：国際線10万円を**含む**／32泊前後／1日2千〜4千�
 - **入国と滞在資格（Issue [#2](https://github.com/Rikkyhub/studying-abroad/issues/2)）**：南アフリカでの語学就学の可否、周遊中の南ア入国回数と滞在日数、再入国の扱い。資料は [visa-and-immigration.md](visa-and-immigration.md)。本資料では3.7のとおり90日免除は就学許可と同義ではない。
 - **保険（Issue [#49](https://github.com/Rikkyhub/studying-abroad/issues/49)）**：長期滞在向け保険は資料 long-stay-insurance.md（関連PR #50。main にまだない）。サファリ・ダイビングの補償条件は **未確認**。
 - 費用モデルの「ビザ・国別手続・周遊保険」行（A 5〜13、B/C 4〜11）は、保険を別立てにすると二重になる可能性がある。保険の保険料が確定するまで **未確認**。
-- 関連資料（関連PR、mainにまだない）：may-itinerary-nbo-to-cpt.md（#47／PR #48）、africa-overland-7-9-countries.md（#44／PR #45）。
+- 関連資料（関連PR、mainにまだない）：archive-may-itinerary-nbo-to-cpt.md（#47／PR #48）、africa-overland-7-9-countries.md（#44／PR #45）。
 
 ---
 

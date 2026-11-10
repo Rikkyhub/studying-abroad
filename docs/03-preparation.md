@@ -81,7 +81,7 @@
 | ID |  | タスク | 期限（目安） | 期限の種類 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|---|
 | T-F01 | ⬜ | 日本→マニラ（往路）を購入 | 出発45日前（推奨目安） | 推奨目安 | 進行中 | 本人 | 片道 約2.2〜6.5万円（KAYAK参考） | 航空会社公式の2026年機内持込規定を比較済み。便・運賃・変更条件・受託荷物・2027年適用を予約前に確認し、本人判断で購入（research/prep-priority2-tasks.md §10） | [出典](https://help.cebupacificair.com/article/hand-carry-guidelines-272309 / https://www.philippineairlines.com/us/en/before-you-fly/baggage-information/baggage-allowance/baggage-allowance-fees/carry-on-baggage.html / https://www.kayak.com/flight-routes/Tokyo-TYO/Manila-Ninoy-Aquino-Intl-MNL) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
-| T-F02 | ⬜ | 日本→モーリシャス→マダガスカルの航空券を比較（購入は本人） | 該当便の出発60日前（推奨目安） | 推奨目安 | 進行中 | 本人 | research/africa-trip.md 参照 | 東京→ムンバイ→モーリシャス（利用者申告 72,270円〜約74,000円）とモーリシャス→アンタナナリボ（同 約50,000円）を、2027年5月で再検索し、単一予約か自己乗継かを区別。ムンバイとモーリシャスの入国・乗継要件、受託手荷物、遅延時の保護、最低接続時間を確認する。公式予約画面で比較してから本人が購入 | [出典](https://www.emirates.com/ph/english/destinations/mnl/jnb/flights-from-manila-to-johannesburg/ / https://www.etihad.com/en-ph/flights/flights-from-manila-to-johannesburg) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-F02 | ⬜ | 日本→モーリシャス→マダガスカルの航空券を比較（購入は本人） | 該当便の出発60日前（推奨目安） | 推奨目安 | 進行中 | 本人 | research/archive-africa-trip.md 参照 | 東京→ムンバイ→モーリシャス（利用者申告 72,270円〜約74,000円）とモーリシャス→アンタナナリボ（同 約50,000円）を、2027年5月で再検索し、単一予約か自己乗継かを区別。ムンバイとモーリシャスの入国・乗継要件、受託手荷物、遅延時の保護、最低接続時間を確認する。公式予約画面で比較してから本人が購入 | [出典](https://www.emirates.com/ph/english/destinations/mnl/jnb/flights-from-manila-to-johannesburg/ / https://www.etihad.com/en-ph/flights/flights-from-manila-to-johannesburg) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-F03 | ⬜ | ケープタウン→日本（帰国便）を購入 | 帰国便の出発90日前（推奨目安） | 推奨目安 | 進行中 | 本人 | research/second-school.md 参照 | 研究§2-4にEmirates/Ethiopian公式CPT→東京候補を比較済み。第2校終了日と最終訪問国を確定後に2027年の片道総額・乗継・荷物・変更条件を各社公式検索し本人が購入判断 | [出典](https://www.emirates.com/jp/english/destinations/cpt/nrt/flights-from-cape-town-to-tokyo-narita/ / https://www.ethiopianairlines.com/en-et/flights-from-cape-town-to-tokyo) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 
 ### お金・通信
@@ -105,7 +105,7 @@
 | ID |  | タスク | 期限（目安） | 期限の種類 | 進捗 | 担当 | 費用目安 | 次のアクション | 根拠 | Issue |
 |---|---|---|---|---|---|---|---|---|---|---|
 | T-T01 | ⬜ | 外務省 たびレジ登録（フィリピン・マダガスカル・南部アフリカ各国） | 出発7日前（推奨目安） | 推奨目安 | 進行中 | 本人 | たびレジ無料（在留届の費用は未確認） | 外務省の2026年公式登録フローを調査済み。国別の滞在期間・居所でたびレジ/在留届を判定し、旅程確定後に本人が公式サイトで登録。たびレジは確認メールのURLから24時間以内に旅行情報を入力（research/prep-priority2-tasks.md §7） | [出典](https://www.ezairyu.mofa.go.jp/tabireg/registration.html / https://www.ezairyu.mofa.go.jp/RRnet/faq.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
-| T-T02 | ⬜ | 5月の周遊ルートを、マダガスカル先行＋ビクトリアの滝周辺3か国の案で詰める | 周遊開始60日前（推奨目安） | 推奨目安 | 進行中 | 本人 | research/africa-trip.md 参照 | research/may-madagascar-vfa-redesign.md の比較表（マダガスカル7〜8日／10日／12日、ビクトリアの滝周辺5〜7日／7〜9日、モーリシャスなし／乗継のみ／2〜4日）を、公式の運航・料金で埋める。ルート作成ページの案Gで順番と日数を触り、調べ直したい行を「Claudeに送る」で渡す。2027年5月の実際の乗継便・費用・宿泊・催行条件を公式事業者で確認してから本人が最終選択 | [出典](https://www.mozambiquehighcommission.org.uk/visa-section.html / https://dailynews.gov.bw/news-detail/90939 / https://dailynews.gov.bw/news-detail/66371 / https://biggameparks.org/rates / https://biggameparks.org/properties/chubeka-trails) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
+| T-T02 | ⬜ | 5月の周遊ルートを、マダガスカル先行＋ビクトリアの滝周辺3か国の案で詰める | 周遊開始60日前（推奨目安） | 推奨目安 | 進行中 | 本人 | research/archive-africa-trip.md 参照 | research/may-madagascar-vfa-redesign.md の比較表（マダガスカル7〜8日／10日／12日、ビクトリアの滝周辺5〜7日／7〜9日、モーリシャスなし／乗継のみ／2〜4日）を、公式の運航・料金で埋める。ルート作成ページの案Gで順番と日数を触り、調べ直したい行を「Claudeに送る」で渡す。2027年5月の実際の乗継便・費用・宿泊・催行条件を公式事業者で確認してから本人が最終選択 | [出典](https://www.mozambiquehighcommission.org.uk/visa-section.html / https://dailynews.gov.bw/news-detail/90939 / https://dailynews.gov.bw/news-detail/66371 / https://biggameparks.org/rates / https://biggameparks.org/properties/chubeka-trails) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 | T-T03 | ⬜ | 渡航中の経費は非公開で記録し、公開用の見積を更新 | 渡航中は随時（推奨目安） | 推奨目安 | 進行中 | 本人 | — | 一般公開用の集計設計は作成済み。渡航後に本人が非公開明細と現金メモを照合し、費目・国・月単位に集約して公開可否を確認する（research/prep-priority2-tasks.md §11） | [出典](https://www.boj.or.jp/statistics/market/forex/fxdaily/index.htm / https://www.ppc.go.jp/personalinfo/tokumeikakouInfo/) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) |
 
 ### 帰国・復職
@@ -179,7 +179,7 @@
 |---|---|---|
 | 南アフリカ | 出国予定日から30日以上の残存期間。空白の査証欄2ページ以上 | [外務省](https://www.anzen.mofa.go.jp/m/mbimmigration_122.html) |
 | フィリピン | 滞在日数＋6か月以上を強く推奨 | [外務省](https://www.anzen.mofa.go.jp/m/mbimmigration_013.html) |
-| モザンビーク／ボツワナ | 残存180日以上／6か月以上 | [africa-trip.md](../research/africa-trip.md) |
+| モザンビーク／ボツワナ | 残存180日以上／6か月以上 | [archive-africa-trip.md](../research/archive-africa-trip.md) |
 | 手数料（2026-07-01〜） | 10年用（18歳以上は10年用のみ）: 電子申請8,900円／窓口9,300円。交付まで約2週間〜1か月 | [東京都](https://www.seikatubunka.metro.tokyo.lg.jp/passport/documents/0000000432) |
 
 **判断基準**: 帰国予定（2027年7月下旬）＋6か月 ＝ **2028年1月下旬以降まで有効**で、空白ページが10ページ程度あるか。

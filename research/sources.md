@@ -187,7 +187,7 @@
 | ケニア（eTA） | https://extern.api.etakenya.go.ke/eligibility / https://etakenya.go.ke/form/apply/how-to-apply | 標準eTA USD30、通過USD20、90日以内の渡航に有効、処理3営業日 | 2026-10-18 | 決済手数料・日本旅券の特例は未確認 |
 | ケニア（安全） | https://www.anzen.mofa.go.jp/m/mbhazardinfo1_100.html / https://www.anzen.mofa.go.jp/info/pcterror_100.html | 危険情報2025-05-19（ナイロビのスラム街周辺レベル2）、テロ情勢2026-04-17 | 2026-10-18 | 渡航直前に再確認 |
 | ケニア（サファリ料金） | https://nairobipark.org/half-day-nairobi-national-park-tour/ | 貸切USD200（1人）〜50（8人）、混載3〜6人で65〜45（成立保証なし）、集合はメインゲート | 2026-10-18 | 民間運営者。政府資料ではない |
-| D案 エスワティニ交通 | https://transmagnific.com/schedule.php | JNB↔Mbabane 毎日4便・R750片道、Maputo便は問合せ制 | 2026-10-20 | 2027年の時刻・料金とみなさない（[d-plan-no-namibia.md](d-plan-no-namibia.md)） |
+| D案 エスワティニ交通 | https://transmagnific.com/schedule.php | JNB↔Mbabane 毎日4便・R750片道、Maputo便は問合せ制 | 2026-10-20 | 2027年の時刻・料金とみなさない（[archive-d-plan-no-namibia.md](archive-d-plan-no-namibia.md)） |
 | D案 レンタカー | https://www.avis.co.za/contact-avis/rental-guide/before-rental / https://www.avis.co.za/safari-rental/Terms-and-Conditions | 通常車はジンバブエ・モザンビーク・ザンビア不可、Safari は最低7日・JNB→VFA片道R11,500 | 2026-10-20 | 書面承認は未取得 |
 | D案 安全・入国 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html / https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html / https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html / https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html | レソト査証免除、モザンビーク650メティカル、ジンバブエ査証料、モザンビーク危険レベル | 2026-10-20 | MOFA更新日はレソト2025-08-22・モザンビーク2025-06-18・ジンバブエ2026-07-13 |
 | D案 FCDO | https://www.gov.uk/foreign-travel-advice/lesotho/safety-and-security / https://www.gov.uk/foreign-travel-advice/eswatini/safety-and-security | 夜間移動・国境付近の注意 | 2026-10-20 | 英国向け助言 |
