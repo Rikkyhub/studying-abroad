@@ -319,15 +319,16 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
   if(!isItem){tr.classList.add("sub");return}
-  var key=page+":"+hash(first.replace(/\\s*出典$/,"")),st=store[key]||{};
+  var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
+  var key=rid?"id:"+rid:page+":"+hash(first.replace(/\\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
   STATES.forEach(function(s){var o=document.createElement("option");o.value=s[0];o.textContent=s[1];sel.appendChild(o)});
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,name:first.replace(/\\s*出典$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\\s*出典$/,"").replace(/\\s*[A-Z]{2}-\\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
-  function upd(){store[key]={s:sel.value,m:memo.value};if(!sel.value&&!memo.value)delete store[key];save();paint()}
+  function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
  });
  var box=document.createElement("div");box.className="triage";
@@ -647,7 +648,8 @@ def budget_cards(root: Path = ROOT) -> str:
         card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標"),
         card("上限予算", build.man(S["budget_cap"]), "モデルの上限"),
         card("見積合計（標準）", build.yen(tot["std"]),
-             f'低 {esc(build.yen(tot["low"]))} 〜 余 {esc(build.yen(tot["high"]))}<br><span class="muted">未計上 {n_na + n_part}件は含まず、0円ではない</span>',
+             f'低 {esc(build.yen(tot["low"]))} 〜 余 {esc(build.yen(tot["high"]))}<br><span class="muted">未計上 {n_na + n_part}件は含まず、0円ではない</span>'
+             f'<span class="tri-top" data-total="{int(round(tot["std"]))}" hidden></span>',
              "docs/02-budget.html"),
         split_card("フィリピン（バギオ）", "baguio", "現地費（航空券を除く）"),
         split_card("アフリカ周遊（5月）", "africa", f'現地費（航空券を除く）。航空券と合わせた5月の総額は {build.yen(may_total)}'),
@@ -742,6 +744,29 @@ form.hidden=false;upd();
 })();
 </script>"""
 
+INDEX_TRIAGE_SCRIPT = """<script>
+(function(){
+var el=document.querySelector(".tri-top");if(!el)return;
+var store={};try{store=JSON.parse(localStorage.getItem("cost-triage-v1")||"{}")}catch(e){return}
+var skip=0,hold=0,nSkip=0,nHold=0,noval=0;
+Object.keys(store).forEach(function(k){
+ if(k.indexOf("id:")!==0)return;var o=store[k];if(!o||!o.s)return;
+ var std=o.v&&o.v[1];
+ if(o.s==="skip"){nSkip++;if(std==null)noval++;else skip+=std}
+ else if(o.s==="hold"){nHold++;if(std!=null)hold+=std}
+});
+if(!nSkip&&!nHold)return;
+var total=parseInt(el.getAttribute("data-total"),10)||0;
+function f(n){return "¥"+Math.round(n).toLocaleString("ja-JP")}
+var t=document.createElement("span");t.className="tri-top-line";
+var line="<br><strong>あなたの判断を反映</strong>：";
+if(nSkip)line+="不要 "+nSkip+"件（"+f(skip)+"）を除くと "+f(total-skip);else line+="不要の判断はまだありません（合計 "+f(total)+"）";
+if(nHold)line+="／保留 "+nHold+"件（"+f(hold)+"）を含む";
+if(noval)line+="／金額が読み取れない不要 "+noval+"件は引けていません";
+t.innerHTML=line;el.parentNode.insertBefore(t,el);
+})();
+</script>"""
+
 INDEX_CAROUSEL_SCRIPT = """<script>
 (function(){
 document.querySelectorAll("[data-carousel]").forEach(function(c){
@@ -806,7 +831,7 @@ def index_page(root: Path = ROOT) -> str:
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY
     for k, v in (("budget", budget_cards(root)), ("timeline", timeline_cards(root)), ("regions", region_cards(root)),("now", now_block(root)), ("fx", fx_summary(root)),
-                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT)):
+                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
 

@@ -169,7 +169,7 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 <p>この地域に対応する未完了の確認事項はありません。</p>
 <details class="sec" open><summary><h2 id="3-費用の見積">3. 費用の見積</h2></summary>
 <p>「未計上」は金額が入っていないことを示し、0円ではありません。8月の追加周遊は実施するかどうかが未定のため、金額は入っていません。</p>
-<div class="scroll"><table class="cost" data-cost><thead><tr><th>項目</th><th>区分</th><th>現地通貨（標準）</th><th class="n">低予算</th><th class="n">標準</th><th class="n">余裕</th></tr></thead><tbody><tr><td data-label="項目">7月末〜8月の追加観光（任意・未計画）</td><td data-label="区分">未確認</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">未計上</td><td class="n" data-label="標準">未計上</td><td class="n" data-label="余裕">未計上</td></tr><tr><td data-label="項目"><strong>小計：公開価格表からの匿名の見積（見積と未確認の合計）</strong></td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算"><strong>未計上</strong></td><td class="n" data-label="標準"><strong>未計上</strong></td><td class="n" data-label="余裕"><strong>未計上</strong></td></tr><tr><td data-label="項目">うち 見積（出典あり）</td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">－</td><td class="n" data-label="標準">－</td><td class="n" data-label="余裕">－</td></tr><tr><td data-label="項目">うち 未確認（出典なし・推定）</td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">－</td><td class="n" data-label="標準">－</td><td class="n" data-label="余裕">－</td></tr></tbody></table></div>
+<div class="scroll"><table class="cost" data-cost><thead><tr><th>項目</th><th>区分</th><th>現地通貨（標準）</th><th class="n">低予算</th><th class="n">標準</th><th class="n">余裕</th></tr></thead><tbody><tr><td data-label="項目">7月末〜8月の追加観光（任意・未計画） <code>AU-01</code></td><td data-label="区分">未確認</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">未計上</td><td class="n" data-label="標準">未計上</td><td class="n" data-label="余裕">未計上</td></tr><tr><td data-label="項目"><strong>小計：公開価格表からの匿名の見積（見積と未確認の合計）</strong></td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算"><strong>未計上</strong></td><td class="n" data-label="標準"><strong>未計上</strong></td><td class="n" data-label="余裕"><strong>未計上</strong></td></tr><tr><td data-label="項目">うち 見積（出典あり）</td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">－</td><td class="n" data-label="標準">－</td><td class="n" data-label="余裕">－</td></tr><tr><td data-label="項目">うち 未確認（出典なし・推定）</td><td data-label="区分">－</td><td data-label="現地通貨（標準）">－</td><td class="n" data-label="低予算">－</td><td class="n" data-label="標準">－</td><td class="n" data-label="余裕">－</td></tr></tbody></table></div>
 <p>金額は公開価格表からの<strong>匿名の見積</strong>です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して合計しています（円未満は四捨五入）。区分の「未確認」は出典なしの推定または金額未入力で、見積と区別して表示しています。</p>
 <p><strong>未計上（合計に含まれない項目）</strong>：AU-01 7月末〜8月の追加観光（任意・未計画）（すべて未計上）。「未計上」は金額が入っていないことを示し、0円ではありません。</p>
 <p><strong>前提と備考</strong></p>
@@ -224,15 +224,16 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
   if(!isItem){tr.classList.add("sub");return}
-  var key=page+":"+hash(first.replace(/\s*出典$/,"")),st=store[key]||{};
+  var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
+  var key=rid?"id:"+rid:page+":"+hash(first.replace(/\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
   STATES.forEach(function(s){var o=document.createElement("option");o.value=s[0];o.textContent=s[1];sel.appendChild(o)});
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,name:first.replace(/\s*出典$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
-  function upd(){store[key]={s:sel.value,m:memo.value};if(!sel.value&&!memo.value)delete store[key];save();paint()}
+  function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
  });
  var box=document.createElement("div");box.className="triage";
