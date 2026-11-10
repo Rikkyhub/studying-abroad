@@ -61,25 +61,25 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 <!-- AUTO:cost -->
 | 項目 | 区分 | 現地通貨（標準） | 低予算 | 標準 | 余裕 |
 |---|---|---|---:|---:|---:|
-| 東京→ムンバイ経由→モーリシャス 片道（航空会社（未定）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥75,000 | ¥75,000 | ¥75,000 |
-| モーリシャス↔アンタナナリボ 往復航空券（マダガスカル観光後にMRUへ戻る）（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥90,700 | ¥90,700 | ¥90,700 |
-| KAZA UNIVISA（ジンバブエ・ザンビア。ボツワナは日帰りまで）（入国管理（現地払い）） [出典](https://www.zambiaimmigration.gov.zm/kaza-univisa/) | 見積 | USD 50 | ¥7,910 | ¥7,910 | ¥7,910 |
-| ビクトリアの滝 入場料（ジンバブエ側＋ザンビア側）（ZimParks／Zambia Tourism） [出典](https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/) | 未確認 | USD 58 | ¥9,175 | ¥9,175 | ¥9,175 |
-| 35日間の食費（地域別単価×日数）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥44,800 | ¥64,000 | ¥97,700 |
-| VFA・Livingstone・Kasane間の日中送迎（区間数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥7,500 | ¥15,000 | ¥24,000 |
-| マダガスカル自然観光とガイド（回数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥15,000 | ¥24,000 | ¥36,000 |
-| マダガスカル宿泊費（食費はAF-11）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥26,000 | ¥39,000 | ¥65,000 |
-| マダガスカル国内線：アンタナナリボ↔モロンダバ（往復・曜日要確認）（未定） [出典](https://www.flight.info/MD702) | 未確認 | － | 未計上 | 未計上 | 未計上 |
-| モーリシャス→ヨハネスブルグ 片道直行便（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥55,000 | ¥55,000 | ¥55,000 |
-| ヨハネスブルグ→ビクトリアフォールズ 片道直行便（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥26,000 | ¥26,000 | ¥26,000 |
-| リビングストンの滝以外の観光（ザンビア側の滝・サンセットクルーズ・博物館・夜間入場。任意のアクティビティ）（未定） [出典](https://en.wikivoyage.org/wiki/Livingstone) | 未確認 | USD 110 | ¥10,282 | ¥17,401 | ¥44,293 |
-| チョベのサファリ・ボート（回数×仮単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥16,000 | ¥24,000 | ¥40,000 |
-| ビクトリアフォールズ→ケープタウン 片道（直行/経由比較）（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) | 未確認 | 円建て | ¥47,000 | ¥47,000 | ¥47,000 |
-| マダガスカル日中の道路移動（回数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥13,000 | ¥27,000 | ¥48,000 |
-| モーリシャス宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥21,000 | ¥30,000 | ¥42,000 |
-| ヨハネスブルグ宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥9,000 | ¥12,000 | ¥18,000 |
-| VFA・Livingstone・Kasane宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥31,500 | ¥40,500 | ¥72,000 |
-| ケープタウン入学前宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) | 未確認 | 円建て | ¥14,000 | ¥20,000 | ¥32,000 |
+| 東京→ムンバイ経由→モーリシャス 片道（航空会社（未定）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-01` | 未確認 | 円建て | ¥75,000 | ¥75,000 | ¥75,000 |
+| モーリシャス↔アンタナナリボ 往復航空券（マダガスカル観光後にMRUへ戻る）（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) `AF-02` | 未確認 | 円建て | ¥90,700 | ¥90,700 | ¥90,700 |
+| KAZA UNIVISA（ジンバブエ・ザンビア。ボツワナは日帰りまで）（入国管理（現地払い）） [出典](https://www.zambiaimmigration.gov.zm/kaza-univisa/) `AF-06` | 見積 | USD 50 | ¥7,910 | ¥7,910 | ¥7,910 |
+| ビクトリアの滝 入場料（ジンバブエ側＋ザンビア側）（ZimParks／Zambia Tourism） [出典](https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/) `AF-07` | 未確認 | USD 58 | ¥9,175 | ¥9,175 | ¥9,175 |
+| 35日間の食費（地域別単価×日数）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-11` | 未確認 | 円建て | ¥44,800 | ¥64,000 | ¥97,700 |
+| VFA・Livingstone・Kasane間の日中送迎（区間数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-12` | 未確認 | 円建て | ¥7,500 | ¥15,000 | ¥24,000 |
+| マダガスカル自然観光とガイド（回数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-14` | 未確認 | 円建て | ¥15,000 | ¥24,000 | ¥36,000 |
+| マダガスカル宿泊費（食費はAF-11）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-15` | 未確認 | 円建て | ¥26,000 | ¥39,000 | ¥65,000 |
+| マダガスカル国内線：アンタナナリボ↔モロンダバ（往復・曜日要確認）（未定） [出典](https://www.flight.info/MD702) `AF-16` | 未確認 | － | 未計上 | 未計上 | 未計上 |
+| モーリシャス→ヨハネスブルグ 片道直行便（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) `AF-17` | 未確認 | 円建て | ¥55,000 | ¥55,000 | ¥55,000 |
+| ヨハネスブルグ→ビクトリアフォールズ 片道直行便（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) `AF-18` | 未確認 | 円建て | ¥26,000 | ¥26,000 | ¥26,000 |
+| リビングストンの滝以外の観光（ザンビア側の滝・サンセットクルーズ・博物館・夜間入場。任意のアクティビティ）（未定） [出典](https://en.wikivoyage.org/wiki/Livingstone) `AF-19` | 未確認 | USD 110 | ¥10,282 | ¥17,401 | ¥44,293 |
+| チョベのサファリ・ボート（回数×仮単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-20` | 未確認 | 円建て | ¥16,000 | ¥24,000 | ¥40,000 |
+| ビクトリアフォールズ→ケープタウン 片道（直行/経由比較）（航空会社（未定）） [出典](https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&utm_term=skyscanner_chatgpt_app_data) `AF-21` | 未確認 | 円建て | ¥47,000 | ¥47,000 | ¥47,000 |
+| マダガスカル日中の道路移動（回数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-22` | 未確認 | 円建て | ¥13,000 | ¥27,000 | ¥48,000 |
+| モーリシャス宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-23` | 未確認 | 円建て | ¥21,000 | ¥30,000 | ¥42,000 |
+| ヨハネスブルグ宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-24` | 未確認 | 円建て | ¥9,000 | ¥12,000 | ¥18,000 |
+| VFA・Livingstone・Kasane宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-25` | 未確認 | 円建て | ¥31,500 | ¥40,500 | ¥72,000 |
+| ケープタウン入学前宿泊（泊数×単価）（仮単価モデル（未検証）） [出典](https://github.com/Rikkyhub/studying-abroad/issues/80) `AF-26` | 未確認 | 円建て | ¥14,000 | ¥20,000 | ¥32,000 |
 | **小計：公開価格表からの匿名の見積（見積と未確認の合計）** | － | － | **¥518,867** | **¥623,685** | **¥829,778** |
 | うち 見積（出典あり） | － | － | ¥7,910 | ¥7,910 | ¥7,910 |
 | うち 未確認（出典なし・推定） | － | － | ¥510,957 | ¥615,776 | ¥821,868 |
