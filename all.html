@@ -118,6 +118,8 @@ details.sec>:last-child{margin-bottom:14px}
 .triage .muted,.triage .tri-note{color:var(--muted);font-size:.85rem}
 .triage button{font:inherit;font-size:.88rem;padding:4px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
 .triage .tri-hide{display:inline-block;margin:6px 12px 0 0}
+.triage .tri-filter{margin:8px 0 4px}
+.triage .tri-filter button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
 th.tri,td.tri{min-width:7em;white-space:nowrap}
 td.tri select,td.tri input[type=text]{font:inherit;font-size:.88rem;max-width:11em;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 td.tri input[type=text]{width:11em}
@@ -356,13 +358,13 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  var iLow=cols["低予算"],iStd=cols["標準"],iHigh=cols["余裕"];
  if(iStd==null)return;
  ["要否","メモ"].forEach(function(t){var th=document.createElement("th");th.textContent=t;th.className="tri";head.appendChild(th)});
- var rows=[];
+ var iGrp=cols["費用区分"],flt="",rows=[],subs=[];
  Array.prototype.forEach.call(tb.tBodies[0].rows,function(tr){
   var first=tr.cells[0].textContent.trim(),isItem=/^(見積|未確認)$/.test((tr.cells[1]||{}).textContent.trim());
   var td1=document.createElement("td"),td2=document.createElement("td");td1.className=td2.className="tri";
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
-  if(!isItem){tr.classList.add("sub");return}
+  if(!isItem){tr.classList.add("sub");subs.push(tr);return}
   var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
   var key=rid?"id:"+rid:page+":"+hash(first.replace(/\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
@@ -370,7 +372,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),g:iGrp==null?"":tr.cells[iGrp].textContent.trim(),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
   function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
@@ -379,15 +381,25 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
+ if(iGrp!=null){
+  var gs=[];rows.forEach(function(r){if(r.g&&gs.indexOf(r.g)<0)gs.push(r.g)});
+  var fb=document.createElement("div");fb.className="tri-filter";fb.setAttribute("role","group");fb.setAttribute("aria-label","費用区分で絞り込み");
+  fb.innerHTML='<span class="muted">費用区分で絞り込み：</span>';
+  [""].concat(gs).forEach(function(g){var b=document.createElement("button");b.type="button";b.textContent=g||"すべて";b.setAttribute("data-g",g);b.setAttribute("aria-pressed",g===""?"true":"false");
+   b.addEventListener("click",function(){flt=g;Array.prototype.forEach.call(fb.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});paint()});fb.appendChild(b)});
+  box.insertBefore(fb,sum);
+ }
  function paint(){
-  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0];
+  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0],fTot=0,fN=0;
   rows.forEach(function(r){
    var s=r.sel.value;cnt[s]++;
    r.tr.classList.toggle("skip",s==="skip");r.tr.classList.toggle("hold",s==="hold");
-   r.tr.hidden=s==="skip"&&hide.checked;
+   r.tr.hidden=(s==="skip"&&hide.checked)||(flt!==""&&r.g!==flt);
+   if(flt!==""&&r.g===flt&&s!=="skip"){fN++;if(r.v[1]!=null)fTot+=r.v[1]}
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
+  subs.forEach(function(t){t.hidden=flt!==""});
+  sum.innerHTML=(flt!==""?'<strong>「'+flt+'」だけの合計（標準・不要を除く）</strong><span class="big">'+fmt(fTot)+'</span><span class="muted">'+fN+'件。下は表全体の合計です。</span><br>':'')+'<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -500,13 +512,13 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  var iLow=cols["低予算"],iStd=cols["標準"],iHigh=cols["余裕"];
  if(iStd==null)return;
  ["要否","メモ"].forEach(function(t){var th=document.createElement("th");th.textContent=t;th.className="tri";head.appendChild(th)});
- var rows=[];
+ var iGrp=cols["費用区分"],flt="",rows=[],subs=[];
  Array.prototype.forEach.call(tb.tBodies[0].rows,function(tr){
   var first=tr.cells[0].textContent.trim(),isItem=/^(見積|未確認)$/.test((tr.cells[1]||{}).textContent.trim());
   var td1=document.createElement("td"),td2=document.createElement("td");td1.className=td2.className="tri";
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
-  if(!isItem){tr.classList.add("sub");return}
+  if(!isItem){tr.classList.add("sub");subs.push(tr);return}
   var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
   var key=rid?"id:"+rid:page+":"+hash(first.replace(/\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
@@ -514,7 +526,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),g:iGrp==null?"":tr.cells[iGrp].textContent.trim(),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
   function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
@@ -523,15 +535,25 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
+ if(iGrp!=null){
+  var gs=[];rows.forEach(function(r){if(r.g&&gs.indexOf(r.g)<0)gs.push(r.g)});
+  var fb=document.createElement("div");fb.className="tri-filter";fb.setAttribute("role","group");fb.setAttribute("aria-label","費用区分で絞り込み");
+  fb.innerHTML='<span class="muted">費用区分で絞り込み：</span>';
+  [""].concat(gs).forEach(function(g){var b=document.createElement("button");b.type="button";b.textContent=g||"すべて";b.setAttribute("data-g",g);b.setAttribute("aria-pressed",g===""?"true":"false");
+   b.addEventListener("click",function(){flt=g;Array.prototype.forEach.call(fb.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});paint()});fb.appendChild(b)});
+  box.insertBefore(fb,sum);
+ }
  function paint(){
-  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0];
+  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0],fTot=0,fN=0;
   rows.forEach(function(r){
    var s=r.sel.value;cnt[s]++;
    r.tr.classList.toggle("skip",s==="skip");r.tr.classList.toggle("hold",s==="hold");
-   r.tr.hidden=s==="skip"&&hide.checked;
+   r.tr.hidden=(s==="skip"&&hide.checked)||(flt!==""&&r.g!==flt);
+   if(flt!==""&&r.g===flt&&s!=="skip"){fN++;if(r.v[1]!=null)fTot+=r.v[1]}
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
+  subs.forEach(function(t){t.hidden=flt!==""});
+  sum.innerHTML=(flt!==""?'<strong>「'+flt+'」だけの合計（標準・不要を除く）</strong><span class="big">'+fmt(fTot)+'</span><span class="muted">'+fN+'件。下は表全体の合計です。</span><br>':'')+'<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -636,13 +658,13 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  var iLow=cols["低予算"],iStd=cols["標準"],iHigh=cols["余裕"];
  if(iStd==null)return;
  ["要否","メモ"].forEach(function(t){var th=document.createElement("th");th.textContent=t;th.className="tri";head.appendChild(th)});
- var rows=[];
+ var iGrp=cols["費用区分"],flt="",rows=[],subs=[];
  Array.prototype.forEach.call(tb.tBodies[0].rows,function(tr){
   var first=tr.cells[0].textContent.trim(),isItem=/^(見積|未確認)$/.test((tr.cells[1]||{}).textContent.trim());
   var td1=document.createElement("td"),td2=document.createElement("td");td1.className=td2.className="tri";
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
-  if(!isItem){tr.classList.add("sub");return}
+  if(!isItem){tr.classList.add("sub");subs.push(tr);return}
   var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
   var key=rid?"id:"+rid:page+":"+hash(first.replace(/\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
@@ -650,7 +672,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),g:iGrp==null?"":tr.cells[iGrp].textContent.trim(),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
   function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
@@ -659,15 +681,25 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
+ if(iGrp!=null){
+  var gs=[];rows.forEach(function(r){if(r.g&&gs.indexOf(r.g)<0)gs.push(r.g)});
+  var fb=document.createElement("div");fb.className="tri-filter";fb.setAttribute("role","group");fb.setAttribute("aria-label","費用区分で絞り込み");
+  fb.innerHTML='<span class="muted">費用区分で絞り込み：</span>';
+  [""].concat(gs).forEach(function(g){var b=document.createElement("button");b.type="button";b.textContent=g||"すべて";b.setAttribute("data-g",g);b.setAttribute("aria-pressed",g===""?"true":"false");
+   b.addEventListener("click",function(){flt=g;Array.prototype.forEach.call(fb.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});paint()});fb.appendChild(b)});
+  box.insertBefore(fb,sum);
+ }
  function paint(){
-  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0];
+  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0],fTot=0,fN=0;
   rows.forEach(function(r){
    var s=r.sel.value;cnt[s]++;
    r.tr.classList.toggle("skip",s==="skip");r.tr.classList.toggle("hold",s==="hold");
-   r.tr.hidden=s==="skip"&&hide.checked;
+   r.tr.hidden=(s==="skip"&&hide.checked)||(flt!==""&&r.g!==flt);
+   if(flt!==""&&r.g===flt&&s!=="skip"){fN++;if(r.v[1]!=null)fTot+=r.v[1]}
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
+  subs.forEach(function(t){t.hidden=flt!==""});
+  sum.innerHTML=(flt!==""?'<strong>「'+flt+'」だけの合計（標準・不要を除く）</strong><span class="big">'+fmt(fTot)+'</span><span class="muted">'+fN+'件。下は表全体の合計です。</span><br>':'')+'<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -771,13 +803,13 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  var iLow=cols["低予算"],iStd=cols["標準"],iHigh=cols["余裕"];
  if(iStd==null)return;
  ["要否","メモ"].forEach(function(t){var th=document.createElement("th");th.textContent=t;th.className="tri";head.appendChild(th)});
- var rows=[];
+ var iGrp=cols["費用区分"],flt="",rows=[],subs=[];
  Array.prototype.forEach.call(tb.tBodies[0].rows,function(tr){
   var first=tr.cells[0].textContent.trim(),isItem=/^(見積|未確認)$/.test((tr.cells[1]||{}).textContent.trim());
   var td1=document.createElement("td"),td2=document.createElement("td");td1.className=td2.className="tri";
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
-  if(!isItem){tr.classList.add("sub");return}
+  if(!isItem){tr.classList.add("sub");subs.push(tr);return}
   var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
   var key=rid?"id:"+rid:page+":"+hash(first.replace(/\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
@@ -785,7 +817,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),g:iGrp==null?"":tr.cells[iGrp].textContent.trim(),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
   function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
@@ -794,15 +826,25 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
+ if(iGrp!=null){
+  var gs=[];rows.forEach(function(r){if(r.g&&gs.indexOf(r.g)<0)gs.push(r.g)});
+  var fb=document.createElement("div");fb.className="tri-filter";fb.setAttribute("role","group");fb.setAttribute("aria-label","費用区分で絞り込み");
+  fb.innerHTML='<span class="muted">費用区分で絞り込み：</span>';
+  [""].concat(gs).forEach(function(g){var b=document.createElement("button");b.type="button";b.textContent=g||"すべて";b.setAttribute("data-g",g);b.setAttribute("aria-pressed",g===""?"true":"false");
+   b.addEventListener("click",function(){flt=g;Array.prototype.forEach.call(fb.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});paint()});fb.appendChild(b)});
+  box.insertBefore(fb,sum);
+ }
  function paint(){
-  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0];
+  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0],fTot=0,fN=0;
   rows.forEach(function(r){
    var s=r.sel.value;cnt[s]++;
    r.tr.classList.toggle("skip",s==="skip");r.tr.classList.toggle("hold",s==="hold");
-   r.tr.hidden=s==="skip"&&hide.checked;
+   r.tr.hidden=(s==="skip"&&hide.checked)||(flt!==""&&r.g!==flt);
+   if(flt!==""&&r.g===flt&&s!=="skip"){fN++;if(r.v[1]!=null)fTot+=r.v[1]}
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
+  subs.forEach(function(t){t.hidden=flt!==""});
+  sum.innerHTML=(flt!==""?'<strong>「'+flt+'」だけの合計（標準・不要を除く）</strong><span class="big">'+fmt(fTot)+'</span><span class="muted">'+fN+'件。下は表全体の合計です。</span><br>':'')+'<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -897,13 +939,13 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  var iLow=cols["低予算"],iStd=cols["標準"],iHigh=cols["余裕"];
  if(iStd==null)return;
  ["要否","メモ"].forEach(function(t){var th=document.createElement("th");th.textContent=t;th.className="tri";head.appendChild(th)});
- var rows=[];
+ var iGrp=cols["費用区分"],flt="",rows=[],subs=[];
  Array.prototype.forEach.call(tb.tBodies[0].rows,function(tr){
   var first=tr.cells[0].textContent.trim(),isItem=/^(見積|未確認)$/.test((tr.cells[1]||{}).textContent.trim());
   var td1=document.createElement("td"),td2=document.createElement("td");td1.className=td2.className="tri";
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
-  if(!isItem){tr.classList.add("sub");return}
+  if(!isItem){tr.classList.add("sub");subs.push(tr);return}
   var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
   var key=rid?"id:"+rid:page+":"+hash(first.replace(/\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
@@ -911,7 +953,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\s*出典$/,"").replace(/\s*[A-Z]{2}-\d+$/,""),g:iGrp==null?"":tr.cells[iGrp].textContent.trim(),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
   function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
@@ -920,15 +962,25 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
+ if(iGrp!=null){
+  var gs=[];rows.forEach(function(r){if(r.g&&gs.indexOf(r.g)<0)gs.push(r.g)});
+  var fb=document.createElement("div");fb.className="tri-filter";fb.setAttribute("role","group");fb.setAttribute("aria-label","費用区分で絞り込み");
+  fb.innerHTML='<span class="muted">費用区分で絞り込み：</span>';
+  [""].concat(gs).forEach(function(g){var b=document.createElement("button");b.type="button";b.textContent=g||"すべて";b.setAttribute("data-g",g);b.setAttribute("aria-pressed",g===""?"true":"false");
+   b.addEventListener("click",function(){flt=g;Array.prototype.forEach.call(fb.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});paint()});fb.appendChild(b)});
+  box.insertBefore(fb,sum);
+ }
  function paint(){
-  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0];
+  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0],fTot=0,fN=0;
   rows.forEach(function(r){
    var s=r.sel.value;cnt[s]++;
    r.tr.classList.toggle("skip",s==="skip");r.tr.classList.toggle("hold",s==="hold");
-   r.tr.hidden=s==="skip"&&hide.checked;
+   r.tr.hidden=(s==="skip"&&hide.checked)||(flt!==""&&r.g!==flt);
+   if(flt!==""&&r.g===flt&&s!=="skip"){fN++;if(r.v[1]!=null)fTot+=r.v[1]}
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
+  subs.forEach(function(t){t.hidden=flt!==""});
+  sum.innerHTML=(flt!==""?'<strong>「'+flt+'」だけの合計（標準・不要を除く）</strong><span class="big">'+fmt(fTot)+'</span><span class="muted">'+fN+'件。下は表全体の合計です。</span><br>':'')+'<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -1171,6 +1223,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 <p>このページを<strong>フェルミ推定の唯一の編集元</strong>とする。新しい予算CSVは作らない。泊数・日数・回数と仮単価をこのMarkdown表で直すと、ビルド時に<code>scripts/fermi_budget.py</code>が読み込み、既存ダッシュボードの費目・国別・月別・5月合計へ反映する。以前の<code>data/fermi_assumptions.csv</code>は廃止する。</p>
 <p><strong>注意</strong>：2027年の旅行費用・料金表ではなく、予算を組むための<strong>仮定</strong>。1泊3,000円は例示であり調査済みの平均宿泊単価ではない。実際の宿・ツアー・航空券の2027年対象日価格を得られたら、参照URL・取得日・含有条件を確認して更新する。公開サイトに個人の予約番号・購入額等は置かない。</p>
 <p>計算ルール：<code>費用（円）＝数量×各シナリオの単価</code>。単価は税込・諸費用を保証しない。機内食、宿の朝食、サファリの送迎・昼食・入園料、学校開始前のホステル代が別商品に含まれる場合は重複分を除外。各国を増やす場合は行の「国・地域」を追加し、同じ分類IDの新しい行を用意する（特定国の実売と単価の仮定を分離する）。下記の <strong>34泊・35日</strong> はDay1〜35の一例で、航空便の実際の日付・発着時刻に応じて変更する。ジンバブエ4日/4泊・ザンビア2日/2泊・ボツワナ3日/3泊は、VFA周辺9日/9泊の<strong>仮配分</strong>であり、各国の入出国・宿泊が確定したという意味ではない。国別単価は現時点で旧VFA合計の仮単価を均等に引き継いでおり、国別の実売比較は未完了。8月の複数ルート比較は<a href="#p-research-africa-august-comparison">8月国別予算モデル</a>を参照。</p>
+<blockquote><p><strong>マダガスカルの日数案ごとの費用比較</strong>は、このページの<a href="#p-research-africa-budget-fermi--マダガスカル日数案ごとの比較手計算編集表は現行14日のまま">「マダガスカル日数案ごとの比較」</a>にあります。日数案そのもの（日別の動き）は<a href="#p-research-may-madagascar-vfa-redesign">ルート調査ページ</a>です。</p></blockquote>
 <details class="sec" open><summary><h2 id="p-research-africa-budget-fermi--編集テーブル円単位">編集テーブル（円単位）</h2></summary>
 <p>数字は全て日本円／1名。数量を変えると予算が再計算される。区分はこの表の内容を確認するための説明で、予算集計上の費目はIDで対応する。</p>
 <div class="scroll"><table><thead><tr><th>ID</th><th>区分</th><th>国・地域</th><th>対象・費目</th><th class="n">数量</th><th>単位</th><th class="n">節約単価</th><th class="n">標準単価</th><th class="n">余裕単価</th></tr></thead><tbody><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">国際移動</td><td data-label="対象・費目">海外移動日</td><td class="n" data-label="数量">1</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,000</td><td class="n" data-label="標準単価">1,500</td><td class="n" data-label="余裕単価">2,500</td></tr><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">モーリシャス</td><td data-label="対象・費目">モーリシャス</td><td class="n" data-label="数量">6</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,500</td><td class="n" data-label="標準単価">2,000</td><td class="n" data-label="余裕単価">3,000</td></tr><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">マダガスカル</td><td data-label="対象・費目">マダガスカル</td><td class="n" data-label="数量">13</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,000</td><td class="n" data-label="標準単価">1,500</td><td class="n" data-label="余裕単価">2,200</td></tr><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">南アフリカ</td><td data-label="対象・費目">ヨハネスブルグ</td><td class="n" data-label="数量">2</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,600</td><td class="n" data-label="標準単価">2,500</td><td class="n" data-label="余裕単価">3,500</td></tr><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">ジンバブエ</td><td data-label="対象・費目">ジンバブエ（Victoria Falls）</td><td class="n" data-label="数量">4</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,400</td><td class="n" data-label="標準単価">2,000</td><td class="n" data-label="余裕単価">3,200</td></tr><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">ザンビア</td><td data-label="対象・費目">ザンビア（Livingstone）</td><td class="n" data-label="数量">2</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,400</td><td class="n" data-label="標準単価">2,000</td><td class="n" data-label="余裕単価">3,200</td></tr><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">ボツワナ</td><td data-label="対象・費目">ボツワナ（Kasane/Chobe）</td><td class="n" data-label="数量">3</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,400</td><td class="n" data-label="標準単価">2,000</td><td class="n" data-label="余裕単価">3,200</td></tr><tr><td data-label="ID">AF-11</td><td data-label="区分">食費</td><td data-label="国・地域">南アフリカ</td><td data-label="対象・費目">ケープタウン学校開始前</td><td class="n" data-label="数量">4</td><td data-label="単位">日</td><td class="n" data-label="節約単価">1,500</td><td class="n" data-label="標準単価">2,000</td><td class="n" data-label="余裕単価">3,200</td></tr><tr><td data-label="ID">AF-15</td><td data-label="区分">宿泊</td><td data-label="国・地域">マダガスカル</td><td data-label="対象・費目">マダガスカル</td><td class="n" data-label="数量">13</td><td data-label="単位">泊</td><td class="n" data-label="節約単価">2,000</td><td class="n" data-label="標準単価">3,000</td><td class="n" data-label="余裕単価">5,000</td></tr><tr><td data-label="ID">AF-23</td><td data-label="区分">宿泊</td><td data-label="国・地域">モーリシャス</td><td data-label="対象・費目">モーリシャス（4泊＋2泊）</td><td class="n" data-label="数量">6</td><td data-label="単位">泊</td><td class="n" data-label="節約単価">3,500</td><td class="n" data-label="標準単価">5,000</td><td class="n" data-label="余裕単価">7,000</td></tr><tr><td data-label="ID">AF-24</td><td data-label="区分">宿泊</td><td data-label="国・地域">南アフリカ</td><td data-label="対象・費目">ヨハネスブルグ</td><td class="n" data-label="数量">2</td><td data-label="単位">泊</td><td class="n" data-label="節約単価">4,500</td><td class="n" data-label="標準単価">6,000</td><td class="n" data-label="余裕単価">9,000</td></tr><tr><td data-label="ID">AF-25</td><td data-label="区分">宿泊</td><td data-label="国・地域">ジンバブエ</td><td data-label="対象・費目">ジンバブエ（Victoria Falls）</td><td class="n" data-label="数量">4</td><td data-label="単位">泊</td><td class="n" data-label="節約単価">3,500</td><td class="n" data-label="標準単価">4,500</td><td class="n" data-label="余裕単価">8,000</td></tr><tr><td data-label="ID">AF-25</td><td data-label="区分">宿泊</td><td data-label="国・地域">ザンビア</td><td data-label="対象・費目">ザンビア（Livingstone）</td><td class="n" data-label="数量">2</td><td data-label="単位">泊</td><td class="n" data-label="節約単価">3,500</td><td class="n" data-label="標準単価">4,500</td><td class="n" data-label="余裕単価">8,000</td></tr><tr><td data-label="ID">AF-25</td><td data-label="区分">宿泊</td><td data-label="国・地域">ボツワナ</td><td data-label="対象・費目">ボツワナ（Kasane/Chobe）</td><td class="n" data-label="数量">3</td><td data-label="単位">泊</td><td class="n" data-label="節約単価">3,500</td><td class="n" data-label="標準単価">4,500</td><td class="n" data-label="余裕単価">8,000</td></tr><tr><td data-label="ID">AF-26</td><td data-label="区分">宿泊</td><td data-label="国・地域">南アフリカ</td><td data-label="対象・費目">ケープタウン入学前</td><td class="n" data-label="数量">4</td><td data-label="単位">泊</td><td class="n" data-label="節約単価">3,500</td><td class="n" data-label="標準単価">5,000</td><td class="n" data-label="余裕単価">8,000</td></tr><tr><td data-label="ID">AF-12</td><td data-label="区分">現地交通</td><td data-label="国・地域">国境・越境共通</td><td data-label="対象・費目">VFA・リビングストン・カサネ間シャトル</td><td class="n" data-label="数量">3</td><td data-label="単位">回</td><td class="n" data-label="節約単価">2,500</td><td class="n" data-label="標準単価">5,000</td><td class="n" data-label="余裕単価">8,000</td></tr><tr><td data-label="ID">AF-22</td><td data-label="区分">現地交通</td><td data-label="国・地域">マダガスカル</td><td data-label="対象・費目">アンタナナリボ↔アンダシベ</td><td class="n" data-label="数量">2</td><td data-label="単位">回</td><td class="n" data-label="節約単価">5,000</td><td class="n" data-label="標準単価">9,000</td><td class="n" data-label="余裕単価">15,000</td></tr><tr><td data-label="ID">AF-22</td><td data-label="区分">現地交通</td><td data-label="国・地域">マダガスカル</td><td data-label="対象・費目">モロンダバ周辺</td><td class="n" data-label="数量">3</td><td data-label="単位">回</td><td class="n" data-label="節約単価">1,000</td><td class="n" data-label="標準単価">3,000</td><td class="n" data-label="余裕単価">6,000</td></tr><tr><td data-label="ID">AF-14</td><td data-label="区分">観光</td><td data-label="国・地域">マダガスカル</td><td data-label="対象・費目">マダガスカル自然観光・ガイド</td><td class="n" data-label="数量">3</td><td data-label="単位">回</td><td class="n" data-label="節約単価">5,000</td><td class="n" data-label="標準単価">8,000</td><td class="n" data-label="余裕単価">12,000</td></tr><tr><td data-label="ID">AF-20</td><td data-label="区分">サファリ</td><td data-label="国・地域">ボツワナ</td><td data-label="対象・費目">チョベのドライブ・ボート体験</td><td class="n" data-label="数量">2</td><td data-label="単位">回</td><td class="n" data-label="節約単価">8,000</td><td class="n" data-label="標準単価">12,000</td><td class="n" data-label="余裕単価">20,000</td></tr></tbody></table></div>
@@ -3393,6 +3446,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 <blockquote><p><strong>これは一般公開用の匿名モデルであり、予約・購入・確定旅程ではない。</strong> 個人の予約・雇用・学校契約・非公開Notionの内容は書かない。<br>
 <strong>この版は「骨組み」</strong>：優先順位、案の構成、比較表の枠、未確認の一覧までを置く。日別の費用・便の確認は次の段階で埋める（空欄は「未確認」であり0円ではない）。<br>
 旧比較（<a href="#p-research-archive-may-three-routes-comparison">#51 3ルート比較</a>、<a href="#p-research-africa-route-comparison">東アフリカ縦断</a>など）は<strong>履歴として残す</strong>。旧案を最新の採用案とはみなさない。</p></blockquote>
+<blockquote><p><strong>マダガスカルの日数案（現行14日／A 10日／B 7日／C 5日）を探している場合</strong>：<a href="#p-research-may-madagascar-vfa-redesign--マダガスカル日数の選択肢abc上の14暦日案を短縮する比較">▶ 日数案の比較表へ</a>。費用の比較は<a href="#p-research-africa-budget-fermi">フェルミ予算の「日数案ごとの比較」</a>。</p></blockquote>
 <p><strong>状態ラベル</strong>：<strong>確認済み</strong>＝公式・運営者ページを確認日に取得した事実／<strong>推計</strong>＝式つきの見積り／<strong>利用者申告</strong>＝公式でなく検証していない／<strong>未確認</strong>＝まだ調べていない。</p>
 <hr>
 <details class="sec" open><summary><h2 id="p-research-may-madagascar-vfa-redesign--2026-11-08追加比較mauritiusを往復の結節点とする35日モデルissue-80">2026-11-08追加比較｜Mauritiusを往復の結節点とする35日モデル（Issue #80）</h2></summary>
@@ -3403,6 +3457,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 <p><strong>既知の5区間参考小計：75,000＋90,700＋55,000＋26,000＋47,000＝293,700円。</strong> 60万円目標との差は<strong>306,300円</strong>だが、ここからマダガスカル国内線、現地移動、宿・食事、入国、サファリ/滝、予備費等が必要。<strong>この小計は別日・別運賃を足した感度分析であり、5区間をその価格で購入できる保証ではない</strong>。MRU↔JNB往復85,000円と片道55,000円は同時に計上しない。マダガスカル往復便の発券日・キャンセル規定も未確認。</p>
 <p>料金ソース：利用者が比較した参考検索額、<a href="https://skyscanner.net/g/referrals/v1/flights/home?mediaPartnerId=2850210&amp;utm_term=skyscanner_chatgpt_app_data" target="_blank" rel="noopener">Skyscanner（2026-11-08調査）</a>。2027年実売額を直接購入した検証ではない。参考時刻表：<a href="https://www.airmauritius.com/en-mu/book-and-manage/book/flight-schedule/timetable" target="_blank" rel="noopener">Air Mauritius公式</a>（公開されている最新季節の対象終了日を確認）、<a href="https://www.flight.info/MD702" target="_blank" rel="noopener">Madagascar Airlines参考 TNR→MOQ</a>、<a href="https://www.flight.info/MD703" target="_blank" rel="noopener">MOQ→TNR</a>。時刻表集計サイトの2027年掲載でも航空会社の運航・座席・運賃の保証にならない。</p>
 <h3 id="p-research-may-madagascar-vfa-redesign--day-1day-35乗継と国内移動を含む相対日モデル">Day 1〜Day 35｜乗継と国内移動を含む相対日モデル</h3>
+<blockquote><p>この表は<strong>現行の14日案</strong>です。マダガスカルを10日・7日・5日に縮めた案は、<a href="#p-research-may-madagascar-vfa-redesign--マダガスカル日数の選択肢abc上の14暦日案を短縮する比較">この表の下の「日数の選択肢」</a>にあります。</p></blockquote>
 <p><strong>Day 1 = 2027年5月3日（月）の仮置き</strong>（#46の「5月3日東京発」の参考検索に合わせた起点。確定出発日ではない）。曜日は国内線・国際線の運航曜日を確認するために付けた。</p>
 <div class="scroll"><table><thead><tr><th>日数</th><th>日付</th><th>国</th><th>都市・町／移動</th><th>実施内容・日数上の扱い</th></tr></thead><tbody><tr><td data-label="日数">1</td><td data-label="日付">5/3(月)</td><td data-label="国">日本→インド（乗継）</td><td data-label="都市・町／移動">東京→Mumbai</td><td data-label="実施内容・日数上の扱い">国際線出発（実便・乗継時間未確認）</td></tr><tr><td data-label="日数">2</td><td data-label="日付">5/4(火)</td><td data-label="国">モーリシャス</td><td data-label="都市・町／移動">MRU（空港）→島内</td><td data-label="実施内容・日数上の扱い">モーリシャス到着（到着がDay3の場合は後ろを組み替える）</td></tr><tr><td data-label="日数">3〜5</td><td data-label="日付">5/5(水)〜5/7(金)</td><td data-label="国">モーリシャス</td><td data-label="都市・町／移動">島内</td><td data-label="実施内容・日数上の扱い">島内観光3日、海・街・自然。入国観光日として確保</td></tr><tr><td data-label="日数">6</td><td data-label="日付">5/8(土)</td><td data-label="国">モーリシャス→マダガスカル</td><td data-label="都市・町／移動">MRU→Antananarivo（TNR）</td><td data-label="実施内容・日数上の扱い">マダガスカル入国、首都近郊泊</td></tr><tr><td data-label="日数">7</td><td data-label="日付">5/9(日)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">TNR→Andasibe</td><td data-label="実施内容・日数上の扱い">日中の手配車で東部へ移動</td></tr><tr><td data-label="日数">8</td><td data-label="日付">5/10(月)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">Andasibe</td><td data-label="実施内容・日数上の扱い">インドリ等のキツネザル・国立公園</td></tr><tr><td data-label="日数">9</td><td data-label="日付">5/11(火)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">Andasibe→TNR</td><td data-label="実施内容・日数上の扱い">東部観光後、首都へ戻る</td></tr><tr><td data-label="日数">10</td><td data-label="日付">5/12(水)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">TNR→Morondava</td><td data-label="実施内容・日数上の扱い"><strong>国内線</strong>で西部へ移動（運航曜日が合わなければ日付調整）</td></tr><tr><td data-label="日数">11〜13</td><td data-label="日付">5/13(木)〜5/15(土)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">Morondava</td><td data-label="実施内容・日数上の扱い">バオバブ街道・Kirindy等、ガイド・車両の正式条件待ち</td></tr><tr><td data-label="日数">14〜15</td><td data-label="日付">5/16(日)〜5/17(月)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">Morondava</td><td data-label="実施内容・日数上の扱い">西部の観光と欠航・雨天予備</td></tr><tr><td data-label="日数">16</td><td data-label="日付">5/18(火)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">Morondava→TNR</td><td data-label="実施内容・日数上の扱い"><strong>国内線</strong>で首都へ戻る（運航曜日が合うか再確認）</td></tr><tr><td data-label="日数">17〜18</td><td data-label="日付">5/19(水)〜5/20(木)</td><td data-label="国">マダガスカル</td><td data-label="都市・町／移動">Antananarivo近郊</td><td data-label="実施内容・日数上の扱い">観光・帰路の国内線遅延バッファ（2日）</td></tr><tr><td data-label="日数">19</td><td data-label="日付">5/21(金)</td><td data-label="国">マダガスカル→モーリシャス</td><td data-label="都市・町／移動">TNR→MRU</td><td data-label="実施内容・日数上の扱い">マダガスカルを出国。現行参考では<strong>マダガスカル滞在14暦日</strong></td></tr><tr><td data-label="日数">20</td><td data-label="日付">5/22(土)</td><td data-label="国">モーリシャス</td><td data-label="都市・町／移動">MRU周辺</td><td data-label="実施内容・日数上の扱い">再接続・待機（追加観光を想定する場合は追加費計上）</td></tr><tr><td data-label="日数">21</td><td data-label="日付">5/23(日)</td><td data-label="国">モーリシャス→南アフリカ</td><td data-label="都市・町／移動">MRU→Johannesburg（JNB）</td><td data-label="実施内容・日数上の扱い">直行片道。往復チケット復路は使わないので原則選ばない</td></tr><tr><td data-label="日数">22</td><td data-label="日付">5/24(月)</td><td data-label="国">南アフリカ</td><td data-label="都市・町／移動">JNB</td><td data-label="実施内容・日数上の扱い">別切り航空券の接続バッファ、空港周辺を基本に日中移動</td></tr><tr><td data-label="日数">23</td><td data-label="日付">5/25(火)</td><td data-label="国">南アフリカ→ジンバブエ</td><td data-label="都市・町／移動">JNB→Victoria Falls（VFA）</td><td data-label="実施内容・日数上の扱い">空路でビクトリアの滝へ</td></tr><tr><td data-label="日数">24</td><td data-label="日付">5/26(水)</td><td data-label="国">ジンバブエ</td><td data-label="都市・町／移動">Victoria Falls</td><td data-label="実施内容・日数上の扱い">滝の観光・入園料</td></tr><tr><td data-label="日数">25</td><td data-label="日付">5/27(木)</td><td data-label="国">ザンビア</td><td data-label="都市・町／移動">Livingstone</td><td data-label="実施内容・日数上の扱い">昼間の国境移動、滝の反対側</td></tr><tr><td data-label="日数">26</td><td data-label="日付">5/28(金)</td><td data-label="国">ザンビア</td><td data-label="都市・町／移動">Livingstone</td><td data-label="実施内容・日数上の扱い">観光・現地ツアー</td></tr><tr><td data-label="日数">27</td><td data-label="日付">5/29(土)</td><td data-label="国">ボツワナ</td><td data-label="都市・町／移動">Kasane</td><td data-label="実施内容・日数上の扱い">昼間の送迎・Kazungula国境移動</td></tr><tr><td data-label="日数">28〜29</td><td data-label="日付">5/30(日)〜5/31(月)</td><td data-label="国">ボツワナ</td><td data-label="都市・町／移動">Kasane／Chobe</td><td data-label="実施内容・日数上の扱い">乗合ゲームドライブ・ボートクルーズ、最低催行人数確認</td></tr><tr><td data-label="日数">30</td><td data-label="日付">6/1(火)</td><td data-label="国">ボツワナ→ジンバブエ</td><td data-label="都市・町／移動">Kasane→Victoria Falls</td><td data-label="実施内容・日数上の扱い">昼間の越境でVFA側へ戻り、空港接続を確保</td></tr><tr><td data-label="日数">31</td><td data-label="日付">6/2(水)</td><td data-label="国">ジンバブエ</td><td data-label="都市・町／移動">Victoria Falls</td><td data-label="実施内容・日数上の扱い">空路出発前の予備日</td></tr><tr><td data-label="日数">32</td><td data-label="日付">6/3(木)</td><td data-label="国">ジンバブエ→南アフリカ</td><td data-label="都市・町／移動">VFA→Cape Town</td><td data-label="実施内容・日数上の扱い">空路（直行と経由の両方を比較）</td></tr><tr><td data-label="日数">33〜35</td><td data-label="日付">6/4(金)〜6/6(日)</td><td data-label="国">南アフリカ</td><td data-label="都市・町／移動">Cape Town</td><td data-label="実施内容・日数上の扱い">学校前の生活準備・交通確認・遅延バッファ3日</td></tr></tbody></table></div>
 <p><strong>日数検算：</strong> 1出発＋1到着＋3モーリシャス観光＋14マダガスカル＋1モーリシャス帰路待機＋2JNB接続＋9VFA/3か国（Day23〜31）＋1CPT移動＋3CPT準備＝<strong>35日</strong>。上表の単位は重複しない。航空会社の実時刻で到着/出発日が変わるため、予約版では再計算する。</p>
