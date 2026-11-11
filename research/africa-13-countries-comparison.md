@@ -1,7 +1,7 @@
-# アフリカ13か国の比較：日数・シーズン・費用・コスパ・タイパ（2027年5月想定・調査版）
+# アフリカの国の比較表：日数・シーズン・費用・コスパ・タイパ（2027年5月想定・調査版）
 
 - 確認日：2026-11-08（表の見直し：2026-11-10）
-- 位置づけ：[国別深掘り調査](country-kenya.md)（13件）の結論を1枚に並べた比較表です。旅程の確定や予約ではありません。国の優劣を決める資料ではなく、「何日あてると無駄が少ないか」を見るためのものです。
+- 位置づけ：各国ページの「旅程の目安」の節（[ケニアの例](../countries/kenya.md)）の結論を1枚に並べた比較表です。**対象は13か国**（国別ページは16か国あり、南アフリカ・ナミビア・モーリシャスは日数・費用の深掘りが未調査のため、この表には入っていません）。旅程の確定や予約ではありません。国の優劣を決める資料ではなく、「何日あてると無駄が少ないか」を見るためのものです。
 - 数値の扱い：各国レポートの結論欄から転記しました。公式の値は増えましたが、**まだ準公式（Wikivoyage 等）や本書の推計を含む国があります**。どれも2027年の確定料金ではありません。下表の最後の列で、確度を次の記号で区別しています。
   - **【公式】**＝政府・公園運営機関・事業者の公式ページ／文書で確認した値（年度は各国のレポートに記載）
   - **【準公式】**＝Wikivoyage など。年度が古い、または不明
@@ -88,8 +88,8 @@
 
 ## 出典
 
-- 各国の数値は、次の13件の `research/country-*.md` の結論欄から転記しました。出典URLと確認日は、各レポートの出典一覧にあります。
-  - [エチオピア](country-ethiopia.md)、[マダガスカル](country-madagascar.md)、[ケニア](country-kenya.md)、[ジンバブエ](country-zimbabwe.md)、[タンザニア](country-tanzania.md)、[ボツワナ](country-botswana.md)、[モザンビーク](country-mozambique.md)、[ザンビア](country-zambia.md)、[レソト](country-lesotho.md)、[エスワティニ](country-eswatini.md)、[ウガンダ](country-uganda.md)、[ルワンダ](country-rwanda.md)、[マラウイ](country-malawi.md)
+- 各国の数値は、次の13か国の国別ページ（`countries/*.md`）の「旅程の目安」の節から転記しました。出典URLと確認日は、各レポートの出典一覧にあります。
+  - [エチオピア](../countries/ethiopia.md)、[マダガスカル](../countries/madagascar.md)、[ケニア](../countries/kenya.md)、[ジンバブエ](../countries/zimbabwe.md)、[タンザニア](../countries/tanzania.md)、[ボツワナ](../countries/botswana.md)、[モザンビーク](../countries/mozambique.md)、[ザンビア](../countries/zambia.md)、[レソト](../countries/lesotho.md)、[エスワティニ](../countries/eswatini.md)、[ウガンダ](../countries/uganda.md)、[ルワンダ](../countries/rwanda.md)、[マラウイ](../countries/malawi.md)
 - エボラ関連：https://www.gov.uk/foreign-travel-advice/madagascar/entry-requirements （公式・英国政府、2026-11-08確認）、https://www.gov.uk/foreign-travel-advice/kenya/health （同、2026-11-08確認）。
 - 外務省 海外安全ホームページ：https://www.anzen.mofa.go.jp/ （公式、2026-11-09確認。国ごとのページ番号は、エチオピア95、ウガンダ93、ケニア100、ザンビア104、ジンバブエ106、タンザニア111、マダガスカル119、マラウイ120、モザンビーク123、レソト130、ルワンダ131、エスワティニ281、ボツワナ296）
 - 既存資料：[africa-route-comparison.md](africa-route-comparison.md)
@@ -99,7 +99,7 @@
 - WebSearch は「Bedrock が server-side web search に未対応」のエラーで実行できず、検索エンジンは使っていない。
 - WebFetch で英FCDOのマダガスカル入国ページとケニア健康ページを取得し、エボラの記述を確認した（どちらもページ本文に「Still current at」の日付は含まれず、日付は取得できなかった）。
 - Wikivoyage の Uganda・Rwanda・Malawi の Eat 節を取得し、国別ページの料理表に使った。
-- 比較表の数値は、13件の国別レポートの結論欄からの転記。値の再計算や追加調査はしていない。
+- 比較表の数値は、13か国の国別ページの結論欄からの転記。値の再計算や追加調査はしていない。
 - 再取得（2回目）：KWSの公式料金表PDF（2025年版）を `pdftotext -raw` で読み取り、ケニアの公園料を公式値で確認した。レソトのマレアレア・ロッジは公式の料金表PDFを読み取った。タンザニア（TANAPA）はトップが JavaScript 描画で料金ページを辿れず、未確認のまま。
 - 再取得（3回目）：UWAの公式料金表PDF（2024-07〜2026-06）を読み取り、ウガンダの許可証・入園料を公式値で確認した。ルワンダは visitrwanda.com の公式ページでゴリラ許可証 USD 1,500／人／日を確認した。
 - 再取得（4回目）：モザンビークの電子ビザ公式ポータルの観光ビザページには料金が公開されていない（『975MXN』は、HTMLコメント内の非表示の下書きで、前回の記載は読み違いだったため訂正）。日本旅券のETA料金は未確認のまま。2026-02-11開始の新プラットフォームで、日本を含む査証免除国も事前認証が必要と駐英高等弁務官事務所のページで確認した。タンザニアは公式サイトの公開APIまで調べたが、料金の項目は無かった。
