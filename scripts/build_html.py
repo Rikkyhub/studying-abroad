@@ -1372,6 +1372,28 @@ def open_request_map(root: Path = ROOT) -> dict:
     return out
 
 
+def open_request_free(root: Path = ROOT) -> list:
+    """依頼票の中で、反映先に費用行ID（AF-01 など）を持たない行 [(R-xx, 項目, 何を調べるか, 反映先)]。
+    国別ページの未調査など、費用の見積に直接ひも付かない調べ残しを QA に出すため（手で書き写さない）"""
+    src = root / "research" / "77-open-research-requests.md"
+    out: list = []
+    if not src.exists():
+        return out
+    for line in src.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"^\|\s*(R-\d+)\s*\|(.*)\|\s*$", line)
+        if not m:
+            continue
+        cells = [c.strip() for c in m.group(2).split("|")]
+        if len(cells) < 4:
+            continue
+        # 反映先に国別ページ・比較表があるものを出す（費用行IDを併記していても、国別ページの未調査は費用表からは見えないため）
+        if not any(k in cells[-1] for k in ("countries/", "比較表", "各国ページ")):
+            continue
+        short = cells[1] if len(cells[1]) <= 90 else cells[1][:90] + "…"
+        out.append((m.group(1), cells[0], short, cells[-1]))
+    return out
+
+
 QA_MD = "10-qa.md"
 QA_HEAD = re.compile(r"^##+\s+.*(未確認|残課題).*$", re.M)
 
@@ -1422,12 +1444,19 @@ def qa_markdown(root: Path = ROOT) -> str:
         out.append(f"| {t['task']} | {regs} | {t['deadline_note'].split('。')[0]} | {t['status']} | {nxt.replace('|', '／')} |")
     if not todo:
         out.append("| （なし） | － | － | － | － |")
+    free = open_request_free(root)
+    if free:
+        out += ["", "## 2.5 費用行にひも付かない調べ残し（ChatGPT に依頼）", "",
+                "国別ページの未調査や、公式ページが取得できなかった項目です。依頼票の書式で Issue #77 に回答をもらい、各国ページに反映します。", "",
+                "| 依頼 | 項目 | 何を調べるか | 反映先 |", "|---|---|---|---|"]
+        for rid, item, what, dest in free:
+            out.append(f"| {rid} | {item} | {what} | {dest} |")
     out += ["", "## 3. 調査資料ごとの「未確認事項」", "",
             "各資料の末尾にある未確認・残課題の節への入口です（件数は、その節の行数の目安）。", "",
             "| 資料 | 節 |", "|---|---|"]
     for r in sorted_pages(root):
         p = root / r["path"].replace(".html", ".md")
-        if not p.exists() or not r["path"].startswith("research/"):
+        if not p.exists() or not r["path"].startswith(("research/", "countries/")):
             continue
         text = p.read_text(encoding="utf-8")
         heads = [m.group(0).lstrip("#").strip() for m in QA_HEAD.finditer(text)]
