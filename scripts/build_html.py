@@ -1114,7 +1114,7 @@ def planner_markdown() -> str:
         "期間（例：5/3〜6/6）を、どの国・町に何日ずつ使うかを入れて、残り日数を見ながら予定を組む画面です。"
         "最初の区間（例：モーリシャス、マダガスカル）を決めると、その後に使える日数が自動で出ます。", "",
         "入力はこのブラウザに自動で残り、公開されません。案A〜Hは、地図・ルート比較と同じ順序の骨組みです"
-        "（日数は入っていません。国別の目安は[13か国の比較表](../research/africa-13-countries-comparison.md)を参照）。", "",
+        "（日数は入っていません。国別の目安は[国の比較表（13か国）](../research/africa-13-countries-comparison.md)を参照）。", "",
         "## 1. 日程の表", "",
         "@@DAY-PLANNER@@", "",
         "## 2. 使い方", "",
@@ -1149,7 +1149,7 @@ def planner_daily_costs(root: Path = ROOT) -> str:
 
 def planner_hints() -> str:
     """国名 -> [下限, 上限, 説明]（JSON）。プランナーの泊数の下に『目安』として出す"""
-    return json.dumps({k: list(v) for k, v in STAY_HINTS.items()}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\/")
+    return json.dumps({k: list(v) for k, v in STAY_HINTS.items()}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
 PLANNER_HTML = (
