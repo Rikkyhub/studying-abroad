@@ -431,6 +431,10 @@ def render(path: Path, root: Path = ROOT) -> str:
     return render_text(path.read_text(encoding="utf-8"), path, root)
 
 
+# 長い docs で、節ごとの開閉を使うページ -> 最初から開いておく節の見出し（部分一致）。生成される短いページ（12-flights など）は対象外
+FOLD_DOCS = {"docs/02-budget.md": "1. 概要", "docs/03-preparation.md": "", "docs/10-qa.md": "", "docs/09-issue-map.md": ""}
+
+
 def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     title, body, toc = convert(md)
     title = title or path.stem
@@ -438,6 +442,9 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     if path.parent.name in ("research", "areas"):
         body = fold_sections(fold_notes(body), min_chars=400 if path.parent.name == "areas" else 600,
                              open_key="費用の見積" if path.parent.name == "areas" else "")
+    elif rel in FOLD_DOCS:
+        # 長い docs（予算・準備・QA・Issue対応表）も、節ごとに開閉できるようにする。open_key の節だけ開いておく
+        body = fold_sections(body, min_chars=900, open_key=FOLD_DOCS[rel])
     if 'class="sec"' in body:
         body += "\n" + SECTION_SCRIPT
     if "@@COUNTRY-MAP@@" in md:
