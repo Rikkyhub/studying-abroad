@@ -1149,7 +1149,7 @@ def planner_daily_costs(root: Path = ROOT) -> str:
 
 def planner_hints() -> str:
     """国名 -> [下限, 上限, 説明]（JSON）。プランナーの泊数の下に『目安』として出す"""
-    return json.dumps({k: list(v) for k, v in STAY_HINTS.items()}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\/")
+    return json.dumps({k: list(v) for k, v in STAY_HINTS.items()}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
 PLANNER_HTML = (
