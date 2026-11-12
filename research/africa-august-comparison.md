@@ -2,7 +2,7 @@
 
 - 確認日：2026-11-08
 - 位置づけ：[アフリカ周遊（8月）](../areas/africa-aug.md)のための、**8月のシーズンだけ**を国別に並べた比較表です。5月向けの比較は [アフリカ13か国の比較](africa-13-countries-comparison.md)。旅程の確定や予約ではありません。
-- 作り方：この表は、[国別深掘り調査](country-kenya.md)（13件）に**すでに書かれている**月別の記載から、6〜9月の部分を転記・整理したものです。8月について**新しく調べ直した事実ではない**ため、各国レポートが5月を主眼に書かれている範囲で、8月の記載が無い項目は「記載なし（未確認）」としました。
+- 作り方：この表は、[国別深掘り調査](../countries/kenya.md)（13件）に**すでに書かれている**月別の記載から、6〜9月の部分を転記・整理したものです。8月について**新しく調べ直した事実ではない**ため、各国レポートが5月を主眼に書かれている範囲で、8月の記載が無い項目は「記載なし（未確認）」としました。
 - 費用は、8月の価格・混雑が5月とどう違うかを、どの国レポートも調べていません。**8月の宿・ツアー・許可証の価格は全て未確認**です（公式の料金表の有効期間とも一致しません）。
 - 8月は、留学後の南アフリカ滞在日数の制約があります（[ビザ・再入国](visa-and-immigration.md)）。
 
@@ -165,7 +165,7 @@
 ## 出典
 
 - 本表の記載は、次の13件の国別レポートの月別シーズンの節から転記しました。出典URLと確認日は、各レポートの出典一覧にあります。
-  - [エチオピア](country-ethiopia.md)、[マダガスカル](country-madagascar.md)、[ケニア](country-kenya.md)、[ジンバブエ](country-zimbabwe.md)、[タンザニア](country-tanzania.md)、[ボツワナ](country-botswana.md)、[モザンビーク](country-mozambique.md)、[ザンビア](country-zambia.md)、[レソト](country-lesotho.md)、[エスワティニ](country-eswatini.md)、[ウガンダ](country-uganda.md)、[ルワンダ](country-rwanda.md)、[マラウイ](country-malawi.md)
+  - [エチオピア](../countries/ethiopia.md)、[マダガスカル](../countries/madagascar.md)、[ケニア](../countries/kenya.md)、[ジンバブエ](../countries/zimbabwe.md)、[タンザニア](../countries/tanzania.md)、[ボツワナ](../countries/botswana.md)、[モザンビーク](../countries/mozambique.md)、[ザンビア](../countries/zambia.md)、[レソト](../countries/lesotho.md)、[エスワティニ](../countries/eswatini.md)、[ウガンダ](../countries/uganda.md)、[ルワンダ](../countries/rwanda.md)、[マラウイ](../countries/malawi.md)
 - ビザ・再入国：[visa-and-immigration.md](visa-and-immigration.md)
 
 ## 検索ログ（2026-11-08）

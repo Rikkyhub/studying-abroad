@@ -70,21 +70,8 @@
 | [ルワンダ（国別ページ）](../countries/rwanda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [マラウイ（国別ページ）](../countries/malawi.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [モーリシャス（国別ページ）](../countries/mauritius.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-10 |
-| [アフリカ13か国の比較（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [エチオピア 国別深掘り](../research/country-ethiopia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [アフリカの国の比較表（13か国）（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [アフリカ周遊（8月）の国別シーズン比較](../research/africa-august-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [マダガスカル 国別深掘り](../research/country-madagascar.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [ケニア 国別深掘り](../research/country-kenya.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [ジンバブエ 国別深掘り](../research/country-zimbabwe.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [タンザニア 国別深掘り](../research/country-tanzania.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [ボツワナ 国別深掘り](../research/country-botswana.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [モザンビーク 国別深掘り](../research/country-mozambique.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [ザンビア 国別深掘り](../research/country-zambia.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [レソト 国別深掘り](../research/country-lesotho.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [エスワティニ 国別深掘り](../research/country-eswatini.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [ウガンダ 国別深掘り](../research/country-uganda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [ルワンダ 国別深掘り](../research/country-rwanda.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
-| [マラウイ 国別深掘り](../research/country-malawi.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [確認待ち（QA）](../docs/10-qa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-11-08 |
 | [モデルルート作成](../docs/11-route-builder.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-08 |
 | [飛行機代の内訳](../docs/12-flights.html) | [#80](https://github.com/Rikkyhub/studying-abroad/issues/80) | 作成中 | 2026-11-09 |
