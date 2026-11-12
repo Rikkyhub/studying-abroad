@@ -531,6 +531,34 @@ def badge_svg(shape, x, y, letter):
     return g + f'<text x="{f1(x)}" y="{f1(ty)}" text-anchor="middle" class="bl">{letter}</text>'
 
 
+def stop_candidates(points, routes):
+    """立ち寄り候補の町。(slug, 国名ja, ルート記号の集合, 行ごとの辞書) を返す。
+    候補ルートが通る国（route_points.csv の country）の country_places.csv の行だけを使い、
+    すでにルートの点（route_points.csv）として描かれている町とは重ねない"""
+    try:
+        cp = read_csv("country_places.csv")
+        cs = read_csv("countries.csv")
+    except FileNotFoundError:
+        return []
+    ja = {r["slug"]: r["name_ja"] for r in cs}
+    by_country = {}
+    for rid, rt in routes.items():
+        for l in rt["legs"]:
+            for pid in (l["from_point"], l["to_point"]):
+                by_country.setdefault(points[pid]["country"], set()).add(rid)
+    have = [(float(p["lat"]), float(p["lon"])) for p in points.values()]
+    out = []
+    for r in cp:
+        cj = ja.get(r["slug"])
+        if cj not in by_country or r["kind"] not in ("city", "park", "lake", "falls", "coast", "site"):
+            continue
+        lat, lon = float(r["lat"]), float(r["lon"])
+        if any(haversine(lat, lon, a, b) < 25 for a, b in have):  # すでに描かれている地点（空港など）に近い候補は出さない
+            continue
+        out.append({**r, "country_ja": cj, "routes": "".join(sorted(by_country[cj]))})
+    return out
+
+
 def build_map(kind, points, routes, world_geo, africa_geo):
     world = kind == "world"
     if world:
@@ -676,6 +704,19 @@ def build_map(kind, points, routes, world_geo, africa_geo):
             g.append(f'<text class="lb{minor}" x="{f1(tx)}" y="{f1(ty)}" text-anchor="{anchor}">{html.escape(txt)}</text>')
         g.append("</g>")
         markers.append("".join(g))
+    # 立ち寄り候補（アフリカ地図のみ。薄く小さく、ルートの選択に連動して表示）
+    stops_svg = []
+    if not world:
+        for c in stop_candidates(points, routes):
+            x, y = proj.xy(float(c["lon"]), float(c["lat"]))
+            if not proj.in_view(x, y, -2):
+                continue
+            title = f'{c["name_ja"]}（{c["country_ja"]}・立ち寄り候補）'
+            stops_svg.append(
+                f'<g class="stop" data-routes="{c["routes"]}" data-country="{html.escape(c["country_ja"])}">'
+                f'<title>{html.escape(title)}</title>'
+                f'<rect class="sq" x="{f1(x - 2.6)}" y="{f1(y - 2.6)}" width="5.2" height="5.2" transform="rotate(45 {f1(x)} {f1(y)})"/>'
+                f'<text class="sl" x="{f1(x + 5)}" y="{f1(y + 3.4)}">{html.escape(c["name_ja"])}</text></g>')
     # 出発・終点の注記
     notes = []
     for pid, word in (("MNL", "出発"), ("CPT", "終点（南ア）")):
@@ -746,6 +787,7 @@ def build_map(kind, points, routes, world_geo, africa_geo):
            f'<g class="legs">{"".join(leg_svgs)}</g>'
            f'<g class="tags">{"".join(tag_svgs)}</g>'
            f'</g><path class="frame" d="{outline}"/>'
+           f'<g class="stops">{"".join(stops_svg)}</g>'
            f'<g class="pts">{"".join(markers)}</g>'
            f'</svg>')
 
@@ -800,6 +842,11 @@ svg#map.solo .leg .uncl{display:inline}
 .leg:hover .ln,.leg:focus .ln,.leg.on .ln{stroke-width:4}
 .leg:focus{outline:none} .leg:focus-visible .ln{stroke:var(--ink);stroke-width:4.5}
 .leg.off,.pt.off{opacity:.1;pointer-events:none}
+.stop .sq{fill:none;stroke:var(--muted);stroke-width:1;opacity:.75}
+.stop .sl{font-size:calc(9px * var(--ts,1));fill:var(--muted);paint-order:stroke;stroke:var(--sea);stroke-width:2.6px;display:none;pointer-events:none;font-family:var(--sans)}
+svg#map.zoomed .stop .sl,svg#map.hi .stop .sl{display:inline}
+.stop.off{display:none}
+svg#map.nostops .stops{display:none}
 .pt{cursor:pointer;transition:opacity .15s} .pt:focus{outline:none}
 .pt .dot{fill:var(--pt);stroke:var(--sea);stroke-width:1.2}
 .pt.prov .dot{fill:var(--sea);stroke:var(--pt);stroke-width:1.6}
@@ -850,11 +897,12 @@ D.legs.filter(function(l){return l.route===sel}).forEach(function(l){var t=el('t
 var c=el('td');c.appendChild(link(l.to,l.url_to));t.appendChild(c);
 var go=function(){showLeg(l.id)};t.addEventListener('click',function(e){if(e.target.tagName!=='A')go()});t.addEventListener('keydown',function(e){if(e.key==='Enter'){go()}});body.appendChild(t)})}
 function pick(id){var r=document.querySelector('input[name=rt][value='+id+']');if(r){r.checked=true}apply(id)}
-function apply(v){sel=v;svg.classList.toggle('solo',v!=='all');
+function apply(v){sel=v;svg.classList.toggle('solo',v!=='all');svg.querySelectorAll('.stop').forEach(function(g){g.classList.toggle('off',v!=='all'&&(g.dataset.routes||'').indexOf(v)<0)});
 svg.querySelectorAll('.leg').forEach(function(g){g.classList.toggle('off',v!=='all'&&g.dataset.route!==v)});
 svg.querySelectorAll('.pt').forEach(function(g){var r=g.dataset.routes||'';g.classList.toggle('off',v!=='all'&&r.indexOf(v)<0&&g.dataset.pt!=='MNL'&&g.dataset.pt!=='BAGUIO')});
 tbl();detail.textContent='';detail.appendChild(el('p',v==='all'?'線または地点を選ぶ（ホバー・タップ・Tabキー）と、区間の詳細を表示します。':'ルート'+v+'：線・表の行を選ぶと区間の詳細を表示します。'))}
 document.querySelectorAll('input[name=rt]').forEach(function(r){r.addEventListener('change',function(){apply(r.value)})});
+var sc=document.getElementById('stopchk');if(sc){sc.addEventListener('change',function(){svg.classList.toggle('nostops',!sc.checked)})}
 svg.querySelectorAll('.leg').forEach(function(g){var id=g.dataset.leg;g.addEventListener('mouseenter',function(){showLeg(id)});g.addEventListener('focus',function(){showLeg(id)});g.addEventListener('click',function(){showLeg(id)});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();showLeg(id)}})});
 svg.querySelectorAll('.pt').forEach(function(g){var id=g.dataset.pt;['mouseenter','focus','click'].forEach(function(ev){g.addEventListener(ev,function(){showPt(id)})})});
 function setVB(){svg.setAttribute('viewBox',vb.x+' '+vb.y+' '+vb.w+' '+vb.h);var px=svg.getBoundingClientRect().width||W,sc=px/vb.w;
@@ -942,6 +990,7 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../areas/africa.html">アフリカ周遊のページ</a></nav>
 <fieldset><legend>表示するルート</legend><div class="sel">{"".join(radios)}</div></fieldset>
 <p class="muted">直線距離の合計は大圏（地球上の最短距離）の足し算で、<strong>実際の飛行・走行距離ではありません</strong>。区間の運賃・ダイヤは未確認のものを含みます。{zoom_note}</p>
+{"" if world else '<p class="muted"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示する。拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、候補ルートの確定した立ち寄り先ではありません。</label></p>'}
 <div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div>
 {off_note}
 <div id="detail" role="status" aria-live="polite"></div>

@@ -314,13 +314,13 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  var iLow=cols["低予算"],iStd=cols["標準"],iHigh=cols["余裕"];
  if(iStd==null)return;
  ["要否","メモ"].forEach(function(t){var th=document.createElement("th");th.textContent=t;th.className="tri";head.appendChild(th)});
- var rows=[];
+ var iGrp=cols["費用区分"],flt="",rows=[],subs=[];
  Array.prototype.forEach.call(tb.tBodies[0].rows,function(tr){
   var first=tr.cells[0].textContent.trim(),isItem=/^(見積|未確認)$/.test((tr.cells[1]||{}).textContent.trim());
   var td1=document.createElement("td"),td2=document.createElement("td");td1.className=td2.className="tri";
   td1.setAttribute("data-label","要否");td2.setAttribute("data-label","メモ");
   tr.appendChild(td1);tr.appendChild(td2);
-  if(!isItem){tr.classList.add("sub");return}
+  if(!isItem){tr.classList.add("sub");subs.push(tr);return}
   var idm=tr.cells[0].querySelector("code"),rid=idm?idm.textContent.trim():"";
   var key=rid?"id:"+rid:page+":"+hash(first.replace(/\\s*出典$/,"")),st=store[key]||{};
   var sel=document.createElement("select");sel.setAttribute("aria-label","要否");
@@ -328,7 +328,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   sel.value=st.s||"";
   var memo=document.createElement("input");memo.type="text";memo.placeholder="メモ";memo.value=st.m||"";memo.setAttribute("aria-label","メモ");
   td1.appendChild(sel);td2.appendChild(memo);
-  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\\s*出典$/,"").replace(/\\s*[A-Z]{2}-\\d+$/,""),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
+  var r={tr:tr,sel:sel,id:rid,name:first.replace(/\\s*出典$/,"").replace(/\\s*[A-Z]{2}-\\d+$/,""),g:iGrp==null?"":tr.cells[iGrp].textContent.trim(),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
   function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
@@ -337,15 +337,25 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
  box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
+ if(iGrp!=null){
+  var gs=[];rows.forEach(function(r){if(r.g&&gs.indexOf(r.g)<0)gs.push(r.g)});
+  var fb=document.createElement("div");fb.className="tri-filter";fb.setAttribute("role","group");fb.setAttribute("aria-label","費用区分で絞り込み");
+  fb.innerHTML='<span class="muted">費用区分で絞り込み：</span>';
+  [""].concat(gs).forEach(function(g){var b=document.createElement("button");b.type="button";b.textContent=g||"すべて";b.setAttribute("data-g",g);b.setAttribute("aria-pressed",g===""?"true":"false");
+   b.addEventListener("click",function(){flt=g;Array.prototype.forEach.call(fb.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});paint()});fb.appendChild(b)});
+  box.insertBefore(fb,sum);
+ }
  function paint(){
-  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0];
+  var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0],fTot=0,fN=0;
   rows.forEach(function(r){
    var s=r.sel.value;cnt[s]++;
    r.tr.classList.toggle("skip",s==="skip");r.tr.classList.toggle("hold",s==="hold");
-   r.tr.hidden=s==="skip"&&hide.checked;
+   r.tr.hidden=(s==="skip"&&hide.checked)||(flt!==""&&r.g!==flt);
+   if(flt!==""&&r.g===flt&&s!=="skip"){fN++;if(r.v[1]!=null)fTot+=r.v[1]}
    for(var k=0;k<3;k++){if(r.v[k]==null)continue;if(s==="skip")skipTot[k]+=r.v[k];else tot[k]+=r.v[k]}
   });
-  sum.innerHTML='<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
+  subs.forEach(function(t){t.hidden=flt!==""});
+  sum.innerHTML=(flt!==""?'<strong>「'+flt+'」だけの合計（標準・不要を除く）</strong><span class="big">'+fmt(fTot)+'</span><span class="muted">'+fN+'件。下は表全体の合計です。</span><br>':'')+'<strong>不要を除いた合計（標準）</strong><span class="big">'+fmt(tot[1])+'</span><span class="muted">低予算 '+fmt(tot[0])+' 〜 余裕 '+fmt(tot[2])+'</span>'+
    '<br><span class="muted">必要 '+cnt.need+'件・保留 '+cnt.hold+'件・未判断 '+cnt[""]+'件・不要 '+cnt.skip+'件（不要で '+fmt(skipTot[1])+' 減）。この表の見積を足しただけで、未計上の項目は含みません。</span>';
  }
  hide.addEventListener("change",paint);
@@ -1111,7 +1121,7 @@ def planner_markdown() -> str:
         "期間（例：5/3〜6/6）を、どの国・町に何日ずつ使うかを入れて、残り日数を見ながら予定を組む画面です。"
         "最初の区間（例：モーリシャス、マダガスカル）を決めると、その後に使える日数が自動で出ます。", "",
         "入力はこのブラウザに自動で残り、公開されません。案A〜Hは、地図・ルート比較と同じ順序の骨組みです"
-        "（日数は入っていません。国別の目安は[13か国の比較表](../research/africa-13-countries-comparison.md)を参照）。", "",
+        "（日数は入っていません。国別の目安は[国の比較表（13か国）](../research/africa-13-countries-comparison.md)を参照）。", "",
         "## 1. 日程の表", "",
         "@@DAY-PLANNER@@", "",
         "## 2. 使い方", "",
@@ -1146,7 +1156,7 @@ def planner_daily_costs(root: Path = ROOT) -> str:
 
 def planner_hints() -> str:
     """国名 -> [下限, 上限, 説明]（JSON）。プランナーの泊数の下に『目安』として出す"""
-    return json.dumps({k: list(v) for k, v in STAY_HINTS.items()}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\/")
+    return json.dumps({k: list(v) for k, v in STAY_HINTS.items()}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
 PLANNER_HTML = (
@@ -1573,6 +1583,8 @@ details.sec>:last-child{margin-bottom:14px}
 .triage .muted,.triage .tri-note{color:var(--muted);font-size:.85rem}
 .triage button{font:inherit;font-size:.88rem;padding:4px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
 .triage .tri-hide{display:inline-block;margin:6px 12px 0 0}
+.triage .tri-filter{margin:8px 0 4px}
+.triage .tri-filter button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
 th.tri,td.tri{min-width:7em;white-space:nowrap}
 td.tri select,td.tri input[type=text]{font:inherit;font-size:.88rem;max-width:11em;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 td.tri input[type=text]{width:11em}

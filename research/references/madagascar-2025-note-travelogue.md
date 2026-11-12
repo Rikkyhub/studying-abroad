@@ -6,7 +6,7 @@
 - **本文確認日**：2026年11月10日
 - **情報種別**：旅行者1人の体験談。独立した公式検証なし。筆者が利用した料金・通信・交通・安全に関する記述は**当時の一例**であり、2027年の条件は未確認。
 - **関連Issue**：[本資料 #92](https://github.com/Rikkyhub/studying-abroad/issues/92)、[マダガスカル日数比較 #66](https://github.com/Rikkyhub/studying-abroad/issues/66)、[5月周遊 #77](https://github.com/Rikkyhub/studying-abroad/issues/77)
-- **既存調査**：[マダガスカル国別研究](../country-madagascar.md)、[7〜8／10／12日比較](../madagascar-day-models-and-vfa-to-cpt.md)
+- **既存調査**：[マダガスカル国別研究](../../countries/madagascar.md)、[7〜8／10／12日比較](../madagascar-day-models-and-vfa-to-cpt.md)
 
 ## 1. 記事の10日間（筆者の実例）
 
