@@ -114,3 +114,61 @@
 - **検索**：旧調査では Brave・DuckDuckGo・Bing・Mojeek・Yahoo が captcha／429／無関係な結果で使えず。今回は検索エンジンを使わず公式ドメインに直接アクセス。
 - **取得成功（今回）**：`https://cms.tablemountain.net/api`（GraphQL：ticketTypes、maintenance／refund 検索）、`https://www.tablemountain.net/our-blog/table-mountain-aerial-cableway-announces-2026-annual-maintenance-shutdown-dates`（WebFetch）、`https://www.tablemountain.net/our-blog/how-does-table-mountain-cableways-ticketing-work`（WebFetch）、`http://web.archive.org/web/20261010190236/https://www.sanparks.org/parks/table-mountain/rates-entry-fees`、`https://www.sanbi.org/gardens/kirstenboch/visitor-information/information/`、`https://zeitzmocaa.museum/plan-your-visit/`、`https://www.iziko.org.za/visit/`、`https://www.robben-island.org.za/`、`https://www.aquarium.co.za/visit-us/plan-your-trip`、`https://shop.aquarium.co.za/`（埋め込みデータ）、`https://theoldbiscuitmill.co.za/visitor-info/`、`https://www.myciti.org.za/en/myconnect-fares/multi-day-packages/`、`https://www.myciti.org.za/en/myconnect-fares/get-your-myconnect-card/`、`https://winetram.co.za/`、`https://www.chapmanspeakdrive.co.za/tariff/standard.html`、`https://aquilasafari.com/day-trip-safaris/`、`https://aquilasafari.com/transport/`、`https://www.hermanus-whale-cruises.co.za/trip.php`、`https://www.hermanus-whale-cruises.co.za/whales.php`、`https://en.wikipedia.org/w/index.php?title=Cape_Town&action=raw`、`https://router.project-osrm.org/table/v1/driving/...`。
 - **失敗**：`https://www.sanparks.org/parks/table-mountain/rates-entry-fees`（403）、`http://web.archive.org/cdx/search/cdx?...`（Temporarily Offline。availability API で代替）、`https://www.capetown.travel/the-best-time-of-year-to-visit-cape-town/`・`/100-things-to-do-in-winter-in-cape-town/`（403）、CMS の `ticketTypesEntries` 直接クエリ（エラー。`entries(section:)` で代替）。旧調査での失敗：waterfront.co.za（429）、weathersa.co.za（JavaScript 表示）、robben-island.org.za/tickets（404）。
+
+---
+
+## 8. 追補（2026-11-13）：泊まるエリアと移動・治安（案Gの終点がケープタウン）
+
+案Gは6/6にケープタウンへ着き、そのまま留学に入る前提のため、**着いてすぐの数日にどこへ泊まり、どう動くか**を整理した。**匿名モデルで、予約ではない。** Wikivoyage（利用者編集の旅行ガイド、準公式）と英国FCDOによる。価格には年の記載がないものがあり、**2027年6月の料金は未確認**。
+
+### 8.1 泊まるエリア（Wikivoyage、準公式）
+
+| エリア | 記載された特徴 |
+|---|---|
+| 市内（シティボウル） | 見どころが近く、**宿が安いことが多い**。隣接する地区のほうが、料金が良く夜が静かな場合がある |
+| ガーデンズ／タンボエルスクルーフ（クルーフ通り） | 「若いカフェ文化とおしゃれな買い物」。**よい選択肢**として挙がる |
+| 南部郊外（ミュイゼンバーグ、フィッシュフック、サイモンズタウン） | **静かな選択肢**。ワイン地方にも近い |
+| カンプスベイと西海岸 | **料金が高め**。夜の店・バー・レストランが集まる |
+| オブザバトリー | **ホステル中心**。夜の街が活発で、学生寮がある |
+| タウンシップのB&B（ググレトゥ、ランガ） | 改装した小屋が中心。**一人で行かず、ツアーなら安全**と記載 |
+
+- 宿の料金帯（2人部屋、Wikivoyage）：**安い＝R200未満、中級＝R200〜R1,000、高級＝R1,000超**。ドミトリーは **R500未満**（例：ガーデンズの Anzac Backpackers の相部屋 R220、Ashanti Lodge は1人 R240〜。いずれも**年の記載なし**）。
+- 中級・高級の個別の宿と料金は、取得が途中で切れたため**未取得**。
+- 「Stay safe」の節は取得できなかったため、エリアごとの治安は Wikivoyage からは**未確認**（シーポイントは別の箇所で「快適で安全」と記載）。
+
+### 8.2 市内の移動
+
+- **Uber／Bolt**：広く使える。**2つのアプリで料金が大きく違うことがある**ので両方を見る。空港→市内は **R150ほど**（年の記載なし）。
+- **空港のタクシー**：「公式タクシー」のベストを着た人は**公式ではない**（メーターなし）。公式は Touchdown Taxis のみで、**乗る前に料金を決める**。メーター式は1kmあたり R8〜R10。
+- **MyCiTi（路線バス）**：4:30〜22:00。観光客に勧められる。**スマートカードは R35**、降りるときにもタップが必要。
+- **ミニバスのタクシー**：安いが、観光客は**避けるよう勧められる**。メーター式より**安全性が低い**（Wikivoyage、FCDOも同趣旨）。
+- **メトロレール（近郊列車）**：日曜は運休。**夜は避ける**。サイモンズタウン線は18:30以降（暗くなったら）使わない。窃盗・暴力・遅延の危険が高い交通として、**FCDOも名指し**している。
+- **運転**：左側通行。**渋滞がひどい**。暗い時間や信号待ちで**カージャックの危険**。
+
+### 8.3 治安・登山・海（英国FCDO、確認日 2026-11-13）
+
+- 「南アフリカは犯罪率が高い」。**暴力的な強盗、車の窓を割る盗み、貴重品のひったくり**が起きうる。「**観光地や交通の拠点でも起きる**」。**ATM・両替所の周辺での犯罪は多い**。**暗くなってから歩かない**。
+- **ライセンスのあるタクシーか、確立した配車サービス**を使い、**乗る前に車のナンバーとアプリの表示が一致するか確認する**。空港を含む大都市で、**タクシー・配車アプリを狙う詐欺**がある。
+- **テーブルマウンテン国立公園では、登山者や外国人旅行者への暴力的な襲撃・強盗が最近あった**。**4人以上のグループで、人の多い整備された道を歩き、早朝・夕方の人気のない場所は避け、登録ガイドの利用を検討**する。Wikivoyage も、グループでのハイキングを強く勧める。
+- **ライオンズヘッドとシグナルヒル**も、襲撃の記述の中に出てくる。**デビルズピークは「一人で行かない・貴重品を持たない」**（Wikivoyage）。
+- **海**：毎年、強い離岸流で多くの人が溺れる。**赤と黄の旗の間だけで泳ぐ**。迷ったら入らない。**アザラシなどの海の動物は噛む**。ケープ半島沿岸のアザラシで**狂犬病が確認**されている。**人気のない浜辺は避ける**。
+
+### 8.4 冬（6〜8月）の目安（Wikivoyage）
+
+- 「かなり雨が多い」。**2週間降り続くこともある**。夜は5〜7℃、昼は9〜15℃、曇りが多く、日の出は7:45頃、日の入りは17:45頃。
+- 計画停電（ロードシェディング）は、取得した範囲に記載がなく**未確認**。
+
+**使い方（モデル）**：着いて数日は、**市内かガーデンズに泊まる**と、見どころが近く、夜の移動が少なく済む。空港からは **Uber／Bolt**（またはTouchdownのような公式の手配）で、歩きや列車の夜間移動は避ける。テーブルマウンテンは、**ケーブルカーか、グループ・ガイド同行**で。
+
+**取得できなかったもの（未確認のまま）**
+- Wikivoyage の「Stay safe」の節と、中級・高級の宿の個別料金（取得が途中で切れた）。
+- エリア別の治安（シティボウル、ガーデンズ、シーポイント、カンプスベイ等）の公式の記載。
+- 2027年6月の宿の料金、ロードシェディングの状況。
+
+### 調査ログ（2026-11-13）
+
+| 取得 | 結果 |
+|---|---|
+| en.wikivoyage.org/wiki/Cape_Town（先頭〜10万字、10万字〜） | 成功。エリア、宿の料金帯、移動手段、冬の気候。「Sleep」の途中で切れ、「Stay safe」は取得できず |
+| gov.uk/foreign-travel-advice/south-africa/safety-and-security | 成功。犯罪、タクシー・配車、公共交通の危険、テーブルマウンテンの襲撃、海の安全。更新日の表示なし |
+| WebSearch | この環境では使えなかった |
