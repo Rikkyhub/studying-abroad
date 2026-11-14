@@ -4,11 +4,11 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**非公式**＝利用者編集のWikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
-首都アンタナナリボ、通貨アリアリ（MGA）、公用語はマダガスカル語・フランス語（一般知識、本回出典未取得）。Wikivoyage: 暑い雨季は11〜4月、涼しい乾季は5〜10月。5月は乾季の入口で、旅行シーズンの始まり。2025年9〜10月のデモを経て軍主導の暫定政権が樹立され、情勢は流動的（外務省）。出典: [Wikivoyage](https://en.wikivoyage.org/wiki/Madagascar)（準公式）。
+首都アンタナナリボ、通貨アリアリ（MGA）、公用語はマダガスカル語・フランス語（一般知識、本回出典未取得）。Wikivoyage: 暑い雨季は11〜4月、涼しい乾季は5〜10月。5月は乾季の入口で、旅行シーズンの始まり。2025年9〜10月のデモを経て軍主導の暫定政権が樹立され、情勢は流動的（外務省）。出典: [Wikivoyage](https://en.wikivoyage.org/wiki/Madagascar)（利用者編集の非公式情報）。
 
 ## おおよその位置の地図
 
@@ -54,7 +54,7 @@
 出典: Wikivoyage Madagascar「Eat」。個別の料理名（ロマザバ等）は出典を取得できず掲載しない。
 | 料理名 | どんな料理か | 食べられる場所の例 | 価格の目安 |
 |---|---|---|---|
-| ホテリ（hotely）の定食 | ご飯とラオカ（おかず: 鶏・豆・豚）と米のゆで汁 | 食堂「hotely」（最も安く食べられる、Wikivoyage） | 約3,000 Ar（2020年、準公式、2027年の価格ではない） |
+| ホテリ（hotely）の定食 | ご飯とラオカ（おかず: 鶏・豆・豚）と米のゆで汁 | 食堂「hotely」（最も安く食べられる、Wikivoyage） | 約3,000 Ar（2020年、非公式、2027年の価格ではない） |
 | ラノナパンゴ（ranon'apango） | 米を炊いた後の湯。飲料として一般的 | 未確認 | 未確認 |
 | 自家製ヨーグルト | hotelyで追加できる | 未確認 | +1,000 Ar（2020年） |
 | バナナ・米の菓子（ライスケーキ） | 屋台の定番、各地で手に入る | 未確認 | 未確認 |
@@ -145,7 +145,7 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 | 項目 | 結論 |
 |---|---|
 | 最適日数 | 1地域（東部 or 西部）に絞って **7〜10日**。5日は首都発着の東部のみで可能だが移動比率が高い。14日で2地域（東部＋西部）。 |
-| 5月の適性 | 乾季の入口で良好（公式・準公式とも5〜10月を乾季/観察適期とする）。ただし**ホエールウォッチは6〜9月**で5月は対象外。バオバブは通年見られるが、5月は雨季直後で道路状況は未確認。 |
+| 5月の適性 | 乾季の入口で良好（公式・非公式資料とも5〜10月を乾季/観察適期とする）。ただし**ホエールウォッチは6〜9月**で5月は対象外。バオバブは通年見られるが、5月は雨季直後で道路状況は未確認。 |
 | 費用目安 | 現地費（宿・食・国内線・入園・ガイド・車）の一次料金は多くが**未確認**。公式で確認できた確定値はビザ・一部入園料等に限られる。目安レンジは第5章の「推定」として別建て。 |
 | コスパ | ★★★☆☆（3）：現地物価は安いが、国内線・車・ガイドが必須で積み上がる。固有種体験の希少性は非常に高い。 |
 | タイパ | ★★☆☆☆（2）：道路が悪く移動日が増える。国内線を使えば改善するが運賃は未確認。5月周遊の他国と比べ日数あたりの見どころ数は少ない。 |
@@ -157,7 +157,7 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 
 | 目的 | 推奨日数（推定） | 根拠・前提 |
 |---|---|---|
-| レムール（インドリ等）＋首都のみ | 4〜5日 | MNP公式：Mantadiaは首都から約140km、RN2経由・道路のみ・認定ガイド必須（https://parcs-madagascar.com/parc/mantadia/、2026-10/11確認）。Wikivoyage：Andasibe-Mantadiaは首都から舗装路で数時間（準公式）。 |
+| レムール（インドリ等）＋首都のみ | 4〜5日 | MNP公式：Mantadiaは首都から約140km、RN2経由・道路のみ・認定ガイド必須（https://parcs-madagascar.com/parc/mantadia/、2026-10/11確認）。Wikivoyage：Andasibe-Mantadiaは首都から舗装路で数時間（利用者編集の非公式情報）。 |
 | バオバブ街道＋キリンディ | 5〜7日 | Wikivoyage Morondava：タナ→モロンダバ空路約1時間（毎日運航の記載、年不明）、陸路9〜12時間。街道は市の北東17km。キリンディは約70km（ONTM）。 |
 | バオバブ＋ベマラハのツィンギ | 8〜10日 | Wikivoyage：ベマラハはモロンダバの北約200km、4WD約4日貸切が一般的（年不明）。MNP公式は1月中旬〜5月のモロンダバ側アクセスに集団バイク移動を推奨（countries/madagascar.md、2026-10-28確認）→5月は不確実。 |
 | 東部レムール＋西部バオバブ（2地域） | 12〜14日 | 上記2つの合算。TNR経由の往復で移動日が追加。 |
@@ -233,15 +233,15 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 | タニケリー海洋公園 | 40,000 MGA（外国人成人、2024-01-01以降の記載） | 公園運営サイト（countries/madagascar.md、2026-10-26確認） | 公式 |
 | ノシ・ベ ダイビング（認定ダイバー、器材込み2本） | EUR 85 | Tropical Diving / Mada Scuba 2026料金表（countries/madagascar.md） | 公式(事業者) |
 | タナ→ラノマファナ（乗合バス） | 65,000 MGA | Soatrans掲載、適用年不明（countries/madagascar.md） | 公式(事業者) |
-| タナ→モロンダバ（Cotisse、乗合） | 55,000 MGA | Wikivoyage Morondava、年不明 | 準公式 |
-| 街道往復タクシー | 60,000 MGA | Wikivoyage Morondava、年不明 | 準公式 |
-| 4WD運転手付き | 最低USD 70/日（2014年10月） | Wikivoyage Madagascar。**古く2027年に使えない**。参考のみ | 準公式 |
-| 空港→タナ市内タクシー | 約40,000〜60,000 MGA | Wikivoyage、年不明 | 準公式 |
-| 簡易食堂（hotely）定食 | 約3,000 MGA | Wikivoyage、2020年 | 準公式 |
-| ホステル | USD 5〜 | Wikivoyage、年不明 | 準公式 |
-| Kirindyドミトリー | 35,000 MGA | Wikivoyage、年不明 | 準公式 |
-| スピードボート Ankify→Hell-Ville | 20,000 MGA | Wikivoyage Nosy Be、年不明 | 準公式 |
-| 為替参考 | USD 1 ≈ 4,300 MGA、EUR 1 ≈ 4,900 MGA | Wikivoyage（2026年8月表記）。実勢は未確認 | 準公式 |
+| タナ→モロンダバ（Cotisse、乗合） | 55,000 MGA | Wikivoyage Morondava、年不明 | 非公式 |
+| 街道往復タクシー | 60,000 MGA | Wikivoyage Morondava、年不明 | 非公式 |
+| 4WD運転手付き | 最低USD 70/日（2014年10月） | Wikivoyage Madagascar。**古く2027年に使えない**。参考のみ | 非公式 |
+| 空港→タナ市内タクシー | 約40,000〜60,000 MGA | Wikivoyage、年不明 | 非公式 |
+| 簡易食堂（hotely）定食 | 約3,000 MGA | Wikivoyage、2020年 | 非公式 |
+| ホステル | USD 5〜 | Wikivoyage、年不明 | 非公式 |
+| Kirindyドミトリー | 35,000 MGA | Wikivoyage、年不明 | 非公式 |
+| スピードボート Ankify→Hell-Ville | 20,000 MGA | Wikivoyage Nosy Be、年不明 | 非公式 |
+| 為替参考 | USD 1 ≈ 4,300 MGA、EUR 1 ≈ 4,900 MGA | Wikivoyage（2026年8月表記）。実勢は未確認 | 非公式 |
 | 国内線運賃（TNR↔MOQ/NOS等） | **未確認**（Air Madagascar公式は本回403で取得不可） | — | — |
 | ガイド料・ツアー料金（公式） | **未確認** | — | — |
 | ベマラハ等の2027年料金 | **未確認** | — | — |
@@ -288,7 +288,7 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 | https://evisamada-mg.com/en/info/about | 査証申請ポータル（公式と表示） | 2026-10-25 | 90日区分と最大60日記載の矛盾あり |
 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_119.html | 公式 | 2026-10-20 | 2025-11-26発出 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/madagascar | 公式 | 2026-10-20 | 現行 |
-| https://en.wikivoyage.org/wiki/Madagascar | 準公式 | 2026-10-20 | 2020年価格を含む |
+| https://en.wikivoyage.org/wiki/Madagascar | 非公式 | 2026-10-20 | 2020年価格を含む |
 | https://www.madagascar-tourisme.com | 公式（観光局） | 2026-10-20 | - |
 | https://parcs-madagascar.com/parc/isalo-3/ | Madagascar National Parks（公園運営機関） | 2026-10-25 | 掲載時点のアクセス・体験案内。2027年の料金・催行は未確認 |
 | https://parcs-madagascar.com/parc/ranomafana/ | Madagascar National Parks（公園運営機関） | 2026-10-27 | 掲載年不明の外国人自治体税5,000 MGA/人、ガイド必須、4〜11月推奨・通年アクセス。公園入園料・ガイド料と2027年の適用は未確認 |
@@ -300,9 +300,9 @@ CDC: 一部地域でマラリア予防薬を推奨。https://wwwnc.cdc.gov/trave
 
 | URL | 種別 | 確認日 | 適用年・メモ |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Madagascar | 準公式 | 2026-11-08 | 季節・移動・物価。価格は2014〜2020年混在、為替は2026年8月表記 |
-| https://en.wikivoyage.org/wiki/Morondava | 準公式 | 2026-11-08 | 価格は年不明 |
-| https://en.wikivoyage.org/wiki/Nosy_Be | 準公式 | 2026-11-08 | 価格は年不明 |
+| https://en.wikivoyage.org/wiki/Madagascar | 非公式 | 2026-11-08 | 季節・移動・物価。価格は2014〜2020年混在、為替は2026年8月表記 |
+| https://en.wikivoyage.org/wiki/Morondava | 非公式 | 2026-11-08 | 価格は年不明 |
+| https://en.wikivoyage.org/wiki/Nosy_Be | 非公式 | 2026-11-08 | 価格は年不明 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/madagascar | 公式(米CDC) | 2026-11-08 | 2026-08-25表示、マラリア節2025-04-23更新 |
 | https://www.gov.uk/foreign-travel-advice/madagascar | 公式(英FCDO) | 2026-11-08 | 2026-11-03更新、2026-11-07時点有効 |
 | https://www.gov.uk/foreign-travel-advice/madagascar/entry-requirements | 公式(英FCDO) | 2026-11-08 | 英国民向け条件を含む。更新日は取得文から不明 |
