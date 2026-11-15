@@ -11,6 +11,7 @@
 | [バギオ発ダイビング](../research/baguio-diving.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 調査中 | 2026-10-17 |
 | [予算の計算ルール](../docs/02-budget.html) | － | 整理済 | － |
 | [スービック湾の沈船ダイビング（マニラ発）](../research/subic-wreck-diving.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 作成中 | 2026-11-15 |
+| [マニラ周辺の観光とダイビング（バギオ滞在の前後）](../research/manila-area-guide.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 作成中 | 2026-11-16 |
 | [ケープタウン発ダイビング](../research/capetown-diving.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 調査中 | 2026-10-17 |
 | [準備チェック](../docs/03-preparation.html) | － | 整理済 | － |
 | [出発前ロードマップ](../docs/06-predeparture-roadmap.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 整理済 | 2026-10-17 |
