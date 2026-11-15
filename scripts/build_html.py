@@ -330,11 +330,20 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   td1.appendChild(sel);td2.appendChild(memo);
   var r={tr:tr,sel:sel,id:rid,name:first.replace(/\\s*出典$/,"").replace(/\\s*[A-Z]{2}-\\d+$/,""),g:iGrp==null?"":tr.cells[iGrp].textContent.trim(),v:[yen(tr.cells[iLow].textContent),yen(tr.cells[iStd].textContent),yen(tr.cells[iHigh].textContent)]};
   rows.push(r);
+  /* 3つの金額が同額＝幅のない固定の金額。低予算・標準・余裕に分けて見せず、1つにまとめて「固定」と示す（計算は r.v のまま） */
+  if(r.v[0]!=null&&r.v[0]===r.v[1]&&r.v[1]===r.v[2]){
+   var c0=tr.cells[iLow],c1=tr.cells[iStd],c2=tr.cells[iHigh];
+   tr.classList.add("fixed-amt");
+   c0.hidden=true;c2.hidden=true;
+   c1.colSpan=3;c1.classList.add("fixed");
+   c1.innerHTML='<span class="fx-tag">'+(/^未確認$/.test(tr.cells[1].textContent.trim())?"仮・固定":"固定")+'</span> '+c1.innerHTML;
+   c1.setAttribute("data-label","金額（固定）");
+  }
   function upd(){store[key]={s:sel.value,m:memo.value,v:r.v};if(!sel.value&&!memo.value)delete store[key];save();paint()}
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
  });
  var box=document.createElement("div");box.className="triage";
- box.innerHTML='<div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
+ box.innerHTML='<p class="muted fx-note">「固定」は、低予算・標準・余裕が同じ金額の行です（決まった料金や、幅を置いていない仮置きの金額）。「仮・固定」は、出典のない仮置きで、確定した金額ではありません。</p><div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
  if(iGrp!=null){
@@ -1648,7 +1657,8 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 """
 
 # トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
-PAGE_CSS_EXTRA = """.pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
+PAGE_CSS_EXTRA = """.fx-tag{display:inline-block;font-size:.78rem;font-weight:700;padding:0 6px;border:1px solid var(--line);border-radius:4px;color:var(--muted);vertical-align:1px}td.fixed{text-align:center!important;white-space:nowrap;background:color-mix(in srgb,var(--link) 6%,transparent)}tr.fixed-amt td.fixed .fx-tag{margin-right:4px}.fx-note{margin:6px 0}
+.pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
 .pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
 .pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-h{margin:26px 0 6px}.pl-name{min-width:14em;max-width:100%}.pl-cmp td.over{color:#b3261e;font-weight:700}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
 @media(max-width:640px){
