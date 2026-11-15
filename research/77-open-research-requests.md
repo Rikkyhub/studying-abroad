@@ -125,6 +125,19 @@
 | R-48 | 13か国の比較表の更新 | R-44・R-46・R-47 が揃ったら、`research/africa-13-countries-comparison.md` に モーリシャス・ナミビア・南アフリカ を加え、16か国の表にする | 上記の結果 | 比較表、`data/pages.csv` の題名 |
 | R-49 | 外務省の危険情報の再確認（全16か国） | 国別ページの危険レベルを、最新の更新日つきで再確認。Claude は anzen.mofa.go.jp が 403 のため、公式を直接取得できない国がある | 外務省 海外安全ホームページ | 各国ページの安全・健康 |
 
+### J. スービックの沈船ダイビング（マニラ発・Claude が取得できなかったもの）
+
+[スービック湾の沈船ダイビング](subic-wreck-diving.md)の「未確認事項」です。事業者への問い合わせは本人が送るため、ここでは**公開されている情報の確認**と、**問い合わせ文案の用意**を依頼します（Claude は問い合わせを送れません）。
+
+| # | 項目 | 何を調べるか | 取得先の候補 | 反映先 |
+|---|---|---|---|---|
+| R-50 | アドバンス・ログ11本での深場の受け入れ条件 | LST（28〜35m）、Skyraider（35〜36m）、USS New York（17〜30m）に、アドバンス認定・ログ約10本で参加できるか。事業者ごとの経験本数の条件、ガイド同行、ダイブコンピューター必須などの規定（公式ページや規約の文言） | Mangos Dive Center、Boardwalk Divers、Scuba Tech Philippines の公式サイト・規約 | `research/subic-wreck-diving.md` の §1・§7 |
+| R-51 | 2027年のダイブ料金 | 認定ダイバー1本（器材込み・自分の器材）、沈船ごとの追加料金、パッケージ割引、2027年2〜4月の改定。通貨・年・含まれる内容 | 各事業者の公式料金ページ（日付指定の掲載） | `research/subic-wreck-diving.md` の §3 |
+| R-52 | マニラ⇄スービック（オロンガポ）のバス | Victory Liner のマニラ側ターミナル名、時刻表、運賃（2027年）、所要時間。バレット地区までの乗り継ぎ | Victory Liner 公式、時刻表サイト | `research/subic-wreck-diving.md` の §4 |
+| R-53 | バレット地区の宿の実勢 | ダイブセンター併設を含む宿の1泊料金（日付指定、2027年2〜4月）。朝食、税 | 宿泊予約サイトの掲載価格 | `research/subic-wreck-diving.md` の §4・§6 |
+| R-54 | 沈船ごとの水深・必要認定の公式値 | ダイブガイド（philippinedives.com）と Wikivoyage で食い違う水深（LST 28〜35m と32m、USS New York 17〜30m と27m）。Seian Maru の水深。事業者の公式の値 | 各事業者の沈船紹介ページ | `research/subic-wreck-diving.md` の §1 |
+| R-55 | USS New York の港湾警察の事前許可 | 手続き、所要日数、事業者が手配するか | 事業者公式、Subic Bay Metropolitan Authority の案内 | `research/subic-wreck-diving.md` の §1 |
+
 ## 3. 優先順位の目安
 
 1. **R-01（為替）** と **R-02・R-07・R-13（運賃・見積）** が、予算の合計を決める。

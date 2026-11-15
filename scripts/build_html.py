@@ -1403,7 +1403,10 @@ def open_request_free(root: Path = ROOT) -> list:
         if len(cells) < 4:
             continue
         # 反映先に国別ページ・比較表があるものを出す（費用行IDを併記していても、国別ページの未調査は費用表からは見えないため）
-        if not any(k in cells[-1] for k in ("countries/", "比較表", "各国ページ")):
+        has_cost_row = bool(re.search(r"(?:AF|SC|CM|PH|AU)-\d+", cells[-1]))
+        to_page = any(k in cells[-1] for k in ("countries/", "比較表", "各国ページ"))
+        to_research_only = ("research/" in cells[-1]) and not has_cost_row  # 例：スービックの沈船ダイビングの調べ残し
+        if not (to_page or to_research_only):
             continue
         short = cells[1] if len(cells[1]) <= 90 else cells[1][:90] + "…"
         out.append((m.group(1), cells[0], short, cells[-1]))
