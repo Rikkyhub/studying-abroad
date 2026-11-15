@@ -50,3 +50,132 @@ G,Issue #77/#80 マダガスカル往復＋ビクトリアの滝周辺3か国（
 G,Issue #77/#80 マダガスカル往復＋ビクトリアの滝周辺3か国（モーリシャス経由・約5週間）,8,LIVINGSTONE,CHOBE,overland,候補,Y,カズングラ国境経由のチョベ日帰り。ボツワナは日帰りまで（宿泊はKAZA UNIVISAの範囲外）
 G,Issue #77/#80 マダガスカル往復＋ビクトリアの滝周辺3か国（モーリシャス経由・約5週間）,9,CHOBE,LIVINGSTONE,overland,候補,Y,同日にリビングストンへ戻る。日中のみ
 G,Issue #77/#80 マダガスカル往復＋ビクトリアの滝周辺3か国（モーリシャス経由・約5週間）,10,LIVINGSTONE,CPT,flight,候補,Y,"リビングストン発ケープタウン直行（Proflight公式、2027年5月は月曜P0 050・金曜P0 054）。#80の想定は VFA→CPT 片道（AF-21、約47,000円）で、どちらを使うかは未確定。座席・片道運賃は未確認"
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,1,NRT,MRU,flight,候補,N,"日本→モーリシャスは確定（Issue #137）。日本側の空港・経由地・運賃は未決定（AF-01は参考約75,000円）"
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,2,MRU,TNR,flight,候補,Y,"モーリシャス→アンタナナリボ。AF-02往復約90,700円の往路（参考）"
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,3,TNR,MRU,flight,候補,Y,往復の復路。使わない場合は片道2本に分ける比較（M0-B）が必要
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,4,MRU,JNB,flight,候補,Y,"MRU→JNB片道（AF-17、約55,000円・参考）"
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,5,JNB,VICFALLS,flight,候補,Y,"JNB→ビクトリアフォールズ片道（AF-18、約26,000円・参考）"
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,6,VICFALLS,LIVINGSTONE,overland,候補,Y,"ジンバブエ→ザンビア。KAZA UNIVISA USD50（約7,900円）・日中のみ"
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,7,LIVINGSTONE,KASANE,overland,候補,Y,ザンビア→ボツワナ（Kazungula）。宿泊はKAZA UNIVISAの範囲外
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,8,KASANE,VICFALLS,overland,候補,Y,ボツワナ→ジンバブエ。昼間の越境でVFA空港へ
+M0A,5月 M0-A：ナミビアなし・往復接続（MRU→TNR→MRU→JNB→滝周辺→CPT）,9,VICFALLS,CPT,flight,候補,Y,"VFA→CPT片道（AF-21、約47,000円・参考）。5月の確認済み小計は約606,000円（目標+約6,000円）"
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,1,NRT,MRU,flight,候補,N,"日本→モーリシャスは確定（Issue #137）。日本側の空港・経由地・運賃は未決定（AF-01は参考約75,000円）"
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,2,MRU,TNR,flight,候補,Y,"MRU→TNR片道。往復の半額約45,350円は推計（未取得）"
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,3,TNR,JNB,flight,候補,Y,"TNRから本土へ直接（MRUへ戻らない）。片道運賃・接続は未取得。約100,350円を下回ればM0-Aより安い（反転点・推計）"
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,4,JNB,VICFALLS,flight,候補,Y,"JNB→ビクトリアフォールズ片道（AF-18、約26,000円・参考）"
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,5,VICFALLS,LIVINGSTONE,overland,候補,Y,"ジンバブエ→ザンビア。KAZA UNIVISA USD50（約7,900円）・日中のみ"
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,6,LIVINGSTONE,KASANE,overland,候補,Y,ザンビア→ボツワナ（Kazungula）。宿泊はKAZA UNIVISAの範囲外
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,7,KASANE,VICFALLS,overland,候補,Y,ボツワナ→ジンバブエ。昼間の越境
+M0B,5月 M0-B：ナミビアなし・オープンジョー（TNRから本土へ直接。MRUへ戻らない）,8,VICFALLS,CPT,flight,候補,Y,"VFA→CPT片道（AF-21、約47,000円・参考）"
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,1,NRT,MRU,flight,候補,N,"日本→モーリシャスは確定（Issue #137）。日本側の空港・経由地・運賃は未決定（AF-01は参考約75,000円）"
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,2,MRU,TNR,flight,候補,Y,"モーリシャス→アンタナナリボ。AF-02往復約90,700円の往路（参考）"
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,3,TNR,MRU,flight,候補,Y,往復の復路。使わない場合は片道2本に分ける比較（M0-B）が必要
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,4,MRU,JNB,flight,候補,Y,"MRU→JNB片道（AF-17、約55,000円・参考）"
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,5,JNB,LIVINGSTONE,flight,候補,Y,JNB→リビングストン。直行の有無・運賃は未確認（拠点型）
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,6,LIVINGSTONE,CHOBE,overland,候補,Y,チョベ日帰り（Kazungula経由）。ボツワナは日帰りまで
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,7,CHOBE,LIVINGSTONE,overland,候補,Y,同日にリビングストンへ戻る。日中のみ
+M0C,5月 M0-C：ナミビアなし・短縮（マダガスカル5日＋滝周辺は拠点型）,8,LIVINGSTONE,CPT,flight,候補,Y,"リビングストン→CPT（Proflight：月・金。運賃は未確認）。マダガスカル5日の短縮で確認済み小計は約558,000円（目標−約42,000円）"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,1,NRT,MRU,flight,候補,N,"日本→モーリシャスは確定（Issue #137）。日本側の空港・経由地・運賃は未決定（AF-01は参考約75,000円）"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,2,MRU,TNR,flight,候補,Y,"モーリシャス→アンタナナリボ。AF-02往復約90,700円の往路（参考）"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,3,TNR,MRU,flight,候補,Y,往復の復路。使わない場合は片道2本に分ける比較（M0-B）が必要
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,4,MRU,JNB,flight,候補,Y,"MRU→JNB片道（AF-17、約55,000円・参考）。マダガスカルは7日に短縮して比較"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,5,JNB,VICFALLS,flight,候補,Y,"JNB→ビクトリアフォールズ片道（AF-18、約26,000円・参考）"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,6,VICFALLS,KASANE,overland,候補,Y,ジンバブエ→ボツワナ（滝周辺は短縮）
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,7,KASANE,WDH,overland,候補,Y,"カサネ→ウィントフック（約1,200km・カプリビ経由）。昼間の直通運行・運賃は未確認（最大の未解決区間）"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,8,WDH,SOSSUSVLEI,overland,候補,Y,"WDH→Sesriem。乗合Go2は片道N$850（約8,200円・Issue記載。2027年は未確認）。日中の移動"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,9,SOSSUSVLEI,WDH,overland,候補,Y,"Sesriem→WDH。Sesriemキャンプ N$670/人・泊（公式、約6,400円）、Deadvleiシャトル N$180（公式）"
+M1A,5月 M1-A：ボツワナの後にナミビア（カサネ→WDH→Sossusvlei→CPT）,10,WDH,CPT,flight,候補,Y,"WDH→CPT。航空運賃は未取得。バスは約21〜23時間・夜間走行を含む（参考R1,000〜1,300、約9,600〜12,500円）。確認済み小計は約595,500円＋WDH関連"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,1,NRT,MRU,flight,候補,N,"日本→モーリシャスは確定（Issue #137）。日本側の空港・経由地・運賃は未決定（AF-01は参考約75,000円）"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,2,MRU,TNR,flight,候補,Y,"モーリシャス→アンタナナリボ。AF-02往復約90,700円の往路（参考）"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,3,TNR,MRU,flight,候補,Y,往復の復路。使わない場合は片道2本に分ける比較（M0-B）が必要
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,4,MRU,JNB,flight,候補,Y,"MRU→JNB片道（AF-17、約55,000円・参考）。マダガスカルは7日に短縮して比較"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,5,JNB,VICFALLS,flight,候補,Y,"JNB→ビクトリアフォールズ片道（AF-18、約26,000円・参考）"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,6,VICFALLS,KASANE,overland,候補,Y,ジンバブエ→ボツワナ
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,7,KASANE,MAUN,overland,候補,Y,カサネ→マウン（直線約300km、道路約520km）。昼間の移動手段は未確認
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,8,MAUN,WDH,flight,候補,Y,"マウン→WDH。直行の有無・運賃は未取得。陸路は約1,100kmで1〜2日"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,9,WDH,SOSSUSVLEI,overland,候補,Y,"WDH→Sesriem。乗合Go2は片道N$850（約8,200円・Issue記載。2027年は未確認）。日中の移動"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,10,SOSSUSVLEI,WDH,overland,候補,Y,"Sesriem→WDH。Sesriemキャンプ N$670/人・泊（公式、約6,400円）、Deadvleiシャトル N$180（公式）"
+M1B,5月 M1-B：ナミビア入口をマウンへ変更（マウン→WDH→Sossusvlei→CPT）,11,WDH,CPT,flight,候補,Y,"WDH→CPT。航空は運賃未取得、夜行バスは参考R1,000〜1,300"
+A0,8月 A0：ケニア中心（CPT→NBO→サファリ→ドーハ→日本）,1,CPT,NBO,flight,候補,Y,"CPT→NBO。運賃は未取得。ケニアeTA USD30（約4,700円）"
+A0,8月 A0：ケニア中心（CPT→NBO→サファリ→ドーハ→日本）,2,NBO,DOH,flight,候補,Y,NBO→DOH。運賃は未取得。DOH観光の費用は別加算
+A0,8月 A0：ケニア中心（CPT→NBO→サファリ→ドーハ→日本）,3,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A1,8月 A1：ケニア＋タンザニア（CPT→NBO→セレンゲティ→DAR→ドーハ→日本）,1,CPT,NBO,flight,候補,Y,"CPT→NBO。運賃は未取得。ケニアeTA USD30（約4,700円）"
+A1,8月 A1：ケニア＋タンザニア（CPT→NBO→セレンゲティ→DAR→ドーハ→日本）,2,NBO,SERENGETI,overland,候補,Y,NBO→セレンゲティ。陸路/国内線の別・公園料金は未確認（直線の例示）
+A1,8月 A1：ケニア＋タンザニア（CPT→NBO→セレンゲティ→DAR→ドーハ→日本）,3,SERENGETI,DAR,flight,候補,Y,"セレンゲティ→ダルエスサラーム。国内線の有無は未確認。タンザニアビザ USD50（約7,900円）"
+A1,8月 A1：ケニア＋タンザニア（CPT→NBO→セレンゲティ→DAR→ドーハ→日本）,4,DAR,DOH,flight,候補,Y,DAR→DOH。運賃は未取得
+A1,8月 A1：ケニア＋タンザニア（CPT→NBO→セレンゲティ→DAR→ドーハ→日本）,5,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,1,CPT,WDH,flight,候補,Y,CPT→WDH。運賃は未取得
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,2,WDH,SOSSUSVLEI,overland,候補,Y,WDH→Sesriem。乗合 片道N$850（Issue記載・未確認）。キャンプ N$670/人・泊（公式）
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,3,SOSSUSVLEI,WDH,overland,候補,Y,Sesriem→WDH
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,4,WDH,DOH,flight,候補,Y,WDH→DOH。直行の有無は未確認（JNB経由の可能性が高い）
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,5,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,1,CPT,JNB,flight,候補,Y,CPT→JNB（南アフリカ国内）。運賃は未取得
+A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,2,JNB,MLILWANE,overland,候補,Y,JNB→エスワティニ。JNB↔ムババーネの路線バスの現行運賃は未確認
+A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認
+A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,4,MPM,JNB,flight,候補,Y,マプト→JNB。運賃は未取得
+A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,5,JNB,DOH,flight,候補,Y,JNB→DOH。運賃は未取得
+A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,6,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
+A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
+A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
+A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,4,MPM,NBO,flight,候補,Y,MPM→NBO直行（Kenya Airways公式：水・金・日 13:50→18:45。2027年8月のダイヤ・運賃は未確認）
+A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,5,NBO,DOH,flight,候補,Y,NBO→DOH。運賃は未取得。DOH観光の費用は別加算
+A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,6,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
+A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
+A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
+A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,4,MPM,NBO,flight,候補,Y,MPM→NBO直行（Kenya Airways公式：水・金・日）。2027年は未確認
+A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,5,NBO,DXB,flight,候補,Y,NBO→DXB。運賃は未取得
+A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,6,DXB,NRT,flight,候補,Y,ドバイ→日本。Dubai Connectは適格な便・運賃条件が必要（自動付帯ではない）。2027年は未確認
+A5,8月 A5：南部3か国→JNB→ドーハ（ケニアなし）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
+A5,8月 A5：南部3か国→JNB→ドーハ（ケニアなし）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
+A5,8月 A5：南部3か国→JNB→ドーハ（ケニアなし）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
+A5,8月 A5：南部3か国→JNB→ドーハ（ケニアなし）,4,MPM,JNB,flight,候補,Y,マプト→JNB（空路または陸路）。運賃・所要は未確認
+A5,8月 A5：南部3か国→JNB→ドーハ（ケニアなし）,5,JNB,DOH,flight,候補,Y,JNB→DOH。運賃は未取得
+A5,8月 A5：南部3か国→JNB→ドーハ（ケニアなし）,6,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A5X,8月 A5-DXB：南部3か国→JNB→ドバイ,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
+A5X,8月 A5-DXB：南部3か国→JNB→ドバイ,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
+A5X,8月 A5-DXB：南部3か国→JNB→ドバイ,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
+A5X,8月 A5-DXB：南部3か国→JNB→ドバイ,4,MPM,JNB,flight,候補,Y,マプト→JNB（空路または陸路）。運賃・所要は未確認
+A5X,8月 A5-DXB：南部3か国→JNB→ドバイ,5,JNB,DXB,flight,候補,Y,JNB→DXB。運賃は未取得
+A5X,8月 A5-DXB：南部3か国→JNB→ドバイ,6,DXB,NRT,flight,候補,Y,ドバイ→日本。Dubai Connectは適格な便・運賃条件が必要（自動付帯ではない）。2027年は未確認
+A6,8月 A6：ナミビア→JNB→ドーハ→日本,1,CPT,WDH,flight,候補,Y,CPT→WDH。運賃は未取得
+A6,8月 A6：ナミビア→JNB→ドーハ→日本,2,WDH,SOSSUSVLEI,overland,候補,Y,WDH→Sesriem。乗合 片道N$850（Issue記載・未確認）。キャンプ N$670/人・泊（公式）
+A6,8月 A6：ナミビア→JNB→ドーハ→日本,3,SOSSUSVLEI,WDH,overland,候補,Y,Sesriem→WDH
+A6,8月 A6：ナミビア→JNB→ドーハ→日本,4,WDH,JNB,flight,候補,Y,WDH→JNB。運賃は未取得。WDH→他国経由との比較が必要
+A6,8月 A6：ナミビア→JNB→ドーハ→日本,5,JNB,DOH,flight,候補,Y,JNB→DOH。運賃は未取得
+A6,8月 A6：ナミビア→JNB→ドーハ→日本,6,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A7,8月 A7：ナミビア→JNB→ドバイ→日本,1,CPT,WDH,flight,候補,Y,CPT→WDH。運賃は未取得
+A7,8月 A7：ナミビア→JNB→ドバイ→日本,2,WDH,SOSSUSVLEI,overland,候補,Y,WDH→Sesriem。乗合 片道N$850（Issue記載・未確認）。キャンプ N$670/人・泊（公式）
+A7,8月 A7：ナミビア→JNB→ドバイ→日本,3,SOSSUSVLEI,WDH,overland,候補,Y,Sesriem→WDH
+A7,8月 A7：ナミビア→JNB→ドバイ→日本,4,WDH,JNB,flight,候補,Y,WDH→JNB。運賃は未取得
+A7,8月 A7：ナミビア→JNB→ドバイ→日本,5,JNB,DXB,flight,候補,Y,JNB→DXB。運賃は未取得
+A7,8月 A7：ナミビア→JNB→ドバイ→日本,6,DXB,NRT,flight,候補,Y,ドバイ→日本。Dubai Connectは適格な便・運賃条件が必要（自動付帯ではない）。2027年は未確認
+A8,8月 A8：ケニア長めサファリ＋中東観光（A0と同じ区間）,1,CPT,NBO,flight,候補,Y,"CPT→NBO。運賃は未取得。ケニアeTA USD30（約4,700円）"
+A8,8月 A8：ケニア長めサファリ＋中東観光（A0と同じ区間）,2,NBO,DOH,flight,候補,Y,NBO→DOH。サファリ日数を長く取る案。国数よりサファリの質と滞在余裕を優先
+A8,8月 A8：ケニア長めサファリ＋中東観光（A0と同じ区間）,3,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A9,8月 A9：南部3か国のみ・中東観光なし（JNB→DOH乗継のみ）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
+A9,8月 A9：南部3か国のみ・中東観光なし（JNB→DOH乗継のみ）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
+A9,8月 A9：南部3か国のみ・中東観光なし（JNB→DOH乗継のみ）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
+A9,8月 A9：南部3か国のみ・中東観光なし（JNB→DOH乗継のみ）,4,MPM,JNB,flight,候補,Y,マプト→JNB。最安の実接続を比較する対照案
+A9,8月 A9：南部3か国のみ・中東観光なし（JNB→DOH乗継のみ）,5,JNB,DOH,flight,空港乗継のみ,Y,乗継のみ（市内観光0日）。運賃は未取得
+A9,8月 A9：南部3か国のみ・中東観光なし（JNB→DOH乗継のみ）,6,DOH,NRT,flight,空港乗継のみ,Y,乗継のみ。観光付きより安いとは限らない（Issue #137）
+A10,8月 A10：2か国に短縮（レソト＋エスワティニ→JNB→ドーハ）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
+A10,8月 A10：2か国に短縮（レソト＋エスワティニ→JNB→ドーハ）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
+A10,8月 A10：2か国に短縮（レソト＋エスワティニ→JNB→ドーハ）,3,MLILWANE,JNB,overland,候補,Y,エスワティニ→JNB。路線バスの運賃は未確認
+A10,8月 A10：2か国に短縮（レソト＋エスワティニ→JNB→ドーハ）,4,JNB,DOH,flight,候補,Y,JNB→DOH。運賃は未取得
+A10,8月 A10：2か国に短縮（レソト＋エスワティニ→JNB→ドーハ）,5,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,4,MPM,NBO,flight,候補,Y,MPM→NBO直行（水・金・日）。2027年は未確認
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,5,NBO,DOH,flight,候補,Y,NBO→DOH。運賃は未取得。DOH観光の費用は別加算
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,6,DOH,DXB,flight,候補,Y,DOH→DXB。別発券・再チェックイン・入国要件・保護の有無を確認（正式運航・価格は未確認）
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,7,DXB,NRT,flight,候補,Y,ドバイ→日本。Dubai Connectは適格な便・運賃条件が必要（自動付帯ではない）。2027年は未確認
+A12,8月 A12：ナミビア→JNB→ドーハ→ドバイ→日本（中東2都市）,1,CPT,WDH,flight,候補,Y,CPT→WDH。運賃は未取得
+A12,8月 A12：ナミビア→JNB→ドーハ→ドバイ→日本（中東2都市）,2,WDH,SOSSUSVLEI,overland,候補,Y,WDH→Sesriem。乗合 片道N$850（Issue記載・未確認）。キャンプ N$670/人・泊（公式）
+A12,8月 A12：ナミビア→JNB→ドーハ→ドバイ→日本（中東2都市）,3,SOSSUSVLEI,WDH,overland,候補,Y,Sesriem→WDH
+A12,8月 A12：ナミビア→JNB→ドーハ→ドバイ→日本（中東2都市）,4,WDH,JNB,flight,候補,Y,WDH→JNB。運賃は未取得
+A12,8月 A12：ナミビア→JNB→ドーハ→ドバイ→日本（中東2都市）,5,JNB,DOH,flight,候補,Y,JNB→DOH。運賃は未取得
+A12,8月 A12：ナミビア→JNB→ドーハ→ドバイ→日本（中東2都市）,6,DOH,DXB,flight,候補,Y,DOH→DXB。別発券等の確認が必要（未確認）
+A12,8月 A12：ナミビア→JNB→ドーハ→ドバイ→日本（中東2都市）,7,DXB,NRT,flight,候補,Y,ドバイ→日本。Dubai Connectは適格な便・運賃条件が必要（自動付帯ではない）。2027年は未確認
