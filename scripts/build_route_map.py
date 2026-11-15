@@ -271,7 +271,7 @@ def build() -> str:
 <div class="zwrap"><div class="mapbox">{africa}</div></div>
 {legend}
 <p class="lead" style="margin-top:14px">モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウンの35日モデル。線の横の「Day」は、<a href="../research/may-madagascar-vfa-redesign.html#day-1day-35乗継と国内移動を含む相対日モデル">35日表</a>の日です。Day 1 は 2027年5月3日の仮置きで、確定した日程ではありません。</p>
-<nav class="switch" aria-label="地図とページの移動"><a href="africa-map.html">候補ルートのアフリカ地図</a><a href="world-map.html">世界地図</a><a href="africa-countries.html">アフリカ国別地図</a><a href="../research/may-madagascar-vfa-redesign.html">ルート調査（35日表・日数案）</a></nav>
+{bm.map_switch("route-g")}
 <h2>2. マダガスカル拡大図（日数案で切り替え）</h2>
 <p>アフリカ全体の縮尺では首都・アンダシベ・モロンダバが重なるので、島だけを拡大しています。下のボタンで、日数案ごとの動きと日が切り替わります。</p>
 <div class="plans" role="group" aria-label="マダガスカルの日数案">{btns}</div>
