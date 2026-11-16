@@ -78,8 +78,10 @@ CSS = BASE_CSS + """
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sea:#1a2530;--land:#2b2f2c;--border:#59605a;--grat:#2a3844;--fl:#F2A1A3;--dm:#9AD9E6;--rd:#F2C94C;--pt:#fbfbfa}}
 :root[data-theme="dark"]{--sea:#1a2530;--land:#2b2f2c;--border:#59605a;--grat:#2a3844;--fl:#F2A1A3;--dm:#9AD9E6;--rd:#F2C94C;--pt:#fbfbfa}
 .zwrap{overflow:auto;margin:6px 0;max-width:100%}
+.rwrap{display:grid;grid-template-columns:max-content minmax(240px,1fr);gap:0 18px;align-items:start}
+@media (max-width:1100px){.rwrap{grid-template-columns:1fr}}
 h1{margin:6px 0!important;font-size:1.35rem!important}.crumb{margin:6px 0!important}h2.mt{margin:6px 0!important;font-size:1.05rem!important}
-.mapbox{position:relative;border:1px solid var(--line);width:calc(min(100%,(100vh - 215px) * var(--ar,1.6)) * var(--zf,1))}
+.mapbox{position:relative;border:1px solid var(--line);width:calc(min(94vw,720px,max(420px,(100vh - 200px) * var(--ar,1.6))) * var(--zf,1))}
 .zoom{position:sticky;top:var(--bar,44px);z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0;padding:6px 0;background:var(--bg);border-bottom:1px solid var(--line)}
 .zoom button{font:inherit;min-width:56px;min-height:40px;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
 .zoom button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
@@ -94,6 +96,15 @@ svg.m{display:block;width:100%;height:auto;background:var(--sea);font-family:var
 .tx.big{font-size:calc(15px * var(--ts,1))}
 .dn{font-size:calc(11px * var(--ts,1));font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
 .dn.a{fill:var(--fl)} .dn.b{fill:var(--dm)} .dn.c{fill:var(--rd)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}
+.tabs button{font:inherit;min-height:38px;padding:4px 16px;border:1px solid var(--line);border-radius:8px 8px 0 0;background:var(--bg);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--link);color:#fff;border-color:var(--link);font-weight:700}
+.chips[hidden],.mapbox[hidden]{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:4px 6px;border-top:2px solid var(--link);padding-top:4px}
+.chips label{display:inline-flex;gap:6px;align-items:center;min-height:36px;padding:3px 10px;border:1px solid var(--line);border-radius:18px;background:var(--bg);cursor:pointer}
+.chips label:has(input:checked){background:var(--hl);border-color:var(--link);font-weight:700}
+.chips input{margin:0}
+.rinfo{margin:6px 0;padding:6px 10px;border-left:6px solid var(--link);background:var(--bg);font-size:.92em}.rinfo b{display:block}
 .switch{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0;padding:6px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.95em}
 .plans{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
 .plans button{font:inherit;padding:6px 14px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
@@ -145,52 +156,83 @@ def land_svg(proj, geo, visit, tol, extra=""):
     return "".join(out)
 
 
-def build_africa(points, geo):
-    proj = bm.Laea(37.0, -22.0, (10.0, 66.0, -37.0, -8.0))
-    visit = {"480", "450", "710", "716", "894", "072"}
-    W, H = proj.width, proj.height
-    outline = f"M0 0H{bm.f1(W)}V{bm.f1(H)}H0Z"
-    grat = bm.graticule(proj, 10, 10, (0, 80), (-40, 0))
-    lines, labels = [], []
-    seen = {}
-    for i, (a, b, mode, day) in enumerate(MAIN_LEGS):
+# 全体図で選べる案。G は Day 番号つき（35日表）。他は routes.csv の区間をそのまま描く（Day なし）
+MAY_IDS = ["G", "M0A", "M0B", "M0C", "M1A", "M1B"]
+AUG_IDS = ["A0", "A1", "A2", "A3", "A4", "A4X", "A5", "A5X", "A6", "A7", "A8", "A9", "A10", "A11", "A12"]
+G_DAYS = {("BOM", "MRU"): "Day 1〜2", ("MRU", "TNR"): "Day 6", ("TNR", "MRU"): "Day 19", ("MRU", "JNB"): "Day 21", ("JNB", "VICFALLS"): "Day 23", ("VICFALLS", "CPT"): "Day 32"}
+SHORT = {"G": "G：現行35日", "M0A": "M0-A ナミビアなし・往復", "M0B": "M0-B オープンジョー", "M0C": "M0-C 短縮", "M1A": "M1-A ボツワナ→ナミビア", "M1B": "M1-B マウン入口"}
+
+
+def short_name(rid, name):
+    if rid in SHORT:
+        return SHORT[rid]
+    n = name.split("：", 1)[1] if "：" in name[:14] else name
+    return rid + " " + n.split("（", 1)[0]
+
+
+def route_svg(proj, points, legs, rid):
+    """1案ぶんの線と地点。G だけ Day 番号を付ける。同じ2点の往復は左右にずらす"""
+    lines, labels, used = [], [], []
+    for l in legs:
+        a, b, mode = l["from_point"], l["to_point"], ("flight" if l["mode"] == "flight" else "overland")
         pa, pb = pt(points, a), pt(points, b)
-        cls = MODE_STYLE[mode][0]
-        # 同じ区間の往復は曲線を左右にずらす
         key = tuple(sorted((a, b)))
-        seen[key] = seen.get(key, 0) + 1
-        if a == "BOM":
-            continue
+        for q in (a, b):
+            if q not in used:
+                used.append(q)
         d, pts = leg_path(proj, pa, pb, mode == "flight")
-        if seen[key] > 1 or key in {("MRU", "TNR"), ("KASANE", "LIVINGSTONE"), ("KASANE", "VICFALLS")}:
+        again = sum(1 for m in legs if tuple(sorted((m["from_point"], m["to_point"]))) == key) > 1
+        if again:
             d, mid = offset_line(pts, 10)
         else:
             mid = ((pts[0][0] + pts[-1][0]) / 2, (pts[0][1] + pts[-1][1]) / 2)
-        lines.append(f'<path class="ln {cls}" d="{d}"><title>{html.escape(pa[0])}→{html.escape(pb[0])}（{day}）</title></path>')
+        day = G_DAYS.get((a, b), "") if rid == "G" else ""
+        cls = MODE_STYLE[mode][0]
+        tip = html.escape(pa[0]) + "→" + html.escape(pb[0]) + (("（" + day + "）") if day else "")
+        lines.append(f'<path class="ln {cls}" d="{d}"><title>{tip}</title></path>')
         if day:
-            labels.append(f'<text class="dn" x="{bm.f1(mid[0])}" y="{bm.f1(mid[1] + (-8 if a == "MRU" else 14))}" text-anchor="middle">{html.escape(day)}</text>')
-    # 日本から（図の外）。ムンバイ方向へ大圏の線を引き、図の端で切る
-    _, la, lo = pt(points, "MRU")
-    bn, bla, blo = pt(points, "BOM")
-    d, _pts = leg_path(proj, ("", la, lo), ("", bla, blo), True)
-    lines.append(f'<path class="ln fl" d="{d}"><title>日本→ムンバイ→モーリシャス（Day 1〜2）</title></path>')
-    mxx, myy = proj.xy(lo, la)
-    labels.append(f'<text class="dn" x="{bm.f1(mxx + 8)}" y="{bm.f1(myy - 34)}" text-anchor="start">日本から Day 1〜2</text>')
-    # 滝周辺3か国は線が短く重なるので、日をまとめて1か所に書く
-    _, vla, vlo = pt(points, "VICFALLS")
-    vx, vy = proj.xy(vlo, vla)
-    labels.append(f'<text class="dn c" x="{bm.f1(vx - 12)}" y="{bm.f1(vy - 34)}" text-anchor="end">Day 24〜31 滝周辺3か国</text>')
+            dy = -8 if a == "MRU" else 14
+            labels.append(f'<text class="dn" x="{bm.f1(mid[0])}" y="{bm.f1(mid[1] + dy)}" text-anchor="middle">{html.escape(day)}</text>')
+    if rid == "G":
+        _, vla, vlo = pt(points, "VICFALLS")
+        vx, vy = proj.xy(vlo, vla)
+        labels.append(f'<text class="dn c" x="{bm.f1(vx - 12)}" y="{bm.f1(vy - 34)}" text-anchor="end">Day 24〜31 滝周辺3か国</text>')
     dots, names = [], []
-    for pid, dx, dy, anchor in (("MRU", 12, 16, "start"), ("TNR", -12, -8, "end"), ("JNB", 12, 4, "start"), ("VICFALLS", -10, -8, "end"),
-                                ("CPT", 12, 4, "start")):
+    for pid in used:
         n, lat, lon = pt(points, pid)
         x, y = proj.xy(lon, lat)
-        dots.append(f'<circle class="pt" cx="{bm.f1(x)}" cy="{bm.f1(y)}" r="5"/>')
-        names.append(f'<text class="tx" x="{bm.f1(x + dx)}" y="{bm.f1(y + dy)}" text-anchor="{anchor}">{html.escape(n)}</text>')
-    return (f'<svg class="m" viewBox="0 0 {bm.f1(W)} {bm.f1(H)}" role="img" aria-label="案Gの全体経路（アフリカ南部）">'
-            f'<defs><clipPath id="c1"><path d="{outline}"/></clipPath></defs><g clip-path="url(#c1)">'
-            f'<path class="sea" d="{outline}"/><path class="grat" d="{grat}"/><g>{land_svg(proj, geo, visit, 0.5)}</g>'
-            f'<g>{"".join(lines)}</g><g>{"".join(dots)}</g><g>{"".join(names)}</g><g>{"".join(labels)}</g></g><path class="frame" d="{outline}"/></svg>')
+        if not proj.in_view(x, y, -4):
+            continue
+        dots.append(f'<circle class="pt" cx="{bm.f1(x)}" cy="{bm.f1(y)}" r="4.5"/>')
+        names.append(f'<text class="tx" x="{bm.f1(x + 8)}" y="{bm.f1(y - 7)}" text-anchor="start">{html.escape(n)}</text>')
+    return "".join(lines), "".join(dots), "".join(names), "".join(labels)
+
+
+def build_africa(points, geo, routes):
+    """5月の案（モーリシャス以南）と8月の案（ケープタウン→日本）で、地図の範囲を分けた2枚を作る。切り替えで見える方だけ表示"""
+    visit_may = {"480", "450", "710", "716", "894", "072", "516"}
+    visit_aug = {"404", "834", "710", "426", "748", "508", "516", "072", "634", "784"}
+    out = []
+    for kind, ids, win, lon0, lat0, visit in (
+            ("may", MAY_IDS, (10.0, 62.0, -37.0, -8.0), 37.0, -22.0, visit_may),
+            ("aug", AUG_IDS, (14.0, 62.0, -36.0, 27.0), 38.0, -4.0, visit_aug)):
+        proj = bm.Laea(lon0, lat0, win)
+        W, H = proj.width, proj.height
+        outline = f"M0 0H{bm.f1(W)}V{bm.f1(H)}H0Z"
+        grat = bm.graticule(proj, 10, 10, (0, 80), (-40, 40))
+        groups = []
+        for rid in ids:
+            if rid not in routes:
+                continue
+            ln, dt, nm, lb = route_svg(proj, points, routes[rid]["legs"], rid)
+            on = rid == "G"
+            groups.append(f'<g class="rt{" on" if on else ""}" data-rt="{rid}" style="display:{"inline" if on else "none"}">{ln}{dt}{nm}{lb}</g>')
+        hid = "" if kind == "may" else " hidden"
+        out.append(f'<div class="mapbox" data-pan="{kind}"{hid}><svg class="m" viewBox="0 0 {bm.f1(W)} {bm.f1(H)}" role="img" aria-label="{"5月" if kind == "may" else "8月"}の案の全体図">'
+                   f'<defs><clipPath id="c1{kind}"><path d="{outline}"/></clipPath></defs><g clip-path="url(#c1{kind})">'
+                   f'<path class="sea" d="{outline}"/><path class="grat" d="{grat}"/><g>{land_svg(proj, geo, visit, 0.5)}</g>'
+                   f'{"".join(groups)}</g><path class="frame" d="{outline}"/></svg></div>')
+    return "".join(out)
 
 
 def build_madagascar(points, geo):
@@ -239,11 +281,39 @@ def build_madagascar(points, geo):
 
 
 def build() -> str:
-    points, _routes = bm.load_model()
+    points, routes = bm.load_model()
     geo = bm.load_topo("countries-50m.json")
-    africa = build_africa(points, geo)
+    africa = build_africa(points, geo, routes)
     mada = build_madagascar(points, geo)
 
+    def chip(rid):
+        rt = routes[rid]
+        inf = bm.ROUTE_INFO.get(rid)
+        tip = rt["name"] + (("｜確認できた費用の小計：" + inf[0]) if inf else "")
+        chk = " checked" if rid == "G" else ""
+        return (f'<label title="{html.escape(tip)}"><input type="radio" name="rt" value="{rid}"{chk}>'
+                f'<span>{html.escape(short_name(rid, rt["name"]))}</span></label>')
+    may_n = len([r for r in MAY_IDS if r in routes])
+    aug_n = len([r for r in AUG_IDS if r in routes])
+    may_chips = "".join(chip(r) for r in MAY_IDS if r in routes)
+    aug_chips = "".join(chip(r) for r in AUG_IDS if r in routes)
+    rtabs = ('<div class="tabs" role="tablist" aria-label="5月と8月の切替">'
+             f'<button type="button" role="tab" data-tab="may" aria-selected="true">5月の案（{may_n}）</button>'
+             f'<button type="button" role="tab" data-tab="aug" aria-selected="false">8月の案（{aug_n}）</button></div>'
+             f'<div class="chips" data-pan="may">{may_chips}</div><div class="chips" data-pan="aug" hidden>{aug_chips}</div>')
+    g_info = ('案Gは35日表（Day 番号つき）。費用は<a href="../research/may-madagascar-vfa-redesign.html">ルート調査</a>と'
+              '<a href="../research/africa-budget-fermi.html">フェルミ予算</a>を参照')
+    info_parts = []
+    for r in MAY_IDS + AUG_IDS:
+        if r not in routes:
+            continue
+        if r in bm.ROUTE_INFO:
+            body = "確認できた費用の小計：" + html.escape(bm.ROUTE_INFO[r][0]) + "／主な未確認：" + html.escape(bm.ROUTE_INFO[r][2])
+        else:
+            body = g_info
+        disp = "block" if r == "G" else "none"
+        info_parts.append(f'<div class="rinfo" data-rt="{r}" style="display:{disp}"><b>{html.escape(routes[r]["name"])}</b>{body}</div>')
+    infos_r = "".join(info_parts)
     zbtns = "".join(f'<button type="button" data-z="{z}" aria-pressed="false">{z}%</button>' for z in (70, 100, 125, 150))
     btns = "".join(f'<button type="button" data-plan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
     infos = "".join(
@@ -259,16 +329,17 @@ def build() -> str:
     return f"""<!doctype html>
 <!-- generated by scripts/build_route_map.py from data/route_points.csv, data/geo/countries-50m.json; do not edit -->
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>案Gルート地図｜2027 留学・アフリカ周遊</title>
+<title>ルート地図（5月・8月）｜2027 留学・アフリカ周遊</title>
 <style>
 {CSS}</style></head><body>
 {bar("../", "maps/route-g.html")}
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
-<h1>案Gのルート地図（Day 番号つき）</h1>
+<h1>ルート地図（5月・8月の案）</h1>
 <div class="zoom" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div>
-<h2 class="mt">1. 全体（アフリカ南部）</h2>
-<div class="zwrap"><div class="mapbox">{africa}</div></div>
+<h2 class="mt">1. 全体（5月の案はモーリシャス以南、8月の案はケープタウンから日本まで）</h2>
+<div class="rsel" role="group" aria-label="表示するルート">{rtabs}</div>
+<div class="rwrap"><div class="zwrap">{africa}</div><div class="rside">{infos_r}</div></div>
 {legend}
 <p class="lead" style="margin-top:14px">モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウンの35日モデル。線の横の「Day」は、<a href="../research/may-madagascar-vfa-redesign.html#day-1day-35乗継と国内移動を含む相対日モデル">35日表</a>の日です。Day 1 は 2027年5月3日の仮置きで、確定した日程ではありません。</p>
 {bm.map_switch("route-g")}
@@ -290,6 +361,18 @@ function zoom(z){{var r=document.documentElement.style;r.setProperty("--zf",(z/1
 document.querySelectorAll(".mapbox svg").forEach(function(v){{var q=(v.getAttribute("viewBox")||"").split(" ");if(q.length===4&&+q[3])v.parentNode.style.setProperty("--ar",(q[2]/q[3]).toFixed(3))}});
 var z0=100;try{{var sv=localStorage.getItem(KEY);if(sv&&[70,100,125,150].indexOf(+sv)>=0)z0=+sv}}catch(e){{}}
 zoom(z0);zs.forEach(function(b){{b.addEventListener("click",function(){{zoom(+b.getAttribute("data-z"))}})}});
+var rs=document.querySelectorAll('.chips input[name=rt]');
+function pickRt(k){{document.querySelectorAll('.rt').forEach(function(g){{g.style.display=g.getAttribute('data-rt')===k?'inline':'none'}});
+ document.querySelectorAll('.rinfo').forEach(function(e){{e.style.display=e.getAttribute('data-rt')===k?'block':'none'}});
+ rs.forEach(function(r){{r.checked=r.value===k}})}}
+rs.forEach(function(r){{r.addEventListener('change',function(){{pickRt(r.value)}})}});
+document.querySelectorAll('.tabs button').forEach(function(b){{b.addEventListener('click',function(){{var k=b.getAttribute('data-tab');
+ document.querySelectorAll('.tabs button').forEach(function(x){{x.setAttribute('aria-selected',x===b?'true':'false')}});
+ document.querySelectorAll('.chips').forEach(function(c){{c.hidden=c.getAttribute('data-pan')!==k}});
+ document.querySelectorAll('.mapbox[data-pan]').forEach(function(c){{c.hidden=c.getAttribute('data-pan')!==k}});
+ var first=document.querySelector('.chips[data-pan='+k+'] input');if(first){{pickRt(first.value)}}}})}});
+var hm=/^#route-([A-Z][A-Z0-9]*)$/.exec(location.hash);
+if(hm){{var tr=document.querySelector('.chips input[value="'+hm[1]+'"]');if(tr){{var pn=tr.closest('.chips').getAttribute('data-pan');var tb=document.querySelector('.tabs button[data-tab="'+pn+'"]');if(tb)tb.click();pickRt(hm[1])}}}}
 var bs=document.querySelectorAll(".plans button");
 function show(k){{
  bs.forEach(function(b){{b.setAttribute("aria-pressed",b.getAttribute("data-plan")===k?"true":"false")}});
