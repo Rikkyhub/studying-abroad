@@ -931,7 +931,7 @@ function snap(label){undo.push({label:label,s:JSON.stringify(st)});if(undo.lengt
 function conv(x){var r={place:x.place,country:x.country,move:x.move,memo:x.memo||""};if(x.fare){r.fare=x.fare;r.fareSrc=x.fare_src||""}return r}
 function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];if(!c)return;
  snap("案の切替");st.preset=id;st.rows=c.stops.slice(1).map(conv);st.first=c.stops[0];save();build()}
-if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="G"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
+if(!st.rows.length&&!st.preset){var d=PRESETS.filter(function(p){return p.id==="M0A"})[0]||PRESETS[0];if(d){st.preset=d.id;st.rows=d.stops.slice(1).map(conv);st.first=d.stops[0]}}
 /* 日数の読み取り：12週/8週/10日/3か月/2ヶ月/1年 などを日に換算（読めなければ 0） */
 function toDays(t){t=(t||"").replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)});var m=t.match(/(\\d+(?:\\.\\d+)?)\\s*(週間|週|日間|日|か月|ヶ月|カ月|ヵ月|月|年)?/);if(!m)return 0;var n=parseFloat(m[1]),u=m[2]||"日";
  return Math.round(/週/.test(u)?n*7:/年/.test(u)?n*365:/月/.test(u)?n*30:n)}
@@ -1051,7 +1051,8 @@ MODE_JA = {"flight": "飛行機", "overland": "陸路"}
 
 # 案の区間 → expenses.csv の航空券の行（移動費の自動入力用）。金額は expenses.csv の標準値を使い、ここには数字を持たない。
 # 往復の行（AF-02）は往路の区間に入れ、復路の区間には入れない（二重に数えない）
-LEG_FARE_IDS = {"G": {1: "AF-01", 3: "AF-02", 5: "AF-17", 6: "AF-18", 10: "AF-21"}}
+LEG_FARE_IDS = {"G": {1: "AF-01", 3: "AF-02", 5: "AF-17", 6: "AF-18", 10: "AF-21"},
+                "M0A": {1: "AF-01", 2: "AF-02", 4: "AF-17", 5: "AF-18", 9: "AF-21"}}  # M0A は旧案Gと同じ参考運賃を各区間に1回だけ計上（往復AF-02は往路に置く）
 
 
 def route_presets(root: Path = ROOT) -> str:
@@ -1127,14 +1128,14 @@ def planner_markdown() -> str:
     """日程プランナー。入力はブラウザ内の表（data-planner）。公開されるのは説明文だけ"""
     return "\n".join([
         "# 日程プランナー（日数の割り振り）", "",
-        "期間（例：5/3〜6/6）を、どの国・町に何日ずつ使うかを入れて、残り日数を見ながら予定を組む画面です。"
+        "期間（例：5/4〜6/6）を、どの国・町に何日ずつ使うかを入れて、残り日数を見ながら予定を組む画面です。"
         "最初の区間（例：モーリシャス、マダガスカル）を決めると、その後に使える日数が自動で出ます。", "",
-        "入力はこのブラウザに自動で残り、公開されません。案A〜Hは、地図・ルート比較と同じ順序の骨組みです"
+        "入力はこのブラウザに自動で残り、公開されません。案（5月M0A〜M1B、8月A0〜A12、旧案A〜H）は、地図・ルート比較と同じ順序の骨組みです。どれも決定ではありません"
         "（日数は入っていません。国別の目安は[国の比較表（13か国）](../research/africa-13-countries-comparison.md)を参照）。", "",
         "## 1. 日程の表", "",
         "@@DAY-PLANNER@@", "",
         "## 2. 使い方", "",
-        "- 上の「期間」で開始日と終了日を入れます（初期値は5/3〜6/6。年は2027年）。",
+        "- 上の「期間」で開始日と終了日を入れます（初期値は5/4〜6/6。年は2027年）。",
         "- 各行に泊数（その場所に泊まる夜の数）を入れると、到着日と出発日が自動で並びます。"
         "移動日を泊数とは別に数えたいときは「移動日」の列に入れます。",
         "- 「確定」にチェックを付けた行は、案を切り替えても残ります。まだ決まっていない場所は「仮」のままにします。",
@@ -1194,7 +1195,7 @@ var KEY="day-planner-v1",root=document.querySelector("[data-planner]");if(!root)
 var tb=root.querySelector("tbody"),sumEl=root.querySelector(".pl-sum"),desc=root.querySelector(".route-desc"),totEl=root.querySelector(".pl-total");
 var elS=root.querySelector(".pl-start"),elE=root.querySelector(".pl-end");
 var PRESETS=@@PRESETS@@, HINTS=@@HINTS@@, DAILY=@@DAILY@@;
-var st={start:"2027-05-03",end:"2027-06-06",preset:"",rows:[],pats:[]};
+var st={start:"2027-05-04",end:"2027-06-06",preset:"",rows:[],pats:[]};
 try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.rows)st=o}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function toD(s){var m=(s||"").match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);return m?Date.UTC(+m[1],+m[2]-1,+m[3]):NaN}
@@ -1208,7 +1209,7 @@ function loadPreset(id){var c=PRESETS.filter(function(p){return p.id===id})[0];i
  st.preset=id;st.rows=keep.concat(rest);save();build()}
 if(!st.rows.length){st.rows=[
 {place:"モーリシャス（仮）",country:"モーリシャス",nights:"4",travel:"",fixed:true,memo:"仮：乗継を含め4泊"},
-{place:"アンタナナリボ（仮）",country:"マダガスカル",nights:"10",travel:"",fixed:true,memo:"暫定基準10日（7〜8日／12日と比較中）"},
+{place:"アンタナナリボ（仮）",country:"マダガスカル",nights:"10",travel:"",fixed:false,memo:"暫定基準10日（7〜8日／12日と比較中）。確定ではない"},
 {place:"ヨハネスブルグ",country:"南アフリカ",nights:"0",travel:"",fixed:false,memo:"乗継。1泊にするか要検討"},
 {place:"ビクトリアフォールズ／リビングストン",country:"ジンバブエ",nights:"3",travel:"",fixed:false,memo:"滝2〜3泊（目安）"},
 {place:"チョベ",country:"ボツワナ",nights:"2",travel:"",fixed:false,memo:"日帰り or 宿泊（目安2〜3泊）"},

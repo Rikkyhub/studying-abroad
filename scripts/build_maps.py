@@ -42,10 +42,47 @@ ROUTE_COLORS = {
     "H": ("#1B7A8C", "#9AD9E6"),
 }
 BADGE_SHAPE = {"A": "circle", "B": "square", "C": "diamond", "D": "triangle", "E": "hexagon", "F": "pentagon", "G": "star", "H": "cross"}
-MAIN_ROUTE = "G"  # 現在の本命。地図の初期表示で前面に出す（他の案は選択で見られる履歴・比較用）
+# Issue #137 の新規ルート（5月M0/M1・8月A0〜A12）。色は旧案の配色を再利用し、形で区別する。旧A〜Hは「旧案（アーカイブ）」
+LEGACY = ["A", "B", "C", "D", "E", "F", "G", "H"]
+MAY_ROUTES = ["M0A", "M0B", "M0C", "M1A", "M1B"]
+AUG_ROUTES = ["A0", "A1", "A2", "A3", "A4", "A4X", "A5", "A5X", "A6", "A7", "A8", "A9", "A10", "A11", "A12"]
+_PALETTE = ["A", "B", "C", "D", "E", "F"]
+_SHAPES = ["circle", "square", "diamond", "triangle", "hexagon", "pentagon", "star", "cross"]
+for _i, _rid in enumerate(MAY_ROUTES + AUG_ROUTES):
+    BADGE_SHAPE[_rid] = _SHAPES[_i % len(_SHAPES)]
+ROUTE_COLOR_KEY = {rid: _PALETTE[i % len(_PALETTE)] for i, rid in enumerate(MAY_ROUTES + AUG_ROUTES)}
+ROUTE_COLOR_KEY.update({r: r if r in _PALETTE else "A" for r in LEGACY})
+MAIN_ROUTE = ""  # Issue #137：確定した本命はない。初期表示は「5月の候補」から始め、案を選んでもらう
+# Issue #137 の各案の要点（確認できた費用の小計と、主な未確認）。正本は research/137-route-redesign-comparison.md。
+# 「小計」は確認できた・既存資料の参考値だけの合計で、実売ではない。未確認は0円ではない。
+ROUTE_INFO = {
+    "M0A": ("約60.6万円（目標+約0.6万円）", "5月・ナミビアなし。国：モーリシャス・マダガスカル・南ア・ジンバブエ・ザンビア・ボツワナ", "各区間の2027年運賃、国境送迎、ビザの2027年料金"),
+    "M0B": ("計算不能（TNR→本土片道が約10.0万円未満ならM0-Aより安い）", "5月・ナミビアなし。MRUへ戻らない片道接続", "TNR→JNB/LVI等の片道運賃・曜日（最優先）"),
+    "M0C": ("約55.8万円（目標−約4.2万円）", "5月・ナミビアなし。マダガスカル5日＋滝は拠点型", "JNB→リビングストン、リビングストン→CPTの運賃"),
+    "M1A": ("約59.6万円＋ナミビア関連の未確認分（WDH→CPTを足すと約60.5〜60.8万円）", "5月・ボツワナの後にナミビア。砂漠あり", "カサネ→WDHの昼間移動、WDH→CPT運賃、公園入園料"),
+    "M1B": ("計算不能", "5月・入口をマウンへ変更", "マウン→WDH、WDH→CPTの便・価格"),
+    "A0": ("約18.9万円（宿食の一律仮定＋帰国便参考＋eTA）", "8月・ケニア中心", "CPT→NBO運賃、サファリ・公園料金、日本行き運賃"),
+    "A1": ("約19.7万円", "8月・ケニア＋タンザニア", "NBOからタンザニアへの移動、公園料金（高額）"),
+    "A2": ("約20.0万円", "8月・ナミビア中心", "CPT→WDH・WDH→日本の運賃"),
+    "A3": ("約18.5万円〜", "8月・南ア／エスワティニ／モザンビークの近距離", "国境・国内移動"),
+    "A4": ("約18.9万円＋モザンビーク査証", "8月・南部3か国→ケニア→ドーハ", "MPM→NBO運賃（水金日は公式確認）、レソト↔エスワティニは南ア経由で日数増"),
+    "A4X": ("約18.9万円＋モザンビーク査証", "8月・A4の最後をドバイに置換", "DXB経由の日本行き運賃"),
+    "A5": ("約18.5万円＋モザンビーク査証", "8月・南部3か国→JNB→ドーハ", "JNB→日本の運賃、陸路・国境"),
+    "A5X": ("約18.5万円＋モザンビーク査証", "8月・A5の最後をドバイに置換", "JNB→DXB→日本の運賃"),
+    "A6": ("約20.0万円", "8月・ナミビア→JNB→ドーハ", "WDH→JNB、JNB→DOHの運賃"),
+    "A7": ("約20.0万円", "8月・ナミビア→JNB→ドバイ", "WDH→JNB、JNB→DXBの運賃"),
+    "A8": ("約18.9万円", "8月・ケニア長めサファリ＋中東観光", "サファリ費（高額）、マサイマラ公式料金は未確認"),
+    "A9": ("約18.5万円＋モザンビーク査証", "8月・南部3か国のみ（中東観光なし）", "最安の実接続の運賃"),
+    "A10": ("約18.5万円〜", "8月・2か国に短縮", "国の選び方次第"),
+    "A11": ("約18.9万円＋中東2都市の追加分", "8月・ケニア→ドーハ→ドバイ", "DOH→DXB運賃、別発券・再チェックイン、入国要件"),
+    "A12": ("約20.0万円＋中東2都市の追加分", "8月・ナミビア→JNB→ドーハ→ドバイ", "DOH→DXB運賃、別発券等"),
+}
+GROUP_NAMES = {"may": "5月の候補（2027-05-04 日本→モーリシャス固定）", "aug": "8月の候補（ケープタウン発・日本着・約21日）", "legacy": "旧案A〜H（アーカイブ・比較履歴）"}
+GROUPS = {"may": MAY_ROUTES, "aug": AUG_ROUTES, "legacy": LEGACY}
+GROUP_OF = {r: k for k, ids in GROUPS.items() for r in ids}
 ROUTE_SHORT = {"A": "ナイロビ起点", "B": "ADD乗継→マダガスカル", "C": "陸路主体", "D": "島めぐり", "E": "ケニア→マダガスカル", "F": "S2 南部アフリカ周遊", "G": "MRU経由→マダガスカル→VFA", "H": "VFA周辺 拠点型"}
 # 行き先として色を付ける国（ISO 3166-1 numeric）
-VISIT = {"404", "834", "450", "894", "716", "072", "710", "480", "690", "608", "748"}
+VISIT = {"404", "834", "450", "894", "716", "072", "710", "480", "690", "608", "748", "516", "426", "508", "634"}
 CAUTION = "231"  # エチオピア
 MODE_JA = {"flight": "航空", "overland": "陸路（直線で例示）", "ferry": "船", "sea": "海路"}
 
@@ -528,7 +565,9 @@ def badge_svg(shape, x, y, letter):
         pts = [(x + (r + 1) * math.cos(math.radians(60 * k)), y + (r + 1) * math.sin(math.radians(60 * k))) for k in range(6)]
         g = f'<path d="{poly_d(pts)}"/>'
     ty = y + 3.2 + (1.6 if shape == "triangle" else 0)
-    return g + f'<text x="{f1(x)}" y="{f1(ty)}" text-anchor="middle" class="bl">{letter}</text>'
+    shown = letter[1:] if letter.startswith("M") and len(letter) > 2 else letter
+    small = ' style="font-size:6.5px"' if len(shown) > 2 else (' style="font-size:8px"' if len(shown) == 2 else "")
+    return g + f'<text x="{f1(x)}" y="{f1(ty)}" text-anchor="middle" class="bl"{small}>{shown}</text>'
 
 
 def stop_candidates(points, routes):
@@ -555,7 +594,7 @@ def stop_candidates(points, routes):
         lat, lon = float(r["lat"]), float(r["lon"])
         if any(haversine(lat, lon, a, b) < 25 for a, b in have):  # すでに描かれている地点（空港など）に近い候補は出さない
             continue
-        out.append({**r, "country_ja": cj, "routes": "".join(sorted(by_country[cj]))})
+        out.append({**r, "country_ja": cj, "routes": " ".join(sorted(by_country[cj]))})
     return out
 
 
@@ -596,9 +635,10 @@ def build_map(kind, points, routes, world_geo, africa_geo):
         for l in routes[rid]["legs"]:
             a, b = points[l["from_point"]], points[l["to_point"]]
             la1, lo1, la2, lo2 = float(a["lat"]), float(a["lon"]), float(b["lat"]), float(b["lon"])
-            n = 56 if l["mode"] == "flight" else 12
+            # 点の数は距離に応じて減らす（案が増えてもページを肥大させない。短い区間は曲がりが見えないので少なくてよい）
+            n = max(6, min(56, int(l["km"] / 150))) if l["mode"] == "flight" else 6
             gc = gc_points(la1, lo1, la2, lo2, n)
-            off = (rank[rid] - 2) * 3.2
+            off = ((rank[rid] % 9) - 4) * 2.4
             subpaths, mid_candidates = [], []
             for sh in proj.shifts:
                 pts = [proj.xy(lon, lat, sh) for lat, lon in gc]
@@ -616,7 +656,7 @@ def build_map(kind, points, routes, world_geo, africa_geo):
                 leg_data.append({"id": f"{rid}-{l['seq']}", "drawn": False})
                 continue
             share = shared[frozenset((l["from_point"], l["to_point"]))]
-            frac = 0.5 + (share.index(rid) - (len(share) - 1) / 2) * 0.17 if len(share) > 1 else 0.5
+            frac = 0.5 + (share.index(rid) - (len(share) - 1) / 2) * min(0.17, 0.7 / max(1, len(share) - 1)) if len(share) > 1 else 0.5
             mid_candidates = [(arc_at(pp, frac), tt, pp) for _, tt, pp in mid_candidates]
             vis = [m for m in mid_candidates if 8 <= m[0][0] <= W - 8 and 8 <= m[0][1] <= H - 8]
             mid, tot, pts = (vis or mid_candidates)[0]
@@ -678,7 +718,7 @@ def build_map(kind, points, routes, world_geo, africa_geo):
         x, y = pt_xy[pid]
         if not proj.in_view(x, y, -2) or (not used_in[pid] and pid != "BAGUIO"):
             continue
-        routes_used = "".join(sorted(used_in[pid]))
+        routes_used = " ".join(sorted(used_in[pid]))
         cls = "pt"
         if pid == "MNL":
             cls += " start"
@@ -804,6 +844,10 @@ MAP_VARS = """:root{--sea:#e6eef3;--land:#f4f1e8;--visit:#e3e8c9;--border:#b9b4a
 --rA:#56B4E9;--rB:#FF9A5C;--rC:#3DCCA0;--rD:#E7A6CE;--rE:#F2C94C;--rF:#D9D9D9}
 """
 
+_RT = list(ROUTE_COLOR_KEY)
+ROUTE_CSS = " ".join(f".leg.r-{r}{{--c:var(--r{ROUTE_COLOR_KEY[r]})}}" for r in _RT if r not in "ABCDEF")
+RB_CSS = " ".join(f".rb.{r}{{--c:var(--r{ROUTE_COLOR_KEY[r]})}}" for r in _RT if r not in "ABCDEF")
+
 # 共通テンプレート（scripts/build_html.py の BASE_CSS：固定ナビ・16px・行間1.8・色トークン）の上に、地図固有の規則だけを足す
 CSS = BASE_CSS + MAP_VARS + """.switch{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0;padding:6px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.95em}
 fieldset{border:0;margin:14px 0 6px;padding:0;min-width:0}
@@ -825,10 +869,10 @@ svg#map.zoomed{touch-action:none;cursor:grab}
 .hatchln{stroke:var(--caution);stroke-width:1.1}
 .leg{--c:var(--rA);cursor:pointer;transition:opacity .15s}
 .leg.r-A{--c:var(--rA)} .leg.r-B{--c:var(--rB)} .leg.r-C{--c:var(--rC)} .leg.r-D{--c:var(--rD)} .leg.r-E{--c:var(--rE)} .leg.r-F{--c:var(--rF)}
+@@ROUTECSS@@
 .leg .ln{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .leg .hit{fill:none;stroke:transparent;stroke-width:14}
-svg:not(.solo) .leg:not(.r-G) .ln{opacity:.45}
-svg:not(.solo) .leg.r-G .ln{stroke-width:3.4}
+svg:not(.solo) .leg .ln{opacity:.7}
 .leg.m-overland .ln{stroke-width:2.8}
 .leg.m-ferry .ln,.leg.m-sea .ln{stroke-dasharray:9 5}
 .leg.unc .ln{stroke-dasharray:.1 5.2;stroke-width:2.6}
@@ -869,14 +913,24 @@ tr:last-child td{border-bottom:0}
 .cautionnote{border:1px solid var(--caution);border-radius:4px;background:var(--cautionbg);padding:8px 12px;margin:12px 0;font-size:.93em}
 .rb{display:inline-block;min-width:1.6em;padding:0 5px;margin-right:4px;font-weight:700;text-align:center;color:var(--bg);background:var(--c,var(--ink))}
 .rb.A{--c:var(--rA)} .rb.B{--c:var(--rB)} .rb.C{--c:var(--rC)} .rb.D{--c:var(--rD)} .rb.E{--c:var(--rE)} .rb.F{--c:var(--rF)}
+@@RBCSS@@
+.rb{min-width:2.2em;white-space:nowrap}
+.grp{margin:8px 0;border-top:1px solid var(--line);padding-top:4px} .grp>summary{font-weight:700;cursor:pointer;min-height:44px;display:flex;align-items:center}
+.info{margin:8px 0;padding:8px 12px;border:1px solid var(--line);border-radius:4px;background:var(--th);font-size:.95em}
+.info dl{margin:4px 0;display:grid;grid-template-columns:8em 1fr;gap:2px 10px} .info dt{color:var(--muted)} .info dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:480px){.info dl{grid-template-columns:6em 1fr}}
 @media(max-width:480px){#detail dl{grid-template-columns:5.5em 1fr}}
 """
+
+CSS = CSS.replace("@@ROUTECSS@@", ROUTE_CSS).replace("@@RBCSS@@", RB_CSS)
 
 JS = r"""(function(){
 var D=JSON.parse(document.getElementById('map-data').textContent);
 var svg=document.getElementById('map'),detail=document.getElementById('detail'),body=document.getElementById('tbody'),head=document.getElementById('thead');
 var W=+svg.dataset.w,H=+svg.dataset.h,vb={x:0,y:0,w:W,h:H},sel='all',legs={},pts={};
-var INIT=(document.querySelector('input[name=rt]:checked')||{}).value||'all';
+var INIT=(document.querySelector('input[name=rt]:checked')||{}).value||'all';var G=D.groups||{};
+function inSel(r,v){return v==='all'||r===v||G[r]===v}
+function hasR(str,v){if(v==='all')return true;return (str||'').split(' ').some(function(r){return r===v||G[r]===v})}
 D.legs.forEach(function(l){legs[l.id]=l});D.points.forEach(function(p){pts[p.id]=p});
 function el(t,txt,cls){var e=document.createElement(t);if(txt!=null)e.textContent=txt;if(cls)e.className=cls;return e}
 function link(txt,url){var a=el('a',txt);a.href=url;a.target='_blank';a.rel='noopener';return a}
@@ -889,18 +943,18 @@ function showPt(id){var p=pts[id];if(!p)return;detail.textContent='';detail.appe
 function mark(id){svg.querySelectorAll('.leg.on').forEach(function(e){e.classList.remove('on')});var g=document.getElementById('leg-'+id);if(g)g.classList.add('on');
 body.querySelectorAll('tr.on').forEach(function(e){e.classList.remove('on')});var r=document.getElementById('row-'+id);if(r)r.classList.add('on')}
 function tbl(){head.textContent='';body.textContent='';var tr=el('tr');
-if(sel==='all'){['ルート','直線距離の合計（参考）','区間数','未確認の区間'].forEach(function(h,i){tr.appendChild(el('th',h,i==1?'n':''))});head.appendChild(tr);
-D.routes.forEach(function(r){var t=el('tr',null,'row');t.tabIndex=0;var c=el('td');c.appendChild(el('span',r.id,'rb '+r.id));c.appendChild(document.createTextNode(r.name));t.appendChild(c);t.appendChild(el('td',r.km,'n'));t.appendChild(el('td',String(r.n),'n'));t.appendChild(el('td',String(r.unc),'n'));
+if(sel==='all'||sel==='may'||sel==='aug'||sel==='legacy'){['ルート','直線距離の合計（参考）','区間数','未確認の区間'].forEach(function(h,i){tr.appendChild(el('th',h,i==1?'n':''))});head.appendChild(tr);
+D.routes.filter(function(r){return inSel(r.id,sel)}).forEach(function(r){var t=el('tr',null,'row');t.tabIndex=0;var c=el('td');c.appendChild(el('span',r.id,'rb '+r.id));c.appendChild(document.createTextNode(r.name));t.appendChild(c);t.appendChild(el('td',r.km,'n'));t.appendChild(el('td',String(r.n),'n'));t.appendChild(el('td',String(r.unc),'n'));
 var go=function(){pick(r.id)};t.addEventListener('click',go);t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});body.appendChild(t)});return}
 ['区間','手段','直線距離','状態','地図'].forEach(function(h,i){tr.appendChild(el('th',h,i==2?'n':''))});head.appendChild(tr);
 D.legs.filter(function(l){return l.route===sel}).forEach(function(l){var t=el('tr',null,'row');t.id='row-'+l.id;t.tabIndex=0;t.appendChild(el('td',l.seq+'. '+l.from+' → '+l.to));t.appendChild(el('td',l.mode));t.appendChild(el('td',l.km,'n'));t.appendChild(el('td',l.status+(l.unc?'（未確認）':'')));
 var c=el('td');c.appendChild(link(l.to,l.url_to));t.appendChild(c);
 var go=function(){showLeg(l.id)};t.addEventListener('click',function(e){if(e.target.tagName!=='A')go()});t.addEventListener('keydown',function(e){if(e.key==='Enter'){go()}});body.appendChild(t)})}
-function pick(id){var r=document.querySelector('input[name=rt][value='+id+']');if(r){r.checked=true}apply(id)}
-function apply(v){sel=v;svg.classList.toggle('solo',v!=='all');svg.querySelectorAll('.stop').forEach(function(g){g.classList.toggle('off',v!=='all'&&(g.dataset.routes||'').indexOf(v)<0)});
-svg.querySelectorAll('.leg').forEach(function(g){g.classList.toggle('off',v!=='all'&&g.dataset.route!==v)});
-svg.querySelectorAll('.pt').forEach(function(g){var r=g.dataset.routes||'';g.classList.toggle('off',v!=='all'&&r.indexOf(v)<0&&g.dataset.pt!=='MNL'&&g.dataset.pt!=='BAGUIO')});
-tbl();detail.textContent='';detail.appendChild(el('p',v==='all'?'線または地点を選ぶ（ホバー・タップ・Tabキー）と、区間の詳細を表示します。':'ルート'+v+'：線・表の行を選ぶと区間の詳細を表示します。'))}
+function pick(id){var r=document.querySelector('input[name=rt][value='+id+']');if(r){r.checked=true;var d=r.closest('details');if(d)d.open=true}apply(id)}
+function apply(v){sel=v;svg.classList.toggle('solo',D.routes.some(function(r){return r.id===v}));svg.querySelectorAll('.stop').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v))});
+svg.querySelectorAll('.leg').forEach(function(g){g.classList.toggle('off',!inSel(g.dataset.route,v))});
+svg.querySelectorAll('.pt').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v)&&g.dataset.pt!=='MNL'&&g.dataset.pt!=='BAGUIO')});
+tbl();detail.textContent='';var inf=(D.info||{})[v];if(inf){var h=el('h3','案'+v+'：'+inf.what);detail.appendChild(h);var dl=el('dl');row(dl,'確認できた費用の小計',inf.cost);row(dl,'主な未確認',inf.unk);row(dl,'注意','小計は公式の一般料金・既存資料の参考値・推計だけの合計で、2027年の実売ではありません。未確認は0円ではありません。');detail.appendChild(dl)}else{detail.appendChild(el('p',(D.routes.some(function(r){return r.id===v}))?'ルート'+v+'：線・表の行を選ぶと区間の詳細を表示します。':'線または地点を選ぶ（ホバー・タップ・Tabキー）と、区間の詳細を表示します。案を選ぶと費用の小計と未確認を表示します。'))}}
 document.querySelectorAll('input[name=rt]').forEach(function(r){r.addEventListener('change',function(){apply(r.value)})});
 var sc=document.getElementById('stopchk');if(sc){sc.addEventListener('change',function(){svg.classList.toggle('nostops',!sc.checked)})}
 svg.querySelectorAll('.leg').forEach(function(g){var id=g.dataset.leg;g.addEventListener('mouseenter',function(){showLeg(id)});g.addEventListener('focus',function(){showLeg(id)});g.addEventListener('click',function(){showLeg(id)});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();showLeg(id)}})});
@@ -915,7 +969,7 @@ svg.addEventListener('pointermove',function(e){if(!drag)return;var k=vb.w/svg.ge
 svg.addEventListener('pointerup',function(){drag=null});svg.addEventListener('pointercancel',function(){drag=null});
 window.addEventListener('resize',setVB);
 if(svg.getBoundingClientRect().width<640&&svg.dataset.focus){var f=svg.dataset.focus.split(' ').map(Number);vb={x:f[0],y:f[1],w:f[2],h:f[3]}}
-setVB();apply(INIT);var hm=/^#route-([A-Z])$/.exec(location.hash);if(hm&&document.querySelector('input[name=rt][value='+hm[1]+']'))pick(hm[1]);
+setVB();apply(INIT);var hm=/^#route-([A-Z][A-Z0-9]*)$/.exec(location.hash);if(hm&&document.querySelector('input[name=rt][value='+hm[1]+']'))pick(hm[1]);
 })();"""
 
 
@@ -958,17 +1012,25 @@ def build_page(kind, points, routes, world_geo, africa_geo):
     for pid, p in points.items():
         data_pts.append({"id": pid, "name": p["name_ja"], "code": p["iata_or_code"], "country": p["country"], "note": p["note"],
                          "routes": " ".join(sorted(used.get(pid, ()))), "url": maps_link(p["maps_query"])})
-    data = json.dumps({"legs": data_legs, "routes": data_routes, "points": data_pts}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    data_info = {r: {"cost": v[0], "what": v[1], "unk": v[2]} for r, v in ROUTE_INFO.items() if r in routes}
+    data = json.dumps({"legs": data_legs, "routes": data_routes, "points": data_pts, "info": data_info, "groups": GROUP_OF}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
     def _radio(rid):
         rt = routes[rid]
-        main = rid == MAIN_ROUTE
-        mark = '<span class="tot">本命のルート（初期表示）</span>' if main else ""
-        return (f'<label><input type="radio" name="rt" value="{rid}"{" checked" if main else ""}><span><span class="rb {rid}">{rid}</span>{html.escape(rt["name"])}'
-                f'{mark}<span class="tot">直線距離の合計 {km_text(rt["km"])}（参考）</span></span></label>')
-    order = ([MAIN_ROUTE] if MAIN_ROUTE in routes else []) + [r for r in sorted(routes) if r != MAIN_ROUTE]
-    radios = [_radio(rid) for rid in order]
-    radios.append('<label><input type="radio" name="rt" value="all"' + ('' if MAIN_ROUTE in routes else ' checked') + '><span>すべて<span class="tot">全ルートを重ねて表示（過去の比較用）</span></span></label>')
+        inf = ROUTE_INFO.get(rid)
+        sub = f'<span class="tot">確認できた費用の小計：{html.escape(inf[0])}</span>' if inf else ""
+        return (f'<label><input type="radio" name="rt" value="{rid}"><span><span class="rb {rid}">{html.escape(rid)}</span>{html.escape(rt["name"])}'
+                f'{sub}<span class="tot">直線距離の合計 {km_text(rt["km"])}（参考）</span></span></label>')
+
+    def _group(key):
+        ids = [r for r in GROUPS[key] if r in routes]
+        if not ids:
+            return ""
+        head = (f'<label><input type="radio" name="rt" value="{key}"{" checked" if key == "may" else ""}><span><strong>{html.escape(GROUP_NAMES[key])}をまとめて見る</strong>'
+                f'<span class="tot">{len(ids)}案を重ねて表示。どれも決定ではなく比較用</span></span></label>')
+        return f'<details class="grp"{" open" if key == "may" else ""}><summary>{html.escape(GROUP_NAMES[key])}（{len(ids)}案）</summary><div class="sel">{head}{"".join(_radio(r) for r in ids)}</div></details>'
+    radios = ["".join(_group(k) for k in ("may", "aug", "legacy")),
+              '<label><input type="radio" name="rt" value="all"><span>すべて<span class="tot">5月・8月・旧案を全部重ねる（線が多く見づらい）</span></span></label>']
     other = ("africa-map.html", "アフリカ地図") if world else ("world-map.html", "世界地図")
     here = "世界地図" if world else "アフリカ地図"
     off_note = ("" if world else '<p class="muted">アジア発の区間は図の外（東）にあります。線が図の端から入る所に「○○方面」と表示し、区間の一覧は下の表で確認できます。</p>')
@@ -988,7 +1050,7 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <h1>{title}</h1>
 <p class="lead">候補ルートの概念図。実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
 <nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../areas/africa.html">アフリカ周遊のページ</a></nav>
-<fieldset><legend>表示するルート</legend><div class="sel">{"".join(radios)}</div></fieldset>
+<fieldset><legend>表示するルート</legend>{"".join(radios)}</fieldset>
 <p class="muted">直線距離の合計は大圏（地球上の最短距離）の足し算で、<strong>実際の飛行・走行距離ではありません</strong>。区間の運賃・ダイヤは未確認のものを含みます。{zoom_note}</p>
 {"" if world else '<p class="muted"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示する。拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、候補ルートの確定した立ち寄り先ではありません。</label></p>'}
 <div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div>

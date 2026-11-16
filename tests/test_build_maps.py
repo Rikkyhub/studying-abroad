@@ -51,7 +51,8 @@ class GeometryTests(unittest.TestCase):
 
     def test_page_size_reasonable(self):
         for p in MAPS:
-            self.assertLess(p.stat().st_size, 400 * 1024, p.name)
+            # 400KB→480KB：Issue #137 で案を8から28、区間を51から180に増やしたため（曲線の点数は距離比例に削減済み）
+            self.assertLess(p.stat().st_size, 480 * 1024, p.name)
 
 
 class MathTests(unittest.TestCase):
@@ -81,7 +82,7 @@ class RouteDataTests(unittest.TestCase):
             self.assertIn(r["from_point"], self.points)
             self.assertIn(r["to_point"], self.points)
             by.setdefault(r["route_id"], []).append(r)
-        self.assertEqual(sorted(by), ["A", "B", "C", "D", "E", "F", "G", "H"])
+        self.assertEqual(sorted(by), sorted(list("ABCDEFGH") + bm.MAY_ROUTES + bm.AUG_ROUTES))
         for rid, legs in by.items():
             legs.sort(key=lambda r: int(r["seq"]))
             self.assertEqual([int(r["seq"]) for r in legs], list(range(1, len(legs) + 1)), rid)
@@ -95,9 +96,37 @@ class RouteDataTests(unittest.TestCase):
             legs = sorted((r for r in self.legs if r["route_id"] == rid), key=lambda r: int(r["seq"]))
             self.assertEqual(legs[0]["from_point"], starts.get(rid, "MNL"))
             self.assertEqual(legs[-1]["to_point"], end)
+        # Issue #137：5月の新案は日本→モーリシャスから始まりCPTで終わる。8月の新案はCPTから始まり日本で終わる（旧MNL起点を現行案にしない）
+        for rid in bm.MAY_ROUTES:
+            legs = sorted((r for r in self.legs if r["route_id"] == rid), key=lambda r: int(r["seq"]))
+            self.assertEqual((legs[0]["from_point"], legs[0]["to_point"]), ("NRT", "MRU"), rid)
+            self.assertEqual(legs[-1]["to_point"], "CPT", rid)
+            self.assertEqual(legs[0]["unconfirmed"], "N", rid)  # 確定しているのは日本→モーリシャスだけ
+            self.assertTrue(all(l["unconfirmed"] == "Y" for l in legs[1:]), rid)  # 他の区間に「確定」を付けない
+        for rid in bm.AUG_ROUTES:
+            legs = sorted((r for r in self.legs if r["route_id"] == rid), key=lambda r: int(r["seq"]))
+            self.assertEqual(legs[-1]["to_point"], "NRT", rid)
+            self.assertEqual(legs[0]["from_point"], "CPT" if rid != "A10" else "CPT", rid)
+            self.assertTrue(all(l["unconfirmed"] == "Y" for l in legs), rid)
         for rid in "ABCEFG":  # H（ビクトリアの滝周辺の拠点型）は終点がザンビア
             last = [r for r in self.legs if r["route_id"] == rid][-1]
             self.assertEqual(self.points[last["to_point"]]["country"], "南アフリカ")
+
+    def test_new_routes_have_grouping_info_and_no_confirmed_label(self):
+        self.assertEqual(set(bm.ROUTE_INFO), set(bm.MAY_ROUTES + bm.AUG_ROUTES))
+        for rid, (cost, what, unk) in bm.ROUTE_INFO.items():
+            self.assertTrue(cost and what and unk, rid)
+        text = (REPO / "maps" / "africa-map.html").read_text(encoding="utf-8")
+        self.assertNotIn("本命のルート", text)  # 比較結果を見てから決める。どの案も本命と表示しない
+
+    def test_namibia_may_and_aug_routes_use_windhoek_and_sossusvlei(self):
+        for rid in ("M1A", "M1B", "A2", "A6", "A7", "A12"):
+            pts = {r["from_point"] for r in self.legs if r["route_id"] == rid} | {r["to_point"] for r in self.legs if r["route_id"] == rid}
+            self.assertIn("WDH", pts, rid)
+            self.assertIn("SOSSUSVLEI", pts, rid)
+        for rid in ("M0A", "M0B", "M0C"):
+            pts = {r["from_point"] for r in self.legs if r["route_id"] == rid} | {r["to_point"] for r in self.legs if r["route_id"] == rid}
+            self.assertNotIn("WDH", pts, rid)  # ナミビアなし案
 
     def test_ethiopia_is_transit_only(self):
         for r in self.legs:
@@ -105,7 +134,8 @@ class RouteDataTests(unittest.TestCase):
                 self.assertEqual(r["status"], "空港乗継のみ", r)
 
     def test_coordinates_sane_for_known_airports(self):
-        expect = {"MNL": (14.5, 121.0), "NBO": (-1.3, 36.9), "JNB": (-26.1, 28.2), "CPT": (-34.0, 18.6),
+        expect = {"WDH": (-22.48, 17.47), "MPM": (-25.92, 32.57), "DOH": (25.27, 51.61), "MSU": (-29.46, 27.55),
+                  "MNL": (14.5, 121.0), "NBO": (-1.3, 36.9), "JNB": (-26.1, 28.2), "CPT": (-34.0, 18.6),
                   "ADD": (9.0, 38.8), "TNR": (-18.8, 47.5), "DAR": (-6.9, 39.2), "LUN": (-15.3, 28.5)}
         for pid, (lat, lon) in expect.items():
             p = self.points[pid]
