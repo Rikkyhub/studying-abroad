@@ -109,6 +109,9 @@ def map_namespace(text: str, pfx: str) -> str:
     text = text.replace("getElementById('leg-'+id)", f"getElementById('{pfx}-leg-'+id)")
     text = text.replace("getElementById('row-'+id)", f"getElementById('{pfx}-row-'+id)")
     text = text.replace("t.id='row-'+l.id", f"t.id='{pfx}-row-'+l.id")
+    # 5月／8月のタブとパネルの id・aria の参照も、ページごとに分ける
+    text = re.sub(r'(?<![\w-])(id|aria-controls|aria-labelledby)="((?:tab|pan)-[a-z]+)"', lambda m: f'{m.group(1)}="{pfx}-{m.group(2)}"', text)
+    text = text.replace("p.id!=='pan-'+k", f"p.id!=='{pfx}-pan-'+k")
     # ラジオの name はページごとに分ける（同名だと2つの地図の選択が連動してしまう）
     text = text.replace('name="rt"', f'name="{pfx}-rt"')
     text = text.replace("input[name=rt]", f"input[name={pfx}-rt]")
