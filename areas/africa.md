@@ -149,25 +149,30 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | アフリカ | [【過去案】5月アフリカ周遊3ルートの比較](../research/archive-may-three-routes-comparison.md) | ケニア・タンザニア経由／JNB北側先行／JNB南側先行の日別表・費用式・入国条件の検証（調査版） | [flyairlink.com](https://www.flyairlink.com/sites/default/files/files/Schedule-June.pdf)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_281.html)<br>[evisa.gov.mz](https://www.evisa.gov.mz/) | 2026-10-20 |
 | アフリカ | [【過去案】5月アフリカ周遊3ルート（Deep Research比較）](../research/archive-africa-2027-may-three-route-deep-research.md) | MNL発・CPT着の東アフリカ/Namibia/Eswatini+Mozambique 3案の比較基準資料（匿名モデル） | － | 2026-10-19 |
 | アフリカ | [【過去案】D案（ナミビアなし）の陸路周遊検証](../research/archive-d-plan-no-namibia.md) | JNB→レソト/エスワティニ/モザンビーク→ジンバブエのD1〜D4順序・交通・安全・レンタカー可否の検証（調査版） | [transmagnific.com](https://transmagnific.com/schedule.php)<br>[avis.co.za](https://www.avis.co.za/safari-rental/Terms-and-Conditions)<br>[anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/info/pcsafetymeasure_130.html) | 2026-10-20 |
-| アフリカ | [南アフリカ（国別ページ）](../countries/south-africa.html) | ケープタウン留学の国。サファリ・ダイビング・ワインの拠点。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [レソト（国別ページ）](../countries/lesotho.html) | 山岳の王国。南アに囲まれた小国。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [エスワティニ（国別ページ）](../countries/eswatini.html) | 小さな王国。野生動物保護区と文化体験。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [ナミビア（国別ページ）](../countries/namibia.html) | 砂漠と野生動物。2025年から査証が必要。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [ボツワナ（国別ページ）](../countries/botswana.html) | オカバンゴ・チョベ。サファリの本場。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [ジンバブエ（国別ページ）](../countries/zimbabwe.html) | ビクトリアの滝（ジンバブエ側）。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [ザンビア（国別ページ）](../countries/zambia.html) | ビクトリアの滝（ザンビア側）・リビングストン。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [モザンビーク（国別ページ）](../countries/mozambique.html) | インド洋のダイビング。入国は北部の危険度に注意。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [マダガスカル（国別ページ）](../countries/madagascar.html) | 固有種の島。到着ビザ。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [ケニア（国別ページ）](../countries/kenya.html) | ナイロビ起点の短期滞在・サファリ。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [タンザニア（国別ページ）](../countries/tanzania.html) | セレンゲティ・ンゴロンゴロ・ザンジバル。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [エチオピア（国別ページ）](../countries/ethiopia.html) | アディスアベバ空港での乗継のみ（北部は渡航を避ける勧告）。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） | － | 2026-10-20 |
-| アフリカ | [ウガンダ（国別ページ）](../countries/uganda.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） | － | 2026-11-08 |
-| アフリカ | [ルワンダ（国別ページ）](../countries/rwanda.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） | － | 2026-11-08 |
-| アフリカ | [マラウイ（国別ページ）](../countries/malawi.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） | － | 2026-11-08 |
-| アフリカ | [モーリシャス（国別ページ）](../countries/mauritius.html) | 5月周遊の乗継・観光候補。ダイビング・航空券の既存調査を整理（査証・安全などは未確認） | [tourismauthority.mu](https://www.tourismauthority.mu/fr/licensee-lists/)<br>[airmauritius.com](https://www.airmauritius.com/flights/en/flights-to-antananarivo) | 2026-11-10 |
 | アフリカ | [アフリカの国の比較表（13か国）（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.md) | 13か国の最適日数・5月の適性・費用目安・星評価・並べ方の案・旅程に響く未確認事項（調査版） | － | 2026-11-08 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。
+
+**国別ページ（16か国）**：観光地・食べ物・ビザ・安全などを、国ごとにまとめたページです。
+
+| 国 | 内容 |
+|---|---|
+| [南アフリカ](../countries/south-africa.html) | ケープタウン留学の国。サファリ・ダイビング・ワインの拠点。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [レソト](../countries/lesotho.html) | 山岳の王国。南アに囲まれた小国。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [エスワティニ](../countries/eswatini.html) | 小さな王国。野生動物保護区と文化体験。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [ナミビア](../countries/namibia.html) | 砂漠と野生動物。2025年から査証が必要。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [ボツワナ](../countries/botswana.html) | オカバンゴ・チョベ。サファリの本場。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [ジンバブエ](../countries/zimbabwe.html) | ビクトリアの滝（ジンバブエ側）。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [ザンビア](../countries/zambia.html) | ビクトリアの滝（ザンビア側）・リビングストン。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [モザンビーク](../countries/mozambique.html) | インド洋のダイビング。入国は北部の危険度に注意。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [マダガスカル](../countries/madagascar.html) | 固有種の島。到着ビザ。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [ケニア](../countries/kenya.html) | ナイロビ起点の短期滞在・サファリ。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [タンザニア](../countries/tanzania.html) | セレンゲティ・ンゴロンゴロ・ザンジバル。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [エチオピア](../countries/ethiopia.html) | アディスアベバ空港での乗継のみ（北部は渡航を避ける勧告）。観光地・おすすめの食べ物・ビザ・安全・行き方（調査版） |
+| [ウガンダ](../countries/uganda.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） |
+| [ルワンダ](../countries/rwanda.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） |
+| [マラウイ](../countries/malawi.html) | 観光地・おすすめの食べ物・ビザ・安全・行き方（調査版・公式未確認あり） |
+| [モーリシャス](../countries/mauritius.html) | 5月周遊の乗継・観光候補。ダイビング・航空券の既存調査を整理（査証・安全などは未確認） |
 <!-- /AUTO:docs -->
 
 ## 5. 場所と地図
