@@ -71,6 +71,108 @@ PLANS = {
         "note": "4泊5日のみ。欠航の予備なし。1回の欠航で出国日がずれる。",
     },
 }
+
+# ---- カレンダー：日ごとの「国・場所・内容・種別」。正本は research/may-madagascar-vfa-redesign.md の35日表と日数案の日別表
+# 種別: fly=空路 / move=昼間の車・国境 / tour=観光・体験 / gap=予備・待機 / base=準備・滞在
+KIND_LABEL = {"fly": "移動（空路）", "move": "移動（昼間の車・国境）", "tour": "観光・体験", "gap": "予備・待機", "base": "準備・滞在"}
+import datetime as _dt
+CAL_START = _dt.date(2027, 5, 3)  # Day 1（仮置き）
+WD = "月火水木金土日"
+
+
+def _mada_days(plan):
+    """マダガスカル滞在中の日（Day 6〜出国日）。{Day: (国, 場所, 内容, 種別)}"""
+    M = "マダガスカル"
+    if plan == "now":
+        return {6: (M, "TNR", "到着。首都近郊泊", "fly"), 7: (M, "TNR→Andasibe", "日中の車で東部へ", "move"),
+                8: (M, "Andasibe", "インドリ等のキツネザル", "tour"), 9: (M, "Andasibe→TNR", "首都へ戻る", "move"),
+                10: (M, "TNR→Morondava", "国内線で西部へ", "fly"),
+                11: (M, "Morondava", "バオバブ街道・Kirindy", "tour"), 12: (M, "Morondava", "バオバブ街道・Kirindy", "tour"),
+                13: (M, "Morondava", "バオバブ街道・Kirindy", "tour"),
+                14: (M, "Morondava", "予備（欠航・雨天）", "gap"), 15: (M, "Morondava", "予備（欠航・雨天）", "gap"),
+                16: (M, "Morondava→TNR", "国内線で首都へ", "fly"),
+                17: (M, "TNR近郊", "観光・予備", "gap"), 18: (M, "TNR近郊", "予備（国内線遅延）", "gap"),
+                19: (M + "→モーリシャス", "TNR→MRU", "マダガスカルを出国", "fly")}
+    if plan == "A":
+        return {6: (M, "TNR", "到着。首都泊", "fly"), 7: (M, "TNR→Andasibe", "日中の車で東部へ", "move"),
+                8: (M, "Andasibe", "インドリ観察", "tour"), 9: (M, "Andasibe→TNR", "首都へ戻る", "move"),
+                10: (M, "TNR→Morondava", "国内線で西部へ", "fly"),
+                11: (M, "Morondava", "バオバブ街道・Kirindy", "tour"), 12: (M, "Morondava", "バオバブ街道・Kirindy", "tour"),
+                13: (M, "Morondava", "予備（欠航・雨天）", "gap"),
+                14: (M, "Morondava→TNR", "国内線で首都へ", "fly"), 15: (M + "→モーリシャス", "TNR→MRU", "マダガスカルを出国", "fly")}
+    if plan == "B":
+        return {6: (M, "MRU→TNR→Andasibe", "到着後そのまま東部へ（日中の車）", "move"),
+                7: (M, "Andasibe→TNR", "観察後、首都へ（午後便なら西部へ直行）", "move"),
+                8: (M, "TNR→Morondava", "国内線で西部へ。バオバブ夕景", "fly"),
+                9: (M, "Morondava", "Kirindy等", "tour"), 10: (M, "Morondava", "バオバブ街道・予備", "tour"),
+                11: (M, "Morondava→TNR", "国内線で首都へ（欠航なら翌日）", "fly"), 12: (M + "→モーリシャス", "TNR→MRU", "マダガスカルを出国", "fly")}
+    return {6: (M, "MRU→TNR→Andasibe", "到着後そのまま東部へ", "move"),
+            7: (M, "Andasibe→TNR", "朝の観察後、首都へ", "move"),
+            8: (M, "TNR→Morondava", "国内線で西部へ。バオバブ夕景", "fly"),
+            9: (M, "Morondava", "Kirindy等", "tour"),
+            10: (M + "→モーリシャス", "Morondava→TNR→MRU", "首都経由でそのまま出国（予備なし）", "fly")}
+
+
+def calendar_days(plan):
+    """Day 1〜最終日の (day, date, 国, 場所, 内容, 種別) の一覧。出国日以降は案で日付だけ前倒しになる"""
+    exit_day = {"now": 19, "A": 15, "B": 12, "C": 10}[plan]
+    days = {1: ("日本→インド", "東京→Mumbai", "国際線出発", "fly"), 2: ("モーリシャス", "MRU", "到着", "fly"),
+            3: ("モーリシャス", "島内", "島内観光", "tour"), 4: ("モーリシャス", "島内", "島内観光", "tour"),
+            5: ("モーリシャス", "島内", "島内観光", "tour")}
+    days.update(_mada_days(plan))
+    tail = [("モーリシャス", "MRU周辺", "再接続・待機（便が合えば削れる）", "gap"),
+            ("モーリシャス→南アフリカ", "MRU→JNB", "直行片道", "fly"),
+            ("南アフリカ", "JNB", "別切り接続バッファ", "gap"),
+            ("南アフリカ→ジンバブエ", "JNB→VFA", "空路", "fly"),
+            ("ジンバブエ", "Victoria Falls", "滝の観光", "tour"),
+            ("ザンビア", "Livingstone", "昼間の国境移動・反対側の滝", "move"),
+            ("ザンビア", "Livingstone", "観光・ツアー", "tour"),
+            ("ボツワナ", "Kasane", "昼間の送迎・Kazungula国境", "move"),
+            ("ボツワナ", "Kasane／Chobe", "ゲームドライブ・ボート", "tour"),
+            ("ボツワナ", "Kasane／Chobe", "ゲームドライブ・ボート", "tour"),
+            ("ボツワナ→ジンバブエ", "Kasane→Victoria Falls", "昼間の越境、空港接続", "move"),
+            ("ジンバブエ", "Victoria Falls", "空路前の予備日", "gap"),
+            ("ジンバブエ→南アフリカ", "VFA→Cape Town", "空路", "fly"),
+            ("南アフリカ", "Cape Town", "学校前の準備", "base"), ("南アフリカ", "Cape Town", "学校前の準備", "base"),
+            ("南アフリカ", "Cape Town", "学校前の準備", "base")]
+    for i, t in enumerate(tail):
+        days[exit_day + 1 + i] = t
+    return [(n, CAL_START + _dt.timedelta(days=n - 1), *days[n]) for n in sorted(days)]
+
+
+def calendar_html(plan):
+    """月ごとの週表（月曜始まり）。1日=1セル。日付・Day番号・国・場所・内容"""
+    ds = {d[1]: d for d in calendar_days(plan)}
+    first, last = min(ds), max(ds)
+    out = []
+    cur = _dt.date(first.year, first.month, 1)
+    while cur <= last:
+        nxt = _dt.date(cur.year + (cur.month == 12), cur.month % 12 + 1, 1)
+        rows = []
+        wk = cur - _dt.timedelta(days=cur.weekday())
+        while wk < nxt and wk <= last:
+            cells = []
+            has = False
+            for i in range(7):
+                day = wk + _dt.timedelta(days=i)
+                if day.month != cur.month:
+                    cells.append('<td class="x"></td>')
+                    continue
+                e = ds.get(day)
+                if e:
+                    has = True
+                    n, _d, country, place, what, kind = e
+                    cells.append(f'<td class="k-{kind}"><span class="dd">{day.day}</span><span class="dn2">Day {n}</span>'
+                                 f'<b>{html.escape(country)}</b><span class="pl">{html.escape(place)}</span><span class="wh">{html.escape(what)}</span></td>')
+                else:
+                    cells.append(f'<td class="off"><span class="dd">{day.day}</span></td>')
+            rows.append(("<tr>" if has else '<tr class="blank">') + "".join(cells) + "</tr>")
+            wk += _dt.timedelta(days=7)
+        out.append(f'<table class="cal"><caption>{cur.year}年{cur.month}月</caption><thead><tr>'
+                   + "".join(f"<th>{w}</th>" for w in WD) + f'</tr></thead><tbody>{"".join(rows)}</tbody></table>')
+        cur = nxt
+    return "".join(out)
+
 MODE_STYLE = {"flight": ("fl", "空路"), "domestic": ("dm", "国内線（直線で例示）"), "road": ("rd", "昼間の車（直線で例示）"), "overland": ("rd", "陸路（直線で例示）")}
 
 CSS = BASE_CSS + """
@@ -105,6 +207,23 @@ svg.m{display:block;width:100%;height:auto;background:var(--sea);font-family:var
 .chips label:has(input:checked){background:var(--hl);border-color:var(--link);font-weight:700}
 .chips input{margin:0}
 .rinfo{margin:6px 0;padding:6px 10px;border-left:6px solid var(--link);background:var(--bg);font-size:.92em}.rinfo b{display:block}
+.calbox{margin:8px 0}
+table.cal{width:100%;table-layout:fixed;border-collapse:collapse;margin:10px 0}
+table.cal caption{text-align:left;font-weight:700;font-size:1.05rem;padding:4px 0}
+table.cal th{background:var(--th);border:1px solid var(--line);padding:3px;font-size:.85rem;text-align:center}
+table.cal td{border:1px solid var(--line);vertical-align:top;padding:4px 5px;height:96px;font-size:.78rem;line-height:1.35;overflow:hidden}
+table.cal tr.blank td{height:30px}
+table.cal td.x{background:var(--bg)} table.cal td.off{color:var(--muted)}
+table.cal .dd{font-weight:700;font-size:.95rem;margin-right:4px} table.cal .dn2{color:var(--muted);font-size:.72rem}
+table.cal b{display:block;font-size:.8rem;margin-top:1px} table.cal .pl{display:block;color:var(--muted)} table.cal .wh{display:block}
+table.cal td.k-fly{background:var(--c-fly)} table.cal td.k-move{background:var(--c-move)} table.cal td.k-tour{background:var(--c-tour)}
+table.cal td.k-gap{background:var(--c-gap);border-style:dashed} table.cal td.k-base{background:var(--c-base)}
+:root{--c-fly:#fbe3e4;--c-move:#fbf0d2;--c-tour:#dff1e6;--c-gap:#eceff1;--c-base:#e3ecf8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-fly:#4a2a2c;--c-move:#463c1e;--c-tour:#22402d;--c-gap:#2e3336;--c-base:#25344a}}
+:root[data-theme="dark"]{--c-fly:#4a2a2c;--c-move:#463c1e;--c-tour:#22402d;--c-gap:#2e3336;--c-base:#25344a}
+.cal-key{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0;font-size:.9rem}
+.cal-key i{display:inline-block;width:14px;height:14px;margin-right:5px;vertical-align:-2px;border:1px solid var(--line)}
+@media (max-width:700px){table.cal td{height:auto;font-size:.7rem;padding:3px} table.cal .wh,table.cal .pl{display:none}}
 .switch{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0;padding:6px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.95em}
 .plans{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
 .plans button{font:inherit;padding:6px 14px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
@@ -314,6 +433,9 @@ def build() -> str:
         disp = "block" if r == "G" else "none"
         info_parts.append(f'<div class="rinfo" data-rt="{r}" style="display:{disp}"><b>{html.escape(routes[r]["name"])}</b>{body}</div>')
     infos_r = "".join(info_parts)
+    btns_cal = "".join(f'<button type="button" data-cplan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
+    cal_key = "".join(f'<span><i style="background:var(--c-{k})"></i>{v}</span>' for k, v in KIND_LABEL.items())
+    cal_blocks = "".join(f'<div class="calbox" data-cplan="{k}"{"" if k == "now" else " hidden"}>{calendar_html(k)}</div>' for k in PLANS)
     zbtns = "".join(f'<button type="button" data-z="{z}" aria-pressed="false">{z}%</button>' for z in (70, 100, 125, 150))
     btns = "".join(f'<button type="button" data-plan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
     infos = "".join(
@@ -343,7 +465,12 @@ def build() -> str:
 {legend}
 <p class="lead" style="margin-top:14px">モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウンの35日モデル。線の横の「Day」は、<a href="../research/may-madagascar-vfa-redesign.html#day-1day-35乗継と国内移動を含む相対日モデル">35日表</a>の日です。Day 1 は 2027年5月3日の仮置きで、確定した日程ではありません。</p>
 {bm.map_switch("route-map")}
-<h2>2. マダガスカル拡大図（日数案で切り替え）</h2>
+<h2>2. カレンダー（日数案で切り替え）</h2>
+<p>日付と曜日、国、移動・観光・予備を月ごとの表にしたものです。マダガスカルの日数案（現行・A・B・C）で切り替わります。Day 1 は2027年5月3日（月）の仮置きで、確定した日程ではありません。</p>
+<div class="plans" role="group" aria-label="日数案（カレンダー）">{btns_cal}</div>
+<div class="cal-key" aria-label="色の凡例">{cal_key}</div>
+{cal_blocks}
+<h2>3. マダガスカル拡大図（日数案で切り替え）</h2>
 <p>アフリカ全体の縮尺では首都・アンダシベ・モロンダバが重なるので、島だけを拡大しています。下のボタンで、日数案ごとの動きと日が切り替わります。</p>
 <div class="plans" role="group" aria-label="マダガスカルの日数案">{btns}</div>
 {infos}
@@ -373,7 +500,12 @@ document.querySelectorAll('.tabs button').forEach(function(b){{b.addEventListene
  var first=document.querySelector('.chips[data-pan='+k+'] input');if(first){{pickRt(first.value)}}}})}});
 var hm=/^#route-([A-Z][A-Z0-9]*)$/.exec(location.hash);
 if(hm){{var tr=document.querySelector('.chips input[value="'+hm[1]+'"]');if(tr){{var pn=tr.closest('.chips').getAttribute('data-pan');var tb=document.querySelector('.tabs button[data-tab="'+pn+'"]');if(tb)tb.click();pickRt(hm[1])}}}}
-var bs=document.querySelectorAll(".plans button");
+var cbs=document.querySelectorAll('button[data-cplan]');
+cbs.forEach(function(b){{b.addEventListener('click',function(){{var k=b.getAttribute('data-cplan');
+ cbs.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});
+ document.querySelectorAll('.calbox').forEach(function(c){{c.hidden=c.getAttribute('data-cplan')!==k}})}})}});
+var cm=/^#cal-(now|A|B|C)$/.exec(location.hash);if(cm){{var cb=document.querySelector('button[data-cplan="'+cm[1]+'"]');if(cb)cb.click()}}
+var bs=document.querySelectorAll(".plans button[data-plan]");
 function show(k){{
  bs.forEach(function(b){{b.setAttribute("aria-pressed",b.getAttribute("data-plan")===k?"true":"false")}});
  document.querySelectorAll("[data-plan].plan").forEach(function(e){{e.style.display=e.getAttribute("data-plan")===k?(e.tagName.toLowerCase()==="g"?"inline":"block"):"none"}});
