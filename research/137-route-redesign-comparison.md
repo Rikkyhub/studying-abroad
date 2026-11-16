@@ -170,6 +170,21 @@
 
 個人の予約・支払い・請求額・口座・契約番号は含みません。金額は公式の一般料金・既存資料の参考値・推計だけです。
 
+### 6.1 追記（2026-11-16）：WDH⇄CPT の移動手段（準公式の確認）
+
+公式の運賃・時刻は取れませんでした。取得できた範囲を、出典の区分つきで並べます。**どれも2027年5月・8月の運行・運賃ではありません。**
+
+| 手段 | わかったこと | 出典・年 | 状態 |
+|---|---|---|---|
+| 長距離バス：Baileys Reo Liner | ケープタウン行きが**週3回**。ケープタウン側の記載では**水・金・日**に出発。**N$650**（ウィントフック側の記載） | [Wikivoyage Windhoek](https://en.wikivoyage.org/wiki/Windhoek)（年の記載なし）、[Wikivoyage Cape Town](https://en.wikivoyage.org/wiki/Cape_Town)（年の記載なし） | 準公式。**運賃・曜日は2027年の保証なし、公式は未確認** |
+| 長距離バス：Intercape・Translux | どちらも両ページで**リンク切れ**の表示。時刻・運賃の記載なし。Intercape公式は HTTP 403 | 同上、intercape.co.za（2026-11-16） | **未確認** |
+| 空路 | Wikivoyage Cape Town は、ウィントフック発の直行便の運航会社として **FlySafair・Airlink** を挙げる（運航会社の一覧は**2022年時点**の記載）。FlyNamibia はウォルビスベイ・ウィントフック発として記載。飛行時間・運賃の記載なし | [Wikivoyage Cape Town](https://en.wikivoyage.org/wiki/Cape_Town) | 準公式。**公式で路線・曜日・運賃は未確認**（FlySafair は読み込み中の画面のみ、Airlink は路線・運賃の表示なし） |
+| 夜行バスの安全性 | 両ページに記載なし。外務省の危険情報は未取得 | — | **未確認** |
+
+- **使い方**：バス N$650 は、既存のバス参考値（約9,600〜12,500円）と同じ水準かどうかを、換算（約9.59円/N$で約6,200円）で見ると**低め**です。ただし年不明の準公式値なので、**表の合計は変えていません**。
+- **週3回しかないバス**は、CPT到着の「余裕日」を決めるうえで制約になります（水・金・日出発。到着は夜行なら翌日）。
+- **空路で行く場合の運賃は未確認**のため、M1-A・M1-B の合計には入れていません。
+
 ## 8. 検索ログ（2026-11-16）
 
 | 何を | 結果 |
@@ -185,3 +200,6 @@
 | airlink.co.za | 接続拒否 |
 | en.wikivoyage.org Namibia／Sossusvlei | **取得**（準公式。道路・シャトル N$260（2025年12月）・Sesriemキャンプ N$490（2022年1月）・2WD可否） |
 | 既存資料（visa-and-immigration、countries/*、archive-*） | 査証・レンタカー越境・バス参考値を転記 |
+| en.wikivoyage.org/wiki/Cape_Town・Windhoek（2026-11-16、追記） | **取得**。WDH→CPT のバス（Baileys Reo Liner 週3回・水金日、N$650、年不明）、空路の運航会社（FlySafair・Airlink、2022年時点の一覧）。Intercape・Translux はリンク切れの表示 |
+| intercape.co.za（追記） | HTTP 403 |
+| flysafair.co.za・flyairlink.com（追記） | 読み込み中の画面／路線・運賃の表示なし。**公式の運賃・曜日は取れず** |
