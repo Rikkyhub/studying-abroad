@@ -12,6 +12,8 @@
 | 2027年2〜4月 | **第1か国留学（バギオ・モデル）** | 計画（モデル） | 約12週間の語学留学を想定（フィリピン・バギオ）。2月に開始。授業の組み方は学校の案内で確認。 |
 <!-- /AUTO:timeline -->
 
+**マニラ周辺**：バギオに入る前後や週末に、マニラ・スービック・アニラオ・プエルト・ガレラで観光やダイビングをする場合は、[マニラ周辺の観光とダイビング](../research/manila-area-guide.md)を見てください（沈船は[スービック湾](../research/subic-wreck-diving.md)）。
+
 ## 2. いまの確認事項
 
 出発前に確認する、一般的な優先項目です（個人の進捗ではありません）。
@@ -93,6 +95,7 @@
 | ビザ・入国 | [ビザ・再入国](../research/visa-and-immigration.md) | フィリピン12週 / 南アの就学と5〜8月の入出国 | [tokyo.philembassy.net](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/)<br>[immigration.gov.ph](https://immigration.gov.ph/visas/visa-waiver/)<br>[dirco.gov.za](https://dirco.gov.za/japan/immigration-visa-info/) | 2026-10-16 |
 | ダイビング | [バギオ発ダイビング](../research/baguio-diving.md) | 週末・2〜4月・ショップ料金・高地移動への注意 | [buceoanilao.com](https://buceoanilao.com/season-iii/)<br>[mangosdivecenter.com](https://mangosdivecenter.com/fun-diving-in-subic-bay/)<br>[diveunion.com.ph](https://diveunion.com.ph/) | 2026-10-17 |
 | ダイビング | [スービック湾の沈船ダイビング（マニラ発）](../research/subic-wreck-diving.md) | アドバンス認定向けの沈船・時期・料金・マニラからの行き方。ログ本数の条件は未確認 | [mangosdivecenter.com](https://mangosdivecenter.com/fun-diving-in-subic-bay/)<br>[philippinedives.com](https://philippinedives.com/dive-guide/subic-bay/)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Olongapo) | 2026-11-15 |
+| 観光 | [マニラ周辺の観光とダイビング（バギオ滞在の前後）](../research/manila-area-guide.md) | スービック・アニラオ・プエルト・ガレラのダイビング比較と、マニラ市内・近郊の観光。費用の目安と未確認事項つき | [en.wikivoyage.org](https://en.wikivoyage.org/wiki/Manila)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Batangas)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Puerto_Galera) | 2026-11-16 |
 | 観光 | [バギオの週末観光](../research/baguio-sightseeing.md) | 市内・近郊・2〜4月 | [visita.baguio.gov.ph](https://visita.baguio.gov.ph/park-tickets/20) | 2026-10-16 |
 | 生活費 | [食費・自炊・スーパー](../research/food-and-living.md) | バギオの寮食、ケープタウンの買物 | － | 2026-10-16 |
 | 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
