@@ -78,8 +78,9 @@ ROUTE_INFO = {
     "A12": ("約20.0万円＋中東2都市の追加分", "8月・ナミビア→JNB→ドーハ→ドバイ", "DOH→DXB運賃、別発券等"),
 }
 GROUP_NAMES = {"may": "5月の候補（2027-05-04 日本→モーリシャス固定）", "aug": "8月の候補（ケープタウン発・日本着・約21日）", "legacy": "旧案A〜H（アーカイブ・比較履歴）"}
-GROUPS = {"may": MAY_ROUTES, "aug": AUG_ROUTES, "legacy": LEGACY}
+GROUPS = {"may": MAY_ROUTES, "aug": AUG_ROUTES, "legacy": [r for r in LEGACY if r != "G"]}  # G（現行の本命）は5月の先頭に出すので、旧案には入れない
 GROUP_OF = {r: k for k, ids in GROUPS.items() for r in ids}
+GROUP_OF["G"] = "may"
 ROUTE_SHORT = {"A": "ナイロビ起点", "B": "ADD乗継→マダガスカル", "C": "陸路主体", "D": "島めぐり", "E": "ケニア→マダガスカル", "F": "S2 南部アフリカ周遊", "G": "MRU経由→マダガスカル→VFA", "H": "VFA周辺 拠点型"}
 # 行き先として色を付ける国（ISO 3166-1 numeric）
 VISIT = {"404", "834", "450", "894", "716", "072", "710", "480", "690", "608", "748", "516", "426", "508", "634"}
@@ -857,11 +858,12 @@ legend{font-weight:700;padding:0;margin-bottom:4px}
 .sel input{margin-top:6px;flex:none}
 .sel .tot{color:var(--muted);font-size:.9em;display:block}
 .zwrap{overflow:auto;margin:6px 0;max-width:100%}
-.mapbox{position:relative;border:1px solid var(--line);width:calc(min(100%,(100vh - 360px) * var(--ar,1.6)) * var(--zf,1))}
+.mapbox{position:relative;border:1px solid var(--line);width:calc(min(100%,(100vh - 300px) * var(--ar,1.6)) * var(--zf,1))}
 .szbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
 .szbar button{font:inherit;min-width:56px;min-height:40px;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
 .szbar button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
 .sr{position:absolute;left:-9999px}
+.gonew{margin:4px 0;padding:6px 10px;box-shadow:inset 6px 0 0 var(--link);background:var(--hl);font-size:.95em}.gonew a{font-weight:700}
 .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
 .tabs button{font:inherit;min-height:44px;padding:4px 16px;border:1px solid var(--line);border-radius:8px 8px 0 0;background:var(--bg);color:var(--ink);cursor:pointer}
 .tabs button[aria-selected=true]{background:var(--link);color:#fff;border-color:var(--link);font-weight:700}
@@ -871,6 +873,7 @@ legend{font-weight:700;padding:0;margin-bottom:4px}
 [role=tabpanel] .sel label:has(input:checked),details.old .sel label:has(input:checked){background:var(--hl);border-color:var(--link);font-weight:700}
 [role=tabpanel] .sel input,details.old .sel input{margin:0}
 [role=tabpanel] .sel .tot,details.old .sel .tot{display:none}
+.sel label:has(strong){border-style:dashed;color:var(--muted);font-size:.9em}
 [role=tabpanel] .sel label>span>.rb{margin-right:4px}
 details.old{margin:8px 0;color:var(--muted);font-size:.92em} details.old>summary{cursor:pointer;min-height:40px;display:flex;align-items:center}
 details.old .sel{margin-top:4px;opacity:.85}
@@ -1056,6 +1059,8 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 
     def _short(n):
         """チップ用の短い名前：「5月 M0-A：」「8月 A4：」の接頭辞と、後ろの（…）を落とす。全文は title と詳細欄"""
+        if n.startswith("Issue #77/#80"):
+            return "現行35日（モーリシャス→マダガスカル→滝周辺）"
         n = n.split("：", 1)[1] if "：" in n[:14] else n
         return n.split("（", 1)[0] or n
 
@@ -1063,18 +1068,20 @@ def build_page(kind, points, routes, world_geo, africa_geo):
         rt = routes[rid]
         inf = ROUTE_INFO.get(rid)
         sub = f'<span class="tot">確認できた費用の小計：{html.escape(inf[0])}</span>' if inf else ""
-        return (f'<label title="{html.escape(rt["name"])}"><input type="radio" name="rt" value="{rid}"><span><span class="rb {rid}">{html.escape(rid)}</span>{html.escape(_short(rt["name"]))}'
+        return (f'<label title="{html.escape(rt["name"])}"><input type="radio" name="rt" value="{rid}"{" checked" if rid == "G" else ""}><span><span class="rb {rid}">{html.escape(rid)}</span>{html.escape(_short(rt["name"]))}'
                 f'{sub}<span class="tot">直線距離の合計 {km_text(rt["km"])}（参考）</span></span></label>')
 
     TAB_LABEL = {"may": "5月", "aug": "8月"}
 
     def _panel(key, old=False):
         ids = [r for r in GROUPS[key] if r in routes]
+        if key == "may" and "G" in routes:
+            ids = ["G"] + ids
         if not ids:
             return ""
-        head = (f'<label><input type="radio" name="rt" value="{key}"{" checked" if key == "may" else ""}><span><strong>{html.escape(GROUP_NAMES[key])}をまとめて見る</strong>'
+        tail = (f'<label><input type="radio" name="rt" value="{key}"><span><strong>{html.escape(GROUP_NAMES[key])}をまとめて見る</strong>'
                 f'<span class="tot">{len(ids)}案を重ねて表示。どれも決定ではなく比較用</span></span></label>')
-        return f'<div class="sel">{head}{"".join(_radio(r) for r in ids)}</div>'
+        return f'<div class="sel">{"".join(_radio(r) for r in ids)}{tail}</div>'
     tabs = "".join(f'<button type="button" role="tab" id="tab-{k}" data-tab="{k}" aria-controls="pan-{k}" aria-selected="{"true" if k == "may" else "false"}">{TAB_LABEL[k]}の候補（{len([r for r in GROUPS[k] if r in routes])}案）</button>' for k in ("may", "aug"))
     panels = "".join(f'<div role="tabpanel" id="pan-{k}" aria-labelledby="tab-{k}"{"" if k == "may" else " hidden"}>{_panel(k)}</div>' for k in ("may", "aug"))
     legacy = (f'<details class="old"><summary>過去案 old（旧A〜H・{len([r for r in GROUPS["legacy"] if r in routes])}案・参考）</summary>{_panel("legacy")}</details>')
@@ -1099,6 +1106,7 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <h1>{title}</h1>
 {map_switch("world-map" if world else "africa-map")}
+<p class="gonew"><a href="route-map.html">▶ 案を選んで見るなら「ルート地図」へ</a>（5月・8月の案を1つずつ切り替え、案Gは Day 番号つき）。このページは<strong>{"世界" if world else "アフリカ"}全体</strong>の概観です。</p>
 <div class="szbar" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div>
 <fieldset class="rtes"><legend class="sr">表示するルート</legend>{"".join(radios)}</fieldset>
 {"" if world else '<p class="muted stp"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示</label></p>'}

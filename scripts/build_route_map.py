@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""案G（35日モデル）の地図 maps/route-g.html を生成する。標準ライブラリのみ。
+"""案G（35日モデル）の地図 maps/route-map.html を生成する。標準ライブラリのみ。
 
 使い方（リポジトリのルートで実行）:
     py scripts/build_route_map.py           生成
@@ -21,7 +21,7 @@ import build_maps as bm  # noqa: E402
 from build_html import BASE_CSS, bar, nav as site_nav  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "maps" / "route-g.html"
+OUT = ROOT / "maps" / "route-map.html"
 
 # マダガスカル内の町（route_points.csv にない地点。概略の座標）
 LOCAL = {
@@ -332,7 +332,7 @@ def build() -> str:
 <title>ルート地図（5月・8月）｜2027 留学・アフリカ周遊</title>
 <style>
 {CSS}</style></head><body>
-{bar("../", "maps/route-g.html")}
+{bar("../", "maps/route-map.html")}
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <h1>ルート地図（5月・8月の案）</h1>
@@ -342,7 +342,7 @@ def build() -> str:
 <div class="rwrap"><div class="zwrap">{africa}</div><div class="rside">{infos_r}</div></div>
 {legend}
 <p class="lead" style="margin-top:14px">モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウンの35日モデル。線の横の「Day」は、<a href="../research/may-madagascar-vfa-redesign.html#day-1day-35乗継と国内移動を含む相対日モデル">35日表</a>の日です。Day 1 は 2027年5月3日の仮置きで、確定した日程ではありません。</p>
-{bm.map_switch("route-g")}
+{bm.map_switch("route-map")}
 <h2>2. マダガスカル拡大図（日数案で切り替え）</h2>
 <p>アフリカ全体の縮尺では首都・アンダシベ・モロンダバが重なるので、島だけを拡大しています。下のボタンで、日数案ごとの動きと日が切り替わります。</p>
 <div class="plans" role="group" aria-label="マダガスカルの日数案">{btns}</div>
@@ -393,7 +393,7 @@ def main() -> int:
         if not OUT.exists() or OUT.read_text(encoding="utf-8") != text:
             print("案Gの地図HTMLが古いです。`py scripts/build_route_map.py` を実行してコミットしてください", file=sys.stderr)
             return 1
-        print("PASS: route-g map is current")
+        print("PASS: route-map map is current")
         return 0
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(text, encoding="utf-8", newline="\n")
