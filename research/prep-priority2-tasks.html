@@ -139,6 +139,8 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
 @media(max-width:640px){
 .scroll{overflow-x:visible;border-top:0;border-bottom:0}
+.scroll table:not(:has(td[data-label])){min-width:0;table-layout:auto}
+.scroll table:not(:has(td[data-label])) th,.scroll table:not(:has(td[data-label])) td{padding:7px 6px;overflow-wrap:anywhere}
 .scroll table:has(td[data-label]){min-width:0;display:block}
 .scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
