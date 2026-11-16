@@ -229,8 +229,18 @@ def docs_block(pages, region):
     rs = sorted((p for p in pages if in_region(p.get("region", ""), region)), key=lambda r: (r["group"] != "research", int(r["sort"] or 0), r["id"]))
     if not rs:
         return "この地域に対応する資料はありません。"
+    ctry = [p for p in rs if mdp(p["path"]).startswith("countries/")]
+    if len(ctry) >= 5:
+        # 国別ページが多い地域は、調査資料の表と分けて、2列（国・内容）の短い表にまとめる
+        rs = [p for p in rs if p not in ctry]
+    else:
+        ctry = []
     body = [[p["area"], f"[{p['title']}](../{mdp(p['path'])})", p["summary"], ref_cell(p["refs"]), p["verified_at"] or "－"] for p in rs]
-    return md_table(["分野", "資料", "内容", "参考（一次情報）", "最終確認日"], body) + "\n\n「参考」は各資料が根拠にした公式・一次情報へのリンクです。"
+    out = md_table(["分野", "資料", "内容", "参考（一次情報）", "最終確認日"], body) + "\n\n「参考」は各資料が根拠にした公式・一次情報へのリンクです。"
+    if ctry:
+        rows = [[f"[{p['title'].replace('（国別ページ）', '')}](../{mdp(p['path'])})", p["summary"]] for p in ctry]
+        out += f"\n\n**国別ページ（{len(ctry)}か国）**：観光地・食べ物・ビザ・安全などを、国ごとにまとめたページです。\n\n" + md_table(["国", "内容"], rows)
+    return out
 
 
 def places_block(places, region):
