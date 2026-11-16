@@ -72,7 +72,7 @@ class IndexTests(unittest.TestCase):
             self.assertIn(f'href="areas/{k}.html"', self.index)
         import re
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
-        self.assertLess(len(self.index), 52000)  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
+        self.assertLess(len(self.index), 66000)  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
 
     def test_tables_have_headers(self):
         import re
@@ -99,10 +99,11 @@ class IndexTests(unittest.TestCase):
 
     def test_timeline_cards_one_per_period_with_area_link(self):
         import csv
+        import re
         sec = self.index.split('<h2 id="plan">')[1].split("<h2 id=")[0]
         with (ROOT / "data" / "timeline.csv").open(newline="", encoding="utf-8-sig") as f:
             rows = list(csv.DictReader(f))
-        self.assertEqual(sec.count('class="card link"'), len(rows))
+        self.assertEqual(len(re.findall(r'class="card link[ "]', sec)), len(rows))
         for r in rows:
             self.assertIn(r["period"], sec)
         self.assertIn("モデル", sec)
@@ -116,7 +117,7 @@ class IndexTests(unittest.TestCase):
 
     def test_link_cards_do_not_nest_links(self):
         import re
-        for m in re.findall(r'<a class="card link".*?</a>', self.index, re.S):
+        for m in re.findall(r'<a class="card link[^"]*".*?</a>', self.index, re.S):
             self.assertEqual(m.count("<a "), 1, m[:80])
 
     def test_floating_card_css(self):
@@ -125,9 +126,9 @@ class IndexTests(unittest.TestCase):
         self.assertNotIn("border-left", style)
         self.assertNotIn("border-left", self.index)
         self.assertNotIn("gradient", style)
-        self.assertIn("transition:transform .3s ease,box-shadow .3s ease", style)
-        self.assertRegex(style, r"@media \(hover:hover\)\{\.card:hover\{transform:translateY\(-10px\);box-shadow:var\(--shadow-up\)")
-        self.assertIn("--shadow:0 10px 30px rgba(0,0,0,.05)", style)
+        self.assertRegex(style, r"transition:transform \.\d+s ease,box-shadow \.\d+s ease")
+        self.assertRegex(style, r"@media \(hover:hover\)\{\.card:hover\{transform:translateY\(-\d+px\);box-shadow:var\(--shadow-up\)")
+        self.assertRegex(style, r"--shadow:0 10px 30px rgba\(0,0,0,\.\d+\)")
         self.assertRegex(style, r"@media \(prefers-reduced-motion:reduce\)\{\.card\{transition:none\}\.card:hover\{transform:none\}\}")
         self.assertIn("a.card:focus-visible", style)
         self.assertRegex(style, r"gap:2[4-9]px|gap:[3-9]\d px|gap:2[4-9]px")

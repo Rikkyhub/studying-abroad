@@ -5,67 +5,111 @@
 <title>2027 留学・アフリカ周遊｜全ページ（1枚版）</title>
 <style>
 
-:root{color-scheme:light;--ink:#1d2227;--muted:#555f68;--link:#0a58a8;--bg:#fbfbfa;--line:#d4d4cd;--th:#ecece6;--code:#ecece7;--hl:#fff6dc;--bar:44px;
---page:#f4f5f7;--card:#fff;--card-line:rgba(0,0,0,.04);--shadow:0 10px 30px rgba(0,0,0,.05);--shadow-up:0 20px 40px rgba(0,0,0,.10);
---sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619;--page:#111315;--card:#1c1f22;--card-line:rgba(255,255,255,.06);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.55)}}
-:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619;--page:#111315;--card:#1c1f22;--card-line:rgba(255,255,255,.06);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.55)}
+:root{color-scheme:light;--ink:#1b2430;--muted:#566170;--link:#0b5cad;--bg:#fbfaf7;--line:#dcd8cf;--th:#efece5;--code:#efece6;--hl:#fff5d6;--page:#f3f1ec;--card:#ffffff;--card-line:rgba(20,30,40,.07);--shadow:0 10px 30px rgba(0,0,0,.05);--shadow-up:0 20px 40px rgba(0,0,0,.10);--accent:#0b6e6e;--accent-ink:#ffffff;--accent-soft:#e1f1ef;--warn:#8a4b00;--warn-soft:#fdeccf;--bad:#b3261e;--r-baguio:#c2410c;--r-may:#0b6e6e;--r-aug:#7c3aed;--r-cape:#1d4ed8;--r-common:#4b5563;--r-baguio-s:#fdebdd;--r-may-s:#dff1ef;--r-aug-s:#ece4fd;--r-cape-s:#dde8fd;--r-common-s:#e8eaed;--hero:#12343b;--hero-ink:#f4f7f7;--hero-mut:#c3d6d6;--sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--bar:52px;--rad:12px;--rad-s:8px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e6e9ec;--muted:#a6b0ba;--link:#82b8ee;--bg:#14171a;--line:#363c42;--th:#20262b;--code:#21272c;--hl:#2d2813;--page:#0f1214;--card:#1b1f23;--card-line:rgba(255,255,255,.07);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.5);--accent:#5cc2bf;--accent-ink:#06201f;--accent-soft:#13302f;--warn:#f0b561;--warn-soft:#33270f;--bad:#f3857d;--r-baguio:#fb923c;--r-may:#5cc2bf;--r-aug:#b79cf7;--r-cape:#7ea6f4;--r-common:#a9b2bd;--r-baguio-s:#3a2214;--r-may-s:#12302e;--r-aug-s:#2a2142;--r-cape-s:#1a2745;--r-common-s:#262b31;--hero:#0c2a30;--hero-ink:#f0f5f5;--hero-mut:#a9c3c3}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#e6e9ec;--muted:#a6b0ba;--link:#82b8ee;--bg:#14171a;--line:#363c42;--th:#20262b;--code:#21272c;--hl:#2d2813;--page:#0f1214;--card:#1b1f23;--card-line:rgba(255,255,255,.07);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.5);--accent:#5cc2bf;--accent-ink:#06201f;--accent-soft:#13302f;--warn:#f0b561;--warn-soft:#33270f;--bad:#f3857d;--r-baguio:#fb923c;--r-may:#5cc2bf;--r-aug:#b79cf7;--r-cape:#7ea6f4;--r-common:#a9b2bd;--r-baguio-s:#3a2214;--r-may-s:#12302e;--r-aug-s:#2a2142;--r-cape-s:#1a2745;--r-common-s:#262b31;--hero:#0c2a30;--hero-ink:#f0f5f5;--hero-mut:#a9c3c3}
+
 *{box-sizing:border-box}
-html{scroll-padding-top:calc(var(--bar) + 12px)}
+html{scroll-padding-top:calc(var(--bar) + 14px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--sans)}
-a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-header.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-header.bar nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px;min-height:var(--bar);font-size:.94rem}
-header.bar a,header.bar .here{padding:8px 0;text-decoration:none;white-space:nowrap}
-header.bar .here,header.bar a[aria-current]{font-weight:700;color:var(--ink);box-shadow:inset 0 -3px 0 var(--link)}
-header.bar a:hover{text-decoration:underline}
-h1{font-size:1.65rem;line-height:1.4;margin:26px 0 8px;font-weight:700}
-h2{font-size:1.25rem;line-height:1.5;margin:44px 0 10px;padding-top:14px;border-top:2px solid var(--line)}
-h3{font-size:1.05rem;line-height:1.6;margin:28px 0 6px} h4{font-size:1rem;margin:20px 0 4px}
-p{margin:10px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px} .muted{color:var(--muted);font-size:.93rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:2px 22px;margin:14px 0 4px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.94rem}
-nav.toc .label{font-weight:700;color:var(--muted)}
-.note{background:var(--hl);padding:10px 14px;margin:16px 0;max-width:none}
+a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1{font-size:2rem;line-height:1.35;margin:10px 0 10px;font-weight:800;letter-spacing:.01em}
+h2{font-size:1.4rem;line-height:1.45;margin:52px 0 12px;padding-top:0;font-weight:800}
+h3{font-size:1.12rem;line-height:1.55;margin:30px 0 8px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
+p{margin:10px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
+.note{background:var(--warn-soft);color:var(--ink);padding:12px 16px;margin:18px 0;max-width:none;border-radius:var(--rad-s)}
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
-.scroll{margin:12px 0 22px;border-top:2px solid var(--line);border-bottom:1px solid var(--line)}
+.scroll{margin:14px 0 24px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
 table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
-th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
-td{min-width:4.4em} tbody tr:last-child td{border-bottom:0} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 38%,transparent)}
+th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
+td{min-width:4.4em} tbody tr:last-child td{border-bottom:0}
+thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
+tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line)}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
-code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 4px}
-pre{background:var(--code);padding:10px 12px;overflow-x:auto} pre code{padding:0;background:none}
-blockquote{margin:14px 0;background:var(--hl);padding:4px 14px}
+code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
+pre{background:var(--code);padding:12px 14px;overflow-x:auto;border-radius:var(--rad-s)} pre code{padding:0;background:none}
+blockquote{margin:16px 0;background:var(--accent-soft);padding:6px 16px;border-radius:var(--rad-s)}
 ul,ol{padding-left:1.5em} li{margin:4px 0}
-.check{display:inline-block;width:.9em;height:.9em;border:1.5px solid var(--muted);margin-right:6px;vertical-align:-1px}
+.check{display:inline-block;width:.9em;height:.9em;border:1.5px solid var(--muted);margin-right:6px;vertical-align:-1px;border-radius:3px}
 .check.done{background:var(--link);border-color:var(--link)}
 form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px;margin:10px 0 14px}
 form.calc label{display:grid;gap:4px;font-size:.93rem;color:var(--muted)}
-form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:7px 9px;min-width:0;width:100%}
+form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:8px 10px;min-width:0;width:100%;border-radius:var(--rad-s)}
 form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.8em}
-footer{color:var(--muted);font-size:.9rem;margin-top:48px;padding:14px 0 40px;border-top:1px solid var(--line)}
-footer p{max-width:none}
 article,h1,p,li{overflow-wrap:anywhere}
-.crumb{margin:18px 0 0;color:var(--muted);font-size:.9rem}
+main.page{padding-bottom:24px}
+
+/* ---- 上部ナビ（全ページ共通） ---- */
+header.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex;align-items:center;gap:6px 18px;min-height:var(--bar)}
+header.bar .brand{font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;white-space:nowrap;padding:8px 0;letter-spacing:.02em}
+header.bar .brand::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--accent);margin-right:8px;vertical-align:0}
+header.bar nav.menu{display:flex;align-items:center;gap:2px 4px;flex:1;font-size:.93rem}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--ink);white-space:nowrap;cursor:pointer;list-style:none}
+header.bar nav.menu>details>summary::-webkit-details-marker{display:none}
+header.bar nav.menu>details>summary::after{content:"\25BE";margin-left:4px;color:var(--muted);font-size:.8em}
+header.bar nav.menu>a:hover,header.bar nav.menu>details>summary:hover{background:var(--accent-soft)}
+header.bar nav.menu [aria-current]{font-weight:800;color:var(--accent);background:var(--accent-soft)}
+header.bar nav.menu>details{position:relative}
+header.bar nav.menu>details[open]>summary{background:var(--accent-soft)}
+header.bar .drop{position:absolute;left:0;top:calc(100% + 6px);min-width:240px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);box-shadow:var(--shadow-up);padding:8px;display:grid;gap:2px;z-index:30}
+header.bar .drop a{display:block;padding:7px 12px;border-radius:var(--rad-s);text-decoration:none;color:var(--ink);font-size:.92rem;white-space:normal}
+header.bar .drop a:hover{background:var(--accent-soft)}
+header.bar .drop a[aria-current]{color:var(--accent);font-weight:800;background:var(--accent-soft)}
+header.bar .drop .dl{font-size:.78rem;font-weight:700;color:var(--muted);padding:6px 12px 2px;letter-spacing:.04em}
+header.bar details.mobile{display:none}
+
+/* ---- ページの見出し帯・パンくず・目次 ---- */
+.crumb{margin:20px 0 0;color:var(--muted);font-size:.9rem}
+.crumb a{color:var(--muted)}
+.page-head{margin:6px 0 4px}
+.page-head .tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--r-common-s);color:var(--r-common);margin-bottom:4px}
+.page-head .tag.r-baguio{background:var(--r-baguio-s);color:var(--r-baguio)}
+.page-head .tag.r-may{background:var(--r-may-s);color:var(--r-may)}
+.page-head .tag.r-aug{background:var(--r-aug-s);color:var(--r-aug)}
+.page-head .tag.r-cape{background:var(--r-cape-s);color:var(--r-cape)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 8px;margin:16px 0 8px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);font-size:.92rem}
+nav.toc .label{font-weight:700;color:var(--muted);align-self:center;margin-right:4px}
+nav.toc a{padding:3px 12px;border-radius:999px;background:var(--th);color:var(--ink);text-decoration:none}
+nav.toc a:hover{background:var(--accent-soft);color:var(--accent)}
+
+/* ---- フッター ---- */
+footer{color:var(--muted);font-size:.9rem;margin-top:56px;padding:18px 0 44px;border-top:1px solid var(--line)}
+footer p{max-width:none}
 nav.all{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 28px;margin:14px 0;font-size:.94rem}
 nav.all .g{font-weight:700;color:var(--muted);margin-top:8px} nav.all a{display:block;padding:1px 0}
 nav.all details.g-fold{align-self:start} nav.all details.g-fold>summary{cursor:pointer;font-weight:700;color:var(--muted);padding:2px 0}
 nav.all details.g-fold[open]>summary{margin-bottom:2px}
-details.more.notes{margin:4px 0 8px}
 nav.all a[aria-current]{font-weight:700;color:var(--ink)}
-main.page{padding-bottom:24px}
-body.home{background:var(--page)} body.home header.bar{background:var(--page)}
-.top{max-width:1100px;overflow:visible} .top h1{font-size:1.9rem;margin-top:36px}
-.top h2{border-top:0;padding-top:0;margin:56px 0 6px;font-size:1.3rem}
-.top .note{background:var(--hl);padding:12px 16px;border-radius:8px}
+details.more.notes{margin:4px 0 8px}
+
+/* ---- トップ ---- */
+body.home{background:var(--page)}
+.top{max-width:1120px;overflow:visible}
+.top h2{margin:60px 0 6px;font-size:1.45rem}
 .sec-lead{color:var(--muted);font-size:.95rem;margin:6px 0 0;max-width:72ch}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;padding:20px 0 28px;overflow:visible;align-items:stretch}
-.card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:12px;padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease}
+.hero{background:var(--hero);color:var(--hero-ink);border-radius:20px;padding:44px 36px 36px;margin:22px 0 8px}
+.hero h1{color:var(--hero-ink);font-size:2.2rem;margin:0 0 10px}
+.hero .lead{color:var(--hero-ink);max-width:60ch}
+.hero .hero-note{margin:16px 0 0;font-size:.92rem;color:var(--hero-mut);max-width:70ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.hero .cta a{display:inline-block;padding:11px 20px;border-radius:999px;font-weight:700;text-decoration:none;background:var(--hero-ink);color:var(--hero)}
+.hero .cta a.alt{background:transparent;color:var(--hero-ink);box-shadow:inset 0 0 0 1.5px var(--hero-mut)}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:18px 0}
+.stat-row .stat{background:var(--card);border:1px solid var(--card-line);border-radius:var(--rad);padding:16px 18px;box-shadow:var(--shadow)}
+.stat .k{font-size:.82rem;color:var(--muted);margin:0}
+.stat .v{font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums;margin:2px 0 0;line-height:1.35}
+.stat .s{font-size:.82rem;color:var(--muted);margin:2px 0 0}
+
+/* ---- カード ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;padding:20px 0 28px;overflow:visible;align-items:stretch}
+.card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:var(--rad);padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
 .card.wide{grid-column:1/-1;margin:20px 0 28px}
-.card h3{font-size:1.08rem;margin:2px 0 6px;line-height:1.5}
+.card h3{font-size:1.1rem;margin:2px 0 6px;line-height:1.5}
 .card p{margin:6px 0;max-width:none}
 .card .eyebrow{font-size:.85rem;color:var(--muted);margin:0 0 2px}
 .card .val{font-size:1.75rem;line-height:1.3;font-weight:700;font-variant-numeric:tabular-nums;margin:4px 0 8px}
@@ -79,80 +123,104 @@ dl.kv{margin:8px 0}
 dl.kv div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
 dl.kv div:last-child{border-bottom:0}
 dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
-.card .scroll{margin:0;border-top:0}
+.card .scroll{margin:0;border:0;border-radius:0}
 .card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
+.card.reg{border-top:4px solid var(--c,var(--r-common))}
+.card.reg .eyebrow{color:var(--c,var(--muted));font-weight:700}
+.card.reg-baguio{--c:var(--r-baguio)} .card.reg-may{--c:var(--r-may)} .card.reg-aug{--c:var(--r-aug)} .card.reg-cape{--c:var(--r-cape)} .card.reg-common{--c:var(--r-common)}
+
+/* ---- 開閉（長いページ） ---- */
 details.more{margin:0} details.more>summary{cursor:pointer;list-style:none;color:var(--ink)}
 details.more>summary::-webkit-details-marker{display:none}
 details.more .hint{color:var(--link);font-size:.82rem;margin-left:4px;white-space:nowrap}
 details.more[open]>summary{font-weight:700;margin-bottom:4px} details.more[open]>summary .hint{display:none}
 details.more>.full{padding:6px 0 4px 12px;box-shadow:inset 2px 0 0 var(--line)}
-details.sec{margin:10px 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
-details.sec>summary{cursor:pointer;padding:10px 14px;list-style:none}
+details.sec{margin:12px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
+details.sec>summary{cursor:pointer;padding:12px 16px;list-style:none}
 details.sec>summary::-webkit-details-marker{display:none}
-details.sec>summary::before{content:"\25B8";float:left;margin:2px 8px 0 0;color:var(--muted);transition:transform .2s}
+details.sec>summary::before{content:"\25B8";float:left;margin:3px 10px 0 0;color:var(--accent);transition:transform .2s}
 details.sec[open]>summary::before{transform:rotate(90deg)}
-details.sec>summary h2{display:inline;margin:0;padding:0;border:0;font-size:1.15rem}
-details.sec>:not(summary){margin-left:14px;margin-right:14px} details.sec>.scroll{margin-left:14px;margin-right:14px}
-details.sec[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px}
-details.sec>:last-child{margin-bottom:14px}
-.sec-tools{margin:8px 0} .sec-tools button{font:inherit;font-size:.88rem;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:6px}
+details.sec>summary h2{display:inline;margin:0;padding:0;border:0;font-size:1.18rem}
+details.sec>:not(summary){margin-left:16px;margin-right:16px} details.sec>.scroll{margin-left:16px;margin-right:16px}
+details.sec[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+details.sec>:last-child{margin-bottom:16px}
+.sec-tools{margin:10px 0} .sec-tools button{font:inherit;font-size:.88rem;padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:6px}
+details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:12px 16px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);list-style:none}
+details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\25B8";display:inline-block;margin-right:8px;color:var(--accent);transition:transform .2s}
+details.fold[open]>summary::before{transform:rotate(90deg)}
+
+/* ---- ルート作成・コスト表・日程プランナー（JS が使うクラス） ---- */
 .route-pre{margin:8px 0 2px}.route-pre .lbl{font-weight:700;margin-right:6px}
-.route-pre .pre-btn{font:inherit;font-size:.88rem;padding:4px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;margin:2px 4px 2px 0}
-.route-pre .pre-btn.on{background:var(--link);border-color:var(--link);color:#fff}
+.route-pre .pre-btn{font:inherit;font-size:.88rem;padding:5px 15px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;margin:2px 4px 2px 0}
+.route-pre .pre-btn.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .route-desc{color:var(--muted);font-size:.88rem;margin:2px 0 8px}
 .route-t td.chk{text-align:center}.route-t td.chk input{width:auto;min-width:0;transform:scale(1.25)}
 .route-ask{display:block;margin:12px 0 4px;font-weight:700;font-size:.9rem}
-.route-ask textarea{display:block;width:100%;margin-top:4px;font:inherit;font-size:.92rem;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
-.route-cost{font-size:.92rem;margin:2px 0 8px;font-weight:700}.route-cost.dim{color:var(--muted);font-weight:400}.route-cost.over{color:#b3261e}
+.route-ask textarea{display:block;width:100%;margin-top:4px;font:inherit;font-size:.92rem;padding:8px 10px;border:1px solid var(--line);border-radius:var(--rad-s);background:var(--bg);color:var(--ink)}
+.route-cost{font-size:.92rem;margin:2px 0 8px;font-weight:700}.route-cost.dim{color:var(--muted);font-weight:400}.route-cost.over{color:var(--bad)}
 .route-t td.sub{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-.route-days{font-size:.92rem;margin:2px 0 8px}.route-days.dim{color:var(--muted)}.route-days.over{color:#b3261e;font-weight:700}
+.route-days{font-size:.92rem;margin:2px 0 8px}.route-days.dim{color:var(--muted)}.route-days.over{color:var(--bad);font-weight:700}
 .route-t td select{width:100%;min-width:5.5em;font:inherit;font-size:.9rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 .route-bar button:disabled{opacity:.45;cursor:default}
 .route-t td input{width:100%;min-width:6em;font:inherit;font-size:.9rem;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
-.route-t tr.fix td{background:color-mix(in srgb,var(--link) 10%,transparent);text-align:center}
+.route-t tr.fix td{background:color-mix(in srgb,var(--accent) 10%,transparent);text-align:center}
 .route-t td.ops{white-space:nowrap}.route-t td.ops button{font:inherit;font-size:.8rem;padding:2px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:3px}
-.route-bar button{font:inherit;font-size:.9rem;padding:5px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
+.route-bar button{font:inherit;font-size:.9rem;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
 .route-sum{font-weight:700;margin:10px 0}
-.triage{margin:12px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:.92rem}
-.triage .big{font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
+.triage{margin:12px 0 4px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);font-size:.92rem}
+.triage .big{font-size:1.4rem;font-weight:800;font-variant-numeric:tabular-nums}
 .triage .muted,.triage .tri-note{color:var(--muted);font-size:.85rem}
-.triage button{font:inherit;font-size:.88rem;padding:4px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
+.triage button{font:inherit;font-size:.88rem;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
 .triage .tri-hide{display:inline-block;margin:6px 12px 0 0}
 .triage .tri-filter{margin:8px 0 4px}
-.triage .tri-filter button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
+.triage .tri-filter button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 th.tri,td.tri{min-width:7em;white-space:nowrap}
 td.tri select,td.tri input[type=text]{font:inherit;font-size:.88rem;max-width:11em;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 td.tri input[type=text]{width:11em}
 tr.skip td:not(.tri){text-decoration:line-through;opacity:.5}
 tr.hold td:not(.tri){opacity:.75}
 tr[hidden]{display:none}
+
+/* ---- カルーセル ---- */
 .carousel{position:relative}
 .car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 4px 32px;-webkit-overflow-scrolling:touch}
 .car-track>.card{flex:0 0 min(300px,80%);scroll-snap-align:start}
 .car-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
 .car-btn.prev{left:-12px} .car-btn.next{right:-12px} .car-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 .car-btn[disabled]{opacity:.35;cursor:default}
-details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);list-style:none}
-details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\25B8";display:inline-block;margin-right:8px;transition:transform .2s}
-details.fold[open]>summary::before{transform:rotate(90deg)}
+
 @media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
-@media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
+@media (hover:hover){.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-up)}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+
+/* ---- 携帯 ---- */
+@media(max-width:860px){
+header.bar nav.menu{display:none}
+header.bar details.mobile{display:block;margin-left:auto}
+header.bar details.mobile>summary{list-style:none;cursor:pointer;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;background:var(--card)}
+header.bar details.mobile>summary::-webkit-details-marker{display:none}
+header.bar details.mobile[open]>summary{background:var(--accent-soft)}
+header.bar .mpanel{position:absolute;left:0;right:0;top:100%;background:var(--card);border-bottom:1px solid var(--line);box-shadow:var(--shadow-up);padding:10px 18px 16px;max-height:calc(100vh - var(--bar));overflow:auto}
+header.bar .mpanel .dl{font-size:.78rem;font-weight:700;color:var(--muted);margin:12px 0 2px;letter-spacing:.04em}
+header.bar .mpanel a{display:block;padding:9px 4px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+header.bar .mpanel a[aria-current]{color:var(--accent);font-weight:800}
+}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
 @media(max-width:640px){
-.scroll{overflow-x:visible;border-top:0;border-bottom:0}
+.hero{padding:30px 20px 26px;border-radius:16px} .hero h1{font-size:1.7rem}
+.scroll{overflow-x:visible;border:0;background:none;border-radius:0}
 .scroll table:not(:has(td[data-label])){min-width:0;table-layout:auto}
 .scroll table:not(:has(td[data-label])) th,.scroll table:not(:has(td[data-label])) td{padding:7px 6px;overflow-wrap:anywhere}
 .scroll table:has(td[data-label]){min-width:0;display:block}
 .scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
-.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
 .scroll table:has(td[data-label]) td{display:block;padding:8px 12px;border-bottom:1px solid var(--line);background:none!important;min-width:0;text-align:left}
 .scroll table:has(td[data-label]) td:last-child{border-bottom:0}
 .scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
 .scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
 }
-@media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
+@media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.5rem}}
 :root{--sea:#e6eef3;--land:#f4f1e8;--visit:#e3e8c9;--border:#b9b4a4;--grat:#cdd8df;--pt:#1d2227;--caution:#b3261e;--cautionbg:#f1d9d6;
 --rA:#0072B2;--rB:#B84A00;--rC:#007A5A;--rD:#A5498A;--rE:#8A6D00;--rF:#3B3B3B}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sea:#1a2530;--land:#2b2f2c;--visit:#3b4328;--border:#59605a;--grat:#2a3844;--pt:#e3e6e8;--caution:#ff8a80;--cautionbg:#4a2523;
@@ -278,21 +346,24 @@ body.open aside#side{transform:none}#toggle{display:block;position:sticky;top:0;
 <p class="muted" style="margin-top:18px">個別ページ版は <a href="index.html">index.html</a>。内容の正本は Markdown と data/*.csv です。</p></aside>
 <main id="content">
 <section class="pg" id="p-home" data-title="トップ">
+<section class="hero">
 <h1>2027 留学・アフリカ周遊 計画メモ</h1>
 <p class="lead">2027年2〜7月に、フィリピン・バギオの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学を一つの旅程として整理するための計画メモです。公開してよい一般の料金・制度・調査だけを匿名のモデルとして載せ、地域ごとに費用・確認事項・資料・地図を見られます。</p>
-<p class="note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。個人の支払い・資産・予約情報は公開していません。</p>
+<p class="hero-note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。個人の支払い・資産・予約情報は公開していません。</p>
+<p class="cta"><a href="#p-home--areas">地域ごとに見る</a><a class="alt" href="#p-home--budget">費用を見る</a><a class="alt" href="#p-docs-10-qa">確認待ちを見る</a><a class="alt" href="#p-maps-route-map">ルート地図</a></p>
+</section>
 
 <h2 id="p-home--budget">予算の全体像</h2>
 <p class="sec-lead">金額はすべて公開料金などに基づく<strong>モデルの見積</strong>で、実費ではありません。各カードを開くと内訳があります。空欄は「未計上」で、0円ではありません。計算ルールは <a href="#p-docs-02-budget">予算の計算ルール</a>。</p>
-<div class="carousel" data-carousel><button type="button" class="car-btn prev" aria-label="前のカード" hidden>‹</button><div class="car-track" tabindex="0" role="region" aria-label="予算の全体像"><div class="card"><p class="eyebrow">目標総予算</p><p class="val">250.0万円</p><p class="sub">モデルの予算目標</p></div><div class="card"><p class="eyebrow">上限予算</p><p class="val">300.0万円</p><p class="sub">モデルの上限</p></div><a class="card link" href="#p-docs-02-budget"><p class="eyebrow">見積合計（標準）</p><p class="val">¥2,564,965</p><p class="sub">低 ¥2,356,415 〜 余 ¥2,936,692<br><span class="muted">未計上 3件は含まず、0円ではない</span><span class="tri-top" data-total="2564965" hidden></span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-baguio"><p class="eyebrow">フィリピン（バギオ）</p><p class="val">¥797,438</p><p class="sub">現地費（航空券を除く）<br><span class="muted">低 ¥774,051 〜 余 ¥810,685</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa"><p class="eyebrow">アフリカ周遊（5月）</p><p class="val">¥328,404</p><p class="sub">現地費（航空券を除く）。航空券と合わせた5月の総額は ¥622,104<br><span class="muted">低 ¥223,585 〜 余 ¥534,496</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-capetown"><p class="eyebrow">南アフリカ（ケープタウン）</p><p class="val">¥685,190</p><p class="sub">現地費（航空券を除く）<br><span class="muted">低 ¥681,632 〜 余 ¥726,921</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa-aug"><p class="eyebrow">アフリカ周遊（8月）</p><p class="val">未計上</p><p class="sub">現地費（航空券を除く）。国は未定</p><span class="go">ページを見る</span></a><a class="card link" href="#p-docs-12-flights"><p class="eyebrow">飛行機代</p><p class="val">¥445,883</p><p class="sub">全ての航空券（国内線を含む）<br><span class="muted">低 ¥430,166 〜 余 ¥461,599</span> <span class="muted">未計上 2件</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-common"><p class="eyebrow">共通（保険・日本国内など）</p><p class="val">¥308,051</p><p class="sub">上の区分に入らない費用<br><span class="muted">低 ¥246,981 〜 余 ¥402,991</span></p><span class="go">ページを見る</span></a></div><button type="button" class="car-btn next" aria-label="次のカード" hidden>›</button></div>
+<div class="grid"><div class="card"><p class="eyebrow">目標総予算</p><p class="val">250.0万円</p><p class="sub">モデルの予算目標</p></div><div class="card"><p class="eyebrow">上限予算</p><p class="val">300.0万円</p><p class="sub">モデルの上限</p></div><a class="card link" href="#p-docs-02-budget"><p class="eyebrow">見積合計（標準）</p><p class="val">¥2,564,965</p><p class="sub">低 ¥2,356,415 〜 余 ¥2,936,692<br><span class="muted">未計上 3件は含まず、0円ではない</span><span class="tri-top" data-total="2564965" hidden></span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-baguio"><p class="eyebrow">フィリピン（バギオ）</p><p class="val">¥797,438</p><p class="sub">現地費（航空券を除く）<br><span class="muted">低 ¥774,051 〜 余 ¥810,685</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa"><p class="eyebrow">アフリカ周遊（5月）</p><p class="val">¥328,404</p><p class="sub">現地費（航空券を除く）。航空券と合わせた5月の総額は ¥622,104<br><span class="muted">低 ¥223,585 〜 余 ¥534,496</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-capetown"><p class="eyebrow">南アフリカ（ケープタウン）</p><p class="val">¥685,190</p><p class="sub">現地費（航空券を除く）<br><span class="muted">低 ¥681,632 〜 余 ¥726,921</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa-aug"><p class="eyebrow">アフリカ周遊（8月）</p><p class="val">未計上</p><p class="sub">現地費（航空券を除く）。国は未定</p><span class="go">ページを見る</span></a><a class="card link" href="#p-docs-12-flights"><p class="eyebrow">飛行機代</p><p class="val">¥445,883</p><p class="sub">全ての航空券（国内線を含む）<br><span class="muted">低 ¥430,166 〜 余 ¥461,599</span> <span class="muted">未計上 2件</span></p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-common"><p class="eyebrow">共通（保険・日本国内など）</p><p class="val">¥308,051</p><p class="sub">上の区分に入らない費用<br><span class="muted">低 ¥246,981 〜 余 ¥402,991</span></p><span class="go">ページを見る</span></a></div>
 
 <h2 id="p-home--plan">旅程</h2>
 <p class="sec-lead">期間ごとの計画（モデル）です。カードを開くと、その地域の費用・確認事項・資料・地図を見られます。</p>
-<div class="carousel" data-carousel><button type="button" class="car-btn prev" aria-label="前のカード" hidden>‹</button><div class="car-track" tabindex="0" role="region" aria-label="旅程"><a class="card link" href="#p-areas-baguio"><p class="eyebrow">2027年2〜4月</p><h3>第1か国留学（バギオ・モデル）</h3><p class="status">計画（モデル）</p><p class="sub">約12週間の語学留学を想定（フィリピン・バギオ）。2月に開始。授業の組み方は学校の案内で確認。</p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa"><p class="eyebrow">2027年5月</p><h3>アフリカ周遊（5月）</h3><p class="status">検討中（モデル）</p><p class="sub">約5週間の匿名モデル。日本→ムンバイ経由→モーリシャス観光→マダガスカル→モーリシャス→ヨハネスブルグ→VFA周辺3か国→ケープタウン。5月配分目標60万円は航空券と現地費を合算（Issue #80）。便・現地費は未確認。</p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-capetown"><p class="eyebrow">2027年6〜7月</p><h3>第2か国留学（ケープタウン候補・モデル）</h3><p class="status">検討中（モデル）</p><p class="sub">約8週間の語学留学を想定。学校・就学資格・住居は要確認。</p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa-aug"><p class="eyebrow">2027年8月</p><h3>アフリカ周遊（8月）・帰国</h3><p class="status">検討中（モデル）</p><p class="sub">留学後の追加周遊と日本帰国を想定。5月とはシーズンと目的が違う。南ア再入国条件は最優先で検証。</p><span class="go">ページを見る</span></a></div><button type="button" class="car-btn next" aria-label="次のカード" hidden>›</button></div>
+<div class="grid"><a class="card link reg reg-baguio" href="#p-areas-baguio"><p class="eyebrow">2027年2〜4月</p><h3>第1か国留学（バギオ・モデル）</h3><p class="status">計画（モデル）</p><p class="sub">約12週間の語学留学を想定（フィリピン・バギオ）。2月に開始。授業の組み方は学校の案内で確認。</p><span class="go">ページを見る</span></a><a class="card link reg reg-may" href="#p-areas-africa"><p class="eyebrow">2027年5月</p><h3>アフリカ周遊（5月）</h3><p class="status">検討中（モデル）</p><p class="sub">約5週間の匿名モデル。日本→ムンバイ経由→モーリシャス観光→マダガスカル→モーリシャス→ヨハネスブルグ→VFA周辺3か国→ケープタウン。5月配分目標60万円は航空券と現地費を合算（Issue #80）。便・現地費は未確認。</p><span class="go">ページを見る</span></a><a class="card link reg reg-cape" href="#p-areas-capetown"><p class="eyebrow">2027年6〜7月</p><h3>第2か国留学（ケープタウン候補・モデル）</h3><p class="status">検討中（モデル）</p><p class="sub">約8週間の語学留学を想定。学校・就学資格・住居は要確認。</p><span class="go">ページを見る</span></a><a class="card link reg reg-aug" href="#p-areas-africa-aug"><p class="eyebrow">2027年8月</p><h3>アフリカ周遊（8月）・帰国</h3><p class="status">検討中（モデル）</p><p class="sub">留学後の追加周遊と日本帰国を想定。5月とはシーズンと目的が違う。南ア再入国条件は最優先で検証。</p><span class="go">ページを見る</span></a></div>
 
 <h2 id="p-home--areas">地域別</h2>
 <p class="sec-lead">知りたい地域のページを開いてください。各ページに、概要、いまの確認事項、費用の見積、資料、場所と地図、通貨の換算がまとまっています。</p>
-<div class="carousel" data-carousel><button type="button" class="car-btn prev" aria-label="前のカード" hidden>‹</button><div class="car-track" tabindex="0" role="region" aria-label="地域別"><a class="card link" href="#p-areas-baguio"><p class="eyebrow">2027年2〜4月</p><h3>バギオ</h3><p class="sub">計画（モデル）</p><p class="sub">確認事項 <span class="n">8</span>件</p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa"><p class="eyebrow">2027年5月</p><h3>アフリカ周遊（5月）</h3><p class="sub">検討中（モデル）</p><p class="sub">確認事項 <span class="n">6</span>件</p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-africa-aug"><p class="eyebrow">2027年8月</p><h3>アフリカ周遊（8月）</h3><p class="sub">検討中（モデル）</p><p class="sub">確認事項は未登録（0件ではなく、まだ洗い出していません）</p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-capetown"><p class="eyebrow">2027年6〜7月・2027年8月</p><h3>ケープタウン</h3><p class="sub">検討中（モデル）</p><p class="sub">確認事項 <span class="n">8</span>件</p><span class="go">ページを見る</span></a><a class="card link" href="#p-areas-common"><p class="eyebrow">出発前〜帰国後（随時）</p><h3>日本国内・保険・共通</h3><p class="sub">一般的な確認項目（匿名モデル）</p><p class="sub">確認事項 <span class="n">25</span>件</p><span class="go">ページを見る</span></a></div><button type="button" class="car-btn next" aria-label="次のカード" hidden>›</button></div>
+<div class="grid"><a class="card link reg reg-baguio" href="#p-areas-baguio"><p class="eyebrow">2027年2〜4月</p><h3>バギオ</h3><p class="sub">計画（モデル）</p><p class="sub">確認事項 <span class="n">8</span>件</p><span class="go">ページを見る</span></a><a class="card link reg reg-may" href="#p-areas-africa"><p class="eyebrow">2027年5月</p><h3>アフリカ周遊（5月）</h3><p class="sub">検討中（モデル）</p><p class="sub">確認事項 <span class="n">6</span>件</p><span class="go">ページを見る</span></a><a class="card link reg reg-aug" href="#p-areas-africa-aug"><p class="eyebrow">2027年8月</p><h3>アフリカ周遊（8月）</h3><p class="sub">検討中（モデル）</p><p class="sub">確認事項は未登録（0件ではなく、まだ洗い出していません）</p><span class="go">ページを見る</span></a><a class="card link reg reg-cape" href="#p-areas-capetown"><p class="eyebrow">2027年6〜7月・2027年8月</p><h3>ケープタウン</h3><p class="sub">検討中（モデル）</p><p class="sub">確認事項 <span class="n">8</span>件</p><span class="go">ページを見る</span></a><a class="card link reg reg-common" href="#p-areas-common"><p class="eyebrow">出発前〜帰国後（随時）</p><h3>日本国内・保険・共通</h3><p class="sub">一般的な確認項目（匿名モデル）</p><p class="sub">確認事項 <span class="n">25</span>件</p><span class="go">ページを見る</span></a></div>
 
 <h2 id="p-home--now">いま何をするか</h2>
 <div class="card wide"><p class="sub"><a href="#p-docs-10-qa"><strong>確認待ち（QA）の一覧を見る</strong></a>：AIが調べ切れなかった費用・本人の確認が要ることをまとめています。</p>
@@ -301,7 +372,7 @@ body.open aside#side{transform:none}#toggle{display:block;position:sticky;top:0;
 <ul class="facts"><li>最優先（優先度1）の未完了の確認事項：16件（上は着手の早いもの6件。全件は各地域のページ）</li><li>調査中の資料：44件</li></ul></div>
 
 <h2 id="p-home--fx">通貨と円換算</h2>
-<p class="sec-lead">レート日：2026-10-16（取得元：<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">www.murc-kawasesouba.jp</a>）。参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が加わるため、実際に受け取る額・支払う額とは一致しません。</p><div class="carousel" data-carousel><button type="button" class="car-btn prev" aria-label="前のカード" hidden>‹</button><div class="car-track" tabindex="0" role="region" aria-label="通貨"><div class="card"><p class="eyebrow">フィリピン</p><h3>フィリピン・ペソ（PHP）</h3><dl class="kv"><div><dt>1PHP＝</dt><dd class="n">2.53 円</dd></div><div><dt>1万円＝</dt><dd class="n">3,952.57 PHP</dd></div></dl><p class="sub">レート日 2026-10-16</p></div><div class="card"><p class="eyebrow">南アフリカ</p><h3>南アフリカ・ランド（ZAR）</h3><dl class="kv"><div><dt>1ZAR＝</dt><dd class="n">9.59 円</dd></div><div><dt>1万円＝</dt><dd class="n">1,042.75 ZAR</dd></div></dl><p class="sub">レート日 2026-10-16</p></div><div class="card"><p class="eyebrow">フィリピン・アフリカ（価格がドル建ての項目）</p><h3>米ドル（USD）</h3><dl class="kv"><div><dt>1USD＝</dt><dd class="n">158.19 円</dd></div><div><dt>1万円＝</dt><dd class="n">63.22 USD</dd></div></dl><p class="sub">レート日 2026-10-16</p></div></div><button type="button" class="car-btn next" aria-label="次のカード" hidden>›</button></div>
+<p class="sec-lead">レート日：2026-10-16（取得元：<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">www.murc-kawasesouba.jp</a>）。参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が加わるため、実際に受け取る額・支払う額とは一致しません。</p><div class="grid"><div class="card"><p class="eyebrow">フィリピン</p><h3>フィリピン・ペソ（PHP）</h3><dl class="kv"><div><dt>1PHP＝</dt><dd class="n">2.53 円</dd></div><div><dt>1万円＝</dt><dd class="n">3,952.57 PHP</dd></div></dl><p class="sub">レート日 2026-10-16</p></div><div class="card"><p class="eyebrow">南アフリカ</p><h3>南アフリカ・ランド（ZAR）</h3><dl class="kv"><div><dt>1ZAR＝</dt><dd class="n">9.59 円</dd></div><div><dt>1万円＝</dt><dd class="n">1,042.75 ZAR</dd></div></dl><p class="sub">レート日 2026-10-16</p></div><div class="card"><p class="eyebrow">フィリピン・アフリカ（価格がドル建ての項目）</p><h3>米ドル（USD）</h3><dl class="kv"><div><dt>1USD＝</dt><dd class="n">158.19 円</dd></div><div><dt>1万円＝</dt><dd class="n">63.22 USD</dd></div></dl><p class="sub">レート日 2026-10-16</p></div></div>
 <script type="application/json" id="p-home--fx-data">[{"code":"PHP","name":"フィリピン・ペソ","unit":"₱","region":"フィリピン","rate":2.53,"date":"2026-10-16"},{"code":"ZAR","name":"南アフリカ・ランド","unit":"R","region":"南アフリカ","rate":9.59,"date":"2026-10-16"},{"code":"USD","name":"米ドル","unit":"$","region":"フィリピン・アフリカ（価格がドル建ての項目）","rate":158.19,"date":"2026-10-16"}]</script>
 <div class="card wide">
 <h3>電卓</h3>
@@ -322,7 +393,7 @@ body.open aside#side{transform:none}#toggle{display:block;position:sticky;top:0;
 
 </section><section class="pg" id="p-areas-africa-aug" data-group="地域別" data-title="アフリカ周遊（8月）"><div class="wrap page">
 
-<h1>アフリカ周遊（8月）</h1>
+<div class="page-head"><span class="tag r-aug">地域別</span><h1>アフリカ周遊（8月）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-areas-africa-aug--2026-11-098月の国別宿泊食費予算の作成方法">2026-11-09｜8月の国別宿泊・食費予算の作成方法</a><a href="#p-areas-africa-aug--1-概要と時期モデル">1. 概要と時期（モデル）</a><a href="#p-areas-africa-aug--2-いまの確認事項">2. いまの確認事項</a><a href="#p-areas-africa-aug--3-費用の見積">3. 費用の見積</a><a href="#p-areas-africa-aug--4-資料">4. 資料</a><a href="#p-areas-africa-aug--5-場所と地図">5. 場所と地図</a><a href="#p-areas-africa-aug--6-通貨と円換算">6. 通貨と円換算</a><a href="#p-areas-africa-aug--7-地図">7. 地図</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -484,7 +555,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
 
 </div></section><section class="pg" id="p-areas-africa" data-group="地域別" data-title="アフリカ周遊（5月）"><div class="wrap page">
 
-<h1>アフリカ周遊（5月）</h1>
+<div class="page-head"><span class="tag r-may">地域別</span><h1>アフリカ周遊（5月）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-areas-africa--1-概要と時期モデル">1. 概要と時期（モデル）</a><a href="#p-areas-africa--2-いまの確認事項">2. いまの確認事項</a><a href="#p-areas-africa--3-費用の見積">3. 費用の見積</a><a href="#p-areas-africa--4-資料">4. 資料</a><a href="#p-areas-africa--5-場所と地図">5. 場所と地図</a><a href="#p-areas-africa--6-通貨と円換算">6. 通貨と円換算</a><a href="#p-areas-africa--7-地図">7. 地図</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -648,7 +719,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
 
 </div></section><section class="pg" id="p-areas-baguio" data-group="地域別" data-title="バギオ（フィリピン語学留学）"><div class="wrap page">
 
-<h1>バギオ（フィリピン語学留学）</h1>
+<div class="page-head"><span class="tag r-baguio">地域別</span><h1>バギオ（フィリピン語学留学）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-areas-baguio--1-概要と時期モデル">1. 概要と時期（モデル）</a><a href="#p-areas-baguio--2-いまの確認事項">2. いまの確認事項</a><a href="#p-areas-baguio--3-費用の見積">3. 費用の見積</a><a href="#p-areas-baguio--4-資料">4. 資料</a><a href="#p-areas-baguio--5-場所と地図">5. 場所と地図</a><a href="#p-areas-baguio--6-通貨と円換算">6. 通貨と円換算</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -803,7 +874,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
 
 </div></section><section class="pg" id="p-areas-capetown" data-group="地域別" data-title="ケープタウン（第2か国留学）"><div class="wrap page">
 
-<h1>ケープタウン（第2か国留学）</h1>
+<div class="page-head"><span class="tag r-cape">地域別</span><h1>ケープタウン（第2か国留学）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-areas-capetown--1-概要と時期モデル">1. 概要と時期（モデル）</a><a href="#p-areas-capetown--2-いまの確認事項">2. いまの確認事項</a><a href="#p-areas-capetown--3-費用の見積">3. 費用の見積</a><a href="#p-areas-capetown--4-資料">4. 資料</a><a href="#p-areas-capetown--5-場所と地図">5. 場所と地図</a><a href="#p-areas-capetown--6-通貨と円換算">6. 通貨と円換算</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -956,7 +1027,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
 
 </div></section><section class="pg" id="p-areas-common" data-group="地域別" data-title="日本国内・保険・共通"><div class="wrap page">
 
-<h1>日本国内・保険・共通</h1>
+<div class="page-head"><span class="tag">地域別</span><h1>日本国内・保険・共通</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-areas-common--1-概要">1. 概要</a><a href="#p-areas-common--2-いまの確認事項">2. いまの確認事項</a><a href="#p-areas-common--3-費用の見積">3. 費用の見積</a><a href="#p-areas-common--4-資料">4. 資料</a><a href="#p-areas-common--5-通貨と円換算">5. 通貨と円換算</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1177,7 +1248,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
 
 </div></section><section class="pg" id="p-research-137-route-redesign-comparison" data-group="現地調査" data-title="5月×8月ルート再設計の比較（Issue #137）"><div class="wrap page">
 
-<h1>5月×8月ルート再設計の比較（Issue #137）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>5月×8月ルート再設計の比較（Issue #137）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-137-route-redesign-comparison--0-先に結論暫定判断用">0. 先に結論（暫定・判断用）</a><a href="#p-research-137-route-redesign-comparison--1-取得できた一次情報2026-11-16">1. 取得できた一次情報（2026-11-16）</a><a href="#p-research-137-route-redesign-comparison--2-5月ナミビアなしありm0m1">2. 5月：ナミビアなし／あり（M0・M1）</a><a href="#p-research-137-route-redesign-comparison--3-ナミビアの3方式比較wdh起点sesriem-2泊4日">3. ナミビアの3方式比較（WDH起点、Sesriem 2泊・4日）</a><a href="#p-research-137-route-redesign-comparison--4-8月約21日cpt発日本a0a12">4. 8月（約21日・CPT発→日本）A0〜A12</a><a href="#p-research-137-route-redesign-comparison--5-5月8月の組み合わせと訪問国の重複">5. 5月×8月の組み合わせと訪問国の重複</a><a href="#p-research-137-route-redesign-comparison--6-次に確認すべき航空券移動手段優先順">6. 次に確認すべき航空券・移動手段（優先順）</a><a href="#p-research-137-route-redesign-comparison--7-公開データの確認">7. 公開データの確認</a><a href="#p-research-137-route-redesign-comparison--8-検索ログ2026-11-16">8. 検索ログ（2026-11-16）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1243,7 +1314,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-77-open-research-requests" data-group="現地調査" data-title="Issue #77 の調べ残し：定期確認の依頼票（ChatGPT 向け）"><div class="wrap page">
 
-<h1>Issue #77 の調べ残し：定期確認の依頼票（ChatGPT 向け）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>Issue #77 の調べ残し：定期確認の依頼票（ChatGPT 向け）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-77-open-research-requests--0-調べ方の約束">0. 調べ方の約束</a><a href="#p-research-77-open-research-requests--1-コメントの書き方コピーして使う">1. コメントの書き方（コピーして使う）</a><a href="#p-research-77-open-research-requests--2-依頼一覧優先度順">2. 依頼一覧（優先度順）</a><a href="#p-research-77-open-research-requests--3-優先順位の目安">3. 優先順位の目安</a><a href="#p-research-77-open-research-requests--35-回答状況2026-11-11-時点qa回答台帳researchreferencesqa-answers-2026-11-11mdから">3.5 回答状況（2026-11-11 時点・QA回答台帳（research/references/qa-answers-2026-11-11.md）から）</a><a href="#p-research-77-open-research-requests--4-結果の反映の流れ">4. 結果の反映の流れ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1322,7 +1393,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-africa-13-countries-comparison" data-group="現地調査" data-title="アフリカの国の比較表：日数・シーズン・費用・コスパ・タイパ（2027年5月想定・調査版）"><div class="wrap page">
 
-<h1>アフリカの国の比較表：日数・シーズン・費用・コスパ・タイパ（2027年5月想定・調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>アフリカの国の比較表：日数・シーズン・費用・コスパ・タイパ（2027年5月想定・調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-africa-13-countries-comparison--1-一覧">1. 一覧</a><a href="#p-research-africa-13-countries-comparison--2-読み取れること">2. 読み取れること</a><a href="#p-research-africa-13-countries-comparison--3-無駄の少ない並べ方案推計">3. 無駄の少ない並べ方（案・推計）</a><a href="#p-research-africa-13-countries-comparison--4-旅程に直接響く重要な未確認事項">4. 旅程に直接響く重要な未確認事項</a><a href="#p-research-africa-13-countries-comparison--外務省-海外安全ホームページの危険レベル13か国2026-11-09に公式ページで確認">外務省 海外安全ホームページの危険レベル（13か国、2026-11-09に公式ページで確認）</a><a href="#p-research-africa-13-countries-comparison--5-次にやること">5. 次にやること</a><a href="#p-research-africa-13-countries-comparison--出典">出典</a><a href="#p-research-africa-13-countries-comparison--検索ログ2026-11-082026-11-10">検索ログ（2026-11-08〜2026-11-10）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1359,7 +1430,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-africa-august-comparison" data-group="現地調査" data-title="アフリカ周遊（8月）の国別シーズン比較（2027年8月想定・調査版）"><div class="wrap page">
 
-<h1>アフリカ周遊（8月）の国別シーズン比較（2027年8月想定・調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>アフリカ周遊（8月）の国別シーズン比較（2027年8月想定・調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-africa-august-comparison--8月の国別滞在費泊数単価日数単価編集用markdown">8月の国別滞在費：泊数×単価・日数×単価（編集用Markdown）</a><a href="#p-research-africa-august-comparison--1-8月の一覧">1. 8月の一覧</a><a href="#p-research-africa-august-comparison--2-5月との違いこのページの記載から読み取れる範囲">2. 5月との違い（このページの記載から読み取れる範囲）</a><a href="#p-research-africa-august-comparison--3-8月で最初に確認すること">3. 8月で最初に確認すること</a><a href="#p-research-africa-august-comparison--4-次にやること">4. 次にやること</a><a href="#p-research-africa-august-comparison--出典">出典</a><a href="#p-research-africa-august-comparison--検索ログ2026-11-08">検索ログ（2026-11-08）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1416,7 +1487,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-africa-budget-fermi" data-group="現地調査" data-title="5月アフリカ周遊：数量×仮単価の予算表（編集用Markdown）"><div class="wrap page">
 
-<h1>5月アフリカ周遊：数量×仮単価の予算表（編集用Markdown）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>5月アフリカ周遊：数量×仮単価の予算表（編集用Markdown）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-africa-budget-fermi--編集テーブル円単位">編集テーブル（円単位）</a><a href="#p-research-africa-budget-fermi--自動集計上表の単価と数量から生成">自動集計（上表の単価と数量から生成）</a><a href="#p-research-africa-budget-fermi--マダガスカル日数案ごとの比較手計算編集表は現行14日のまま">マダガスカル日数案ごとの比較（手計算・編集表は現行14日のまま）</a><a href="#p-research-africa-budget-fermi--区分と重複防止">区分と重複防止</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1457,7 +1528,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-africa-overland-7-9-countries" data-group="現地調査" data-title="東アフリカ→南部アフリカ縦断：7か国・9か国・モザンビーク追加の実現性（調査版）"><div class="wrap page">
 
-<h1>東アフリカ→南部アフリカ縦断：7か国・9か国・モザンビーク追加の実現性（調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>東アフリカ→南部アフリカ縦断：7か国・9か国・モザンビーク追加の実現性（調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-africa-overland-7-9-countries--1-結論と判定表">1. 結論と判定表</a><a href="#p-research-africa-overland-7-9-countries--1a-issue-44-改訂版2026-10-18への対応固定アンカーと日数の突き合わせ">1A. Issue #44 改訂版（2026-10-18）への対応：固定アンカーと日数の突き合わせ</a><a href="#p-research-africa-overland-7-9-countries--2-前提">2. 前提</a><a href="#p-research-africa-overland-7-9-countries--3-国別">3. 国別</a><a href="#p-research-africa-overland-7-9-countries--4-ビザ比較表">4. ビザ比較表</a><a href="#p-research-africa-overland-7-9-countries--5-陸路バス所要時間表">5. 陸路バス所要時間表</a><a href="#p-research-africa-overland-7-9-countries--6-mozambique-ダイビング南部限定">6. Mozambique ダイビング（南部限定）</a><a href="#p-research-africa-overland-7-9-countries--7-日別ルート案day番号候補">7. 日別ルート案（Day番号・候補）</a><a href="#p-research-africa-overland-7-9-countries--8-費用モデル">8. 費用モデル</a><a href="#p-research-africa-overland-7-9-countries--9-google-maps-検索リンク">9. Google Maps 検索リンク</a><a href="#p-research-africa-overland-7-9-countries--10-未確認後続タスクと調査ログ">10. 未確認・後続タスクと調査ログ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1594,7 +1665,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-africa-route-comparison" data-group="現地調査" data-title="フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）"><div class="wrap page">
 
-<h1>フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>フィリピン→南アフリカ：複数国・低コスト周遊ルート比較（一般向けモデル）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-africa-route-comparison--0-結論先に">0. 結論（先に）</a><a href="#p-research-africa-route-comparison--1-ルート定義">1. ルート定義</a><a href="#p-research-africa-route-comparison--2-区間別比較表">2. 区間別比較表</a><a href="#p-research-africa-route-comparison--3-国別入国条件日本の一般旅券観光2027年5月想定">3. 国別入国条件（日本の一般旅券、観光、2027年5月想定）</a><a href="#p-research-africa-route-comparison--4-最新の危険情報確認日-2026-10-17">4. 最新の危険情報（確認日 2026-10-17）</a><a href="#p-research-africa-route-comparison--5-最低日数と5月の季節性">5. 最低日数と5月の季節性</a><a href="#p-research-africa-route-comparison--6-価格モデル匿名の例示予算上限-60万円">6. 価格モデル（匿名の例示予算上限 60万円）</a><a href="#p-research-africa-route-comparison--7-国数別シナリオのトレードオフ約1か月">7. 国数別シナリオのトレードオフ（約1か月）</a><a href="#p-research-africa-route-comparison--8-主要地点のgoogle-mapsリンク">8. 主要地点のGoogle Mapsリンク</a><a href="#p-research-africa-route-comparison--9-公開データの確認16">9. 公開データの確認（#16）</a><a href="#p-research-africa-route-comparison--10-残課題未確認一覧">10. 残課題（未確認一覧）</a><a href="#p-research-africa-route-comparison--11-調査ログ2026-10-17">11. 調査ログ（2026-10-17）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1674,7 +1745,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-archive-africa-2027-may-three-route-deep-research" data-group="現地調査" data-title="2027年5月 アフリカ周遊3ルート：Deep Research比較・意思決定用基準資料"><div class="wrap page">
 
-<h1>2027年5月 アフリカ周遊3ルート：Deep Research比較・意思決定用基準資料</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>2027年5月 アフリカ周遊3ルート：Deep Research比較・意思決定用基準資料</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-archive-africa-2027-may-three-route-deep-research--a-結論現時点での比較上の優先順位">A. 結論：現時点での比較上の優先順位</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--b-採点内訳">B. 採点内訳</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--c-モデル日別旅程同日便の購入接続は未検証">C. モデル日別旅程（同日便の購入・接続は未検証）</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--d-交通事業者と重要区間2026-10時点予約前の再確認必須">D. 交通事業者と重要区間（2026-10時点／予約前の再確認必須）</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--e-観光体験5月の独自性で優先">E. 観光体験：5月の独自性で優先</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--f-サファリダイビング2026年参考額全込みではない可能性">F. サファリ・ダイビング（2026年参考額、全込みではない可能性）</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--g-ナミビアありなし同一路線の追加分を比較">G. ナミビアあり／なし：同一路線の追加分を比較</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--h-60万円モデルの積算計上ルール">H. 60万円モデルの積算・計上ルール</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--i-調整オプション">I. 調整オプション</a><a href="#p-research-archive-africa-2027-may-three-route-deep-research--j-現在の推奨と決定条件">J. 現在の推奨と決定条件</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1747,7 +1818,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-archive-africa-trip" data-group="現地調査" data-title="05 5月 南部アフリカ周遊（2027年5月）【未確定】"><div class="wrap page">
 
-<h1>05 5月 南部アフリカ周遊（2027年5月）【未確定】</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>05 5月 南部アフリカ周遊（2027年5月）【未確定】</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-archive-africa-trip--1-結論2026-10-16-時点">1. 結論（2026-10-16 時点）</a><a href="#p-research-archive-africa-trip--2-ルート案どれも未確定">2. ルート案（どれも未確定）</a><a href="#p-research-archive-africa-trip--3-入国条件日本国籍一般旅券">3. 入国条件（日本国籍・一般旅券）</a><a href="#p-research-archive-africa-trip--4-健康">4. 健康</a><a href="#p-research-archive-africa-trip--5-サファリダイビング観光の料金">5. サファリ・ダイビング・観光の料金</a><a href="#p-research-archive-africa-trip--6-航空券参考">6. 航空券（参考）</a><a href="#p-research-archive-africa-trip--7-安全情報外務省-危険レベル2026-10-16-取得">7. 安全情報（外務省 危険レベル、2026-10-16 取得）</a><a href="#p-research-archive-africa-trip--8-決めること">8. 決めること</a><a href="#p-research-archive-africa-trip--9-未確認事項">9. 未確認事項</a><a href="#p-research-archive-africa-trip--10-旅の記録周遊中に記入">10. 旅の記録（周遊中に記入）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1826,7 +1897,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-archive-d-plan-no-namibia" data-group="現地調査" data-title="D案（ナミビアなし）：JNB→レソト／エスワティニ／モザンビーク→ジンバブエ陸路周遊の検証（Issue #53）"><div class="wrap page">
 
-<h1>D案（ナミビアなし）：JNB→レソト／エスワティニ／モザンビーク→ジンバブエ陸路周遊の検証（Issue #53）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>D案（ナミビアなし）：JNB→レソト／エスワティニ／モザンビーク→ジンバブエ陸路周遊の検証（Issue #53）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-archive-d-plan-no-namibia--1-結論">1. 結論</a><a href="#p-research-archive-d-plan-no-namibia--2-前提と換算">2. 前提と換算</a><a href="#p-research-archive-d-plan-no-namibia--3-順序案-d1d4の日別表">3. 順序案 D1〜D4の日別表</a><a href="#p-research-archive-d-plan-no-namibia--4-レソト追加の価値と交通">4. レソト（追加の価値と交通）</a><a href="#p-research-archive-d-plan-no-namibia--5-区間ごとの交通昼行シャトルバス">5. 区間ごとの交通（昼行・シャトル・バス）</a><a href="#p-research-archive-d-plan-no-namibia--6-安全日本の外務省と英国fcdo確認-2026-10-20">6. 安全（日本の外務省と英国FCDO。確認 2026-10-20）</a><a href="#p-research-archive-d-plan-no-namibia--7-d4自力レンタカーの可否">7. D4：自力レンタカーの可否</a><a href="#p-research-archive-d-plan-no-namibia--8-比較表bナミビア改善cd1d4">8. 比較表（B＋ナミビア・改善C・D1〜D4）</a><a href="#p-research-archive-d-plan-no-namibia--9-未確認次にやること">9. 未確認（次にやること）</a><a href="#p-research-archive-d-plan-no-namibia--10-検索ログ2026-10-20">10. 検索ログ（2026-10-20）</a><a href="#p-research-archive-d-plan-no-namibia--公開データの確認">公開データの確認</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1912,7 +1983,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-archive-kenya-nairobi-short-stay" data-group="現地調査" data-title="ケニア短期観光B案：ナイロビ3泊4日＋半日サファリ（匿名モデル・調査版）"><div class="wrap page">
 
-<h1>ケニア短期観光B案：ナイロビ3泊4日＋半日サファリ（匿名モデル・調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>ケニア短期観光B案：ナイロビ3泊4日＋半日サファリ（匿名モデル・調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-archive-kenya-nairobi-short-stay--1-結論">1. 結論</a><a href="#p-research-archive-kenya-nairobi-short-stay--2-前提と為替">2. 前提と為替</a><a href="#p-research-archive-kenya-nairobi-short-stay--3-費用表3泊4日1人円">3. 費用表（3泊4日・1人・円）</a><a href="#p-research-archive-kenya-nairobi-short-stay--4-重要な価格条件混載が成立しない場合">4. 重要な価格条件：混載が成立しない場合</a><a href="#p-research-archive-kenya-nairobi-short-stay--5-出典との照合issueの数値-vs-取得結果">5. 出典との照合（Issueの数値 vs 取得結果）</a><a href="#p-research-archive-kenya-nairobi-short-stay--6-3泊4日の行程表匿名モデル">6. 3泊4日の行程表（匿名モデル）</a><a href="#p-research-archive-kenya-nairobi-short-stay--7-5月の雨季と安全の注意">7. 5月の雨季と安全の注意</a><a href="#p-research-archive-kenya-nairobi-short-stay--8-2泊3日3泊4日4泊5日の比較">8. 2泊3日／3泊4日／4泊5日の比較</a><a href="#p-research-archive-kenya-nairobi-short-stay--9-ブログ用の整理体験談は書かない">9. ブログ用の整理（体験談は書かない）</a><a href="#p-research-archive-kenya-nairobi-short-stay--10-出典確認日-2026-10-18">10. 出典（確認日 2026-10-18）</a><a href="#p-research-archive-kenya-nairobi-short-stay--11-未確認todo">11. 未確認・ToDo</a><a href="#p-research-archive-kenya-nairobi-short-stay--12-南部アフリカ案との関係">12. 南部アフリカ案との関係</a><a href="#p-research-archive-kenya-nairobi-short-stay--13-調査ログ2026-10-18各2530秒のタイムアウト">13. 調査ログ（2026-10-18、各25〜30秒のタイムアウト）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -1983,7 +2054,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-archive-may-itinerary-nbo-to-cpt" data-group="現地調査" data-title="2027年5月 仮旅程（MNL→AUH→NBO→…→CPT）の実現性検証（調査版）"><div class="wrap page">
 
-<h1>2027年5月 仮旅程（MNL→AUH→NBO→…→CPT）の実現性検証（調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>2027年5月 仮旅程（MNL→AUH→NBO→…→CPT）の実現性検証（調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-archive-may-itinerary-nbo-to-cpt--1-結論完成版日程2本">1. 結論（完成版日程2本）</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--2-前提">2. 前提</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--3-区間表day-別">3. 区間表（Day 別）</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--4-区間ごとの検証">4. 区間ごとの検証</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--5-費用モデル">5. 費用モデル</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--6-選択と削減ルール">6. 選択と削減ルール</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--7-主要地点の-google-マップ検索リンク">7. 主要地点の Google マップ検索リンク</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--8-受入条件issue-47と未確認後続タスク">8. 受入条件（Issue #47）と未確認・後続タスク</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--9-公開データの確認16と関連資料">9. 公開データの確認（#16）と関連資料</a><a href="#p-research-archive-may-itinerary-nbo-to-cpt--10-調査ログ2026-10-19">10. 調査ログ（2026-10-19）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2098,7 +2169,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-archive-may-three-routes-comparison" data-group="現地調査" data-title="5月アフリカ周遊3ルートの比較：ケニア・タンザニア経由／JNB北側先行／JNB南側先行（調査版）"><div class="wrap page">
 
-<h1>5月アフリカ周遊3ルートの比較：ケニア・タンザニア経由／JNB北側先行／JNB南側先行（調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>5月アフリカ周遊3ルートの比較：ケニア・タンザニア経由／JNB北側先行／JNB南側先行（調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-archive-may-three-routes-comparison--1-結論の表">1. 結論の表</a><a href="#p-research-archive-may-three-routes-comparison--2-日別表相対日数day-1--東京出発日">2. 日別表（相対日数。Day 1 = 東京出発日）</a><a href="#p-research-archive-may-three-routes-comparison--3-重要な新発見の検証2026-10-20に公式運営者ページを自分で取得">3. 重要な新発見の検証（2026-10-20に公式・運営者ページを自分で取得）</a><a href="#p-research-archive-may-three-routes-comparison--4-北側1週間の圧縮検証相対日数国境移動の実在は34と同じく未確認を含む">4. 北側1週間の圧縮検証（相対日数。国境・移動の実在は3.4と同じく未確認を含む）</a><a href="#p-research-archive-may-three-routes-comparison--5-費用モデル万円試算であり見積りではない">5. 費用モデル（万円。試算であり見積りではない）</a><a href="#p-research-archive-may-three-routes-comparison--6-保険留学資格との依存">6. 保険・留学資格との依存</a><a href="#p-research-archive-may-three-routes-comparison--7-地図リンクgoogle-マップ検索公共の場所のみ">7. 地図リンク（Google マップ検索。公共の場所のみ）</a><a href="#p-research-archive-may-three-routes-comparison--8-受入条件issue-51-の次タスク">8. 受入条件（Issue #51 の次タスク）</a><a href="#p-research-archive-may-three-routes-comparison--9-未確認後続">9. 未確認・後続</a><a href="#p-research-archive-may-three-routes-comparison--10-調査ログ2026-10-20各1530秒のタイムアウト">10. 調査ログ（2026-10-20、各15〜30秒のタイムアウト）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2217,7 +2288,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-baguio-diving" data-group="現地調査" data-title="バギオ発の週末ダイビング（2〜4月）"><div class="wrap page">
 
-<h1>バギオ発の週末ダイビング（2〜4月）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>バギオ発の週末ダイビング（2〜4月）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-baguio-diving--結論暫定">結論（暫定）</a><a href="#p-research-baguio-diving--比較表issue-3-の必須列">比較表（Issue #3 の必須列）</a><a href="#p-research-baguio-diving--週末モデル推定予約時刻表は未確認">週末モデル（推定。予約・時刻表は未確認）</a><a href="#p-research-baguio-diving--ショップに尋ねる項目問い合わせ文案の材料送信はしていない">ショップに尋ねる項目（問い合わせ文案の材料。送信はしていない）</a><a href="#p-research-baguio-diving--最優先の安全確認潜水後にバギオへ戻る際の標高上昇">最優先の安全確認：潜水後にバギオへ戻る際の標高上昇</a><a href="#p-research-baguio-diving--出典確認日-2026-10-17">出典（確認日 2026-10-17）</a><a href="#p-research-baguio-diving--調査ログ2026-10-17">調査ログ（2026-10-17）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2257,7 +2328,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-baguio-sightseeing" data-group="現地調査" data-title="バギオ週末観光（2〜4月）と季節・雨天代替"><div class="wrap page">
 
-<h1>バギオ週末観光（2〜4月）と季節・雨天代替</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>バギオ週末観光（2〜4月）と季節・雨天代替</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-baguio-sightseeing--0-表記ルール">0. 表記ルール</a><a href="#p-research-baguio-sightseeing--1-要点">1. 要点</a><a href="#p-research-baguio-sightseeing--2-市内baguio-visita-公式データ">2. 市内（Baguio VISITA 公式データ）</a><a href="#p-research-baguio-sightseeing--3-日帰り1泊2日">3. 日帰り・1泊2日</a><a href="#p-research-baguio-sightseeing--4-季節24月">4. 季節（2〜4月）</a><a href="#p-research-baguio-sightseeing--5-モデルコース推計を含む1名php">5. モデルコース（推計を含む。1名、PHP）</a><a href="#p-research-baguio-sightseeing--6-未確認事項">6. 未確認事項</a><a href="#p-research-baguio-sightseeing--7-調査ログ2026-10-17">7. 調査ログ（2026-10-17）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2309,7 +2380,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-capetown-diving" data-group="現地調査" data-title="ケープタウン発の週末ダイビング（6〜7月・冬）"><div class="wrap page">
 
-<h1>ケープタウン発の週末ダイビング（6〜7月・冬）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>ケープタウン発の週末ダイビング（6〜7月・冬）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-capetown-diving--結論暫定">結論（暫定）</a><a href="#p-research-capetown-diving--比較表issue-3-の必須列">比較表（Issue #3 の必須列）</a><a href="#p-research-capetown-diving--冬季67月の条件と運休リスク">冬季（6〜7月）の条件と運休リスク</a><a href="#p-research-capetown-diving--保険健康">保険・健康</a><a href="#p-research-capetown-diving--ショップに尋ねる項目問い合わせ文案の材料送信はしていない">ショップに尋ねる項目（問い合わせ文案の材料。送信はしていない）</a><a href="#p-research-capetown-diving--出典確認日-2026-10-17">出典（確認日 2026-10-17）</a><a href="#p-research-capetown-diving--調査ログ2026-10-17">調査ログ（2026-10-17）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2345,7 +2416,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-capetown-sightseeing" data-group="現地調査" data-title="ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替"><div class="wrap page">
 
-<h1>ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-capetown-sightseeing--0-表記ルール">0. 表記ルール</a><a href="#p-research-capetown-sightseeing--1-要点">1. 要点</a><a href="#p-research-capetown-sightseeing--2-候補地料金区分つき">2. 候補地（料金区分つき）</a><a href="#p-research-capetown-sightseeing--3-週末の日帰り1泊2日が成立する条件">3. 週末の日帰り・1泊2日が成立する条件</a><a href="#p-research-capetown-sightseeing--4-冬の天候統計">4. 冬の天候統計</a><a href="#p-research-capetown-sightseeing--5-モデルコース推計を含む1名zar">5. モデルコース（推計を含む。1名、ZAR）</a><a href="#p-research-capetown-sightseeing--6-未確認事項">6. 未確認事項</a><a href="#p-research-capetown-sightseeing--7-調査ログ2026-10-172026-10-27更新">7. 調査ログ（2026-10-17／2026-10-27更新）</a><a href="#p-research-capetown-sightseeing--8-追補2026-11-13泊まるエリアと移動治安案gの終点がケープタウン">8. 追補（2026-11-13）：泊まるエリアと移動・治安（案Gの終点がケープタウン）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2406,7 +2477,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-deep-research-report" data-group="現地調査" data-title="ケープタウン語学留学・最適選定調査報告"><div class="wrap page">
 
-<h1>ケープタウン語学留学・最適選定調査報告</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>ケープタウン語学留学・最適選定調査報告</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-deep-research-report--結論と最終推奨">結論と最終推奨</a><a href="#p-research-deep-research-report--学校の教育ビジネス英語交流環境を比較">学校の教育・ビジネス英語・交流環境を比較</a><a href="#p-research-deep-research-report--友達の作りやすさ口コミ宿泊環境">友達の作りやすさ・口コミ・宿泊環境</a><a href="#p-research-deep-research-report--費用と費用対効果">費用と費用対効果</a><a href="#p-research-deep-research-report--ケープタウンで過ごす留学生活のシミュレーション">ケープタウンで過ごす留学生活のシミュレーション</a><a href="#p-research-deep-research-report--安全性冬の気候滞在手続き">安全性・冬の気候・滞在手続き</a><a href="#p-research-deep-research-report--最終評価と予約前の問い合わせ文案">最終評価と予約前の問い合わせ文案</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2610,7 +2681,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-food-and-living" data-group="現地調査" data-title="現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）"><div class="wrap page">
 
-<h1>現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-food-and-living--1-要点">1. 要点</a><a href="#p-research-food-and-living--2-バギオ寮食中心">2. バギオ（寮食中心）</a><a href="#p-research-food-and-living--3-ケープタウン自炊中心">3. ケープタウン（自炊中心）</a><a href="#p-research-food-and-living--4-匿名モデルの試算ケープタウンの食費3パターン1人8週間">4. 匿名モデルの試算：ケープタウンの食費3パターン（1人、8週間）</a><a href="#p-research-food-and-living--5-未確認事項">5. 未確認事項</a><a href="#p-research-food-and-living--6-問い合わせの文案送信はしていない">6. 問い合わせの文案（送信はしていない）</a><a href="#p-research-food-and-living--7-調査ログ2026-10-17">7. 調査ログ（2026-10-17）</a><a href="#p-research-food-and-living--8-追補2026-11-08ケープタウンの予算sc-0105sc-08の根拠を取り直した">8. 追補（2026-11-08）：ケープタウンの予算（SC-01〜05・SC-08）の根拠を取り直した</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2674,7 +2745,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-long-stay-insurance" data-group="現地調査" data-title="長期留学＋周遊旅行の保険：カード90日・期間の穴・3/6/7か月の比較（匿名モデル・調査版）"><div class="wrap page">
 
-<h1>長期留学＋周遊旅行の保険：カード90日・期間の穴・3/6/7か月の比較（匿名モデル・調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>長期留学＋周遊旅行の保険：カード90日・期間の穴・3/6/7か月の比較（匿名モデル・調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-long-stay-insurance--1-結論の表">1. 結論の表</a><a href="#p-research-long-stay-insurance--2-前提">2. 前提</a><a href="#p-research-long-stay-insurance--3-カード付帯保険">3. カード付帯保険</a><a href="#p-research-long-stay-insurance--4-長期の旅行保険">4. 長期の旅行保険</a><a href="#p-research-long-stay-insurance--5-期間の算数">5. 期間の算数</a><a href="#p-research-long-stay-insurance--6-補償範囲の論点各社への質問とページの記載">6. 補償範囲の論点（各社への質問と、ページの記載）</a><a href="#p-research-long-stay-insurance--7-必須確認事項p0p1と文案">7. 必須確認事項（P0/P1）と文案</a><a href="#p-research-long-stay-insurance--8-調査ログ">8. 調査ログ</a><a href="#p-research-long-stay-insurance--9-残課題">9. 残課題</a><a href="#p-research-long-stay-insurance--10-追補2026-11-08予算の保険料cm-01の根拠を取り直した">10. 追補（2026-11-08）：予算の保険料（CM-01）の根拠を取り直した</a><a href="#p-research-long-stay-insurance--11-追補2026-11-10safetywing-nomad-insurance-を公式ページで読み直した">11. 追補（2026-11-10）：SafetyWing Nomad Insurance を公式ページで読み直した</a><a href="#p-research-long-stay-insurance--12-追補2026-11-11案gの国で医療搬送がどこへ行くか英国fcdoの保健ページ">12. 追補（2026-11-11）：案Gの国で、医療搬送がどこへ行くか（英国FCDOの保健ページ）</a><a href="#p-research-long-stay-insurance--13-追補2026-11-16tbiho-の留学向け条件と保険料例を公式の代理店ページで確認した">13. 追補（2026-11-16）：t@biho の留学向け条件と保険料例を、公式の代理店ページで確認した</a><a href="#p-research-long-stay-insurance--14-追補2026-11-16ダイビング事故の保険danは旅行保険と別に確認が必要">14. 追補（2026-11-16）：ダイビング事故の保険（DAN）は、旅行保険と別に確認が必要</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2812,7 +2883,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-madagascar-day-models-and-vfa-to-cpt" data-group="現地調査" data-title="マダガスカルの日数モデル（7〜8日／10日／12日）の費用の枠と、ビクトリアの滝周辺→ケープタウンの空路（調査版）"><div class="wrap page">
 
-<h1>マダガスカルの日数モデル（7〜8日／10日／12日）の費用の枠と、ビクトリアの滝周辺→ケープタウンの空路（調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>マダガスカルの日数モデル（7〜8日／10日／12日）の費用の枠と、ビクトリアの滝周辺→ケープタウンの空路（調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--1-結論先に">1. 結論（先に）</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--2-ビクトリアの滝周辺--ケープタウンの空路">2. ビクトリアの滝周辺 → ケープタウンの空路</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--3-マダガスカル日数モデルの費用の枠">3. マダガスカル：日数モデルの費用の枠</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--4-予算dataexpensescsvへの反映">4. 予算（data/expenses.csv）への反映</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--5-未確認次の取得先">5. 未確認（次の取得先）</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--6-調査ログ2026-11-08">6. 調査ログ（2026-11-08）</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--7-追補2026-11-11案gの空路のうちモーリシャス発の2区間を運航会社の公式ページで確認した">7. 追補（2026-11-11）：案Gの空路のうち、モーリシャス発の2区間を運航会社の公式ページで確認した</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--8-追補2026-11-11案gを日付と曜日に落とした通しの日別表モデル">8. 追補（2026-11-11）：案Gを日付と曜日に落とした通しの日別表（モデル）</a><a href="#p-research-madagascar-day-models-and-vfa-to-cpt--9-追補2026-11-13ヨハネスブルグビクトリアフォールズの空路airlink-の公式ページは路線の記載なし">9. 追補（2026-11-13）：ヨハネスブルグ→ビクトリアフォールズの空路（Airlink の公式ページは路線の記載なし）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2899,7 +2970,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-manila-area-guide" data-group="現地調査" data-title="マニラ周辺の観光とダイビング（バギオ滞在の前後・週末向け）"><div class="wrap page">
 
-<h1>マニラ周辺の観光とダイビング（バギオ滞在の前後・週末向け）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>マニラ周辺の観光とダイビング（バギオ滞在の前後・週末向け）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-manila-area-guide--0-結論先に">0. 結論（先に）</a><a href="#p-research-manila-area-guide--1-ダイビングの比較マニラ発">1. ダイビングの比較（マニラ発）</a><a href="#p-research-manila-area-guide--2-マニラ市内の観光半日1日">2. マニラ市内の観光（半日〜1日）</a><a href="#p-research-manila-area-guide--3-日帰り近郊">3. 日帰り・近郊</a><a href="#p-research-manila-area-guide--4-費用の目安確認できた金額だけphp">4. 費用の目安（確認できた金額だけ。PHP）</a><a href="#p-research-manila-area-guide--5-未確認事項次の取得先">5. 未確認事項（次の取得先）</a><a href="#p-research-manila-area-guide--6-出典一覧">6. 出典一覧</a><a href="#p-research-manila-area-guide--7-調査ログ2026-11-16">7. 調査ログ（2026-11-16）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -2943,7 +3014,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-may-madagascar-vfa-redesign" data-group="現地調査" data-title="5月アフリカ周遊の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国（骨組み・調査版）"><div class="wrap page">
 
-<h1>5月アフリカ周遊の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国（骨組み・調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>5月アフリカ周遊の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国（骨組み・調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-may-madagascar-vfa-redesign--2026-11-08追加比較mauritiusを往復の結節点とする35日モデルissue-80">2026-11-08追加比較｜Mauritiusを往復の結節点とする35日モデル（Issue #80）</a><a href="#p-research-may-madagascar-vfa-redesign--0-旅行順序の最新方針issue-462026-11-08">0. 旅行順序の最新方針（Issue #46、2026-11-08）</a><a href="#p-research-may-madagascar-vfa-redesign--1-方針issue-77-の要約">1. 方針（Issue #77 の要約）</a><a href="#p-research-may-madagascar-vfa-redesign--2-案の構成ルート作成ページの案gと同じ形">2. 案の構成（ルート作成ページの「案G」と同じ形）</a><a href="#p-research-may-madagascar-vfa-redesign--3-比較表の枠これから埋める">3. 比較表の枠（これから埋める）</a><a href="#p-research-may-madagascar-vfa-redesign--4-航空券の参考価格利用者申告未検証">4. 航空券の参考価格（利用者申告・未検証）</a><a href="#p-research-may-madagascar-vfa-redesign--5-次に調べること受入条件との対応">5. 次に調べること（受入条件との対応）</a><a href="#p-research-may-madagascar-vfa-redesign--6-公開データの確認">6. 公開データの確認</a><a href="#p-research-may-madagascar-vfa-redesign--7-調査ログ2026-11-08">7. 調査ログ（2026-11-08）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3047,7 +3118,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-philippines-pines" data-group="現地調査" data-title="04 フィリピン語学留学の匿名費用モデル：PINES International Academy／バギオ"><div class="wrap page">
 
-<h1>04 フィリピン語学留学の匿名費用モデル：PINES International Academy／バギオ</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>04 フィリピン語学留学の匿名費用モデル：PINES International Academy／バギオ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-philippines-pines--1-概要">1. 概要</a><a href="#p-research-philippines-pines--2-費用">2. 費用</a><a href="#p-research-philippines-pines--3-入国滞在手続き日本国籍">3. 入国・滞在手続き（日本国籍）</a><a href="#p-research-philippines-pines--4-現地生活">4. 現地生活</a><a href="#p-research-philippines-pines--5-安全健康">5. 安全・健康</a><a href="#p-research-philippines-pines--6-学習の記録滞在中に記入">6. 学習の記録（滞在中に記入）</a><a href="#p-research-philippines-pines--7-未確認事項要照合">7. 未確認事項（要照合）</a><a href="#p-research-philippines-pines--参考リンク">参考リンク</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3104,7 +3175,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-prep-priority1-tasks" data-group="現地調査" data-title="優先度1の準備タスク：公式情報の調査結果（Issue #20）"><div class="wrap page">
 
-<h1>優先度1の準備タスク：公式情報の調査結果（Issue #20）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>優先度1の準備タスク：公式情報の調査結果（Issue #20）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-prep-priority1-tasks--結論35行">結論（3〜5行）</a><a href="#p-research-prep-priority1-tasks--前提">前提</a><a href="#p-research-prep-priority1-tasks--調査結果">調査結果</a><a href="#p-research-prep-priority1-tasks--未確認要確認事項">未確認・要確認事項</a><a href="#p-research-prep-priority1-tasks--残課題次のアクション">残課題・次のアクション</a><a href="#p-research-prep-priority1-tasks--公開データの確認16">公開データの確認(#16)</a><a href="#p-research-prep-priority1-tasks--検索ログ">検索ログ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3177,7 +3248,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-prep-priority2-tasks" data-group="現地調査" data-title="優先度1の残りと優先度2の準備タスク：公式情報の調査結果（Issue #20）"><div class="wrap page">
 
-<h1>優先度1の残りと優先度2の準備タスク：公式情報の調査結果（Issue #20）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>優先度1の残りと優先度2の準備タスク：公式情報の調査結果（Issue #20）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-prep-priority2-tasks--結論35行">結論（3〜5行）</a><a href="#p-research-prep-priority2-tasks--前提">前提</a><a href="#p-research-prep-priority2-tasks--調査結果">調査結果</a><a href="#p-research-prep-priority2-tasks--調べていないもの今回の対象外または取得できなかった">調べていないもの（今回の対象外または取得できなかった）</a><a href="#p-research-prep-priority2-tasks--公開データの確認16">公開データの確認(#16)</a><a href="#p-research-prep-priority2-tasks--検索ログ">検索ログ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3261,7 +3332,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-safety-and-health" data-group="現地調査" data-title="バギオ・ケープタウンの治安・健康・日常移動"><div class="wrap page">
 
-<h1>バギオ・ケープタウンの治安・健康・日常移動</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>バギオ・ケープタウンの治安・健康・日常移動</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-safety-and-health--1-要点">1. 要点</a><a href="#p-research-safety-and-health--2-外務省の危険情報スポット情報領事メール">2. 外務省の危険情報・スポット情報・領事メール</a><a href="#p-research-safety-and-health--3-健康食品水感染症">3. 健康（食品・水・感染症）</a><a href="#p-research-safety-and-health--4-災害自然環境冬の海">4. 災害・自然環境・冬の海</a><a href="#p-research-safety-and-health--5-医療機関緊急連絡先">5. 医療機関・緊急連絡先</a><a href="#p-research-safety-and-health--6-保険">6. 保険</a><a href="#p-research-safety-and-health--7-日常の行動の目安">7. 日常の行動の目安</a><a href="#p-research-safety-and-health--8-未確認事項">8. 未確認事項</a><a href="#p-research-safety-and-health--9-出発前チェックリスト">9. 出発前チェックリスト</a><a href="#p-research-safety-and-health--10-出典一覧確認日-2026-10-17">10. 出典一覧（確認日 2026-10-17）</a><a href="#p-research-safety-and-health--11-調査ログ">11. 調査ログ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3341,7 +3412,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-second-school" data-group="現地調査" data-title="06 ケープタウン語学留学8週間の比較モデル【未確定】"><div class="wrap page">
 
-<h1>06 ケープタウン語学留学8週間の比較モデル【未確定】</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>06 ケープタウン語学留学8週間の比較モデル【未確定】</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-second-school--1-計画案">1. 計画案</a><a href="#p-research-second-school--2-費用見積">2. 費用（見積）</a><a href="#p-research-second-school--3-ビザ入国日本国籍">3. ビザ・入国（日本国籍）</a><a href="#p-research-second-school--4-安全情報">4. 安全情報</a><a href="#p-research-second-school--5-決めること意思決定メモ">5. 決めること（意思決定メモ）</a><a href="#p-research-second-school--6-体験の記録滞在中に記入">6. 体験の記録（滞在中に記入）</a><a href="#p-research-second-school--7-未確認事項">7. 未確認事項</a><a href="#p-research-second-school--参考リンク">参考リンク</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3423,7 +3494,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-sources" data-group="現地調査" data-title="一次資料・調査ログ"><div class="wrap page">
 
-<h1>一次資料・調査ログ</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>一次資料・調査ログ</h1></div>
 
 <article>
 <p>最終確認：2026-10-16（ダイビング・冬服・食事/生活費・治安/健康関連は2026-10-17）。治安・健康の詳細な出典一覧と調査ログは <a href="#p-research-safety-and-health">safety-and-health.md</a> §10・§11 にある。公式サイト上の料金でも<strong>2027年価格・空き状況・制度改定を保証しない</strong>。サイトの利用条件・対象者（現地住民限定等）を読む。</p>
@@ -3445,7 +3516,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-southern-africa-countries" data-group="現地調査" data-title="2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）"><div class="wrap page">
 
-<h1>2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-southern-africa-countries--0-方針修正体験の多様性を優先issue-38-2026-10-18">0. 方針修正：体験の多様性を優先（Issue #38, 2026-10-18）</a><a href="#p-research-southern-africa-countries--1-結論s1s5-比較表旧版の比較第0章の再比較で置き換え">1. 結論（S1–S5 比較表）【旧版の比較。第0章の再比較で置き換え】</a><a href="#p-research-southern-africa-countries--2-前提">2. 前提</a><a href="#p-research-southern-africa-countries--3-国別日数費用体験季節アクセス注意">3. 国別（日数・費用・体験・季節・アクセス・注意）</a><a href="#p-research-southern-africa-countries--4-日数の積み上げ式">4. 日数の積み上げ（式）</a><a href="#p-research-southern-africa-countries--5-広域移動航空陸路">5. 広域移動（航空・陸路）</a><a href="#p-research-southern-africa-countries--6-査証国境安全">6. 査証・国境・安全</a><a href="#p-research-southern-africa-countries--7-費用の構造二重計上しない">7. 費用の構造（二重計上しない）</a><a href="#p-research-southern-africa-countries--8-旅行順序の仮案予約ではない相対日数">8. 旅行順序の仮案（予約ではない・相対日数）</a><a href="#p-research-southern-africa-countries--9-主要地点のgoogle-mapsリンク">9. 主要地点のGoogle Mapsリンク</a><a href="#p-research-southern-africa-countries--10-issue-38-初版からの修正点">10. Issue #38 初版からの修正点</a><a href="#p-research-southern-africa-countries--11-未確認後続タスクr1r9">11. 未確認・後続タスク（R1–R9）</a><a href="#p-research-southern-africa-countries--12-公開データの確認16">12. 公開データの確認（#16）</a><a href="#p-research-southern-africa-countries--13-調査ログ2026-10-18">13. 調査ログ（2026-10-18）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3585,7 +3656,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-subic-wreck-diving" data-group="現地調査" data-title="スービック湾の沈船ダイビング（マニラ発・アドバンス認定向け）"><div class="wrap page">
 
-<h1>スービック湾の沈船ダイビング（マニラ発・アドバンス認定向け）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>スービック湾の沈船ダイビング（マニラ発・アドバンス認定向け）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-subic-wreck-diving--0-結論先に">0. 結論（先に）</a><a href="#p-research-subic-wreck-diving--1-主な沈船と必要な認定">1. 主な沈船と必要な認定</a><a href="#p-research-subic-wreck-diving--2-時期2027年25月">2. 時期（2027年2〜5月）</a><a href="#p-research-subic-wreck-diving--3-料金1人phpすべて2026年掲載値">3. 料金（1人、PHP、すべて2026年掲載値）</a><a href="#p-research-subic-wreck-diving--4-マニラからの行き方と宿">4. マニラからの行き方と宿</a><a href="#p-research-subic-wreck-diving--5-生物保証なし">5. 生物（保証なし）</a><a href="#p-research-subic-wreck-diving--6-費用モデル暫定php">6. 費用モデル（暫定・PHP）</a><a href="#p-research-subic-wreck-diving--65-日程モデル2027-02-04木昼に到着--スービックで1泊--25金に潜る--夜マニラへ">6.5 日程モデル：2027-02-04（木）昼に到着 → スービックで1泊 → 2/5（金）に潜る → 夜マニラへ</a><a href="#p-research-subic-wreck-diving--7-未確認事項次の取得先">7. 未確認事項（次の取得先）</a><a href="#p-research-subic-wreck-diving--8-出典一覧">8. 出典一覧</a><a href="#p-research-subic-wreck-diving--9-調査ログ2026-11-15">9. 調査ログ（2026-11-15）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3647,7 +3718,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-vaccines-and-medicines-checklist" data-group="現地調査" data-title="予防接種・常備薬の一覧（Issue #8・#20）"><div class="wrap page">
 
-<h1>予防接種・常備薬の一覧（Issue #8・#20）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>予防接種・常備薬の一覧（Issue #8・#20）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-vaccines-and-medicines-checklist--結論35行">結論（3〜5行）</a><a href="#p-research-vaccines-and-medicines-checklist--前提">前提</a><a href="#p-research-vaccines-and-medicines-checklist--1-予防接種の一覧">1. 予防接種の一覧</a><a href="#p-research-vaccines-and-medicines-checklist--2-接種の時期の目安推奨目安医師の判断ではない">2. 接種の時期の目安（推奨目安・医師の判断ではない）</a><a href="#p-research-vaccines-and-medicines-checklist--3-黄熱と周遊ルート">3. 黄熱と周遊ルート</a><a href="#p-research-vaccines-and-medicines-checklist--4-マラリア予防薬処方薬">4. マラリア予防薬（処方薬）</a><a href="#p-research-vaccines-and-medicines-checklist--5-持参を検討する薬用品公式の案内に基づく一般的な目安">5. 持参を検討する薬・用品（公式の案内に基づく一般的な目安）</a><a href="#p-research-vaccines-and-medicines-checklist--6-渡航外来で聞くことのリスト">6. 渡航外来で聞くことのリスト</a><a href="#p-research-vaccines-and-medicines-checklist--未確認要確認事項">未確認・要確認事項</a><a href="#p-research-vaccines-and-medicines-checklist--公開データの確認16">公開データの確認(#16)</a><a href="#p-research-vaccines-and-medicines-checklist--検索ログ">検索ログ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3696,7 +3767,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-victoria-falls-chobe-livingstone-model" data-group="現地調査" data-title="ビクトリアの滝周辺3か国のモデルルート：チョベサファリ（ボツワナ）とリビングストン滞在・滝以外の過ごし方（調査版）"><div class="wrap page">
 
-<h1>ビクトリアの滝周辺3か国のモデルルート：チョベサファリ（ボツワナ）とリビングストン滞在・滝以外の過ごし方（調査版）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>ビクトリアの滝周辺3か国のモデルルート：チョベサファリ（ボツワナ）とリビングストン滞在・滝以外の過ごし方（調査版）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-victoria-falls-chobe-livingstone-model--1-結論先に">1. 結論（先に）</a><a href="#p-research-victoria-falls-chobe-livingstone-model--2-チョベ国立公園ボツワナ日帰りサファリ">2. チョベ国立公園（ボツワナ）：日帰りサファリ</a><a href="#p-research-victoria-falls-chobe-livingstone-model--3-リビングストンザンビア滝以外の過ごし方">3. リビングストン（ザンビア）：滝以外の過ごし方</a><a href="#p-research-victoria-falls-chobe-livingstone-model--4-国境と査証確認済み">4. 国境と査証（確認済み）</a><a href="#p-research-victoria-falls-chobe-livingstone-model--5-モデルルート日別いずれも匿名モデル未予約">5. モデルルート（日別。いずれも匿名モデル・未予約）</a><a href="#p-research-victoria-falls-chobe-livingstone-model--6-予算の積み上げ1名usd建てで掲載のある費目のみ円換算は為替レート取得後">6. 予算の積み上げ（1名、USD建てで掲載のある費目のみ。円換算は為替レート取得後）</a><a href="#p-research-victoria-falls-chobe-livingstone-model--7-未確認次の取得先">7. 未確認（次の取得先）</a><a href="#p-research-victoria-falls-chobe-livingstone-model--8-調査ログ2026-11-08">8. 調査ログ（2026-11-08）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3791,7 +3862,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-visa-and-immigration" data-group="現地調査" data-title="査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）"><div class="wrap page">
 
-<h1>査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-visa-and-immigration--1-要点結論と確度">1. 要点（結論と確度）</a><a href="#p-research-visa-and-immigration--2-詳細">2. 詳細</a><a href="#p-research-visa-and-immigration--3-ケース別の入出国表南アフリカ">3. ケース別の入出国表（南アフリカ）</a><a href="#p-research-visa-and-immigration--4-実行可否の判定現時点">4. 実行可否の判定（現時点）</a><a href="#p-research-visa-and-immigration--5-費用試算一般料金モデル計算式つき">5. 費用試算（一般料金・モデル、計算式つき）</a><a href="#p-research-visa-and-immigration--6-未確認事項理由つき">6. 未確認事項（理由つき）</a><a href="#p-research-visa-and-immigration--7-問い合わせ文案送信しない文案のみ個人情報欄は空欄">7. 問い合わせ文案（送信しない。文案のみ。個人情報欄は空欄）</a><a href="#p-research-visa-and-immigration--8-出典一覧確認日はすべて-2026-10-17">8. 出典一覧（確認日はすべて 2026-10-17）</a><a href="#p-research-visa-and-immigration--9-調査ログ2026-10-17main-基準の再検証">9. 調査ログ（2026-10-17、main 基準の再検証）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3917,7 +3988,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-research-winter-clothing" data-group="現地調査" data-title="ケープタウン 6〜7月の衣類と現地調達・防寒"><div class="wrap page">
 
-<h1>ケープタウン 6〜7月の衣類と現地調達・防寒</h1>
+<div class="page-head"><span class="tag">現地調査</span><h1>ケープタウン 6〜7月の衣類と現地調達・防寒</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-research-winter-clothing--1-要点結論と確度">1. 要点（結論と確度）</a><a href="#p-research-winter-clothing--2-詳細">2. 詳細</a><a href="#p-research-winter-clothing--3-日本から用意するか現地で買うか判断の目安">3. 日本から用意するか、現地で買うか（判断の目安）</a><a href="#p-research-winter-clothing--4-モデル試算一式を新規に揃える場合の参考1人">4. モデル試算（一式を新規に揃える場合の参考、1人）</a><a href="#p-research-winter-clothing--5-実行可否">5. 実行可否</a><a href="#p-research-winter-clothing--6-未確認事項理由">6. 未確認事項（理由）</a><a href="#p-research-winter-clothing--7-確認用の文案送信はしていない">7. 確認用の文案（送信はしていない）</a><a href="#p-research-winter-clothing--8-調査ログ">8. 調査ログ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -3984,7 +4055,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-countries-botswana" data-group="アフリカの国別" data-title="ボツワナ"><div class="wrap page">
 
-<h1>ボツワナ</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>ボツワナ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-botswana--概要">概要</a><a href="#p-countries-botswana--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-botswana--主な観光地">主な観光地</a><a href="#p-countries-botswana--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-botswana--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-botswana--安全健康">安全・健康</a><a href="#p-countries-botswana--行き方移動">行き方・移動</a><a href="#p-countries-botswana--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-botswana--未確認事項">未確認事項</a><a href="#p-countries-botswana--出典一覧">出典一覧</a><a href="#p-countries-botswana--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4090,7 +4161,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-eswatini" data-group="アフリカの国別" data-title="エスワティニ"><div class="wrap page">
 
-<h1>エスワティニ</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>エスワティニ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-eswatini--概要">概要</a><a href="#p-countries-eswatini--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-eswatini--主な観光地">主な観光地</a><a href="#p-countries-eswatini--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-eswatini--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-eswatini--安全健康">安全・健康</a><a href="#p-countries-eswatini--行き方移動">行き方・移動</a><a href="#p-countries-eswatini--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-eswatini--未確認事項">未確認事項</a><a href="#p-countries-eswatini--出典一覧">出典一覧</a><a href="#p-countries-eswatini--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4201,7 +4272,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-ethiopia" data-group="アフリカの国別" data-title="エチオピア"><div class="wrap page">
 
-<h1>エチオピア</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>エチオピア</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-ethiopia--概要">概要</a><a href="#p-countries-ethiopia--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-ethiopia--主な観光地">主な観光地</a><a href="#p-countries-ethiopia--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-ethiopia--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-ethiopia--安全健康">安全・健康</a><a href="#p-countries-ethiopia--行き方移動">行き方・移動</a><a href="#p-countries-ethiopia--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-ethiopia--未確認事項">未確認事項</a><a href="#p-countries-ethiopia--出典一覧">出典一覧</a><a href="#p-countries-ethiopia--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4322,7 +4393,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-kenya" data-group="アフリカの国別" data-title="ケニア"><div class="wrap page">
 
-<h1>ケニア</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>ケニア</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-kenya--概要">概要</a><a href="#p-countries-kenya--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-kenya--主な観光地">主な観光地</a><a href="#p-countries-kenya--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-kenya--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-kenya--安全健康">安全・健康</a><a href="#p-countries-kenya--行き方移動">行き方・移動</a><a href="#p-countries-kenya--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-kenya--未確認事項">未確認事項</a><a href="#p-countries-kenya--出典一覧">出典一覧</a><a href="#p-countries-kenya--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4473,7 +4544,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-lesotho" data-group="アフリカの国別" data-title="レソト"><div class="wrap page">
 
-<h1>レソト</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>レソト</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-lesotho--概要">概要</a><a href="#p-countries-lesotho--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-lesotho--主な観光地">主な観光地</a><a href="#p-countries-lesotho--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-lesotho--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-lesotho--安全健康">安全・健康</a><a href="#p-countries-lesotho--行き方移動">行き方・移動</a><a href="#p-countries-lesotho--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-lesotho--未確認事項">未確認事項</a><a href="#p-countries-lesotho--出典一覧">出典一覧</a><a href="#p-countries-lesotho--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4582,7 +4653,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-madagascar" data-group="アフリカの国別" data-title="マダガスカル"><div class="wrap page">
 
-<h1>マダガスカル</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>マダガスカル</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-madagascar--概要">概要</a><a href="#p-countries-madagascar--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-madagascar--主な観光地">主な観光地</a><a href="#p-countries-madagascar--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-madagascar--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-madagascar--安全健康">安全・健康</a><a href="#p-countries-madagascar--行き方移動">行き方・移動</a><a href="#p-countries-madagascar--モーリシャス接続の一次資料と短期ルート比較2026-10-26確認">モーリシャス接続の一次資料と短期ルート比較（2026-10-26確認）</a><a href="#p-countries-madagascar--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-madagascar--未確認事項">未確認事項</a><a href="#p-countries-madagascar--出典一覧">出典一覧</a><a href="#p-countries-madagascar--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4725,7 +4796,7 @@ CDC: 一部地域でマラリア予防薬を推奨。<a href="https://wwwnc.cdc.
 
 </div></section><section class="pg" id="p-countries-malawi" data-group="アフリカの国別" data-title="マラウイ"><div class="wrap page">
 
-<h1>マラウイ</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>マラウイ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-malawi--概要">概要</a><a href="#p-countries-malawi--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-malawi--主な観光地">主な観光地</a><a href="#p-countries-malawi--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-malawi--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-malawi--安全健康">安全・健康</a><a href="#p-countries-malawi--行き方移動">行き方・移動</a><a href="#p-countries-malawi--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-malawi--未確認事項">未確認事項</a><a href="#p-countries-malawi--出典一覧">出典一覧</a><a href="#p-countries-malawi--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4843,7 +4914,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-mauritius" data-group="アフリカの国別" data-title="モーリシャス"><div class="wrap page">
 
-<h1>モーリシャス</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>モーリシャス</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-mauritius--概要">概要</a><a href="#p-countries-mauritius--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-mauritius--主な観光地">主な観光地</a><a href="#p-countries-mauritius--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-mauritius--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-mauritius--安全健康">安全・健康</a><a href="#p-countries-mauritius--行き方移動">行き方・移動</a><a href="#p-countries-mauritius--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-mauritius--未確認事項">未確認事項</a><a href="#p-countries-mauritius--出典一覧">出典一覧</a><a href="#p-countries-mauritius--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -4929,7 +5000,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-mozambique" data-group="アフリカの国別" data-title="モザンビーク"><div class="wrap page">
 
-<h1>モザンビーク</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>モザンビーク</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-mozambique--概要">概要</a><a href="#p-countries-mozambique--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-mozambique--主な観光地">主な観光地</a><a href="#p-countries-mozambique--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-mozambique--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-mozambique--安全健康">安全・健康</a><a href="#p-countries-mozambique--行き方移動">行き方・移動</a><a href="#p-countries-mozambique--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-mozambique--未確認事項">未確認事項</a><a href="#p-countries-mozambique--出典一覧">出典一覧</a><a href="#p-countries-mozambique--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5049,7 +5120,7 @@ CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全
 
 </div></section><section class="pg" id="p-countries-namibia" data-group="アフリカの国別" data-title="ナミビア"><div class="wrap page">
 
-<h1>ナミビア</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>ナミビア</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-namibia--概要">概要</a><a href="#p-countries-namibia--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-namibia--主な観光地">主な観光地</a><a href="#p-countries-namibia--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-namibia--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-namibia--安全健康">安全・健康</a><a href="#p-countries-namibia--行き方移動">行き方・移動</a><a href="#p-countries-namibia--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-namibia--未確認事項">未確認事項</a><a href="#p-countries-namibia--出典一覧">出典一覧</a><a href="#p-countries-namibia--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5123,7 +5194,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-rwanda" data-group="アフリカの国別" data-title="ルワンダ"><div class="wrap page">
 
-<h1>ルワンダ</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>ルワンダ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-rwanda--概要">概要</a><a href="#p-countries-rwanda--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-rwanda--主な観光地">主な観光地</a><a href="#p-countries-rwanda--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-rwanda--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-rwanda--安全健康">安全・健康</a><a href="#p-countries-rwanda--行き方移動">行き方・移動</a><a href="#p-countries-rwanda--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-rwanda--未確認事項">未確認事項</a><a href="#p-countries-rwanda--出典一覧">出典一覧</a><a href="#p-countries-rwanda--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5237,7 +5308,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-south-africa" data-group="アフリカの国別" data-title="南アフリカ"><div class="wrap page">
 
-<h1>南アフリカ</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>南アフリカ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-south-africa--概要">概要</a><a href="#p-countries-south-africa--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-south-africa--主な観光地">主な観光地</a><a href="#p-countries-south-africa--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-south-africa--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-south-africa--安全健康">安全・健康</a><a href="#p-countries-south-africa--行き方移動">行き方・移動</a><a href="#p-countries-south-africa--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-south-africa--未確認事項">未確認事項</a><a href="#p-countries-south-africa--出典一覧">出典一覧</a><a href="#p-countries-south-africa--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5310,7 +5381,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-tanzania" data-group="アフリカの国別" data-title="タンザニア"><div class="wrap page">
 
-<h1>タンザニア</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>タンザニア</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-tanzania--概要">概要</a><a href="#p-countries-tanzania--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-tanzania--主な観光地">主な観光地</a><a href="#p-countries-tanzania--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-tanzania--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-tanzania--安全健康">安全・健康</a><a href="#p-countries-tanzania--行き方移動">行き方・移動</a><a href="#p-countries-tanzania--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-tanzania--未確認事項">未確認事項</a><a href="#p-countries-tanzania--出典一覧">出典一覧</a><a href="#p-countries-tanzania--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5438,7 +5509,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-uganda" data-group="アフリカの国別" data-title="ウガンダ"><div class="wrap page">
 
-<h1>ウガンダ</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>ウガンダ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-uganda--概要">概要</a><a href="#p-countries-uganda--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-uganda--主な観光地">主な観光地</a><a href="#p-countries-uganda--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-uganda--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-uganda--安全健康">安全・健康</a><a href="#p-countries-uganda--行き方移動">行き方・移動</a><a href="#p-countries-uganda--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-uganda--未確認事項">未確認事項</a><a href="#p-countries-uganda--出典一覧">出典一覧</a><a href="#p-countries-uganda--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5543,7 +5614,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-zambia" data-group="アフリカの国別" data-title="ザンビア"><div class="wrap page">
 
-<h1>ザンビア</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>ザンビア</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-zambia--概要">概要</a><a href="#p-countries-zambia--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-zambia--主な観光地">主な観光地</a><a href="#p-countries-zambia--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-zambia--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-zambia--安全健康">安全・健康</a><a href="#p-countries-zambia--行き方移動">行き方・移動</a><a href="#p-countries-zambia--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-zambia--未確認事項">未確認事項</a><a href="#p-countries-zambia--出典一覧">出典一覧</a><a href="#p-countries-zambia--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5654,7 +5725,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-countries-zimbabwe" data-group="アフリカの国別" data-title="ジンバブエ"><div class="wrap page">
 
-<h1>ジンバブエ</h1>
+<div class="page-head"><span class="tag">国別ページ</span><h1>ジンバブエ</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-countries-zimbabwe--概要">概要</a><a href="#p-countries-zimbabwe--おおよその位置の地図">おおよその位置の地図</a><a href="#p-countries-zimbabwe--主な観光地">主な観光地</a><a href="#p-countries-zimbabwe--おすすめの食べ物">おすすめの食べ物</a><a href="#p-countries-zimbabwe--ビザ入国日本国籍">ビザ・入国（日本国籍）</a><a href="#p-countries-zimbabwe--安全健康">安全・健康</a><a href="#p-countries-zimbabwe--行き方移動">行き方・移動</a><a href="#p-countries-zimbabwe--旅程の目安日数モデルコース季節費用評価">旅程の目安（日数・モデルコース・季節・費用・評価）</a><a href="#p-countries-zimbabwe--未確認事項">未確認事項</a><a href="#p-countries-zimbabwe--出典一覧">出典一覧</a><a href="#p-countries-zimbabwe--調査ログ">調査ログ</a></nav>
 <article>
 <p><a href="#p-maps-africa-countries">← アフリカ国別地図へ戻る</a></p>
@@ -5765,7 +5836,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-docs-01-timeline" data-group="計画・費用" data-title="2027年2〜8月：全体日程（匿名モデル）"><div class="wrap page">
 
-<h1>2027年2〜8月：全体日程（匿名モデル）</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>2027年2〜8月：全体日程（匿名モデル）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-01-timeline--日程月単位モデル">日程（月単位・モデル）</a><a href="#p-docs-01-timeline--計画の判断順">計画の判断順</a><a href="#p-docs-01-timeline--月別の見積自動">月別の見積（自動）</a></nav>
 <article>
 <p>最終確認：2026-10-17。地域ごとの時期・費用は <a href="#p-areas-baguio">地域別ページ</a>（下の AUTO ブロックは <code>py scripts/build_all.py</code> が生成）。<strong>フィリピン・南アフリカを比較することは目的ではない。</strong> 休職〜留学〜周遊〜帰国を1本の旅程として整理する匿名モデル。個別の雇用条件・予約内容は掲載しない。</p>
@@ -5783,7 +5854,7 @@ document.querySelectorAll('.cm-box').forEach(function(box){
 
 </div></section><section class="pg" id="p-docs-02-budget" data-group="計画・費用" data-title="6か月間の予算モデル（公開用・匿名）"><div class="wrap page">
 
-<h1>6か月間の予算モデル（公開用・匿名）</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>6か月間の予算モデル（公開用・匿名）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-02-budget--2026-11-085月航空券を独立表示する予算区分issue-80">2026-11-08｜5月航空券を独立表示する予算区分（Issue #80）</a><a href="#p-docs-02-budget--2026-11-09数量仮単価の編集場所markdown正本">2026-11-09｜数量×仮単価の編集場所（Markdown正本）</a><a href="#p-docs-02-budget--1-概要自動">1. 概要（自動）</a><a href="#p-docs-02-budget--2-月別自動">2. 月別（自動）</a><a href="#p-docs-02-budget--3-費目別プラン別自動">3. 費目別・プラン別（自動）</a><a href="#p-docs-02-budget--4-国地域別自動">4. 国・地域別（自動）</a><a href="#p-docs-02-budget--5-費用明細自動">5. 費用明細（自動）</a><a href="#p-docs-02-budget--6-為替レート自動">6. 為替レート（自動）</a><a href="#p-docs-02-budget--7-更新のしかた">7. 更新のしかた</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -5894,7 +5965,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-docs-03-preparation" data-group="計画・費用" data-title="出発前・現地・帰国の準備チェック"><div class="wrap page">
 
-<h1>出発前・現地・帰国の準備チェック</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>出発前・現地・帰国の準備チェック</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-03-preparation--先に確定すべきもの">先に確定すべきもの</a><a href="#p-docs-03-preparation--タスク一覧自動">タスク一覧（自動）</a><a href="#p-docs-03-preparation--後続作業">後続作業</a><a href="#p-docs-03-preparation--手続きの要点公的情報の調査結果2026-10-16-調査">手続きの要点（公的情報の調査結果・2026-10-16 調査）</a><a href="#p-docs-03-preparation--勤務先自治体に確認すること一般的な確認項目">勤務先・自治体に確認すること（一般的な確認項目）</a><a href="#p-docs-03-preparation--持ち物リスト準備中に更新">持ち物リスト（準備中に更新）</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -5975,7 +6046,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-docs-04-dashboard" data-group="計画・費用" data-title="トップページと地域別ページの見方・更新方法"><div class="wrap page">
 
-<h1>トップページと地域別ページの見方・更新方法</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>トップページと地域別ページの見方・更新方法</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-04-dashboard--手で書くもの生成されるもの">手で書くもの・生成されるもの</a><a href="#p-docs-04-dashboard--生成の流れ2段階順序固定">生成の流れ（2段階・順序固定）</a><a href="#p-docs-04-dashboard--地域別ページの構成">地域別ページの構成</a><a href="#p-docs-04-dashboard--トップページ">トップページ</a><a href="#p-docs-04-dashboard--見やすさの方針">見やすさの方針</a><a href="#p-docs-04-dashboard--内部入力csvの列">内部入力（CSV）の列</a><a href="#p-docs-04-dashboard--為替レートの更新">為替レートの更新</a><a href="#p-docs-04-dashboard--2026-11-095月周遊フェルミ費用のmarkdown編集先行実装">2026-11-09｜5月周遊フェルミ費用のMarkdown編集（先行実装）</a><a href="#p-docs-04-dashboard--今後の検討費用タスクを-markdown-の表に移すか">今後の検討（費用・タスクを Markdown の表に移すか）</a><a href="#p-docs-04-dashboard--公開に関する注意">公開に関する注意</a></nav>
 <article>
 <p>読者が見るのは <code>index.html</code>（トップ）と <code>areas/</code> の地域別ページ（バギオ・アフリカ周遊・ケープタウン・共通）です。どれも静的HTMLで、外部ライブラリ・サーバー不要、<code>file://</code> で直接開いて読めます。CSV は読者向けの表示対象ではありません（生成スクリプトの内部入力です）。</p>
@@ -6014,7 +6085,7 @@ py scripts/build_all.py --check  # 生成物が元データと一致するか検
 
 </div></section><section class="pg" id="p-docs-05-public-data-policy" data-group="計画・費用" data-title="公開データと非公開データの分離"><div class="wrap page">
 
-<h1>公開データと非公開データの分離</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>公開データと非公開データの分離</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-05-public-data-policy--公開可能">公開可能</a><a href="#p-docs-05-public-data-policy--本人が予算のために置く丸めた金額2026-11-15に追加">本人が予算のために置く丸めた金額（2026-11-15に追加）</a><a href="#p-docs-05-public-data-policy--非公開で管理">非公開で管理</a><a href="#p-docs-05-public-data-policy--pr提出とマージ前の確認">PR提出とマージ前の確認</a></nav>
 <article>
 <p>このリポジトリは公開されています。個人の実績と公開向けの調査情報を混ぜないでください。</p>
@@ -6031,7 +6102,7 @@ py scripts/build_all.py --check  # 生成物が元データと一致するか検
 
 </div></section><section class="pg" id="p-docs-06-predeparture-roadmap" data-group="計画・費用" data-title="海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）"><div class="wrap page">
 
-<h1>海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>海外語学留学・周遊の出発前準備ロードマップ（一般向けモデル）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-06-predeparture-roadmap--フィリピンで再確認する公的条件">フィリピンで再確認する公的条件</a><a href="#p-docs-06-predeparture-roadmap--日本側の住所社会保険海外渡航登録追加調査2026-10-17">日本側の住所・社会保険・海外渡航登録（追加調査：2026-10-17）</a><a href="#p-docs-06-predeparture-roadmap--期限を調べる際の運用">期限を調べる際の運用</a><a href="#p-docs-06-predeparture-roadmap--一次情報2026-10-17確認">一次情報（2026-10-17確認）</a></nav>
 <article>
 <p>最終調査日：2026-10-17。対象：語学学校への長期滞在と、その後の第三国周遊を予定する人の<strong>一般的な準備例</strong>。個人の支払い・雇用・旅券・予約・提出状況は掲載しない。</p>
@@ -6054,7 +6125,7 @@ py scripts/build_all.py --check  # 生成物が元データと一致するか検
 
 </div></section><section class="pg" id="p-docs-07-export" data-group="計画・費用" data-title="HTML・Word への変換（Markdown が正本）"><div class="wrap page">
 
-<h1>HTML・Word への変換（Markdown が正本）</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>HTML・Word への変換（Markdown が正本）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-07-export--使い方">使い方</a><a href="#p-docs-07-export--コミットするものしないもの">コミットするもの・しないもの</a><a href="#p-docs-07-export--対応している記法">対応している記法</a><a href="#p-docs-07-export--制限事項">制限事項</a></nav>
 <article>
 <p>このリポジトリの内容の正本は Markdown（<code>research/</code>・<code>docs/</code>・<code>blog/</code>）です。HTML と Word（.docx）は、Python スクリプトで Markdown から自動生成する派生物です。直接編集せず、必ず Markdown を直してから再生成してください。</p>
@@ -6073,7 +6144,7 @@ py scripts/build_all.py --check  # 生成物が元データと一致するか検
 
 </div></section><section class="pg" id="p-docs-08-handoff" data-group="計画・費用" data-title="AI・別PC向け 引き継ぎ手順書"><div class="wrap page">
 
-<h1>AI・別PC向け 引き継ぎ手順書</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>AI・別PC向け 引き継ぎ手順書</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-08-handoff--0-ページとファイルの置き場所早見表">0. ページとファイルの置き場所（早見表）</a><a href="#p-docs-08-handoff--1-セットアップ">1. セットアップ</a><a href="#p-docs-08-handoff--2-最初の15分チェックリスト">2. 最初の15分チェックリスト</a><a href="#p-docs-08-handoff--3-次の作業の見つけ方">3. 次の作業の見つけ方</a><a href="#p-docs-08-handoff--4-調査タスクの流れresearch">4. 調査タスクの流れ（research）</a><a href="#p-docs-08-handoff--5-0-フェルミ推定はmarkdownから編集2026-11-09より">5-0. フェルミ推定はMarkdownから編集（2026-11-09より）</a><a href="#p-docs-08-handoff--5-既存のレガシーcsvデータ変更タスク費用の全面移行は未了">5. 既存のレガシーCSVデータ変更タスク（費用の全面移行は未了）</a><a href="#p-docs-08-handoff--6-htmldocxの再生成">6. HTML・DOCXの再生成</a><a href="#p-docs-08-handoff--7-prの出し方">7. PRの出し方</a><a href="#p-docs-08-handoff--8-完了の定義">8. 完了の定義</a><a href="#p-docs-08-handoff--9-やってはいけないこと">9. やってはいけないこと</a><a href="#p-docs-08-handoff--10-faq過去の落とし穴">10. FAQ・過去の落とし穴</a><a href="#p-docs-08-handoff--11-skillsの使い方">11. skillsの使い方</a></nav>
 <article>
 <p>別のAI（Claude Code、Codex等）や別のPCで作業を引き継ぐための手順。要点は <a href="https://github.com/Rikkyhub/studying-abroad/blob/main/AGENTS.md">AGENTS.md</a>、ここはその詳細版。</p>
@@ -6114,7 +6185,7 @@ gh auth login        # アカウント: Rikkyhub</code></pre>
 
 </div></section><section class="pg" id="p-docs-09-issue-map" data-group="計画・費用" data-title="Issue対応表（AI・保守者向け）"><div class="wrap page">
 
-<h1>Issue対応表（AI・保守者向け）</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>Issue対応表（AI・保守者向け）</h1></div>
 
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -6136,7 +6207,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-docs-10-qa" data-group="計画・費用" data-title="確認待ち（QA）"><div class="wrap page">
 
-<h1>確認待ち（QA）</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>確認待ち（QA）</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-10-qa--1-費用の見積で確認が要るもの">1. 費用の見積で確認が要るもの</a><a href="#p-docs-10-qa--2-最優先の確認事項未完了">2. 最優先の確認事項（未完了）</a><a href="#p-docs-10-qa--25-費用行にひも付かない調べ残しchatgpt-に依頼">2.5 費用行にひも付かない調べ残し（ChatGPT に依頼）</a><a href="#p-docs-10-qa--3-調査資料ごとの未確認事項">3. 調査資料ごとの「未確認事項」</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
@@ -6166,7 +6237,7 @@ window.addEventListener("hashchange",fromHash);fromHash();
 
 </div></section><section class="pg" id="p-docs-11-route-builder" data-group="計画・費用" data-title="モデルルート作成"><div class="wrap page">
 
-<h1>モデルルート作成</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>モデルルート作成</h1></div>
 
 <article>
 <p>「日本 → 滞在地 → … → 日本」の骨組みを、自分で入力して作る画面です。まず滞在地の名前だけを入れ、時期・日数・移動・メモは決まったものから足していけます。空欄のままでも構いません。</p>
@@ -6307,7 +6378,7 @@ build();paintCmp();
 
 </div></section><section class="pg" id="p-docs-12-flights" data-group="計画・費用" data-title="飛行機代の内訳"><div class="wrap page">
 
-<h1>飛行機代の内訳</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>飛行機代の内訳</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-docs-12-flights--1-フィリピン">1. フィリピン</a><a href="#p-docs-12-flights--2-5月の周遊日本モーリシャスマダガスカルビクトリアの滝周辺ケープタウン">2. 5月の周遊（日本→モーリシャス→マダガスカル→ビクトリアの滝周辺→ケープタウン）</a><a href="#p-docs-12-flights--3-帰国">3. 帰国</a><a href="#p-docs-12-flights--全体">全体</a><a href="#p-docs-12-flights--備考行ごと">備考（行ごと）</a></nav>
 <article>
 <p>トップの「飛行機代」カードの内訳です。金額は検索サイトの参考値や予算枠で、公式の運賃でも購入できる保証でもありません。空欄は未取得で、0円ではありません。このページは <code>py scripts/build_all.py</code> が <code>data/expenses.csv</code> から自動で作ります。</p>
@@ -6326,7 +6397,7 @@ build();paintCmp();
 
 </div></section><section class="pg" id="p-docs-13-day-planner" data-group="計画・費用" data-title="日程プランナー（日数の割り振り）"><div class="wrap page">
 
-<h1>日程プランナー（日数の割り振り）</h1>
+<div class="page-head"><span class="tag">計画・費用</span><h1>日程プランナー（日数の割り振り）</h1></div>
 
 <article>
 <p>期間（例：5/4〜6/6）を、どの国・町に何日ずつ使うかを入れて、残り日数を見ながら予定を組む画面です。最初の区間（例：モーリシャス、マダガスカル）を決めると、その後に使える日数が自動で出ます。</p>
@@ -6465,7 +6536,7 @@ build();
 
 </div></section><section class="pg" id="p-blog-article-ideas" data-group="ブログ" data-title="ブログの将来記事・調査の再利用"><div class="wrap page">
 
-<h1>ブログの将来記事・調査の再利用</h1>
+<div class="page-head"><span class="tag">ブログ</span><h1>ブログの将来記事・調査の再利用</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-blog-article-ideas--初期の記事案2026-10-16下の一覧に統合済み">初期の記事案（2026-10-16、下の一覧に統合済み）</a><a href="#p-blog-article-ideas--記事化のルール">記事化のルール</a><a href="#p-blog-article-ideas--記事候補一覧自動">記事候補一覧（自動）</a><a href="#p-blog-article-ideas--下書きのテンプレート">下書きのテンプレート</a></nav>
 <article>
 <p><strong>実際の経験と準備中の調査を分ける</strong>。記事候補は公開原稿ではない。<a href="https://github.com/Rikkyhub/studying-abroad/issues/7" target="_blank" rel="noopener">Issue #7</a>。</p>
@@ -6506,7 +6577,7 @@ status: 下書き
 
 </div></section><section class="pg" id="p-blog-experience-log" data-group="ブログ" data-title="体験/実費の記録フォーム"><div class="wrap page">
 
-<h1>体験/実費の記録フォーム</h1>
+<div class="page-head"><span class="tag">ブログ</span><h1>体験/実費の記録フォーム</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#p-blog-experience-log--アフリカ渡航前の予防接種必要性接種間隔料金を分けて比較するa08一般向け下書き2026-10-31公式確認">アフリカ渡航前の予防接種：必要性・接種間隔・料金を分けて比較する（A08・一般向け下書き／2026-10-31公式確認）</a><a href="#p-blog-experience-log--退去荷物整理日本に残る固定費の整理a04一般向け記事下書き2026-10-31公式確認">退去・荷物整理・日本に残る固定費の整理（A04・一般向け記事下書き／2026-10-31公式確認）</a><a href="#p-blog-experience-log--長期語学留学の準備と手続きチェックリストa05一般向け記事下書き2026-10-31公式再確認">長期語学留学の準備と手続きチェックリスト（A05・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#p-blog-experience-log--pinesの英語コースを比較するマンツーマンとグループ授業a09一般向け記事下書き2026-10-31公式掲載内容の照合">PINESの英語コースを比較する：マンツーマンとグループ授業（A09・一般向け記事下書き／2026-10-31公式掲載内容の照合）</a><a href="#p-blog-experience-log--12週間の語学留学で英語力はどう変わるa11一般向け記事下書き2026-10-31公式再確認">12週間の語学留学で英語力はどう変わる？（A11・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#p-blog-experience-log--語学留学で困ったときの対処法授業寮医療お金在留資格a12一般向け記事下書き2026-10-31公式再確認">語学留学で困ったときの対処法：授業・寮・医療・お金・在留資格（A12・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#p-blog-experience-log--長期の海外経験を準備するときの判断モデルa23記事下書き2026-10-30一次資料再確認">長期の海外経験を準備するときの判断モデル（A23・記事下書き／2026-10-30一次資料再確認）</a><a href="#p-blog-experience-log--長期留学の準備で起きやすい失敗と対策a24記事下書き2026-10-30一次資料再確認">長期留学の準備で起きやすい失敗と対策（A24・記事下書き／2026-10-30一次資料再確認）</a><a href="#p-blog-experience-log--半年間の語学留学を考える人向け準備ガイドa25記事下書き2026-10-30一次資料再確認">半年間の語学留学を考える人向け準備ガイド（A25・記事下書き／2026-10-30一次資料再確認）</a><a href="#p-blog-experience-log--a22見積の初版と更新版を比較する一般向け記事下書き未公開">A22｜見積の初版と更新版を比較する（一般向け記事下書き・未公開）</a><a href="#p-blog-experience-log--a21留学周遊の予算モデルを更新する手順一般向け記事下書き未公開">A21｜留学・周遊の予算モデルを更新する手順（一般向け記事下書き・未公開）</a><a href="#p-blog-experience-log--アフリカ周遊の安全判断チェックa19記事下書き2026-10-30公式確認">アフリカ周遊の安全判断チェック（A19・記事下書き／2026-10-30公式確認）</a><a href="#p-blog-experience-log--30日間のアフリカ周遊費用を比較する方法a20記事下書き2026-10-30一次確認">30日間のアフリカ周遊費用を比較する方法（A20・記事下書き／2026-10-30一次確認）</a><a href="#p-blog-experience-log--アフリカ周遊の交通費を安全条件込みで比べるa16一般向け記事下書き2026-10-31一次確認">アフリカ周遊の交通費を安全条件込みで比べる（A16・一般向け記事下書き／2026-10-31一次確認）</a><a href="#p-blog-experience-log--チョベのサファリを比較するゲームドライブボート宿泊型a17一般向け記事下書き2026-10-31一次確認">チョベのサファリを比較する：ゲームドライブ・ボート・宿泊型（A17・一般向け記事下書き／2026-10-31一次確認）</a><a href="#p-blog-experience-log--南部アフリカのダイビング料金を比較するa18一般向け記事下書き2026-10-31一次確認">南部アフリカのダイビング料金を比較する（A18・一般向け記事下書き／2026-10-31一次確認）</a><a href="#p-blog-experience-log--記録単位1体験につき1件">記録単位（1体験につき1件）</a><a href="#p-blog-experience-log--サンプル空欄">サンプル空欄</a></nav>
 <article>
 <blockquote><p>現時点は<strong>未体験</strong>。帰国後に実体験として書けるよう、旅行中に以下を記録する。公開する際は私生活と場所のリアルタイム露出に注意。</p></blockquote>

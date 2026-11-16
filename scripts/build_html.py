@@ -444,6 +444,19 @@ def render(path: Path, root: Path = ROOT) -> str:
 FOLD_DOCS = {"docs/02-budget.md": "1. 概要", "docs/03-preparation.md": "", "docs/10-qa.md": "", "docs/09-issue-map.md": ""}
 
 
+PAGE_TAG_CLASS = {"baguio": "r-baguio", "africa": "r-may", "africa-aug": "r-aug", "capetown": "r-cape"}
+
+
+def page_tag(path: Path) -> str:
+    """見出しの上の小さなラベル（ページの種類。地域ページは地域の色）"""
+    d = path.parent.name
+    name = {"areas": "地域別", "countries": "国別ページ", "research": "現地調査", "docs": "計画・費用", "blog": "ブログ"}.get(d, "")
+    if not name:
+        return ""
+    cls = PAGE_TAG_CLASS.get(path.stem, "") if d == "areas" else ""
+    return f'<span class="tag {cls}">{name}</span>'.replace('class="tag "', 'class="tag"')
+
+
 def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     title, body, toc = convert(md)
     title = title or path.stem
@@ -479,6 +492,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         mark=GENERATED_MARK.format(src=rel),
         title=html.escape(title),
         section=GROUPS.get(path.parent.name, ""),
+        tag=page_tag(path),
         body=body,
         toc=toc_html,
         bar=bar("../", current),
@@ -590,9 +604,13 @@ def region_names(value: str) -> str:
     return "・".join(labels[r] for r in value.split(";") if r in labels)
 
 
-def card_link(href: str, inner: str) -> str:
-    """カード全体を1つのリンクにする（カードの中に別のリンクを入れない）"""
-    return f'<a class="card link" href="{esc(href)}">{inner}<span class="go">ページを見る</span></a>'
+REGION_CLASS = {"baguio": "reg-baguio", "africa": "reg-may", "africa-aug": "reg-aug", "capetown": "reg-cape", "common": "reg-common"}
+
+
+def card_link(href: str, inner: str, region: str = "") -> str:
+    """カード全体を1つのリンクにする（カードの中に別のリンクを入れない）。regionを渡すと地域の色の上線がつく"""
+    extra = f" reg {REGION_CLASS[region]}" if region in REGION_CLASS else ""
+    return f'<a class="card link{extra}" href="{esc(href)}">{inner}<span class="go">ページを見る</span></a>'
 
 
 def carousel(cards: list[str], label: str) -> str:
@@ -618,8 +636,8 @@ def region_cards(root: Path = ROOT) -> str:
         cards.append(card_link(f"areas/{key}.html",
                                f'<p class="eyebrow">{period}</p><h3>{esc(label)}</h3>'
                                f'<p class="sub">{status}</p>'
-                               + (f'<p class="sub">確認事項 <span class="n">{n}</span>件</p>' if n else '<p class="sub">確認事項は未登録（0件ではなく、まだ洗い出していません）</p>')))
-    return carousel(cards, "地域別")
+                               + (f'<p class="sub">確認事項 <span class="n">{n}</span>件</p>' if n else '<p class="sub">確認事項は未登録（0件ではなく、まだ洗い出していません）</p>'), key))
+    return '<div class="grid">' + "".join(cards) + '</div>'
 
 
 def timeline_cards(root: Path = ROOT) -> str:
@@ -630,8 +648,8 @@ def timeline_cards(root: Path = ROOT) -> str:
         key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
         cards.append(card_link(f"areas/{key}.html",
                                f'<p class="eyebrow">{esc(r["period"])}</p><h3>{esc(r["title"])}</h3>'
-                               f'<p class="status">{esc(r["status"])}</p><p class="sub">{esc(r["summary"])}</p>'))
-    return carousel(cards, "旅程")
+                               f'<p class="status">{esc(r["status"])}</p><p class="sub">{esc(r["summary"])}</p>', key))
+    return '<div class="grid">' + "".join(cards) + '</div>'
 
 
 FLIGHT_IDS = ("PH-11", "PH-12", "AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21", "SC-08")  # 国際線・国内線。バス・現地交通・査証は除外
@@ -707,7 +725,7 @@ def budget_cards(root: Path = ROOT) -> str:
     ]
     return ('<p class="sec-lead">金額はすべて公開料金などに基づく<strong>モデルの見積</strong>で、実費ではありません。'
             '各カードを開くと内訳があります。空欄は「未計上」で、0円ではありません。計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
-            + carousel(cards, "予算の全体像"))
+            + '<div class="grid">' + "".join(cards) + '</div>')
 
 
 def now_block(root: Path = ROOT) -> str:
@@ -757,7 +775,7 @@ def fx_summary(root: Path = ROOT) -> str:
     if dates:
         links = " ／ ".join(f'<a href="{esc(s)}" target="_blank" rel="noopener">{esc(urlparse(s).netloc)}</a>' for s in srcs)
         head = f'<p class="sec-lead">レート日：{esc(dates[-1])}（取得元：{links}）。{esc(FX_SOURCE_NOTE)}</p>'
-    return head + carousel(cards, "通貨") + "\n" + fx_json(root)
+    return head + '<div class="grid">' + "".join(cards) + '</div>' + "\n" + fx_json(root)
 
 
 def docs_summary(root: Path = ROOT) -> str:
@@ -828,11 +846,14 @@ document.querySelectorAll("[data-carousel]").forEach(function(c){
 })();
 </script>"""
 
-INDEX_BODY = """<header class="bar"><div class="wrap"><nav aria-label="ページ内の移動"><strong class="here">トップ</strong><a href="#budget">予算の全体像</a><a href="#plan">旅程</a><a href="#areas">地域別</a><a href="#now">いま何をするか</a><a href="docs/10-qa.html">確認待ち</a><a href="docs/11-route-builder.html">ルート作成</a><a href="#fx">通貨と円換算</a><a href="#docs">資料一覧</a></nav></div></header>
+INDEX_BODY = """@@bar@@
 <main class="wrap top">
+<section class="hero">
 <h1>2027 留学・アフリカ周遊 計画メモ</h1>
 <p class="lead">2027年2〜7月に、フィリピン・バギオの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学を一つの旅程として整理するための計画メモです。公開してよい一般の料金・制度・調査だけを匿名のモデルとして載せ、地域ごとに費用・確認事項・資料・地図を見られます。</p>
-<p class="note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。個人の支払い・資産・予約情報は公開していません。</p>
+<p class="hero-note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。個人の支払い・資産・予約情報は公開していません。</p>
+<p class="cta"><a href="#areas">地域ごとに見る</a><a class="alt" href="#budget">費用を見る</a><a class="alt" href="docs/10-qa.html">確認待ちを見る</a><a class="alt" href="maps/route-map.html">ルート地図</a></p>
+</section>
 
 <h2 id="budget">予算の全体像</h2>
 @@budget@@
@@ -876,7 +897,7 @@ def index_page(root: Path = ROOT) -> str:
     meta = {r["key"]: r["value"] for r in csv_records(root / DATA_DIR / "meta.csv")} if (root / DATA_DIR / "meta.csv").exists() else {}
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
-    body = INDEX_BODY
+    body = INDEX_BODY.replace("@@bar@@", bar("", "index.html"))
     for k, v in (("budget", budget_cards(root)), ("timeline", timeline_cards(root)), ("regions", region_cards(root)),("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
@@ -1513,162 +1534,14 @@ def main() -> int:
 
 
 # ---------------------------------------------------------------- style / template
-BASE_CSS = """:root{color-scheme:light;--ink:#1d2227;--muted:#555f68;--link:#0a58a8;--bg:#fbfbfa;--line:#d4d4cd;--th:#ecece6;--code:#ecece7;--hl:#fff6dc;--bar:44px;
---page:#f4f5f7;--card:#fff;--card-line:rgba(0,0,0,.04);--shadow:0 10px 30px rgba(0,0,0,.05);--shadow-up:0 20px 40px rgba(0,0,0,.10);
---sans:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619;--page:#111315;--card:#1c1f22;--card-line:rgba(255,255,255,.06);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.55)}}
-:root[data-theme="dark"]{color-scheme:dark;--ink:#e3e6e8;--muted:#a3acb4;--link:#7db4ec;--bg:#16181a;--line:#383d41;--th:#22272a;--code:#23282b;--hl:#2a2619;--page:#111315;--card:#1c1f22;--card-line:rgba(255,255,255,.06);--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-up:0 20px 40px rgba(0,0,0,.55)}
-*{box-sizing:border-box}
-html{scroll-padding-top:calc(var(--bar) + 12px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--sans)}
-a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-header.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-header.bar nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px;min-height:var(--bar);font-size:.94rem}
-header.bar a,header.bar .here{padding:8px 0;text-decoration:none;white-space:nowrap}
-header.bar .here,header.bar a[aria-current]{font-weight:700;color:var(--ink);box-shadow:inset 0 -3px 0 var(--link)}
-header.bar a:hover{text-decoration:underline}
-h1{font-size:1.65rem;line-height:1.4;margin:26px 0 8px;font-weight:700}
-h2{font-size:1.25rem;line-height:1.5;margin:44px 0 10px;padding-top:14px;border-top:2px solid var(--line)}
-h3{font-size:1.05rem;line-height:1.6;margin:28px 0 6px} h4{font-size:1rem;margin:20px 0 4px}
-p{margin:10px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px} .muted{color:var(--muted);font-size:.93rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:2px 22px;margin:14px 0 4px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.94rem}
-nav.toc .label{font-weight:700;color:var(--muted)}
-.note{background:var(--hl);padding:10px 14px;margin:16px 0;max-width:none}
-ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
-.scroll{margin:12px 0 22px;border-top:2px solid var(--line);border-bottom:1px solid var(--line)}
-table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
-th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
-td{min-width:4.4em} tbody tr:last-child td{border-bottom:0} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 38%,transparent)}
-th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line)}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-td.c,th.c{text-align:center}
-td strong{font-weight:700}
-code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 4px}
-pre{background:var(--code);padding:10px 12px;overflow-x:auto} pre code{padding:0;background:none}
-blockquote{margin:14px 0;background:var(--hl);padding:4px 14px}
-ul,ol{padding-left:1.5em} li{margin:4px 0}
-.check{display:inline-block;width:.9em;height:.9em;border:1.5px solid var(--muted);margin-right:6px;vertical-align:-1px}
-.check.done{background:var(--link);border-color:var(--link)}
-form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px;margin:10px 0 14px}
-form.calc label{display:grid;gap:4px;font-size:.93rem;color:var(--muted)}
-form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:7px 9px;min-width:0;width:100%}
-form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.8em}
-footer{color:var(--muted);font-size:.9rem;margin-top:48px;padding:14px 0 40px;border-top:1px solid var(--line)}
-footer p{max-width:none}
-article,h1,p,li{overflow-wrap:anywhere}
-.crumb{margin:18px 0 0;color:var(--muted);font-size:.9rem}
-nav.all{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 28px;margin:14px 0;font-size:.94rem}
-nav.all .g{font-weight:700;color:var(--muted);margin-top:8px} nav.all a{display:block;padding:1px 0}
-nav.all details.g-fold{align-self:start} nav.all details.g-fold>summary{cursor:pointer;font-weight:700;color:var(--muted);padding:2px 0}
-nav.all details.g-fold[open]>summary{margin-bottom:2px}
-details.more.notes{margin:4px 0 8px}
-nav.all a[aria-current]{font-weight:700;color:var(--ink)}
-main.page{padding-bottom:24px}
-body.home{background:var(--page)} body.home header.bar{background:var(--page)}
-.top{max-width:1100px;overflow:visible} .top h1{font-size:1.9rem;margin-top:36px}
-.top h2{border-top:0;padding-top:0;margin:56px 0 6px;font-size:1.3rem}
-.top .note{background:var(--hl);padding:12px 16px;border-radius:8px}
-.sec-lead{color:var(--muted);font-size:.95rem;margin:6px 0 0;max-width:72ch}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;padding:20px 0 28px;overflow:visible;align-items:stretch}
-.card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:12px;padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease}
-.card.wide{grid-column:1/-1;margin:20px 0 28px}
-.card h3{font-size:1.08rem;margin:2px 0 6px;line-height:1.5}
-.card p{margin:6px 0;max-width:none}
-.card .eyebrow{font-size:.85rem;color:var(--muted);margin:0 0 2px}
-.card .val{font-size:1.75rem;line-height:1.3;font-weight:700;font-variant-numeric:tabular-nums;margin:4px 0 8px}
-.card .sub{font-size:.9rem;color:var(--muted);line-height:1.7}
-.card .status{font-size:.88rem;font-weight:700;margin:2px 0 6px}
-.card .go{display:block;margin-top:12px;font-size:.9rem;font-weight:700;color:var(--link)}
-.card .go::after{content:" \\2192"}
-a.card:focus-visible{outline:2px solid var(--link);outline-offset:4px}
-.card .n,dl.kv dd{font-variant-numeric:tabular-nums}
-dl.kv{margin:8px 0}
-dl.kv div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
-dl.kv div:last-child{border-bottom:0}
-dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
-.card .scroll{margin:0;border-top:0}
-.card ol.todo{margin:8px 0 8px} .card ul.facts{margin:8px 0 0}
-details.more{margin:0} details.more>summary{cursor:pointer;list-style:none;color:var(--ink)}
-details.more>summary::-webkit-details-marker{display:none}
-details.more .hint{color:var(--link);font-size:.82rem;margin-left:4px;white-space:nowrap}
-details.more[open]>summary{font-weight:700;margin-bottom:4px} details.more[open]>summary .hint{display:none}
-details.more>.full{padding:6px 0 4px 12px;box-shadow:inset 2px 0 0 var(--line)}
-details.sec{margin:10px 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
-details.sec>summary{cursor:pointer;padding:10px 14px;list-style:none}
-details.sec>summary::-webkit-details-marker{display:none}
-details.sec>summary::before{content:"\\25B8";float:left;margin:2px 8px 0 0;color:var(--muted);transition:transform .2s}
-details.sec[open]>summary::before{transform:rotate(90deg)}
-details.sec>summary h2{display:inline;margin:0;padding:0;border:0;font-size:1.15rem}
-details.sec>:not(summary){margin-left:14px;margin-right:14px} details.sec>.scroll{margin-left:14px;margin-right:14px}
-details.sec[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px}
-details.sec>:last-child{margin-bottom:14px}
-.sec-tools{margin:8px 0} .sec-tools button{font:inherit;font-size:.88rem;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:6px}
-.route-pre{margin:8px 0 2px}.route-pre .lbl{font-weight:700;margin-right:6px}
-.route-pre .pre-btn{font:inherit;font-size:.88rem;padding:4px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;margin:2px 4px 2px 0}
-.route-pre .pre-btn.on{background:var(--link);border-color:var(--link);color:#fff}
-.route-desc{color:var(--muted);font-size:.88rem;margin:2px 0 8px}
-.route-t td.chk{text-align:center}.route-t td.chk input{width:auto;min-width:0;transform:scale(1.25)}
-.route-ask{display:block;margin:12px 0 4px;font-weight:700;font-size:.9rem}
-.route-ask textarea{display:block;width:100%;margin-top:4px;font:inherit;font-size:.92rem;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
-.route-cost{font-size:.92rem;margin:2px 0 8px;font-weight:700}.route-cost.dim{color:var(--muted);font-weight:400}.route-cost.over{color:#b3261e}
-.route-t td.sub{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-.route-days{font-size:.92rem;margin:2px 0 8px}.route-days.dim{color:var(--muted)}.route-days.over{color:#b3261e;font-weight:700}
-.route-t td select{width:100%;min-width:5.5em;font:inherit;font-size:.9rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
-.route-bar button:disabled{opacity:.45;cursor:default}
-.route-t td input{width:100%;min-width:6em;font:inherit;font-size:.9rem;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
-.route-t tr.fix td{background:color-mix(in srgb,var(--link) 10%,transparent);text-align:center}
-.route-t td.ops{white-space:nowrap}.route-t td.ops button{font:inherit;font-size:.8rem;padding:2px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer;margin-right:3px}
-.route-bar button{font:inherit;font-size:.9rem;padding:5px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
-.route-sum{font-weight:700;margin:10px 0}
-.triage{margin:12px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:.92rem}
-.triage .big{font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
-.triage .muted,.triage .tri-note{color:var(--muted);font-size:.85rem}
-.triage button{font:inherit;font-size:.88rem;padding:4px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer;margin:6px 6px 0 0}
-.triage .tri-hide{display:inline-block;margin:6px 12px 0 0}
-.triage .tri-filter{margin:8px 0 4px}
-.triage .tri-filter button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
-th.tri,td.tri{min-width:7em;white-space:nowrap}
-td.tri select,td.tri input[type=text]{font:inherit;font-size:.88rem;max-width:11em;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
-td.tri input[type=text]{width:11em}
-tr.skip td:not(.tri){text-decoration:line-through;opacity:.5}
-tr.hold td:not(.tri){opacity:.75}
-tr[hidden]{display:none}
-.carousel{position:relative}
-.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 4px 32px;-webkit-overflow-scrolling:touch}
-.car-track>.card{flex:0 0 min(300px,80%);scroll-snap-align:start}
-.car-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
-.car-btn.prev{left:-12px} .car-btn.next{right:-12px} .car-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.car-btn[disabled]{opacity:.35;cursor:default}
-details.fold{margin:12px 0 28px} details.fold>summary{cursor:pointer;font-weight:700;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);list-style:none}
-details.fold>summary::-webkit-details-marker{display:none} details.fold>summary::before{content:"\\25B8";display:inline-block;margin-right:8px;transition:transform .2s}
-details.fold[open]>summary::before{transform:rotate(90deg)}
-@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
-@media (hover:hover){.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-up)}}
-@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
-@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
-@media(max-width:640px){
-.scroll{overflow-x:visible;border-top:0;border-bottom:0}
-.scroll table:not(:has(td[data-label])){min-width:0;table-layout:auto}
-.scroll table:not(:has(td[data-label])) th,.scroll table:not(:has(td[data-label])) td{padding:7px 6px;overflow-wrap:anywhere}
-.scroll table:has(td[data-label]){min-width:0;display:block}
-.scroll table:has(td[data-label]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.scroll table:has(td[data-label]) tbody,.scroll table:has(td[data-label]) tr{display:block}
-.scroll table:has(td[data-label]) tr{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
-.scroll table:has(td[data-label]) td{display:block;padding:8px 12px;border-bottom:1px solid var(--line);background:none!important;min-width:0;text-align:left}
-.scroll table:has(td[data-label]) td:last-child{border-bottom:0}
-.scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
-.scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
-}
-@media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.45rem} header.bar nav{gap:0 14px}}
-"""
+from site_css import BASE_CSS  # noqa: E402  共通のデザイン（色・部品）は site_css.py にまとめた
 
 # トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
 PAGE_CSS_EXTRA = """details.tri-help,details.tri-save{margin:6px 0;border:1px solid var(--line);border-radius:8px;padding:2px 10px;background:var(--bg)}details.tri-help>summary,details.tri-save>summary{cursor:pointer;min-height:40px;display:flex;align-items:center;font-weight:700;font-size:.92rem}ul.tri-help-list{margin:4px 0 8px;padding-left:1.3em;font-size:.92rem}ul.tri-help-list li{margin:3px 0}.tri-btns{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
 .fx-tag{display:inline-block;font-size:.78rem;font-weight:700;padding:0 6px;border:1px solid var(--line);border-radius:4px;color:var(--muted);vertical-align:1px}td.fixed{text-align:center!important;white-space:nowrap;background:color-mix(in srgb,var(--link) 6%,transparent)}tr.fixed-amt td.fixed .fx-tag{margin-right:4px}.fx-note{margin:6px 0}
-.pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
+.pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:var(--bad)}
 .pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
-.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-h{margin:26px 0 6px}.pl-name{min-width:14em;max-width:100%}.pl-cmp td.over{color:#b3261e;font-weight:700}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
+.pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-h{margin:26px 0 6px}.pl-name{min-width:14em;max-width:100%}.pl-cmp td.over{color:var(--bad);font-weight:700}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
 @media(max-width:640px){
 nav.toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
 nav.toc .label{grid-column:1/-1}
@@ -1714,7 +1587,7 @@ PAGE = """<!doctype html>
 @@bar@@
 <main class="wrap page">
 <p class="crumb"><a href="@@prefix@@index.html">トップ</a> ／ @@section@@</p>
-<h1>@@title@@</h1>
+<div class="page-head">@@tag@@<h1>@@title@@</h1></div>
 @@toc@@
 <article>
 @@body@@
@@ -1734,19 +1607,40 @@ INDEX_PAGE = """<!doctype html>
 """
 
 
+# 上部ナビの構成（全ページ共通）。(見出し, [(リンク名, パス)])。パスは ROOT からの相対。
+def _menu_groups() -> list[tuple[str, list[tuple[str, str]]]]:
+    regions = [(label, f"areas/{k}.html") for k, label in REGION_PAGES]
+    maps = [(t, f"maps/{n}.html") for n, t in MAP_PAGES]
+    return [
+        ("旅程（地域別）", regions),
+        ("調べる", [("国別ページ（アフリカ）", "countries/kenya.html"), ("現地調査・比較の資料", "research/africa-13-countries-comparison.html"),
+                  ("すべての出典", "research/sources.html"), ("Q&A（確認待ち）", "docs/10-qa.html")]),
+        ("地図", maps),
+        ("ツール", [("予算の計算ルール", "docs/02-budget.html"), ("ルート作成", "docs/11-route-builder.html"),
+                  ("日程プランナー", "docs/13-day-planner.html"), ("航空券の比較", "docs/12-flights.html"),
+                  ("準備チェック", "docs/03-preparation.html"), ("準備タスク（アプリ表示）", "app.html")]),
+    ]
+
+
 def bar(prefix: str, current: str = "") -> str:
-    """上部に固定するページ間の移動バー（トップ・地域別4ページ・全ページ一覧）"""
-    links = [("", "トップ", "index.html")] + [(k, label, f"areas/{k}.html") for k, label in REGION_PAGES]
-    parts = []
-    for key, label, href in links:
-        if href == current:
-            parts.append(f'<a href="{prefix}{href}" aria-current="page">{html.escape(label)}</a>')
-        else:
-            parts.append(f'<a href="{prefix}{href}">{html.escape(label)}</a>')
-    maps_cur = ' aria-current="page"' if current.startswith("maps/") else ""
-    parts.append(f'<a href="{prefix}maps/world-map.html"{maps_cur}>{MAP_GROUP}</a>')
-    parts.append('<a href="#all-pages">全ページ</a>')
-    return f'<header class="bar"><div class="wrap"><nav aria-label="ページ間の移動">{"".join(parts)}</nav></div></header>'
+    """全ページ共通の上部ナビ。ブランド＋4つのまとまり（開閉）＋確認待ち。携帯では1つのメニューにまとめる"""
+    def link(label: str, href: str, cls: str = "") -> str:
+        cur = ' aria-current="page"' if href == current else ""
+        return f'<a href="{prefix}{href}"{cur}{cls}>{html.escape(label)}</a>'
+    groups = _menu_groups()
+    desk, mob = [], []
+    for title, items in groups:
+        here = any(h == current or (current.startswith("maps/") and h.startswith("maps/") and title == "地図") for _, h in items)
+        drop = "".join(link(l, h) for l, h in items)
+        desk.append(f'<details{" class=\"on\"" if here else ""}><summary{" aria-current=\"true\"" if here else ""}>{html.escape(title)}</summary><div class="drop">{drop}</div></details>')
+        mob.append(f'<p class="dl">{html.escape(title)}</p>' + drop)
+    qa = link("確認待ち", "docs/10-qa.html")
+    top = link("トップ", "index.html")
+    brand = f'<a class="brand" href="{prefix}index.html">2027 留学・アフリカ周遊</a>'
+    menu = f'<nav class="menu" aria-label="ページ間の移動">{top}{"".join(desk)}{qa}<a href="#all-pages">全ページ</a></nav>'
+    mobile = (f'<details class="mobile"><summary>メニュー</summary><div class="mpanel">{top}{"".join(mob)}{qa}'
+              f'<a href="#all-pages">全ページ一覧</a></div></details>')
+    return f'<header class="bar"><div class="wrap">{brand}{menu}{mobile}</div></header>'
 
 
 def page_html(**kw) -> str:
