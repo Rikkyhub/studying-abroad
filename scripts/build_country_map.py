@@ -154,7 +154,7 @@ def build() -> str:
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <h1>アフリカ国別地図</h1>
 <p class="lead">色のついた国を押す（クリック・タップ・Tabキーで選んでEnter）と、その国の観光地・おすすめの食べ物・ビザ・安全・行き方のページに移動します。旅程の候補になった国だけを色分けしています。</p>
-<nav class="switch" aria-label="地図とページの移動"><a href="africa-map.html">候補ルートのアフリカ地図</a><a href="world-map.html">世界地図</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../areas/africa.html">アフリカ周遊のページ</a></nav>
+{bm.map_switch("africa-countries")}
 <div class="mapbox">{svg}</div>
 <div class="lg" aria-label="色の凡例">{legend}</div>
 <p class="muted">破線で灰色の国は、ページを準備中です。国境線は概念図としての表示で、各国の公式な主張を表すものではありません。小さな国（レソト・エスワティニ）は地図上で押しにくいので、下の一覧からも移動できます。</p>

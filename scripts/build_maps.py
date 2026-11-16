@@ -21,7 +21,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_html import BASE_CSS, bar, nav as site_nav  # noqa: E402  共通テンプレート
+from build_html import BASE_CSS, MAP_PAGES, bar, nav as site_nav  # noqa: E402  共通テンプレート
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -856,7 +856,30 @@ legend{font-weight:700;padding:0;margin-bottom:4px}
 .sel label{display:flex;gap:8px;align-items:flex-start;padding:6px 4px;min-height:44px;cursor:pointer}
 .sel input{margin-top:6px;flex:none}
 .sel .tot{color:var(--muted);font-size:.9em;display:block}
-.mapbox{position:relative;margin:10px 0;border:1px solid var(--line)}
+.zwrap{overflow:auto;margin:6px 0;max-width:100%}
+.mapbox{position:relative;border:1px solid var(--line);width:calc(min(100%,(100vh - 360px) * var(--ar,1.6)) * var(--zf,1))}
+.szbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
+.szbar button{font:inherit;min-width:56px;min-height:40px;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
+.szbar button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
+.sr{position:absolute;left:-9999px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.tabs button{font:inherit;min-height:44px;padding:4px 16px;border:1px solid var(--line);border-radius:8px 8px 0 0;background:var(--bg);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--link);color:#fff;border-color:var(--link);font-weight:700}
+[role=tabpanel]{border-top:2px solid var(--link);padding-top:4px}
+[role=tabpanel] .sel,details.old .sel{display:flex;flex-wrap:wrap;gap:4px 6px}
+[role=tabpanel] .sel label,details.old .sel label{min-height:36px;padding:3px 10px;border:1px solid var(--line);border-radius:18px;align-items:center;background:var(--bg)}
+[role=tabpanel] .sel label:has(input:checked),details.old .sel label:has(input:checked){background:var(--hl);border-color:var(--link);font-weight:700}
+[role=tabpanel] .sel input,details.old .sel input{margin:0}
+[role=tabpanel] .sel .tot,details.old .sel .tot{display:none}
+[role=tabpanel] .sel label>span>.rb{margin-right:4px}
+details.old{margin:8px 0;color:var(--muted);font-size:.92em} details.old>summary{cursor:pointer;min-height:40px;display:flex;align-items:center}
+details.old .sel{margin-top:4px;opacity:.85}
+.allr{display:inline-flex;gap:6px;align-items:center;padding:2px 8px;min-height:32px;cursor:pointer;color:var(--muted);font-size:.9em}
+.rtes{margin:2px 0!important}.rtes .allr .tot{display:none}
+.tabs button{min-height:38px!important}
+details.old{display:inline-block;margin:4px 12px 4px 0!important} details.old>summary{min-height:32px!important}
+.stp{margin:2px 0!important;font-size:.9em}
+h1{margin:6px 0!important;font-size:1.35rem!important}.crumb{margin:6px 0!important}fieldset{margin:6px 0!important}
 svg#map{display:block;width:100%;height:auto;background:var(--sea);touch-action:pan-y;user-select:none;-webkit-user-select:none;font-family:var(--sans)}
 svg#map.zoomed{touch-action:none;cursor:grab}
 .zoom{position:absolute;right:8px;top:8px;display:flex;gap:4px}
@@ -950,12 +973,14 @@ var go=function(){pick(r.id)};t.addEventListener('click',go);t.addEventListener(
 D.legs.filter(function(l){return l.route===sel}).forEach(function(l){var t=el('tr',null,'row');t.id='row-'+l.id;t.tabIndex=0;t.appendChild(el('td',l.seq+'. '+l.from+' → '+l.to));t.appendChild(el('td',l.mode));t.appendChild(el('td',l.km,'n'));t.appendChild(el('td',l.status+(l.unc?'（未確認）':'')));
 var c=el('td');c.appendChild(link(l.to,l.url_to));t.appendChild(c);
 var go=function(){showLeg(l.id)};t.addEventListener('click',function(e){if(e.target.tagName!=='A')go()});t.addEventListener('keydown',function(e){if(e.key==='Enter'){go()}});body.appendChild(t)})}
-function pick(id){var r=document.querySelector('input[name=rt][value='+id+']');if(r){r.checked=true;var d=r.closest('details');if(d)d.open=true}apply(id)}
+function pick(id){var r=document.querySelector('input[name=rt][value='+id+']');if(r){r.checked=true;var d=r.closest('details');if(d)d.open=true;var pn=r.closest('[role=tabpanel]');if(pn)tab(pn.id.slice(4),false)}apply(id)}
 function apply(v){sel=v;svg.classList.toggle('solo',D.routes.some(function(r){return r.id===v}));svg.querySelectorAll('.stop').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v))});
 svg.querySelectorAll('.leg').forEach(function(g){g.classList.toggle('off',!inSel(g.dataset.route,v))});
 svg.querySelectorAll('.pt').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v)&&g.dataset.pt!=='MNL'&&g.dataset.pt!=='BAGUIO')});
 tbl();detail.textContent='';var inf=(D.info||{})[v];if(inf){var h=el('h3','案'+v+'：'+inf.what);detail.appendChild(h);var dl=el('dl');row(dl,'確認できた費用の小計',inf.cost);row(dl,'主な未確認',inf.unk);row(dl,'注意','小計は公式の一般料金・既存資料の参考値・推計だけの合計で、2027年の実売ではありません。未確認は0円ではありません。');detail.appendChild(dl)}else{detail.appendChild(el('p',(D.routes.some(function(r){return r.id===v}))?'ルート'+v+'：線・表の行を選ぶと区間の詳細を表示します。':'線または地点を選ぶ（ホバー・タップ・Tabキー）と、区間の詳細を表示します。案を選ぶと費用の小計と未確認を表示します。'))}}
 document.querySelectorAll('input[name=rt]').forEach(function(r){r.addEventListener('change',function(){apply(r.value)})});
+var tbs=document.querySelectorAll('.tabs button');function tab(k,go){tbs.forEach(function(b){var on=b.getAttribute('data-tab')===k;b.setAttribute('aria-selected',on?'true':'false')});document.querySelectorAll('[role=tabpanel]').forEach(function(p){p.hidden=p.id!=='pan-'+k});if(go)pick(k)}
+tbs.forEach(function(b){b.addEventListener('click',function(){tab(b.getAttribute('data-tab'),true)})});
 var sc=document.getElementById('stopchk');if(sc){sc.addEventListener('change',function(){svg.classList.toggle('nostops',!sc.checked)})}
 svg.querySelectorAll('.leg').forEach(function(g){var id=g.dataset.leg;g.addEventListener('mouseenter',function(){showLeg(id)});g.addEventListener('focus',function(){showLeg(id)});g.addEventListener('click',function(){showLeg(id)});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();showLeg(id)}})});
 svg.querySelectorAll('.pt').forEach(function(g){var id=g.dataset.pt;['mouseenter','focus','click'].forEach(function(ev){g.addEventListener(ev,function(){showPt(id)})})});
@@ -969,8 +994,22 @@ svg.addEventListener('pointermove',function(e){if(!drag)return;var k=vb.w/svg.ge
 svg.addEventListener('pointerup',function(){drag=null});svg.addEventListener('pointercancel',function(){drag=null});
 window.addEventListener('resize',setVB);
 if(svg.getBoundingClientRect().width<640&&svg.dataset.focus){var f=svg.dataset.focus.split(' ').map(Number);vb={x:f[0],y:f[1],w:f[2],h:f[3]}}
+var zs=document.querySelectorAll('.szbar button'),ZK='route-g-zoom-v2';
+function zsz(z){var r=document.documentElement.style;r.setProperty('--zf',(z/100).toFixed(2));zs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===String(z)?'true':'false')});try{localStorage.setItem(ZK,String(z))}catch(e){}setVB()}
+document.querySelector('.mapbox').style.setProperty('--ar',(W/H).toFixed(3));
+var z0=100;try{var sv=localStorage.getItem(ZK);if(sv&&[70,100,125,150].indexOf(+sv)>=0)z0=+sv}catch(e){}
+zs.forEach(function(b){b.addEventListener('click',function(){zsz(+b.getAttribute('data-z'))})});zsz(z0);
 setVB();apply(INIT);var hm=/^#route-([A-Z][A-Z0-9]*)$/.exec(location.hash);if(hm&&document.querySelector('input[name=rt][value='+hm[1]+']'))pick(hm[1]);
 })();"""
+
+
+def map_switch(current):
+    """地図4ページに共通のナビ（今いるページは強調）。route_map.py・country_map.py も同じものを使う"""
+    items = []
+    for n, t in MAP_PAGES:
+        items.append(f'<span aria-current="page"><strong>{html.escape(t)}</strong></span>' if n == current else f'<a href="{n}.html">{html.escape(t)}</a>')
+    items.append('<a href="../research/may-madagascar-vfa-redesign.html">ルート調査（35日表・日数案）</a>')
+    return '<nav class="switch" aria-label="地図同士の移動">' + "".join(items) + "</nav>"
 
 
 def legend_html():
@@ -1015,24 +1054,35 @@ def build_page(kind, points, routes, world_geo, africa_geo):
     data_info = {r: {"cost": v[0], "what": v[1], "unk": v[2]} for r, v in ROUTE_INFO.items() if r in routes}
     data = json.dumps({"legs": data_legs, "routes": data_routes, "points": data_pts, "info": data_info, "groups": GROUP_OF}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
+    def _short(n):
+        """チップ用の短い名前：「5月 M0-A：」「8月 A4：」の接頭辞と、後ろの（…）を落とす。全文は title と詳細欄"""
+        n = n.split("：", 1)[1] if "：" in n[:14] else n
+        return n.split("（", 1)[0] or n
+
     def _radio(rid):
         rt = routes[rid]
         inf = ROUTE_INFO.get(rid)
         sub = f'<span class="tot">確認できた費用の小計：{html.escape(inf[0])}</span>' if inf else ""
-        return (f'<label><input type="radio" name="rt" value="{rid}"><span><span class="rb {rid}">{html.escape(rid)}</span>{html.escape(rt["name"])}'
+        return (f'<label title="{html.escape(rt["name"])}"><input type="radio" name="rt" value="{rid}"><span><span class="rb {rid}">{html.escape(rid)}</span>{html.escape(_short(rt["name"]))}'
                 f'{sub}<span class="tot">直線距離の合計 {km_text(rt["km"])}（参考）</span></span></label>')
 
-    def _group(key):
+    TAB_LABEL = {"may": "5月", "aug": "8月"}
+
+    def _panel(key, old=False):
         ids = [r for r in GROUPS[key] if r in routes]
         if not ids:
             return ""
         head = (f'<label><input type="radio" name="rt" value="{key}"{" checked" if key == "may" else ""}><span><strong>{html.escape(GROUP_NAMES[key])}をまとめて見る</strong>'
                 f'<span class="tot">{len(ids)}案を重ねて表示。どれも決定ではなく比較用</span></span></label>')
-        return f'<details class="grp"{" open" if key == "may" else ""}><summary>{html.escape(GROUP_NAMES[key])}（{len(ids)}案）</summary><div class="sel">{head}{"".join(_radio(r) for r in ids)}</div></details>'
-    radios = ["".join(_group(k) for k in ("may", "aug", "legacy")),
-              '<label><input type="radio" name="rt" value="all"><span>すべて<span class="tot">5月・8月・旧案を全部重ねる（線が多く見づらい）</span></span></label>']
+        return f'<div class="sel">{head}{"".join(_radio(r) for r in ids)}</div>'
+    tabs = "".join(f'<button type="button" role="tab" id="tab-{k}" data-tab="{k}" aria-controls="pan-{k}" aria-selected="{"true" if k == "may" else "false"}">{TAB_LABEL[k]}の候補（{len([r for r in GROUPS[k] if r in routes])}案）</button>' for k in ("may", "aug"))
+    panels = "".join(f'<div role="tabpanel" id="pan-{k}" aria-labelledby="tab-{k}"{"" if k == "may" else " hidden"}>{_panel(k)}</div>' for k in ("may", "aug"))
+    legacy = (f'<details class="old"><summary>過去案 old（旧A〜H・{len([r for r in GROUPS["legacy"] if r in routes])}案・参考）</summary>{_panel("legacy")}</details>')
+    radios = [f'<div class="tabs" role="tablist" aria-label="5月と8月の切替">{tabs}</div>{panels}{legacy}',
+              '<label class="allr"><input type="radio" name="rt" value="all"><span>すべて<span class="tot">5月・8月・過去案を全部重ねる（線が多く見づらい）</span></span></label>']
     other = ("africa-map.html", "アフリカ地図") if world else ("world-map.html", "世界地図")
     here = "世界地図" if world else "アフリカ地図"
+    zbtns = "".join(f'<button type="button" data-z="{z}" aria-pressed="false">{z}%</button>' for z in (70, 100, 125, 150))
     off_note = ("" if world else '<p class="muted">アジア発の区間は図の外（東）にあります。線が図の端から入る所に「○○方面」と表示し、区間の一覧は下の表で確認できます。</p>')
     zoom_note = "地図は拡大・縮小ボタンで拡大でき、拡大中はドラッグで移動できます。"
     caution = ('<div class="cautionnote"><strong>エチオピア（斜線部）：</strong>英国FCDO（2026-10-16更新）はティグライ・アムハラ・ガンベラ全域への渡航を避けるよう勧告。'
@@ -1048,12 +1098,13 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <h1>{title}</h1>
-<p class="lead">候補ルートの概念図。実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
-<nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../areas/africa.html">アフリカ周遊のページ</a></nav>
-<fieldset><legend>表示するルート</legend>{"".join(radios)}</fieldset>
+{map_switch("world-map" if world else "africa-map")}
+<div class="szbar" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div>
+<fieldset class="rtes"><legend class="sr">表示するルート</legend>{"".join(radios)}</fieldset>
+{"" if world else '<p class="muted stp"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示</label></p>'}
+<div class="zwrap"><div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div></div>
+<p class="lead">候補ルートの概念図。{"" if world else "立ち寄り候補の町（◇）は拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、確定した立ち寄り先ではありません。"}実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
 <p class="muted">直線距離の合計は大圏（地球上の最短距離）の足し算で、<strong>実際の飛行・走行距離ではありません</strong>。区間の運賃・ダイヤは未確認のものを含みます。{zoom_note}</p>
-{"" if world else '<p class="muted"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示する。拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、候補ルートの確定した立ち寄り先ではありません。</label></p>'}
-<div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div>
 {off_note}
 <div id="detail" role="status" aria-live="polite"></div>
 {caution}
