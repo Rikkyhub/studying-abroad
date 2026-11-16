@@ -25,7 +25,7 @@ SOURCE_DIRS = ["areas", "research", "countries", "docs", "blog"]
 DATA_DIR = "data"
 GROUPS = {"areas": "地域別", "research": "現地調査", "countries": "アフリカの国別", "docs": "計画・費用", "blog": "ブログ"}
 ISSUE_MAP = "09-issue-map.md"
-MAP_PAGES = [("world-map", "世界地図"), ("africa-map", "アフリカ地図"), ("africa-countries", "アフリカ国別地図")]  # scripts/build_maps.py が生成する maps/*.html
+MAP_PAGES = [("world-map", "世界地図"), ("africa-map", "アフリカ地図"), ("africa-countries", "アフリカ国別地図"), ("route-g", "案Gルート地図（Day番号つき）")]  # scripts/build_maps.py が生成する maps/*.html
 MAP_GROUP = "ルート地図"
 ARCHIVE_PREFIX = "archive-"  # research/archive-*.md = 採用していない・古い比較案（案Gの前の資料）
 ARCHIVE_GROUP = "過去の比較案（参考）"
@@ -343,7 +343,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   sel.addEventListener("change",upd);memo.addEventListener("input",upd);
  });
  var box=document.createElement("div");box.className="triage";
- box.innerHTML='<p class="muted fx-note">「固定」は、低予算・標準・余裕が同じ金額の行です（決まった料金や、幅を置いていない仮置きの金額）。「仮・固定」は、出典のない仮置きで、確定した金額ではありません。</p><div class="tri-sum" aria-live="polite"></div><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button><br><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span>';
+ box.innerHTML='<div class="tri-sum" aria-live="polite"></div><details class="tri-help"><summary>この表の見方（低予算・標準・余裕、固定）</summary><ul class="tri-help-list"><li><strong>低予算・標準・余裕</strong>：同じ旅の3つの見積です。低予算＝安い選択肢で節約、標準＝無理のない普通の選択（<strong>合計・予算判定はこの列</strong>）、余裕＝快適さや時間を優先して予備を見込む。</li><li><strong>固定</strong>：低予算・標準・余裕が同じ金額の行です（決まった料金や、幅を置いていない仮置き）。<strong>仮・固定</strong>は、出典のない仮置きで、確定した金額ではありません。</li><li>金額は公開価格表からの匿名の見積で、実際の支払額ではありません。</li></ul></details><details class="tri-save"><summary>判断の保存（このブラウザ内だけ・公開されません）</summary><p class="tri-btns"><label class="tri-hide"><input type="checkbox"> 不要の行を隠す</label> <button type="button" class="tri-send">Claudeに送る（ファイル保存）</button> <button type="button" class="tri-copy">判断をコピー</button> <button type="button" class="tri-reset">判断をすべて消す</button></p><span class="tri-note">入力はこのブラウザに自動保存され、公開されません。「Claudeに送る」を押すと、リポジトリの <code>triage/</code> フォルダに判断を保存します（最初の1回だけフォルダを選びます。Chrome・Edge向け）。それ以外のブラウザではダウンロードされるので <code>triage/</code> に移してください。このフォルダの中身は公開されません。</span></details>';
  tb.closest(".scroll").parentNode.insertBefore(box,tb.closest(".scroll"));
  var hide=box.querySelector("input"),sum=box.querySelector(".tri-sum");
  if(iGrp!=null){
@@ -352,7 +352,7 @@ document.querySelectorAll("table[data-cost]").forEach(function(tb,ti){
   fb.innerHTML='<span class="muted">費用区分で絞り込み：</span>';
   [""].concat(gs).forEach(function(g){var b=document.createElement("button");b.type="button";b.textContent=g||"すべて";b.setAttribute("data-g",g);b.setAttribute("aria-pressed",g===""?"true":"false");
    b.addEventListener("click",function(){flt=g;Array.prototype.forEach.call(fb.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});paint()});fb.appendChild(b)});
-  box.insertBefore(fb,sum);
+  box.insertBefore(fb,box.querySelector(".tri-help"));  /* 合計は先頭のまま、絞り込みは合計の直下（見方・保存の折りたたみの前）に置く */
  }
  function paint(){
   var tot=[0,0,0],cnt={"":0,need:0,skip:0,hold:0},skipTot=[0,0,0],fTot=0,fN=0;
@@ -1661,7 +1661,8 @@ details.fold[open]>summary::before{transform:rotate(90deg)}
 """
 
 # トップには入れない（ルート作成・費用表のスマホ表示用）。個別ページ（page_html）にだけ足す
-PAGE_CSS_EXTRA = """.fx-tag{display:inline-block;font-size:.78rem;font-weight:700;padding:0 6px;border:1px solid var(--line);border-radius:4px;color:var(--muted);vertical-align:1px}td.fixed{text-align:center!important;white-space:nowrap;background:color-mix(in srgb,var(--link) 6%,transparent)}tr.fixed-amt td.fixed .fx-tag{margin-right:4px}.fx-note{margin:6px 0}
+PAGE_CSS_EXTRA = """details.tri-help,details.tri-save{margin:6px 0;border:1px solid var(--line);border-radius:8px;padding:2px 10px;background:var(--bg)}details.tri-help>summary,details.tri-save>summary{cursor:pointer;min-height:40px;display:flex;align-items:center;font-weight:700;font-size:.92rem}ul.tri-help-list{margin:4px 0 8px;padding-left:1.3em;font-size:.92rem}ul.tri-help-list li{margin:3px 0}.tri-btns{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.fx-tag{display:inline-block;font-size:.78rem;font-weight:700;padding:0 6px;border:1px solid var(--line);border-radius:4px;color:var(--muted);vertical-align:1px}td.fixed{text-align:center!important;white-space:nowrap;background:color-mix(in srgb,var(--link) 6%,transparent)}tr.fixed-amt td.fixed .fx-tag{margin-right:4px}.fx-note{margin:6px 0}
 .pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:#b3261e}
 .pl-t tr[data-fixed="1"]{background:color-mix(in srgb,var(--link) 9%,transparent)}
 .pl-t td.pl-a,.pl-t td.pl-d{white-space:nowrap}.pl-h{margin:26px 0 6px}.pl-name{min-width:14em;max-width:100%}.pl-cmp td.over{color:#b3261e;font-weight:700}.pl-hint{display:block;color:var(--muted);font-size:.8rem;min-height:1em}
