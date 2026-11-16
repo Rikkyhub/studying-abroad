@@ -770,6 +770,9 @@ def build_map(kind, points, routes, world_geo, africa_geo):
     tag_svgs = []
     seen = {}
     tag_rects = []
+    tag_routes = {}
+    for rid, q, txt in tags:
+        tag_routes.setdefault(txt, set()).add(rid)
     for rid, q, txt in sorted(tags, key=lambda t: (t[2], t[0])):
         k = txt
         seen[k] = seen.get(k, 0) + 1
@@ -784,7 +787,7 @@ def build_map(kind, points, routes, world_geo, africa_geo):
                 break
             ty += 18
         tag_rects.append((tx - tw, ty - 12, tx, ty + 3))
-        tag_svgs.append(f'<text class="tag" x="{f1(tx)}" y="{f1(ty)}" text-anchor="end">{html.escape(txt)}</text>')
+        tag_svgs.append(f'<text class="tag" data-routes="{" ".join(sorted(tag_routes[txt]))}" x="{f1(tx)}" y="{f1(ty)}" text-anchor="end">{html.escape(txt)}</text>')
 
     # エチオピア警戒
     eth = paths.get(CAUTION)
@@ -911,7 +914,7 @@ svg:not(.solo) .leg .ln{opacity:.7}
 svg#map.solo .leg .uncl{display:inline}
 .leg:hover .ln,.leg:focus .ln,.leg.on .ln{stroke-width:4}
 .leg:focus{outline:none} .leg:focus-visible .ln{stroke:var(--ink);stroke-width:4.5}
-.leg.off,.pt.off{opacity:.1;pointer-events:none}
+.leg.off,.pt.off,.tag.off{display:none}
 .stop .sq{fill:none;stroke:var(--muted);stroke-width:1;opacity:.75}
 .stop .sl{font-size:calc(9px * var(--ts,1));fill:var(--muted);paint-order:stroke;stroke:var(--sea);stroke-width:2.6px;display:none;pointer-events:none;font-family:var(--sans)}
 svg#map.zoomed .stop .sl,svg#map.hi .stop .sl{display:inline}
@@ -979,7 +982,8 @@ var go=function(){showLeg(l.id)};t.addEventListener('click',function(e){if(e.tar
 function pick(id){var r=document.querySelector('input[name=rt][value='+id+']');if(r){r.checked=true;var d=r.closest('details');if(d)d.open=true;var pn=r.closest('[role=tabpanel]');if(pn)tab(pn.id.slice(4),false)}apply(id)}
 function apply(v){sel=v;svg.classList.toggle('solo',D.routes.some(function(r){return r.id===v}));svg.querySelectorAll('.stop').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v))});
 svg.querySelectorAll('.leg').forEach(function(g){g.classList.toggle('off',!inSel(g.dataset.route,v))});
-svg.querySelectorAll('.pt').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v)&&g.dataset.pt!=='MNL'&&g.dataset.pt!=='BAGUIO')});
+svg.querySelectorAll('.pt').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v))});
+svg.querySelectorAll('.tag').forEach(function(g){g.classList.toggle('off',!hasR(g.dataset.routes,v))});
 tbl();detail.textContent='';var inf=(D.info||{})[v];if(inf){var h=el('h3','案'+v+'：'+inf.what);detail.appendChild(h);var dl=el('dl');row(dl,'確認できた費用の小計',inf.cost);row(dl,'主な未確認',inf.unk);row(dl,'注意','小計は公式の一般料金・既存資料の参考値・推計だけの合計で、2027年の実売ではありません。未確認は0円ではありません。');detail.appendChild(dl)}else{detail.appendChild(el('p',(D.routes.some(function(r){return r.id===v}))?'ルート'+v+'：線・表の行を選ぶと区間の詳細を表示します。':'線または地点を選ぶ（ホバー・タップ・Tabキー）と、区間の詳細を表示します。案を選ぶと費用の小計と未確認を表示します。'))}}
 document.querySelectorAll('input[name=rt]').forEach(function(r){r.addEventListener('change',function(){apply(r.value)})});
 var tbs=document.querySelectorAll('.tabs button');function tab(k,go){tbs.forEach(function(b){var on=b.getAttribute('data-tab')===k;b.setAttribute('aria-selected',on?'true':'false')});document.querySelectorAll('[role=tabpanel]').forEach(function(p){p.hidden=p.id!=='pan-'+k});if(go)pick(k)}
