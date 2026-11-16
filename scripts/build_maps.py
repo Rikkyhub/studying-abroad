@@ -21,7 +21,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_html import BASE_CSS, bar, nav as site_nav  # noqa: E402  共通テンプレート
+from build_html import BASE_CSS, MAP_PAGES, bar, nav as site_nav  # noqa: E402  共通テンプレート
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -812,7 +812,13 @@ legend{font-weight:700;padding:0;margin-bottom:4px}
 .sel label{display:flex;gap:8px;align-items:flex-start;padding:6px 4px;min-height:44px;cursor:pointer}
 .sel input{margin-top:6px;flex:none}
 .sel .tot{color:var(--muted);font-size:.9em;display:block}
-.mapbox{position:relative;margin:10px 0;border:1px solid var(--line)}
+.zwrap{overflow:auto;margin:6px 0;max-width:100%}
+.mapbox{position:relative;border:1px solid var(--line);width:calc(min(100%,(100vh - 330px) * var(--ar,1.6)) * var(--zf,1))}
+.szbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0}
+.szbar button{font:inherit;min-width:56px;min-height:40px;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
+.szbar button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
+details.rsel>summary{cursor:pointer;font-weight:700;margin:4px 0}.sr{position:absolute;left:-9999px}
+h1{margin:6px 0!important;font-size:1.35rem!important}.crumb{margin:6px 0!important}fieldset{margin:6px 0!important}
 svg#map{display:block;width:100%;height:auto;background:var(--sea);touch-action:pan-y;user-select:none;-webkit-user-select:none;font-family:var(--sans)}
 svg#map.zoomed{touch-action:none;cursor:grab}
 .zoom{position:absolute;right:8px;top:8px;display:flex;gap:4px}
@@ -915,8 +921,22 @@ svg.addEventListener('pointermove',function(e){if(!drag)return;var k=vb.w/svg.ge
 svg.addEventListener('pointerup',function(){drag=null});svg.addEventListener('pointercancel',function(){drag=null});
 window.addEventListener('resize',setVB);
 if(svg.getBoundingClientRect().width<640&&svg.dataset.focus){var f=svg.dataset.focus.split(' ').map(Number);vb={x:f[0],y:f[1],w:f[2],h:f[3]}}
+var zs=document.querySelectorAll('.szbar button'),ZK='route-g-zoom-v2';
+function zsz(z){var r=document.documentElement.style;r.setProperty('--zf',(z/100).toFixed(2));zs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===String(z)?'true':'false')});try{localStorage.setItem(ZK,String(z))}catch(e){}setVB()}
+document.querySelector('.mapbox').style.setProperty('--ar',(W/H).toFixed(3));
+var z0=100;try{var sv=localStorage.getItem(ZK);if(sv&&[70,100,125,150].indexOf(+sv)>=0)z0=+sv}catch(e){}
+zs.forEach(function(b){b.addEventListener('click',function(){zsz(+b.getAttribute('data-z'))})});zsz(z0);
 setVB();apply(INIT);var hm=/^#route-([A-Z])$/.exec(location.hash);if(hm&&document.querySelector('input[name=rt][value='+hm[1]+']'))pick(hm[1]);
 })();"""
+
+
+def map_switch(current):
+    """地図4ページに共通のナビ（今いるページは強調）。route_map.py・country_map.py も同じものを使う"""
+    items = []
+    for n, t in MAP_PAGES:
+        items.append(f'<span aria-current="page"><strong>{html.escape(t)}</strong></span>' if n == current else f'<a href="{n}.html">{html.escape(t)}</a>')
+    items.append('<a href="../research/may-madagascar-vfa-redesign.html">ルート調査（35日表・日数案）</a>')
+    return '<nav class="switch" aria-label="地図同士の移動">' + "".join(items) + "</nav>"
 
 
 def legend_html():
@@ -969,8 +989,7 @@ def build_page(kind, points, routes, world_geo, africa_geo):
     order = ([MAIN_ROUTE] if MAIN_ROUTE in routes else []) + [r for r in sorted(routes) if r != MAIN_ROUTE]
     radios = [_radio(rid) for rid in order]
     radios.append('<label><input type="radio" name="rt" value="all"' + ('' if MAIN_ROUTE in routes else ' checked') + '><span>すべて<span class="tot">全ルートを重ねて表示（過去の比較用）</span></span></label>')
-    other = ("africa-map.html", "アフリカ地図") if world else ("world-map.html", "世界地図")
-    here = "世界地図" if world else "アフリカ地図"
+    zbtns = "".join(f'<button type="button" data-z="{z}" aria-pressed="false">{z}%</button>' for z in (70, 100, 125, 150))
     off_note = ("" if world else '<p class="muted">アジア発の区間は図の外（東）にあります。線が図の端から入る所に「○○方面」と表示し、区間の一覧は下の表で確認できます。</p>')
     zoom_note = "地図は拡大・縮小ボタンで拡大でき、拡大中はドラッグで移動できます。"
     caution = ('<div class="cautionnote"><strong>エチオピア（斜線部）：</strong>英国FCDO（2026-10-16更新）はティグライ・アムハラ・ガンベラ全域への渡航を避けるよう勧告。'
@@ -986,12 +1005,13 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <h1>{title}</h1>
-<p class="lead">候補ルートの概念図。実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
-<nav class="switch" aria-label="地図とページの移動"><span aria-current="page"><strong>{here}</strong></span><a href="{other[0]}">{other[1]}</a><a href="../research/africa-route-comparison.html">ルート比較資料</a><a href="../areas/africa.html">アフリカ周遊のページ</a></nav>
-<fieldset><legend>表示するルート</legend><div class="sel">{"".join(radios)}</div></fieldset>
+{map_switch("world-map" if world else "africa-map")}
+<div class="szbar" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div>
+<details class="rsel"><summary>表示するルート（初期は本命の案G）</summary><fieldset><legend class="sr">表示するルート</legend><div class="sel">{"".join(radios)}</div></fieldset></details>
+{"" if world else '<p class="muted"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示</label></p>'}
+<div class="zwrap"><div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div></div>
+<p class="lead">候補ルートの概念図。{"" if world else "立ち寄り候補の町（◇）は拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、確定した立ち寄り先ではありません。"}実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
 <p class="muted">直線距離の合計は大圏（地球上の最短距離）の足し算で、<strong>実際の飛行・走行距離ではありません</strong>。区間の運賃・ダイヤは未確認のものを含みます。{zoom_note}</p>
-{"" if world else '<p class="muted"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示する。拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、候補ルートの確定した立ち寄り先ではありません。</label></p>'}
-<div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div>
 {off_note}
 <div id="detail" role="status" aria-live="polite"></div>
 {caution}
