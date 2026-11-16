@@ -127,6 +127,12 @@ dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 .card.reg .eyebrow{color:var(--c,var(--muted));font-weight:700}
 .card.reg-baguio{--c:var(--r-baguio)} .card.reg-may{--c:var(--r-may)} .card.reg-aug{--c:var(--r-aug)} .card.reg-cape{--c:var(--r-cape)} .card.reg-common{--c:var(--r-common)}
 
+.card.doc{padding:18px 20px}
+.card.doc h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:0 0 6px}
+.card.doc .cnt{font-size:.8rem;font-weight:700;color:var(--muted)}
+.card.doc ul{margin:4px 0 0;padding-left:1.1em} .card.doc li{margin:4px 0;font-size:.92rem}
+.docs-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+
 /* ---- 開閉（長いページ） ---- */
 details.more{margin:0} details.more>summary{cursor:pointer;list-style:none;color:var(--ink)}
 details.more>summary::-webkit-details-marker{display:none}
@@ -203,7 +209,7 @@ header.bar .mpanel .dl{font-size:.78rem;font-weight:700;color:var(--muted);margi
 header.bar .mpanel a{display:block;padding:9px 4px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
 header.bar .mpanel a[aria-current]{color:var(--accent);font-weight:800}
 }
-@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table{min-width:560px} th{position:static}}
+@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table:not(.cal):not(.pl){min-width:560px} th{position:static}}
 @media(max-width:640px){
 .hero{padding:30px 20px 26px;border-radius:16px} .hero h1{font-size:1.7rem}
 .scroll{overflow-x:visible;border:0;background:none;border-radius:0}
@@ -252,7 +258,7 @@ svg.m{display:block;width:100%;height:auto;background:var(--sea);font-family:var
 .chips input{margin:0}
 .rinfo{margin:6px 0;padding:6px 10px;border-left:6px solid var(--link);background:var(--bg);font-size:.92em}.rinfo b{display:block}
 .calbox{margin:8px 0}
-table.cal{width:100%;table-layout:fixed;border-collapse:collapse;margin:10px 0}
+table.cal{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;margin:10px 0}
 table.cal caption{text-align:left;font-weight:700;font-size:1.05rem;padding:4px 0}
 table.cal th{background:var(--th);border:1px solid var(--line);padding:3px;font-size:.85rem;text-align:center}
 table.cal td{border:1px solid var(--line);vertical-align:top;padding:4px 5px;height:96px;font-size:.78rem;line-height:1.35;overflow:hidden}

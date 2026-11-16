@@ -138,8 +138,12 @@ class LayoutTemplateTests(unittest.TestCase):
             self.assertIn('class="bar"', text, rel)
             self.assertIn("<style>", text)
 
-    def test_wide_tables_have_column_widths_on_index(self):
-        self.assertIn("<colgroup>", read("index.html"))
+    def test_index_docs_are_grouped_cards_not_one_wide_table(self):
+        # 資料一覧は分野ごとのカード（62行の1枚表をやめた）。表が残る場合だけ列幅を指定する
+        index = read("index.html")
+        self.assertIn('class="grid docs-grid"', index)
+        if "<table>" in index:
+            self.assertIn("<colgroup>", index)
 
 
 if __name__ == "__main__":

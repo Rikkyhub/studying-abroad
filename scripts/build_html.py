@@ -779,14 +779,19 @@ def fx_summary(root: Path = ROOT) -> str:
 
 
 def docs_summary(root: Path = ROOT) -> str:
-    """資料一覧（分野・資料・参考）。地域別ページと保守者向けの資料は別枠"""
-    rows = []
+    """資料一覧。分野ごとのカードに分け、各カードに資料名のリンクを並べる（地域別ページと保守者向けは別枠）"""
+    groups: dict[str, list[str]] = {}
     for r in sorted_pages(root):
         if r["area"] in ("地域別", "運用"):
             continue
-        rows.append([esc(r["area"]), f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>', ref_links(r["refs"])])
-    return (f'<details class="fold"><summary>資料一覧を開く（{len(rows)}件）</summary>'
-            '<div class="card wide">' + table(["分野", "資料", "参考（一次情報）"], rows, widths=[16, 34, 50]) + "</div></details>")
+        groups.setdefault(r["area"], []).append(f'<li><a href="{esc(r["path"])}">{esc(r["title"])}</a></li>')
+    total = sum(len(v) for v in groups.values())
+    cards = "".join(
+        f'<div class="card doc"><h3>{esc(area)}<span class="cnt">{len(items)}件</span></h3>'
+        + ("<ul>" + "".join(items[:6]) + "</ul>" if len(items) <= 6 else
+           "<ul>" + "".join(items[:5]) + "</ul>" + f'<details class="more"><summary>ほか {len(items) - 5} 件を開く<span class="hint">（一覧）</span></summary><ul>' + "".join(items[5:]) + "</ul></details>")
+        + "</div>" for area, items in sorted(groups.items(), key=lambda kv: -len(kv[1])))
+    return f'<p class="sec-lead">全{total}件。分野ごとにまとめています。</p><div class="grid docs-grid">{cards}</div>'
 
 
 INDEX_FX_SCRIPT = """<script>
