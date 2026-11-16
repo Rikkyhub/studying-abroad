@@ -617,7 +617,8 @@ def region_cards(root: Path = ROOT) -> str:
             period, status = "出発前〜帰国後（随時）", "一般的な確認項目（匿名モデル）"
         cards.append(card_link(f"areas/{key}.html",
                                f'<p class="eyebrow">{period}</p><h3>{esc(label)}</h3>'
-                               f'<p class="sub">{status}</p><p class="sub">確認事項 <span class="n">{n}</span>件</p>'))
+                               f'<p class="sub">{status}</p>'
+                               + (f'<p class="sub">確認事項 <span class="n">{n}</span>件</p>' if n else '<p class="sub">確認事項は未登録（0件ではなく、まだ洗い出していません）</p>')))
     return carousel(cards, "地域別")
 
 
