@@ -131,7 +131,7 @@ def fold_notes(body: str, keep: int = 2) -> str:
     return re.sub(r"(<p><strong>前提と備考</strong></p>\s*)<ul>(.*?)</ul>", repl, body, flags=re.S)
 
 
-def fold_sections(body: str, min_chars: int = 600, open_key: str = "", closed_keys: tuple = ()) -> str:
+def fold_sections(body: str, min_chars: int = 600, open_key: str = "", closed_keys: tuple = (), open_keys: tuple = ()) -> str:
     """長いページ：h2 の節ごとに開閉できるようにする。open_key を含む見出しの節（なければ最初の長い節）だけ開いておく。
     closed_keys を渡すと、その見出しの節だけ閉じ、ほかの節は最初から開く（旅のしおり型のページ用）"""
     parts = re.split(r'(?=<h2 id=)', body)
@@ -139,7 +139,10 @@ def fold_sections(body: str, min_chars: int = 600, open_key: str = "", closed_ke
     for p in parts[1:]:
         m = re.match(r'(<h2 id="[^"]+">.*?</h2>)(.*)$', p, re.S)
         if m and len(re.sub(r"<[^>]+>", "", m.group(2))) > min_chars:
-            if closed_keys:
+            if open_keys:
+                op = " open" if any(k in m.group(1) for k in open_keys) else ""
+                n += 1
+            elif closed_keys:
                 op = "" if any(k in m.group(1) for k in closed_keys) else " open"
                 n += 1
             else:
@@ -475,7 +478,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く
         body = fold_sections(fold_notes(body), min_chars=400 if path.parent.name == "areas" else 600,
                              open_key="費用の見積" if path.parent.name == "areas" else "",
-                             closed_keys=("調査メモ",) if shiori else ())
+                             open_keys=("旅の要点", "旅の流れ") if shiori else ())
     elif rel in FOLD_DOCS:
         # 長い docs（予算・準備・QA・Issue対応表）も、節ごとに開閉できるようにする。open_key の節だけ開いておく
         body = fold_sections(body, min_chars=900, open_key=FOLD_DOCS[rel])
@@ -497,8 +500,11 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     toc_html = ""
     heads = [(a, t) for lv, a, t in toc if lv == 2]
     if len(heads) >= 3:
-        toc_html = '<nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span>' + "".join(
-            f'<a href="#{a}">{html.escape(t)}</a>' for a, t in heads) + "</nav>"
+        links = "".join(f'<a href="#{a}">{html.escape(t)}</a>' for a, t in heads)
+        tools = ('<p class="doc-tools"><button type="button" data-sec="open">すべて開く</button>'
+                 '<button type="button" data-sec="close">すべて閉じる</button></p>') if 'class="sec"' in body else ""
+        toc_html = (f'<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary>'
+                    f'<nav class="toc" aria-label="このページの目次">{links}</nav>{tools}</details></aside>')
     current = f"{path.parent.name}/{path.stem}.html" if path.parent.name == "areas" else ""
     return page_html(
         mark=GENERATED_MARK.format(src=rel),
@@ -1716,10 +1722,12 @@ PAGE = """<!doctype html>
 <main class="wrap page">
 <p class="crumb"><a href="@@prefix@@index.html">トップ</a> ／ @@section@@</p>
 <div class="page-head @@region@@">@@tag@@<h1>@@title@@</h1></div>
+<div class="doc">
 @@toc@@
 <article>
 @@body@@
 </article>
+</div>
 <footer><nav class="all" id="all-pages" aria-label="全ページ">@@nav@@</nav><p>Markdown（<a href="@@src_url@@" target="_blank" rel="noopener">@@src@@</a>）から自動生成。内容の正本は Markdown 側です。公開リポジトリの生成物のため、個人の支払・資産・予約情報は掲載しません。料金・制度は確認日時点の情報で、2027年の内容を保証しません。</p></footer>
 </main>
 </body></html>

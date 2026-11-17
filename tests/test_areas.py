@@ -36,6 +36,20 @@ class AreaPageTests(unittest.TestCase):
                 self.assertLess(md.index("旅の要点"), md.index("今日のやること"), k)
                 self.assertLess(md.index("費用の見積"), md.index("調査メモ"), k)
 
+    def test_area_pages_have_sidebar_toc_and_open_key_sections(self):
+        # 左の目次（サイドバー）があり、最初に開いている節は「旅の要点」「旅の流れ」だけ（最初の画面に入れる）
+        import re
+        for k in ("baguio", "africa", "capetown", "africa-aug"):
+            html = read(f"areas/{k}.html")
+            self.assertIn('<aside class="doc-toc">', html, k)
+            self.assertIn('class="doc"', html, k)
+            opened = re.findall(r'<details class="sec" open><summary><h2[^>]*>(.*?)</h2>', html)
+            for h in opened:
+                self.assertTrue(any(x in h for x in ("旅の要点", "旅の流れ")), f"{k}: {h}")
+            # 「旅の要点」は、開いた節か、折りたたまない短い節（常に見える）のどちらか。閉じた節の中には入れない
+            closed = re.findall(r'<details class="sec"><summary><h2[^>]*>(.*?)</h2>', html)
+            self.assertFalse(any("旅の要点" in h for h in closed), k)
+
     def test_cost_table_has_subtotal_and_caption(self):
         for k in ("baguio", "africa", "capetown"):
             md = read(f"areas/{k}.md")
