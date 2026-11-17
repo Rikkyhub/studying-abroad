@@ -1619,40 +1619,38 @@ INDEX_PAGE = """<!doctype html>
 """
 
 
-# 上部ナビの構成（全ページ共通）。(見出し, [(リンク名, パス)])。パスは ROOT からの相対。
-def _menu_groups() -> list[tuple[str, list[tuple[str, str]]]]:
-    regions = [(label, f"areas/{k}.html") for k, label in REGION_PAGES]
+# 上部ナビ（全ページ共通）：ホーム／地域4つ／費用の横並びと、右端の「ほか」（開閉）。パスは ROOT からの相対
+NAV_MAIN = [("ホーム", "index.html"), ("バギオ", "areas/baguio.html"), ("アフリカ5月", "areas/africa.html"),
+            ("ケープタウン", "areas/capetown.html"), ("アフリカ8月", "areas/africa-aug.html"), ("費用", "docs/02-budget.html")]
+
+
+def _more_groups() -> list[tuple[str, list[tuple[str, str]]]]:
+    """「ほか」の中身（見出し, [(リンク名, パス)]）"""
     maps = [(t, f"maps/{n}.html") for n, t in MAP_PAGES]
     return [
-        ("旅程（地域別）", regions),
-        ("調べる", [("国別ページ（アフリカ）", "countries/kenya.html"), ("現地調査・比較の資料", "research/africa-13-countries-comparison.html"),
+        ("調べる", [("日本国内・保険・共通", "areas/common.html"), ("国別ページ（アフリカ）", "countries/kenya.html"),
+                  ("現地調査・比較の資料", "research/africa-13-countries-comparison.html"),
                   ("すべての出典", "research/sources.html"), ("Q&A（確認待ち）", "docs/10-qa.html")]),
         ("地図", maps),
-        ("ツール", [("予算の計算ルール", "docs/02-budget.html"), ("ルート作成", "docs/11-route-builder.html"),
-                  ("日程プランナー", "docs/13-day-planner.html"), ("航空券の比較", "docs/12-flights.html"),
-                  ("準備チェック", "docs/03-preparation.html"), ("準備タスク（アプリ表示）", "app.html")]),
+        ("ツール", [("ルート作成", "docs/11-route-builder.html"), ("日程プランナー", "docs/13-day-planner.html"),
+                  ("航空券の比較", "docs/12-flights.html"), ("準備チェック", "docs/03-preparation.html"),
+                  ("準備タスク（アプリ表示）", "app.html")]),
     ]
 
 
 def bar(prefix: str, current: str = "") -> str:
-    """全ページ共通の上部ナビ。ブランド＋4つのまとまり（開閉）＋確認待ち。携帯では1つのメニューにまとめる"""
-    def link(label: str, href: str, cls: str = "") -> str:
+    """全ページ共通の上部ナビ。ブランド＋横並び（ホーム・地域・費用）＋「ほか」。携帯は横スクロール"""
+    def link(label: str, href: str) -> str:
         cur = ' aria-current="page"' if href == current else ""
-        return f'<a href="{prefix}{href}"{cur}{cls}>{html.escape(label)}</a>'
-    groups = _menu_groups()
-    desk, mob = [], []
-    for title, items in groups:
-        here = any(h == current or (current.startswith("maps/") and h.startswith("maps/") and title == "地図") for _, h in items)
-        drop = "".join(link(l, h) for l, h in items)
-        desk.append(f'<details{" class=\"on\"" if here else ""}><summary{" aria-current=\"true\"" if here else ""}>{html.escape(title)}</summary><div class="drop">{drop}</div></details>')
-        mob.append(f'<p class="dl">{html.escape(title)}</p>' + drop)
-    qa = link("確認待ち", "docs/10-qa.html")
-    top = link("トップ", "index.html")
+        return f'<a href="{prefix}{href}"{cur}>{html.escape(label)}</a>'
+    main = "".join(link(l, h) for l, h in NAV_MAIN)
+    groups = _more_groups()
+    here = any(h == current or (current.startswith("maps/") and h.startswith("maps/")) for _, items in groups for _, h in items)
+    body = "".join(f'<p class="dl">{html.escape(title)}</p>' + "".join(link(l, h) for l, h in items) for title, items in groups)
+    more = (f'<details class="more-nav{" on" if here else ""}"><summary>ほか</summary>'
+            f'<div class="drop">{body}<p class="dl">このページの下</p><a href="#all-pages">全ページ一覧</a></div></details>')
     brand = f'<a class="brand" href="{prefix}index.html">2027 留学・アフリカ周遊</a>'
-    menu = f'<nav class="menu" aria-label="ページ間の移動">{top}{"".join(desk)}{qa}<a href="#all-pages">全ページ</a></nav>'
-    mobile = (f'<details class="mobile"><summary>メニュー</summary><div class="mpanel">{top}{"".join(mob)}{qa}'
-              f'<a href="#all-pages">全ページ一覧</a></div></details>')
-    return f'<header class="bar"><div class="wrap">{brand}{menu}{mobile}</div></header>'
+    return f'<header class="bar"><div class="wrap">{brand}<nav class="menu" aria-label="ページ間の移動">{main}{more}</nav></div></header>'
 
 
 def page_html(**kw) -> str:
