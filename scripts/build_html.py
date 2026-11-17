@@ -452,14 +452,19 @@ FOLD_DOCS = {"docs/02-budget.md": "1. 概要", "docs/03-preparation.md": "", "do
 PAGE_TAG_CLASS = {"baguio": "r-baguio", "africa": "r-may", "africa-aug": "r-aug", "capetown": "r-cape"}
 
 
-def page_tag(path: Path) -> str:
-    """見出しの上の小さなラベル（ページの種類。地域ページは地域の色）"""
+def page_tag(path: Path, root: Path = ROOT) -> str:
+    """見出しの上の小さなラベル。地域ページは「期間」（timeline.csv）を地域の色で、そのほかはページの種類を示す"""
     d = path.parent.name
     name = {"areas": "地域別", "countries": "国別ページ", "research": "現地調査", "docs": "計画・費用", "blog": "ブログ"}.get(d, "")
     if not name:
         return ""
     cls = PAGE_TAG_CLASS.get(path.stem, "") if d == "areas" else ""
-    return f'<span class="tag {cls}">{name}</span>'.replace('class="tag "', 'class="tag"')
+    if cls:
+        tl = csv_records(root / DATA_DIR / "timeline.csv") if (root / DATA_DIR / "timeline.csv").exists() else []
+        periods = [r["period"] for r in sorted(tl, key=lambda r: (int(r["sort"] or 0), r["id"])) if path.stem in r["region"].split(";")]
+        if periods:
+            name = " ・ ".join(dict.fromkeys(periods))
+    return f'<span class="tag {cls}">{esc(name)}</span>'.replace('class="tag "', 'class="tag"')
 
 
 def render_text(md: str, path: Path, root: Path = ROOT) -> str:
@@ -499,7 +504,8 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         mark=GENERATED_MARK.format(src=rel),
         title=html.escape(title),
         section=GROUPS.get(path.parent.name, ""),
-        tag=page_tag(path),
+        tag=page_tag(path, root),
+        region=PAGE_TAG_CLASS.get(path.stem, "") if path.parent.name == "areas" else "",
         body=body,
         toc=toc_html,
         bar=bar("../", current),
@@ -657,6 +663,73 @@ def timeline_cards(root: Path = ROOT) -> str:
                                f'<p class="eyebrow">{esc(r["period"])}</p><h3>{esc(r["title"])}</h3>'
                                f'<p class="status">{esc(r["status"])}</p><p class="sub">{esc(r["summary"])}</p>', key))
     return '<div class="grid">' + "".join(cards) + '</div>'
+
+
+def route_line(root: Path = ROOT) -> str:
+    """旅の路線：期間（timeline.csv の並び）ごとに1つの駅。地域の色の線でつなぎ、各駅が地域ページへのリンク"""
+    timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
+    costs = _station_costs(root)
+    items = []
+    for r in timeline:
+        key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
+        cls = REGION_CLASS.get(key, "reg-common")
+        cost = costs.get(key)
+        cost_txt = esc(cost) if cost else "未計上"
+        items.append(f'<li class="stop {cls}"><span class="node"></span>'
+                     f'<a class="station" href="areas/{key}.html"><span class="tag">{esc(r["period"])}</span>'
+                     f'<h3>{esc(r["title"])}</h3><p class="sub">{esc(r["summary"])}</p>'
+                     f'<span class="go"><span class="num">{cost_txt}</span><span>しおりを開く →</span></span></a></li>')
+    return '<ol class="stops">' + "".join(items) + '</ol>'
+
+
+def _station_costs(root: Path) -> dict:
+    """地域キー → 標準の現地費（円表記）。金額が入っていない地域は含めない"""
+    if root != ROOT:
+        return {}
+    import build
+    import areas
+    rows = build.load_model()[1]
+    out = {}
+    for key, _ in REGION_PAGES:
+        rs = [r for r in rows if r["id"] not in FLIGHT_IDS and areas.PHASE_REGION.get(r["phase"], "common") == key and not r["no_amount"]]
+        if rs:
+            out[key] = build.yen(sum(r["est"]["std"] or 0.0 for r in rs))
+    return out
+
+
+def budget_meter(root: Path = ROOT) -> str:
+    """予算のものさし：見積合計（標準）と、目標・上限の目盛つきの棒"""
+    if root != ROOT:
+        return ""
+    import build
+    S = build.load_model()[0]
+    tot, goal, cap = S["total"]["std"], S["budget_ideal"], S["budget_cap"]
+    pct = lambda v: max(0.0, min(100.0, v / cap * 100.0))
+    return ('<section class="side-card"><h2>予算のものさし</h2>'
+            f'<p class="big num">{esc(build.yen(tot))}</p>'
+            f'<div class="meter" role="img" aria-label="見積合計 {esc(build.yen(tot))}、目標 {esc(build.man(goal))}、上限 {esc(build.man(cap))}">'
+            f'<i style="width:{pct(tot):.1f}%"></i><span class="mark" style="left:{pct(goal):.1f}%"><span>目標 {esc(build.man(goal))}</span></span>'
+            f'<span class="mark" style="left:100%"><span>上限 {esc(build.man(cap))}</span></span></div>'
+            '<p class="sub">モデルの見積で、実費ではありません。未計上の項目は含まれていません（0円ではありません）。</p>'
+            '<a class="more-link" href="docs/02-budget.html">予算の計算ルールと内訳へ →</a></section>')
+
+
+def _short_deadline(note: str) -> str:
+    """期限の注記から「出発90日前」のような短い言い方だけを取り出す（括弧と文末の注記は省く）"""
+    first = note.split("。")[0]
+    m = re.search(r"(出発|開始|帰国便の出発|該当便の出発|周遊開始)?\s*\d+日前", first)
+    return m.group(0).strip() if m else first[:12]
+
+
+def now_short(root: Path = ROOT) -> str:
+    """いま何をするか：優先度1の確認事項のうち、着手の早い3件（全件は確認待ちページ）"""
+    tasks = csv_records(root / DATA_DIR / "tasks.csv")
+    key = lambda t: (-int(t["lead_days"] or 0), t["id"])
+    open_p0 = sorted((t for t in tasks if t["priority"] == "1" and t["status"] not in DONE_STATUS), key=key)
+    items = "".join(f'<li><b>{esc(_short_deadline(t["deadline_note"]))}</b><span>{esc(t["task"])}</span></li>' for t in open_p0[:3])
+    return ('<section class="side-card"><h2>いま何をするか</h2>'
+            f'<ul class="todo-s">{items}</ul>'
+            f'<p class="sub">最優先の未完了は {len(open_p0)} 件。全件は <a href="docs/10-qa.html">確認待ち（QA）</a> と、各地域のページに。</p></section>')
 
 
 FLIGHT_IDS = ("PH-11", "PH-12", "AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21", "SC-08")  # 国際線・国内線。バス・現地交通・査証は除外
@@ -860,25 +933,28 @@ document.querySelectorAll("[data-carousel]").forEach(function(c){
 
 INDEX_BODY = """@@bar@@
 <main class="wrap top">
-<section class="hero">
-<h1>2027 留学・アフリカ周遊 計画メモ</h1>
-<p class="lead">2027年2〜7月に、フィリピン・バギオの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学を一つの旅程として整理するための計画メモです。公開してよい一般の料金・制度・調査だけを匿名のモデルとして載せ、地域ごとに費用・確認事項・資料・地図を見られます。</p>
-<p class="hero-note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。個人の支払い・資産・予約情報は公開していません。</p>
-<p class="cta"><a href="#areas">地域ごとに見る</a><a class="alt" href="#budget">費用を見る</a><a class="alt" href="docs/10-qa.html">確認待ちを見る</a><a class="alt" href="maps/route-map.html">ルート地図</a></p>
+<section class="hero-a">
+<h1>2027年2月、バギオから。7月、ケープタウンまで。</h1>
+<p class="lead">フィリピンの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学と、その後の追加周遊を、時間の順に1本の路線として見られます。駅を押すと、その区間のしおり（費用・やること・資料・地図）へ移動します。</p>
+<p class="hero-note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p>
 </section>
+
+<div class="route-cols" id="plan">
+<div>
+<h2 class="kicker">旅の路線（時間の順）</h2>
+@@route@@
+<p class="sub common-link">日本国内の手続き・保険・共通の準備は <a href="areas/common.html">日本国内・保険・共通</a> にまとめています。</p>
+</div>
+<div class="side-col">
+@@meter@@
+@@nowshort@@
+</div>
+</div>
 
 <h2 id="budget">予算の全体像</h2>
 @@budget@@
 
-<h2 id="plan">旅程</h2>
-<p class="sec-lead">期間ごとの計画（モデル）です。カードを開くと、その地域の費用・確認事項・資料・地図を見られます。</p>
-@@timeline@@
-
-<h2 id="areas">地域別</h2>
-<p class="sec-lead">知りたい地域のページを開いてください。各ページに、概要、いまの確認事項、費用の見積、資料、場所と地図、通貨の換算がまとまっています。</p>
-@@regions@@
-
-<h2 id="now">いま何をするか</h2>
+<h2 id="now">いま何をするか（詳しく）</h2>
 @@now@@
 
 <h2 id="fx">通貨と円換算</h2>
@@ -910,7 +986,7 @@ def index_page(root: Path = ROOT) -> str:
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY.replace("@@bar@@", bar("", "index.html"))
-    for k, v in (("budget", budget_cards(root)), ("timeline", timeline_cards(root)), ("regions", region_cards(root)),("now", now_block(root)), ("fx", fx_summary(root)),
+    for k, v in (("budget", budget_cards(root)), ("route", route_line(root)), ("meter", budget_meter(root)), ("nowshort", now_short(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
@@ -1599,7 +1675,7 @@ PAGE = """<!doctype html>
 @@bar@@
 <main class="wrap page">
 <p class="crumb"><a href="@@prefix@@index.html">トップ</a> ／ @@section@@</p>
-<div class="page-head">@@tag@@<h1>@@title@@</h1></div>
+<div class="page-head @@region@@">@@tag@@<h1>@@title@@</h1></div>
 @@toc@@
 <article>
 @@body@@
@@ -1619,40 +1695,38 @@ INDEX_PAGE = """<!doctype html>
 """
 
 
-# 上部ナビの構成（全ページ共通）。(見出し, [(リンク名, パス)])。パスは ROOT からの相対。
-def _menu_groups() -> list[tuple[str, list[tuple[str, str]]]]:
-    regions = [(label, f"areas/{k}.html") for k, label in REGION_PAGES]
+# 上部ナビ（全ページ共通）：ホーム／地域4つ／費用の横並びと、右端の「ほか」（開閉）。パスは ROOT からの相対
+NAV_MAIN = [("ホーム", "index.html"), ("バギオ", "areas/baguio.html"), ("アフリカ5月", "areas/africa.html"),
+            ("ケープタウン", "areas/capetown.html"), ("アフリカ8月", "areas/africa-aug.html"), ("費用", "docs/02-budget.html")]
+
+
+def _more_groups() -> list[tuple[str, list[tuple[str, str]]]]:
+    """「ほか」の中身（見出し, [(リンク名, パス)]）"""
     maps = [(t, f"maps/{n}.html") for n, t in MAP_PAGES]
     return [
-        ("旅程（地域別）", regions),
-        ("調べる", [("国別ページ（アフリカ）", "countries/kenya.html"), ("現地調査・比較の資料", "research/africa-13-countries-comparison.html"),
+        ("調べる", [("日本国内・保険・共通", "areas/common.html"), ("国別ページ（アフリカ）", "countries/kenya.html"),
+                  ("現地調査・比較の資料", "research/africa-13-countries-comparison.html"),
                   ("すべての出典", "research/sources.html"), ("Q&A（確認待ち）", "docs/10-qa.html")]),
         ("地図", maps),
-        ("ツール", [("予算の計算ルール", "docs/02-budget.html"), ("ルート作成", "docs/11-route-builder.html"),
-                  ("日程プランナー", "docs/13-day-planner.html"), ("航空券の比較", "docs/12-flights.html"),
-                  ("準備チェック", "docs/03-preparation.html"), ("準備タスク（アプリ表示）", "app.html")]),
+        ("ツール", [("ルート作成", "docs/11-route-builder.html"), ("日程プランナー", "docs/13-day-planner.html"),
+                  ("航空券の比較", "docs/12-flights.html"), ("準備チェック", "docs/03-preparation.html"),
+                  ("準備タスク（アプリ表示）", "app.html")]),
     ]
 
 
 def bar(prefix: str, current: str = "") -> str:
-    """全ページ共通の上部ナビ。ブランド＋4つのまとまり（開閉）＋確認待ち。携帯では1つのメニューにまとめる"""
-    def link(label: str, href: str, cls: str = "") -> str:
+    """全ページ共通の上部ナビ。ブランド＋横並び（ホーム・地域・費用）＋「ほか」。携帯は横スクロール"""
+    def link(label: str, href: str) -> str:
         cur = ' aria-current="page"' if href == current else ""
-        return f'<a href="{prefix}{href}"{cur}{cls}>{html.escape(label)}</a>'
-    groups = _menu_groups()
-    desk, mob = [], []
-    for title, items in groups:
-        here = any(h == current or (current.startswith("maps/") and h.startswith("maps/") and title == "地図") for _, h in items)
-        drop = "".join(link(l, h) for l, h in items)
-        desk.append(f'<details{" class=\"on\"" if here else ""}><summary{" aria-current=\"true\"" if here else ""}>{html.escape(title)}</summary><div class="drop">{drop}</div></details>')
-        mob.append(f'<p class="dl">{html.escape(title)}</p>' + drop)
-    qa = link("確認待ち", "docs/10-qa.html")
-    top = link("トップ", "index.html")
+        return f'<a href="{prefix}{href}"{cur}>{html.escape(label)}</a>'
+    main = "".join(link(l, h) for l, h in NAV_MAIN)
+    groups = _more_groups()
+    here = any(h == current or (current.startswith("maps/") and h.startswith("maps/")) for _, items in groups for _, h in items)
+    body = "".join(f'<p class="dl">{html.escape(title)}</p>' + "".join(link(l, h) for l, h in items) for title, items in groups)
+    more = (f'<details class="more-nav{" on" if here else ""}"><summary>ほか</summary>'
+            f'<div class="drop">{body}<p class="dl">このページの下</p><a href="#all-pages">全ページ一覧</a></div></details>')
     brand = f'<a class="brand" href="{prefix}index.html">2027 留学・アフリカ周遊</a>'
-    menu = f'<nav class="menu" aria-label="ページ間の移動">{top}{"".join(desk)}{qa}<a href="#all-pages">全ページ</a></nav>'
-    mobile = (f'<details class="mobile"><summary>メニュー</summary><div class="mpanel">{top}{"".join(mob)}{qa}'
-              f'<a href="#all-pages">全ページ一覧</a></div></details>')
-    return f'<header class="bar"><div class="wrap">{brand}{menu}{mobile}</div></header>'
+    return f'<header class="bar"><div class="wrap">{brand}<nav class="menu" aria-label="ページ間の移動">{main}{more}</nav></div></header>'
 
 
 def page_html(**kw) -> str:

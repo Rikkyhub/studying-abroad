@@ -82,7 +82,9 @@ class IndexTests(unittest.TestCase):
     def test_top_page_sections_in_order(self):
         import re
         heads = re.findall(r"<h2 id=\"[^\"]+\">(.*?)</h2>", self.index)
-        self.assertEqual(heads, ["予算の全体像", "旅程", "地域別", "いま何をするか", "通貨と円換算", "資料一覧"])
+        # 旅の路線（時間順の駅）は h2 ではなく kicker の見出しで、予算の前に置く。旅程と地域別の重複は路線に統合した
+        self.assertEqual(heads, ["予算の全体像", "いま何をするか（詳しく）", "通貨と円換算", "資料一覧"])
+        self.assertLess(self.index.index("旅の路線"), self.index.index('<h2 id="budget">'))
 
     def test_budget_cards_are_model_and_never_zero_for_unpriced(self):
         import re
@@ -100,10 +102,11 @@ class IndexTests(unittest.TestCase):
     def test_timeline_cards_one_per_period_with_area_link(self):
         import csv
         import re
-        sec = self.index.split('<h2 id="plan">')[1].split("<h2 id=")[0]
+        sec = self.index.split('id="plan"')[1].split('<h2 id="budget">')[0]
         with (ROOT / "data" / "timeline.csv").open(newline="", encoding="utf-8-sig") as f:
             rows = list(csv.DictReader(f))
-        self.assertEqual(len(re.findall(r'class="card link[ "]', sec)), len(rows))
+        # 各期間が1つの駅（a.station）で、地域ページへのリンクになっている
+        self.assertEqual(len(re.findall(r'<a class="station" href="areas/', sec)), len(rows))
         for r in rows:
             self.assertIn(r["period"], sec)
         self.assertIn("モデル", sec)
@@ -117,7 +120,7 @@ class IndexTests(unittest.TestCase):
 
     def test_link_cards_do_not_nest_links(self):
         import re
-        for m in re.findall(r'<a class="card link[^"]*".*?</a>', self.index, re.S):
+        for m in re.findall(r'<a class="(?:card link[^"]*|station)".*?</a>', self.index, re.S):
             self.assertEqual(m.count("<a "), 1, m[:80])
 
     def test_floating_card_css(self):
@@ -170,6 +173,32 @@ class IndexTests(unittest.TestCase):
                 "currency,name_ja,unit,region,jpy_per_unit,rate_date,rate_kind,source\nBWP,プラ,P,ボツワナ,,,,\n",
                 encoding="utf-8")
             self.assertIn("未確認", fx_summary(root))
+
+
+class NavTests(unittest.TestCase):
+    """全ページ共通の上部ナビ：ホーム・地域4つ・費用が横並びで、ほかの入口は「ほか」から開く"""
+
+    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "アフリカ8月", "費用")
+
+    def test_main_links_on_every_kind_of_page(self):
+        for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "research/sources.html",
+                    "docs/02-budget.html", "maps/route-map.html"):
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
+            for label in self.MAIN:
+                self.assertIn(f">{label}</a>", nav, f"{rel}: {label}")
+            self.assertIn("<summary>ほか</summary>", nav, rel)
+
+    def test_current_page_is_marked(self):
+        text = (ROOT / "areas/capetown.html").read_text(encoding="utf-8")
+        nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
+        self.assertRegex(nav, r'href="[^"]*areas/capetown\.html" aria-current="page">ケープタウン</a>')
+
+    def test_more_menu_reaches_every_group(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        more = text.split('<details class="more-nav')[1].split("</details>")[0]
+        for label in ("国別ページ（アフリカ）", "現地調査・比較の資料", "Q&amp;A（確認待ち）", "世界地図", "ルート地図", "ルート作成", "日程プランナー", "全ページ一覧"):
+            self.assertIn(label, more, label)
 
 
 if __name__ == "__main__":
