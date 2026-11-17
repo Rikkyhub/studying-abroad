@@ -72,7 +72,7 @@ class IndexTests(unittest.TestCase):
             self.assertIn(f'href="areas/{k}.html"', self.index)
         import re
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
-        self.assertLess(len(self.index), 66000)  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
+        self.assertLess(len(self.index), 100000)  # 5月の案Gの地図（SVG約46KB）をトップの中心に置いた分を加算  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
 
     def test_tables_have_headers(self):
         import re
@@ -84,8 +84,8 @@ class IndexTests(unittest.TestCase):
         heads = re.findall(r"<h2 id=\"[^\"]+\">(.*?)</h2>", self.index)
         # 旅の路線（時間順の駅）は h2 ではなく kicker の見出しで、予算の前に置く。旅程と地域別の重複は路線に統合した
         self.assertEqual(heads, ["予算の全体像", "いま何をするか（詳しく）", "通貨と円換算", "資料一覧"])
-        # 4つの区間の比較（横並び）が、最初の h2（予算）より前にある＝最初の画面に入る
-        self.assertLess(self.index.index('class="region-compare"'), self.index.index('<h2 id="budget">'))
+        # 地図と4つの区間のカードが、最初の h2（予算）より前にある＝最初の画面に入る
+        self.assertLess(self.index.index('class="home-map"'), self.index.index('<h2 id="budget">'))
 
     def test_budget_cards_are_model_and_never_zero_for_unpriced(self):
         import re
@@ -107,8 +107,8 @@ class IndexTests(unittest.TestCase):
         import re as _re
         with (ROOT / "data" / "timeline.csv").open(newline="", encoding="utf-8-sig") as f:
             rows = list(csv.DictReader(f))
-        # 各期間が1つの列（a.region-col）で、地域ページへのリンクになっている
-        self.assertEqual(len(re.findall(r'<a class="region-col [^"]*" href="areas/', sec)), len(rows))
+        # 各期間が1つのカード（a.mini）で、地域ページへのリンクになっている
+        self.assertEqual(len(re.findall(r'<a class="mini [^"]*" href="areas/', sec)), len(rows))
         for r in rows:
             self.assertIn(r["period"], sec)
         self.assertIn("モデル", sec)
@@ -118,10 +118,11 @@ class IndexTests(unittest.TestCase):
         head = self.index.split('<h2 id="budget">')[0]
         hero = re.search(r'<section class="hero-a">(.*?)</section>', head, re.S).group(1)
         self.assertLess(len(re.sub(r"<[^>]+>", "", hero)), 200)  # ヒーローは短く（最初の画面に比較が入る）
-        self.assertEqual(len(re.findall(r'class="region-col ', head)), 4)
+        self.assertEqual(len(re.findall(r'<a class="mini ', head)), 4)  # 地図の左右に区間カード4つ
+        self.assertIn('class="home-map"', head)  # トップの中心にルート地図
         self.assertIn('class="strip"', head)  # 予算の1行の帯
-        for col in re.findall(r'<a class="region-col .*?</a>', head, re.S):
-            self.assertIn("いまやること", col)
+        for col in re.findall(r'<a class="mini .*?</a>', head, re.S):
+            self.assertIn("しおりを開く", col)
             self.assertRegex(col, r"¥[\d,]+|未計上")
 
     def test_currency_cards(self):
@@ -133,7 +134,7 @@ class IndexTests(unittest.TestCase):
 
     def test_link_cards_do_not_nest_links(self):
         import re
-        for m in re.findall(r'<a class="(?:card link[^"]*|region-col [^"]*)".*?</a>', self.index, re.S):
+        for m in re.findall(r'<a class="(?:card link[^"]*|mini [^"]*)".*?</a>', self.index, re.S):
             self.assertEqual(m.count("<a "), 1, m[:80])
 
     def test_floating_card_css(self):
