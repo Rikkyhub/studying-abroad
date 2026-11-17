@@ -137,6 +137,40 @@ body.home{background:var(--page)}
 .stat .v{font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums;margin:2px 0 0;line-height:1.35}
 .stat .s{font-size:.82rem;color:var(--muted);margin:2px 0 0}
 
+/* ---- トップ：案A（路線図） ---- */
+.hero-a{margin:34px 0 8px}
+.hero-a h1{font-size:clamp(1.7rem,5.4vw,2.7rem);line-height:1.3;font-weight:900;text-wrap:balance;margin:0}
+.hero-a .lead{color:var(--muted);max-width:60ch;margin-top:12px}
+.hero-a .hero-note{color:var(--muted);font-size:.9rem;max-width:72ch;margin-top:8px}
+.route-cols{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:30px 44px;margin-top:30px;align-items:start}
+.kicker{font-size:.82rem!important;letter-spacing:.08em;color:var(--muted);margin:0 0 14px!important;font-weight:700;border:0!important;padding:0!important}
+ol.stops{list-style:none;margin:0;padding:0 0 0 46px;display:grid;gap:16px}
+.stop{position:relative;max-width:none}
+.stop::before{content:"";position:absolute;left:-30px;top:34px;bottom:-16px;width:4px;background:var(--c,var(--r-common))}
+.stop:last-child::before{display:none}
+.stop .node{position:absolute;left:-46px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--c,var(--r-common));border:4px solid var(--bg);box-shadow:0 0 0 3px var(--c,var(--r-common))}
+.stop.reg-baguio{--c:var(--r-baguio)} .stop.reg-may{--c:var(--r-may)} .stop.reg-aug{--c:var(--r-aug)} .stop.reg-cape{--c:var(--r-cape)} .stop.reg-common{--c:var(--r-common)}
+a.station{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px 15px;transition:transform .2s,border-color .2s}
+a.station:hover{transform:translateX(4px);border-color:var(--c)}
+a.station .tag{display:inline-block;font-size:.78rem;font-weight:700;padding:1px 10px;border-radius:999px;color:#fff;background:var(--c)}
+a.station h3{font-size:1.2rem;font-weight:900;margin:6px 0 2px;line-height:1.4}
+a.station .sub{color:var(--muted);font-size:.9rem;line-height:1.65;margin:2px 0 0;max-width:none}
+a.station .go{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-weight:700;font-size:.9rem;color:var(--ink)}
+.common-link{margin-top:14px!important}
+.side-col{display:grid;gap:22px}
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.side-card h2{font-size:.82rem;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;font-weight:700;border:0;padding:0}
+.side-card .big{font-size:2rem;font-weight:900;line-height:1.3;margin:0}
+.meter{height:14px;border-radius:7px;background:var(--th);position:relative;margin:26px 0 34px}
+.meter>i{display:block;height:100%;border-radius:7px;background:var(--r-may)}
+.meter .mark{position:absolute;top:-6px;bottom:-6px;width:2px;background:var(--ink)}
+.meter .mark span{position:absolute;top:100%;margin-top:6px;right:-2px;left:auto;font-size:.72rem;white-space:nowrap;color:var(--muted)}
+.meter .mark:last-child span{top:auto;bottom:100%;margin:0 0 6px}
+.more-link{font-weight:700}
+ul.todo-s{list-style:none;margin:6px 0 10px;padding:0;display:grid;gap:8px;font-size:.93rem}
+ul.todo-s li{display:grid;grid-template-columns:auto 1fr;gap:10px;max-width:none;margin:0}
+ul.todo-s b{font-size:.76rem;border-radius:6px;padding:0 7px;height:1.6em;line-height:1.6em;background:var(--th);white-space:nowrap}
+
 /* ---- カード ---- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;padding:20px 0 28px;overflow:visible;align-items:stretch}
 .card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:var(--rad);padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
@@ -232,6 +266,7 @@ tr[hidden]{display:none}
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 
 /* ---- 携帯 ---- */
+@media(max-width:900px){.route-cols{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table:not(.cal):not(.pl){min-width:560px} th{position:static}}
 @media(max-width:640px){
 .hero{padding:30px 20px 26px;border-radius:16px} .hero h1{font-size:1.7rem}
