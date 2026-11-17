@@ -112,10 +112,10 @@ body.home{background:var(--page)}
 .stat .s{font-size:.82rem;color:var(--muted);margin:2px 0 0}
 
 /* ---- トップ：案A（路線図） ---- */
-.hero-a{margin:34px 0 8px}
-.hero-a h1{font-size:clamp(1.7rem,5.4vw,2.7rem);line-height:1.3;font-weight:900;text-wrap:balance;margin:0}
+.hero-a{margin:18px 0 6px}
+.hero-a h1{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;font-weight:900;text-wrap:balance;margin:0}
 .hero-a .lead{color:var(--muted);max-width:60ch;margin-top:12px}
-.hero-a .hero-note{color:var(--muted);font-size:.9rem;max-width:72ch;margin-top:8px}
+.hero-a .hero-note{color:var(--muted);font-size:.85rem;max-width:none;margin-top:6px;line-height:1.6}
 .route-cols{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:30px 44px;margin-top:30px;align-items:start}
 .kicker{font-size:.82rem!important;letter-spacing:.08em;color:var(--muted);margin:0 0 14px!important;font-weight:700;border:0!important;padding:0!important}
 ol.stops{list-style:none;margin:0;padding:0 0 0 46px;display:grid;gap:16px}
@@ -144,6 +144,37 @@ a.station .go{display:flex;justify-content:space-between;gap:10px;margin-top:8px
 ul.todo-s{list-style:none;margin:6px 0 10px;padding:0;display:grid;gap:8px;font-size:.93rem}
 ul.todo-s li{display:grid;grid-template-columns:auto 1fr;gap:10px;max-width:none;margin:0}
 ul.todo-s b{font-size:.76rem;border-radius:6px;padding:0 7px;height:1.6em;line-height:1.6em;background:var(--th);white-space:nowrap}
+
+
+/* ---- トップ：4つの区間を横に並べて比べる／予算の1行の帯 ---- */
+.top .kicker{margin:14px 0 8px!important}
+.region-compare{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+a.region-col{display:flex;flex-direction:column;gap:0;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-top:6px solid var(--c,var(--r-common));border-radius:12px;padding:12px 14px 12px;transition:transform .2s,border-color .2s,box-shadow .2s;max-width:none}
+a.region-col:hover{transform:translateY(-3px);box-shadow:var(--shadow-up)}
+a.region-col.reg-baguio{--c:var(--r-baguio)} a.region-col.reg-may{--c:var(--r-may)} a.region-col.reg-aug{--c:var(--r-aug)} a.region-col.reg-cape{--c:var(--r-cape)} a.region-col.reg-common{--c:var(--r-common)}
+a.region-col .tag{align-self:flex-start;font-size:.74rem;font-weight:700;padding:1px 9px;border-radius:999px;color:#fff;background:var(--c)}
+a.region-col h3{font-size:1.02rem;font-weight:900;line-height:1.4;margin:6px 0 0}
+a.region-col .st{font-size:.76rem;color:var(--muted);margin:1px 0 0;font-weight:700}
+a.region-col .cost{font-size:1.45rem;font-weight:900;line-height:1.3;margin:8px 0 0}
+a.region-col .cost-note{font-size:.72rem;color:var(--muted);margin:0}
+a.region-col .sum{font-size:.82rem;line-height:1.55;color:var(--muted);margin:8px 0 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:none}
+a.region-col h4{font-size:.72rem;letter-spacing:.06em;color:var(--muted);margin:10px 0 4px;font-weight:700}
+ul.col-todo{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:.8rem;line-height:1.5}
+ul.col-todo li{max-width:none;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.col-none{font-size:.78rem;color:var(--muted);margin:0}
+a.region-col .go{margin-top:auto;padding-top:10px;font-weight:700;font-size:.82rem}
+.strip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:14px;margin-top:14px}
+.strip>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px 12px}
+.strip .k{display:block;font-size:.72rem;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.strip .big{font-size:1.4rem;font-weight:900;line-height:1.3;display:block}
+.strip .meter{margin:20px 0 26px}
+.strip .note{display:block;font-size:.76rem;color:var(--muted);line-height:1.5;background:none;padding:0;margin:0;border-radius:0}
+.strip ul{list-style:none;margin:4px 0 6px;padding:0;display:grid;gap:5px;font-size:.84rem}
+.strip li{display:grid;grid-template-columns:auto 1fr;gap:8px;max-width:none;margin:0;line-height:1.45}
+.strip li b{font-size:.7rem;border-radius:6px;padding:0 6px;height:1.7em;line-height:1.7em;background:var(--th);white-space:nowrap}
+.more-below{margin-top:12px!important;font-size:.85rem}
+@media(max-width:1000px){.region-compare{grid-template-columns:repeat(2,minmax(0,1fr))}.strip{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.region-compare{grid-template-columns:minmax(0,1fr)}}
 
 /* ---- カード ---- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;padding:20px 0 28px;overflow:visible;align-items:stretch}

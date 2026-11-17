@@ -697,6 +697,54 @@ def _station_costs(root: Path) -> dict:
     return out
 
 
+def _top_task(root: Path, region: str, n: int = 2) -> list[str]:
+    """その地域の、優先度の高い未完了の確認事項の題名（着手の早い順）。共通の確認事項は含めない"""
+    tasks = csv_records(root / DATA_DIR / "tasks.csv")
+    key = lambda t: (int(t["priority"] or 9), -int(t["lead_days"] or 0), t["id"])
+    mine = [t for t in tasks if region in t["region"].split(";") and t["status"] not in DONE_STATUS]
+    return [t["task"] for t in sorted(mine, key=key)[:n]]
+
+
+def region_compare(root: Path = ROOT) -> str:
+    """4つの地域を横に並べて比べる（期間・状態・費用・やること）。timeline.csv の並び＝時間順で、左から右へ"""
+    timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
+    costs = _station_costs(root)
+    cols = []
+    for r in timeline:
+        key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
+        cls = REGION_CLASS.get(key, "reg-common")
+        cost = costs.get(key)
+        cost_html = f'<p class="cost num">{esc(cost)}</p><p class="cost-note">標準・航空券を除く現地費</p>' if cost else '<p class="cost num">未計上</p><p class="cost-note">国が未定のため金額なし</p>'
+        todo = _top_task(root, key)
+        todo_html = ("<ul class=\"col-todo\">" + "".join(f"<li>{esc(x)}</li>" for x in todo) + "</ul>") if todo else '<p class="col-none">確認事項は未登録（0件ではなく、洗い出し前）</p>'
+        cols.append(f'<a class="region-col {cls}" href="areas/{key}.html"><span class="tag">{esc(r["period"])}</span>'
+                    f'<h3>{esc(r["title"])}</h3><p class="st">{esc(r["status"])}</p>{cost_html}'
+                    f'<p class="sum">{esc(r["summary"])}</p><h4>いまやること</h4>{todo_html}<span class="go">しおりを開く →</span></a>')
+    return '<div class="region-compare">' + "".join(cols) + '</div>'
+
+
+def budget_strip(root: Path = ROOT) -> str:
+    """予算の1行の帯：見積合計の棒（目標・上限の目盛）と、優先の高いやること3件のチップ"""
+    if root != ROOT:
+        return ""
+    import build
+    S = build.load_model()[0]
+    tot, goal, cap = S["total"]["std"], S["budget_ideal"], S["budget_cap"]
+    pct = lambda v: max(0.0, min(100.0, v / cap * 100.0))
+    tasks = csv_records(root / DATA_DIR / "tasks.csv")
+    key = lambda t: (-int(t["lead_days"] or 0), t["id"])
+    open_p0 = sorted((t for t in tasks if t["priority"] == "1" and t["status"] not in DONE_STATUS), key=key)
+    chips = "".join(f'<li><b>{esc(_short_deadline(t["deadline_note"]))}</b>{esc(t["task"])}</li>' for t in open_p0[:3])
+    return ('<div class="strip">'
+            f'<div class="strip-budget"><span class="k">見積合計（標準）</span><span class="big num">{esc(build.yen(tot))}</span>'
+            f'<div class="meter" role="img" aria-label="見積合計 {esc(build.yen(tot))}、目標 {esc(build.man(goal))}、上限 {esc(build.man(cap))}">'
+            f'<i style="width:{pct(tot):.1f}%"></i><span class="mark" style="left:{pct(goal):.1f}%"><span>目標 {esc(build.man(goal))}</span></span>'
+            f'<span class="mark" style="left:100%"><span>上限 {esc(build.man(cap))}</span></span></div>'
+            '<span class="note">モデルの見積。未計上は含まず、0円ではありません。 <a href="docs/02-budget.html">内訳へ →</a></span></div>'
+            f'<div class="strip-todo"><span class="k">いま何をするか（最優先）</span><ul>{chips}</ul>'
+            f'<span class="note">最優先の未完了 {len(open_p0)} 件。<a href="docs/10-qa.html">確認待ち（QA）へ →</a></span></div></div>')
+
+
 def budget_meter(root: Path = ROOT) -> str:
     """予算のものさし：見積合計（標準）と、目標・上限の目盛つきの棒"""
     if root != ROOT:
@@ -935,21 +983,13 @@ INDEX_BODY = """@@bar@@
 <main class="wrap top">
 <section class="hero-a">
 <h1>2027年2月、バギオから。7月、ケープタウンまで。</h1>
-<p class="lead">フィリピンの語学留学、5月のアフリカ周遊、6〜7月のケープタウン留学と、その後の追加周遊を、時間の順に1本の路線として見られます。駅を押すと、その区間のしおり（費用・やること・資料・地図）へ移動します。</p>
-<p class="hero-note">現在は計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認の項目が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p>
+<p class="hero-note">計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p>
 </section>
 
-<div class="route-cols" id="plan">
-<div>
-<h2 class="kicker">旅の路線（時間の順）</h2>
-@@route@@
-<p class="sub common-link">日本国内の手続き・保険・共通の準備は <a href="areas/common.html">日本国内・保険・共通</a> にまとめています。</p>
-</div>
-<div class="side-col">
-@@meter@@
-@@nowshort@@
-</div>
-</div>
+<h2 class="kicker" id="plan">4つの区間を比べる（時間の順に左から右へ）</h2>
+@@compare@@
+@@strip@@
+<p class="sub more-below">下に、予算の内訳・通貨と円換算・資料の一覧が続きます。日本国内の手続き・保険・共通の準備は <a href="areas/common.html">日本国内・保険・共通</a> に。</p>
 
 <h2 id="budget">予算の全体像</h2>
 @@budget@@
@@ -986,7 +1026,7 @@ def index_page(root: Path = ROOT) -> str:
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY.replace("@@bar@@", bar("", "index.html"))
-    for k, v in (("budget", budget_cards(root)), ("route", route_line(root)), ("meter", budget_meter(root)), ("nowshort", now_short(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
+    for k, v in (("budget", budget_cards(root)), ("compare", region_compare(root)), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
