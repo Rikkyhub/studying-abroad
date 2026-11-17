@@ -30,8 +30,11 @@ class AreaPageTests(unittest.TestCase):
                 self.assertIn(f"<!-- AUTO:{name} -->", md, k)
             self.assertIn("<table>", html)
             if k != "common":
-                for h in ("費用の見積", "資料", "場所と地図", "通貨と円換算"):
+                # 旅のしおり型の章立て：要点→やること→費用→住む場所→準備→調査メモ（資料・通貨・地図は調査メモの中）
+                for h in ("旅の要点", "今日のやること", "費用の見積", "住む場所・町と地図", "出発前の準備", "調査メモ", "資料の一覧", "通貨と円換算"):
                     self.assertIn(h, md, f"{k}: {h}")
+                self.assertLess(md.index("旅の要点"), md.index("今日のやること"), k)
+                self.assertLess(md.index("費用の見積"), md.index("調査メモ"), k)
 
     def test_cost_table_has_subtotal_and_caption(self):
         for k in ("baguio", "africa", "capetown"):

@@ -131,16 +131,21 @@ def fold_notes(body: str, keep: int = 2) -> str:
     return re.sub(r"(<p><strong>前提と備考</strong></p>\s*)<ul>(.*?)</ul>", repl, body, flags=re.S)
 
 
-def fold_sections(body: str, min_chars: int = 600, open_key: str = "") -> str:
-    """長いページ：h2 の節ごとに開閉できるようにする。open_key を含む見出しの節（なければ最初の長い節）だけ開いておく"""
+def fold_sections(body: str, min_chars: int = 600, open_key: str = "", closed_keys: tuple = ()) -> str:
+    """長いページ：h2 の節ごとに開閉できるようにする。open_key を含む見出しの節（なければ最初の長い節）だけ開いておく。
+    closed_keys を渡すと、その見出しの節だけ閉じ、ほかの節は最初から開く（旅のしおり型のページ用）"""
     parts = re.split(r'(?=<h2 id=)', body)
     out, opened, n = [parts[0]], False, 0
     for p in parts[1:]:
         m = re.match(r'(<h2 id="[^"]+">.*?</h2>)(.*)$', p, re.S)
         if m and len(re.sub(r"<[^>]+>", "", m.group(2))) > min_chars:
-            want = (open_key in m.group(1)) if open_key else not opened
-            op = " open" if want and not opened else ""
-            opened, n = opened or want, n + 1
+            if closed_keys:
+                op = "" if any(k in m.group(1) for k in closed_keys) else " open"
+                n += 1
+            else:
+                want = (open_key in m.group(1)) if open_key else not opened
+                op = " open" if want and not opened else ""
+                opened, n = opened or want, n + 1
             out.append(f'<details class="sec"{op}><summary>{m.group(1)}</summary>{m.group(2)}</details>')
         else:
             out.append(p)
@@ -462,8 +467,10 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     title = title or path.stem
     rel = path.relative_to(root).as_posix()
     if path.parent.name in ("research", "areas"):
+        shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く
         body = fold_sections(fold_notes(body), min_chars=400 if path.parent.name == "areas" else 600,
-                             open_key="費用の見積" if path.parent.name == "areas" else "")
+                             open_key="費用の見積" if path.parent.name == "areas" else "",
+                             closed_keys=("調査メモ",) if shiori else ())
     elif rel in FOLD_DOCS:
         # 長い docs（予算・準備・QA・Issue対応表）も、節ごとに開閉できるようにする。open_key の節だけ開いておく
         body = fold_sections(body, min_chars=900, open_key=FOLD_DOCS[rel])

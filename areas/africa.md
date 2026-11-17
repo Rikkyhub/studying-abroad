@@ -2,18 +2,11 @@
 
 > 8月の追加周遊は別ページ [アフリカ周遊（8月）](africa-aug.md) に分けました。シーズンと目的が違うためです（5月は東アフリカが雨季の終わり・南部が乾季の入口、8月は乾季の最盛期）。
 
+## 1. 旅の要点
+
 2027年5月の周遊を、**マダガスカル先行＋ビクトリアの滝周辺3か国（ジンバブエ・ザンビア・ボツワナ）**で組み直す想定の**匿名モデル**です（Issue #77）。旅程・航空券・宿はすべて未確定で、**日数と費用はこれから調べる段階**です。予算の目安は60万円（航空券を含む）で、安全、費用、訪問国の数の順に優先します。
 
-## 1. 概要と時期（モデル）
-
-- **必須（A）**：マダガスカル／ジンバブエ／ザンビア／ボツワナ。**ツィンギ・ド・ベマラハは除外**。
-- **日数・費用が許せば（B）**：ケニア／タンザニア／モザンビーク／レソト／エスワティニ／モーリシャス。**予備（C）**：エチオピア／ウガンダ／ルワンダ／マラウイ／ナミビア／アンゴラ／セーシェル。
-- **日数の比較**：マダガスカル 7〜8日／10日（暫定基準）／12日、ビクトリアの滝周辺 5〜7日／7〜9日（7日が暫定基準）。モーリシャスは「なし／乗継のみ／入国して観光（仮に4日）」で比べます。
-- 6〜7月にケープタウンで留学する場合は、南アフリカの滞在日数（90日）の扱いに注意が必要です。留学開始前に最低2〜3日の余裕を置きます。
-
-詳細と比較表の枠は [5月の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国](../research/may-madagascar-vfa-redesign.md)。旧案（ケニア・タンザニア縦断、ナミビア経由など）は履歴として [3ルート比較](../research/archive-may-three-routes-comparison.md) と [ルート比較](../research/africa-route-comparison.md) に残しています。**旧案を最新の採用案とはみなしません。**
-
-ルートは [モデルルート作成](../docs/11-route-builder.md) で「案G」を読み込んで、日数や順番を触れます。期間（5/3〜6/6）を国・町ごとの泊数に割り振って残り日数を見たいときは、[日程プランナー](../docs/13-day-planner.md) を使います。
+**採用中の優先案（案G）**：東京 → ムンバイ → モーリシャス → アンタナナリボ（マダガスカル）→ モーリシャス → ヨハネスブルグ → ビクトリアの滝周辺（ジンバブエ・ザンビア・ボツワナ）→ ケープタウン。約35日（Day 1 = 5/3 の仮置き）。航空券は利用者申告の参考値のみで未検証です。
 
 <!-- AUTO:timeline -->
 | 時期（モデル） | 内容 | 状態 | 概要 |
@@ -21,25 +14,26 @@
 | 2027年5月 | **アフリカ周遊（5月）** | 検討中（モデル） | 約5週間の匿名モデル。日本→ムンバイ経由→モーリシャス観光→マダガスカル→モーリシャス→ヨハネスブルグ→VFA周辺3か国→ケープタウン。5月配分目標60万円は航空券と現地費を合算（Issue #80）。便・現地費は未確認。 |
 <!-- /AUTO:timeline -->
 
-### ルート案（未確定・旧案は履歴）
+- **必須（A）**：マダガスカル／ジンバブエ／ザンビア／ボツワナ。**ツィンギ・ド・ベマラハは除外**。
+- **日数・費用が許せば（B）**：ケニア／タンザニア／モザンビーク／レソト／エスワティニ／モーリシャス。**予備（C）**：エチオピア／ウガンダ／ルワンダ／マラウイ／ナミビア／アンゴラ／セーシェル。
+- 6〜7月にケープタウンで留学する場合は、南アフリカの滞在日数（90日）の扱いに注意が必要です。留学開始前に最低2〜3日の余裕を置きます。
 
-**新しい優先案（案G）**：東京 → ムンバイ → モーリシャス → アンタナナリボ（マダガスカル）→ ビクトリアの滝周辺（ジンバブエ・ザンビア・ボツワナ）→ ケープタウン。航空券は利用者申告の参考値のみで未検証です。
+## 2. 旅の流れ（日ごと）
 
-以下の表は**旧案（マニラ発のA〜E）の履歴**です。現在の採用案ではありません。
+日付と曜日、国、移動・観光・予備の別は、**[ルート地図のカレンダー](../maps/route-map.html)**（日数案で切り替え）で見られます。35日表（Day 1〜35）は [5月の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国](../research/may-madagascar-vfa-redesign.md) にあります。
 
-<!-- AUTO:routes -->
-| ID | 経路（案） | 終点 | 備考 |
-|---|---|---|---|
-| A | MNL → アジア乗継（BKK/KUL/SIN等）→ NBO → ケニア/タンザニア → 南ア | JNB/CPT | 乗継都市は未選定 |
-| B | MNL → 乗継 → ADD（空港乗継のみ）→ TNR → JNB → CPT | CPT | エチオピア北部は対象外 |
-| C | 東アフリカ（DAR）→ ザンビア → ジンバブエ → ボツワナ → 南ア | JNB | 陸路/航空の混成 |
-| D | モーリシャス / セーシェル / マダガスカル | — | マダガスカル以外は接続未確認 |
-| E | MNL → 乗継 → NBO → TNR（Kenya Airways）→ JNB | JNB/CPT | ADDを避ける |
+| 区間 | Day（5/3 起点の仮置き） | 内容 |
+|---|---|---|
+| 日本 → モーリシャス | 1〜2 | 東京→ムンバイ→モーリシャス（便・乗継時間は未確認） |
+| モーリシャス | 3〜5 | 島内観光（3日）。観光なし／乗継のみ／2〜4日を比較中 |
+| マダガスカル | 6〜19 | アンタナナリボ→東部（アンダシベ）→西部（モロンダバ）→首都。14暦日の案（10日・7日・5日に縮める案もあり） |
+| マダガスカル → モーリシャス → 南アフリカ | 19〜22 | モーリシャスへ戻り（Day 19）、1日待機（Day 20）、ヨハネスブルグへ（Day 21）、接続の余裕（Day 22） |
+| ビクトリアの滝周辺 | 23〜31 | ジンバブエ（滝）→ ザンビア（リビングストン）→ ボツワナ（カサネ・チョベ）→ ジンバブエへ戻る。空路の前日（Day 31）は予備 |
+| ケープタウン | 32〜35 | 空路で移動（Day 32）。学校前の生活準備と予備日（Day 33〜35） |
 
-MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝アンタナナリボ、JNB＝ヨハネスブルグ、CPT＝ケープタウン、DAR＝ダルエスサラーム。どれも未確定の案です。区間別の比較・入国条件・危険情報・価格モデルは [アフリカ周遊ルート比較](../research/africa-route-comparison.md) にあります。
-<!-- /AUTO:routes -->
+ルートは [モデルルート作成](../docs/11-route-builder.md) で「案G」を読み込んで、日数や順番を触れます。期間（5/3〜6/6）を国・町ごとの泊数に割り振って残り日数を見たいときは、[日程プランナー](../docs/13-day-planner.md) を使います。
 
-## 2. いまの確認事項
+## 3. 今日のやること
 
 <!-- AUTO:tasks -->
 | 優先 | 作業 | 期限（目安） | 状態・期限の種類 | 次のアクション |
@@ -54,7 +48,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 優先度は1が最優先です。期限は暦日ではなく、出発日などを基準にした相対的な目安です（期限の種類：公式期限＝制度上の期限／学校・機関の個別期限＝各機関の案内に従う／推奨目安＝このモデルの提案／要確認）。一般的な確認項目で、個人の進捗ではありません。
 <!-- /AUTO:tasks -->
 
-## 3. 費用の見積
+## 4. 費用の見積
 
 「未計上」は金額が入っていないことを示し、0円ではありません。ツアー現地払いや食費・現地交通などは未確認の推定を含みます。
 
@@ -125,7 +119,57 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 - AF-06：ザンビア入国管理局（2026-11-08確認）：日本は対象国、USD50、12か月のうち最大30日、ザンビアとジンバブエを複数回往来できる。ボツワナはカズングラ国境経由の日帰りまで（チョベで宿泊する場合は別の入国手続き）。ビクトリアの滝周辺は5月の新案（Issue #77）の必須Aなので、全シナリオ同額。旧案の『低予算ルートでは不要（0円）』は外した。2027年の料金・条件は未確認 ／ main 側の一次照合（2026-11-02）: KAZA基本USD50、カード決済時の総額USD50.50（手数料USD0.50）は別条件 https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/ 。日本はザンビア単独入国の査証免除対象 https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/ だが、KAZAはザンビアとジンバブエの両国往来用の任意の選択肢。日本旅券のザンビア単独査証料USD50を自動加算しない。2027年のKAZA価格・取得地点・ジンバブエ側の査証要件・決済方法・渡航条件は未確認。次：ザンビア入管最新料金/免除一覧とジンバブエ入管公式案内、実際の入国順に照らして再計算。
 <!-- /AUTO:cost -->
 
-## 4. 資料
+## 5. 住む場所・町と地図
+
+国ごとの観光地・食べ物・ビザ・安全は [アフリカ国別地図](../maps/africa-countries.html) から、各国のページへ進めます。
+
+<!-- AUTO:places -->
+| 名称 | 種類 | 地図 | 備考 | 出典 |
+|---|---|---|---|---|
+| O.R. Tambo International Airport（ヨハネスブルグ） | 空港 | [Google マップ](https://www.google.com/maps/search/?api=1&query=O.R.+Tambo+International+Airport) | 南部アフリカ周遊の乗継・起点の候補 | [資料](../research/africa-route-comparison.md) |
+| Jomo Kenyatta International Airport（ナイロビ） | 空港 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Jomo+Kenyatta+International+Airport) | 東アフリカ経由ルートの乗継候補 | [資料](../research/africa-route-comparison.md) |
+| Julius Nyerere International Airport（ダルエスサラーム） | 空港 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Julius+Nyerere+International+Airport) | 東アフリカ側の起点候補 | [資料](../research/africa-route-comparison.md) |
+| Victoria Falls Bridge（ザンビア・ジンバブエ国境） | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+Bridge+border+post) | ビクトリアの滝周辺の国境 | [資料](../research/africa-route-comparison.md) |
+| Kazungula Border Post（ザンビア・ボツワナ国境） | その他 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Kazungula+Border+Post) | 陸路ルートの国境 | [資料](../research/africa-route-comparison.md) |
+| Chobe National Park | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Chobe+National+Park) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
+| Kruger National Park | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Kruger+National+Park) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
+| Serengeti National Park | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Serengeti+National+Park) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
+| Ngorongoro Conservation Area | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Ngorongoro+Conservation+Area) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
+
+公共の施設・名所・ダイビングショップ・空港だけを載せています。地図リンクは Google マップの検索結果を開きます（営業・安全の保証ではありません）。
+<!-- /AUTO:places -->
+
+## 6. 出発前の準備
+
+- ビザ・入国：[ビザ・入国の調査](../research/visa-and-immigration.md)
+- 保険：[長期留学＋周遊旅行の保険](../research/long-stay-insurance.md)
+- 予防接種・薬：[ワクチンと薬のチェックリスト](../research/vaccines-and-medicines-checklist.md)
+- 治安・医療：[治安・医療・安全](../research/safety-and-health.md)
+- 全体の準備チェック：[準備チェック](../docs/03-preparation.md)
+
+## 7. 調査メモ
+
+旅の組み立てには直接使わない、旧案・資料の一覧・通貨・地図リンクをここにまとめています。
+
+### 旧案の履歴（現在の採用案ではない）
+
+**新しい優先案（案G）**：東京 → ムンバイ → モーリシャス → アンタナナリボ（マダガスカル）→ ビクトリアの滝周辺（ジンバブエ・ザンビア・ボツワナ）→ ケープタウン。航空券は利用者申告の参考値のみで未検証です。
+
+以下の表は**旧案（マニラ発のA〜E）の履歴**です。現在の採用案ではありません。
+
+<!-- AUTO:routes -->
+| ID | 経路（案） | 終点 | 備考 |
+|---|---|---|---|
+| A | MNL → アジア乗継（BKK/KUL/SIN等）→ NBO → ケニア/タンザニア → 南ア | JNB/CPT | 乗継都市は未選定 |
+| B | MNL → 乗継 → ADD（空港乗継のみ）→ TNR → JNB → CPT | CPT | エチオピア北部は対象外 |
+| C | 東アフリカ（DAR）→ ザンビア → ジンバブエ → ボツワナ → 南ア | JNB | 陸路/航空の混成 |
+| D | モーリシャス / セーシェル / マダガスカル | — | マダガスカル以外は接続未確認 |
+| E | MNL → 乗継 → NBO → TNR（Kenya Airways）→ JNB | JNB/CPT | ADDを避ける |
+
+MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝アンタナナリボ、JNB＝ヨハネスブルグ、CPT＝ケープタウン、DAR＝ダルエスサラーム。どれも未確定の案です。区間別の比較・入国条件・危険情報・価格モデルは [アフリカ周遊ルート比較](../research/africa-route-comparison.md) にあります。
+<!-- /AUTO:routes -->
+
+### 資料の一覧
 
 <!-- AUTO:docs -->
 | 分野 | 資料 | 内容 | 参考（一次情報） | 最終確認日 |
@@ -175,25 +219,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | [モーリシャス](../countries/mauritius.html) | 5月周遊の乗継・観光候補。ダイビング・航空券の既存調査を整理（査証・安全などは未確認） |
 <!-- /AUTO:docs -->
 
-## 5. 場所と地図
-
-<!-- AUTO:places -->
-| 名称 | 種類 | 地図 | 備考 | 出典 |
-|---|---|---|---|---|
-| O.R. Tambo International Airport（ヨハネスブルグ） | 空港 | [Google マップ](https://www.google.com/maps/search/?api=1&query=O.R.+Tambo+International+Airport) | 南部アフリカ周遊の乗継・起点の候補 | [資料](../research/africa-route-comparison.md) |
-| Jomo Kenyatta International Airport（ナイロビ） | 空港 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Jomo+Kenyatta+International+Airport) | 東アフリカ経由ルートの乗継候補 | [資料](../research/africa-route-comparison.md) |
-| Julius Nyerere International Airport（ダルエスサラーム） | 空港 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Julius+Nyerere+International+Airport) | 東アフリカ側の起点候補 | [資料](../research/africa-route-comparison.md) |
-| Victoria Falls Bridge（ザンビア・ジンバブエ国境） | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+Bridge+border+post) | ビクトリアの滝周辺の国境 | [資料](../research/africa-route-comparison.md) |
-| Kazungula Border Post（ザンビア・ボツワナ国境） | その他 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Kazungula+Border+Post) | 陸路ルートの国境 | [資料](../research/africa-route-comparison.md) |
-| Chobe National Park | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Chobe+National+Park) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
-| Kruger National Park | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Kruger+National+Park) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
-| Serengeti National Park | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Serengeti+National+Park) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
-| Ngorongoro Conservation Area | 観光 | [Google マップ](https://www.google.com/maps/search/?api=1&query=Ngorongoro+Conservation+Area) | サファリの候補地 | [資料](../research/africa-route-comparison.md) |
-
-公共の施設・名所・ダイビングショップ・空港だけを載せています。地図リンクは Google マップの検索結果を開きます（営業・安全の保証ではありません）。
-<!-- /AUTO:places -->
-
-## 6. 通貨と円換算
+### 通貨と円換算
 
 訪問国ごとに通貨が異なり、このリポジトリで参考レートを持っているのは下の通貨だけです。ほかの通貨は、資料の中で現地通貨のまま記載しています。
 
@@ -206,7 +232,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が加わるため、実際に受け取る額・支払う額とは一致しません。通貨が違う金額は、換算前に足し合わせていません。
 <!-- /AUTO:fx -->
 
-## 7. 地図
+### 地図
 
 <!-- AUTO:maps -->
 - [世界地図（移動の全体像）](../maps/world-map.html)
