@@ -70,7 +70,9 @@ header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);
 /* ---- ページの見出し帯・パンくず・目次 ---- */
 .crumb{margin:20px 0 0;color:var(--muted);font-size:.9rem}
 .crumb a{color:var(--muted)}
-.page-head{margin:6px 0 4px}
+.page-head{margin:10px 0 6px;border-top:6px solid var(--c,var(--ink));padding-top:14px}
+.page-head.r-baguio{--c:var(--r-baguio)} .page-head.r-may{--c:var(--r-may)} .page-head.r-aug{--c:var(--r-aug)} .page-head.r-cape{--c:var(--r-cape)}
+.page-head h1{margin-top:6px}
 .page-head .tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--r-common-s);color:var(--r-common);margin-bottom:4px}
 .page-head .tag.r-baguio{background:var(--r-baguio-s);color:var(--r-baguio)}
 .page-head .tag.r-may{background:var(--r-may-s);color:var(--r-may)}
@@ -172,6 +174,9 @@ dl.kv dt{color:var(--muted);font-size:.9rem} dl.kv dd{margin:0;font-weight:700}
 .card.doc .cnt{font-size:.8rem;font-weight:700;color:var(--muted)}
 .card.doc ul{margin:4px 0 0;padding-left:1.1em} .card.doc li{margin:4px 0;font-size:.92rem}
 .docs-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+
+details.sec>summary h2{text-decoration:none}
+.page-head.r-baguio~article details.sec,.page-head.r-may~article details.sec,.page-head.r-aug~article details.sec,.page-head.r-cape~article details.sec{border-color:color-mix(in srgb,var(--c,var(--line)) 30%,var(--line))}
 
 /* ---- 開閉（長いページ） ---- */
 details.more{margin:0} details.more>summary{cursor:pointer;list-style:none;color:var(--ink)}
@@ -297,7 +302,7 @@ table.cost tr.sub td{display:inline-block;padding:2px 8px 2px 0!important;border
 <header class="bar"><div class="wrap"><a class="brand" href="../index.html">2027 留学・アフリカ周遊</a><nav class="menu" aria-label="ページ間の移動"><a href="../index.html">ホーム</a><a href="../areas/baguio.html">バギオ</a><a href="../areas/africa.html">アフリカ5月</a><a href="../areas/capetown.html">ケープタウン</a><a href="../areas/africa-aug.html">アフリカ8月</a><a href="../docs/02-budget.html">費用</a><details class="more-nav"><summary>ほか</summary><div class="drop"><p class="dl">調べる</p><a href="../areas/common.html">日本国内・保険・共通</a><a href="../countries/kenya.html">国別ページ（アフリカ）</a><a href="../research/africa-13-countries-comparison.html">現地調査・比較の資料</a><a href="../research/sources.html">すべての出典</a><a href="../docs/10-qa.html">Q&amp;A（確認待ち）</a><p class="dl">地図</p><a href="../maps/world-map.html">世界地図</a><a href="../maps/africa-map.html">アフリカ地図</a><a href="../maps/africa-countries.html">アフリカ国別地図</a><a href="../maps/route-map.html">ルート地図（5月・8月の案を選んで見る）</a><p class="dl">ツール</p><a href="../docs/11-route-builder.html">ルート作成</a><a href="../docs/13-day-planner.html">日程プランナー</a><a href="../docs/12-flights.html">航空券の比較</a><a href="../docs/03-preparation.html">準備チェック</a><a href="../app.html">準備タスク（アプリ表示）</a><p class="dl">このページの下</p><a href="#all-pages">全ページ一覧</a></div></details></nav></div></header>
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
-<div class="page-head"><span class="tag">現地調査</span><h1>バギオ・ケープタウンの治安・健康・日常移動</h1></div>
+<div class="page-head "><span class="tag">現地調査</span><h1>バギオ・ケープタウンの治安・健康・日常移動</h1></div>
 <nav class="toc" aria-label="このページの目次"><span class="label">このページ：</span><a href="#1-要点">1. 要点</a><a href="#2-外務省の危険情報スポット情報領事メール">2. 外務省の危険情報・スポット情報・領事メール</a><a href="#3-健康食品水感染症">3. 健康（食品・水・感染症）</a><a href="#4-災害自然環境冬の海">4. 災害・自然環境・冬の海</a><a href="#5-医療機関緊急連絡先">5. 医療機関・緊急連絡先</a><a href="#6-保険">6. 保険</a><a href="#7-日常の行動の目安">7. 日常の行動の目安</a><a href="#8-未確認事項">8. 未確認事項</a><a href="#9-出発前チェックリスト">9. 出発前チェックリスト</a><a href="#10-出典一覧確認日-2026-10-17">10. 出典一覧（確認日 2026-10-17）</a><a href="#11-調査ログ">11. 調査ログ</a></nav>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>

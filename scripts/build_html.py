@@ -452,14 +452,19 @@ FOLD_DOCS = {"docs/02-budget.md": "1. 概要", "docs/03-preparation.md": "", "do
 PAGE_TAG_CLASS = {"baguio": "r-baguio", "africa": "r-may", "africa-aug": "r-aug", "capetown": "r-cape"}
 
 
-def page_tag(path: Path) -> str:
-    """見出しの上の小さなラベル（ページの種類。地域ページは地域の色）"""
+def page_tag(path: Path, root: Path = ROOT) -> str:
+    """見出しの上の小さなラベル。地域ページは「期間」（timeline.csv）を地域の色で、そのほかはページの種類を示す"""
     d = path.parent.name
     name = {"areas": "地域別", "countries": "国別ページ", "research": "現地調査", "docs": "計画・費用", "blog": "ブログ"}.get(d, "")
     if not name:
         return ""
     cls = PAGE_TAG_CLASS.get(path.stem, "") if d == "areas" else ""
-    return f'<span class="tag {cls}">{name}</span>'.replace('class="tag "', 'class="tag"')
+    if cls:
+        tl = csv_records(root / DATA_DIR / "timeline.csv") if (root / DATA_DIR / "timeline.csv").exists() else []
+        periods = [r["period"] for r in sorted(tl, key=lambda r: (int(r["sort"] or 0), r["id"])) if path.stem in r["region"].split(";")]
+        if periods:
+            name = " ・ ".join(dict.fromkeys(periods))
+    return f'<span class="tag {cls}">{esc(name)}</span>'.replace('class="tag "', 'class="tag"')
 
 
 def render_text(md: str, path: Path, root: Path = ROOT) -> str:
@@ -499,7 +504,8 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         mark=GENERATED_MARK.format(src=rel),
         title=html.escape(title),
         section=GROUPS.get(path.parent.name, ""),
-        tag=page_tag(path),
+        tag=page_tag(path, root),
+        region=PAGE_TAG_CLASS.get(path.stem, "") if path.parent.name == "areas" else "",
         body=body,
         toc=toc_html,
         bar=bar("../", current),
@@ -1669,7 +1675,7 @@ PAGE = """<!doctype html>
 @@bar@@
 <main class="wrap page">
 <p class="crumb"><a href="@@prefix@@index.html">トップ</a> ／ @@section@@</p>
-<div class="page-head">@@tag@@<h1>@@title@@</h1></div>
+<div class="page-head @@region@@">@@tag@@<h1>@@title@@</h1></div>
 @@toc@@
 <article>
 @@body@@
