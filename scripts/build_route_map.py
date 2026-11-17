@@ -290,7 +290,7 @@ svg.m{display:block;width:100%;height:auto;background:var(--sea);font-family:var
 .rinfo{margin:6px 0;padding:6px 10px;border-left:6px solid var(--link);background:var(--bg);font-size:.92em}.rinfo b{display:block}
 .calbox{margin:8px 0}
 [data-cpan][hidden],.acal[hidden],.aplan[hidden]{display:none}
-table.cal{width:100%;table-layout:fixed;border-collapse:collapse;margin:10px 0}
+table.cal{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;margin:10px 0}
 table.cal caption{text-align:left;font-weight:700;font-size:1.05rem;padding:4px 0}
 table.cal th{background:var(--th);border:1px solid var(--line);padding:3px;font-size:.85rem;text-align:center}
 table.cal td{border:1px solid var(--line);vertical-align:top;padding:4px 5px;height:96px;font-size:.78rem;line-height:1.35;overflow:hidden}
