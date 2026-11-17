@@ -214,5 +214,26 @@ class NavTests(unittest.TestCase):
             self.assertIn(label, more, label)
 
 
+class FontSizeAndHomeMapTests(unittest.TestCase):
+    """文字サイズのボタン（小・中・大）と、トップの中心に置くルート地図"""
+
+    def test_font_size_buttons_on_every_page_kind(self):
+        for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "docs/02-budget.html",
+                    "maps/route-map.html", "maps/world-map.html", "maps/africa-countries.html"):
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            for v in ("0.9", "1", "1.15"):
+                self.assertIn(f'data-fs="{v}"', text, f"{rel}: {v}")
+            self.assertIn('var K="site-fs"', text, rel)  # 保存・復元（localStorage は try/catch の中）
+            self.assertIn("try{", text.split('var K="site-fs"')[1][:600], rel)
+
+    def test_home_has_route_map_before_budget(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        i_map = text.index('class="home-map"')
+        self.assertLess(i_map, text.index('<h2 id="budget">'))
+        self.assertEqual(text.count('class="m"'), 1)  # 地図のSVGは1つ（5月の案G）
+        self.assertIn('href="maps/route-map.html"', text)
+        self.assertEqual(text.count('class="mini '), 4)  # 区間カードは4つ（地図の左右に2つずつ）
+
+
 if __name__ == "__main__":
     unittest.main()

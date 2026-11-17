@@ -142,7 +142,8 @@ class LayoutTemplateTests(unittest.TestCase):
         css = build_html.BASE_CSS
         self.assertIn(':root:not([data-theme="light"])', css)
         self.assertIn(':root[data-theme="dark"]', css)
-        self.assertRegex(css, r"font:16px/1\.8")
+        self.assertRegex(css, r"font-size:calc\(16px \* var\(--fs,1\)\)")  # 文字サイズは倍率(--fs)で変えられる
+        self.assertRegex(css, r"font:1rem/1\.\d+")
         self.assertIn("tabular-nums", css)
         self.assertIn("72ch", css)
         self.assertRegex(css, r"th\{position:sticky")

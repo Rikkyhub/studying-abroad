@@ -1074,7 +1074,7 @@ def index_page(root: Path = ROOT) -> str:
     for k, v in (("budget", budget_cards(root)), ("homemap", home_map(root)), ("minileft", region_mini(root)[0]), ("miniright", region_mini(root)[1]), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
-    return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
+    return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@fsjs@@", FONT_SIZE_JS).replace("@@body@@", body)
 
 
 # ---------------------------------------------------------------- issue map (maintainers / AI)
@@ -1756,7 +1756,7 @@ PAGE = """<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>@@title@@｜2027 留学・アフリカ周遊</title>
 <style>
-@@css@@</style></head><body>
+@@css@@</style>@@fsjs@@</head><body>
 @@bar@@
 <main class="wrap page">
 <p class="crumb"><a href="@@prefix@@index.html">トップ</a> ／ @@section@@</p>
@@ -1777,7 +1777,7 @@ INDEX_PAGE = """<!doctype html>
 <meta name="description" content="2027年2〜7月の海外留学・アフリカ周遊の計画・費用・準備・調査（地域別）">
 <title>2027 留学・アフリカ周遊｜計画メモ</title>
 <style>
-@@css@@</style></head><body class="home">
+@@css@@</style>@@fsjs@@</head><body class="home">
 @@body@@</body></html>
 """
 
@@ -1813,11 +1813,23 @@ def bar(prefix: str, current: str = "") -> str:
     more = (f'<details class="more-nav{" on" if here else ""}"><summary>ほか</summary>'
             f'<div class="drop">{body}<p class="dl">このページの下</p><a href="#all-pages">全ページ一覧</a></div></details>')
     brand = f'<a class="brand" href="{prefix}index.html">2027 留学・アフリカ周遊</a>'
-    return f'<header class="bar"><div class="wrap">{brand}<nav class="menu" aria-label="ページ間の移動">{main}{more}</nav></div></header>'
+    fs = ('<div class="fs" role="group" aria-label="文字の大きさ"><span>文字</span>'
+          '<button type="button" data-fs="0.9" aria-pressed="false" aria-label="文字を小さく">小</button>'
+          '<button type="button" data-fs="1" aria-pressed="true" aria-label="文字を標準に">中</button>'
+          '<button type="button" data-fs="1.15" aria-pressed="false" aria-label="文字を大きく">大</button></div>')
+    return f'<header class="bar"><div class="wrap">{brand}<nav class="menu" aria-label="ページ間の移動">{main}{more}</nav>{fs}</div></header>'
+
+
+FONT_SIZE_JS = """<script>(function(){var K="site-fs",R=document.documentElement;function ok(v){return v===0.9||v===1||v===1.15}
+function set(v){R.style.setProperty("--fs",String(v));document.querySelectorAll(".fs button").forEach(function(b){b.setAttribute("aria-pressed",String(+b.getAttribute("data-fs")===v))})}
+var v=1;try{var s=+localStorage.getItem(K);if(ok(s))v=s}catch(e){}
+R.style.setProperty("--fs",String(v));
+document.addEventListener("DOMContentLoaded",function(){set(v);document.querySelectorAll(".fs button").forEach(function(b){b.addEventListener("click",function(){var n=+b.getAttribute("data-fs");if(!ok(n))return;v=n;set(n);try{localStorage.setItem(K,String(n))}catch(e){}})})});})();</script>"""
 
 
 def page_html(**kw) -> str:
     kw["css"] = BASE_CSS + PAGE_CSS_EXTRA
+    kw["fsjs"] = FONT_SIZE_JS
     return re.sub(r"@@(\w+)@@", lambda m: kw[m.group(1)], PAGE)
 
 

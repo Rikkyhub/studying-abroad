@@ -9,18 +9,19 @@
 
 *{box-sizing:border-box}
 html{scroll-padding-top:calc(var(--bar) + 14px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--sans)}
+html{font-size:calc(16px * var(--fs,1))}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.7 var(--sans)}
 a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-h1{font-size:2rem;line-height:1.35;margin:10px 0 10px;font-weight:800;letter-spacing:.01em}
-h2{font-size:1.4rem;line-height:1.45;margin:52px 0 12px;padding-top:0;font-weight:800}
-h3{font-size:1.12rem;line-height:1.55;margin:30px 0 8px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
-p{margin:10px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
-.note{background:var(--warn-soft);color:var(--ink);padding:12px 16px;margin:18px 0;max-width:none;border-radius:var(--rad-s)}
+h1{font-size:1.9rem;line-height:1.35;margin:8px 0 6px;font-weight:800;letter-spacing:.01em}
+h2{font-size:1.35rem;line-height:1.45;margin:30px 0 8px;padding-top:0;font-weight:800}
+h3{font-size:1.1rem;line-height:1.55;margin:20px 0 6px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
+p{margin:6px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
+.note{background:var(--warn-soft);color:var(--ink);padding:8px 14px;margin:10px 0;max-width:none;border-radius:var(--rad-s)}
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
-.scroll{margin:14px 0 24px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
+.scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
 table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
-th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
+th,td{padding:7px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:4.4em} tbody tr:last-child td{border-bottom:0}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
@@ -31,7 +32,7 @@ td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
 pre{background:var(--code);padding:12px 14px;overflow-x:auto;border-radius:var(--rad-s)} pre code{padding:0;background:none}
 blockquote{margin:16px 0;background:var(--accent-soft);padding:6px 16px;border-radius:var(--rad-s)}
-ul,ol{padding-left:1.5em} li{margin:4px 0}
+ul,ol{padding-left:1.4em;margin:6px 0} li{margin:2px 0}
 .check{display:inline-block;width:.9em;height:.9em;border:1.5px solid var(--muted);margin-right:6px;vertical-align:-1px;border-radius:3px}
 .check.done{background:var(--link);border-color:var(--link)}
 form.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px;margin:10px 0 14px}
@@ -66,6 +67,12 @@ header.bar nav.menu{flex:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
+
+header.bar .fs{display:inline-flex;align-items:center;gap:2px;margin-left:6px;font-size:.82rem}
+header.bar .fs span{color:var(--muted);margin-right:2px;white-space:nowrap}
+header.bar .fs button{font:inherit;min-width:34px;min-height:34px;padding:0 6px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;line-height:1}
+header.bar .fs button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700}
+header.bar .fs button[data-fs="0.9"]{font-size:.78rem} header.bar .fs button[data-fs="1.15"]{font-size:1.05rem}
 
 /* ---- ページの見出し帯・パンくず・目次 ---- */
 .crumb{margin:10px 0 0;color:var(--muted);font-size:.85rem}
@@ -182,7 +189,7 @@ a.region-col .go{margin-top:auto;padding-top:10px;font-weight:700;font-size:.82r
 .strip>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px 12px}
 .strip .k{display:block;font-size:.72rem;letter-spacing:.06em;color:var(--muted);font-weight:700}
 .strip .big{font-size:1.4rem;font-weight:900;line-height:1.3;display:block}
-.strip .meter{margin:20px 0 26px}
+.strip .meter{margin:22px 0 34px}
 .strip .note{display:block;font-size:.76rem;color:var(--muted);line-height:1.5;background:none;padding:0;margin:0;border-radius:0}
 .strip ul{list-style:none;margin:4px 0 6px;padding:0;display:grid;gap:5px;font-size:.84rem}
 .strip li{display:grid;grid-template-columns:auto 1fr;gap:8px;max-width:none;margin:0;line-height:1.45}
@@ -262,7 +269,7 @@ details.more>summary::-webkit-details-marker{display:none}
 details.more .hint{color:var(--link);font-size:.82rem;margin-left:4px;white-space:nowrap}
 details.more[open]>summary{font-weight:700;margin-bottom:4px} details.more[open]>summary .hint{display:none}
 details.more>.full{padding:6px 0 4px 12px;box-shadow:inset 2px 0 0 var(--line)}
-details.sec{margin:12px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
+details.sec{margin:8px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
 details.sec>summary{cursor:pointer;padding:12px 16px;list-style:none}
 details.sec>summary::-webkit-details-marker{display:none}
 details.sec>summary::before{content:"\25B8";float:left;margin:3px 10px 0 0;color:var(--accent);transition:transform .2s}
@@ -337,7 +344,7 @@ tr[hidden]{display:none}
 .scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
 .scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
 }
-@media(max-width:480px){body{font-size:15.5px} th,td{padding:7px 9px} h1{font-size:1.5rem}}
+@media(max-width:480px){html{font-size:calc(15.5px * var(--fs,1))} th,td{padding:7px 9px} h1{font-size:1.5rem}}
 details.tri-help,details.tri-save{margin:6px 0;border:1px solid var(--line);border-radius:8px;padding:2px 10px;background:var(--bg)}details.tri-help>summary,details.tri-save>summary{cursor:pointer;min-height:40px;display:flex;align-items:center;font-weight:700;font-size:.92rem}ul.tri-help-list{margin:4px 0 8px;padding-left:1.3em;font-size:.92rem}ul.tri-help-list li{margin:3px 0}.tri-btns{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
 .fx-tag{display:inline-block;font-size:.78rem;font-weight:700;padding:0 6px;border:1px solid var(--line);border-radius:4px;color:var(--muted);vertical-align:1px}td.fixed{text-align:center!important;white-space:nowrap;background:color-mix(in srgb,var(--link) 6%,transparent)}tr.fixed-amt td.fixed .fx-tag{margin-right:4px}.fx-note{margin:6px 0}
 .pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:var(--bad)}
@@ -376,8 +383,12 @@ table.cost td input[type=text],table.cost td select{max-width:none!important;wid
 table.cost tr.sub{display:block;padding:6px 10px}
 table.cost tr.sub td{display:inline-block;padding:2px 8px 2px 0!important;border:0!important}
 }
-</style></head><body>
-<header class="bar"><div class="wrap"><a class="brand" href="../index.html">2027 留学・アフリカ周遊</a><nav class="menu" aria-label="ページ間の移動"><a href="../index.html">ホーム</a><a href="../areas/baguio.html">バギオ</a><a href="../areas/africa.html">アフリカ5月</a><a href="../areas/capetown.html">ケープタウン</a><a href="../areas/africa-aug.html">アフリカ8月</a><a href="../docs/02-budget.html">費用</a><details class="more-nav"><summary>ほか</summary><div class="drop"><p class="dl">調べる</p><a href="../areas/common.html">日本国内・保険・共通</a><a href="../countries/kenya.html">国別ページ（アフリカ）</a><a href="../research/africa-13-countries-comparison.html">現地調査・比較の資料</a><a href="../research/sources.html">すべての出典</a><a href="../docs/10-qa.html">Q&amp;A（確認待ち）</a><p class="dl">地図</p><a href="../maps/world-map.html">世界地図</a><a href="../maps/africa-map.html">アフリカ地図</a><a href="../maps/africa-countries.html">アフリカ国別地図</a><a href="../maps/route-map.html">ルート地図（5月・8月の案を選んで見る）</a><p class="dl">ツール</p><a href="../docs/11-route-builder.html">ルート作成</a><a href="../docs/13-day-planner.html">日程プランナー</a><a href="../docs/12-flights.html">航空券の比較</a><a href="../docs/03-preparation.html">準備チェック</a><a href="../app.html">準備タスク（アプリ表示）</a><p class="dl">このページの下</p><a href="#all-pages">全ページ一覧</a></div></details></nav></div></header>
+</style><script>(function(){var K="site-fs",R=document.documentElement;function ok(v){return v===0.9||v===1||v===1.15}
+function set(v){R.style.setProperty("--fs",String(v));document.querySelectorAll(".fs button").forEach(function(b){b.setAttribute("aria-pressed",String(+b.getAttribute("data-fs")===v))})}
+var v=1;try{var s=+localStorage.getItem(K);if(ok(s))v=s}catch(e){}
+R.style.setProperty("--fs",String(v));
+document.addEventListener("DOMContentLoaded",function(){set(v);document.querySelectorAll(".fs button").forEach(function(b){b.addEventListener("click",function(){var n=+b.getAttribute("data-fs");if(!ok(n))return;v=n;set(n);try{localStorage.setItem(K,String(n))}catch(e){}})})});})();</script></head><body>
+<header class="bar"><div class="wrap"><a class="brand" href="../index.html">2027 留学・アフリカ周遊</a><nav class="menu" aria-label="ページ間の移動"><a href="../index.html">ホーム</a><a href="../areas/baguio.html">バギオ</a><a href="../areas/africa.html">アフリカ5月</a><a href="../areas/capetown.html">ケープタウン</a><a href="../areas/africa-aug.html">アフリカ8月</a><a href="../docs/02-budget.html">費用</a><details class="more-nav"><summary>ほか</summary><div class="drop"><p class="dl">調べる</p><a href="../areas/common.html">日本国内・保険・共通</a><a href="../countries/kenya.html">国別ページ（アフリカ）</a><a href="../research/africa-13-countries-comparison.html">現地調査・比較の資料</a><a href="../research/sources.html">すべての出典</a><a href="../docs/10-qa.html">Q&amp;A（確認待ち）</a><p class="dl">地図</p><a href="../maps/world-map.html">世界地図</a><a href="../maps/africa-map.html">アフリカ地図</a><a href="../maps/africa-countries.html">アフリカ国別地図</a><a href="../maps/route-map.html">ルート地図（5月・8月の案を選んで見る）</a><p class="dl">ツール</p><a href="../docs/11-route-builder.html">ルート作成</a><a href="../docs/13-day-planner.html">日程プランナー</a><a href="../docs/12-flights.html">航空券の比較</a><a href="../docs/03-preparation.html">準備チェック</a><a href="../app.html">準備タスク（アプリ表示）</a><p class="dl">このページの下</p><a href="#all-pages">全ページ一覧</a></div></details></nav><div class="fs" role="group" aria-label="文字の大きさ"><span>文字</span><button type="button" data-fs="0.9" aria-pressed="false" aria-label="文字を小さく">小</button><button type="button" data-fs="1" aria-pressed="true" aria-label="文字を標準に">中</button><button type="button" data-fs="1.15" aria-pressed="false" aria-label="文字を大きく">大</button></div></div></header>
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>ケープタウン語学留学・最適選定調査報告</h1></div>
