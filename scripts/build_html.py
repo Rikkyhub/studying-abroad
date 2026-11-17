@@ -729,6 +729,36 @@ def region_compare(root: Path = ROOT) -> str:
     return '<div class="region-compare">' + "".join(cols) + '</div>'
 
 
+def home_map(root: Path = ROOT) -> str:
+    """トップの中心に置くルート地図（5月の案G）。全体図は maps/route-map.html（案の切替・拡大・カレンダー）"""
+    if root != ROOT:
+        return ""
+    import build_route_map  # 循環 import を避けるため、関数の中で読む
+    svg = build_route_map.africa_may_svg("home-")
+    return ('<figure class="home-map">'
+            f'<div class="mapbox-h">{svg}</div>'
+            '<figcaption><span class="legend"><i class="fl"></i>空路 <i class="dm"></i>国内線 <i class="rd"></i>陸路・車</span> '
+            '経路は点を結んだ概念図です（Day 1 = 5/3 の仮置き）。'
+            '<a href="maps/route-map.html">ルート地図で、5月・8月の案を切り替えて見る →</a></figcaption></figure>')
+
+
+def region_mini(root: Path = ROOT) -> tuple[str, str]:
+    """地図の左右に置く小さな区間カード。時間順に前半2つ（左）と後半2つ（右）"""
+    timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
+    costs = _station_costs(root)
+    cards = []
+    for r in timeline:
+        key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
+        cls = REGION_CLASS.get(key, "reg-common")
+        cost = costs.get(key)
+        cost_html = f'<span class="cost num">{esc(cost)}</span>' if cost else '<span class="cost num">未計上</span>'
+        cards.append(f'<a class="mini {cls}" href="areas/{key}.html"><span class="tag">{esc(r["period"])}</span>'
+                     f'<h3>{esc(r["title"])}</h3><span class="st">{esc(r["status"])}</span>{cost_html}'
+                     f'<span class="go">しおりを開く →</span></a>')
+    half = (len(cards) + 1) // 2
+    return "".join(cards[:half]), "".join(cards[half:])
+
+
 def budget_strip(root: Path = ROOT) -> str:
     """予算の1行の帯：見積合計の棒（目標・上限の目盛）と、優先の高いやること3件のチップ"""
     if root != ROOT:
@@ -992,8 +1022,17 @@ INDEX_BODY = """@@bar@@
 <p class="hero-note">計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p>
 </section>
 
-<h2 class="kicker" id="plan">4つの区間を比べる（時間の順に左から右へ）</h2>
-@@compare@@
+<div class="home-grid" id="plan">
+<div class="col-side">
+@@minileft@@
+</div>
+<div class="col-map">
+@@homemap@@
+</div>
+<div class="col-side">
+@@miniright@@
+</div>
+</div>
 @@strip@@
 <p class="sub more-below">下に、予算の内訳・通貨と円換算・資料の一覧が続きます。日本国内の手続き・保険・共通の準備は <a href="areas/common.html">日本国内・保険・共通</a> に。</p>
 
@@ -1032,7 +1071,7 @@ def index_page(root: Path = ROOT) -> str:
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY.replace("@@bar@@", bar("", "index.html"))
-    for k, v in (("budget", budget_cards(root)), ("compare", region_compare(root)), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
+    for k, v in (("budget", budget_cards(root)), ("homemap", home_map(root)), ("minileft", region_mini(root)[0]), ("miniright", region_mini(root)[1]), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@body@@", body)
