@@ -47,7 +47,7 @@
 | Bell Church（La Trinidad） | 0 | 「6:00-5:00」 | 2.9km／8分 | ○ | [Maps](https://www.google.com/maps/search/?api=1&query=Bell+Church+La+Trinidad) |
 | Tam-awan Village | 60 | 「7:00-8:00」（曖昧） | 3.9km／10分 | △（ギャラリー） | [Maps](https://www.google.com/maps/search/?api=1&query=Tam-awan+Village+Baguio) |
 | Igorot Stone Kingdom | 100 | 「7:00-6:00」 | 4.4km／12分 | × | [Maps](https://www.google.com/maps/search/?api=1&query=Igorot+Stone+Kingdom+Baguio) |
-| BenCab Museum（Tuba） | 200 | 「9:00-6:00」 | 6.4km／16分 | ◎（屋内） | [Maps](https://www.google.com/maps/search/?api=1&query=BenCab+Museum) |
+| BenCab Museum（Tuba） | 200（公式、2026-11-18確認。学割 PHP120 は**フィリピンの学校発行の学生証が条件**で、語学留学生が使えるとは言えない） | 「9:00-6:00」（公式：**火〜日**、最終入場17:30、**月曜・12/25・1/1は休み**） | 6.4km／16分 | ◎（屋内） | [Maps](https://www.google.com/maps/search/?api=1&query=BenCab+Museum) |
 | Strawberry Farm（La Trinidad） | 0（イチゴ狩りは別料金・未確認） | 「8:00-6:00」 | 7.3km／16分 | × | [Maps](https://www.google.com/maps/search/?api=1&query=Strawberry+Farm+La+Trinidad+Benguet) |
 | Lion's Head（Kennon Rd） | 0 | 「6:00-6:00」 | 8.1km／21分 | × | [Maps](https://www.google.com/maps/search/?api=1&query=Lion%27s+Head+Kennon+Road+Baguio) |
 | Mirador Heritage & Eco-Spirituality Park | 100 | 「6:00-6:00」 | 未計算（APIに座標なし） | × | [Maps](https://www.google.com/maps/search/?api=1&query=Mirador+Heritage+Eco-Spirituality+Park+Baguio) |
@@ -65,7 +65,7 @@
 | Mt. Ulap（Itogon） | 22km／約45分 | ジープニー・タクシー（運賃**未確認**） | 登録料・ガイド料**未確認** | ガイド要否も**未確認** | 日帰り可（料金要確認） | [Maps](https://www.google.com/maps/search/?api=1&query=Mt+Ulap+Ampucao+Itogon) |
 | Kabayan | 84km／約1.8時間 | バス・バン・ジープニー（口コミ） | 一部施設は寄付制（口コミ） | 未確認 | 日帰りは長い。1泊推奨 | [Maps](https://www.google.com/maps/search/?api=1&query=Kabayan+Benguet) |
 | La Union（San Juan） | 85km／約2時間 | バス・バン（運賃・時刻**未確認**） | 個別サーフレッスンの2027年料金は**未確認**。学校主催2025年ツアー例はバン＋昼食 PHP1,700／同条件＋1時間サーフ PHP2,300（下記） | 不要 | 日帰りまたは1泊2日 | [Maps](https://www.google.com/maps/search/?api=1&query=Urbiztondo+Beach+San+Juan+La+Union) |
-| Sagada | 140km／約2.9時間 | GL Trans／Lizardo Trans、6:00〜13:00に複数便、約6時間、**PHP220**、**聖金曜は1便のみ**（口コミ：Wikivoyage） | 登録・環境料 **100**（口コミ、2025年6月時点）、洞窟の連結ツアー 1名 **800**（口コミ、年度不明） | 到着後に町の観光案内所で登録。洞窟はガイド同行 | **1泊2日なら可** | [Maps](https://www.google.com/maps/search/?api=1&query=Sagada+Municipal+Tourism+Office) |
+| Sagada | 140km／約2.9時間 | **GL Trans：3:00・5:30・8:30・10:30・13:00・17:00発、約6時間、事前予約なし（窓口で購入）**（自治体公式 tourism.sagada.gov.ph、2026-11-18確認。年の記載なし・フッターに2025）。**運賃は公式に記載なし**（口コミ：PHP220、Wikivoyage、年不明）。聖金曜は1便のみ（口コミ） | 登録・環境料 **100**（口コミ、2025年6月時点）、洞窟の連結ツアー 1名 **800**（口コミ、年度不明） | 到着後に町の観光案内所で登録。洞窟はガイド同行 | **1泊2日なら可** | [Maps](https://www.google.com/maps/search/?api=1&query=Sagada+Municipal+Tourism+Office) |
 | Mt. Pulag | Kabayan方面 | チャーター、またはツアー | **2026/2027年の入山料は公式で未確認** | DENR の許可・オリエンテーション・診断書が必要とする情報（口コミ、2015年） | ツアー利用の1泊2日。要確認事項が多い | [Maps](https://www.google.com/maps/search/?api=1&query=Mt+Pulag+DENR+Visitor+Center+Ambangeg) |
 | Banaue／Batad | 187km／約3.7時間 | **Ohayami Bus がバギオ（Governor Pack Rd）21:00発**（公式：Ifugao州） | 料金**未確認**（公式に記載なし） | Batad は徒歩 | **金曜夜発の夜行＋1泊**なら可 | [Maps](https://www.google.com/maps/search/?api=1&query=Batad+Rice+Terraces) |
 | Vigan | 230km／約4時間 | バス会社・運賃**未確認** | 未確認 | 不要 | 週末では非推奨 | [Maps](https://www.google.com/maps/search/?api=1&query=Calle+Crisologo+Vigan) |
@@ -82,6 +82,24 @@
 - **日帰り**：①片道が推計2時間以内、②帰りの便・配車が日没前後に確保できる、③所属先（学校・寮）の門限・外出規則に収まる、④晴天（山・展望地）または屋内中心の雨天案がある。→ 市内・La Trinidad・Tuba・Mt. Ulap が該当。La Union は帰りの便が確認できるまで「条件付き」。
 - **1泊2日**：①所属先の**外泊許可**が得られる、②土曜朝に出発し日曜午後に帰着できる便がある（Sagada は口コミ上 6:00〜13:00発・約6時間）、③**聖週間（2027-03-21〜28）とPanagbenga の大型週末を避ける**か事前予約する、④天候による道路状況（4月以降は雷雨が増える）を前日に確認する。
 - **夜行併用**：Banaue/Batad は金曜21:00発（公式）で土曜朝着、日曜に戻る行程。金曜夜に出られることが前提。
+- **Sagada は2泊3日が望ましい**（Issue #171、2026-11-18の整理）：片道約6時間のため、1泊2日では移動の比率が非常に高い。吊り棺（Echo Valley）・Sumaguing Cave などの洞窟は認定ガイドの登録・料金が要る見込みで、**雨天は洞窟が閉鎖になることがある**（2027年の料金・ガイド条件は未確認）。聖週間（2027-03-25〜27は祝日）に当てる場合は、バスの混雑と運行減に注意。
+
+## 3.5 週末旅行の優先度（Issue #171、2026-11-18）
+
+[Issue #171](https://github.com/Rikkyhub/studying-abroad/issues/171) の比較に基づく暫定の推奨。**予約・学校への照会・2027年の運行確認は未実施**。
+
+| 優先 | 候補 | 必要日数 | ひとこと |
+|---|---|---|---|
+| A | **Sagada**（吊り棺・洞窟・山岳文化） | **2泊3日が望ましい** | 特別な体験の最優先。交通は片道約6時間（上の表の公式時刻）。洞窟の認定ガイドの料金・条件、雨天閉鎖、学校の外泊許可が未確認 |
+| A | **La Union／San Juan**（サーフィン） | 日帰り〜1泊2日 | 観光省：サーフィンは10〜3月が目安、サンフアンのレッスン料金例 PHP500〜600/時。バギオ発の実バス時刻・往復運賃・海況、学校の門限が未確認 |
+| B | **Atok**（花畑・山景） | 日帰り（早朝発を検討） | Benguet省の観光ページに施設・ルートの説明。2027年の開園・入場料・往復交通は未確認。霧の影響が大きい |
+| B | **Mt. Pulag**（高地トレッキング・雲海） | 1泊2日以上 | PIA（2026年）にトレイル制限・再開の公表。ルート別の許可・ガイド・健康条件・気温、2027年の運営が未確認。装備・体力・外泊制限で不成立もあり得る |
+| C | **Banaue／Batad の棚田** | 2泊3日以上（別回） | 長距離のため、Sagada と1泊2日に同時投入しない |
+
+- **優先度の考え方**：特別な体験は **Sagada ＞ La Union/San Juan ＞ バギオ市内の美術・先住民文化**。景観・写真を重視するなら Atok の花畑と Benguet の農園。
+- **市内（平日夕方〜半日）**：Burnham Park／Session Road／Harrison Rd の夜市は授業後に組みやすい（夜の移動・門限は現地確認）。**BenCab Museum** は内容が濃い候補（半日、営業は火〜日）。Igorot Stone Kingdom（入場 PHP100）は演出施設で、生きた文化を学ぶ目的なら美術館・地元文化ガイドも検討。**Strawberry Farm** の適期は概ね10〜5月（Benguet観光局・DOT）で、収穫体験の可否・重量課金は当日確認。
+- **Panagbenga（花祭り）**：主催者公式で確認できた主要プログラムは2026年のもの。**2027年のパレードの日付を公式確定としない**。発表後に学校の授業・観光交通と照合する。
+- **祝日**：2027-03-25（聖木曜）・26（聖金曜）は regular holidays、27（聖土曜）は additional special non-working day（フィリピン大統領府、Proclamation No. 1427）。**学校の休講・補講・外泊許可は別確認**で、休日だから授業なしとは決めつけない。
 
 ## 4. 季節（2〜4月）
 
@@ -114,6 +132,21 @@
 - **日帰りB「山と農園」（晴天日）**：早朝 Mt. Ulap → 午後 La Trinidad（Strawberry Farm 0、Bell Church 0）。Ulap の登録・ガイド料が**未確認**のため合計は算出しない。
 - **1泊2日「Sagada」**：バス 220×2＝440＋登録料 100＋洞窟ツアー 800＝**1,340**（いずれも口コミ値の合計）。宿・飲食は**未確認**（公式価格なし）。
 
+## 5.5 追加予算の設計（Issue #171・#7、2026-11-18）。**費用行（`data/expenses.csv`）は今回追加しない**
+
+観光・潜水の費用を予算に入れるときの、**費目の分け方**と**二重計上の防止**です。金額はまだ入れない（日程・本人の選択が決まっていないため。未入力を0円とみなさない）。
+
+| 区分 | 分ける費目 | 既存の行との関係 |
+|---|---|---|
+| バギオ市内・近郊 | 無料の散策／博物館の入館／郊外までの交通／近郊1泊／サーフ体験／Sagada の認定ガイド | **PH-09（外食・日用品・交際費・週末の外出）と重複させない**。週末の外食や市内の交通は PH-09 に含まれる前提 |
+| マニラ市内観光 | 入場料／市内の移動・宿／バギオ⇔マニラの長距離バス／ダイブ地までの移動／追加宿泊／返金不可の費目 | **PH-11（日本⇄マニラ往復）・PH-12（一時帰国）と重複させない**。航空券は PH-11・PH-12 だけ |
+| ダイビング | ダイブ代／器材・コンピューター／保護区料などの追加／ダイブ地までの交通／宿 | **スービックは PH-13（ダイブ）・PH-14（バス）として追加済み**。アニラオ・プエルト・ガレラを選ぶ場合は別の行にする |
+| 学校の費用 | — | **PINES の12週の学費・現地払いは [Issue #132](https://github.com/Rikkyhub/studying-abroad/issues/132) の匿名モデルで管理**。ここで請求額を再掲しない |
+
+- **通貨**：原通貨（PHP・USD）と**確認年月**を保つ。USD と PHP の混在を、根拠のない円換算で混ぜない。
+- **個人の実績は公開しない**：実際の予約・支払い・請求書は非公開（Notion）で管理する。
+- **潜水後のバギオへの高地移動**：マニラ・スービック・アニラオ・プエルト・ガレラ（いずれも海抜に近い）で潜ったあとにバギオ（標高約1,465m）へ陸路で戻る場合は、24時間空ける目安（DAN Europe・PADI）を考える。詳細と出典は [バギオ発ダイビング](baguio-diving.md)（Issue #3）。**個人の潜水許可ではなく一般的な目安**で、専門家の確認が要る。
+
 ## 6. 未確認事項
 
 | 項目 | 理由 |
@@ -121,20 +154,22 @@
 | VISITA料金が外国人にも同額か・学生割引 | APIに区分がない |
 | Botanical Garden の値上げ額・適用日 | 市の告知が JavaScript 表示で取得できず、報道にも金額なし |
 | Mt. Pulag・Mt. Ulap の入山料・ガイド料・予約方法（2027年） | DENR関係サイトが 403／名前解決不可。公式ページ未発見 |
-| Sagada の公式料金 | 町の公式サイトが再構築中。口コミ値で代用 |
+| Sagada の公式料金（登録料PHP100は自治体公式に記載、洞窟ガイド料は未確認）・バス運賃 | 時刻は自治体公式で取得（2026-11-18）。運賃は公式に記載なし。洞窟ガイドの料金は口コミ値で代用 |
 | La Union・Vigan 行きのバス会社・運賃・時刻、Ohayami の運賃 | 公式時刻・運賃表を取得できず |
 | Panagbenga 2027、2/6旧正月・聖週間の学校休講・補講・特別交通運行 | 主催者公式は2026年カレンダーのみ掲載（2026-10-27確認）。国の2027年2/6・3/25〜27祝日区分はProclamation No. 1427で確認済み。学校・交通事業者の個別運用は未確認 |
 | タクシー公式運賃（LTFRB） | 未取得 |
 | 所属先の外泊・門限規則 | 個別に確認する事項（本資料には記載しない） |
+| 週末旅行の実現性（Issue #171 の未完了項目） | Sagada：GL Trans の往復時刻・運賃、認定ガイドの料金・必要泊数、1泊2日／2泊3日の成立。La Union：バギオ発の公共交通、サーフスクール料金・海況・帰着時刻。Panagbenga 2027：主催者公式の発表日・大パレード・交通規制日。いずれも**2027年の公式情報が未確認** |
 
 **問い合わせ文案（送信していない）**
 - DENR-CAR（Mt. Pulag）：*Could you tell me the current fees for foreign visitors, the reservation procedure and lead time, orientation schedule, and medical certificate requirements for a weekend hike in Feb–Apr 2027?*
 - Sagada Municipal Tourism Office：*What are the 2027 registration/environmental fee and cave guide rates for foreign visitors, and are there special arrangements during Holy Week?*
 
-## 7. 調査ログ（2026-10-17）
+## 7. 調査ログ（2026-10-17、2026-11-18追補）
 
 - **方針**：2026-10-16〜17 の旧ブランチ（`origin/research/4-sightseeing`）の記述を出発点に、主要な料金・時間を公式サイトで再取得。個人の滞在先・学校・費用合計は削除し、起点を公開の観光地に変更。
 - **検索クエリ（旧調査、2026-10-16〜17）**：「visita baguio park tickets entrance fee botanical garden」（Brave、成功）、「Baguio Botanical Garden entrance fee P100 tourists 2026 ordinance」（captcha）、「Mt Pulag entrance fee DENR 2026」系6種（Brave・DDG・Bing・Mojeek・Yahoo、すべて失敗）、「Panagbenga 2026 schedule grand street dance float parade」（captcha）。今回（2026-10-17）は検索エンジンを使わず公式ドメインに直接アクセス。
 - **取得成功（今回）**：`https://api-booking.baguio.visita.ph/api/parks`（curl、16件）、`https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/cad/CLIMATOLOGICAL%20NORMALS%20(1991-2020)/BAGUIO.pdf`（WebFetch で保存したPDFを読取）、`https://ifugao.gov.ph/getting-here/`、`https://mountainprovince.gov.ph/the-province/getting-here/`（バギオ発の具体情報なし）、`https://www.victoryliner.com/`、`https://panagbenga.com/`（旧調査時の未整備サイト。2026-10-27に[主催者公式](https://www.panagbengaflowerfestival.com/)を別途確認）、`https://tribune.net.ph/2026/02/18/residents-now-must-pay-for-baguio-botanical-garden`（WebFetch）、`https://en.wikivoyage.org/w/index.php?title=Sagada&action=raw`、`https://router.project-osrm.org/table/v1/driving/...`（距離・時間）。
 - **失敗**：PAGASA PDF の WebFetch 本文抽出（バイナリのため。保存PDFの読取で代替）。旧調査での失敗：newsinfo.inquirer.net・mb.com.ph・pia.gov.ph・bmb.gov.ph・car.denr.gov.ph/mt-pulag（403）、mtpulag.denr.gov.ph（DNS）、banaue.gov.ph・benguet.gov.ph（接続不可）、main.baguio.gov.ph（JavaScript で本文なし）、sagada.gov.ph（再構築中）。
 - **計算**：復活祭の日付（2027-03-28）は計算アルゴリズムによる。
+- **2026-11-18追補**（Issue #171）：BenCab 公式（bencabmuseum.org/location-info）で営業日・最終入場・学割の条件、Sagada 自治体公式（tourism.sagada.gov.ph/getting-here）で GL Trans の時刻・約6時間・事前予約なしを確認。新節 §3.5 に週末旅行の優先度を追加。Mt. Pulag・Atok・La Union の2027年の料金・運行は引き続き未確認。
