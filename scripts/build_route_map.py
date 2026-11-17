@@ -140,9 +140,90 @@ def calendar_days(plan):
     return [(n, CAL_START + _dt.timedelta(days=n - 1), *days[n]) for n in sorted(days)]
 
 
-def calendar_html(plan):
+
+# ---- 8月の代表案の日別（仮置き）。条件：Day 1 = 2027-08-01(日) ケープタウン発、Day 20 = 8/20(金) 日本着（#137）。
+# 制約：MPM→NBO は水・金・日のみ（Kenya Airways公式）、CPT↔WDH のバスは水・金・日（Wikivoyage）。
+# 滞在配分は research/137-route-redesign-comparison.md と research/africa-august-comparison.md から仮置き。運賃・便は未確認。
+AUG_START = _dt.date(2027, 8, 1)
+AUG_PLANS = {
+    "A0": {"label": "A0 ケニア中心", "note": "CPT→NBO→サファリ→ドーハ→日本。ケニアに長く滞在", "days": [
+        ("南アフリカ→ケニア", "CPT→NBO", "空路（経由便の可能性）", "fly"),
+        ("ケニア", "ナイロビ", "入国・休息（eTA）", "base"),
+        ("ケニア", "ナイロビ→マサイマラ", "昼間の車か小型機で移動", "move"),
+        ("ケニア", "マサイマラ", "ゲームドライブ", "tour"), ("ケニア", "マサイマラ", "ゲームドライブ", "tour"),
+        ("ケニア", "マサイマラ", "ゲームドライブ（マラ川の渡河期）", "tour"),
+        ("ケニア", "マサイマラ→ナイロビ", "戻り", "move"),
+        ("ケニア", "ナイロビ", "市内・予備", "gap"),
+        ("ケニア", "ナイロビ→ナクル湖", "日中の車", "move"), ("ケニア", "ナクル湖", "サファリ", "tour"),
+        ("ケニア", "ナクル湖→ナイロビ", "戻り", "move"),
+        ("ケニア", "ナイロビ", "予備", "gap"), ("ケニア", "ナイロビ", "予備", "gap"),
+        ("ケニア", "アンボセリ方面", "日帰りまたは1泊", "tour"), ("ケニア", "アンボセリ方面", "サファリ", "tour"),
+        ("ケニア", "ナイロビ", "戻り・買い物", "base"), ("ケニア", "ナイロビ", "予備（国際線の前日）", "gap"),
+        ("ケニア→カタール", "NBO→DOH", "空路（乗継観光は未確定）", "fly"),
+        ("カタール", "ドーハ", "乗継（観光は任意）", "gap"),
+        ("カタール→日本", "DOH→東京", "日本着（8/20）", "fly")]},
+    "A2": {"label": "A2 ナミビア中心", "note": "CPT→WDH→砂漠→ドーハ→日本。ナミビアに長め", "days": [
+        ("南アフリカ→ナミビア", "CPT→WDH", "空路（航空会社は未確認）", "fly"),
+        ("ナミビア", "ウィントフック", "入国・休息（査証の確認）", "base"),
+        ("ナミビア", "WDH→Sesriem", "乗合シャトル（日中）", "move"),
+        ("ナミビア", "Sesriem", "Sossusvlei・Deadvlei（日の出）", "tour"), ("ナミビア", "Sesriem", "Sesriem Canyon・予備", "tour"),
+        ("ナミビア", "Sesriem→Swakopmund", "日中の車", "move"),
+        ("ナミビア", "Swakopmund", "砂丘・ダイビング候補", "tour"), ("ナミビア", "Swakopmund", "予備", "gap"),
+        ("ナミビア", "Swakopmund→Etosha", "日中の車", "move"),
+        ("ナミビア", "Etosha", "ゲームドライブ", "tour"), ("ナミビア", "Etosha", "ゲームドライブ", "tour"),
+        ("ナミビア", "Etosha", "ゲームドライブ", "tour"),
+        ("ナミビア", "Etosha→ウィントフック", "日中の車（予備を含む）", "move"),
+        ("ナミビア", "ウィントフック", "予備", "gap"), ("ナミビア", "ウィントフック", "予備", "gap"),
+        ("ナミビア", "ウィントフック", "買い物・休息", "base"),
+        ("ナミビア→カタール", "WDH→DOH", "空路（経由は未確認）", "fly"),
+        ("カタール", "ドーハ", "乗継（観光は任意）", "gap"),
+        ("カタール→日本", "DOH→東京", "日本着の前日（予備）", "gap"),
+        ("日本", "東京", "日本着（8/20）", "fly")]},
+    "A4": {"label": "A4 南部3か国→ケニア→ドーハ", "note": "レソト→エスワティニ→モザンビーク→NBO→ドーハ→日本。国境の移動が多い", "days": [
+        ("南アフリカ→レソト", "CPT→マセル（MSU）", "空路か国境越え（日中）", "fly"),
+        ("レソト", "マセル", "入国・休息", "base"),
+        ("レソト", "マセル周辺", "ポニートレッキング・日帰り", "tour"), ("レソト", "マセル周辺", "ハイキング", "tour"),
+        ("レソト→南アフリカ", "マセル→JNB方面", "南ア経由で移動（日中）", "move"),
+        ("南アフリカ→エスワティニ", "→ムババーネ", "昼間の国境越え", "move"),
+        ("エスワティニ", "Mlilwane", "保護区・文化", "tour"), ("エスワティニ", "Mlilwane／Hlane", "保護区", "tour"),
+        ("エスワティニ", "Hlane", "保護区", "tour"),
+        ("エスワティニ→モザンビーク", "→マプト", "昼間の国境越え（要確認）", "move"),
+        ("モザンビーク", "マプト", "入国・市内", "base"),
+        ("モザンビーク", "マプト", "予備（MPM→NBOは水・金・日のみ。翌日の金曜便に合わせる）", "gap"),
+        ("モザンビーク→ケニア", "MPM→NBO", "金曜13:50発（水・金・日のみ・公式）", "fly"),
+        ("ケニア", "ナイロビ", "入国・休息（eTA）", "base"),
+        ("ケニア", "ナイロビ周辺", "国立公園（日帰り）", "tour"), ("ケニア", "ナイロビ周辺", "予備", "gap"),
+        ("ケニア→カタール", "NBO→DOH", "空路", "fly"),
+        ("カタール", "ドーハ", "乗継（観光は任意）", "gap"),
+        ("カタール→日本", "DOH→東京", "日本着の前日（予備）", "gap"),
+        ("日本", "東京", "日本着（8/20）", "fly")]},
+    "A5": {"label": "A5 南部3か国→JNB→ドーハ", "note": "ケニアに行かず、JNB経由でドーハから日本へ。移動が少なく予備が多い", "days": [
+        ("南アフリカ→レソト", "CPT→マセル（MSU）", "空路か国境越え（日中）", "fly"),
+        ("レソト", "マセル", "入国・休息", "base"),
+        ("レソト", "マセル周辺", "ポニートレッキング・日帰り", "tour"), ("レソト", "マセル周辺", "ハイキング", "tour"),
+        ("レソト→南アフリカ", "マセル→JNB方面", "南ア経由で移動（日中）", "move"),
+        ("南アフリカ→エスワティニ", "→ムババーネ", "昼間の国境越え", "move"),
+        ("エスワティニ", "Mlilwane", "保護区・文化", "tour"), ("エスワティニ", "Mlilwane／Hlane", "保護区", "tour"),
+        ("エスワティニ", "Hlane", "保護区", "tour"),
+        ("エスワティニ→モザンビーク", "→マプト", "昼間の国境越え（要確認）", "move"),
+        ("モザンビーク", "マプト", "入国・市内", "base"), ("モザンビーク", "マプト", "海岸・日帰り", "tour"),
+        ("モザンビーク", "マプト", "予備", "gap"), ("モザンビーク", "マプト", "予備", "gap"),
+        ("モザンビーク→南アフリカ", "マプト→JNB", "空路または昼間のバス", "move"),
+        ("南アフリカ", "JNB", "休息・予備", "gap"),
+        ("南アフリカ→カタール", "JNB→DOH", "空路", "fly"),
+        ("カタール", "ドーハ", "乗継（観光は任意）", "gap"),
+        ("カタール→日本", "DOH→東京", "日本着の前日（予備）", "gap"),
+        ("日本", "東京", "日本着（8/20）", "fly")]},
+}
+
+
+def aug_calendar_days(key):
+    """8月の案の日別。(day, date, 国, 場所, 内容, 種別)。Day 1 = 8/1（日）"""
+    return [(i + 1, AUG_START + _dt.timedelta(days=i), *d) for i, d in enumerate(AUG_PLANS[key]["days"])]
+
+def calendar_html(plan, days=None):
     """月ごとの週表（月曜始まり）。1日=1セル。日付・Day番号・国・場所・内容"""
-    ds = {d[1]: d for d in calendar_days(plan)}
+    ds = {d[1]: d for d in (days if days is not None else calendar_days(plan))}
     first, last = min(ds), max(ds)
     out = []
     cur = _dt.date(first.year, first.month, 1)
@@ -208,6 +289,7 @@ svg.m{display:block;width:100%;height:auto;background:var(--sea);font-family:var
 .chips input{margin:0}
 .rinfo{margin:6px 0;padding:6px 10px;border-left:6px solid var(--link);background:var(--bg);font-size:.92em}.rinfo b{display:block}
 .calbox{margin:8px 0}
+[data-cpan][hidden],.acal[hidden],.aplan[hidden]{display:none}
 table.cal{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;margin:10px 0}
 table.cal caption{text-align:left;font-weight:700;font-size:1.05rem;padding:4px 0}
 table.cal th{background:var(--th);border:1px solid var(--line);padding:3px;font-size:.85rem;text-align:center}
@@ -436,6 +518,9 @@ def build() -> str:
     btns_cal = "".join(f'<button type="button" data-cplan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
     cal_key = "".join(f'<span><i style="background:var(--c-{k})"></i>{v}</span>' for k, v in KIND_LABEL.items())
     cal_blocks = "".join(f'<div class="calbox" data-cplan="{k}"{"" if k == "now" else " hidden"}>{calendar_html(k)}</div>' for k in PLANS)
+    aug_btns = "".join(f'<button type="button" data-aplan="{k}" aria-pressed="{"true" if i == 0 else "false"}">{html.escape(v["label"])}</button>' for i, (k, v) in enumerate(AUG_PLANS.items()))
+    aug_infos = "".join(f'<p class="pinfo aplan" data-aplan="{k}"{"" if i == 0 else " hidden"}><b>{html.escape(v["label"])}</b>{html.escape(v["note"])}</p>' for i, (k, v) in enumerate(AUG_PLANS.items()))
+    aug_blocks = "".join(f'<div class="calbox acal" data-aplan="{k}"{"" if i == 0 else " hidden"}>{calendar_html(k, aug_calendar_days(k))}</div>' for i, k in enumerate(AUG_PLANS))
     zbtns = "".join(f'<button type="button" data-z="{z}" aria-pressed="false">{z}%</button>' for z in (70, 100, 125, 150))
     btns = "".join(f'<button type="button" data-plan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
     infos = "".join(
@@ -465,11 +550,21 @@ def build() -> str:
 {legend}
 <p class="lead" style="margin-top:14px">モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウンの35日モデル。線の横の「Day」は、<a href="../research/may-madagascar-vfa-redesign.html#day-1day-35乗継と国内移動を含む相対日モデル">35日表</a>の日です。Day 1 は 2027年5月3日の仮置きで、確定した日程ではありません。</p>
 {bm.map_switch("route-map")}
-<h2>2. カレンダー（日数案で切り替え）</h2>
+<h2>2. カレンダー（5月・8月）</h2>
+<div class="tabs" role="tablist" aria-label="カレンダーの月"><button type="button" role="tab" data-ctab="may" aria-selected="true">5月の案G</button><button type="button" role="tab" data-ctab="aug" aria-selected="false">8月の案（代表4案）</button></div>
+<div data-cpan="may">
 <p>日付と曜日、国、移動・観光・予備を月ごとの表にしたものです。マダガスカルの日数案（現行・A・B・C）で切り替わります。Day 1 は2027年5月3日（月）の仮置きで、確定した日程ではありません。</p>
 <div class="plans" role="group" aria-label="日数案（カレンダー）">{btns_cal}</div>
 <div class="cal-key" aria-label="色の凡例">{cal_key}</div>
 {cal_blocks}
+</div>
+<div data-cpan="aug" hidden>
+<p>8月は、ケープタウンの留学終了後に出発し、<b>8/20（金）までに日本へ着く</b>前提の約20日です。Day 1 は8/1（日）の仮置きで、確定した日程ではありません。MPM→NBO（水・金・日）、WDH↔CPTのバス（水・金・日）など、確認できた曜日の制約には合わせてあります。運賃・便は未確認です。</p>
+<div class="plans" role="group" aria-label="8月の案（カレンダー）">{aug_btns}</div>
+{aug_infos}
+<div class="cal-key" aria-label="色の凡例">{cal_key}</div>
+{aug_blocks}
+</div>
 <h2>3. マダガスカル拡大図（日数案で切り替え）</h2>
 <p>アフリカ全体の縮尺では首都・アンダシベ・モロンダバが重なるので、島だけを拡大しています。下のボタンで、日数案ごとの動きと日が切り替わります。</p>
 <div class="plans" role="group" aria-label="マダガスカルの日数案">{btns}</div>
@@ -505,6 +600,14 @@ cbs.forEach(function(b){{b.addEventListener('click',function(){{var k=b.getAttri
  cbs.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});
  document.querySelectorAll('.calbox').forEach(function(c){{c.hidden=c.getAttribute('data-cplan')!==k}})}})}});
 var cm=/^#cal-(now|A|B|C)$/.exec(location.hash);if(cm){{var cb=document.querySelector('button[data-cplan="'+cm[1]+'"]');if(cb)cb.click()}}
+var abs=document.querySelectorAll('button[data-aplan]');
+abs.forEach(function(b){{b.addEventListener('click',function(){{var k=b.getAttribute('data-aplan');
+ abs.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});
+ document.querySelectorAll('.acal,.aplan').forEach(function(c){{c.hidden=c.getAttribute('data-aplan')!==k}})}})}});
+document.querySelectorAll('button[data-ctab]').forEach(function(b){{b.addEventListener('click',function(){{var k=b.getAttribute('data-ctab');
+ document.querySelectorAll('button[data-ctab]').forEach(function(x){{x.setAttribute('aria-selected',x===b?'true':'false')}});
+ document.querySelectorAll('[data-cpan]').forEach(function(c){{c.hidden=c.getAttribute('data-cpan')!==k}})}})}});
+var am=/^#cal-(A[0-9]+)$/.exec(location.hash);if(am){{var ab=document.querySelector('button[data-aplan="'+am[1]+'"]');var tb2=document.querySelector('button[data-ctab="aug"]');if(ab&&tb2){{tb2.click();ab.click()}}}}
 var bs=document.querySelectorAll(".plans button[data-plan]");
 function show(k){{
  bs.forEach(function(b){{b.setAttribute("aria-pressed",b.getAttribute("data-plan")===k?"true":"false")}});
