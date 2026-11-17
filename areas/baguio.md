@@ -1,8 +1,8 @@
 # バギオ（フィリピン語学留学）
 
-2027年2〜4月に、フィリピン・バギオの語学学校で約12週間学ぶ想定の**匿名モデル**です。個人の予約・支払い・日程は載せていません。この表の金額は、学校などの公開価格表からの見積です。
+## 1. 旅の要点
 
-## 1. 概要と時期（モデル）
+2027年2〜4月に、フィリピン・バギオの語学学校で約12週間学ぶ想定の**匿名モデル**です。個人の予約・支払い・日程は載せていません。この表の金額は、学校などの公開価格表からの見積です。
 
 バギオは標高の高い高原の都市で、学校の寮に滞在して平日に授業を受け、週末は市内観光やダイビングに出かける使い方を想定しています。ダイビングは、バギオから陸路で行けるラ・ウニオン、スービック、アニラオ、ボリナオが候補です。授業の組み方・部屋タイプ・2027年の料金は学校の案内で確認が必要です。
 
@@ -14,7 +14,7 @@
 
 **マニラ周辺**：バギオに入る前後や週末に、マニラ・スービック・アニラオ・プエルト・ガレラで観光やダイビングをする場合は、[マニラ周辺の観光とダイビング](../research/manila-area-guide.md)を見てください（沈船は[スービック湾](../research/subic-wreck-diving.md)）。
 
-## 2. いまの確認事項
+## 2. 今日のやること
 
 出発前に確認する、一般的な優先項目です（個人の進捗ではありません）。
 
@@ -92,24 +92,7 @@
 - PH-10：Globe公式GoSURF料金（2026-10-30確認）。低＝GoSURF299（全サイト2GB＋対象アプリ10GB）×3回でPHP897／標準＝GoSURF999（全サイト10GB＋対象アプリ10GB）×3回でPHP2997／余裕＝GoSURF1299（全サイト15GB＋対象アプリ10GB）×3回でPHP3897。各30日有効で12週間84日を3回更新する一般モデル。旧余裕PHP4497は非公式GoSURF1499仮置きを公式掲載の1299プランに置換した見積訂正（実支出の節約ではない）。SIM/eSIM本体・登録・税金/追加料金・2027年料金・長期外国人SIM登録の延長可否・バギオ通信品質は未確認。Globe公式 https://www.globe.com.ph/prepaid/gosurf 。購入・契約なし
 <!-- /AUTO:cost -->
 
-## 4. 資料
-
-<!-- AUTO:docs -->
-| 分野 | 資料 | 内容 | 参考（一次情報） | 最終確認日 |
-|---|---|---|---|---|
-| ビザ・入国 | [ビザ・再入国](../research/visa-and-immigration.md) | フィリピン12週 / 南アの就学と5〜8月の入出国 | [tokyo.philembassy.net](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/)<br>[immigration.gov.ph](https://immigration.gov.ph/visas/visa-waiver/)<br>[dirco.gov.za](https://dirco.gov.za/japan/immigration-visa-info/) | 2026-10-16 |
-| ダイビング | [バギオ発ダイビング](../research/baguio-diving.md) | 週末・2〜4月・ショップ料金・高地移動への注意 | [buceoanilao.com](https://buceoanilao.com/season-iii/)<br>[mangosdivecenter.com](https://mangosdivecenter.com/fun-diving-in-subic-bay/)<br>[diveunion.com.ph](https://diveunion.com.ph/) | 2026-10-17 |
-| ダイビング | [スービック湾の沈船ダイビング（マニラ発）](../research/subic-wreck-diving.md) | アドバンス認定向けの沈船・時期・料金・マニラからの行き方。ログ本数の条件は未確認 | [mangosdivecenter.com](https://mangosdivecenter.com/fun-diving-in-subic-bay/)<br>[philippinedives.com](https://philippinedives.com/dive-guide/subic-bay/)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Olongapo) | 2026-11-15 |
-| 観光 | [マニラ周辺の観光とダイビング（バギオ滞在の前後）](../research/manila-area-guide.md) | スービック・アニラオ・プエルト・ガレラのダイビング比較と、マニラ市内・近郊の観光。費用の目安と未確認事項つき | [en.wikivoyage.org](https://en.wikivoyage.org/wiki/Manila)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Batangas)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Puerto_Galera) | 2026-11-16 |
-| 観光 | [バギオの週末観光](../research/baguio-sightseeing.md) | 市内・近郊・2〜4月 | [visita.baguio.gov.ph](https://visita.baguio.gov.ph/park-tickets/20) | 2026-10-16 |
-| 生活費 | [食費・自炊・スーパー](../research/food-and-living.md) | バギオの寮食、ケープタウンの買物 | － | 2026-10-16 |
-| 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
-| ビザ・入国 | [フィリピン留学（PINES）](../research/philippines-pines.md) | バギオPINESの12週間・料金表・生活の前提 | [philschools.jp](https://philschools.jp/pricelist/pines.pdf)<br>[immigration.gov.ph](https://immigration.gov.ph/)<br>[etravel.gov.ph](https://etravel.gov.ph/) | 2026-10-17 |
-
-「参考」は各資料が根拠にした公式・一次情報へのリンクです。
-<!-- /AUTO:docs -->
-
-## 5. 場所と地図
+## 4. 住む場所・町と地図
 
 <!-- AUTO:places -->
 | 名称 | 種類 | 地図 | 備考 | 出典 |
@@ -127,7 +110,36 @@
 公共の施設・名所・ダイビングショップ・空港だけを載せています。地図リンクは Google マップの検索結果を開きます（営業・安全の保証ではありません）。
 <!-- /AUTO:places -->
 
-## 6. 通貨と円換算
+## 5. 出発前の準備
+
+- ビザ・入国：[ビザ・入国の調査](../research/visa-and-immigration.md)
+- 保険：[長期留学＋周遊旅行の保険](../research/long-stay-insurance.md)
+- 予防接種・薬：[ワクチンと薬のチェックリスト](../research/vaccines-and-medicines-checklist.md)
+- 治安・医療：[治安・医療・安全](../research/safety-and-health.md)
+- 全体の準備チェック：[準備チェック](../docs/03-preparation.md)
+
+## 6. 調査メモ
+
+旅の組み立てには直接使わない、資料の一覧・通貨・地図リンクをここにまとめています。
+
+### 資料の一覧
+
+<!-- AUTO:docs -->
+| 分野 | 資料 | 内容 | 参考（一次情報） | 最終確認日 |
+|---|---|---|---|---|
+| ビザ・入国 | [ビザ・再入国](../research/visa-and-immigration.md) | フィリピン12週 / 南アの就学と5〜8月の入出国 | [tokyo.philembassy.net](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/)<br>[immigration.gov.ph](https://immigration.gov.ph/visas/visa-waiver/)<br>[dirco.gov.za](https://dirco.gov.za/japan/immigration-visa-info/) | 2026-10-16 |
+| ダイビング | [バギオ発ダイビング](../research/baguio-diving.md) | 週末・2〜4月・ショップ料金・高地移動への注意 | [buceoanilao.com](https://buceoanilao.com/season-iii/)<br>[mangosdivecenter.com](https://mangosdivecenter.com/fun-diving-in-subic-bay/)<br>[diveunion.com.ph](https://diveunion.com.ph/) | 2026-10-17 |
+| ダイビング | [スービック湾の沈船ダイビング（マニラ発）](../research/subic-wreck-diving.md) | アドバンス認定向けの沈船・時期・料金・マニラからの行き方。ログ本数の条件は未確認 | [mangosdivecenter.com](https://mangosdivecenter.com/fun-diving-in-subic-bay/)<br>[philippinedives.com](https://philippinedives.com/dive-guide/subic-bay/)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Olongapo) | 2026-11-15 |
+| 観光 | [マニラ周辺の観光とダイビング（バギオ滞在の前後）](../research/manila-area-guide.md) | スービック・アニラオ・プエルト・ガレラのダイビング比較と、マニラ市内・近郊の観光。費用の目安と未確認事項つき | [en.wikivoyage.org](https://en.wikivoyage.org/wiki/Manila)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Batangas)<br>[en.wikivoyage.org](https://en.wikivoyage.org/wiki/Puerto_Galera) | 2026-11-16 |
+| 観光 | [バギオの週末観光](../research/baguio-sightseeing.md) | 市内・近郊・2〜4月 | [visita.baguio.gov.ph](https://visita.baguio.gov.ph/park-tickets/20) | 2026-10-16 |
+| 生活費 | [食費・自炊・スーパー](../research/food-and-living.md) | バギオの寮食、ケープタウンの買物 | － | 2026-10-16 |
+| 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
+| ビザ・入国 | [フィリピン留学（PINES）](../research/philippines-pines.md) | バギオPINESの12週間・料金表・生活の前提 | [philschools.jp](https://philschools.jp/pricelist/pines.pdf)<br>[immigration.gov.ph](https://immigration.gov.ph/)<br>[etravel.gov.ph](https://etravel.gov.ph/) | 2026-10-17 |
+
+「参考」は各資料が根拠にした公式・一次情報へのリンクです。
+<!-- /AUTO:docs -->
+
+### 通貨と円換算
 
 現地ではフィリピン・ペソ（PHP）が使われ、学校料金などはドル（USD）建てのものもあります。
 

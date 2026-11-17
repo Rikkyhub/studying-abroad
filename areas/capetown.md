@@ -1,8 +1,8 @@
 # ケープタウン（第2か国留学）
 
-2027年6〜7月に、南アフリカ・ケープタウンの語学学校で約8週間学び、その後に観光と帰国をする想定の**匿名モデル**です。学校・就学資格・住居は検討中で、確定していません。
+## 1. 旅の要点
 
-## 1. 概要と時期（モデル）
+2027年6〜7月に、南アフリカ・ケープタウンの語学学校で約8週間学び、その後に観光と帰国をする想定の**匿名モデル**です。学校・就学資格・住居は検討中で、確定していません。
 
 候補はケープタウン大学の語学センター（UCT ELC）などの公開料金表のある学校です。南半球なので6〜7月は冬で、雨と風が多く、冬服の準備や雨天の代替案が必要です。ダイビングは冬のケルプ（海藻の森）が中心で、ホホジロザメのケージダイビングはガンスバイからの日帰りです。
 
@@ -13,7 +13,7 @@
 | 2027年8月 | **アフリカ周遊（8月）・帰国** | 検討中（モデル） | 留学後の追加周遊と日本帰国を想定。5月とはシーズンと目的が違う。南ア再入国条件は最優先で検証。 |
 <!-- /AUTO:timeline -->
 
-## 2. いまの確認事項
+## 2. 今日のやること
 
 <!-- AUTO:tasks -->
 | 優先 | 作業 | 期限（目安） | 状態・期限の種類 | 次のアクション |
@@ -76,24 +76,7 @@
 - SC-07：R699（30GB）×2。有効期間はページに記載なし。5月の周遊中の通信も含む想定
 <!-- /AUTO:cost -->
 
-## 4. 資料
-
-<!-- AUTO:docs -->
-| 分野 | 資料 | 内容 | 参考（一次情報） | 最終確認日 |
-|---|---|---|---|---|
-| ビザ・入国 | [ビザ・再入国](../research/visa-and-immigration.md) | フィリピン12週 / 南アの就学と5〜8月の入出国 | [tokyo.philembassy.net](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/)<br>[immigration.gov.ph](https://immigration.gov.ph/visas/visa-waiver/)<br>[dirco.gov.za](https://dirco.gov.za/japan/immigration-visa-info/) | 2026-10-16 |
-| ダイビング | [ケープタウン発ダイビング](../research/capetown-diving.md) | 冬季・ケルプ・ガイド付き2ダイブと装備 | [piscesdivers.co.za](https://piscesdivers.co.za/reef-and-kelp/)<br>[diveschoolcapetown.co.za](https://www.diveschoolcapetown.co.za/fun-dives/scuba-shoredives/)<br>[piscesdivers.co.za](https://piscesdivers.co.za/guided-shore-dives/) | 2026-10-17 |
-| 観光 | [ケープタウン観光](../research/capetown-sightseeing.md) | 冬季・雨天・強風時の代替案 | [tablemountain.net](https://www.tablemountain.net/)<br>[capetown.travel](https://www.capetown.travel/100-things-to-do-in-winter-in-cape-town/) | 2026-10-16 |
-| 生活費 | [食費・自炊・スーパー](../research/food-and-living.md) | バギオの寮食、ケープタウンの買物 | － | 2026-10-16 |
-| 生活費 | [ケープタウン冬服](../research/winter-clothing.md) | 持参と現地調達・価格調査 | [capetown.travel](https://www.capetown.travel/the-best-time-of-year-to-visit-cape-town/) | 2026-10-16 |
-| 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
-| 留学 | [第2か国留学（ケープタウン）](../research/second-school.md) | 6〜7月8週間の語学留学の候補と入国条件 | [uctlanguagecentre.com](https://uctlanguagecentre.com/)<br>[dha.gov.za](https://www.dha.gov.za/) | 2026-10-17 |
-| 留学 | [ケープタウン語学留学の学校選定（Deep Research）](../research/deep-research-report.md) | IH・Cape Studies・UCT・GHS の4校を予算枠・Business English・交流環境で比較（匿名モデル） | [ihcapetown.com](https://ihcapetown.com/courses/business-english/)<br>[capestudies.com](https://capestudies.com/courses/)<br>[uctlanguagecentre.com](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027) | 2026-10-21 |
-
-「参考」は各資料が根拠にした公式・一次情報へのリンクです。
-<!-- /AUTO:docs -->
-
-## 5. 場所と地図
+## 4. 住む場所・町と地図
 
 <!-- AUTO:places -->
 | 名称 | 種類 | 地図 | 備考 | 出典 |
@@ -110,7 +93,36 @@
 公共の施設・名所・ダイビングショップ・空港だけを載せています。地図リンクは Google マップの検索結果を開きます（営業・安全の保証ではありません）。
 <!-- /AUTO:places -->
 
-## 6. 通貨と円換算
+## 5. 出発前の準備
+
+- ビザ・入国：[ビザ・入国の調査](../research/visa-and-immigration.md)
+- 保険：[長期留学＋周遊旅行の保険](../research/long-stay-insurance.md)
+- 予防接種・薬：[ワクチンと薬のチェックリスト](../research/vaccines-and-medicines-checklist.md)
+- 治安・医療：[治安・医療・安全](../research/safety-and-health.md)
+- 全体の準備チェック：[準備チェック](../docs/03-preparation.md)
+
+## 6. 調査メモ
+
+旅の組み立てには直接使わない、資料の一覧・通貨・地図リンクをここにまとめています。
+
+### 資料の一覧
+
+<!-- AUTO:docs -->
+| 分野 | 資料 | 内容 | 参考（一次情報） | 最終確認日 |
+|---|---|---|---|---|
+| ビザ・入国 | [ビザ・再入国](../research/visa-and-immigration.md) | フィリピン12週 / 南アの就学と5〜8月の入出国 | [tokyo.philembassy.net](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/)<br>[immigration.gov.ph](https://immigration.gov.ph/visas/visa-waiver/)<br>[dirco.gov.za](https://dirco.gov.za/japan/immigration-visa-info/) | 2026-10-16 |
+| ダイビング | [ケープタウン発ダイビング](../research/capetown-diving.md) | 冬季・ケルプ・ガイド付き2ダイブと装備 | [piscesdivers.co.za](https://piscesdivers.co.za/reef-and-kelp/)<br>[diveschoolcapetown.co.za](https://www.diveschoolcapetown.co.za/fun-dives/scuba-shoredives/)<br>[piscesdivers.co.za](https://piscesdivers.co.za/guided-shore-dives/) | 2026-10-17 |
+| 観光 | [ケープタウン観光](../research/capetown-sightseeing.md) | 冬季・雨天・強風時の代替案 | [tablemountain.net](https://www.tablemountain.net/)<br>[capetown.travel](https://www.capetown.travel/100-things-to-do-in-winter-in-cape-town/) | 2026-10-16 |
+| 生活費 | [食費・自炊・スーパー](../research/food-and-living.md) | バギオの寮食、ケープタウンの買物 | － | 2026-10-16 |
+| 生活費 | [ケープタウン冬服](../research/winter-clothing.md) | 持参と現地調達・価格調査 | [capetown.travel](https://www.capetown.travel/the-best-time-of-year-to-visit-cape-town/) | 2026-10-16 |
+| 安全・医療 | [治安・医療・安全](../research/safety-and-health.md) | 日本外務省などの情報 | [anzen.mofa.go.jp](https://www.anzen.mofa.go.jp/od/ryojiMailDetail.html?keyCd=157521)<br>[world.dan.org](https://world.dan.org/health-medicine/health-resources/diseases-conditions/flying-after-diving/) | 2026-10-16 |
+| 留学 | [第2か国留学（ケープタウン）](../research/second-school.md) | 6〜7月8週間の語学留学の候補と入国条件 | [uctlanguagecentre.com](https://uctlanguagecentre.com/)<br>[dha.gov.za](https://www.dha.gov.za/) | 2026-10-17 |
+| 留学 | [ケープタウン語学留学の学校選定（Deep Research）](../research/deep-research-report.md) | IH・Cape Studies・UCT・GHS の4校を予算枠・Business English・交流環境で比較（匿名モデル） | [ihcapetown.com](https://ihcapetown.com/courses/business-english/)<br>[capestudies.com](https://capestudies.com/courses/)<br>[uctlanguagecentre.com](https://uctlanguagecentre.com/enroll/booking-and-payment/price-list-2027) | 2026-10-21 |
+
+「参考」は各資料が根拠にした公式・一次情報へのリンクです。
+<!-- /AUTO:docs -->
+
+### 通貨と円換算
 
 現地では南アフリカ・ランド（ZAR）が使われます。
 
