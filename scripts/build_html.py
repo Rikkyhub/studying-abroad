@@ -175,7 +175,7 @@ window.addEventListener("hashchange",function(){var h2=location.hash.replace(/^#
 
 
 SIDE_KEYS = ("概要", "旅の要点", "ビザ", "安全")  # 左に固定して、いつも見える節
-TAB_ORDER = ("旅程の目安", "旅の流れ", "今日のやること", "費用", "主な観光地", "住む場所", "行き方", "おすすめの食べ物",
+TAB_ORDER = ("旅程の目安", "旅の流れ", "今日のやること", "費用", "主な観光地", "住む場所", "ビザ", "安全", "行き方", "おすすめの食べ物",
              "おおよその位置の地図", "出発前の準備", "未確認", "出典", "調査ログ", "調査メモ")  # タブの並び（見る順）
 
 
@@ -205,7 +205,12 @@ def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) 
                 intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{rest}'
                 continue
         elif any(k in title for k in side_keys) and reorder:
-            intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{rest}'
+            # 先頭の箇条書きだけを左に出し、見出し(h3)以降の詳細は、同じ名前のタブに回す
+            cut = re.search(r'<h3[ >]', rest)
+            head_part, detail = (rest[:cut.start()], rest[cut.start():]) if cut else (rest, "")
+            intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{head_part}'
+            if detail.strip():
+                items.append((i, title + "（詳細）", hid + "-detail", h2html + "（詳細）", detail))
             continue
         items.append((i, title, hid, h2html, rest))
     if reorder:
