@@ -271,6 +271,56 @@ a.mini .go{font-size:.78rem;font-weight:700;margin-top:4px}
 @media(max-width:1100px){.home-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.col-map{grid-column:1/-1;grid-row:1}.col-side{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media(max-width:600px){.home-grid{grid-template-columns:minmax(0,1fr)}.col-side{grid-template-columns:minmax(0,1fr)}}
 
+/* ---- ホーム：画面の高さ(100dvh)から逆算し、左=地図／右=旅の流れ・予算・やること を最初の画面に収める ---- */
+body.home{overflow-x:hidden}
+.home-main{max-width:none;padding-top:6px;padding-bottom:8px}
+.home-top{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin:2px 0 6px}
+.home-top h1{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:900;line-height:1.3;margin:0}
+.home-top .hero-note{color:var(--muted);font-size:.78rem;line-height:1.5;margin:0;max-width:none;flex:1 1 360px}
+.home-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px;height:calc(100dvh - var(--bar) - 66px);min-height:480px;max-height:1000px}
+.home-left,.home-right{min-height:0;min-width:0}
+.home-left{display:flex}
+.home-left .home-map{flex:1;display:flex;flex-direction:column;margin:0;min-height:0;height:auto}
+.home-left .home-map .mapbox-h{flex:1;min-height:0;display:grid;place-items:center;background:var(--sea)}
+.home-left .home-map svg.m{width:auto;height:auto;max-width:100%;max-height:100%}
+.home-left .home-map figcaption{margin-top:4px;font-size:.72rem;line-height:1.45;display:block}
+.home-right{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:8px;align-content:stretch}
+.flow{display:grid;grid-auto-rows:minmax(0,1fr);gap:8px;min-height:0}
+a.seg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"when title cost" "sub sub cost";gap:2px 14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c,var(--r-common));border-radius:10px;padding:6px 14px;min-height:0;overflow:hidden;transition:border-color .2s,box-shadow .2s;max-width:none}
+a.seg:hover{border-color:var(--c);box-shadow:var(--shadow)}
+a.seg.reg-baguio{--c:var(--r-baguio)} a.seg.reg-may{--c:var(--r-may)} a.seg.reg-aug{--c:var(--r-aug)} a.seg.reg-cape{--c:var(--r-cape)} a.seg.reg-common{--c:var(--r-common)}
+a.seg .when{grid-area:when;font-weight:900;font-size:.84rem;color:var(--c);white-space:nowrap}
+a.seg h3{grid-area:title;font-size:1rem;font-weight:900;line-height:1.35;margin:0}
+a.seg .sub{grid-area:sub;font-size:.78rem;color:var(--muted);line-height:1.45;margin:0;max-width:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+a.seg .cost{grid-area:cost;text-align:right;font-weight:900;font-size:1.15rem;line-height:1.2;white-space:nowrap}
+a.seg .cost small{display:block;font-weight:500;font-size:.68rem;color:var(--muted)}
+.home-right .strip{grid-template-columns:minmax(0,1fr);gap:6px;margin-top:0}
+.home-right .strip>div{padding:6px 12px 8px;border-radius:10px}
+.home-right .strip .big{display:inline;font-size:1.15rem;margin-left:8px}
+.home-right .strip .k{display:inline}
+.home-right .strip .meter{margin:16px 0 20px;height:10px}
+.home-right .strip .note{font-size:.7rem}
+.home-right .strip .strip-todo ul{margin:2px 0 2px;gap:2px;font-size:.76rem}
+.home-right .strip .strip-todo li:nth-child(n+3){display:none}
+@media(max-height:820px){
+.home-top .hero-note{display:none}
+.home-top{margin:0 0 4px}
+a.seg{padding:4px 12px;border-top-width:4px}
+a.seg .sub{display:none}
+a.seg .cost{font-size:1.05rem}
+.home-right .strip .strip-todo{display:none}
+.home-body{height:calc(100dvh - var(--bar) - 44px);min-height:420px}
+.home-right .strip .meter{margin:14px 0 18px}
+}
+@media(max-width:1000px){
+.home-body{display:block;height:auto;max-height:none}
+.home-left .home-map .mapbox-h{display:block}
+.home-left .home-map svg.m{width:100%}
+.flow{display:grid;grid-template-rows:none;margin-top:10px}
+.home-right{display:block}
+.home-right .strip{margin-top:10px}
+}
+
 /* ---- カード ---- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;padding:20px 0 28px;overflow:visible;align-items:stretch}
 .card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:var(--rad);padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}

@@ -764,6 +764,23 @@ def region_mini(root: Path = ROOT) -> tuple[str, str]:
     return "".join(cards[:half]), "".join(cards[half:])
 
 
+def home_flow(root: Path = ROOT) -> str:
+    """ホームの右側：旅の全体の流れ。時間順の4区間を、色の線つきの帯で縦に並べる（期間・見出し・現地費・要約）"""
+    timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
+    costs = _station_costs(root)
+    out = []
+    for r in timeline:
+        key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
+        cls = REGION_CLASS.get(key, "reg-common")
+        cost = costs.get(key)
+        cost_html = (f'<span class="cost num">{esc(cost)}<small>現地費・標準</small></span>' if cost
+                     else '<span class="cost num">未計上<small>国が未定のため</small></span>')
+        out.append(f'<a class="seg {cls}" href="areas/{key}.html"><span class="when">{esc(r["period"])}</span>'
+                   f'<h3>{esc(r["title"])}</h3>{cost_html}'
+                   f'<span class="sub">{esc(r["summary"])}</span></a>')
+    return "".join(out)
+
+
 def budget_strip(root: Path = ROOT) -> str:
     """予算の1行の帯：見積合計の棒（目標・上限の目盛）と、優先の高いやること3件のチップ"""
     if root != ROOT:
@@ -1021,24 +1038,18 @@ document.querySelectorAll("[data-carousel]").forEach(function(c){
 </script>"""
 
 INDEX_BODY = """@@bar@@
-<main class="wrap top">
-<section class="hero-a">
-<h1>2027年2月、バギオから。7月、ケープタウンまで。</h1>
-<p class="hero-note">計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p>
-</section>
-
-<div class="home-grid" id="plan">
-<div class="col-side">
-@@minileft@@
-</div>
-<div class="col-map">
+<main class="wrap top home-main">
+<div class="home-top"><h1>2027年2月、バギオから。7月、ケープタウンまで。</h1>
+<p class="hero-note">計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p></div>
+<div class="home-body" id="plan">
+<div class="home-left">
 @@homemap@@
 </div>
-<div class="col-side">
-@@miniright@@
-</div>
-</div>
+<div class="home-right">
+<div class="flow">@@flow@@</div>
 @@strip@@
+</div>
+</div>
 <p class="sub more-below">下に、予算の内訳・通貨と円換算・資料の一覧が続きます。日本国内の手続き・保険・共通の準備は <a href="areas/common.html">日本国内・保険・共通</a> に。</p>
 
 <h2 id="budget">予算の全体像</h2>
@@ -1076,7 +1087,7 @@ def index_page(root: Path = ROOT) -> str:
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY.replace("@@bar@@", bar("", "index.html"))
-    for k, v in (("budget", budget_cards(root)), ("homemap", home_map(root)), ("minileft", region_mini(root)[0]), ("miniright", region_mini(root)[1]), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
+    for k, v in (("budget", budget_cards(root)), ("homemap", home_map(root)), ("flow", home_flow(root)), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@fsjs@@", FONT_SIZE_JS).replace("@@body@@", body)
