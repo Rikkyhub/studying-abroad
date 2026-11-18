@@ -16,16 +16,20 @@ a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-vis
 h1{font-size:1.9rem;line-height:1.35;margin:8px 0 6px;font-weight:800;letter-spacing:.01em}
 h2{font-size:1.35rem;line-height:1.45;margin:30px 0 8px;padding-top:0;font-weight:800}
 h3{font-size:1.1rem;line-height:1.55;margin:20px 0 6px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
-p{margin:6px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
+p{margin:6px 0} p,li{max-width:80ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
 .note{background:var(--warn-soft);color:var(--ink);padding:8px 14px;margin:10px 0;max-width:none;border-radius:var(--rad-s)}
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
 .scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
 table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
-th,td{padding:7px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
-td{min-width:4.4em} tbody tr:last-child td{border-bottom:0}
+th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
+td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
+table{table-layout:auto}
+th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
+table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
-th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line)}
+th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
+table th:first-child,table td:first-child{font-weight:700}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
@@ -40,6 +44,8 @@ form.calc label{display:grid;gap:4px;font-size:.93rem;color:var(--muted)}
 form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:8px 10px;min-width:0;width:100%;border-radius:var(--rad-s)}
 form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.8em}
 article,h1,p,li{overflow-wrap:anywhere}
+h1,h2,h3,.tag,nav.toc a,a.station h3,a.mini h3{word-break:keep-all;overflow-wrap:break-word;text-wrap:balance;line-break:strict}
+.tag{white-space:nowrap}
 main.page{padding-bottom:24px}
 
 /* ---- 上部ナビ（全ページ共通）：ブランド＋横並び＋「ほか」 ---- */
@@ -100,7 +106,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article{min-width:0}
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
-.doc{grid-template-columns:230px minmax(0,1fr)}
+.doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -137,7 +143,7 @@ body.home{background:var(--page)}
 .hero-a{margin:18px 0 6px}
 .hero-a h1{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;font-weight:900;text-wrap:balance;margin:0}
 .hero-a .lead{color:var(--muted);max-width:60ch;margin-top:12px}
-.hero-a .hero-note{color:var(--muted);font-size:.85rem;max-width:none;margin-top:6px;line-height:1.6}
+.hero-a .hero-note{color:var(--muted);font-size:.85rem;max-width:none;margin-top:6px;line-height:1.6;text-wrap:pretty}
 .route-cols{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:30px 44px;margin-top:30px;align-items:start}
 .kicker{font-size:.82rem!important;letter-spacing:.08em;color:var(--muted);margin:0 0 14px!important;font-weight:700;border:0!important;padding:0!important}
 ol.stops{list-style:none;margin:0;padding:0 0 0 46px;display:grid;gap:16px}
@@ -194,19 +200,19 @@ a.region-col .go{margin-top:auto;padding-top:10px;font-weight:700;font-size:.82r
 .strip ul{list-style:none;margin:4px 0 6px;padding:0;display:grid;gap:5px;font-size:.84rem}
 .strip li{display:grid;grid-template-columns:auto 1fr;gap:8px;max-width:none;margin:0;line-height:1.45}
 .strip li b{font-size:.7rem;border-radius:6px;padding:0 6px;height:1.7em;line-height:1.7em;background:var(--th);white-space:nowrap}
-.more-below{margin-top:12px!important;font-size:.85rem}
+.more-below{margin-top:12px!important;font-size:.85rem;max-width:none;text-wrap:pretty}
 @media(max-width:1000px){.region-compare{grid-template-columns:repeat(2,minmax(0,1fr))}.strip{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.region-compare{grid-template-columns:minmax(0,1fr)}}
 
 
 /* ---- トップ：中心にルート地図、左右に区間カード ---- */
-.home-grid{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr) minmax(0,230px);gap:14px;align-items:stretch;margin-top:10px}
+.home-grid{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) minmax(0,190px);gap:14px;align-items:stretch;margin-top:10px}
 .col-side{display:grid;gap:14px;align-content:start}
 .col-map{min-width:0}
 .home-map{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;height:100%}
 .home-map .mapbox-h{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
 .home-map svg.m{display:block;width:100%;height:auto;background:var(--sea)}
-.home-map figcaption{font-size:.76rem;color:var(--muted);line-height:1.55;margin-top:6px}
+.home-map figcaption{font-size:.76rem;color:var(--muted);line-height:1.55;margin-top:6px;display:grid;gap:2px}
 .home-map figcaption a{font-weight:700;display:inline-block;margin-top:2px}
 .home-map .legend{display:inline-flex;gap:8px;align-items:center;margin-right:6px;font-weight:700;color:var(--ink)}
 .home-map .legend i{display:inline-block;width:20px;height:0;border-top:3px solid var(--fl);vertical-align:middle;margin-right:2px}
@@ -392,7 +398,7 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>ケープタウン週末観光（6〜7月・冬）と雨天・強風時の代替</h1></div>
-<div class="doc">
+<div class="doc has-toc">
 <aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#0-表記ルール">0. 表記ルール</a><a href="#1-要点">1. 要点</a><a href="#2-候補地料金区分つき">2. 候補地（料金区分つき）</a><a href="#3-週末の日帰り1泊2日が成立する条件">3. 週末の日帰り・1泊2日が成立する条件</a><a href="#4-冬の天候統計">4. 冬の天候統計</a><a href="#5-モデルコース推計を含む1名zar">5. モデルコース（推計を含む。1名、ZAR）</a><a href="#6-未確認事項">6. 未確認事項</a><a href="#7-調査ログ2026-10-172026-10-27更新">7. 調査ログ（2026-10-17／2026-10-27更新）</a><a href="#8-追補2026-11-13泊まるエリアと移動治安案gの終点がケープタウン">8. 追補（2026-11-13）：泊まるエリアと移動・治安（案Gの終点がケープタウン）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
