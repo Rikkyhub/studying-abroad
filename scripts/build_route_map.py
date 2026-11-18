@@ -265,9 +265,10 @@ CSS = BASE_CSS + """
 .zwrap{overflow:auto;margin:6px 0;max-width:100%}
 .rwrap{display:grid;grid-template-columns:max-content minmax(240px,1fr);gap:0 16px;align-items:start}
 .rside{position:sticky;top:calc(var(--bar,52px) + 8px);max-height:calc(100dvh - var(--bar,52px) - 120px);overflow:auto}
-@media (max-width:1100px){.rwrap{grid-template-columns:1fr}}
+@media (max-width:1100px){.rwrap{grid-template-columns:minmax(0,1fr)}}
 h1{margin:6px 0!important;font-size:1.35rem!important}.crumb{margin:6px 0!important}h2.mt{margin:6px 0!important;font-size:1.05rem!important}
 .mapbox{position:relative;border:1px solid var(--line);width:calc(min(94vw,980px,max(360px,(100dvh - 215px) * var(--ar,1.6))) * var(--zf,1))}
+@media (max-width:600px){.mapbox{width:calc(100% * var(--zf,1))}}
 .map-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 14px}
 .map-sub{display:none}
 body .crumb{margin:4px 0 0!important}

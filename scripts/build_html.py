@@ -235,7 +235,7 @@ def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) 
     reorder=True のときは、タブを TAB_ORDER の順（見る順）に並べ替える。戻り値：(導入のHTML, タブ＋パネルのHTML, [(id, 見出し)])"""
     parts = re.split(r'(?=<h2 id=)', body)
     intro, secs = parts[0], parts[1:]
-    items = []
+    items, side = [], ""
     for i, p in enumerate(secs):
         m = re.match(r'<h2 id="([^"]+)">(.*?)</h2>(.*)$', p, re.S)
         if not m:
@@ -252,7 +252,7 @@ def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) 
             # 先頭の箇条書きだけを左に出し、見出し(h3)以降の詳細は、同じ名前のタブに回す
             cut = re.search(r'<h3[ >]', rest)
             head_part, detail = (rest[:cut.start()], rest[cut.start():]) if cut else (rest, "")
-            intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{head_part}'
+            side += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{head_part}'
             if detail.strip():
                 items.append((i, title + "（詳細）", hid + "-detail", h2html + "（詳細）", detail))
             continue
@@ -264,9 +264,16 @@ def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) 
         key = f"t{i + 1}"
         heads.append((hid, title))
         label = re.sub(r"^[0-9]+[.．]\s*", "", title)
-        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 0 else "false"}">{html.escape(label)}</button>')
+        detail_tab = label.endswith("（詳細）")
+        short = re.sub(r"（[^（）]*）", "", label).strip() or label
+        short += "（詳細）" if detail_tab else ""
+        tip = f' title="{html.escape(label)}"' if short != label else ""
+        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 0 else "false"}"{tip}>{html.escape(short)}</button>')
         pans.append(f'<section role="tabpanel" id="pan-{key}" data-t="{key}" aria-labelledby="tab-{key}"><h2 id="{hid}">{h2html}</h2>{rest}</section>')
     html_ = f'<div class="pane"><div class="tabs" role="tablist">{"".join(tabs)}</div><div class="pane-body">{"".join(pans)}</div></div>'
+    if reorder and side:
+        # 国別ページ：左は概要・ビザ・安全を先に、確認日・区分などの注記は後ろに回す
+        intro = side + (f'<div class="side-meta">{intro}</div>' if intro.strip() else "")
     return intro, html_, heads
 
 

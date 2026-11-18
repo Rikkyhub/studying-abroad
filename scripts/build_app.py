@@ -101,6 +101,7 @@ header.top{position:sticky;top:0;z-index:10;background:var(--c-bg);padding:calc(
 h1{font-size:var(--fs-head);line-height:var(--lh-tight);margin:0}
 .iconbtn{min-width:var(--touch);min-height:var(--touch);border:1px solid var(--c-line);background:var(--c-surface);border-radius:var(--r-pill);cursor:pointer}
 .sub{color:var(--c-inkMuted);font-size:var(--fs-caption);margin:2px 0 0}
+.home-link{display:inline-block;font-size:var(--fs-caption);color:var(--c-inkMuted);margin:0 0 2px}
 .progress{margin:var(--s-md) 0 var(--s-sm)}
 .bar{height:8px;background:var(--c-surfaceAlt);border-radius:var(--r-pill);overflow:hidden}
 .bar>i{display:block;height:100%;width:0;background:var(--c-brand);border-radius:var(--r-pill);transition:width .25s}
@@ -349,7 +350,7 @@ def build(root: Path = ROOT) -> str:
 {css_vars(tok)}
 {CSS}</style></head><body>
 <header class="top"><div class="app">
-<div class="title"><div><h1 id="ttl">出発前の準備</h1><p class="sub" id="sub">一般的な目安です（個人の進捗ではありません）。期限は出発日を基準にした相対表記。</p></div>
+<div class="title"><div><a class="home-link" href="index.html">← ホーム（2027 留学・アフリカ周遊）</a><h1 id="ttl">出発前の準備</h1><p class="sub" id="sub">一般的な目安です（個人の進捗ではありません）。期限は出発日を基準にした相対表記。</p></div>
 <button id="theme" class="iconbtn" type="button" aria-label="表示の明るさを切り替える">◐</button></div>
 <div class="progress" id="progress"><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="済にした割合"><i id="pb"></i></div>
 <div class="prow"><span id="pn">0 / {n} 件 済</span><span>「済」はこの端末のブラウザにだけ保存</span></div></div>

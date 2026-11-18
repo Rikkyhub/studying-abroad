@@ -262,6 +262,18 @@ class AuditFixTests(unittest.TestCase):
         self.assertIn('<div class="cm-grid">', text)
         self.assertLess(text.index('class="mapbox"'), text.index('class="cm-right"'))
 
+    def test_country_tabs_use_short_labels_and_side_starts_with_summary(self):
+        import re
+        text = (ROOT / "countries" / "namibia.html").read_text(encoding="utf-8")
+        labels = re.findall(r'role="tab"[^>]*>([^<]*)<', text)
+        self.assertIn("旅程の目安", labels)
+        self.assertFalse(any("）（" in x for x in labels))
+        side = re.search(r'<aside class="pane-side">(.*?)</aside>', text, re.S).group(1)
+        self.assertLess(side.index("概要"), side.index("side-meta"))
+
+    def test_app_page_links_back_home(self):
+        self.assertIn('href="index.html"', (ROOT / "app.html").read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()
