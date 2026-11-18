@@ -176,6 +176,18 @@
 | R-61 | NAIAから市内への行き方 | 空港から市内・バスターミナル（PITX、クバオ）への手段、運賃、所要時間、配車アプリの目安 | NAIA公式、配車アプリの目安 | `research/manila-area-guide.md` の §2 |
 | R-62 | マニラ・近郊の安全情報 | 外務省のフィリピンの危険情報（地域別）、2027年2〜4月の混雑・デモの傾向。Claudeは外務省サイトが403で取得できない | 外務省 海外安全ホームページ、在フィリピン日本国大使館 | `research/manila-area-guide.md` の §2・§5 |
 
+### M. バギオ発の週末旅行（Issue #171・Claude が取得できなかったもの）
+
+[バギオ週末観光](baguio-sightseeing.md)の §3.5・§6 の未確認です。学校の外泊・門限・補講は本人が学校へ確認する事項で、ここには含めません。
+
+| # | 項目 | 何を調べるか | 取得先の候補 | 反映先 |
+|---|---|---|---|---|
+| R-63 | Sagada のバス運賃と認定ガイド | GL Trans の運賃（2027年）、洞窟（Sumaguing 等）・吊り棺（Echo Valley）の認定ガイドの料金・必要人数・登録の流れ、雨天の洞窟閉鎖の基準 | Sagada 町観光事務所、GL Trans 公式 | `research/baguio-sightseeing.md` の §3・§3.5、5.5 の「Sagada の認定ガイド」 |
+| R-64 | La Union／San Juan（バギオ発） | 公共交通（バス会社・乗継・往復運賃・時刻・帰着時刻）、サーフスクールの料金（2027年2〜4月）、海況 | バス会社公式、サーフスクール公式 | `research/baguio-sightseeing.md` の §3 |
+| R-65 | Panagbenga 2027 の日程 | 主催者公式の2027年の発表日、大パレード・ストリートダンスの日、交通規制日 | Panagbenga 主催者公式、Baguio 市 | `research/baguio-sightseeing.md` の §4 |
+| R-66 | Atok・Mt. Pulag の2027年条件 | Atok の花畑の営業・入場料・往復交通。Mt. Pulag のルート別の許可・ガイド・健康条件・入山料、2027年の運営 | Benguet 観光局、DENR 公式、PIA | `research/baguio-sightseeing.md` の §3.5 |
+| R-67 | マニラ⇄バギオの長距離バス（2027年） | Genesis JoyBus 等の時刻・運賃、NAIA・Cubao・Pasay 発着の区別、P2P 路線の有無 | Genesis 公式、Victory Liner 公式 | `research/manila-area-guide.md` の §3.1 |
+
 ## 3. 優先順位の目安
 
 1. **R-01（為替）** と **R-02・R-07・R-13（運賃・見積）** が、予算の合計を決める。
