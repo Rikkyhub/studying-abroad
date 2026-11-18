@@ -41,14 +41,27 @@ class AreaPageTests(unittest.TestCase):
         import re
         for k in ("baguio", "africa", "capetown", "africa-aug"):
             html = read(f"areas/{k}.html")
-            self.assertIn('<aside class="doc-toc">', html, k)
-            self.assertIn('class="doc has-toc"', html, k)
-            opened = re.findall(r'<details class="sec" open><summary><h2[^>]*>(.*?)</h2>', html)
-            for h in opened:
-                self.assertTrue(any(x in h for x in ("旅の要点", "旅の流れ")), f"{k}: {h}")
-            # 「旅の要点」は、開いた節か、折りたたまない短い節（常に見える）のどちらか。閉じた節の中には入れない
-            closed = re.findall(r'<details class="sec"><summary><h2[^>]*>(.*?)</h2>', html)
-            self.assertFalse(any("旅の要点" in h for h in closed), k)
+            # 左に要点（pane-side）、右にタブ（pane）の1画面。タブは JS が無くても全節が縦に読める
+            self.assertIn('class="doc tabbed"', html, k)
+            self.assertIn('<aside class="pane-side">', html, k)
+            self.assertIn('role="tablist"', html, k)
+            # 最初のタブが開いていて、タブが2つ以上ある。左（pane-side）に「旅の要点」か「概要」がある
+            self.assertRegex(html, r'role="tab"[^>]*aria-selected="true"', k)
+            self.assertGreaterEqual(len(re.findall(r'role="tab"', html)), 3, k)
+            side = html.split('<aside class="pane-side">')[1].split("</aside>")[0]
+            self.assertTrue("旅の要点" in side or "概要" in side, k)
+
+    def test_country_pages_tabs_in_reading_order(self):
+        # 国別ページ：左に概要・ビザ・安全、右のタブは「旅程の目安」が先頭、その後に観光地・行き方・食べ物
+        import re
+        for k in ("kenya", "zambia", "madagascar", "rwanda"):
+            html = read(f"countries/{k}.html")
+            tabs = re.findall(r'role="tab"[^>]*>([^<]*)<', html)
+            self.assertTrue(tabs[0].startswith("旅程の目安"), (k, tabs[:3]))
+            self.assertLess([i for i, x in enumerate(tabs) if "主な観光地" in x][0], [i for i, x in enumerate(tabs) if "行き方" in x][0], k)
+            side = html.split('<aside class="pane-side">')[1].split("</aside>")[0]
+            for key in ("概要", "ビザ", "安全"):
+                self.assertIn(key, side, f"{k}: {key}")
 
     def test_pages_without_toc_use_one_column(self):
         # ルート作成・日程プランナーは目次がなく、本文が1列で全幅になる（左の細い列に押し込まれない）
