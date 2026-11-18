@@ -42,13 +42,20 @@ class AreaPageTests(unittest.TestCase):
         for k in ("baguio", "africa", "capetown", "africa-aug"):
             html = read(f"areas/{k}.html")
             self.assertIn('<aside class="doc-toc">', html, k)
-            self.assertIn('class="doc"', html, k)
+            self.assertIn('class="doc has-toc"', html, k)
             opened = re.findall(r'<details class="sec" open><summary><h2[^>]*>(.*?)</h2>', html)
             for h in opened:
                 self.assertTrue(any(x in h for x in ("旅の要点", "旅の流れ")), f"{k}: {h}")
             # 「旅の要点」は、開いた節か、折りたたまない短い節（常に見える）のどちらか。閉じた節の中には入れない
             closed = re.findall(r'<details class="sec"><summary><h2[^>]*>(.*?)</h2>', html)
             self.assertFalse(any("旅の要点" in h for h in closed), k)
+
+    def test_pages_without_toc_use_one_column(self):
+        # ルート作成・日程プランナーは目次がなく、本文が1列で全幅になる（左の細い列に押し込まれない）
+        for rel in ("docs/11-route-builder.html", "docs/13-day-planner.html"):
+            html = read(rel)
+            self.assertIn('class="doc no-toc"', html, rel)
+            self.assertNotIn('<aside class="doc-toc">', html, rel)
 
     def test_cost_table_has_subtotal_and_caption(self):
         for k in ("baguio", "africa", "capetown"):
