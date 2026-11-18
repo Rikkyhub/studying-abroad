@@ -446,7 +446,7 @@ tr[hidden]{display:none}
 
 /* ---- 携帯 ---- */
 @media(max-width:900px){.route-cols{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table:not(.cal):not(.pl):not(.gday){min-width:560px} th{position:static}}
+@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} :not(.pane-side)>.scroll>table:not(.cal):not(.pl):not(.gday){min-width:560px} th{position:static}}
 @media(max-width:640px){
 .hero{padding:30px 20px 26px;border-radius:16px} .hero h1{font-size:1.7rem}
 .scroll{overflow-x:auto;border:0;background:none;border-radius:0}
