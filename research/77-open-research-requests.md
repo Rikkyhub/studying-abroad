@@ -188,13 +188,21 @@
 | R-66 | Atok・Mt. Pulag の2027年条件 | Atok の花畑の営業・入場料・往復交通。Mt. Pulag のルート別の許可・ガイド・健康条件・入山料、2027年の運営 | Benguet 観光局、DENR 公式、PIA | `research/baguio-sightseeing.md` の §3.5 |
 | R-67 | マニラ⇄バギオの長距離バス（2027年） | Genesis JoyBus 等の時刻・運賃、NAIA・Cubao・Pasay 発着の区別、P2P 路線の有無 | Genesis 公式、Victory Liner 公式 | `research/manila-area-guide.md` の §3.1 |
 | R-68 | MPM→NBO の直行が2027年8月に実在するか | Kenya Airways公式は「直行・週3回（水金日）」、FlightConnections（2026-11-18）は「直行なし」で矛盾。予約画面で2027-08の水・金・日を検索し、直行か乗継か、総所要・運賃を確認 | Kenya Airways公式予約、Airlink、LAM | `research/137-route-redesign-comparison.md` 4章（A4）、`data/routes.csv` A4/A4X/A11 |
-| R-69 | MRU→TNR／TNR→本土の5/4以降の運賃・曜日 | Air Mauritius公式は2027-04-25発の往復 MUR28,460から（5/4以降ではない）。公式時刻表は2027-03-27まで。5/4以降のMRU到着日を候補別に置き、同日付の片道・往復・複数都市・荷物込みを取得 | Air Mauritius、Airlink、Kenya Airways、Ethiopian の公式予約 | M0A/M0B（AF-02・AF-17）、`research/137-route-redesign-comparison.md` 2章 |
-| R-70 | TNR→KGL（M0-D）の乗継案 | 直行なし（第三者DB・Air Madagascar 2026夏ダイヤ）。NBO・ADD・JNB経由の2027年5月の同日・1名・受託荷物込みの総額・日数。KGL→タンザニア、タンザニア→VFA/LVI、VFA/LVI→CPTも同条件 | Kenya Airways、Ethiopian の公式予約 | M0-D（Issue #137 の追加案）。`data/routes.csv` には**まだ追加していない** |
-| R-71 | WDH⇄CPT／JNB の運賃・曜日と、バス（Intercape・Baileys）の時刻・運賃 | 空路の直行は第三者DBにあるが2027年は未確認。バスは夜間走行を含む。5月・8月の対象日で、空路の1名・荷物込み、バスの出発曜日 | Airlink、Safair、SAA、Intercape、Baileys Reo Liner の公式 | M1-A/M1-B、A2/A6/A7/A12 |
+| R-69 | MRU→TNR／TNR→本土の5/4以降の運賃・曜日 | Air Mauritius公式は2027-04-25発の往復 MUR28,460から（5/4以降ではない）。公式時刻表は2027-03-27まで。5/4以降のMRU到着日を候補別に置き、同日付の片道・往復・複数都市・荷物込みを取得 | Air Mauritius、Airlink、Kenya Airways、Ethiopian の公式予約 | `research/137-route-redesign-comparison.md` 2章（M0A/M0B・AF-02・AF-17） |
+| R-70 | TNR→KGL（M0-D）の乗継案 | 直行なし（第三者DB・Air Madagascar 2026夏ダイヤ）。NBO・ADD・JNB経由の2027年5月の同日・1名・受託荷物込みの総額・日数。KGL→タンザニア、タンザニア→VFA/LVI、VFA/LVI→CPTも同条件 | Kenya Airways、Ethiopian の公式予約 | `research/137-route-redesign-comparison.md` 9.8（M0-D。`data/routes.csv` にはまだ追加していない） |
+| R-71 | WDH⇄CPT／JNB の運賃・曜日と、バス（Intercape・Baileys）の時刻・運賃 | 空路の直行は第三者DBにあるが2027年は未確認。バスは夜間走行を含む。5月・8月の対象日で、空路の1名・荷物込み、バスの出発曜日 | Airlink、Safair、SAA、Intercape、Baileys Reo Liner の公式 | `research/137-route-redesign-comparison.md` 2・3・4章（M1-A/M1-B、A2/A6/A7/A12） |
 | R-72 | Go2 WDH→Sesriem の2027年料金・運行日・1名利用 | Issue #137 は片道N$850。公式ページが動的表示で再確認できていない | Go2 公式（予約画面） | ナミビア方式1（`research/137-route-redesign-comparison.md` 3章） |
-| R-73 | Namib-Naukluft公園入園料の有効日数（1日券か連続か）と Sesriem の日の出時刻（5月・8月） | NWR料金PDF（2026-04-01改定）は有効日数の記載なし。日の出・ゲート時刻は未確認 | NWR、MEFT | ナミビア方式1〜3の共通費用 |
-| R-74 | 8/20日本着が成立するか（7/31発・8/1発の両方） | 8月のA0〜A12を、帰国日から逆算して、乗継・遅延バッファを含めて実便で検証。A4のMPM→NBOは、8/1発ならDay13=8/13（金）、7/31発ならDay13=8/12（木）で運航曜日が変わる | 各航空会社の公式予約 | 8月A0〜A12、`maps/route-map.html` のカレンダー |
-| R-75 | MZN・MUR の為替レート | `data/fx.csv` にMZN（モザンビーク）・MUR（モーリシャス）・KES・MGAがなく、円換算できない。MUFGの対顧客相場などで基準日つきで追加 | MUFG 対顧客外国為替相場 | `data/fx.csv`、モザンビーク査証・Air Mauritius運賃の円換算 |
+| R-73 | Namib-Naukluft公園入園料の有効日数（1日券か連続か）と Sesriem の日の出時刻（5月・8月） | NWR料金PDF（2026-04-01改定）は有効日数の記載なし。日の出・ゲート時刻は未確認 | NWR、MEFT | `research/137-route-redesign-comparison.md` 3章（ナミビア方式1〜3の共通費用）、`countries/namibia.md` |
+| R-74 | 8/20日本着が成立するか（7/31発・8/1発の両方） | 8月のA0〜A12を、帰国日から逆算して、乗継・遅延バッファを含めて実便で検証。A4のMPM→NBOは、8/1発ならDay13=8/13（金）、7/31発ならDay13=8/12（木）で運航曜日が変わる | 各航空会社の公式予約 | `research/137-route-redesign-comparison.md` 4章（8月A0〜A12）、`maps/route-map.html` のカレンダー |
+| R-75 | MZN・MUR の為替レート | `data/fx.csv` にMZN（モザンビーク）・MUR（モーリシャス）・KES・MGAがなく、円換算できない。MUFGの対顧客相場などで基準日つきで追加 | MUFG 対顧客外国為替相場 | `research/137-route-redesign-comparison.md` 1章（モザンビーク・Air Mauritius運賃）、`data/fx.csv` |
+| R-76 | 5月南下・8月北上の航空券（#168 案A/B）の対象日運賃 | 東京→TNR（5月上旬）、TNR→CPT（6月上旬到着）、NBO→東京（8/24までに日本着）、東京→NBO、CPT→TNR（8月上旬）、TNR→SEZ、SEZ→東京。片道・受託荷物込み・同一券面か。TNR⇄CPTは直行なし（JNB乗継が第一候補）。本人入力待ち（Issue #177） | 航空会社の公式予約、経路検索 | `research/168-overland-vs-madagascar-comparison.md` 3A.5（価格欄は空欄のまま） |
+| R-77 | TNR→SEZ（Emirates EK708）の2027年8月の曜日・空席・運賃 | 回答では TNR 18:40→SEZ 22:30（約2時間50分）、復路 EK707 SEZ 15:20→TNR 17:05。2025年の増便発表は4月から週6便。2027年の曜日・運賃・荷物は未確認 | Emirates公式予約 | `research/168-overland-vs-madagascar-comparison.md` 2.2・3A.5（EK708） |
+| R-78 | ナコンデ→ルサカ／ムベヤ〜ルサカの公式運賃・方向別時刻 | JKAS公式はルサカ→ナコンデ ZMW480〜のみ。逆方向へ転用しない。ムピカでの分割便、2日での接続、方向別の発着時刻 | JKAS、Juldan等の公式 | `research/168-overland-vs-madagascar-comparison.md` 3A.0（ナコンデ⇄ルサカ） |
+| R-79 | マラウイ経由の現行公式ダイヤ・実売 | ムベヤ→ソンウェ→カロンガ、カロンガ⇄リロングウェ（SOSOSO旧時刻表は朝7時発の例）、リロングウェ⇄ルサカ（Kobs）。逆方向のソンウェ接続。計画上は移動3〜4日＋観光 | 各運行会社の公式 | `research/168-overland-vs-madagascar-comparison.md` 3A.0（マラウイ経由） |
+| R-80 | TAZARA越境便の2026-10-27以降の運行と2027年の時刻・運賃 | 取消告知は2026-10-27まで。期限後の再開の告知が見つからない。ムベヤ停車の有無 | TAZARA公式ニュース全文・時刻表 | `research/168-overland-vs-madagascar-comparison.md` 3A.4（TAZARA） |
+| R-81 | セーシェル電子渡航許可の2027年適用額と支払時総額 | 公式FAQは標準EUR10（銀行手数料別）、外務省の別案内はEUR10.90。予算はEUR10基準。EURの為替は `data/fx.csv` にない | 現地移民局、申請FAQ、外務省 | `research/168-overland-vs-madagascar-comparison.md` 2.2（セーシェル電子渡航許可。EURは円換算しない） |
+| R-82 | セーシェル8月の海岸別の海藻・ダイビング視界、2027年の宿食の対象日価格 | 気象当局資料は8月は比較的乾燥し南東貿易風が強いとする。宿は節約型USD55〜100/室泊の例。ひとり利用・税額込みの価格 | 気象当局、予約サイト（日付指定） | `research/168-overland-vs-madagascar-comparison.md` 2.2（セーシェル8月の海岸・宿食） |
+| R-83 | 国境の2027年当日の実運用（徒歩旅客・車種別） | ザンビア観光案内は06:00〜18:00掲載。カズングラ橋（ザンビア・ボツワナ）と、ジンバブエ・ザンビア間のカズングラ国境を混同しない | 各国入国管理、ZRA | `research/168-overland-vs-madagascar-comparison.md` 2.1（国境の実運用） |
 
 ## 3. 優先順位の目安
 
