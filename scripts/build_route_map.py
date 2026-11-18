@@ -262,12 +262,16 @@ CSS = BASE_CSS + """
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sea:#1a2530;--land:#2b2f2c;--border:#59605a;--grat:#2a3844;--fl:#F2A1A3;--dm:#9AD9E6;--rd:#F2C94C;--pt:#fbfbfa}}
 :root[data-theme="dark"]{--sea:#1a2530;--land:#2b2f2c;--border:#59605a;--grat:#2a3844;--fl:#F2A1A3;--dm:#9AD9E6;--rd:#F2C94C;--pt:#fbfbfa}
 .zwrap{overflow:auto;margin:6px 0;max-width:100%}
-.rwrap{display:grid;grid-template-columns:max-content minmax(200px,1fr);gap:0 16px;align-items:start}
+.rwrap{display:grid;grid-template-columns:max-content minmax(240px,1fr);gap:0 16px;align-items:start}
+.rside{position:sticky;top:calc(var(--bar,52px) + 8px);max-height:calc(100dvh - var(--bar,52px) - 120px);overflow:auto}
 @media (max-width:1100px){.rwrap{grid-template-columns:1fr}}
 h1{margin:6px 0!important;font-size:1.35rem!important}.crumb{margin:6px 0!important}h2.mt{margin:6px 0!important;font-size:1.05rem!important}
-.mapbox{position:relative;border:1px solid var(--line);width:calc(min(94vw,860px,max(420px,(100vh - 190px) * var(--ar,1.6))) * var(--zf,1))}
+.mapbox{position:relative;border:1px solid var(--line);width:calc(min(94vw,980px,max(360px,(100dvh - 215px) * var(--ar,1.6))) * var(--zf,1))}
 .map-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 14px}
-.map-sub{margin:0 0 6px!important;font-size:.85rem}
+.map-sub{display:none}
+body .crumb{margin:4px 0 0!important}
+.tabs button{min-height:30px!important;padding:2px 14px!important}
+.chips{padding-top:3px!important}.chips label{min-height:30px!important;padding:1px 9px!important}
 .zoom{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0;padding:0}
 .zoom button{font:inherit;min-width:50px;min-height:34px;padding:2px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
 .zoom button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
@@ -565,7 +569,6 @@ def build() -> str:
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <div class="map-top"><h1>ルート地図（5月・8月の案）</h1>
 <div class="zoom" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div></div>
-<p class="muted map-sub">5月の案はモーリシャス以南、8月の案はケープタウンから日本までを表示します。</p>
 <div class="rsel" role="group" aria-label="表示するルート">{rtabs}</div>
 <div class="rwrap"><div class="zwrap">{africa}</div><div class="rside">{infos_r}</div></div>
 {legend}

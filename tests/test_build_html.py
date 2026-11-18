@@ -108,7 +108,7 @@ class IndexTests(unittest.TestCase):
         with (ROOT / "data" / "timeline.csv").open(newline="", encoding="utf-8-sig") as f:
             rows = list(csv.DictReader(f))
         # 各期間が1つのカード（a.mini）で、地域ページへのリンクになっている
-        self.assertEqual(len(re.findall(r'<a class="mini [^"]*" href="areas/', sec)), len(rows))
+        self.assertEqual(len(re.findall(r'<a class="seg [^"]*" href="areas/', sec)), len(rows))
         for r in rows:
             self.assertIn(r["period"], sec)
         self.assertIn("モデル", sec)
@@ -116,14 +116,14 @@ class IndexTests(unittest.TestCase):
     def test_first_screen_has_compare_and_budget_strip(self):
         import re
         head = self.index.split('<h2 id="budget">')[0]
-        hero = re.search(r'<section class="hero-a">(.*?)</section>', head, re.S).group(1)
-        self.assertLess(len(re.sub(r"<[^>]+>", "", hero)), 200)  # ヒーローは短く（最初の画面に比較が入る）
-        self.assertEqual(len(re.findall(r'<a class="mini ', head)), 4)  # 地図の左右に区間カード4つ
-        self.assertIn('class="home-map"', head)  # トップの中心にルート地図
-        self.assertIn('class="strip"', head)  # 予算の1行の帯
-        for col in re.findall(r'<a class="mini .*?</a>', head, re.S):
-            self.assertIn("しおりを開く", col)
-            self.assertRegex(col, r"¥[\d,]+|未計上")
+        top = re.search(r'<div class="home-top">(.*?)</div>', head, re.S).group(1)
+        self.assertLess(len(re.sub(r"<[^>]+>", "", top)), 200)  # 見出し行は短く（最初の画面に地図と旅の流れが入る）
+        self.assertIn('class="home-body"', head)  # 左=地図、右=旅の流れ・予算・やること の2領域
+        self.assertIn('class="home-map"', head)  # 左：ルート地図
+        self.assertEqual(len(re.findall(r'<a class="seg ', head)), 4)  # 右：旅の流れ（時間順の4区間）
+        self.assertIn('class="strip"', head)  # 右：予算の帯
+        for seg in re.findall(r'<a class="seg .*?</a>', head, re.S):
+            self.assertRegex(seg, r"¥[\d,]+|未計上")
 
     def test_currency_cards(self):
         sec = self.index.split('<h2 id="fx">')[1].split("<h2 id=")[0]
@@ -134,7 +134,7 @@ class IndexTests(unittest.TestCase):
 
     def test_link_cards_do_not_nest_links(self):
         import re
-        for m in re.findall(r'<a class="(?:card link[^"]*|mini [^"]*)".*?</a>', self.index, re.S):
+        for m in re.findall(r'<a class="(?:card link[^"]*|seg [^"]*)".*?</a>', self.index, re.S):
             self.assertEqual(m.count("<a "), 1, m[:80])
 
     def test_floating_card_css(self):
@@ -233,7 +233,7 @@ class FontSizeAndHomeMapTests(unittest.TestCase):
         self.assertLess(i_map, text.index('<h2 id="budget">'))
         self.assertEqual(text.count('class="m"'), 1)  # 地図のSVGは1つ（5月の案G）
         self.assertIn('href="maps/route-map.html"', text)
-        self.assertEqual(text.count('class="mini '), 4)  # 区間カードは4つ（地図の左右に2つずつ）
+        self.assertEqual(text.count('class="seg '), 4)  # 右に旅の流れ（区間4つ）
 
 
 if __name__ == "__main__":

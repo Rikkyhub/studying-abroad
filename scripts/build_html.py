@@ -159,6 +159,73 @@ def fold_sections(body: str, min_chars: int = 600, open_key: str = "", closed_ke
     return res
 
 
+PANE_SCRIPT = """<script>(function(){var P=document.querySelector(".pane");if(!P)return;
+var tabs=[].slice.call(P.querySelectorAll('[role=tab]')),pans=[].slice.call(P.querySelectorAll('[role=tabpanel]'));
+function pick(k,push){tabs.forEach(function(b){b.setAttribute("aria-selected",String(b.getAttribute("data-t")===k))});
+ pans.forEach(function(x){x.hidden=x.getAttribute("data-t")!==k});var body=P.querySelector(".pane-body");if(body)body.scrollTop=0;
+ if(push){try{history.replaceState(null,"","#tab-"+k)}catch(e){}}}
+P.classList.add("on");
+tabs.forEach(function(b){b.addEventListener("click",function(){pick(b.getAttribute("data-t"),true)})});
+var h=location.hash.replace(/^#/,"");var m=/^tab-(.+)$/.exec(h);
+if(m&&P.querySelector('[data-t="'+decodeURIComponent(m[1])+'"]'))pick(decodeURIComponent(m[1]));
+else if(h){var el=document.getElementById(decodeURIComponent(h));var pn=el&&el.closest("[role=tabpanel]");if(pn){pick(pn.getAttribute("data-t"));el.scrollIntoView()}else pick(tabs.length?tabs[0].getAttribute("data-t"):"")}
+else pick(tabs.length?tabs[0].getAttribute("data-t"):"");
+window.addEventListener("hashchange",function(){var h2=location.hash.replace(/^#/,"");var mm=/^tab-(.+)$/.exec(h2);if(mm){pick(decodeURIComponent(mm[1]))}else if(h2){var e=document.getElementById(decodeURIComponent(h2));var q=e&&e.closest("[role=tabpanel]");if(q){pick(q.getAttribute("data-t"));e.scrollIntoView()}}});
+})();</script>"""
+
+
+SIDE_KEYS = ("概要", "旅の要点", "ビザ", "安全")  # 左に固定して、いつも見える節
+TAB_ORDER = ("旅程の目安", "旅の流れ", "今日のやること", "費用", "主な観光地", "住む場所", "ビザ", "安全", "行き方", "おすすめの食べ物",
+             "おおよその位置の地図", "出発前の準備", "未確認", "出典", "調査ログ", "調査メモ")  # タブの並び（見る順）
+
+
+def _tab_rank(title: str) -> int:
+    for i, k in enumerate(TAB_ORDER):
+        if k in title:
+            return i
+    return len(TAB_ORDER)
+
+
+def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) -> tuple[str, str, list[tuple[str, str]]]:
+    """本文を、左に固定する導入（概要・ビザ・安全など）と、h2 ごとのタブのパネルに分ける。
+    reorder=True のときは、タブを TAB_ORDER の順（見る順）に並べ替える。戻り値：(導入のHTML, タブ＋パネルのHTML, [(id, 見出し)])"""
+    parts = re.split(r'(?=<h2 id=)', body)
+    intro, secs = parts[0], parts[1:]
+    items = []
+    for i, p in enumerate(secs):
+        m = re.match(r'<h2 id="([^"]+)">(.*?)</h2>(.*)$', p, re.S)
+        if not m:
+            intro += p
+            continue
+        hid, h2html, rest = m.group(1), m.group(2), m.group(3)
+        title = re.sub(r"<[^>]+>", "", h2html)
+        if any(k in title for k in side_keys) and not reorder:
+            # 地域ページは、最初の「概要」「旅の要点」だけを左に固定する
+            if not items and re.search(r"(概要|旅の要点)", title):
+                intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{rest}'
+                continue
+        elif any(k in title for k in side_keys) and reorder:
+            # 先頭の箇条書きだけを左に出し、見出し(h3)以降の詳細は、同じ名前のタブに回す
+            cut = re.search(r'<h3[ >]', rest)
+            head_part, detail = (rest[:cut.start()], rest[cut.start():]) if cut else (rest, "")
+            intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{head_part}'
+            if detail.strip():
+                items.append((i, title + "（詳細）", hid + "-detail", h2html + "（詳細）", detail))
+            continue
+        items.append((i, title, hid, h2html, rest))
+    if reorder:
+        items.sort(key=lambda x: (_tab_rank(x[1]), x[0]))
+    heads, tabs, pans = [], [], []
+    for n, (i, title, hid, h2html, rest) in enumerate(items):
+        key = f"t{i + 1}"
+        heads.append((hid, title))
+        label = re.sub(r"^[0-9]+[.．]\s*", "", title)
+        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 0 else "false"}">{html.escape(label)}</button>')
+        pans.append(f'<section role="tabpanel" id="pan-{key}" data-t="{key}" aria-labelledby="tab-{key}"><h2 id="{hid}">{h2html}</h2>{rest}</section>')
+    html_ = f'<div class="pane"><div class="tabs" role="tablist">{"".join(tabs)}</div><div class="pane-body">{"".join(pans)}</div></div>'
+    return intro, html_, heads
+
+
 TOC_OPEN_SCRIPT = """<script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
 var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
 if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>"""
@@ -478,7 +545,11 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     title, body, toc = convert(md)
     title = title or path.stem
     rel = path.relative_to(root).as_posix()
-    if path.parent.name in ("research", "areas"):
+    tabbed = path.parent.name in ("areas", "countries") and len(re.findall(r"<h2 id=", body)) >= 3
+    if tabbed:
+        intro, panes, _heads = build_panes(body, reorder=(path.parent.name == "countries"))  # 国別ページは、見る順にタブを並べ替える
+        body = '<div class="pane-wrap"><aside class="pane-side">' + intro + '</aside>' + panes + '</div>' + PANE_SCRIPT
+    elif path.parent.name in ("research", "areas"):
         shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く
         body = fold_sections(fold_notes(body), min_chars=400 if path.parent.name == "areas" else 600,
                              open_key="費用の見積" if path.parent.name == "areas" else "",
@@ -503,7 +574,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         body += "\n" + COST_TRIAGE_SCRIPT
     toc_html = ""
     heads = [(a, t) for lv, a, t in toc if lv == 2]
-    if len(heads) >= 3:
+    if len(heads) >= 3 and not tabbed:
         links = "".join(f'<a href="#{a}">{html.escape(t)}</a>' for a, t in heads)
         tools = ('<p class="doc-tools"><button type="button" data-sec="open">すべて開く</button>'
                  '<button type="button" data-sec="close">すべて閉じる</button></p>') if 'class="sec"' in body else ""
@@ -518,7 +589,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         region=PAGE_TAG_CLASS.get(path.stem, "") if path.parent.name == "areas" else "",
         body=body,
         toc=toc_html,
-        docmode="has-toc" if toc_html else "no-toc",
+        docmode="tabbed" if tabbed else ("has-toc" if toc_html else "no-toc"),
         bar=bar("../", current),
         prefix="../",
         nav=nav(root, path),
@@ -762,6 +833,23 @@ def region_mini(root: Path = ROOT) -> tuple[str, str]:
                      f'<span class="go">しおりを開く →</span></a>')
     half = (len(cards) + 1) // 2
     return "".join(cards[:half]), "".join(cards[half:])
+
+
+def home_flow(root: Path = ROOT) -> str:
+    """ホームの右側：旅の全体の流れ。時間順の4区間を、色の線つきの帯で縦に並べる（期間・見出し・現地費・要約）"""
+    timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
+    costs = _station_costs(root)
+    out = []
+    for r in timeline:
+        key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
+        cls = REGION_CLASS.get(key, "reg-common")
+        cost = costs.get(key)
+        cost_html = (f'<span class="cost num">{esc(cost)}<small>現地費・標準</small></span>' if cost
+                     else '<span class="cost num">未計上<small>国が未定のため</small></span>')
+        out.append(f'<a class="seg {cls}" href="areas/{key}.html"><span class="when">{esc(r["period"])}</span>'
+                   f'<h3>{esc(r["title"])}</h3>{cost_html}'
+                   f'<span class="sub">{esc(r["summary"])}</span></a>')
+    return "".join(out)
 
 
 def budget_strip(root: Path = ROOT) -> str:
@@ -1021,24 +1109,18 @@ document.querySelectorAll("[data-carousel]").forEach(function(c){
 </script>"""
 
 INDEX_BODY = """@@bar@@
-<main class="wrap top">
-<section class="hero-a">
-<h1>2027年2月、バギオから。7月、ケープタウンまで。</h1>
-<p class="hero-note">計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p>
-</section>
-
-<div class="home-grid" id="plan">
-<div class="col-side">
-@@minileft@@
-</div>
-<div class="col-map">
+<main class="wrap top home-main">
+<div class="home-top"><h1>2027年2月、バギオから。7月、ケープタウンまで。</h1>
+<p class="hero-note">計画・調査の段階です。出発日・留学先・ビザ・2027年の料金には未確認が残っています。公開しているのは一般の料金・制度・調査をもとにした匿名のモデルで、個人の支払い・資産・予約情報は載せていません。</p></div>
+<div class="home-body" id="plan">
+<div class="home-left">
 @@homemap@@
 </div>
-<div class="col-side">
-@@miniright@@
-</div>
-</div>
+<div class="home-right">
+<div class="flow">@@flow@@</div>
 @@strip@@
+</div>
+</div>
 <p class="sub more-below">下に、予算の内訳・通貨と円換算・資料の一覧が続きます。日本国内の手続き・保険・共通の準備は <a href="areas/common.html">日本国内・保険・共通</a> に。</p>
 
 <h2 id="budget">予算の全体像</h2>
@@ -1076,7 +1158,7 @@ def index_page(root: Path = ROOT) -> str:
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY.replace("@@bar@@", bar("", "index.html"))
-    for k, v in (("budget", budget_cards(root)), ("homemap", home_map(root)), ("minileft", region_mini(root)[0]), ("miniright", region_mini(root)[1]), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
+    for k, v in (("budget", budget_cards(root)), ("homemap", home_map(root)), ("flow", home_flow(root)), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
                  ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@fsjs@@", FONT_SIZE_JS).replace("@@body@@", body)
