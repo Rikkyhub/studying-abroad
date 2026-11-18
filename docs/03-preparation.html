@@ -16,7 +16,7 @@ a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-vis
 h1{font-size:1.9rem;line-height:1.35;margin:8px 0 6px;font-weight:800;letter-spacing:.01em}
 h2{font-size:1.35rem;line-height:1.45;margin:30px 0 8px;padding-top:0;font-weight:800}
 h3{font-size:1.1rem;line-height:1.55;margin:20px 0 6px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
-p{margin:6px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
+p{margin:6px 0} p,li{max-width:80ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
 .note{background:var(--warn-soft);color:var(--ink);padding:8px 14px;margin:10px 0;max-width:none;border-radius:var(--rad-s)}
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
 .scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
@@ -100,7 +100,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article{min-width:0}
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
-.doc{grid-template-columns:230px minmax(0,1fr)}
+.doc.has-toc{grid-template-columns:230px minmax(0,1fr)}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ 計画・費用</p>
 <div class="page-head "><span class="tag">計画・費用</span><h1>出発前・現地・帰国の準備チェック</h1></div>
-<div class="doc">
+<div class="doc has-toc">
 <aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#先に確定すべきもの">先に確定すべきもの</a><a href="#タスク一覧自動">タスク一覧（自動）</a><a href="#後続作業">後続作業</a><a href="#手続きの要点公的情報の調査結果2026-10-16-調査">手続きの要点（公的情報の調査結果・2026-10-16 調査）</a><a href="#勤務先自治体に確認すること一般的な確認項目">勤務先・自治体に確認すること（一般的な確認項目）</a><a href="#持ち物リスト準備中に更新">持ち物リスト（準備中に更新）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>

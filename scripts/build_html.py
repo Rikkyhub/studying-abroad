@@ -514,6 +514,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         region=PAGE_TAG_CLASS.get(path.stem, "") if path.parent.name == "areas" else "",
         body=body,
         toc=toc_html,
+        docmode="has-toc" if toc_html else "no-toc",
         bar=bar("../", current),
         prefix="../",
         nav=nav(root, path),
@@ -1761,7 +1762,7 @@ PAGE = """<!doctype html>
 <main class="wrap page">
 <p class="crumb"><a href="@@prefix@@index.html">トップ</a> ／ @@section@@</p>
 <div class="page-head @@region@@">@@tag@@<h1>@@title@@</h1></div>
-<div class="doc">
+<div class="doc @@docmode@@">
 @@toc@@
 <article>
 @@body@@

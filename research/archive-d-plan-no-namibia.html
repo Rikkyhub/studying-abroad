@@ -16,7 +16,7 @@ a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-vis
 h1{font-size:1.9rem;line-height:1.35;margin:8px 0 6px;font-weight:800;letter-spacing:.01em}
 h2{font-size:1.35rem;line-height:1.45;margin:30px 0 8px;padding-top:0;font-weight:800}
 h3{font-size:1.1rem;line-height:1.55;margin:20px 0 6px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
-p{margin:6px 0} p,li{max-width:72ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
+p{margin:6px 0} p,li{max-width:80ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
 .note{background:var(--warn-soft);color:var(--ink);padding:8px 14px;margin:10px 0;max-width:none;border-radius:var(--rad-s)}
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
 .scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
@@ -100,7 +100,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article{min-width:0}
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
-.doc{grid-template-columns:230px minmax(0,1fr)}
+.doc.has-toc{grid-template-columns:230px minmax(0,1fr)}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>D案（ナミビアなし）：JNB→レソト／エスワティニ／モザンビーク→ジンバブエ陸路周遊の検証（Issue #53）</h1></div>
-<div class="doc">
+<div class="doc has-toc">
 <aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-結論">1. 結論</a><a href="#2-前提と換算">2. 前提と換算</a><a href="#3-順序案-d1d4の日別表">3. 順序案 D1〜D4の日別表</a><a href="#4-レソト追加の価値と交通">4. レソト（追加の価値と交通）</a><a href="#5-区間ごとの交通昼行シャトルバス">5. 区間ごとの交通（昼行・シャトル・バス）</a><a href="#6-安全日本の外務省と英国fcdo確認-2026-10-20">6. 安全（日本の外務省と英国FCDO。確認 2026-10-20）</a><a href="#7-d4自力レンタカーの可否">7. D4：自力レンタカーの可否</a><a href="#8-比較表bナミビア改善cd1d4">8. 比較表（B＋ナミビア・改善C・D1〜D4）</a><a href="#9-未確認次にやること">9. 未確認（次にやること）</a><a href="#10-検索ログ2026-10-20">10. 検索ログ（2026-10-20）</a><a href="#公開データの確認">公開データの確認</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
