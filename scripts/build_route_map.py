@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import html
+import re
 import sys
 from pathlib import Path
 
@@ -295,6 +296,10 @@ svg.m{display:block;width:100%;height:auto;background:var(--sea);font-family:var
 .chips label:has(input:checked){background:var(--hl);border-color:var(--link);font-weight:700}
 .chips input{margin:0}
 .rinfo{margin:6px 0;padding:6px 10px;border-left:6px solid var(--link);background:var(--bg);font-size:.92em}.rinfo b{display:block}
+.gday{border-collapse:collapse;width:100%;font-size:.78rem;margin-top:8px}
+.gday th,.gday td{padding:3px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.gday th{background:var(--th);white-space:nowrap}
+.gday td:nth-child(2){white-space:nowrap}
 .calbox{margin:8px 0}
 [data-cpan][hidden],.acal[hidden],.aplan[hidden]{display:none}
 table.cal{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;margin:10px 0}
@@ -369,6 +374,21 @@ MAY_IDS = ["G", "M0A", "M0B", "M0C", "M1A", "M1B"]
 AUG_IDS = ["A0", "A1", "A2", "A3", "A4", "A4X", "A5", "A5X", "A6", "A7", "A8", "A9", "A10", "A11", "A12"]
 G_DAYS = {("BOM", "MRU"): "Day 1〜2", ("MRU", "TNR"): "Day 6", ("TNR", "MRU"): "Day 19", ("MRU", "JNB"): "Day 21", ("JNB", "VICFALLS"): "Day 23", ("VICFALLS", "CPT"): "Day 32"}
 SHORT = {"G": "G：現行35日", "M0A": "M0-A ナミビアなし・往復", "M0B": "M0-B オープンジョー", "M0C": "M0-C 短縮", "M1A": "M1-A ボツワナ→ナミビア", "M1B": "M1-B マウン入口"}
+
+
+def g_day_table() -> str:
+    """案Gの Day 表（区間・Day・内容）。areas/africa.md の「旅の流れ」の表を、そのまま読んで小さな表にする（文章は足さない）"""
+    md = (ROOT / "areas" / "africa.md").read_text(encoding="utf-8")
+    m = re.search(r"^\| 区間 \|.*?\n\|[-| ]+\|\n((?:\|.*\n)+)", md, re.M)
+    if not m:
+        return ""
+    rows = []
+    for line in m.group(1).strip().split("\n"):
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) >= 3:
+            rows.append("<tr>" + "".join(f"<td>{html.escape(re.sub(r'[*]+', '', c))}</td>" for c in cells[:3]) + "</tr>")
+    return ('<table class="gday"><thead><tr><th>区間</th><th>Day</th><th>内容</th></tr></thead><tbody>'
+            + "".join(rows) + "</tbody></table>") if rows else ""
 
 
 def short_name(rid, name):
@@ -528,7 +548,8 @@ def build() -> str:
              f'<button type="button" role="tab" data-tab="aug" aria-selected="false">8月の案（{aug_n}）</button></div>'
              f'<div class="chips" data-pan="may">{may_chips}</div><div class="chips" data-pan="aug" hidden>{aug_chips}</div>')
     g_info = ('案Gは35日表（Day 番号つき）。費用は<a href="../research/may-madagascar-vfa-redesign.html">ルート調査</a>と'
-              '<a href="../research/africa-budget-fermi.html">フェルミ予算</a>を参照')
+              '<a href="../research/africa-budget-fermi.html">フェルミ予算</a>を参照'
+              + g_day_table())
     info_parts = []
     for r in MAY_IDS + AUG_IDS:
         if r not in routes:
