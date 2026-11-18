@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 地域別</p>
 <div class="page-head r-cape"><span class="tag r-cape">2027年6〜7月 ・ 2027年8月</span><h1>ケープタウン（第2か国留学）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-旅の要点">1. 旅の要点</a><a href="#2-今日のやること">2. 今日のやること</a><a href="#3-費用の見積">3. 費用の見積</a><a href="#4-住む場所町と地図">4. 住む場所・町と地図</a><a href="#5-出発前の準備">5. 出発前の準備</a><a href="#6-調査メモ">6. 調査メモ</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-旅の要点">1. 旅の要点</a><a href="#2-今日のやること">2. 今日のやること</a><a href="#3-費用の見積">3. 費用の見積</a><a href="#4-住む場所町と地図">4. 住む場所・町と地図</a><a href="#5-出発前の準備">5. 出発前の準備</a><a href="#6-調査メモ">6. 調査メモ</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <h2 id="1-旅の要点">1. 旅の要点</h2>

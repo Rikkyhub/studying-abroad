@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 計画・費用</p>
 <div class="page-head "><span class="tag">計画・費用</span><h1>トップページと地域別ページの見方・更新方法</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#手で書くもの生成されるもの">手で書くもの・生成されるもの</a><a href="#生成の流れ2段階順序固定">生成の流れ（2段階・順序固定）</a><a href="#地域別ページの構成">地域別ページの構成</a><a href="#トップページ">トップページ</a><a href="#見やすさの方針">見やすさの方針</a><a href="#内部入力csvの列">内部入力（CSV）の列</a><a href="#為替レートの更新">為替レートの更新</a><a href="#2026-11-095月周遊フェルミ費用のmarkdown編集先行実装">2026-11-09｜5月周遊フェルミ費用のMarkdown編集（先行実装）</a><a href="#今後の検討費用タスクを-markdown-の表に移すか">今後の検討（費用・タスクを Markdown の表に移すか）</a><a href="#公開に関する注意">公開に関する注意</a></nav></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#手で書くもの生成されるもの">手で書くもの・生成されるもの</a><a href="#生成の流れ2段階順序固定">生成の流れ（2段階・順序固定）</a><a href="#地域別ページの構成">地域別ページの構成</a><a href="#トップページ">トップページ</a><a href="#見やすさの方針">見やすさの方針</a><a href="#内部入力csvの列">内部入力（CSV）の列</a><a href="#為替レートの更新">為替レートの更新</a><a href="#2026-11-095月周遊フェルミ費用のmarkdown編集先行実装">2026-11-09｜5月周遊フェルミ費用のMarkdown編集（先行実装）</a><a href="#今後の検討費用タスクを-markdown-の表に移すか">今後の検討（費用・タスクを Markdown の表に移すか）</a><a href="#公開に関する注意">公開に関する注意</a></nav></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p>読者が見るのは <code>index.html</code>（トップ）と <code>areas/</code> の地域別ページ（バギオ・アフリカ周遊・ケープタウン・共通）です。どれも静的HTMLで、外部ライブラリ・サーバー不要、<code>file://</code> で直接開いて読めます。CSV は読者向けの表示対象ではありません（生成スクリプトの内部入力です）。</p>
 <pre><code class="lang-sh">py scripts/build_all.py          # 生成物をすべて更新（入口はこれ1つ）

@@ -159,6 +159,10 @@ def fold_sections(body: str, min_chars: int = 600, open_key: str = "", closed_ke
     return res
 
 
+TOC_OPEN_SCRIPT = """<script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>"""
+
 SECTION_SCRIPT = """<script>
 (function(){
 function openFor(el){for(var d=el&&el.closest?el.closest("details"):null;d;d=d.parentElement&&d.parentElement.closest("details")){d.open=true}}
@@ -503,8 +507,8 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         links = "".join(f'<a href="#{a}">{html.escape(t)}</a>' for a, t in heads)
         tools = ('<p class="doc-tools"><button type="button" data-sec="open">すべて開く</button>'
                  '<button type="button" data-sec="close">すべて閉じる</button></p>') if 'class="sec"' in body else ""
-        toc_html = (f'<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary>'
-                    f'<nav class="toc" aria-label="このページの目次">{links}</nav>{tools}</details></aside>')
+        toc_html = (f'<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary>'
+                    f'<nav class="toc" aria-label="このページの目次">{links}</nav>{tools}</details></aside>' + TOC_OPEN_SCRIPT)
     current = f"{path.parent.name}/{path.stem}.html" if path.parent.name == "areas" else ""
     return page_html(
         mark=GENERATED_MARK.format(src=rel),

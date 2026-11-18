@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,12 +404,14 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 計画・費用</p>
 <div class="page-head "><span class="tag">計画・費用</span><h1>6か月間の予算モデル（公開用・匿名）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#2026-11-085月航空券を独立表示する予算区分issue-80">2026-11-08｜5月航空券を独立表示する予算区分（Issue #80）</a><a href="#2026-11-09数量仮単価の編集場所markdown正本">2026-11-09｜数量×仮単価の編集場所（Markdown正本）</a><a href="#1-概要自動">1. 概要（自動）</a><a href="#2-月別自動">2. 月別（自動）</a><a href="#3-費目別プラン別自動">3. 費目別・プラン別（自動）</a><a href="#4-国地域別自動">4. 国・地域別（自動）</a><a href="#5-費用明細自動">5. 費用明細（自動）</a><a href="#6-為替レート自動">6. 為替レート（自動）</a><a href="#7-更新のしかた">7. 更新のしかた</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#2026-11-085月航空券を独立表示する予算区分issue-80">2026-11-08｜5月航空券を独立表示する予算区分（Issue #80）</a><a href="#2026-11-09数量仮単価の編集場所markdown正本">2026-11-09｜数量×仮単価の編集場所（Markdown正本）</a><a href="#1-概要自動">1. 概要（自動）</a><a href="#2-月別自動">2. 月別（自動）</a><a href="#3-費目別プラン別自動">3. 費目別・プラン別（自動）</a><a href="#4-国地域別自動">4. 国・地域別（自動）</a><a href="#5-費用明細自動">5. 費用明細（自動）</a><a href="#6-為替レート自動">6. 為替レート（自動）</a><a href="#7-更新のしかた">7. 更新のしかた</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <p><strong>このページの見方（2026-11-11）</strong>：下の「AUTO」の表は <code>data/expenses.csv</code> から自動で作った見積モデルです（<code>py scripts/build_all.py</code> で再生成）。<strong>公開料金に基づく匿名の見積であって、支払・実費の記録ではありません。</strong> 空欄は0円ではなく、2027年の料金・条件は未確認です。先頭の「1. 概要」だけ開いてあり、ほかの節は見出しを押すと開きます。</p>
 <p>集計の基準日：2026-10-17（<code>data/meta.csv</code> の <code>as_of</code>。個別の料金の確認日は各行に記載）。<strong>数値は公開料金に基づく見積モデルと予算目標であって、支払・実費の記録ではない。</strong> 個人の請求額・支払額・資産残高は非公開で管理し、この公開資料の集計には含めません（<a href="05-public-data-policy.html">公開データ方針</a>）。</p>
-<ul><li>`<code> ブロックの中は [</code>scripts/build.py`](../scripts/build.py) が CSV から作り直します。手で編集しても上書きされます。</li></ul>
+<ul><li>AUTO ブロック（<code>AUTO:名前</code> の目印で囲まれた部分）の中は <code>scripts/build.py</code> が CSV から作り直します。手で編集しても上書きされます。</li></ul>
 <details class="sec"><summary><h2 id="2026-11-085月航空券を独立表示する予算区分issue-80">2026-11-08｜5月航空券を独立表示する予算区分（Issue #80）</h2></summary>
 <p><strong>定義</strong>：トップの「飛行機代」には日本発着・Mauritius↔Madagascar・Mauritius→JNB・JNB→VFA・VFA→Cape Town・マダガスカル国内線をまとめる。「アフリカ周遊（5月）」には<strong>航空券以外</strong>のバス・タクシー・越境送迎、ビザ・KAZA、宿泊・食事・観光・サファリを含める。各費用を正本<code>data/expenses.csv</code>の1行にのみ置き、同じ支払を2区分に重複計上しない。</p>
 <p>既存の<strong>5月配分目標60万円（総予算の内数）は、飛行機代とアフリカ現地費を合わせた5月旅行全体の目標</strong>として維持する。つまりトップで別々に表示しても、「5月現地費だけが60万円以下なら達成」とは判定しない。合計の算式は <code>sum(expenses.csv の AF-行の標準円換算)</code>。マニラ→日本一時帰国便（PH-12）や保険等は5月アフリカ60万円のAF-行には含めないが、<strong>全行程総予算には1回計上</strong>する。旅行の最終総額にはそれらの別枠を忘れず加える。</p>
