@@ -738,7 +738,7 @@ def home_map(root: Path = ROOT) -> str:
     svg = build_route_map.africa_may_svg("home-")
     return ('<figure class="home-map">'
             f'<div class="mapbox-h">{svg}</div>'
-            '<figcaption><span class="legend"><i class="fl"></i>空路 <i class="dm"></i>国内線 <i class="rd"></i>陸路・車</span> '
+            '<figcaption><span class="legend"><i class="fl"></i>空路 <i class="dm"></i>国内線 <i class="rd"></i>陸路・車</span>'
             '経路は点を結んだ概念図です（Day 1 = 5/3 の仮置き）。'
             '<a href="maps/route-map.html">ルート地図で、5月・8月の案を切り替えて見る →</a></figcaption></figure>')
 

@@ -173,7 +173,7 @@ body.home{background:var(--page)}
 .hero-a{margin:18px 0 6px}
 .hero-a h1{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;font-weight:900;text-wrap:balance;margin:0}
 .hero-a .lead{color:var(--muted);max-width:60ch;margin-top:12px}
-.hero-a .hero-note{color:var(--muted);font-size:.85rem;max-width:none;margin-top:6px;line-height:1.6}
+.hero-a .hero-note{color:var(--muted);font-size:.85rem;max-width:none;margin-top:6px;line-height:1.6;text-wrap:pretty}
 .route-cols{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:30px 44px;margin-top:30px;align-items:start}
 .kicker{font-size:.82rem!important;letter-spacing:.08em;color:var(--muted);margin:0 0 14px!important;font-weight:700;border:0!important;padding:0!important}
 ol.stops{list-style:none;margin:0;padding:0 0 0 46px;display:grid;gap:16px}
@@ -230,19 +230,19 @@ a.region-col .go{margin-top:auto;padding-top:10px;font-weight:700;font-size:.82r
 .strip ul{list-style:none;margin:4px 0 6px;padding:0;display:grid;gap:5px;font-size:.84rem}
 .strip li{display:grid;grid-template-columns:auto 1fr;gap:8px;max-width:none;margin:0;line-height:1.45}
 .strip li b{font-size:.7rem;border-radius:6px;padding:0 6px;height:1.7em;line-height:1.7em;background:var(--th);white-space:nowrap}
-.more-below{margin-top:12px!important;font-size:.85rem}
+.more-below{margin-top:12px!important;font-size:.85rem;max-width:none;text-wrap:pretty}
 @media(max-width:1000px){.region-compare{grid-template-columns:repeat(2,minmax(0,1fr))}.strip{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.region-compare{grid-template-columns:minmax(0,1fr)}}
 
 
 /* ---- トップ：中心にルート地図、左右に区間カード ---- */
-.home-grid{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr) minmax(0,230px);gap:14px;align-items:stretch;margin-top:10px}
+.home-grid{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) minmax(0,190px);gap:14px;align-items:stretch;margin-top:10px}
 .col-side{display:grid;gap:14px;align-content:start}
 .col-map{min-width:0}
 .home-map{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;height:100%}
 .home-map .mapbox-h{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
 .home-map svg.m{display:block;width:100%;height:auto;background:var(--sea)}
-.home-map figcaption{font-size:.76rem;color:var(--muted);line-height:1.55;margin-top:6px}
+.home-map figcaption{font-size:.76rem;color:var(--muted);line-height:1.55;margin-top:6px;display:grid;gap:2px}
 .home-map figcaption a{font-weight:700;display:inline-block;margin-top:2px}
 .home-map .legend{display:inline-flex;gap:8px;align-items:center;margin-right:6px;font-weight:700;color:var(--ink)}
 .home-map .legend i{display:inline-block;width:20px;height:0;border-top:3px solid var(--fl);vertical-align:middle;margin-right:2px}
