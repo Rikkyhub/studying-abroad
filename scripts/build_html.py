@@ -174,27 +174,49 @@ window.addEventListener("hashchange",function(){var h2=location.hash.replace(/^#
 })();</script>"""
 
 
-def build_panes(body: str, skip_first_chars: int = 0) -> tuple[str, str, list[tuple[str, str]]]:
-    """本文を、先頭の導入と、h2 ごとのタブのパネルに分ける。戻り値：(導入のHTML, タブ＋パネルのHTML, [(id, 見出し)])"""
+SIDE_KEYS = ("概要", "旅の要点", "ビザ", "安全")  # 左に固定して、いつも見える節
+TAB_ORDER = ("旅程の目安", "旅の流れ", "今日のやること", "費用", "主な観光地", "住む場所", "行き方", "おすすめの食べ物",
+             "おおよその位置の地図", "出発前の準備", "未確認", "出典", "調査ログ", "調査メモ")  # タブの並び（見る順）
+
+
+def _tab_rank(title: str) -> int:
+    for i, k in enumerate(TAB_ORDER):
+        if k in title:
+            return i
+    return len(TAB_ORDER)
+
+
+def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) -> tuple[str, str, list[tuple[str, str]]]:
+    """本文を、左に固定する導入（概要・ビザ・安全など）と、h2 ごとのタブのパネルに分ける。
+    reorder=True のときは、タブを TAB_ORDER の順（見る順）に並べ替える。戻り値：(導入のHTML, タブ＋パネルのHTML, [(id, 見出し)])"""
     parts = re.split(r'(?=<h2 id=)', body)
     intro, secs = parts[0], parts[1:]
-    heads, tabs, pans = [], [], []
-    n = 0
+    items = []
     for i, p in enumerate(secs):
         m = re.match(r'<h2 id="([^"]+)">(.*?)</h2>(.*)$', p, re.S)
         if not m:
             intro += p
             continue
-        hid, title, rest = m.group(1), re.sub(r"<[^>]+>", "", m.group(2)), m.group(3)
-        if re.search(r"(概要|旅の要点)", title) and not tabs:
-            intro += f'<h2 class="side-h" id="{hid}">{m.group(2)}</h2>{rest}'  # 最初の「概要」「旅の要点」は左に固定
+        hid, h2html, rest = m.group(1), m.group(2), m.group(3)
+        title = re.sub(r"<[^>]+>", "", h2html)
+        if any(k in title for k in side_keys) and not reorder:
+            # 地域ページは、最初の「概要」「旅の要点」だけを左に固定する
+            if not items and re.search(r"(概要|旅の要点)", title):
+                intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{rest}'
+                continue
+        elif any(k in title for k in side_keys) and reorder:
+            intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{rest}'
             continue
+        items.append((i, title, hid, h2html, rest))
+    if reorder:
+        items.sort(key=lambda x: (_tab_rank(x[1]), x[0]))
+    heads, tabs, pans = [], [], []
+    for n, (i, title, hid, h2html, rest) in enumerate(items):
         key = f"t{i + 1}"
-        n += 1
         heads.append((hid, title))
-        label = re.sub(r"^\d+\.\s*", "", title)
-        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 1 else "false"}">{html.escape(label)}</button>')
-        pans.append(f'<section role="tabpanel" id="pan-{key}" data-t="{key}" aria-labelledby="tab-{key}"><h2 id="{hid}">{m.group(2)}</h2>{rest}</section>')
+        label = re.sub(r"^[0-9]+[.．]\s*", "", title)
+        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 0 else "false"}">{html.escape(label)}</button>')
+        pans.append(f'<section role="tabpanel" id="pan-{key}" data-t="{key}" aria-labelledby="tab-{key}"><h2 id="{hid}">{h2html}</h2>{rest}</section>')
     html_ = f'<div class="pane"><div class="tabs" role="tablist">{"".join(tabs)}</div><div class="pane-body">{"".join(pans)}</div></div>'
     return intro, html_, heads
 
@@ -520,7 +542,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     rel = path.relative_to(root).as_posix()
     tabbed = path.parent.name in ("areas", "countries") and len(re.findall(r"<h2 id=", body)) >= 3
     if tabbed:
-        intro, panes, _heads = build_panes(body)
+        intro, panes, _heads = build_panes(body, reorder=(path.parent.name == "countries"))  # 国別ページは、見る順にタブを並べ替える
         body = '<div class="pane-wrap"><aside class="pane-side">' + intro + '</aside>' + panes + '</div>' + PANE_SCRIPT
     elif path.parent.name in ("research", "areas"):
         shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く
