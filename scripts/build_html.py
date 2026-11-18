@@ -179,6 +179,32 @@ TAB_ORDER = ("旅程の目安", "旅の流れ", "今日のやること", "費用
              "おおよその位置の地図", "出発前の準備", "未確認", "出典", "調査ログ", "調査メモ")  # タブの並び（見る順）
 
 
+DIGEST_KEYS = (("最適日数", ("最適日数", "最適な観光日数", "観光日数", "日数")), ("5月の適性", ("5月の適性", "5月")),
+               ("費用目安", ("費用目安", "費用")), ("コスパ", ("コスパ",)), ("タイパ", ("タイパ",)), ("未確認", ("未確認", "主な未確認")))
+
+
+def digest_from_conclusion(body: str) -> str:
+    """国別ページの「結論」の表（観点／項目｜結論）から、左に固定する「項目：値」の短い一覧を作る。見出し名・項目名の揺れを吸収する。
+    結論の表がない国は空（何も足さない）。値は先頭の一文だけにして縦に伸ばさない"""
+    m = re.search(r'<h3[^>]*>結論[^<]*</h3>\s*(?:<[^h][^>]*>\s*)*<div class="scroll"><table>(.*?)</table></div>', body, re.S)
+    if not m:
+        return ""
+    rows = re.findall(r'<tr><td[^>]*>(.*?)</td><td[^>]*>(.*?)</td></tr>', m.group(1), re.S)
+    got = {}
+    for k, v in rows:
+        key = re.sub(r"<[^>]+>", "", k).strip()
+        for name, aliases in DIGEST_KEYS:
+            if name in got:
+                continue
+            if any(key == a or key.startswith(a) for a in aliases):
+                txt = re.sub(r"<[^>]+>", "", v).strip()
+                txt = re.split(r"[。（(]", txt)[0].strip() or txt[:40]
+                got[name] = txt[:56]
+                break
+    out = [f"<dt>{html.escape(n)}</dt><dd>{html.escape(got[n])}</dd>" for n, _ in DIGEST_KEYS if n in got]
+    return '<dl class="digest">' + "".join(out) + "</dl>" if out else ""
+
+
 def _tab_rank(title: str) -> int:
     for i, k in enumerate(TAB_ORDER):
         if k in title:
@@ -548,6 +574,8 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     tabbed = path.parent.name in ("areas", "countries") and len(re.findall(r"<h2 id=", body)) >= 3
     if tabbed:
         intro, panes, _heads = build_panes(body, reorder=(path.parent.name == "countries"))  # 国別ページは、見る順にタブを並べ替える
+        if path.parent.name == "countries":
+            intro = digest_from_conclusion(body) + intro  # 左の先頭に、結論の短い一覧（最適日数・5月の適性・費用…）を置く
         body = '<div class="pane-wrap"><aside class="pane-side">' + intro + '</aside>' + panes + '</div>' + PANE_SCRIPT
     elif path.parent.name in ("research", "areas"):
         shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く

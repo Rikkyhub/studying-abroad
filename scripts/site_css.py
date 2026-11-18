@@ -42,7 +42,7 @@ html{scroll-padding-top:calc(var(--bar) + 14px)}
 html{font-size:calc(16px * var(--fs,1))}
 body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.7 var(--sans)}
 a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1760px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
 h1{font-size:1.9rem;line-height:1.35;margin:8px 0 6px;font-weight:800;letter-spacing:.01em}
 h2{font-size:1.35rem;line-height:1.45;margin:30px 0 8px;padding-top:0;font-weight:800}
 h3{font-size:1.1rem;line-height:1.55;margin:20px 0 6px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
@@ -273,7 +273,7 @@ a.mini .go{font-size:.78rem;font-weight:700;margin-top:4px}
 
 /* ---- ホーム：画面の高さ(100dvh)から逆算し、左=地図／右=旅の流れ・予算・やること を最初の画面に収める ---- */
 body.home{overflow-x:hidden}
-.home-main{max-width:none;padding-top:6px;padding-bottom:8px}
+.home-main{max-width:none;padding-top:4px;padding-bottom:6px}
 .home-top{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin:2px 0 6px}
 .home-top h1{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:900;line-height:1.3;margin:0}
 .home-top .hero-note{color:var(--muted);font-size:.78rem;line-height:1.5;margin:0;max-width:none;flex:1 1 360px}
@@ -327,6 +327,10 @@ a.seg .cost{font-size:1.05rem}
 .pane-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
 .pane-side{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.88rem;min-width:0}
 .pane-side>*:first-child{margin-top:0}
+dl.digest{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0 0 10px;padding:0 0 8px;border-bottom:1px solid var(--line);font-size:.84rem}
+dl.digest dt{color:var(--muted);white-space:nowrap}
+dl.digest dd{margin:0;font-weight:700;min-width:0;overflow-wrap:anywhere}
+.pane-side>ul:first-of-type{font-size:.76rem;color:var(--muted)}
 .pane-side h2.side-h{font-size:.95rem;margin:12px 0 4px;padding:6px 0 0;border-top:1px solid var(--line)}
 .pane-side h2.side-h:first-child{border-top:0;padding-top:0;margin-top:0}
 .pane-side ul{padding-left:1.15em;margin:4px 0}
