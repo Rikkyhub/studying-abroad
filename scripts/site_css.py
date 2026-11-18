@@ -321,6 +321,38 @@ a.seg .cost{font-size:1.05rem}
 .home-right .strip{margin-top:10px}
 }
 
+/* ---- 地域・国別ページ：左=要点（導入）を固定、右=タブで切替（右の中だけスクロール） ---- */
+.doc.tabbed{display:block}
+.doc.tabbed article{min-width:0}
+.pane-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
+.pane-side{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.88rem;min-width:0}
+.pane-side>*:first-child{margin-top:0}
+.pane-side h2.side-h{font-size:.95rem;margin:12px 0 4px;padding:6px 0 0;border-top:1px solid var(--line)}
+.pane-side h2.side-h:first-child{border-top:0;padding-top:0;margin-top:0}
+.pane-side ul{padding-left:1.15em;margin:4px 0}
+.pane-side li{margin:3px 0;max-width:none}
+.pane-side p{max-width:none}
+.pane-side .cmap,.pane-side .cm-box{max-width:100%}
+.pane{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
+.pane .tabs{display:flex;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.pane .tabs button{font:inherit;font-size:.86rem;padding:7px 12px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);cursor:pointer;white-space:nowrap;border-radius:0;margin:0;min-height:0}
+.pane .tabs button[aria-selected=true]{color:var(--ink);font-weight:900;border-bottom-color:var(--c,var(--accent))}
+.pane .tabs button:hover{color:var(--ink)}
+.pane-body{padding:8px 16px 14px}
+.pane section[role=tabpanel] h2{display:none}
+.pane:not(.on) section[role=tabpanel] h2{display:block;margin-top:22px}
+.pane.on section[role=tabpanel][hidden]{display:none}
+.pane.on .tabs{position:static}
+.page-head.r-baguio~.doc{--c:var(--r-baguio)} .page-head.r-may~.doc{--c:var(--r-may)} .page-head.r-aug~.doc{--c:var(--r-aug)} .page-head.r-cape~.doc{--c:var(--r-cape)}
+@media(min-width:1000px){
+.doc.tabbed .pane-wrap{grid-template-columns:minmax(300px,330px) minmax(0,1fr);height:calc(100dvh - var(--bar) - 112px);min-height:420px}
+.doc.tabbed .pane-side{position:sticky;top:calc(var(--bar) + 8px);max-height:100%;overflow:auto;align-self:start}
+.doc.tabbed .pane{display:grid;grid-template-rows:auto minmax(0,1fr);height:100%;min-height:0}
+.doc.tabbed .pane-body{overflow:auto;min-height:0}
+main.page:has(.doc.tabbed) footer{margin-top:30px}
+}
+@media(max-height:820px){.doc.tabbed .pane-wrap{height:calc(100dvh - var(--bar) - 96px)}.pane-side{font-size:.82rem}}
+
 /* ---- カード ---- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;padding:20px 0 28px;overflow:visible;align-items:stretch}
 .card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:var(--rad);padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}

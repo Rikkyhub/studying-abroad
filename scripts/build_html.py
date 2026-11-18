@@ -159,6 +159,46 @@ def fold_sections(body: str, min_chars: int = 600, open_key: str = "", closed_ke
     return res
 
 
+PANE_SCRIPT = """<script>(function(){var P=document.querySelector(".pane");if(!P)return;
+var tabs=[].slice.call(P.querySelectorAll('[role=tab]')),pans=[].slice.call(P.querySelectorAll('[role=tabpanel]'));
+function pick(k,push){tabs.forEach(function(b){b.setAttribute("aria-selected",String(b.getAttribute("data-t")===k))});
+ pans.forEach(function(x){x.hidden=x.getAttribute("data-t")!==k});var body=P.querySelector(".pane-body");if(body)body.scrollTop=0;
+ if(push){try{history.replaceState(null,"","#tab-"+k)}catch(e){}}}
+P.classList.add("on");
+tabs.forEach(function(b){b.addEventListener("click",function(){pick(b.getAttribute("data-t"),true)})});
+var h=location.hash.replace(/^#/,"");var m=/^tab-(.+)$/.exec(h);
+if(m&&P.querySelector('[data-t="'+decodeURIComponent(m[1])+'"]'))pick(decodeURIComponent(m[1]));
+else if(h){var el=document.getElementById(decodeURIComponent(h));var pn=el&&el.closest("[role=tabpanel]");if(pn){pick(pn.getAttribute("data-t"));el.scrollIntoView()}else pick(tabs.length?tabs[0].getAttribute("data-t"):"")}
+else pick(tabs.length?tabs[0].getAttribute("data-t"):"");
+window.addEventListener("hashchange",function(){var h2=location.hash.replace(/^#/,"");var mm=/^tab-(.+)$/.exec(h2);if(mm){pick(decodeURIComponent(mm[1]))}else if(h2){var e=document.getElementById(decodeURIComponent(h2));var q=e&&e.closest("[role=tabpanel]");if(q){pick(q.getAttribute("data-t"));e.scrollIntoView()}}});
+})();</script>"""
+
+
+def build_panes(body: str, skip_first_chars: int = 0) -> tuple[str, str, list[tuple[str, str]]]:
+    """本文を、先頭の導入と、h2 ごとのタブのパネルに分ける。戻り値：(導入のHTML, タブ＋パネルのHTML, [(id, 見出し)])"""
+    parts = re.split(r'(?=<h2 id=)', body)
+    intro, secs = parts[0], parts[1:]
+    heads, tabs, pans = [], [], []
+    n = 0
+    for i, p in enumerate(secs):
+        m = re.match(r'<h2 id="([^"]+)">(.*?)</h2>(.*)$', p, re.S)
+        if not m:
+            intro += p
+            continue
+        hid, title, rest = m.group(1), re.sub(r"<[^>]+>", "", m.group(2)), m.group(3)
+        if re.search(r"(概要|旅の要点)", title) and not tabs:
+            intro += f'<h2 class="side-h" id="{hid}">{m.group(2)}</h2>{rest}'  # 最初の「概要」「旅の要点」は左に固定
+            continue
+        key = f"t{i + 1}"
+        n += 1
+        heads.append((hid, title))
+        label = re.sub(r"^\d+\.\s*", "", title)
+        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 1 else "false"}">{html.escape(label)}</button>')
+        pans.append(f'<section role="tabpanel" id="pan-{key}" data-t="{key}" aria-labelledby="tab-{key}"><h2 id="{hid}">{m.group(2)}</h2>{rest}</section>')
+    html_ = f'<div class="pane"><div class="tabs" role="tablist">{"".join(tabs)}</div><div class="pane-body">{"".join(pans)}</div></div>'
+    return intro, html_, heads
+
+
 TOC_OPEN_SCRIPT = """<script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
 var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
 if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>"""
@@ -478,7 +518,11 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     title, body, toc = convert(md)
     title = title or path.stem
     rel = path.relative_to(root).as_posix()
-    if path.parent.name in ("research", "areas"):
+    tabbed = path.parent.name in ("areas", "countries") and len(re.findall(r"<h2 id=", body)) >= 3
+    if tabbed:
+        intro, panes, _heads = build_panes(body)
+        body = '<div class="pane-wrap"><aside class="pane-side">' + intro + '</aside>' + panes + '</div>' + PANE_SCRIPT
+    elif path.parent.name in ("research", "areas"):
         shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く
         body = fold_sections(fold_notes(body), min_chars=400 if path.parent.name == "areas" else 600,
                              open_key="費用の見積" if path.parent.name == "areas" else "",
@@ -503,7 +547,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         body += "\n" + COST_TRIAGE_SCRIPT
     toc_html = ""
     heads = [(a, t) for lv, a, t in toc if lv == 2]
-    if len(heads) >= 3:
+    if len(heads) >= 3 and not tabbed:
         links = "".join(f'<a href="#{a}">{html.escape(t)}</a>' for a, t in heads)
         tools = ('<p class="doc-tools"><button type="button" data-sec="open">すべて開く</button>'
                  '<button type="button" data-sec="close">すべて閉じる</button></p>') if 'class="sec"' in body else ""
@@ -518,7 +562,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         region=PAGE_TAG_CLASS.get(path.stem, "") if path.parent.name == "areas" else "",
         body=body,
         toc=toc_html,
-        docmode="has-toc" if toc_html else "no-toc",
+        docmode="tabbed" if tabbed else ("has-toc" if toc_html else "no-toc"),
         bar=bar("../", current),
         prefix="../",
         nav=nav(root, path),
