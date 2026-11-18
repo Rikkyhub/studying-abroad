@@ -198,8 +198,26 @@ def digest_from_conclusion(body: str) -> str:
                 continue
             if any(key == a or key.startswith(a) for a in aliases):
                 txt = re.sub(r"<[^>]+>", "", v).strip()
-                txt = re.split(r"[。（(]", txt)[0].strip() or txt[:40]
-                got[name] = txt[:56]
+                txt = re.sub(r"https?://[^\s）)」]+", "", txt)  # URL は左の一覧では出さない（出典は本文のタブにある）
+                txt = re.sub(r"[（(]\s*[）)]", "", txt).replace("公式（", "公式（").strip()
+                # 括弧の中の「。」では切らない：カッコの外にある最初の「。」までを使い、長ければ約48字で省略する
+                depth, cut = 0, len(txt)
+                for i, ch in enumerate(txt):
+                    if ch in "（(":
+                        depth += 1
+                    elif ch in "）)":
+                        depth = max(0, depth - 1)
+                    elif ch == "。" and depth == 0:
+                        cut = i
+                        break
+                first = txt[:cut].strip() or txt
+                if name in ("コスパ", "タイパ"):
+                    first = re.split(r"[（(]", first)[0].strip() + " " + (re.search(r"[（(]([0-9]/5)", first).group(1) if re.search(r"[（(]([0-9]/5)", first) else "")
+                elif name == "未確認":
+                    first = re.split(r"[（(、]", first)[0].strip()  # 最初の項目名だけ
+                if "全文を開く" in first or "http" in first or first.count("（") != first.count("）"):
+                    continue  # 折りたたみ・URL・閉じていない括弧は、左の短い一覧には出さない（右のタブで読める）
+                got[name] = first.strip() if len(first) <= 40 else first[:39] + "…"
                 break
     out = [f"<dt>{html.escape(n)}</dt><dd>{html.escape(got[n])}</dd>" for n, _ in DIGEST_KEYS if n in got]
     return '<dl class="digest">' + "".join(out) + "</dl>" if out else ""
