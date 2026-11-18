@@ -21,7 +21,7 @@ from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_maps as bm  # noqa: E402
-from build_html import BASE_CSS, bar, nav as site_nav  # noqa: E402
+from build_html import BASE_CSS, FONT_SIZE_JS, bar, nav as site_nav  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "maps" / "africa-countries.html"
@@ -148,7 +148,7 @@ def build() -> str:
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>アフリカ国別地図｜2027 留学・アフリカ周遊</title>
 <style>
-{CSS}</style></head><body>
+{CSS}</style>{FONT_SIZE_JS}</head><body>
 {bar("../", "maps/africa-countries.html")}
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>

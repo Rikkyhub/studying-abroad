@@ -21,7 +21,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_html import BASE_CSS, MAP_PAGES, bar, nav as site_nav  # noqa: E402  共通テンプレート
+from build_html import BASE_CSS, FONT_SIZE_JS, MAP_PAGES, bar, nav as site_nav  # noqa: E402  共通テンプレート
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -1104,7 +1104,7 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}｜2027 留学・アフリカ周遊</title>
 <style>
-{CSS}</style></head><body>
+{CSS}</style>{FONT_SIZE_JS}</head><body>
 {bar("../", "maps/" + ("world-map" if world else "africa-map") + ".html")}
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>

@@ -234,7 +234,7 @@ class PageTests(unittest.TestCase):
         for p in MAPS:
             t = p.read_text(encoding="utf-8")
             self.assertIn('class="bar"', t)
-            self.assertIn("font:16px/1.8", t)
+            self.assertIn("font-size:calc(16px * var(--fs,1))", t)  # 文字サイズは倍率(--fs)で変えられる
             self.assertNotIn("border-left", t)
             self.assertNotRegex(re.sub(r"<!--.*?-->|<script.*?</script>", "", t, flags=re.S), r"\.csv")
             self.assertNotIn("区間データ", t)
