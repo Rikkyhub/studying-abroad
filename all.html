@@ -23,11 +23,15 @@ p{margin:6px 0} p,li{max-width:80ch} .lead{color:var(--ink);margin:0 0 6px;font-
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
 .scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
 table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
-th,td{padding:7px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
-td{min-width:4.4em} tbody tr:last-child td{border-bottom:0}
+th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
+td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
+table{table-layout:auto}
+th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
+table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
-th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line)}
+th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
+table th:first-child,table td:first-child{font-weight:700}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
@@ -42,6 +46,8 @@ form.calc label{display:grid;gap:4px;font-size:.93rem;color:var(--muted)}
 form.calc input,form.calc select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:8px 10px;min-width:0;width:100%;border-radius:var(--rad-s)}
 form.calc output{font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--ink);min-height:1.8em}
 article,h1,p,li{overflow-wrap:anywhere}
+h1,h2,h3,.tag,nav.toc a,a.station h3,a.mini h3{word-break:keep-all;overflow-wrap:break-word;text-wrap:balance;line-break:strict}
+.tag{white-space:nowrap}
 main.page{padding-bottom:24px}
 
 /* ---- 上部ナビ（全ページ共通）：ブランド＋横並び＋「ほか」 ---- */
@@ -102,7 +108,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article{min-width:0}
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
-.doc.has-toc{grid-template-columns:230px minmax(0,1fr)}
+.doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
