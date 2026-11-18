@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_maps as bm  # noqa: E402
-from build_html import BASE_CSS, bar, nav as site_nav  # noqa: E402
+from build_html import BASE_CSS, FONT_SIZE_JS, bar, nav as site_nav  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "maps" / "route-map.html"
@@ -436,6 +436,24 @@ def build_africa(points, geo, routes):
     return "".join(out)
 
 
+def africa_may_svg(id_prefix: str = "") -> str:
+    """トップページ用：5月の案G だけの地図（SVG1枚。約46KB）。8月の地図やマダガスカル拡大は含めない。
+    id_prefix は <clipPath> の id を、ページ内の他の地図と重ねないための接頭辞"""
+    points, routes = bm.load_model()
+    geo = bm.load_topo("countries-50m.json")
+    visit = {"480", "450", "710", "716", "894", "072", "516"}
+    proj = bm.Laea(37.0, -22.0, (10.0, 62.0, -37.0, -8.0))
+    W, H = proj.width, proj.height
+    outline = f"M0 0H{bm.f1(W)}V{bm.f1(H)}H0Z"
+    grat = bm.graticule(proj, 10, 10, (0, 80), (-40, 40))
+    ln, dt, nm, lb = route_svg(proj, points, routes["G"]["legs"], "G")
+    cid = f"{id_prefix}c1may"
+    return (f'<svg class="m" viewBox="0 0 {bm.f1(W)} {bm.f1(H)}" role="img" aria-label="5月の案Gの全体図（モーリシャス以南）">'
+            f'<defs><clipPath id="{cid}"><path d="{outline}"/></clipPath></defs><g clip-path="url(#{cid})">'
+            f'<path class="sea" d="{outline}"/><path class="grat" d="{grat}"/><g>{land_svg(proj, geo, visit, 0.5)}</g>'
+            f'<g class="rt on" data-rt="G">{ln}{dt}{nm}{lb}</g></g><path class="frame" d="{outline}"/></svg>')
+
+
 def build_madagascar(points, geo):
     proj = bm.Laea(46.5, -19.0, (42.5, 51.5, -23.5, -15.5), width=700.0)
     W, H = proj.width, proj.height
@@ -538,7 +556,7 @@ def build() -> str:
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ルート地図（5月・8月）｜2027 留学・アフリカ周遊</title>
 <style>
-{CSS}</style></head><body>
+{CSS}</style>{FONT_SIZE_JS}</head><body>
 {bar("../", "maps/route-map.html")}
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>

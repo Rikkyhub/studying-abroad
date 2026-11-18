@@ -72,7 +72,7 @@ class IndexTests(unittest.TestCase):
             self.assertIn(f'href="areas/{k}.html"', self.index)
         import re
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
-        self.assertLess(len(self.index), 66000)  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
+        self.assertLess(len(self.index), 100000)  # 5月の案Gの地図（SVG約46KB）をトップの中心に置いた分を加算  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
 
     def test_tables_have_headers(self):
         import re
@@ -84,7 +84,8 @@ class IndexTests(unittest.TestCase):
         heads = re.findall(r"<h2 id=\"[^\"]+\">(.*?)</h2>", self.index)
         # 旅の路線（時間順の駅）は h2 ではなく kicker の見出しで、予算の前に置く。旅程と地域別の重複は路線に統合した
         self.assertEqual(heads, ["予算の全体像", "いま何をするか（詳しく）", "通貨と円換算", "資料一覧"])
-        self.assertLess(self.index.index("旅の路線"), self.index.index('<h2 id="budget">'))
+        # 地図と4つの区間のカードが、最初の h2（予算）より前にある＝最初の画面に入る
+        self.assertLess(self.index.index('class="home-map"'), self.index.index('<h2 id="budget">'))
 
     def test_budget_cards_are_model_and_never_zero_for_unpriced(self):
         import re
@@ -103,13 +104,26 @@ class IndexTests(unittest.TestCase):
         import csv
         import re
         sec = self.index.split('id="plan"')[1].split('<h2 id="budget">')[0]
+        import re as _re
         with (ROOT / "data" / "timeline.csv").open(newline="", encoding="utf-8-sig") as f:
             rows = list(csv.DictReader(f))
-        # 各期間が1つの駅（a.station）で、地域ページへのリンクになっている
-        self.assertEqual(len(re.findall(r'<a class="station" href="areas/', sec)), len(rows))
+        # 各期間が1つのカード（a.mini）で、地域ページへのリンクになっている
+        self.assertEqual(len(re.findall(r'<a class="mini [^"]*" href="areas/', sec)), len(rows))
         for r in rows:
             self.assertIn(r["period"], sec)
         self.assertIn("モデル", sec)
+
+    def test_first_screen_has_compare_and_budget_strip(self):
+        import re
+        head = self.index.split('<h2 id="budget">')[0]
+        hero = re.search(r'<section class="hero-a">(.*?)</section>', head, re.S).group(1)
+        self.assertLess(len(re.sub(r"<[^>]+>", "", hero)), 200)  # ヒーローは短く（最初の画面に比較が入る）
+        self.assertEqual(len(re.findall(r'<a class="mini ', head)), 4)  # 地図の左右に区間カード4つ
+        self.assertIn('class="home-map"', head)  # トップの中心にルート地図
+        self.assertIn('class="strip"', head)  # 予算の1行の帯
+        for col in re.findall(r'<a class="mini .*?</a>', head, re.S):
+            self.assertIn("しおりを開く", col)
+            self.assertRegex(col, r"¥[\d,]+|未計上")
 
     def test_currency_cards(self):
         sec = self.index.split('<h2 id="fx">')[1].split("<h2 id=")[0]
@@ -120,7 +134,7 @@ class IndexTests(unittest.TestCase):
 
     def test_link_cards_do_not_nest_links(self):
         import re
-        for m in re.findall(r'<a class="(?:card link[^"]*|station)".*?</a>', self.index, re.S):
+        for m in re.findall(r'<a class="(?:card link[^"]*|mini [^"]*)".*?</a>', self.index, re.S):
             self.assertEqual(m.count("<a "), 1, m[:80])
 
     def test_floating_card_css(self):
@@ -199,6 +213,27 @@ class NavTests(unittest.TestCase):
         more = text.split('<details class="more-nav')[1].split("</details>")[0]
         for label in ("国別ページ（アフリカ）", "現地調査・比較の資料", "Q&amp;A（確認待ち）", "世界地図", "ルート地図", "ルート作成", "日程プランナー", "全ページ一覧"):
             self.assertIn(label, more, label)
+
+
+class FontSizeAndHomeMapTests(unittest.TestCase):
+    """文字サイズのボタン（小・中・大）と、トップの中心に置くルート地図"""
+
+    def test_font_size_buttons_on_every_page_kind(self):
+        for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "docs/02-budget.html",
+                    "maps/route-map.html", "maps/world-map.html", "maps/africa-countries.html"):
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            for v in ("0.9", "1", "1.15"):
+                self.assertIn(f'data-fs="{v}"', text, f"{rel}: {v}")
+            self.assertIn('var K="site-fs"', text, rel)  # 保存・復元（localStorage は try/catch の中）
+            self.assertIn("try{", text.split('var K="site-fs"')[1][:600], rel)
+
+    def test_home_has_route_map_before_budget(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        i_map = text.index('class="home-map"')
+        self.assertLess(i_map, text.index('<h2 id="budget">'))
+        self.assertEqual(text.count('class="m"'), 1)  # 地図のSVGは1つ（5月の案G）
+        self.assertIn('href="maps/route-map.html"', text)
+        self.assertEqual(text.count('class="mini '), 4)  # 区間カードは4つ（地図の左右に2つずつ）
 
 
 if __name__ == "__main__":
