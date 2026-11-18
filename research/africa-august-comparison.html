@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>アフリカ周遊（8月）の国別シーズン比較（2027年8月想定・調査版）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#8月の国別滞在費泊数単価日数単価編集用markdown">8月の国別滞在費：泊数×単価・日数×単価（編集用Markdown）</a><a href="#1-8月の一覧">1. 8月の一覧</a><a href="#2-5月との違いこのページの記載から読み取れる範囲">2. 5月との違い（このページの記載から読み取れる範囲）</a><a href="#3-8月で最初に確認すること">3. 8月で最初に確認すること</a><a href="#4-次にやること">4. 次にやること</a><a href="#出典">出典</a><a href="#検索ログ2026-11-08">検索ログ（2026-11-08）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#8月の国別滞在費泊数単価日数単価編集用markdown">8月の国別滞在費：泊数×単価・日数×単価（編集用Markdown）</a><a href="#1-8月の一覧">1. 8月の一覧</a><a href="#2-5月との違いこのページの記載から読み取れる範囲">2. 5月との違い（このページの記載から読み取れる範囲）</a><a href="#3-8月で最初に確認すること">3. 8月で最初に確認すること</a><a href="#4-次にやること">4. 次にやること</a><a href="#出典">出典</a><a href="#検索ログ2026-11-08">検索ログ（2026-11-08）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <ul><li>確認日：2026-11-08</li><li>位置づけ：<a href="../areas/africa-aug.html">アフリカ周遊（8月）</a>のための、<strong>8月のシーズンだけ</strong>を国別に並べた比較表です。5月向けの比較は <a href="africa-13-countries-comparison.html">アフリカ13か国の比較</a>。旅程の確定や予約ではありません。</li><li><details class="more"><summary>作り方：この表は、国別深掘り調査（13件）にすでに書かれている月別の記載から、6〜9月の部分を転記・整理したものです。8月について新しく調べ…<span class="hint">（全文を開く）</span></summary><div class="full">作り方：この表は、<a href="../countries/kenya.html">国別深掘り調査</a>（13件）に<strong>すでに書かれている</strong>月別の記載から、6〜9月の部分を転記・整理したものです。8月について<strong>新しく調べ直した事実ではない</strong>ため、各国レポートが5月を主眼に書かれている範囲で、8月の記載が無い項目は「記載なし（未確認）」としました。</div></details></li><li>費用は、8月の価格・混雑が5月とどう違うかを、どの国レポートも調べていません。<strong>8月の宿・ツアー・許可証の価格は全て未確認</strong>です（公式の料金表の有効期間とも一致しません）。</li><li>8月は、留学後の南アフリカ滞在日数の制約があります（<a href="visa-and-immigration.html">ビザ・再入国</a>）。</li></ul>

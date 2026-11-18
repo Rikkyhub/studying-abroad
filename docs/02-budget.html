@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 計画・費用</p>
 <div class="page-head "><span class="tag">計画・費用</span><h1>6か月間の予算モデル（公開用・匿名）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#2026-11-085月航空券を独立表示する予算区分issue-80">2026-11-08｜5月航空券を独立表示する予算区分（Issue #80）</a><a href="#2026-11-09数量仮単価の編集場所markdown正本">2026-11-09｜数量×仮単価の編集場所（Markdown正本）</a><a href="#1-概要自動">1. 概要（自動）</a><a href="#2-月別自動">2. 月別（自動）</a><a href="#3-費目別プラン別自動">3. 費目別・プラン別（自動）</a><a href="#4-国地域別自動">4. 国・地域別（自動）</a><a href="#5-費用明細自動">5. 費用明細（自動）</a><a href="#6-為替レート自動">6. 為替レート（自動）</a><a href="#7-更新のしかた">7. 更新のしかた</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#2026-11-085月航空券を独立表示する予算区分issue-80">2026-11-08｜5月航空券を独立表示する予算区分（Issue #80）</a><a href="#2026-11-09数量仮単価の編集場所markdown正本">2026-11-09｜数量×仮単価の編集場所（Markdown正本）</a><a href="#1-概要自動">1. 概要（自動）</a><a href="#2-月別自動">2. 月別（自動）</a><a href="#3-費目別プラン別自動">3. 費目別・プラン別（自動）</a><a href="#4-国地域別自動">4. 国・地域別（自動）</a><a href="#5-費用明細自動">5. 費用明細（自動）</a><a href="#6-為替レート自動">6. 為替レート（自動）</a><a href="#7-更新のしかた">7. 更新のしかた</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <p><strong>このページの見方（2026-11-11）</strong>：下の「AUTO」の表は <code>data/expenses.csv</code> から自動で作った見積モデルです（<code>py scripts/build_all.py</code> で再生成）。<strong>公開料金に基づく匿名の見積であって、支払・実費の記録ではありません。</strong> 空欄は0円ではなく、2027年の料金・条件は未確認です。先頭の「1. 概要」だけ開いてあり、ほかの節は見出しを押すと開きます。</p>

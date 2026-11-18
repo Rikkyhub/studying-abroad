@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>査証・滞在・語学就学・再入国（フィリピン／南アフリカ／周遊国）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-要点結論と確度">1. 要点（結論と確度）</a><a href="#2-詳細">2. 詳細</a><a href="#3-ケース別の入出国表南アフリカ">3. ケース別の入出国表（南アフリカ）</a><a href="#4-実行可否の判定現時点">4. 実行可否の判定（現時点）</a><a href="#5-費用試算一般料金モデル計算式つき">5. 費用試算（一般料金・モデル、計算式つき）</a><a href="#6-未確認事項理由つき">6. 未確認事項（理由つき）</a><a href="#7-問い合わせ文案送信しない文案のみ個人情報欄は空欄">7. 問い合わせ文案（送信しない。文案のみ。個人情報欄は空欄）</a><a href="#8-出典一覧確認日はすべて-2026-10-17">8. 出典一覧（確認日はすべて 2026-10-17）</a><a href="#9-調査ログ2026-10-17main-基準の再検証">9. 調査ログ（2026-10-17、main 基準の再検証）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-要点結論と確度">1. 要点（結論と確度）</a><a href="#2-詳細">2. 詳細</a><a href="#3-ケース別の入出国表南アフリカ">3. ケース別の入出国表（南アフリカ）</a><a href="#4-実行可否の判定現時点">4. 実行可否の判定（現時点）</a><a href="#5-費用試算一般料金モデル計算式つき">5. 費用試算（一般料金・モデル、計算式つき）</a><a href="#6-未確認事項理由つき">6. 未確認事項（理由つき）</a><a href="#7-問い合わせ文案送信しない文案のみ個人情報欄は空欄">7. 問い合わせ文案（送信しない。文案のみ。個人情報欄は空欄）</a><a href="#8-出典一覧確認日はすべて-2026-10-17">8. 出典一覧（確認日はすべて 2026-10-17）</a><a href="#9-調査ログ2026-10-17main-基準の再検証">9. 調査ログ（2026-10-17、main 基準の再検証）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <ul><li><strong>確認日: 2026-10-17</strong>（本文中で特に断りのない「確認日」はこの日付）</li><li>Issue: <a href="https://github.com/Rikkyhub/studying-abroad/issues/2" target="_blank" rel="noopener">#2 フィリピン・南アフリカの査証/再入国を旅程別に検証</a>。公開情報の扱いは <a href="https://github.com/Rikkyhub/studying-abroad/issues/16" target="_blank" rel="noopener">#16</a> と <a href="../docs/05-public-data-policy.html">docs/05-public-data-policy.md</a> に従う。</li><li><strong>対象（一般向けモデル）</strong>: 日本国籍・一般旅券・日本居住・現地で就労しない成人。<ul><li>フィリピン: 語学学校に約12週間（匿名モデル：合計85日間。具体的な渡航日・予約状況は掲載せず、入国日をDay 1として計算）</li><li>南部アフリカ周遊: 2027年5月（仮）</li><li>ケープタウンの語学学校で約8週間（2027年6〜7月の仮置き）。前後に周辺国観光の可能性</li></ul></li><li>本資料は<strong>個別の入国許可・就学資格を保証しない</strong>。最終判断は入国審査官・当局が行う。大使館・学校からの個別回答は<strong>未取得</strong>（第7節は送信前の文案）。</li><li>本資料に載せないもの: 個人の申込・支払・契約・申請の状況や金額、雇用・休職情報、予約番号。学校の料金は<strong>学校が公開している一般料金表</strong>としてのみ扱い、本人の請求額とは区別する。</li></ul>

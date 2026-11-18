@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>現地の食事・スーパー・外食の一般料金（バギオ／ケープタウン）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-要点">1. 要点</a><a href="#2-バギオ寮食中心">2. バギオ（寮食中心）</a><a href="#3-ケープタウン自炊中心">3. ケープタウン（自炊中心）</a><a href="#4-匿名モデルの試算ケープタウンの食費3パターン1人8週間">4. 匿名モデルの試算：ケープタウンの食費3パターン（1人、8週間）</a><a href="#5-未確認事項">5. 未確認事項</a><a href="#6-問い合わせの文案送信はしていない">6. 問い合わせの文案（送信はしていない）</a><a href="#7-調査ログ2026-10-17">7. 調査ログ（2026-10-17）</a><a href="#8-追補2026-11-08ケープタウンの予算sc-0105sc-08の根拠を取り直した">8. 追補（2026-11-08）：ケープタウンの予算（SC-01〜05・SC-08）の根拠を取り直した</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-要点">1. 要点</a><a href="#2-バギオ寮食中心">2. バギオ（寮食中心）</a><a href="#3-ケープタウン自炊中心">3. ケープタウン（自炊中心）</a><a href="#4-匿名モデルの試算ケープタウンの食費3パターン1人8週間">4. 匿名モデルの試算：ケープタウンの食費3パターン（1人、8週間）</a><a href="#5-未確認事項">5. 未確認事項</a><a href="#6-問い合わせの文案送信はしていない">6. 問い合わせの文案（送信はしていない）</a><a href="#7-調査ログ2026-10-17">7. 調査ログ（2026-10-17）</a><a href="#8-追補2026-11-08ケープタウンの予算sc-0105sc-08の根拠を取り直した">8. 追補（2026-11-08）：ケープタウンの予算（SC-01〜05・SC-08）の根拠を取り直した</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <ul><li>調査設計：2026-10-16／価格の確認日：<strong>2026-10-17</strong>／<a href="https://github.com/Rikkyhub/studying-abroad/issues/5" target="_blank" rel="noopener">Issue #5</a></li><li>対象：語学学校の寮に滞在する人（バギオ）と、自炊できる住居に滞在する人（ケープタウン）を想定した、<strong>一般向けの価格比較</strong>。個人の支払額・契約内容・予約内容は載せない（<a href="../docs/05-public-data-policy.html">公開データ方針</a>、<a href="https://github.com/Rikkyhub/studying-abroad/issues/16" target="_blank" rel="noopener">#16</a>）。</li><li>価格はすべて <strong>2026-10-17 にオンラインで見た表示価格</strong>で、2027年の価格ではない。店舗・地域・在庫・キャンペーンによって変わる。</li><li>円換算はしない（<a href="sources.html">sources.md</a> のとおり、換算レートは採用していない）。</li><li>第4章の3パターンは<strong>匿名モデルの試算</strong>で、特定の人の実際の支出ではない。</li></ul>

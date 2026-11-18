@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ ブログ</p>
 <div class="page-head "><span class="tag">ブログ</span><h1>体験/実費の記録フォーム</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#アフリカ渡航前の予防接種必要性接種間隔料金を分けて比較するa08一般向け下書き2026-10-31公式確認">アフリカ渡航前の予防接種：必要性・接種間隔・料金を分けて比較する（A08・一般向け下書き／2026-10-31公式確認）</a><a href="#退去荷物整理日本に残る固定費の整理a04一般向け記事下書き2026-10-31公式確認">退去・荷物整理・日本に残る固定費の整理（A04・一般向け記事下書き／2026-10-31公式確認）</a><a href="#長期語学留学の準備と手続きチェックリストa05一般向け記事下書き2026-10-31公式再確認">長期語学留学の準備と手続きチェックリスト（A05・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#pinesの英語コースを比較するマンツーマンとグループ授業a09一般向け記事下書き2026-10-31公式掲載内容の照合">PINESの英語コースを比較する：マンツーマンとグループ授業（A09・一般向け記事下書き／2026-10-31公式掲載内容の照合）</a><a href="#12週間の語学留学で英語力はどう変わるa11一般向け記事下書き2026-10-31公式再確認">12週間の語学留学で英語力はどう変わる？（A11・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#語学留学で困ったときの対処法授業寮医療お金在留資格a12一般向け記事下書き2026-10-31公式再確認">語学留学で困ったときの対処法：授業・寮・医療・お金・在留資格（A12・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#長期の海外経験を準備するときの判断モデルa23記事下書き2026-10-30一次資料再確認">長期の海外経験を準備するときの判断モデル（A23・記事下書き／2026-10-30一次資料再確認）</a><a href="#長期留学の準備で起きやすい失敗と対策a24記事下書き2026-10-30一次資料再確認">長期留学の準備で起きやすい失敗と対策（A24・記事下書き／2026-10-30一次資料再確認）</a><a href="#半年間の語学留学を考える人向け準備ガイドa25記事下書き2026-10-30一次資料再確認">半年間の語学留学を考える人向け準備ガイド（A25・記事下書き／2026-10-30一次資料再確認）</a><a href="#a22見積の初版と更新版を比較する一般向け記事下書き未公開">A22｜見積の初版と更新版を比較する（一般向け記事下書き・未公開）</a><a href="#a21留学周遊の予算モデルを更新する手順一般向け記事下書き未公開">A21｜留学・周遊の予算モデルを更新する手順（一般向け記事下書き・未公開）</a><a href="#アフリカ周遊の安全判断チェックa19記事下書き2026-10-30公式確認">アフリカ周遊の安全判断チェック（A19・記事下書き／2026-10-30公式確認）</a><a href="#30日間のアフリカ周遊費用を比較する方法a20記事下書き2026-10-30一次確認">30日間のアフリカ周遊費用を比較する方法（A20・記事下書き／2026-10-30一次確認）</a><a href="#アフリカ周遊の交通費を安全条件込みで比べるa16一般向け記事下書き2026-10-31一次確認">アフリカ周遊の交通費を安全条件込みで比べる（A16・一般向け記事下書き／2026-10-31一次確認）</a><a href="#チョベのサファリを比較するゲームドライブボート宿泊型a17一般向け記事下書き2026-10-31一次確認">チョベのサファリを比較する：ゲームドライブ・ボート・宿泊型（A17・一般向け記事下書き／2026-10-31一次確認）</a><a href="#南部アフリカのダイビング料金を比較するa18一般向け記事下書き2026-10-31一次確認">南部アフリカのダイビング料金を比較する（A18・一般向け記事下書き／2026-10-31一次確認）</a><a href="#記録単位1体験につき1件">記録単位（1体験につき1件）</a><a href="#サンプル空欄">サンプル空欄</a></nav></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#アフリカ渡航前の予防接種必要性接種間隔料金を分けて比較するa08一般向け下書き2026-10-31公式確認">アフリカ渡航前の予防接種：必要性・接種間隔・料金を分けて比較する（A08・一般向け下書き／2026-10-31公式確認）</a><a href="#退去荷物整理日本に残る固定費の整理a04一般向け記事下書き2026-10-31公式確認">退去・荷物整理・日本に残る固定費の整理（A04・一般向け記事下書き／2026-10-31公式確認）</a><a href="#長期語学留学の準備と手続きチェックリストa05一般向け記事下書き2026-10-31公式再確認">長期語学留学の準備と手続きチェックリスト（A05・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#pinesの英語コースを比較するマンツーマンとグループ授業a09一般向け記事下書き2026-10-31公式掲載内容の照合">PINESの英語コースを比較する：マンツーマンとグループ授業（A09・一般向け記事下書き／2026-10-31公式掲載内容の照合）</a><a href="#12週間の語学留学で英語力はどう変わるa11一般向け記事下書き2026-10-31公式再確認">12週間の語学留学で英語力はどう変わる？（A11・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#語学留学で困ったときの対処法授業寮医療お金在留資格a12一般向け記事下書き2026-10-31公式再確認">語学留学で困ったときの対処法：授業・寮・医療・お金・在留資格（A12・一般向け記事下書き／2026-10-31公式再確認）</a><a href="#長期の海外経験を準備するときの判断モデルa23記事下書き2026-10-30一次資料再確認">長期の海外経験を準備するときの判断モデル（A23・記事下書き／2026-10-30一次資料再確認）</a><a href="#長期留学の準備で起きやすい失敗と対策a24記事下書き2026-10-30一次資料再確認">長期留学の準備で起きやすい失敗と対策（A24・記事下書き／2026-10-30一次資料再確認）</a><a href="#半年間の語学留学を考える人向け準備ガイドa25記事下書き2026-10-30一次資料再確認">半年間の語学留学を考える人向け準備ガイド（A25・記事下書き／2026-10-30一次資料再確認）</a><a href="#a22見積の初版と更新版を比較する一般向け記事下書き未公開">A22｜見積の初版と更新版を比較する（一般向け記事下書き・未公開）</a><a href="#a21留学周遊の予算モデルを更新する手順一般向け記事下書き未公開">A21｜留学・周遊の予算モデルを更新する手順（一般向け記事下書き・未公開）</a><a href="#アフリカ周遊の安全判断チェックa19記事下書き2026-10-30公式確認">アフリカ周遊の安全判断チェック（A19・記事下書き／2026-10-30公式確認）</a><a href="#30日間のアフリカ周遊費用を比較する方法a20記事下書き2026-10-30一次確認">30日間のアフリカ周遊費用を比較する方法（A20・記事下書き／2026-10-30一次確認）</a><a href="#アフリカ周遊の交通費を安全条件込みで比べるa16一般向け記事下書き2026-10-31一次確認">アフリカ周遊の交通費を安全条件込みで比べる（A16・一般向け記事下書き／2026-10-31一次確認）</a><a href="#チョベのサファリを比較するゲームドライブボート宿泊型a17一般向け記事下書き2026-10-31一次確認">チョベのサファリを比較する：ゲームドライブ・ボート・宿泊型（A17・一般向け記事下書き／2026-10-31一次確認）</a><a href="#南部アフリカのダイビング料金を比較するa18一般向け記事下書き2026-10-31一次確認">南部アフリカのダイビング料金を比較する（A18・一般向け記事下書き／2026-10-31一次確認）</a><a href="#記録単位1体験につき1件">記録単位（1体験につき1件）</a><a href="#サンプル空欄">サンプル空欄</a></nav></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <blockquote><p>現時点は<strong>未体験</strong>。帰国後に実体験として書けるよう、旅行中に以下を記録する。公開する際は私生活と場所のリアルタイム露出に注意。</p></blockquote>
 <h2 id="アフリカ渡航前の予防接種必要性接種間隔料金を分けて比較するa08一般向け下書き2026-10-31公式確認">アフリカ渡航前の予防接種：必要性・接種間隔・料金を分けて比較する（A08・一般向け下書き／2026-10-31公式確認）</h2>

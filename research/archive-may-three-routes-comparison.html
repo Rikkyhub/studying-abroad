@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>5月アフリカ周遊3ルートの比較：ケニア・タンザニア経由／JNB北側先行／JNB南側先行（調査版）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-結論の表">1. 結論の表</a><a href="#2-日別表相対日数day-1--東京出発日">2. 日別表（相対日数。Day 1 = 東京出発日）</a><a href="#3-重要な新発見の検証2026-10-20に公式運営者ページを自分で取得">3. 重要な新発見の検証（2026-10-20に公式・運営者ページを自分で取得）</a><a href="#4-北側1週間の圧縮検証相対日数国境移動の実在は34と同じく未確認を含む">4. 北側1週間の圧縮検証（相対日数。国境・移動の実在は3.4と同じく未確認を含む）</a><a href="#5-費用モデル万円試算であり見積りではない">5. 費用モデル（万円。試算であり見積りではない）</a><a href="#6-保険留学資格との依存">6. 保険・留学資格との依存</a><a href="#7-地図リンクgoogle-マップ検索公共の場所のみ">7. 地図リンク（Google マップ検索。公共の場所のみ）</a><a href="#8-受入条件issue-51-の次タスク">8. 受入条件（Issue #51 の次タスク）</a><a href="#9-未確認後続">9. 未確認・後続</a><a href="#10-調査ログ2026-10-20各1530秒のタイムアウト">10. 調査ログ（2026-10-20、各15〜30秒のタイムアウト）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-結論の表">1. 結論の表</a><a href="#2-日別表相対日数day-1--東京出発日">2. 日別表（相対日数。Day 1 = 東京出発日）</a><a href="#3-重要な新発見の検証2026-10-20に公式運営者ページを自分で取得">3. 重要な新発見の検証（2026-10-20に公式・運営者ページを自分で取得）</a><a href="#4-北側1週間の圧縮検証相対日数国境移動の実在は34と同じく未確認を含む">4. 北側1週間の圧縮検証（相対日数。国境・移動の実在は3.4と同じく未確認を含む）</a><a href="#5-費用モデル万円試算であり見積りではない">5. 費用モデル（万円。試算であり見積りではない）</a><a href="#6-保険留学資格との依存">6. 保険・留学資格との依存</a><a href="#7-地図リンクgoogle-マップ検索公共の場所のみ">7. 地図リンク（Google マップ検索。公共の場所のみ）</a><a href="#8-受入条件issue-51-の次タスク">8. 受入条件（Issue #51 の次タスク）</a><a href="#9-未確認後続">9. 未確認・後続</a><a href="#10-調査ログ2026-10-20各1530秒のタイムアウト">10. 調査ログ（2026-10-20、各15〜30秒のタイムアウト）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <blockquote><p><strong>過去の比較案（参考）</strong>：5月の周遊は、現在は「案G」（日本→ムンバイ→モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウン）が最新の方針です。この資料は案Gより前の比較で、<strong>そのまま使わないでください</strong>。最新の費用は <a href="../docs/12-flights.html">航空券・費用</a>、ルートは <a href="../docs/11-route-builder.html">ルート作成</a> を見てください。</p></blockquote>

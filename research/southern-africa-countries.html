@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 現地調査</p>
 <div class="page-head "><span class="tag">現地調査</span><h1>2027年5月・南部アフリカ各国の必要日数・費用・体験価値（調査版・検証済み）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#0-方針修正体験の多様性を優先issue-38-2026-10-18">0. 方針修正：体験の多様性を優先（Issue #38, 2026-10-18）</a><a href="#1-結論s1s5-比較表旧版の比較第0章の再比較で置き換え">1. 結論（S1–S5 比較表）【旧版の比較。第0章の再比較で置き換え】</a><a href="#2-前提">2. 前提</a><a href="#3-国別日数費用体験季節アクセス注意">3. 国別（日数・費用・体験・季節・アクセス・注意）</a><a href="#4-日数の積み上げ式">4. 日数の積み上げ（式）</a><a href="#5-広域移動航空陸路">5. 広域移動（航空・陸路）</a><a href="#6-査証国境安全">6. 査証・国境・安全</a><a href="#7-費用の構造二重計上しない">7. 費用の構造（二重計上しない）</a><a href="#8-旅行順序の仮案予約ではない相対日数">8. 旅行順序の仮案（予約ではない・相対日数）</a><a href="#9-主要地点のgoogle-mapsリンク">9. 主要地点のGoogle Mapsリンク</a><a href="#10-issue-38-初版からの修正点">10. Issue #38 初版からの修正点</a><a href="#11-未確認後続タスクr1r9">11. 未確認・後続タスク（R1–R9）</a><a href="#12-公開データの確認16">12. 公開データの確認（#16）</a><a href="#13-調査ログ2026-10-18">13. 調査ログ（2026-10-18）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#0-方針修正体験の多様性を優先issue-38-2026-10-18">0. 方針修正：体験の多様性を優先（Issue #38, 2026-10-18）</a><a href="#1-結論s1s5-比較表旧版の比較第0章の再比較で置き換え">1. 結論（S1–S5 比較表）【旧版の比較。第0章の再比較で置き換え】</a><a href="#2-前提">2. 前提</a><a href="#3-国別日数費用体験季節アクセス注意">3. 国別（日数・費用・体験・季節・アクセス・注意）</a><a href="#4-日数の積み上げ式">4. 日数の積み上げ（式）</a><a href="#5-広域移動航空陸路">5. 広域移動（航空・陸路）</a><a href="#6-査証国境安全">6. 査証・国境・安全</a><a href="#7-費用の構造二重計上しない">7. 費用の構造（二重計上しない）</a><a href="#8-旅行順序の仮案予約ではない相対日数">8. 旅行順序の仮案（予約ではない・相対日数）</a><a href="#9-主要地点のgoogle-mapsリンク">9. 主要地点のGoogle Mapsリンク</a><a href="#10-issue-38-初版からの修正点">10. Issue #38 初版からの修正点</a><a href="#11-未確認後続タスクr1r9">11. 未確認・後続タスク（R1–R9）</a><a href="#12-公開データの確認16">12. 公開データの確認（#16）</a><a href="#13-調査ログ2026-10-18">13. 調査ログ（2026-10-18）</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <p><strong>調査日・確認日：2026-10-18 / 想定：2027年5月、日本の一般旅券、一人旅の匿名モデル。</strong> Issue <a href="https://github.com/Rikkyhub/studying-abroad/issues/38" target="_blank" rel="noopener">#38</a>（関連 #1, #2, #7, #8, #16, #23）。</p>

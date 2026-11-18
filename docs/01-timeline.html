@@ -67,9 +67,13 @@ header.bar .drop a:hover{background:var(--th)}
 header.bar .drop a[aria-current]{background:var(--ink);color:var(--bg);font-weight:700}
 header.bar .drop .dl{font-size:.74rem;font-weight:700;color:var(--muted);padding:8px 12px 2px;margin:0;letter-spacing:.06em;max-width:none}
 @media(max-width:860px){
-header.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:thin}
-header.bar .brand{margin-right:8px;padding:10px 0}
-header.bar nav.menu{flex:none}
+header.bar .wrap{flex-wrap:nowrap;gap:6px;position:relative}
+header.bar .brand{margin-right:4px;padding:10px 0;flex:none;font-size:.92rem}
+header.bar nav.menu{flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header.bar nav.menu::-webkit-scrollbar{display:none}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:7px 10px}
+header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--bg)}
+header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
 }
@@ -107,6 +111,7 @@ nav.toc a:target,nav.toc a.cur{background:var(--ink);color:var(--bg);font-weight
 .doc article .sec-tools{display:none}
 @media(min-width:1000px){
 .doc.has-toc{grid-template-columns:196px minmax(0,1fr)}
+.doc-toc details.toc-d:not([open])>nav.toc,.doc-toc details.toc-d:not([open])>.doc-tools{display:flex}
 .doc-toc{position:sticky;top:calc(var(--bar) + 12px);max-height:calc(100vh - var(--bar) - 28px);overflow:auto;margin:6px 0 0}
 .doc-toc details.toc-d>summary{pointer-events:none;color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 }
@@ -399,7 +404,9 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p class="crumb"><a href="../index.html">トップ</a> ／ 計画・費用</p>
 <div class="page-head "><span class="tag">計画・費用</span><h1>2027年2〜8月：全体日程（匿名モデル）</h1></div>
 <div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d" open><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#日程月単位モデル">日程（月単位・モデル）</a><a href="#計画の判断順">計画の判断順</a><a href="#月別の見積自動">月別の見積（自動）</a></nav></details></aside>
+<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#日程月単位モデル">日程（月単位・モデル）</a><a href="#計画の判断順">計画の判断順</a><a href="#月別の見積自動">月別の見積（自動）</a></nav></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
+var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
+if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
 <article>
 <p>最終確認：2026-10-17。地域ごとの時期・費用は <a href="../areas/baguio.html">地域別ページ</a>（下の AUTO ブロックは <code>py scripts/build_all.py</code> が生成）。<strong>フィリピン・南アフリカを比較することは目的ではない。</strong> 休職〜留学〜周遊〜帰国を1本の旅程として整理する匿名モデル。個別の雇用条件・予約内容は掲載しない。</p>
 <div class="scroll"><table><thead><tr><th>期間</th><th>滞在/予定</th><th>状態</th><th>次の確認</th></tr></thead><tbody><tr><td data-label="期間">2027年2月〜</td><td data-label="滞在/予定">休職・長期休暇の開始（モデル）</td><td data-label="状態">要確認</td><td data-label="次の確認">勤務先の休職制度、住居、国内保険・税社保</td></tr><tr><td data-label="期間">学校の開講時期（モデル）</td><td data-label="滞在/予定">語学学校の入寮・授業開始（モデル）</td><td data-label="状態">学校の最新案内で確認</td><td data-label="次の確認">移動/空港送迎/入学案内</td></tr><tr><td data-label="期間">2027年2〜4月</td><td data-label="滞在/予定">第1か国留学（バギオ・モデル）</td><td data-label="状態">計画（モデル）</td><td data-label="次の確認">12週修了日・退寮日</td></tr><tr><td data-label="期間">モデル終了後</td><td data-label="滞在/予定">語学学校修了・フィリピン出国（モデル）</td><td data-label="状態">仮の時期</td><td data-label="次の確認">航空券・就学/滞在手続</td></tr><tr><td data-label="期間">2027年5月</td><td data-label="滞在/予定">アフリカ周遊 約1か月</td><td data-label="状態">未確定</td><td data-label="次の確認">訪問国/順序/サファリ/ダイビング/費用</td></tr><tr><td data-label="期間">2027年6〜7月</td><td data-label="滞在/予定">ケープタウンを候補に語学留学約8週間</td><td data-label="状態">未確定</td><td data-label="次の確認">学校・住居・就学資格・入国時期</td></tr><tr><td data-label="期間">2027年7月末〜8月</td><td data-label="滞在/予定">帰国・帰国後の準備</td><td data-label="状態">未確定</td><td data-label="次の確認">90日滞在/再入国との整合</td></tr></tbody></table></div>
