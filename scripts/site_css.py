@@ -317,7 +317,7 @@ a.seg .cost small{display:block;font-weight:500;font-size:.68rem;color:var(--mut
 .home-top .hero-note{display:none}
 .home-top{margin:0 0 4px}
 a.seg{padding:4px 12px;border-top-width:4px}
-a.seg .sub{display:none}
+a.seg .sub{font-size:.74rem}
 a.seg .cost{font-size:1.05rem}
 .home-right .strip .strip-todo{display:none}
 .home-body{height:calc(100dvh - var(--bar) - 44px);min-height:420px}

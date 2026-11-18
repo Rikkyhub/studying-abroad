@@ -859,7 +859,7 @@ def home_map(root: Path = ROOT) -> str:
     svg = build_route_map.africa_may_svg("home-")
     return ('<figure class="home-map">'
             f'<div class="mapbox-h">{svg}</div>'
-            '<figcaption><span class="legend"><i class="fl"></i>空路 <i class="dm"></i>国内線 <i class="rd"></i>陸路・車</span>'
+            '<figcaption><span class="legend">' + "".join(f'<i class="{k}"></i>{t} ' for k, t in (("fl", "空路"), ("dm", "国内線"), ("rd", "陸路・車")) if f'class="ln {k}"' in svg).rstrip() + '</span>'
             ' 比較の土台にしている基準モデル（旧・案G。採用ではありません）を点で結んだ概念図です。確定しているのは5/4 日本発→モーリシャスだけです。'
             '<a href="maps/route-map.html">ルート地図で、5月・8月の案を切り替えて見る →</a></figcaption></figure>')
 

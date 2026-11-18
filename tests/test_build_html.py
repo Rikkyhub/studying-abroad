@@ -240,10 +240,8 @@ class AuditFixTests(unittest.TestCase):
     """Playwright の点検で見つかった不具合の再発防止。"""
 
     def test_route_builder_does_not_call_planner_only_function(self):
-        import re
         import build_html
-        defined = set(re.findall(r"function (\w+)\(", build_html.ROUTE_SCRIPT))
-        self.assertNotIn("paintCmp", build_html.ROUTE_SCRIPT.replace("function paintCmp", "") if "paintCmp" in defined else build_html.ROUTE_SCRIPT)
+        self.assertNotIn("paintCmp", build_html.ROUTE_SCRIPT)
 
     def test_mobile_header_wraps_menu_and_tables_scroll(self):
         from site_css import COMPONENTS
@@ -251,6 +249,18 @@ class AuditFixTests(unittest.TestCase):
         self.assertIn("nav.menu{order:3;flex:1 1 100%", COMPONENTS)
         self.assertIn(".scroll{overflow-x:auto;border:0", COMPONENTS)
         self.assertNotIn(".scroll{overflow-x:visible", COMPONENTS)
+
+    def test_home_legend_lists_only_drawn_line_types(self):
+        import re
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        legend = re.search(r'<span class="legend">(.*?)</span>', text).group(1)
+        for k in re.findall(r'<i class="(\w+)"></i>', legend):
+            self.assertIn(f'class="ln {k}"', text)
+
+    def test_country_map_puts_list_beside_map(self):
+        text = (ROOT / "maps" / "africa-countries.html").read_text(encoding="utf-8")
+        self.assertIn('<div class="cm-grid">', text)
+        self.assertLess(text.index('class="mapbox"'), text.index('class="cm-right"'))
 
 
 if __name__ == "__main__":
