@@ -1369,7 +1369,7 @@ root.querySelector(".r-send").addEventListener("click",function(ev){
  getDir().then(function(dir){return dir.getFileHandle("route.json",{create:true}).then(function(fh){return fh.createWritable()}).then(function(w){return w.write(text).then(function(){return w.close()})})})
   .then(function(){msg("triage フォルダに保存しました（Claudeが確認します）")}).catch(function(e){if(e&&e.name==="AbortError")return;download()});
 });
-build();paintCmp();
+build();
 })();
 </script>"""
 

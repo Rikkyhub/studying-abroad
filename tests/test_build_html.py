@@ -236,5 +236,22 @@ class FontSizeAndHomeMapTests(unittest.TestCase):
         self.assertEqual(text.count('class="seg '), 4)  # 右に旅の流れ（区間4つ）
 
 
+class AuditFixTests(unittest.TestCase):
+    """Playwright の点検で見つかった不具合の再発防止。"""
+
+    def test_route_builder_does_not_call_planner_only_function(self):
+        import re
+        import build_html
+        defined = set(re.findall(r"function (\w+)\(", build_html.ROUTE_SCRIPT))
+        self.assertNotIn("paintCmp", build_html.ROUTE_SCRIPT.replace("function paintCmp", "") if "paintCmp" in defined else build_html.ROUTE_SCRIPT)
+
+    def test_mobile_header_wraps_menu_and_tables_scroll(self):
+        from site_css import COMPONENTS
+        self.assertIn("@media(max-width:600px)", COMPONENTS)
+        self.assertIn("nav.menu{order:3;flex:1 1 100%", COMPONENTS)
+        self.assertIn(".scroll{overflow-x:auto;border:0", COMPONENTS)
+        self.assertNotIn(".scroll{overflow-x:visible", COMPONENTS)
+
+
 if __name__ == "__main__":
     unittest.main()
