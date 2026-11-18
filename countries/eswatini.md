@@ -4,11 +4,11 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
-首都はムババーネ（行政）、王室・立法はロバンバ（Wikivoyage は首都欄に Lobamba）。通貨はリランゲニ（SZL）。公用語は英語・シスワティ語（一般知識、本回出典未取得）。Wikivoyage: 雨は主に夏、冬が乾季。5月は乾季入りで、サファリやハイキングに向く時期（公式の月別データは未取得）。出典: [Wikivoyage](https://en.wikivoyage.org/wiki/Eswatini)（準公式）。
+首都はムババーネ（行政）、王室・立法はロバンバ（Wikivoyage は首都欄に Lobamba）。通貨はリランゲニ（SZL）。公用語は英語・シスワティ語（一般知識、本回出典未取得）。Wikivoyage: 雨は主に夏、冬が乾季。5月は乾季入りで、サファリやハイキングに向く時期（公式の月別データは未取得）。出典: [Wikivoyage](https://en.wikivoyage.org/wiki/Eswatini)（第三者（利用者編集））。
 
 ## おおよその位置の地図
 
@@ -77,7 +77,7 @@
 
 ### (1) 最適な観光日数
 
-観光局によると主な見どころは国内に散在（北西：保護区・岩絵・ジップライン、北東：保護区群、南東：主要ゲームリザーブ、中央：エゼルウィニ渓谷、南西：渓谷・ハイキング）。出典: https://www.thekingdomofeswatini.com （公式、2026-11-08）。Wikivoyageは「車なら1日で横断できる」規模と記す（準公式、https://en.wikivoyage.org/wiki/Eswatini 2026-11-08）。
+観光局によると主な見どころは国内に散在（北西：保護区・岩絵・ジップライン、北東：保護区群、南東：主要ゲームリザーブ、中央：エゼルウィニ渓谷、南西：渓谷・ハイキング）。出典: https://www.thekingdomofeswatini.com （公式、2026-11-08）。Wikivoyageは「車なら1日で横断できる」規模と記す（第三者（利用者編集）、https://en.wikivoyage.org/wiki/Eswatini 2026-11-08）。
 
 | 対象 | 推奨滞在 | 理由・根拠 |
 |---|---|---|
@@ -95,7 +95,7 @@
 
 ### (3) 月別の最適シーズン
 
-- 気候：雨は夏に集中、冬は乾季（Wikivoyage、準公式）。高地（ハイフェルド）年間約1,000〜2,000mm、低地（ローフェルド）約500〜900mm。夏のローフェルドは約40℃。11〜4月は激しい嵐と洪水が起こりやすい（FCDO、https://www.gov.uk/foreign-travel-advice/eswatini/safety-and-security 、2026-11-08）。
+- 気候：雨は夏に集中、冬は乾季（Wikivoyage、第三者（利用者編集））。高地（ハイフェルド）年間約1,000〜2,000mm、低地（ローフェルド）約500〜900mm。夏のローフェルドは約40℃。11〜4月は激しい嵐と洪水が起こりやすい（FCDO、https://www.gov.uk/foreign-travel-advice/eswatini/safety-and-security 、2026-11-08）。
 - 公式の月別データは未取得。以下は上記からの推定。
 
 | 時期 | 評価 | 理由 |
@@ -117,7 +117,7 @@
 ### (4) 効率的ルート（推定）
 
 - **原則：往復の迂回なしの通過型**。ヨハネスブルグ→エスワティニ→（クルーガーの南部 or マプト or ダーバン）の一方向。
-- 国境（Wikivoyage、準公式）：Ngwenya/Oshoek（最も混雑、連休に混む）、Nerston、Jeppes Reef、Mahamba（ダーバン/ヨハネスブルグ方面、通過が早い）。営業時間は未取得。
+- 国境（Wikivoyage、第三者（利用者編集））：Ngwenya/Oshoek（最も混雑、連休に混む）、Nerston、Jeppes Reef、Mahamba（ダーバン/ヨハネスブルグ方面、通過が早い）。営業時間は未取得。
 - 夜間の運転は避ける（N4/Oshoek経路で自動車強盗の危険、Wikivoyage）。FCDOも農村部の夜間運転と市内ミニバスを非推奨（路線の空港連絡バスは概ね安全）。
 - 路線案（推定）：
   1. ヨハネスブルグ→（バス）→ムババーネ→（国内移動）→ヒッポ→北東国境→クルーガー or モザンビーク。
@@ -180,12 +180,12 @@
 - Day3：ヒッポ午前→ムカヤDay Tour（2名以上の場合）or Sibebe→出国。
 
 #### 4日 — 山とカルチャー込み
-- Day1〜3は3日案に準ずる。Day4にマロロジャでハイキング（北西）。5月は乾季入りで山歩きに向く（Wikivoyage「冬が乾季」、準公式。公式の月別データは未取得）。
+- Day1〜3は3日案に準ずる。Day4にマロロジャでハイキング（北西）。5月は乾季入りで山歩きに向く（Wikivoyage「冬が乾季」、第三者（利用者編集）。公式の月別データは未取得）。
 
 #### 他国との組み合わせ（推定）
 - **クルーガー国立公園**：南アのムプマランガ側へ。エスワティニ北東（Lomahasha等）や南アの国境と、クルーガー南ゲートは地理的に近い。具体的な国境・所要時間は未確認。
 - **ヨハネスブルグ**：長距離バス（siyeSwatini TransMagnificが日次運行、約5時間、Wikivoyage。本回は運賃・現行運行を未確認）。
-- **マプト**：ミニバス運行ありとWikivoyage。国境周辺（No-Man's Land）で現地人が撃たれた報告があるため、国境は日中の公式ゲートのみ利用（準公式）。外務省のモザンビーク情報は別資料を参照（本資料は未確認）。
+- **マプト**：ミニバス運行ありとWikivoyage。国境周辺（No-Man's Land）で現地人が撃たれた報告があるため、国境は日中の公式ゲートのみ利用（第三者（利用者編集））。外務省のモザンビーク情報は別資料を参照（本資料は未確認）。
 - **ダーバン**：Mahamba国境がダーバン/ヨハネスブルグ方面から便利、通過が早い、50ランドの通行料（Wikivoyage）。
 - 空路：King Mswati III国際空港（SHO）が唯一の国際空港。2社がケープタウン・ダーバン・ヨハネスブルグ・ハラレ・ルサカに就航（Wikivoyage）。2027年の便・運賃は未確認。
 
@@ -205,7 +205,7 @@
 | https://www.thekingdomofeswatini.com | 公式（観光局） | 2026-10-20 | - |
 | https://biggameparks.org/rates | 公式（公園運営者の料金・最低人数・決済） | 2026-10-28 | 12月〜翌11月単位、開始年不明／2027年未確定 |
 | https://biggameparks.org/properties/chubeka-trails | 公式（乗馬運営者の条件） | 2026-10-28 | 2027年適用未確認 |
-| https://en.wikivoyage.org/wiki/Eswatini | 準公式 | 2026-10-20 | 年度不明 |
+| https://en.wikivoyage.org/wiki/Eswatini | 第三者（利用者編集） | 2026-10-20 | 年度不明 |
 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_281.html | 公式 | 2026-10-20 | 現行 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/eswatini | 公式 | 2026-10-20 | 現行 |
 
@@ -220,7 +220,7 @@
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/eswatini | 公式（CDC） | 2026-11-08 | 現行 |
 | https://www.gov.uk/foreign-travel-advice/eswatini ほか /safety-and-security | 公式（英FCDO） | 2026-11-08 | 2025-12-10更新 |
 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_281.html | 公式（外務省） | 2026-11-08に403で再取得不可。既存確認は2026-10-20 | 現行 |
-| https://en.wikivoyage.org/wiki/Eswatini | 準公式 | 2026-11-08 | 年度不明 |
+| https://en.wikivoyage.org/wiki/Eswatini | 第三者（利用者編集） | 2026-11-08 | 年度不明 |
 
 ## 調査ログ
 

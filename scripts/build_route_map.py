@@ -141,7 +141,7 @@ def calendar_days(plan):
 
 
 
-# ---- 8月の代表案の日別（仮置き）。条件：Day 1 = 2027-08-01(日) ケープタウン発、Day 20 = 8/20(金) 日本着（#137）。
+# ---- 8月の代表案の日別（仮置き）。条件：Day 1 = 2027-08-01(日) ケープタウン発、Day 20 = 8/20(金) 日本着（#137。8/20優先・8/24許容上限の目安）。
 # 制約：MPM→NBO は、Kenya Airways公式は直行・水金日だが第三者DBは直行なしで矛盾（2027年8月は未確認。R-68）、CPT↔WDH のバスは水・金・日（Wikivoyage）。
 # 滞在配分は research/137-route-redesign-comparison.md と research/africa-august-comparison.md から仮置き。運賃・便は未確認。
 AUG_START = _dt.date(2027, 8, 1)
@@ -580,7 +580,7 @@ def build() -> str:
 {cal_blocks}
 </div>
 <div data-cpan="aug" hidden>
-<p>8月は、ケープタウンの留学終了後に出発し、<b>8/20（金）までに日本へ着く</b>前提の約20日です。Day 1 は8/1（日）の仮置きで、確定した日程ではありません。MPM→NBO（水・金・日）、WDH↔CPTのバス（水・金・日）など、確認できた曜日の制約には合わせてあります。運賃・便は未確認です。</p>
+<p>8月は、ケープタウンの留学終了後に出発し、<b>8/20（金）までの日本着を優先</b>した約20日の案です（<b>8/24を許容の上限</b>とする目安。予約・確定はしていません）。Day 1 は8/1（日）の仮置きで、確定した日程ではありません。MPM→NBO（水・金・日）、WDH↔CPTのバス（水・金・日）など、確認できた曜日の制約には合わせてあります。運賃・便は未確認です。</p>
 <div class="plans" role="group" aria-label="8月の案（カレンダー）">{aug_btns}</div>
 {aug_infos}
 <div class="cal-key" aria-label="色の凡例">{cal_key}</div>

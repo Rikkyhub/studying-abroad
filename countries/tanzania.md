@@ -4,7 +4,7 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
@@ -20,7 +20,7 @@
 
 | 名称 | 場所・Google Maps 検索リンク | 見どころ | 入場料や体験料（通貨・年度・対象） | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| セレンゲティ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Serengeti%20National%20Park) | 多様な野生動物と大移動 | 未確認（TANAPAのサイトは料金表を取得できず） | 未確認 | https://en.wikivoyage.org/wiki/Tanzania （準公式） |
+| セレンゲティ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Serengeti%20National%20Park) | 多様な野生動物と大移動 | 未確認（TANAPAのサイトは料金表を取得できず） | 未確認 | https://en.wikivoyage.org/wiki/Tanzania （第三者（利用者編集）） |
 | ンゴロンゴロ自然保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Ngorongoro%20Conservation%20Area) | クレーター内に動物が集中、周囲の高地にゾウ | 未確認 | 未確認 | 同上 |
 | タランギレ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tarangire%20National%20Park) | 約2,600平方km、鳥570種超。乾季に動物が集中 | 未確認 | 乾季向き（Wikivoyage）なので雨季の5月は不向きの可能性 | 同上 |
 | マニャラ湖国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake%20Manyara%20National%20Park) | 北部サーキットの小規模公園 | 未確認 | 未確認 | 同上 |
@@ -31,7 +31,7 @@
 
 | 料理 | 説明 | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| ウガリ | トウモロコシ粉の主食（国民食に近い）。手で食べる | 未確認 | https://en.wikivoyage.org/wiki/Tanzania （準公式） |
+| ウガリ | トウモロコシ粉の主食（国民食に近い）。手で食べる | 未確認 | https://en.wikivoyage.org/wiki/Tanzania （第三者（利用者編集）） |
 | ムトリ | 牛肉とバナナの煮込み | 未確認 | 同上 |
 | ムチチャ | 野菜に肉か魚を加えたシチュー | 未確認 | 同上 |
 | チプシ・マヤイ | フライドポテト入りオムレツ。屋台の名物 | 未確認 | 同上 |
@@ -58,7 +58,7 @@
 | その他の感染症 | デング、コレラ、mpox、高地障害（FCDO） | 同上 | 確定 |
 | エボラ警戒 | 10月17日（年はページ上不明、現行ページに記載）にタンザニア保健省が全入国地点で検査強化。全旅行者に Travellers Health Surveillance Form の記入が必要（出発前または到着時） | FCDO entry-requirements（2026-11-08） | 確定。日付の年は未確認 |
 | 医療体制 | ダルエスサラーム以外は限定的。緊急通報112。旅行保険は現地治療と医療搬送をカバーするものを | FCDO health（2026-11-08） | 確定 |
-| 治安 | ストーンタウンでフェリー詐欺、スリ、スパイスツアー詐欺、警察による言いがかり。夜間運転を避ける | Wikivoyage Zanzibar（年不明） | 準公式 |
+| 治安 | ストーンタウンでフェリー詐欺、スリ、スパイスツアー詐欺、警察による言いがかり。夜間運転を避ける | Wikivoyage Zanzibar（年不明） | 第三者（利用者編集） |
 | 感染症（広域） | コンゴ民主共和国周辺は旅程に入れない（既存資料） | 既存資料 | 既存 |
 
 ## 行き方・移動
@@ -95,7 +95,7 @@
 | ザンジバル | 2泊 | 3〜4泊（ストーンタウン1泊＋ビーチ2〜3泊） | ストーンタウンは1日で概要を把握できる（Wikivoyage）。他の滞在は海・ダイビング目的次第 |
 | ダルエスサラーム | 0〜1泊 | 乗継のみ | 観光の主目的ではない（推計） |
 
-**ラベル：所要時間・距離は準公式（Wikivoyage、年不明）／日数は推計**
+**ラベル：所要時間・距離は第三者（利用者編集）（Wikivoyage、年不明）／日数は推計**
 
 ### モデルコース（アルーシャ起点、推計）
 
@@ -143,10 +143,10 @@ Wikivoyage（年不明）の記述：タンザニア北部は二峰性で、短�
 
 | 時期 | 北部サファリ | 大移動（セレンゲティ） | ザンジバル | ラベル |
 |---|---|---|---|---|
-| 1〜2月 | 良（短い乾き） | 南部の短草原でカルビング（12〜5月に南部集結、Wikivoyage） | 乾いた暑さ（69/65mm） | 準公式 |
+| 1〜2月 | 良（短い乾き） | 南部の短草原でカルビング（12〜5月に南部集結、Wikivoyage） | 乾いた暑さ（69/65mm） | 第三者（利用者編集） |
 | 3月 | 長雨季入り | 南部 | 152mm | 準公式 |
 | **4月** | 雨が最も強い | 西・北へ動き始める（4〜6月） | **357mm（年間最多）** | 準公式 |
-| **5月（本件）** | 長雨季の終盤。道がぬかるみ、タランギレ・マニャラは動物の分散と道路状態に注意（両ページの注記）。宿・ツアーは閑散で割安傾向（推計） | 5月下旬〜8月に西セレンゲティ通過（Wikivoyage）。**5月前半は南部〜中部、後半に西回廊へ向かう過渡期**で、位置の特定は難しい（推計） | **262mm（年間2位）**。ビーチ目的には不向き。一部ホテルが休業（Wikivoyage「低シーズンは一部休業」） | 準公式／推計 |
+| **5月（本件）** | 長雨季の終盤。道がぬかるみ、タランギレ・マニャラは動物の分散と道路状態に注意（両ページの注記）。宿・ツアーは閑散で割安傾向（推計） | 5月下旬〜8月に西セレンゲティ通過（Wikivoyage）。**5月前半は南部〜中部、後半に西回廊へ向かう過渡期**で、位置の特定は難しい（推計） | **262mm（年間2位）**。ビーチ目的には不向き。一部ホテルが休業（Wikivoyage「低シーズンは一部休業」） | 第三者（利用者編集）／推計 |
 | 6〜9月 | 乾季（最良） | 西回廊・北部（マラ川周辺）へ | 乾季（45〜59mm） | 準公式 |
 | 10〜11月 | 短雨季 | 南へ戻る | 88mm（10月）→177mm（11月） | 準公式 |
 | 12月 | 短雨季の終わり | 南部集結 | 143mm | 準公式 |
@@ -187,7 +187,7 @@ Wikivoyage（年不明）の記述：タンザニア北部は二峰性で、短�
 
 ### 費用
 
-**注意：** 以下の数値は Wikivoyage（年不明または2026-03注記）やFCDOから取得した準公式情報で、**TANAPA・NCAA公式の2026/2027年料金表ではない**。公式の最新は未取得。購入前に必ず公式を確認すること。通貨はすべて原通貨。
+**注意：** 以下の数値は Wikivoyage（年不明または2026-03注記）（第三者（利用者編集））やFCDO（英国政府）から取得した情報で、**TANAPA・NCAA公式の2026/2027年料金表ではない**。公式の最新は未取得。購入前に必ず公式を確認すること。通貨はすべて原通貨。
 
 #### 5-1. 入国関係
 
@@ -277,7 +277,7 @@ Wikivoyage（年不明）の記述：タンザニア北部は二峰性で、短�
 
 | URL | 種別 | 確認日 2026-10-20 | 適用年度 |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Tanzania | 準公式 | 2026-10-20 | 現行版 |
+| https://en.wikivoyage.org/wiki/Tanzania | 第三者（利用者編集） | 2026-10-20 | 現行版 |
 | https://visa.immigration.go.tz/guidelines | 公式 | 2026-10-20 | 現行（年度表記なし） |
 | https://www.gov.uk/foreign-travel-advice/tanzania/entry-requirements | 公式（英国政府） | 2026-10-20 | 現行（2026-10-01以降の保険に言及） |
 | https://zic.co.tz/2026/10/07/public-notice-clarification-on-the-implementation-of-mandatoryinbound-travel-insurance-for-foreign-visitors-enteringzanzibar-and-tanzania-mainland | 公式（ZIC） | 2026-10-19（既存資料） | 2026 |
@@ -291,13 +291,13 @@ Wikivoyage（年不明）の記述：タンザニア北部は二峰性で、短�
 | https://www.gov.uk/foreign-travel-advice/tanzania/entry-requirements | 公式（英国政府） | 2026-11-08 | 現行（保険・黄熱・ビザ・エボラ警戒） |
 | https://www.gov.uk/foreign-travel-advice/tanzania/health | 公式（英国政府） | 2026-11-08 | 現行 |
 | https://visa.immigration.go.tz/guidelines | 公式 | 2026-10-20（既存資料） | 現行 |
-| https://en.wikivoyage.org/wiki/Serengeti_National_Park | 準公式 | 2026-11-08 | 年不明 |
-| https://en.wikivoyage.org/wiki/Ngorongoro_Conservation_Area | 準公式 | 2026-11-08 | 年不明 |
-| https://en.wikivoyage.org/wiki/Tarangire_National_Park | 準公式 | 2026-11-08 | 2026-03注記 |
-| https://en.wikivoyage.org/wiki/Lake_Manyara_National_Park | 準公式 | 2026-11-08 | 2026-03注記 |
-| https://en.wikivoyage.org/wiki/Mount_Kilimanjaro | 準公式 | 2026-11-08 | 2025-08の記述を含む |
-| https://en.wikivoyage.org/wiki/Zanzibar | 準公式 | 2026-11-08 | 年不明（2017〜2026の記述が混在） |
-| https://en.wikivoyage.org/wiki/Arusha | 準公式 | 2026-11-08 | 年不明 |
+| https://en.wikivoyage.org/wiki/Serengeti_National_Park | 第三者（利用者編集） | 2026-11-08 | 年不明 |
+| https://en.wikivoyage.org/wiki/Ngorongoro_Conservation_Area | 第三者（利用者編集） | 2026-11-08 | 年不明 |
+| https://en.wikivoyage.org/wiki/Tarangire_National_Park | 第三者（利用者編集） | 2026-11-08 | 2026-03注記 |
+| https://en.wikivoyage.org/wiki/Lake_Manyara_National_Park | 第三者（利用者編集） | 2026-11-08 | 2026-03注記 |
+| https://en.wikivoyage.org/wiki/Mount_Kilimanjaro | 第三者（利用者編集） | 2026-11-08 | 2025-08の記述を含む |
+| https://en.wikivoyage.org/wiki/Zanzibar | 第三者（利用者編集） | 2026-11-08 | 年不明（2017〜2026の記述が混在） |
+| https://en.wikivoyage.org/wiki/Arusha | 第三者（利用者編集） | 2026-11-08 | 年不明 |
 | https://en.wikipedia.org/wiki/Zanzibar | 一般 | 2026-11-08 | Climate-Data.org引用の月別雨量 |
 | https://www.anzen.mofa.go.jp/ （既存資料） | 公式 | 2026-10-20（既存資料） | 更新日2025-11-03（既存資料）。今回再取得は403 |
 | [countries/tanzania.md](../countries/tanzania.md)、[africa-route-comparison.md](../research/africa-route-comparison.md) | 内部資料 | 2026-11-08 | 既存調査の引用 |

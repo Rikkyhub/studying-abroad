@@ -4,7 +4,7 @@
 
 - 確認日：2026-10-25（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
@@ -18,26 +18,26 @@
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| エトーシャ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Etosha+National+Park+Namibia) | 野生動物が豊富（Wikivoyage）。NWR公園一覧に掲載。外務省は密猟者関連の強盗・窃盗に注意と記載 | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | https://www.nwr.com.na（公式）, [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式）；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
-| ソススフレイ（ナミブ砂漠） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Sossusvlei+Namibia) | ナミブ砂漠の最も一般的な入口（Wikivoyage）。砂丘登頂で邦人死亡事故、夏は砂表面50度以上（外務省） | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式）, https://www.nwr.com.na（公式。Sossus Dune Lodge掲載）；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
-| フィッシュリバー・キャニオン | [検索リンク](https://www.google.com/maps/search/?api=1&query=Fish+River+Canyon+Namibia) | 世界最大級の渓谷のひとつ（Wikivoyage）。NWRに/Ai-/Aisの公園ページ | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式）, https://www.nwr.com.na（公式） |
-| スケルトン・コースト | [検索リンク](https://www.google.com/maps/search/?api=1&query=Skeleton+Coast+National+Park) | 濃霧で座礁した船にちなむ北部海岸（Wikivoyage） | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式）, https://www.nwr.com.na（公式）；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
-| スピッツコッペ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Spitzkoppe+Namibia) | 「ナミビアのマッターホルン」（Wikivoyage） | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式） |
-| ウォーターベルグ台地公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Waterberg+Plateau+Park) | 野生動物観察地（Wikivoyage） | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式）, https://www.nwr.com.na（公式）；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
-| スワコプムント | [検索リンク](https://www.google.com/maps/search/?api=1&query=Swakopmund+Namibia) | ナミビア人の休暇地。シーフードが新鮮（Wikivoyage） | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式） |
-| リューデリッツ／コールマンスコップ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Luderitz+Kolmanskop+Namibia) | ドイツ植民地期の港町と近郊のゴーストタウン（Wikivoyage） | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（準公式） |
+| エトーシャ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Etosha+National+Park+Namibia) | 野生動物が豊富（Wikivoyage）。NWR公園一覧に掲載。外務省は密猟者関連の強盗・窃盗に注意と記載 | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | https://www.nwr.com.na（公式）, [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集））；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
+| ソススフレイ（ナミブ砂漠） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Sossusvlei+Namibia) | ナミブ砂漠の最も一般的な入口（Wikivoyage）。砂丘登頂で邦人死亡事故、夏は砂表面50度以上（外務省） | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集））, https://www.nwr.com.na（公式。Sossus Dune Lodge掲載）；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
+| フィッシュリバー・キャニオン | [検索リンク](https://www.google.com/maps/search/?api=1&query=Fish+River+Canyon+Namibia) | 世界最大級の渓谷のひとつ（Wikivoyage）。NWRに/Ai-/Aisの公園ページ | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集））, https://www.nwr.com.na（公式） |
+| スケルトン・コースト | [検索リンク](https://www.google.com/maps/search/?api=1&query=Skeleton+Coast+National+Park) | 濃霧で座礁した船にちなむ北部海岸（Wikivoyage） | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集））, https://www.nwr.com.na（公式）；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
+| スピッツコッペ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Spitzkoppe+Namibia) | 「ナミビアのマッターホルン」（Wikivoyage） | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集）） |
+| ウォーターベルグ台地公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Waterberg+Plateau+Park) | 野生動物観察地（Wikivoyage） | **公式：外国人（SADC以外）の成人 N$280**（入園N$140＋保全N$140）、8歳超〜16歳未満 N$100、車（10席以下）N$60。2026-04-01改定の料金で、2027年は未発表。1日か連続かは表に記載なし（未確認） | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集））, https://www.nwr.com.na（公式）；[NWR料金PDF](https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf)（公式、2026-11-16確認） |
+| スワコプムント | [検索リンク](https://www.google.com/maps/search/?api=1&query=Swakopmund+Namibia) | ナミビア人の休暇地。シーフードが新鮮（Wikivoyage） | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集）） |
+| リューデリッツ／コールマンスコップ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Luderitz+Kolmanskop+Namibia) | ドイツ植民地期の港町と近郊のゴーストタウン（Wikivoyage） | 未確認 | 外務省: 雨季は1〜4月で5月は雨季明け（既存記載）。5月自体の観光適性の出典は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia)（第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明（出典の記述） | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| kapana（カパナ） | 牛肉の網焼きストリップの軽食。辛さは指定可、言わないと激辛。市場で買える | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（準公式） |
-| biltong / droewors | 香辛料漬けの干し肉 / 干しソーセージ。長距離ドライブ向きの軽食 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（準公式） |
-| matangara | 牛(時に山羊)のトライプの酸味のあるソース煮。スーパーに調理済みもある | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（準公式） |
-| potjie（ポイキー） | 鋳鉄鍋で火にかけて煮込む料理。ロッジや一部レストランで提供 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（準公式） |
-| mahangu（パールミレット）/トウモロコシのpap | 主食の粥。ソースと合わせて食べる | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（準公式） |
-| kingklip・sole・hake（沿岸の魚） | 沿岸の町で新鮮で安いシーフード。kingklip/soleが名物と記載 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（準公式） |
-Wikivoyage は準公式。価格は出典に年次付き数値がないため全て未確認。
+| kapana（カパナ） | 牛肉の網焼きストリップの軽食。辛さは指定可、言わないと激辛。市場で買える | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（第三者（利用者編集）） |
+| biltong / droewors | 香辛料漬けの干し肉 / 干しソーセージ。長距離ドライブ向きの軽食 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（第三者（利用者編集）） |
+| matangara | 牛(時に山羊)のトライプの酸味のあるソース煮。スーパーに調理済みもある | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（第三者（利用者編集）） |
+| potjie（ポイキー） | 鋳鉄鍋で火にかけて煮込む料理。ロッジや一部レストランで提供 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（第三者（利用者編集）） |
+| mahangu（パールミレット）/トウモロコシのpap | 主食の粥。ソースと合わせて食べる | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（第三者（利用者編集）） |
+| kingklip・sole・hake（沿岸の魚） | 沿岸の町で新鮮で安いシーフード。kingklip/soleが名物と記載 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Namibia#Eat)（第三者（利用者編集）） |
+Wikivoyage は第三者（利用者編集）の旅行ガイド。価格は出典に年次付き数値がないため全て未確認。
 
 ## ビザ・入国（日本国籍）
 
@@ -55,7 +55,7 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 
 **空路の直行（第三者の経路DB FlightConnections、2026-11-18確認。2027年の運航ではない）**：ウィントフック（WDH）からケープタウン（Airlink・Safair、約2時間5分）、ヨハネスブルグ（Airlink・SAA、約1時間50分）、アディスアベバ（Ethiopian）へ直行がある。**ドーハ・ドバイ・ナイロビへの直行はなく**、ヨハネスブルグなどの経由が必要。リビングストン（Proflight Zambia）は2027年1月開始と案内されている段階で、現在の便数は0。
 
-**ウィントフック⇄ケープタウンのバス**：Wikivoyage（準公式・年の記載なし）は Baileys Reo Liner（週3回、ケープタウン側の記載では水・金・日、N$650）を挙げる。Intercape・Translux は公式が取得できず**未確認**。長距離バスは夜間走行を含むため、夜行を避ける方針では採用しにくい。
+**ウィントフック⇄ケープタウンのバス**：Wikivoyage（第三者（利用者編集）・年の記載なし）は Baileys Reo Liner（週3回、ケープタウン側の記載では水・金・日、N$650）を挙げる。Intercape・Translux は公式が取得できず**未確認**。長距離バスは夜間走行を含むため、夜行を避ける方針では採用しにくい。
 
 **ウィントフック→Sesriem（ソススフレイの入口）**：乗合シャトル Go2 の片道N$850（2026/11〜2027/10）は Issue #137 の記載で、公式ページでは**再確認できていない（未確認）**。レンタカーは、ソススフレイまでなら4×4は不要（最後の約5kmは砂で、駐車場から共同シャトル N$180／NWR公式）。夜間走行は動物のため避ける。
 
@@ -88,7 +88,7 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 | https://www.namibian.com.na/non-au-members-visa-fee-to-be-set-at-n1-600/ | 報道 | 2026-10-20 | 2024-06-28 |
 | https://www.nwr.com.na | 公式（公園運営） | 2026-10-20 | 現行 |
 | https://www.nwr.com.na/wp-content/uploads/2026/10/Namibia-Park-Entrance-Fees-April-2026.pdf | 公式（環境・森林・観光省の通知と料金表。文字のないスキャン画像を目視で読み取り） | 2026-11-16 | 2026-04-01〜の料金（通知日 2026-01-15） |
-| https://en.wikivoyage.org/wiki/Namibia | 準公式（Wikivoyage） | 2026-10-20 | 現行版（Other destinations/Eat節）（今回追加） |
+| https://en.wikivoyage.org/wiki/Namibia | 第三者（利用者編集）（Wikivoyage） | 2026-10-20 | 現行版（Other destinations/Eat節）（今回追加） |
 
 ## 調査ログ
 
