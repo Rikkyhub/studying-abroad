@@ -120,7 +120,7 @@
 | R-43 | モーリシャスの外務省 危険情報・感染症情報 | 危険レベル、治安、感染症（デング熱ほか）、最終更新日。Claude は anzen.mofa.go.jp が 403 で取得不可 | 外務省 海外安全ホームページ（モーリシャス）、在モーリシャス日本国大使館 | `countries/mauritius.md` の安全・健康 |
 | R-44 | モーリシャスの観光日数とモデルコース | 観光2〜4日／乗継のみ／なしを比べる材料。2日・3日・4日で回れる見どころ（西部シャマレル・ル・モンヌ、北部グラン・ベ、首都）と移動時間・費用（USD/MUR）。5月の天気・海況 | 観光当局、Wikivoyage、現地ツアー事業者の公式料金 | `countries/mauritius.md` の旅程の目安、AF-23（宿泊）、案Gの日数 |
 | R-45 | モーリシャスの宿と食事の実勢（2027年5月） | 1泊（ホステル／中級）と1日の食費の実勢価格（MUR・年）。朝食の有無、税 | 宿泊予約サイトの掲載価格（日付指定）、現地飲食店のメニュー価格 | AF-23（泊数×仮単価）、R-29 と合わせる |
-| R-46 | ナミビアの日数・モデルコース・費用 | 国別ページに深掘りがない。最適日数、モデルコース、5月の適性、費用（USD/NAD）、安全。5月の案Gには入らないが、案Gの外の候補として比較できる状態にする | 外務省、ナミビア観光局、国立公園（NWR）の公式料金、Wikivoyage | `countries/namibia.md` の旅程の目安、`research/africa-13-countries-comparison.md` に14か国目として追加 |
+| R-46 | ナミビアの日数・モデルコース・費用 | 一部反映済み（2026-11-18）：`countries/namibia.md` に空路・バス・乗合・費用の枠・季節を追記済み。残り：最適日数とモデルコース（日の出時刻、Sesriem泊の要否）、5月・8月それぞれの気温・混雑、Fish River Canyon・Spitzkoppeの料金。5月・8月どちらに入れるかは未決定（Issue #137）で、案Gの外の候補として比較できる状態にする | 外務省、ナミビア観光局、国立公園（NWR）の公式料金、Wikivoyage | `countries/namibia.md` の旅程の目安、`research/africa-13-countries-comparison.md` に14か国目として追加 |
 | R-47 | 南アフリカの観光（ケープタウン以外）の日数・費用 | 留学中の週末・休暇の観光候補（ガーデンルート、クルーガー等）。日数、費用、マラリア地域の注意 | SANParks 公式（Claude は 403）、南アフリカ観光局 | `countries/south-africa.md` の旅程の目安、SC-09・SC-11 |
 | R-48 | 13か国の比較表の更新 | R-44・R-46・R-47 が揃ったら、`research/africa-13-countries-comparison.md` に モーリシャス・ナミビア・南アフリカ を加え、16か国の表にする | 上記の結果 | 比較表、`data/pages.csv` の題名 |
 | R-49 | 外務省の危険情報の再確認（全16か国） | 国別ページの危険レベルを、最新の更新日つきで再確認。Claude は anzen.mofa.go.jp が 403 のため、公式を直接取得できない国がある | 外務省 海外安全ホームページ | 各国ページの安全・健康 |
@@ -187,6 +187,14 @@
 | R-65 | Panagbenga 2027 の日程 | 主催者公式の2027年の発表日、大パレード・ストリートダンスの日、交通規制日 | Panagbenga 主催者公式、Baguio 市 | `research/baguio-sightseeing.md` の §4 |
 | R-66 | Atok・Mt. Pulag の2027年条件 | Atok の花畑の営業・入場料・往復交通。Mt. Pulag のルート別の許可・ガイド・健康条件・入山料、2027年の運営 | Benguet 観光局、DENR 公式、PIA | `research/baguio-sightseeing.md` の §3.5 |
 | R-67 | マニラ⇄バギオの長距離バス（2027年） | Genesis JoyBus 等の時刻・運賃、NAIA・Cubao・Pasay 発着の区別、P2P 路線の有無 | Genesis 公式、Victory Liner 公式 | `research/manila-area-guide.md` の §3.1 |
+| R-68 | MPM→NBO の直行が2027年8月に実在するか | Kenya Airways公式は「直行・週3回（水金日）」、FlightConnections（2026-11-18）は「直行なし」で矛盾。予約画面で2027-08の水・金・日を検索し、直行か乗継か、総所要・運賃を確認 | Kenya Airways公式予約、Airlink、LAM | `research/137-route-redesign-comparison.md` 4章（A4）、`data/routes.csv` A4/A4X/A11 |
+| R-69 | MRU→TNR／TNR→本土の5/4以降の運賃・曜日 | Air Mauritius公式は2027-04-25発の往復 MUR28,460から（5/4以降ではない）。公式時刻表は2027-03-27まで。5/4以降のMRU到着日を候補別に置き、同日付の片道・往復・複数都市・荷物込みを取得 | Air Mauritius、Airlink、Kenya Airways、Ethiopian の公式予約 | M0A/M0B（AF-02・AF-17）、`research/137-route-redesign-comparison.md` 2章 |
+| R-70 | TNR→KGL（M0-D）の乗継案 | 直行なし（第三者DB・Air Madagascar 2026夏ダイヤ）。NBO・ADD・JNB経由の2027年5月の同日・1名・受託荷物込みの総額・日数。KGL→タンザニア、タンザニア→VFA/LVI、VFA/LVI→CPTも同条件 | Kenya Airways、Ethiopian の公式予約 | M0-D（Issue #137 の追加案）。`data/routes.csv` には**まだ追加していない** |
+| R-71 | WDH⇄CPT／JNB の運賃・曜日と、バス（Intercape・Baileys）の時刻・運賃 | 空路の直行は第三者DBにあるが2027年は未確認。バスは夜間走行を含む。5月・8月の対象日で、空路の1名・荷物込み、バスの出発曜日 | Airlink、Safair、SAA、Intercape、Baileys Reo Liner の公式 | M1-A/M1-B、A2/A6/A7/A12 |
+| R-72 | Go2 WDH→Sesriem の2027年料金・運行日・1名利用 | Issue #137 は片道N$850。公式ページが動的表示で再確認できていない | Go2 公式（予約画面） | ナミビア方式1（`research/137-route-redesign-comparison.md` 3章） |
+| R-73 | Namib-Naukluft公園入園料の有効日数（1日券か連続か）と Sesriem の日の出時刻（5月・8月） | NWR料金PDF（2026-04-01改定）は有効日数の記載なし。日の出・ゲート時刻は未確認 | NWR、MEFT | ナミビア方式1〜3の共通費用 |
+| R-74 | 8/20日本着が成立するか（7/31発・8/1発の両方） | 8月のA0〜A12を、帰国日から逆算して、乗継・遅延バッファを含めて実便で検証。A4のMPM→NBOは、8/1発ならDay13=8/13（金）、7/31発ならDay13=8/12（木）で運航曜日が変わる | 各航空会社の公式予約 | 8月A0〜A12、`maps/route-map.html` のカレンダー |
+| R-75 | MZN・MUR の為替レート | `data/fx.csv` にMZN（モザンビーク）・MUR（モーリシャス）・KES・MGAがなく、円換算できない。MUFGの対顧客相場などで基準日つきで追加 | MUFG 対顧客外国為替相場 | `data/fx.csv`、モザンビーク査証・Air Mauritius運賃の円換算 |
 
 ## 3. 優先順位の目安
 

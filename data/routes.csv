@@ -107,8 +107,9 @@ A1,8月 A1：ケニア＋タンザニア（CPT→NBO→セレンゲティ→DAR�
 A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,1,CPT,WDH,flight,候補,Y,CPT→WDH。運賃は未取得
 A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,2,WDH,SOSSUSVLEI,overland,候補,Y,WDH→Sesriem。乗合 片道N$850（Issue記載・未確認）。キャンプ N$670/人・泊（公式）
 A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,3,SOSSUSVLEI,WDH,overland,候補,Y,Sesriem→WDH
-A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,4,WDH,DOH,flight,候補,Y,WDH→DOH。直行の有無は未確認（JNB経由の可能性が高い）
-A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,5,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,4,WDH,JNB,flight,候補,Y,WDH→JNB。直行あり（第三者DB・2026年11月。Airlink・SAA）。2027年の運賃・曜日は未取得（WDH→DOHの直行はない）
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,5,JNB,DOH,flight,候補,Y,JNB→DOH。運賃は未取得
+A2,8月 A2：ナミビア中心（CPT→WDH→Sossusvlei→ドーハ→日本）,6,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
 A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,1,CPT,JNB,flight,候補,Y,CPT→JNB（南アフリカ国内）。運賃は未取得
 A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,2,JNB,MLILWANE,overland,候補,Y,JNB→エスワティニ。JNB↔ムババーネの路線バスの現行運賃は未確認
 A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→JNB→日本）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認
@@ -118,13 +119,13 @@ A3,8月 A3：近距離・節約（CPT→JNB→エスワティニ→マプト→J
 A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
 A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
 A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
-A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,4,MPM,NBO,flight,候補,Y,MPM→NBO直行（Kenya Airways公式：水・金・日 13:50→18:45。2027年8月のダイヤ・運賃は未確認）
+A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,4,MPM,NBO,flight,候補,Y,MPM→NBO。Kenya Airways公式は直行・水金日 13:50発、第三者DB(FlightConnections 2026-11-18)は直行なしで矛盾。2027年8月に直行があるかは未確認（R-68）。運賃も未取得
 A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,5,NBO,DOH,flight,候補,Y,NBO→DOH。運賃は未取得。DOH観光の費用は別加算
 A4,8月 A4：南部3か国→ケニア→ドーハ（レソト→エスワティニ→モザンビーク→NBO）,6,DOH,NRT,flight,候補,Y,ドーハ→日本。DOHは観光なし乗継・短時間観光（QAR115〜・乗継4〜6時間以上、Issue記載・未確認）・1〜2泊を比較
 A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
 A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
 A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
-A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,4,MPM,NBO,flight,候補,Y,MPM→NBO直行（Kenya Airways公式：水・金・日）。2027年は未確認
+A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,4,MPM,NBO,flight,候補,Y,MPM→NBO。Kenya Airways公式は直行・水金日 13:50発、第三者DB(FlightConnections 2026-11-18)は直行なしで矛盾。2027年8月に直行があるかは未確認（R-68）。運賃も未取得
 A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,5,NBO,DXB,flight,候補,Y,NBO→DXB。運賃は未取得
 A4X,8月 A4-DXB：南部3か国→ケニア→ドバイ（A4の最後をDXBに置換）,6,DXB,NRT,flight,候補,Y,ドバイ→日本。Dubai Connectは適格な便・運賃条件が必要（自動付帯ではない）。2027年は未確認
 A5,8月 A5：南部3か国→JNB→ドーハ（ケニアなし）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
@@ -168,7 +169,7 @@ A10,8月 A10：2か国に短縮（レソト＋エスワティニ→JNB→ドー�
 A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,1,CPT,MSU,flight,候補,Y,CPT→マセル。通常JNB経由（日中便・国境の実運用は未確認）。レソトは日本国籍90日以内ビザ不要
 A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,2,MSU,MLILWANE,overland,候補,Y,レソト→エスワティニは南アフリカ経由で想定以上に日数がかかる可能性（Issue #137）。バス・送迎は未確認
 A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,3,MLILWANE,MPM,overland,候補,Y,エスワティニ→マプト。国境・昼間移動は未確認。モザンビーク入国手数料MZN650（資料間で食い違い・未確認）
-A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,4,MPM,NBO,flight,候補,Y,MPM→NBO直行（水・金・日）。2027年は未確認
+A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,4,MPM,NBO,flight,候補,Y,MPM→NBO。Kenya Airways公式は直行・水金日 13:50発、第三者DB(FlightConnections 2026-11-18)は直行なしで矛盾。2027年8月に直行があるかは未確認（R-68）。運賃も未取得
 A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,5,NBO,DOH,flight,候補,Y,NBO→DOH。運賃は未取得。DOH観光の費用は別加算
 A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,6,DOH,DXB,flight,候補,Y,DOH→DXB。別発券・再チェックイン・入国要件・保護の有無を確認（正式運航・価格は未確認）
 A11,8月 A11：南部3か国→ケニア→ドーハ→ドバイ→日本（中東2都市）,7,DXB,NRT,flight,候補,Y,ドバイ→日本。Dubai Connectは適格な便・運賃条件が必要（自動付帯ではない）。2027年は未確認

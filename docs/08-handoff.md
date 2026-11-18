@@ -9,7 +9,7 @@
 | `index.html` / `all.html` / `app.html` | トップ・全ページ1枚版・アプリ版 | **生成物**（手で直さない） |
 | `areas/*.md` | 地域別ページ（バギオ・アフリカ5月・8月・ケープタウン・共通）。費用表の表示先 | 本文は編集可。費用表は `data/expenses.csv` から自動 |
 | `countries/*.md` | アフリカの国別ページ（**1国1ページ・16か国**）。概要・地図・観光地・ビザ・安全に加え、「旅程の目安」の節に日数・モデルコース・季節・費用・評価を持つ。旧 `research/country-*.md`（深掘り）は統合済み。国別地図の行き先 | 編集可。国を足すときは `data/countries.csv`（`group`: g1=案Gで通る国、g2=案Gの外の候補、g3=東アフリカの参考）と `data/pages.csv` も |
-| `research/*.md` | 現地調査の正本。**現行**の5月案は案G（`may-madagascar-vfa-redesign.md` ほか） | 編集可 |
+| `research/*.md` | 現地調査の正本。5月は**確定しているのは5/4日本発→モーリシャスだけ**で、案G（`may-madagascar-vfa-redesign.md` ほか）は**比較の土台（採用ではない）**。新しい比較は `137-route-redesign-comparison.md`（Issue #137） | 編集可 |
 | `research/archive-*.md` | **過去の比較案**（案Gより前の3ルート比較・D案・旧仮旅程など）。参考用で、最新の方針ではない | 原則そのまま。新しい情報は現行の資料へ |
 | `research/references/` | 回答台帳・引用資料など。HTMLにしない補助資料 | 編集可 |
 | `docs/` | 計画・費用・運用。`10-qa` `11-route-builder` `12-flights` `13-day-planner` `09-issue-map` は**自動生成** | 自動生成の6本は手で直さない |
