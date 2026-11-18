@@ -201,18 +201,21 @@ class NavTests(unittest.TestCase):
             nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
             for label in self.MAIN:
                 self.assertIn(f">{label}</a>", nav, f"{rel}: {label}")
-            self.assertIn("<summary>ほか</summary>", nav, rel)
+            for menu in ("国別", "地図", "ツール", "資料"):
+                self.assertIn(f"<summary>{menu}</summary>", nav, rel)
 
     def test_current_page_is_marked(self):
         text = (ROOT / "areas/capetown.html").read_text(encoding="utf-8")
         nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
         self.assertRegex(nav, r'href="[^"]*areas/capetown\.html" aria-current="page">ケープタウン</a>')
 
-    def test_more_menu_reaches_every_group(self):
+    def test_menus_reach_every_country_and_tool(self):
         text = (ROOT / "index.html").read_text(encoding="utf-8")
-        more = text.split('<details class="more-nav')[1].split("</details>")[0]
-        for label in ("国別ページ（アフリカ）", "現地調査・比較の資料", "Q&amp;A（確認待ち）", "世界地図", "ルート地図", "ルート作成", "日程プランナー", "全ページ一覧"):
-            self.assertIn(label, more, label)
+        nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
+        for label in ("南アフリカ", "ケニア", "ルワンダ", "アフリカ各国の比較", "Q&amp;A（確認待ち）", "世界地図", "ルート地図",
+                      "ルート作成", "日程プランナー", "全ページ一覧"):
+            self.assertIn(label, nav, label)
+        self.assertNotIn("<summary>ほか</summary>", nav)
 
 
 class FontSizeAndHomeMapTests(unittest.TestCase):
@@ -273,6 +276,22 @@ class AuditFixTests(unittest.TestCase):
 
     def test_app_page_links_back_home(self):
         self.assertIn('href="index.html"', (ROOT / "app.html").read_text(encoding="utf-8"))
+
+    def test_reader_pages_do_not_mention_issue_numbers(self):
+        import re
+        keep = {"docs/05-public-data-policy.html", "docs/07-export.html", "docs/08-handoff.html", "docs/09-issue-map.html"}
+        for p in [ROOT / "index.html", ROOT / "app.html", *ROOT.glob("areas/*.html"), *ROOT.glob("countries/*.html"),
+                  *ROOT.glob("maps/*.html"), *ROOT.glob("research/*.html"), *ROOT.glob("docs/*.html")]:
+            rel = p.relative_to(ROOT).as_posix()
+            if rel in keep:
+                continue
+            self.assertIsNone(re.search(r"Issue\s*#\d", p.read_text(encoding="utf-8")), rel)
+
+    def test_reader_clean_keeps_js_parentheses(self):
+        from build_html import reader_clean
+        self.assertEqual(reader_clean("function(){a()}"), "function(){a()}")
+        self.assertEqual(reader_clean("比較（Issue #137）です"), "比較です")
+        self.assertEqual(reader_clean("資料（2026-10-26閲覧、Issue #66）"), "資料（2026-10-26閲覧）")
 
 
 if __name__ == "__main__":

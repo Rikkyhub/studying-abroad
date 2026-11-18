@@ -558,6 +558,31 @@ def nav(root: Path, current: Path) -> str:
     return "".join(parts)
 
 
+_ISSUE_NUM = r"Issue\s*#\d+(?:\s*[・/,，]\s*#?\d+)*"
+_READER_RULES = [
+    # GitHub の Issue へのリンク「Issue #80」は、文字ごと外す
+    (re.compile(r'<a href="https://github\.com/[^"]*/issues/\d+"[^>]*>\s*(?:' + _ISSUE_NUM + r'|#\d+)\s*</a>'), ""),
+    (re.compile(r"[（(]\s*" + _ISSUE_NUM + r"\s*[)）]"), ""),                      # （Issue #20）
+    (re.compile(r"([（(])\s*" + _ISSUE_NUM + r"\s*[、,：:]\s*"), r"\1"),           # （Issue #66、2026-…）→（2026-…）
+    (re.compile(r"\s*[、,・]\s*" + _ISSUE_NUM + r"(?=\s*[)）])"), ""),              # （…、Issue #66）→（…）
+    (re.compile(_ISSUE_NUM + r"\s*(?:の|で|では|に|を|は)\s*"), ""),               # Issue #137 の方針 → 方針
+    (re.compile(_ISSUE_NUM + r"\s*"), ""),
+    (re.compile(r"\s*Issue\s*[（(](?:関連|親)[^）)]*[)）]。?"), ""),               # Issue （関連 #1, #2）
+    (re.compile(r"Issue(?![A-Za-z対])"), "依頼文"),                         # 残りの「Issue の推定」など（ページ一覧の「Issue対応表」は保守者向けに残す）
+    (re.compile(r"（\s*）"), ""),
+    (re.compile(r"（\s*[、,]\s*"), "（"),
+]
+READER_KEEP = ("docs/09-issue-map.html", "docs/08-handoff.html", "docs/05-public-data-policy.html", "docs/07-export.html")
+
+
+def reader_clean(text: str) -> str:
+    """読者向けのHTMLから、作業管理用の「Issue #番号」の言及を外す（元のMarkdownには残す）。
+    <script> の中のデータ（案の名前など）も表示されるので対象。URL・id は 'Issue #' を含まないので変わらない"""
+    for pat, rep in _READER_RULES:
+        text = pat.sub(rep, text)
+    return text
+
+
 def page_title(path: Path) -> str:
     for line in path.read_text(encoding="utf-8").splitlines():
         m = re.match(r"^#\s+(.*)$", line.strip())
@@ -678,6 +703,9 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         out[fp.with_suffix(".html")] = render_text(fmd, fp, root)
     if all((root / DATA_DIR / f).exists() for f in ("tasks.csv", "pages.csv", "timeline.csv", "places.csv", "fx.csv")):
         out[root / "index.html"] = index_page(root)
+    for k in out:
+        if k.suffix == ".html" and k.relative_to(root).as_posix() not in READER_KEEP:
+            out[k] = reader_clean(out[k])
     return out
 
 
@@ -1927,31 +1955,51 @@ NAV_MAIN = [("ホーム", "index.html"), ("バギオ", "areas/baguio.html"), ("�
             ("ケープタウン", "areas/capetown.html"), ("アフリカ8月", "areas/africa-aug.html"), ("費用", "docs/02-budget.html")]
 
 
-def _more_groups() -> list[tuple[str, list[tuple[str, str]]]]:
-    """「ほか」の中身（見出し, [(リンク名, パス)]）"""
+COUNTRY_GROUP_LABEL = {"g1": "5月の周遊で通る国", "g2": "南部アフリカのほかの候補", "g3": "東アフリカ（参考）"}
+
+
+def _country_links(root: Path = ROOT) -> list[tuple[str, list[tuple[str, str]]]]:
+    """国別ページ（data/countries.csv の順、グループごと）。ページが無い国は出さない"""
+    rows = sorted(csv_records(root / DATA_DIR / "countries.csv"), key=lambda r: int(r["sort"] or 0))
+    out = []
+    for g, label in COUNTRY_GROUP_LABEL.items():
+        items = [(r["name_ja"], f"countries/{r['slug']}.html") for r in rows
+                 if r["group"] == g and (root / "countries" / f"{r['slug']}.md").exists()]
+        if items:
+            out.append((label, items))
+    return out
+
+
+def _nav_menus() -> list[tuple[str, list[tuple[str, list[tuple[str, str]]]]]]:
+    """上部ナビの開閉メニュー：(ボタン名, [(見出し, [(リンク名, パス)])])"""
     maps = [(t, f"maps/{n}.html") for n, t in MAP_PAGES]
     return [
-        ("調べる", [("日本国内・保険・共通", "areas/common.html"), ("国別ページ（アフリカ）", "countries/kenya.html"),
-                  ("現地調査・比較の資料", "research/africa-13-countries-comparison.html"),
-                  ("すべての出典", "research/sources.html"), ("Q&A（確認待ち）", "docs/10-qa.html")]),
-        ("地図", maps),
-        ("ツール", [("ルート作成", "docs/11-route-builder.html"), ("日程プランナー", "docs/13-day-planner.html"),
-                  ("航空券の比較", "docs/12-flights.html"), ("準備チェック", "docs/03-preparation.html"),
-                  ("準備タスク（アプリ表示）", "app.html")]),
+        ("国別", _country_links()),
+        ("地図", [("", maps)]),
+        ("ツール", [("", [("ルート作成", "docs/11-route-builder.html"), ("日程プランナー", "docs/13-day-planner.html"),
+                          ("航空券の比較", "docs/12-flights.html"), ("準備チェック", "docs/03-preparation.html"),
+                          ("準備タスク（アプリ表示）", "app.html")])]),
+        ("資料", [("", [("日本国内・保険・共通", "areas/common.html"),
+                        ("アフリカ各国の比較", "research/africa-13-countries-comparison.html"),
+                        ("すべての出典", "research/sources.html"), ("Q&A（確認待ち）", "docs/10-qa.html")]),
+                  ("", [("全ページ一覧（このページの下）", "#all-pages")])]),
     ]
 
 
 def bar(prefix: str, current: str = "") -> str:
-    """全ページ共通の上部ナビ。ブランド＋横並び（ホーム・地域・費用）＋「ほか」。携帯は横スクロール"""
+    """全ページ共通の上部ナビ。ブランド＋横並び（ホーム・地域・費用）＋開閉メニュー（国別・地図・ツール・資料）"""
     def link(label: str, href: str) -> str:
         cur = ' aria-current="page"' if href == current else ""
-        return f'<a href="{prefix}{href}"{cur}>{html.escape(label)}</a>'
+        url = href if href.startswith("#") else prefix + href
+        return f'<a href="{url}"{cur}>{html.escape(label)}</a>'
     main = "".join(link(l, h) for l, h in NAV_MAIN)
-    groups = _more_groups()
-    here = any(h == current or (current.startswith("maps/") and h.startswith("maps/")) for _, items in groups for _, h in items)
-    body = "".join(f'<p class="dl">{html.escape(title)}</p>' + "".join(link(l, h) for l, h in items) for title, items in groups)
-    more = (f'<details class="more-nav{" on" if here else ""}"><summary>ほか</summary>'
-            f'<div class="drop">{body}<p class="dl">このページの下</p><a href="#all-pages">全ページ一覧</a></div></details>')
+    menus = []
+    for name, groups in _nav_menus():
+        here = any(h == current for _, items in groups for _, h in items)
+        body = "".join((f'<p class="dl">{html.escape(t)}</p>' if t else "") + "".join(link(l, h) for l, h in items) for t, items in groups)
+        wide = " wide" if sum(len(i) for _, i in groups) > 10 else ""
+        menus.append(f'<details class="more-nav{" on" if here else ""}"><summary>{html.escape(name)}</summary><div class="drop{wide}">{body}</div></details>')
+    more = "".join(menus)
     brand = f'<a class="brand" href="{prefix}index.html">2027 留学・アフリカ周遊</a>'
     fs = ('<div class="fs" role="group" aria-label="文字の大きさ"><span>文字</span>'
           '<button type="button" data-fs="0.9" aria-pressed="false" aria-label="文字を小さく">小</button>'
@@ -1964,7 +2012,10 @@ FONT_SIZE_JS = """<script>(function(){var K="site-fs",R=document.documentElement
 function set(v){R.style.setProperty("--fs",String(v));document.querySelectorAll(".fs button").forEach(function(b){b.setAttribute("aria-pressed",String(+b.getAttribute("data-fs")===v))})}
 var v=1;try{var s=+localStorage.getItem(K);if(ok(s))v=s}catch(e){}
 R.style.setProperty("--fs",String(v));
-document.addEventListener("DOMContentLoaded",function(){set(v);document.querySelectorAll(".fs button").forEach(function(b){b.addEventListener("click",function(){var n=+b.getAttribute("data-fs");if(!ok(n))return;v=n;set(n);try{localStorage.setItem(K,String(n))}catch(e){}})})});})();</script>"""
+document.addEventListener("DOMContentLoaded",function(){set(v);document.querySelectorAll(".fs button").forEach(function(b){b.addEventListener("click",function(){var n=+b.getAttribute("data-fs");if(!ok(n))return;v=n;set(n);try{localStorage.setItem(K,String(n))}catch(e){}})})
+var ms=document.querySelectorAll("details.more-nav");ms.forEach(function(d){d.addEventListener("toggle",function(){if(d.open)ms.forEach(function(o){if(o!==d)o.open=false})})});
+document.addEventListener("click",function(e){ms.forEach(function(d){if(d.open&&!d.contains(e.target))d.open=false})});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")ms.forEach(function(d){d.open=false})})});})();</script>"""
 
 
 def page_html(**kw) -> str:

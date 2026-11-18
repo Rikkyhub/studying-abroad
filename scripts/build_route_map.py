@@ -527,7 +527,7 @@ def build_madagascar(points, geo):
             f'<g>{arrow}</g><g>{"".join(dots)}</g><g>{"".join(names)}</g></g><path class="frame" d="{outline}"/></svg>')
 
 
-def build() -> str:
+def _build_raw() -> str:
     points, routes = bm.load_model()
     geo = bm.load_topo("countries-50m.json")
     africa = build_africa(points, geo, routes)
@@ -666,6 +666,11 @@ if(h&&document.querySelector('.plans button[data-plan="'+h+'"]'))show(h);
 </script>
 </body></html>
 """
+
+def build() -> str:
+    """生成したHTMLから、作業管理用の「Issue #番号」の言及を外す（build_html.reader_clean）"""
+    from build_html import reader_clean
+    return reader_clean(_build_raw())
 
 
 def main() -> int:

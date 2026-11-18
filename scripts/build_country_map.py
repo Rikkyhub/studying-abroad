@@ -101,7 +101,7 @@ GROUP_NAMES = {
 }
 
 
-def build() -> str:
+def _build_raw() -> str:
     countries = load_countries()
     geo = bm.load_topo("countries-50m.json")
     proj = bm.Laea(25.0, 2.0, (-19.0, 64.0, -36.0, 35.0))
@@ -183,6 +183,11 @@ def build() -> str:
 </script>
 </body></html>
 """
+
+def build() -> str:
+    """生成したHTMLから、作業管理用の「Issue #番号」の言及を外す（build_html.reader_clean）"""
+    from build_html import reader_clean
+    return reader_clean(_build_raw())
 
 
 def main() -> int:

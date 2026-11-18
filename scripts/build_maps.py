@@ -1150,8 +1150,9 @@ def outputs():
     points, routes = load_model()
     world_geo = load_topo("countries-110m.json")
     africa_geo = load_topo("countries-50m.json")
-    return {OUT_DIR / "world-map.html": build_page("world", points, routes, world_geo, africa_geo),
-            OUT_DIR / "africa-map.html": build_page("africa", points, routes, world_geo, africa_geo)}
+    from build_html import reader_clean
+    return {OUT_DIR / "world-map.html": reader_clean(build_page("world", points, routes, world_geo, africa_geo)),
+            OUT_DIR / "africa-map.html": reader_clean(build_page("africa", points, routes, world_geo, africa_geo))}
 
 
 def main() -> int:
