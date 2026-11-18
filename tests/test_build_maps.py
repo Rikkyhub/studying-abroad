@@ -52,7 +52,7 @@ class GeometryTests(unittest.TestCase):
     def test_page_size_reasonable(self):
         for p in MAPS:
             # 400KB→480KB：Issue #137 で案を8から28、区間を51から180に増やしたため（曲線の点数は距離比例に削減済み）
-            self.assertLess(p.stat().st_size, 480 * 1024, p.name)
+            self.assertLess(p.stat().st_size, 520 * 1024, p.name)  # 520KB：画面の高さに合わせた2列のCSSと文字サイズの切替(JS)が全ページに入った分
 
 
 class MathTests(unittest.TestCase):

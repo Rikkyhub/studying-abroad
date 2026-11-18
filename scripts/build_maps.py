@@ -861,8 +861,22 @@ legend{font-weight:700;padding:0;margin-bottom:4px}
 .sel input{margin-top:6px;flex:none}
 .sel .tot{color:var(--muted);font-size:.9em;display:block}
 .zwrap{overflow:auto;margin:6px 0;max-width:100%}
-.mapbox{position:relative;border:1px solid var(--line);width:calc(min(100%,(100vh - 300px) * var(--ar,1.6)) * var(--zf,1))}
-.szbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
+.mapbox{position:relative;border:1px solid var(--line);width:calc(min(100%,(100dvh - 215px) * var(--ar,1.6)) * var(--zf,1))}
+.mp-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:0 16px;align-items:start}
+.mp-left{min-width:0}
+.mp-right .sel{display:flex!important;flex-wrap:wrap;gap:4px 6px}
+.mp-right .sel label{padding:1px 8px;font-size:.78rem}
+.mp-right fieldset.rtes{display:block}
+.mp-right .gonew{font-size:.78rem!important}
+.mp-right .lead{font-size:.82rem}
+.mp-right{min-width:0;position:sticky;top:calc(var(--bar,52px) + 8px);max-height:calc(100dvh - var(--bar,52px) - 20px);overflow:auto}
+@media(max-width:1000px){.mp-grid{grid-template-columns:minmax(0,1fr)}.mp-right{position:static;max-height:none;overflow:visible}}
+.szbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:2px 0}
+main.page h1{margin:2px 0 4px!important;font-size:1.25rem!important}
+.gonew{margin:2px 0!important;padding:4px 10px!important;font-size:.82rem}
+nav.switch{margin:2px 0!important;padding:4px 0!important;font-size:.84rem}
+.tabs button{min-height:30px!important;padding:2px 14px!important}.sel{gap:0 12px}
+.stp{margin:2px 0!important}
 .szbar button{font:inherit;min-width:56px;min-height:40px;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer}
 .szbar button[aria-pressed=true]{background:var(--link);color:#fff;border-color:var(--link)}
 .sr{position:absolute;left:-9999px}
@@ -1110,18 +1124,15 @@ def build_page(kind, points, routes, world_geo, africa_geo):
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
 <h1>{title}</h1>
 {map_switch("world-map" if world else "africa-map")}
-<p class="gonew"><a href="route-map.html">▶ 案を選んで見るなら「ルート地図」へ</a>（5月・8月の案を1つずつ切り替え、案Gは Day 番号つき）。このページは<strong>{"世界" if world else "アフリカ"}全体</strong>の概観です。</p>
-<div class="szbar" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div>
-<fieldset class="rtes"><legend class="sr">表示するルート</legend>{"".join(radios)}</fieldset>
-{"" if world else '<p class="muted stp"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示</label></p>'}
-<div class="zwrap"><div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div></div>
-<p class="lead">候補ルートの概念図。{"" if world else "立ち寄り候補の町（◇）は拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、確定した立ち寄り先ではありません。"}実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
+<div class="mp-grid"><div class="mp-left"><div class="zwrap"><div class="mapbox">{svg}<div class="zoom"><button type="button" id="zin" aria-label="拡大">＋</button><button type="button" id="zout" aria-label="縮小">－</button><button type="button" id="zrs" aria-label="全体表示">全体</button></div></div></div>
+</div><div class="mp-right"><p class="gonew"><a href="route-map.html">▶ 案を選んで見るなら「ルート地図」へ</a>（5月・8月の案を1つずつ切り替え、案Gは Day 番号つき）。このページは<strong>{"世界" if world else "アフリカ"}全体</strong>の概観です。</p><div class="szbar" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div><fieldset class="rtes"><legend class="sr">表示するルート</legend>{"".join(radios)}</fieldset>{"" if world else '<p class="muted stp"><label><input type="checkbox" id="stopchk" checked> 立ち寄り候補の町（◇）も表示</label></p>'}<p class="lead">候補ルートの概念図。{"" if world else "立ち寄り候補の町（◇）は拡大すると名前が出ます。位置は各地点の Wikivoyage 座標のおおよその値で、確定した立ち寄り先ではありません。"}実際の経路・運賃・入国条件は <a href="../research/africa-route-comparison.html">research/africa-route-comparison.html</a> を参照。2027年の運航は未確認。</p>
 <p class="muted">直線距離の合計は大圏（地球上の最短距離）の足し算で、<strong>実際の飛行・走行距離ではありません</strong>。区間の運賃・ダイヤは未確認のものを含みます。{zoom_note}</p>
 {off_note}
 <div id="detail" role="status" aria-live="polite"></div>
 {caution}
 <h2>選んだルートの区間</h2>
 <div class="scroll"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+</div></div>
 <h2>凡例</h2>
 {legend_html()}
 <p class="note">個人の予約・日程・支払いは含みません。公開されている空港・都市・公園の位置と、資料に載っている一般的なルート案だけを描いた概念図です。陸路は実際の道路経路ではなく、点を直線で結んだ例示です。</p>

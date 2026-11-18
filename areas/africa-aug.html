@@ -241,6 +241,96 @@ a.mini .go{font-size:.78rem;font-weight:700;margin-top:4px}
 @media(max-width:1100px){.home-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.col-map{grid-column:1/-1;grid-row:1}.col-side{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media(max-width:600px){.home-grid{grid-template-columns:minmax(0,1fr)}.col-side{grid-template-columns:minmax(0,1fr)}}
 
+/* ---- ホーム：画面の高さ(100dvh)から逆算し、左=地図／右=旅の流れ・予算・やること を最初の画面に収める ---- */
+body.home{overflow-x:hidden}
+.home-main{max-width:none;padding-top:6px;padding-bottom:8px}
+.home-top{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin:2px 0 6px}
+.home-top h1{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:900;line-height:1.3;margin:0}
+.home-top .hero-note{color:var(--muted);font-size:.78rem;line-height:1.5;margin:0;max-width:none;flex:1 1 360px}
+.home-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px;height:calc(100dvh - var(--bar) - 66px);min-height:480px;max-height:1000px}
+.home-left,.home-right{min-height:0;min-width:0}
+.home-left{display:flex}
+.home-left .home-map{flex:1;display:flex;flex-direction:column;margin:0;min-height:0;height:auto}
+.home-left .home-map .mapbox-h{flex:1;min-height:0;display:grid;place-items:center;background:var(--sea)}
+.home-left .home-map svg.m{width:auto;height:auto;max-width:100%;max-height:100%}
+.home-left .home-map figcaption{margin-top:4px;font-size:.72rem;line-height:1.45;display:block}
+.home-right{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:8px;align-content:stretch}
+.flow{display:grid;grid-auto-rows:minmax(0,1fr);gap:8px;min-height:0}
+a.seg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"when title cost" "sub sub cost";gap:2px 14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c,var(--r-common));border-radius:10px;padding:6px 14px;min-height:0;overflow:hidden;transition:border-color .2s,box-shadow .2s;max-width:none}
+a.seg:hover{border-color:var(--c);box-shadow:var(--shadow)}
+a.seg.reg-baguio{--c:var(--r-baguio)} a.seg.reg-may{--c:var(--r-may)} a.seg.reg-aug{--c:var(--r-aug)} a.seg.reg-cape{--c:var(--r-cape)} a.seg.reg-common{--c:var(--r-common)}
+a.seg .when{grid-area:when;font-weight:900;font-size:.84rem;color:var(--c);white-space:nowrap}
+a.seg h3{grid-area:title;font-size:1rem;font-weight:900;line-height:1.35;margin:0}
+a.seg .sub{grid-area:sub;font-size:.78rem;color:var(--muted);line-height:1.45;margin:0;max-width:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+a.seg .cost{grid-area:cost;text-align:right;font-weight:900;font-size:1.15rem;line-height:1.2;white-space:nowrap}
+a.seg .cost small{display:block;font-weight:500;font-size:.68rem;color:var(--muted)}
+.home-right .strip{grid-template-columns:minmax(0,1fr);gap:6px;margin-top:0}
+.home-right .strip>div{padding:6px 12px 8px;border-radius:10px}
+.home-right .strip .big{display:inline;font-size:1.15rem;margin-left:8px}
+.home-right .strip .k{display:inline}
+.home-right .strip .meter{margin:16px 0 20px;height:10px}
+.home-right .strip .note{font-size:.7rem}
+.home-right .strip .strip-todo ul{margin:2px 0 2px;gap:2px;font-size:.76rem}
+.home-right .strip .strip-todo li:nth-child(n+3){display:none}
+@media(max-height:820px){
+.home-top .hero-note{display:none}
+.home-top{margin:0 0 4px}
+a.seg{padding:4px 12px;border-top-width:4px}
+a.seg .sub{display:none}
+a.seg .cost{font-size:1.05rem}
+.home-right .strip .strip-todo{display:none}
+.home-body{height:calc(100dvh - var(--bar) - 44px);min-height:420px}
+.home-right .strip .meter{margin:14px 0 18px}
+}
+@media(max-width:1000px){
+.home-body{display:block;height:auto;max-height:none}
+.home-left .home-map .mapbox-h{display:block}
+.home-left .home-map svg.m{width:100%}
+.flow{display:grid;grid-template-rows:none;margin-top:10px}
+.home-right{display:block}
+.home-right .strip{margin-top:10px}
+}
+
+/* ---- 地域・国別ページ：左=要点（導入）を固定、右=タブで切替（右の中だけスクロール） ---- */
+.doc.tabbed{display:block}
+.doc.tabbed article{min-width:0}
+.pane-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
+.pane-side{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.88rem;min-width:0}
+.pane-side>*:first-child{margin-top:0}
+.pane-side h2.side-h{font-size:.95rem;margin:12px 0 4px;padding:6px 0 0;border-top:1px solid var(--line)}
+.pane-side h2.side-h:first-child{border-top:0;padding-top:0;margin-top:0}
+.pane-side ul{padding-left:1.15em;margin:4px 0}
+.pane-side li{margin:3px 0;max-width:none}
+.pane-side p{max-width:none}
+.pane-side .cmap,.pane-side .cm-box{max-width:100%}
+.pane-side .scroll{margin:6px 0;overflow:visible;border:0;background:none}
+.pane-side table{min-width:0;font-size:.76rem;display:block}
+.pane-side thead{display:none}
+.pane-side tbody,.pane-side tr{display:block}
+.pane-side tr{border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:var(--bg)}
+.pane-side td{display:block;padding:1px 0;border:0;min-width:0;background:none!important}
+.pane-side td[data-label]::before{content:attr(data-label) "：";color:var(--muted);font-weight:700}
+.pane-side th{position:static;white-space:normal}
+.pane{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
+.pane .tabs{display:flex;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.pane .tabs button{font:inherit;font-size:.86rem;padding:7px 12px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);cursor:pointer;white-space:nowrap;border-radius:0;margin:0;min-height:0}
+.pane .tabs button[aria-selected=true]{color:var(--ink);font-weight:900;border-bottom-color:var(--c,var(--accent))}
+.pane .tabs button:hover{color:var(--ink)}
+.pane-body{padding:8px 16px 14px}
+.pane section[role=tabpanel] h2{display:none}
+.pane:not(.on) section[role=tabpanel] h2{display:block;margin-top:22px}
+.pane.on section[role=tabpanel][hidden]{display:none}
+.pane.on .tabs{position:static}
+.page-head.r-baguio~.doc{--c:var(--r-baguio)} .page-head.r-may~.doc{--c:var(--r-may)} .page-head.r-aug~.doc{--c:var(--r-aug)} .page-head.r-cape~.doc{--c:var(--r-cape)}
+@media(min-width:1000px){
+.doc.tabbed .pane-wrap{grid-template-columns:minmax(300px,330px) minmax(0,1fr);height:calc(100dvh - var(--bar) - 112px);min-height:420px}
+.doc.tabbed .pane-side{position:sticky;top:calc(var(--bar) + 8px);max-height:100%;overflow:auto;align-self:start}
+.doc.tabbed .pane{display:grid;grid-template-rows:auto minmax(0,1fr);height:100%;min-height:0}
+.doc.tabbed .pane-body{overflow:auto;min-height:0}
+main.page:has(.doc.tabbed) footer{margin-top:30px}
+}
+@media(max-height:820px){.doc.tabbed .pane-wrap{height:calc(100dvh - var(--bar) - 96px)}.pane-side{font-size:.82rem}}
+
 /* ---- カード ---- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;padding:20px 0 28px;overflow:visible;align-items:stretch}
 .card{display:block;position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:var(--rad);padding:22px 22px 20px;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
@@ -403,13 +493,10 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ 地域別</p>
 <div class="page-head r-aug"><span class="tag r-aug">2027年8月</span><h1>アフリカ周遊（8月）</h1></div>
-<div class="doc has-toc">
-<aside class="doc-toc"><details class="toc-d"><summary>このページの目次</summary><nav class="toc" aria-label="このページの目次"><a href="#1-旅の要点">1. 旅の要点</a><a href="#2-今日のやること">2. 今日のやること</a><a href="#3-費用の見積">3. 費用の見積</a><a href="#4-住む場所町と地図">4. 住む場所・町と地図</a><a href="#5-出発前の準備">5. 出発前の準備</a><a href="#6-調査メモ">6. 調査メモ</a></nav><p class="doc-tools"><button type="button" data-sec="open">すべて開く</button><button type="button" data-sec="close">すべて閉じる</button></p></details></aside><script>(function(){var d=document.querySelector("details.toc-d");if(!d||!window.matchMedia)return;
-var m=window.matchMedia("(min-width:1000px)");function f(){d.open=m.matches}f();
-if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.addListener(f)})();</script>
+<div class="doc tabbed">
+
 <article>
-<p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
-<details class="sec" open><summary><h2 id="1-旅の要点">1. 旅の要点</h2></summary>
+<div class="pane-wrap"><aside class="pane-side"><h2 class="side-h" id="1-旅の要点">1. 旅の要点</h2>
 <p>2027年8月に、ケープタウン留学（6〜7月）の後、日本へ帰国するまでの間に南部・東部アフリカを追加で巡る想定の<strong>匿名モデル</strong>です。実施するか、行き先、期間はすべて未定で、調査段階の案です。費用は未計上（0円ではありません）。5月の周遊とは目的が重なる国もありますが、<strong>シーズンが違う</strong>ため分けています（<a href="africa.html">5月のページ</a>）。</p>
 <p>8月は南部アフリカの乾季の最盛期で、サファリ向きの時期です。一方で、<strong>留学後の滞在日数の制約</strong>があります。南アフリカへ免除で入国した場合の期限や、8月の再入国の可否は未確定で、最優先で確認する項目です（<a href="../research/visa-and-immigration.html">ビザ・再入国</a>）。</p>
 <p>5月との主な違い（各国レポートの記載から。確度は各レポートを参照）:</p>
@@ -417,9 +504,9 @@ if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.add
 <p><strong>8月の新しい比較（Issue #137、2026-11-16〜）</strong>：8月は<strong>2027-08-20までに日本へ着く</strong>ことが条件です（8/1出発なら20暦日、7/31出発なら21暦日）。ケープタウン発・日本着の案を A0〜A12（ケニア中心／ケニア＋タンザニア／ナミビア／南部3か国／ドーハ・ドバイ観光の有無など）で比べています。<strong>どれも決定ではありません。</strong> 費用・日数・未確認の一覧は <a href="../research/137-route-redesign-comparison.html">5月×8月ルート再設計の比較</a>、地図と日別は <a href="../maps/route-map.html">ルート地図</a> を見てください。<strong>8月の上限予算は設けていません</strong>（総額は出して比べます）。2027年8月の運賃は、まだどの区間も取得できていません。</p>
 <p>国別の事実は <a href="../research/africa-13-countries-comparison.html">アフリカ13か国の比較</a> と、各国レポートにあります。8月向けの比較は <a href="../research/africa-august-comparison.html">アフリカ周遊（8月）の国別シーズン比較</a>（調査中）にまとめます。</p>
 <div class="scroll"><table><thead><tr><th>時期（モデル）</th><th>内容</th><th>状態</th><th>概要</th></tr></thead><tbody><tr><td data-label="時期（モデル）">2027年8月</td><td data-label="内容"><strong>アフリカ周遊（8月）・帰国</strong></td><td data-label="状態">検討中（モデル）</td><td data-label="概要">留学後の追加周遊と日本帰国を想定。5月とはシーズンと目的が違う。南ア再入国条件は最優先で検証。</td></tr></tbody></table></div>
-</details><h2 id="2-今日のやること">2. 今日のやること</h2>
+</aside><div class="pane"><div class="tabs" role="tablist"><button type="button" role="tab" id="tab-t2" data-t="t2" aria-controls="pan-t2" aria-selected="true">今日のやること</button><button type="button" role="tab" id="tab-t3" data-t="t3" aria-controls="pan-t3" aria-selected="false">費用の見積</button><button type="button" role="tab" id="tab-t4" data-t="t4" aria-controls="pan-t4" aria-selected="false">住む場所・町と地図</button><button type="button" role="tab" id="tab-t5" data-t="t5" aria-controls="pan-t5" aria-selected="false">出発前の準備</button><button type="button" role="tab" id="tab-t6" data-t="t6" aria-controls="pan-t6" aria-selected="false">調査メモ</button></div><div class="pane-body"><section role="tabpanel" id="pan-t2" data-t="t2" aria-labelledby="tab-t2"><h2 id="2-今日のやること">2. 今日のやること</h2>
 <p>この地域に対応する未完了の確認事項はありません。</p>
-<details class="sec"><summary><h2 id="3-費用の見積">3. 費用の見積</h2></summary>
+</section><section role="tabpanel" id="pan-t3" data-t="t3" aria-labelledby="tab-t3"><h2 id="3-費用の見積">3. 費用の見積</h2>
 <p>8月の国別の宿泊・食費の予算の作り方は、下の「調査メモ」の最初にあります。</p>
 <p>「未計上」は金額が入っていないことを示し、0円ではありません。8月の追加周遊は実施するかどうかが未定のため、金額は入っていません。</p>
 <p>低予算・標準・余裕の意味と、「固定」の見方は、下の合計の欄の「この表の見方」を開くと読めます。</p>
@@ -430,11 +517,11 @@ if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.add
 <p><strong>未計上（合計に含まれない項目）</strong>：AU-01 7月末〜8月の追加観光（任意・未計画）（すべて未計上）。「未計上」は金額が入っていないことを示し、0円ではありません。</p>
 <p><strong>前提と備考</strong></p>
 <ul><li><details class="more"><summary>AU-01：Issue #7 の対象。実施するか・行き先・期間が未定のため金額未入力（0円ではない）。南ア滞在日数（Issue #2）と帰国…<span class="hint">（全文を開く）</span></summary><div class="full">AU-01：Issue #7 の対象。実施するか・行き先・期間が未定のため金額未入力（0円ではない）。南ア滞在日数（Issue #2）と帰国日程の制約あり。2026-11-18追記（Issue #177）：8月の候補として、島旅3案（マダガスカル集中／マヘ短期追加／セーシェル長め）と陸路北上案（CPT→ナイロビ）を記録。実施・日数・総額は、案の選択と運賃の入力待ち（research/168-overland-vs-madagascar-comparison.md）。</div></details></li></ul>
-</details><h2 id="4-住む場所町と地図">4. 住む場所・町と地図</h2>
+</section><section role="tabpanel" id="pan-t4" data-t="t4" aria-labelledby="tab-t4"><h2 id="4-住む場所町と地図">4. 住む場所・町と地図</h2>
 <p>この地域に登録された場所はありません。</p>
-<h2 id="5-出発前の準備">5. 出発前の準備</h2>
+</section><section role="tabpanel" id="pan-t5" data-t="t5" aria-labelledby="tab-t5"><h2 id="5-出発前の準備">5. 出発前の準備</h2>
 <ul><li>ビザ・入国：<a href="../research/visa-and-immigration.html">ビザ・入国の調査</a></li><li>保険：<a href="../research/long-stay-insurance.html">長期留学＋周遊旅行の保険</a></li><li>予防接種・薬：<a href="../research/vaccines-and-medicines-checklist.html">ワクチンと薬のチェックリスト</a></li><li>治安・医療：<a href="../research/safety-and-health.html">治安・医療・安全</a></li><li>全体の準備チェック：<a href="../docs/03-preparation.html">準備チェック</a></li></ul>
-<details class="sec"><summary><h2 id="6-調査メモ">6. 調査メモ</h2></summary>
+</section><section role="tabpanel" id="pan-t6" data-t="t6" aria-labelledby="tab-t6"><h2 id="6-調査メモ">6. 調査メモ</h2>
 <p>旅の組み立てには直接使わない、旧案・資料の一覧・通貨・地図リンクをここにまとめています。</p>
 <h3 id="8月の国別の宿泊食費の予算の作り方2026-11-09">8月の国別の宿泊・食費の予算の作り方（2026-11-09）</h3>
 <p>8月の候補はまだ未決定。<strong><a href="../research/africa-august-comparison.html">国別シーズン比較＋Markdown予算表</a></strong>で、国ごとの泊数×1泊の仮単価、食費日数×1日の仮単価を入力し、候補案ごとに比較できる。現行の仮単価は1泊3,000円・食費1日1,500円の<strong>例示</strong>で、各国の宿泊相場や2027年の確定価格を示さない。Markdown表の<code>予算へ反映する案：未定</code>の間は、代替案を全体予算に足さない。</p>
@@ -450,16 +537,19 @@ if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.add
 <div class="scroll"><table><thead><tr><th>通貨</th><th class="n">1単位＝円</th><th class="n">100単位＝円</th><th class="n">1万円＝現地通貨</th><th>レート日・出典</th></tr></thead><tbody><tr><td data-label="通貨">南アフリカ・ランド（ZAR）</td><td class="n" data-label="1単位＝円">9.59</td><td class="n" data-label="100単位＝円">959</td><td class="n" data-label="1万円＝現地通貨">1,042.75</td><td data-label="レート日・出典">2026-10-16　<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">murc-kawasesouba.jp</a></td></tr><tr><td data-label="通貨">米ドル（USD）</td><td class="n" data-label="1単位＝円">158.19</td><td class="n" data-label="100単位＝円">15,819</td><td class="n" data-label="1万円＝現地通貨">63.22</td><td data-label="レート日・出典">2026-10-16　<a href="https://www.murc-kawasesouba.jp/fx/index.php" target="_blank" rel="noopener">murc-kawasesouba.jp</a></td></tr></tbody></table></div>
 <p>参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が加わるため、実際に受け取る額・支払う額とは一致しません。通貨が違う金額は、換算前に足し合わせていません。</p>
 <h3 id="地図">地図</h3>
-<p>この地域に登録された場所はありません。</p></details>
-<script>
-(function(){
-function openFor(el){for(var d=el&&el.closest?el.closest("details"):null;d;d=d.parentElement&&d.parentElement.closest("details")){d.open=true}}
-function fromHash(){if(location.hash.length>1){var el=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(el){openFor(el);el.scrollIntoView()}}}
-document.querySelectorAll("[data-sec]").forEach(function(b){b.addEventListener("click",function(){
- var open=b.getAttribute("data-sec")==="open";document.querySelectorAll("details.sec").forEach(function(d){d.open=open})})});
-window.addEventListener("hashchange",fromHash);fromHash();
-})();
-</script>
+<p>この地域に登録された場所はありません。</p></section></div></div></div><script>(function(){var P=document.querySelector(".pane");if(!P)return;
+var tabs=[].slice.call(P.querySelectorAll('[role=tab]')),pans=[].slice.call(P.querySelectorAll('[role=tabpanel]'));
+function pick(k,push){tabs.forEach(function(b){b.setAttribute("aria-selected",String(b.getAttribute("data-t")===k))});
+ pans.forEach(function(x){x.hidden=x.getAttribute("data-t")!==k});var body=P.querySelector(".pane-body");if(body)body.scrollTop=0;
+ if(push){try{history.replaceState(null,"","#tab-"+k)}catch(e){}}}
+P.classList.add("on");
+tabs.forEach(function(b){b.addEventListener("click",function(){pick(b.getAttribute("data-t"),true)})});
+var h=location.hash.replace(/^#/,"");var m=/^tab-(.+)$/.exec(h);
+if(m&&P.querySelector('[data-t="'+decodeURIComponent(m[1])+'"]'))pick(decodeURIComponent(m[1]));
+else if(h){var el=document.getElementById(decodeURIComponent(h));var pn=el&&el.closest("[role=tabpanel]");if(pn){pick(pn.getAttribute("data-t"));el.scrollIntoView()}else pick(tabs.length?tabs[0].getAttribute("data-t"):"")}
+else pick(tabs.length?tabs[0].getAttribute("data-t"):"");
+window.addEventListener("hashchange",function(){var h2=location.hash.replace(/^#/,"");var mm=/^tab-(.+)$/.exec(h2);if(mm){pick(decodeURIComponent(mm[1]))}else if(h2){var e=document.getElementById(decodeURIComponent(h2));var q=e&&e.closest("[role=tabpanel]");if(q){pick(q.getAttribute("data-t"));e.scrollIntoView()}}});
+})();</script>
 <script>
 (function(){
 var KEY="cost-triage-v1",store={};
