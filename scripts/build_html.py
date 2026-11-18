@@ -514,6 +514,7 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         region=PAGE_TAG_CLASS.get(path.stem, "") if path.parent.name == "areas" else "",
         body=body,
         toc=toc_html,
+        docmode="has-toc" if toc_html else "no-toc",
         bar=bar("../", current),
         prefix="../",
         nav=nav(root, path),
@@ -737,8 +738,8 @@ def home_map(root: Path = ROOT) -> str:
     svg = build_route_map.africa_may_svg("home-")
     return ('<figure class="home-map">'
             f'<div class="mapbox-h">{svg}</div>'
-            '<figcaption><span class="legend"><i class="fl"></i>空路 <i class="dm"></i>国内線 <i class="rd"></i>陸路・車</span> '
-            '比較の土台にしている基準モデル（旧・案G。採用ではありません）を点で結んだ概念図です。確定しているのは5/4 日本発→モーリシャスだけです。'
+            '<figcaption><span class="legend"><i class="fl"></i>空路 <i class="dm"></i>国内線 <i class="rd"></i>陸路・車</span>'
+            ' 比較の土台にしている基準モデル（旧・案G。採用ではありません）を点で結んだ概念図です。確定しているのは5/4 日本発→モーリシャスだけです。'
             '<a href="maps/route-map.html">ルート地図で、5月・8月の案を切り替えて見る →</a></figcaption></figure>')
 
 
@@ -1761,7 +1762,7 @@ PAGE = """<!doctype html>
 <main class="wrap page">
 <p class="crumb"><a href="@@prefix@@index.html">トップ</a> ／ @@section@@</p>
 <div class="page-head @@region@@">@@tag@@<h1>@@title@@</h1></div>
-<div class="doc">
+<div class="doc @@docmode@@">
 @@toc@@
 <article>
 @@body@@
