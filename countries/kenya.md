@@ -4,7 +4,7 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
@@ -25,14 +25,14 @@
 | ナクル湖国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake%20Nakuru%20National%20Park) | ナイロビ北西の湖と野生動物 | USD 90（非居住・成人）。年度表記なし | 未確認 | https://kws.go.ke/park/lake-nakuru-national-park/ （公式） |
 | ツァボ東国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tsavo%20East%20National%20Park) | 大規模な国立公園 | USD 80（非居住・成人）。年度表記なし | 未確認 | https://kws.go.ke/park/tsavo-east-national-park/ （公式） |
 | ヘルズゲート国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Hells%20Gate%20National%20Park%20Naivasha) | ナイバシャ付近の渓谷公園 | USD 50（非居住・成人）。年度表記なし | 未確認 | https://kws.go.ke/park/hells-gate-national-park/ （公式） |
-| マサイマラ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Maasai%20Mara%20National%20Reserve) | Wikivoyage: 大移動は8〜9月 | 未確認（KWSの該当ページは404、公式料金を取得できず） | 大移動の時期ではない | https://en.wikivoyage.org/wiki/Kenya （準公式） |
-| ディアニビーチ／モンバサ沿岸 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Diani%20Beach%20Kenya) | Wikivoyage: ビーチ休暇の候補 | 未確認 | 未確認 | https://en.wikivoyage.org/wiki/Kenya （準公式） |
+| マサイマラ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Maasai%20Mara%20National%20Reserve) | Wikivoyage: 大移動は8〜9月 | 未確認（KWSの該当ページは404、公式料金を取得できず） | 大移動の時期ではない | https://en.wikivoyage.org/wiki/Kenya （第三者（利用者編集）） |
+| ディアニビーチ／モンバサ沿岸 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Diani%20Beach%20Kenya) | Wikivoyage: ビーチ休暇の候補 | 未確認 | 未確認 | https://en.wikivoyage.org/wiki/Kenya （第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明 | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| ウガリ | トウモロコシ粉の主食。シチューなどと食べる | 未確認 | https://en.wikivoyage.org/wiki/Kenya （準公式） |
+| ウガリ | トウモロコシ粉の主食。シチューなどと食べる | 未確認 | https://en.wikivoyage.org/wiki/Kenya （第三者（利用者編集）） |
 | ニャマチョマ | 炭火焼き肉 | 未確認 | 同上 |
 | チャパティ | 平たいパン | 未確認 | 同上 |
 | スクマウィキ | ケールなど葉野菜の副菜 | 未確認 | 同上 |
@@ -54,7 +54,7 @@
 | 旅券 | 到着後6か月以上の残存、白紙2ページ以上 | FCDO | 二次情報 |
 | 黄熱 | 黄熱の感染リスク国から入国する場合は証明書が必要 | FCDO | 日本の検疫所（FORTH）で要確認、**未確認** |
 | ドローン | 持込・持出にはKCAAの事前承認 | FCDO | 二次情報 |
-| ビニール袋 | 持込禁止（到着時に提出） | Wikivoyage Kenya | 準公式 |
+| ビニール袋 | 持込禁止（到着時に提出） | Wikivoyage Kenya | 第三者（利用者編集） |
 
 eTAのサイトは2026-11-07 22:00〜11-08 05:00（EAT）に計画メンテナンス（etakenya.go.ke、2026-11-08確認）。
 
@@ -74,7 +74,7 @@ eTAのサイトは2026-11-07 22:00〜11-08 05:00（EAT）に計画メンテナ�
 - 旅程への含意：サファリ圏（ナイロビ、ナクル、アンボセリ、マラ）は上記制限地域の外。沿岸では**ラム郡の大部分と、タナ川〜ガラナ川間の沿岸15kmは回避**（ディアニは位置が異なるため制限区域外と推計されるが、出発前に地図で確認）。
 - 保険：FCDO助言に反する渡航は保険が無効になる場合がある。
 
-#### 8.2 ナイロビ市内（準公式 Wikivoyage Nairobi）
+#### 8.2 ナイロビ市内（第三者（利用者編集）のWikivoyage Nairobi）
 - 昼間でも強盗・スリがあり、River Road周辺のマタトゥ乗り場は注意。夜間の徒歩を避ける。カージャックは夜に多いが日中にも起きる。マタトゥは事故が多い。ATM周辺のスリに注意。
 
 #### 8.3 健康
@@ -116,10 +116,10 @@ eTAのサイトは2026-11-07 22:00〜11-08 05:00（EAT）に計画メンテナ�
 |---|---|---|---|
 | ナイロビ近郊の動物（半日〜1日） | 1日 | 1〜2日 | ナイロビ国立公園は市内から約7km・車で約15分（民間運営者、archive-kenya-nairobi-short-stay.md）。KWS記載の開閉6:00〜18:00 |
 | ナクル湖（日帰り〜1泊） | 1日 | 2日（1泊） | ナイロビから約140km、道路で約3〜4時間（Wikivoyage Lake Nakuru：約140km、時間は未記載のため**推計**）。公園は7:00〜18:00（最終入園17:15、準公式） |
-| アンボセリ（キリマンジャロ背景のゾウ） | 2泊3日 | 2〜3泊 | ナイロビから道路で約4〜5時間、Namanga〜Meshanani区間は「非常に悪い」（準公式 Wikivoyage Amboseli）。往復だけで1日弱を使う |
-| マサイマラ | 2泊3日（空路）／3泊4日（陸路） | 3泊 | 陸路は乾季約5時間・雨季は最大約7時間、Wilson空港からの空路は約30分（準公式 Wikivoyage Maasai Mara）。5月は陸路が遅れやすい |
-| 沿岸（ディアニ／モンバサ） | 3泊 | 4〜5泊 | SGRでナイロビ〜モンバサ約5〜6時間（準公式 Wikivoyage Nairobi）。ビーチ休暇目的でない限り5月旅程の優先度は低い（推計） |
-| ナイロビ市内（博物館・ジラフセンター等） | 半日〜1日 | 1日 | 下記の入場料（準公式 Wikivoyage Nairobi）。都市は「見どころが少ない」と国別ページにあり、予備日扱いが妥当 |
+| アンボセリ（キリマンジャロ背景のゾウ） | 2泊3日 | 2〜3泊 | ナイロビから道路で約4〜5時間、Namanga〜Meshanani区間は「非常に悪い」（第三者（利用者編集）のWikivoyage Amboseli）。往復だけで1日弱を使う |
+| マサイマラ | 2泊3日（空路）／3泊4日（陸路） | 3泊 | 陸路は乾季約5時間・雨季は最大約7時間、Wilson空港からの空路は約30分（第三者（利用者編集）のWikivoyage Maasai Mara）。5月は陸路が遅れやすい |
+| 沿岸（ディアニ／モンバサ） | 3泊 | 4〜5泊 | SGRでナイロビ〜モンバサ約5〜6時間（第三者（利用者編集）のWikivoyage Nairobi）。ビーチ休暇目的でない限り5月旅程の優先度は低い（推計） |
+| ナイロビ市内（博物館・ジラフセンター等） | 半日〜1日 | 1日 | 下記の入場料（第三者（利用者編集）のWikivoyage Nairobi）。都市は「見どころが少ない」と国別ページにあり、予備日扱いが妥当 |
 
 ---
 
@@ -176,7 +176,7 @@ eTAのサイトは2026-11-07 22:00〜11-08 05:00（EAT）に計画メンテナ�
 
 ### 月別の最適シーズンと2027年5月の適性
 
-出典は準公式（Wikivoyage Kenya／Maasai Mara）と民間（maasaimara.com）。気象の公式統計（ケニア気象局）は**未取得**。
+出典は第三者（利用者編集）（Wikivoyage Kenya／Maasai Mara）と民間（maasaimara.com）。気象の公式統計（ケニア気象局）は**未取得**。
 
 | 月 | 評価 | 理由 |
 |---|---|---|
@@ -189,7 +189,7 @@ eTAのサイトは2026-11-07 22:00〜11-08 05:00（EAT）に計画メンテナ�
 - **野生動物の大移動は見られない**（セレンゲティから北上する時期の手前。準公式の時期は6〜9月）。
 - 長雨季のため、道の悪化・陸路の遅れ・午後の雨に備える。ただし**料金が下がる傾向**（Wikivoyage Kenya：5〜6月は安い）。
 - 一般的に低シーズンは宿代が割安な事業者が多いが、**具体的な割引率は未確認**。
-- 準公式情報の限界：Wikivoyageの「雨季の道路・移動時間」は年度・出所が不明。出発前に旅行会社・公式ページで再確認する。
+- 第三者（利用者編集）の情報の限界：Wikivoyageの「雨季の道路・移動時間」は年度・出所が不明。出発前に旅行会社・公式ページで再確認する。
 
 ---
 
@@ -246,7 +246,7 @@ PDF（1ページ、表題「Conservation Fees 2025」、PDF作成日 2025-09-30�
 #### 6.2 マサイマラ（前回未確認の再挑戦）
 
 - **KWSの該当ページはまた404**（https://kws.go.ke/park/maasai-mara-national-reserve/、2026-11-08）。KWS料金表PDFにもマラの行は見当たらない。マラは**ナロク／トランスマラ郡政府の管轄**と考えられるが、公式の郡料金表は**取得できていない**（未確認）。
-- 準公式（Wikivoyage Maasai Mara、更新日不明）：**US$100／人／泊（1〜6月、低シーズン）、US$200／人／泊（7〜12月、高シーズン）**。公園ページでは郡政府が出典とされていない。**2027年の公式料金とは扱わない。**
+- 第三者（利用者編集）（Wikivoyage Maasai Mara、更新日不明）：**US$100／人／泊（1〜6月、低シーズン）、US$200／人／泊（7〜12月、高シーズン）**。公園ページでは郡政府が出典とされていない。**2027年の公式料金とは扱わない。**
 - 民間（maasaimara.com）：料金は宿泊費に含まれず、別途支払い。金額は本文から取得できなかった。
 - 目安（推計）：5月に2泊すると、準公式の値を使えば入園料のみで US$200（約31,600円）。**公式確認前の仮置き**。
 - 注意：Wikivoyage MaraにSekenaniゲートで直前に追加請求する詐欺の警告あり。事前に総額を書面で確認する。
@@ -255,7 +255,7 @@ PDF（1ページ、表題「Conservation Fees 2025」、PDF作成日 2025-09-30�
 
 | 項目 | 金額 | 出典・区分 | 備考 |
 |---|---|---|---|
-| UberなどJKIA→中心部 | KES 900〜 | Wikivoyage Nairobi（準公式） | 空港タクシー約KES 2,000 |
+| UberなどJKIA→中心部 | KES 900〜 | Wikivoyage Nairobi（第三者（利用者編集）） | 空港タクシー約KES 2,000 |
 | 市内マタトゥ | KES 50〜100／回 | Wikivoyage Nairobi | 夜は非推奨 |
 | ナイロビ→ナイバシャ（乗合） | KES 300（約1.5時間） | Wikivoyage Nairobi | |
 | SGR ナイロビ→モンバサ | KES 1,000（2nd）〜3,000（1st） | Wikivoyage Nairobi。Wikivoyage Kenyaは1,500／4,500で食い違い | 実額未確認 |
@@ -326,7 +326,7 @@ PDF（1ページ、表題「Conservation Fees 2025」、PDF作成日 2025-09-30�
 |---|---|---|---|
 | https://kws.go.ke/park/amboseli-national-park/ ほか上記KWS各ページ | 公式 | 2026-10-20 | 年度表記なし |
 | https://kws.go.ke/park/nairobi-national-park/ | 公式 | 2026-10-18（既存資料） | 年度表記なし |
-| https://en.wikivoyage.org/wiki/Kenya | 準公式 | 2026-10-20 | 現行版 |
+| https://en.wikivoyage.org/wiki/Kenya | 第三者（利用者編集） | 2026-10-20 | 現行版 |
 | https://etakenya.go.ke/ ほか（既存資料） | 公式 | 2026-10-18 | 2026 |
 | https://www.anzen.mofa.go.jp/（取得済み kenya.html） | 公式 | 2026-10-20 | 更新日 2025-12-23 |
 
@@ -341,11 +341,11 @@ PDF（1ページ、表題「Conservation Fees 2025」、PDF作成日 2025-09-30�
 | https://www.gov.uk/foreign-travel-advice/kenya/health | 二次（英政府） | 2026-11-08 | 2026 | 健康リスク、エボラ |
 | https://etakenya.go.ke/ | 公式 | 2026-11-08 | 2026 | メンテナンス告知のみ（料金は2026-10-18既存資料） |
 | https://www.kenya-airways.com/en_ke/flights-to-kigali | 公式（事業者） | 2026-11-08 | 2026 | NBO-KGL例示運賃 |
-| https://en.wikivoyage.org/wiki/Kenya | 準公式 | 2026-11-08 | 現行版（2026-07の為替等） | 気候、交通、費用 |
-| https://en.wikivoyage.org/wiki/Maasai_Mara | 準公式 | 2026-11-08 | 現行版 | マラ料金・季節・アクセス |
-| https://en.wikivoyage.org/wiki/Amboseli_National_Park | 準公式 | 2026-11-08 | 2025-07掲載の料金 | アクセス・季節 |
-| https://en.wikivoyage.org/wiki/Lake_Nakuru_National_Park | 準公式 | 2026-11-08 | 現行版 | アクセス・宿泊例 |
-| https://en.wikivoyage.org/wiki/Nairobi | 準公式 | 2026-11-08 | 現行版 | 気候・交通・費用例 |
+| https://en.wikivoyage.org/wiki/Kenya | 第三者（利用者編集） | 2026-11-08 | 現行版（2026-07の為替等） | 気候、交通、費用 |
+| https://en.wikivoyage.org/wiki/Maasai_Mara | 第三者（利用者編集） | 2026-11-08 | 現行版 | マラ料金・季節・アクセス |
+| https://en.wikivoyage.org/wiki/Amboseli_National_Park | 第三者（利用者編集） | 2026-11-08 | 2025-07掲載の料金 | アクセス・季節 |
+| https://en.wikivoyage.org/wiki/Lake_Nakuru_National_Park | 第三者（利用者編集） | 2026-11-08 | 現行版 | アクセス・宿泊例 |
+| https://en.wikivoyage.org/wiki/Nairobi | 第三者（利用者編集） | 2026-11-08 | 現行版 | 気候・交通・費用例 |
 | https://www.maasaimara.com/ | 民間 | 2026-11-08 | — | 季節区分（料金本文は取得不可） |
 | https://nairobipark.org/half-day-nairobi-national-park-tour/ | 民間 | 2026-10-18（既存資料） | 2026 | 半日ツアー料金 |
 | https://www.kenya-airways.com/en_ke/flights-to-johannesburg | 公式（事業者） | 2026-10-19（既存資料） | 2026 | NBO-JNB直行案内 |
