@@ -4,7 +4,7 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
@@ -18,25 +18,25 @@
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| ビクトリアの滝（ジンバブエ側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+National+Park+Zimbabwe) | ジンバブエ西端の観光地。バンジー(橋から111m)の記述あり（Wikivoyage） | 入園（日帰り、国際訪問者）USD 58（ジンバブエ国立公園・野生動物管理局の公式2026年料金表 https://www.zimparks.org.zw/media/2026/02/De-Gazetted-Tariff-2026.pdf 、2026-11-08確認）。2027年は未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式）, https://www.zimparks.org（公式・トップのみ） |
-| ワンゲ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Hwange+National+Park) | 100種超の動物・400種超の鳥、象3万頭超（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
-| マナ・プールズ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mana+Pools+National+Park) | 世界遺産。象・カバ・ライオン等、350種超の鳥（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
-| マトボ（マトポス）国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Matobo+National+Park) | 奇岩とサンの洞窟壁画。2003年世界遺産（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
-| グレート・ジンバブエ遺跡 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Great+Zimbabwe+Masvingo) | マスヴィンゴ近郊の石造都市遺跡。国名の由来（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
-| カリバ湖 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake+Kariba+Zimbabwe) | ダム湖。ハウスボート滞在が可能（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
-| ゴナレゾウ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Gonarezhou+National+Park) | 辺境の手つかずの原野（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（準公式） |
+| ビクトリアの滝（ジンバブエ側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+National+Park+Zimbabwe) | ジンバブエ西端の観光地。バンジー(橋から111m)の記述あり（Wikivoyage） | 入園（日帰り、国際訪問者）USD 58（ジンバブエ国立公園・野生動物管理局の公式2026年料金表 https://www.zimparks.org.zw/media/2026/02/De-Gazetted-Tariff-2026.pdf 、2026-11-08確認）。2027年は未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（第三者（利用者編集））, https://www.zimparks.org（公式・トップのみ） |
+| ワンゲ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Hwange+National+Park) | 100種超の動物・400種超の鳥、象3万頭超（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（第三者（利用者編集）） |
+| マナ・プールズ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mana+Pools+National+Park) | 世界遺産。象・カバ・ライオン等、350種超の鳥（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（第三者（利用者編集）） |
+| マトボ（マトポス）国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Matobo+National+Park) | 奇岩とサンの洞窟壁画。2003年世界遺産（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（第三者（利用者編集）） |
+| グレート・ジンバブエ遺跡 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Great+Zimbabwe+Masvingo) | マスヴィンゴ近郊の石造都市遺跡。国名の由来（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（第三者（利用者編集）） |
+| カリバ湖 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake+Kariba+Zimbabwe) | ダム湖。ハウスボート滞在が可能（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（第三者（利用者編集）） |
+| ゴナレゾウ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Gonarezhou+National+Park) | 辺境の手つかずの原野（Wikivoyage） | 未確認 | 雨季は11〜3月（Wikivoyage Zimbabwe Climate）。5月は雨季明けで、冬(気温5℃未満になる日も)に向かう。5月自体の記述は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe)（第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明（出典の記述） | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| sadza（サザ）＋stew/relish | トウモロコシ粉の厚いお粥(ポレンタに似る)に煮込みを添える。ほぼ毎日の昼夕食 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（準公式） |
-| sadza nedovi | 野菜をピーナッツソースで煮たものを添えたsadza | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（準公式） |
-| braai（ブライ） | 薪火焼きの肉(ステーキ、スペアリブ、ソーセージ等)。南部アフリカの定番 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（準公式） |
-| boerewors / vetkoek | スパイスソーセージ / 揚げパン（南アフリカ由来と記載） | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（準公式） |
-| peri-peri chicken | ポルトガル/モザンビーク由来の辛味ソースのチキン | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（準公式） |
-| bream（淡水魚）・meat pie | Specialities として列挙。meat pieは手軽な軽食 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（準公式） |
-Wikivoyage は準公式。価格は出典に年次付き数値がないため全て未確認。
+| sadza（サザ）＋stew/relish | トウモロコシ粉の厚いお粥(ポレンタに似る)に煮込みを添える。ほぼ毎日の昼夕食 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（第三者（利用者編集）） |
+| sadza nedovi | 野菜をピーナッツソースで煮たものを添えたsadza | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（第三者（利用者編集）） |
+| braai（ブライ） | 薪火焼きの肉(ステーキ、スペアリブ、ソーセージ等)。南部アフリカの定番 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（第三者（利用者編集）） |
+| boerewors / vetkoek | スパイスソーセージ / 揚げパン（南アフリカ由来と記載） | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（第三者（利用者編集）） |
+| peri-peri chicken | ポルトガル/モザンビーク由来の辛味ソースのチキン | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（第三者（利用者編集）） |
+| bream（淡水魚）・meat pie | Specialities として列挙。meat pieは手軽な軽食 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zimbabwe#Eat)（第三者（利用者編集）） |
+Wikivoyage は第三者（利用者編集）の旅行ガイド。価格は出典に年次付き数値がないため全て未確認。
 
 ## ビザ・入国（日本国籍）
 
@@ -104,7 +104,7 @@ KAZA UNIVISA の費用は USD 50（12か月のうち最大30日、ザンビア�
 
 ### 月別の最適シーズン（特に5月）
 
-出典：Wikipedia Victoria Falls、Wikivoyage Victoria Falls / Zimbabwe（いずれも準公式、確認日2026-11-08。年次の月別実測値ではなく一般的傾向）。
+出典：Wikipedia Victoria Falls、Wikivoyage Victoria Falls / Zimbabwe（いずれも第三者（利用者編集）、確認日2026-11-08。年次の月別実測値ではなく一般的傾向）。
 
 | 項目 | 内容 |
 |---|---|
@@ -195,7 +195,7 @@ KAZA UNIVISA の費用は USD 50（12か月のうち最大30日、ザンビア�
 |---|---|---|---|
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html | 公式 | 2026-10-20 | 2026年6月現在 |
 | https://www.zimparks.org | 公式 | 2026-10-20 | 現行（トップのみ） |
-| https://en.wikivoyage.org/wiki/Zimbabwe | 準公式（Wikivoyage） | 2026-10-20 | 現行版（Climate/See/Eat節）（今回追加） |
+| https://en.wikivoyage.org/wiki/Zimbabwe | 第三者（利用者編集）（Wikivoyage） | 2026-10-20 | 現行版（Climate/See/Eat節）（今回追加） |
 
 ### 詳細（旧深掘り調査）
 
@@ -204,13 +204,13 @@ KAZA UNIVISA の費用は USD 50（12か月のうち最大30日、ザンビア�
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_106.html | 公式（外務省） | 2026-11-08（403で再取得不可）／既存ページは2026-10-20 | 2026年6月現在（既存ページ記載の査証料金）。今回は未取得 |
 | https://www.anzen.mofa.go.jp/info/pcspotinfo_2024T116.html | 公式（外務省） | 2026-11-08（403） | 2024-12-18のレベル1（既存資料）。未取得 |
 | https://www.zimparks.org | 公式 | 2026-11-08（別ドメインへ転送、料金表に届かず） | 未確認 |
-| https://en.wikivoyage.org/wiki/Victoria_Falls | 準公式 | 2026-11-08 | 入園2021年1月、アクティビティ2019年7月、列車2026年 |
-| https://en.wikivoyage.org/wiki/Zimbabwe | 準公式 | 2026-11-08 | 現行版（KAZA、ビザ2019年7月、ZiG 2026年1月、列車2025年11月） |
-| https://en.wikivoyage.org/wiki/Livingstone | 準公式 | 2026-11-08 | ザンビア側入園（2026年2月時点）ほか |
-| https://en.wikivoyage.org/wiki/Hwange_National_Park | 準公式 | 2026-11-08 | 年不明 |
-| https://en.wikivoyage.org/wiki/Chobe_National_Park | 準公式 | 2026-11-08 | 入園2023年3月 |
-| https://en.wikivoyage.org/wiki/Great_Zimbabwe | 準公式 | 2026-11-08 | 年不明 |
-| https://en.wikivoyage.org/wiki/Mana_Pools_National_Park | 準公式 | 2026-11-08 | 内容なし（アウトライン） |
+| https://en.wikivoyage.org/wiki/Victoria_Falls | 第三者（利用者編集） | 2026-11-08 | 入園2021年1月、アクティビティ2019年7月、列車2026年 |
+| https://en.wikivoyage.org/wiki/Zimbabwe | 第三者（利用者編集） | 2026-11-08 | 現行版（KAZA、ビザ2019年7月、ZiG 2026年1月、列車2025年11月） |
+| https://en.wikivoyage.org/wiki/Livingstone | 第三者（利用者編集） | 2026-11-08 | ザンビア側入園（2026年2月時点）ほか |
+| https://en.wikivoyage.org/wiki/Hwange_National_Park | 第三者（利用者編集） | 2026-11-08 | 年不明 |
+| https://en.wikivoyage.org/wiki/Chobe_National_Park | 第三者（利用者編集） | 2026-11-08 | 入園2023年3月 |
+| https://en.wikivoyage.org/wiki/Great_Zimbabwe | 第三者（利用者編集） | 2026-11-08 | 年不明 |
+| https://en.wikivoyage.org/wiki/Mana_Pools_National_Park | 第三者（利用者編集） | 2026-11-08 | 内容なし（アウトライン） |
 | https://en.wikipedia.org/wiki/Victoria_Falls | 準公式 | 2026-11-08 | 水量の季節性 |
 | [countries/zimbabwe.md](../countries/zimbabwe.md) | 既存資料 | 2026-10-20 | — |
 | [africa-route-comparison.md](../research/africa-route-comparison.md) | 既存資料 | — | — |

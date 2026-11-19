@@ -4,11 +4,11 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
-首都マプト、通貨メティカル（MZN）、公用語ポルトガル語（一般知識、本回出典未取得）。Wikivoyage の気候表ではマプトの5月は最高約28度・最低約17度、降水約32mm（年度不明）で、雨季明けの乾季入り。海岸・ダイビングのシーズン前半（公式の月別データは未取得）。出典: [Wikivoyage](https://en.wikivoyage.org/wiki/Mozambique)（準公式）。
+首都マプト、通貨メティカル（MZN）、公用語ポルトガル語（一般知識、本回出典未取得）。Wikivoyage の気候表ではマプトの5月は最高約28度・最低約17度、降水約32mm（年度不明）で、雨季明けの乾季入り。海岸・ダイビングのシーズン前半（公式の月別データは未取得）。出典: [Wikivoyage](https://en.wikivoyage.org/wiki/Mozambique)（第三者（利用者編集））。
 
 ## おおよその位置の地図
 
@@ -147,7 +147,7 @@ CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全
 | マンタ | 事業者は「通年」と案内。月別・5月の頻度は**未確認** | Peri-Peri FAQ |
 | ザトウクジラ | 「最も見やすいのは**6月〜8月下旬**（現地の冬）。同泳は運次第」。ツアーによっては海上観察のみで遊泳不可 | Peri-Peri FAQ（確認2026-11-08）。5月は**シーズン前＝未確認** |
 | ポンタ（イルカ・サメ・ウミガメ） | Gozo Azulの価格ページに月別の記載なし。月別は**未確認** | |
-| 気候 | 乾季は3〜11月、約15〜23℃（バザルト）、マプトの降水はJun〜Augで約15〜20mm、1月は171mm。「プライム期は5〜10月」（Inhambane） | Wikivoyage（準公式）。年度不明 |
+| 気候 | 乾季は3〜11月、約15〜23℃（バザルト）、マプトの降水はJun〜Augで約15〜20mm、1月は171mm。「プライム期は5〜10月」（Inhambane） | Wikivoyage（第三者（利用者編集））。年度不明 |
 | 雨季の道路 | 11〜4月は洪水で道路閉鎖（マプト含む） | FCDO（確認2026-11-08） |
 | **2027年5月の適性** | 雨季明けで陸路に有利、気温も快適。**クジラ本番にはやや早い**。大型生物の遭遇は季節より年変動が大きく、**期待値を下げて計画**（ダイブそのものと景観・文化を目的に） | 上記を総合した**判断**（推測を含む） |
 
@@ -199,7 +199,7 @@ CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全
 | 市内食事 | カフェ 15〜75MT、市場食 40〜60MT、ビール 30〜50MT | Wikivoyage Maputo（年不明、古い可能性） |
 | 空港税 | 国内 200MT、国際 500MT（現金） | Wikivoyage Mozambique（年不明） |
 | バザルト ダウ | 日帰り USD 70（Sailaway）、1泊 USD 230 | Wikivoyage Vilanculos（年不明） |
-| 為替参照 | USD 1≒65MT、R1≒4MT（2026年8月と表記） | Wikivoyage Mozambique（準公式） |
+| 為替参照 | USD 1≒65MT、R1≒4MT（2026年8月と表記） | Wikivoyage Mozambique（第三者（利用者編集）） |
 
 #### 5.3 査証
 | 項目 | 内容 | 状態 |
@@ -256,7 +256,7 @@ CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全
 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html | 公式 | 2026-10-20 | 2025-07-04発出 |
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_123.html | 公式 | 2026-10-20 | 2025-06-18更新 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/mozambique | 公式 | 2026-10-20 | 現行 |
-| https://en.wikivoyage.org/wiki/Mozambique | 準公式 | 2026-10-20 | 年度不明 |
+| https://en.wikivoyage.org/wiki/Mozambique | 第三者（利用者編集） | 2026-10-20 | 年度不明 |
 | https://www.anac.gov.mz/en/parques/ponta-do-ouro/ | 公式（保護区管理当局） | 2026-10-28 | 掲載適用年不明、2027年要再確認 |
 | https://parquemaputo.gov.mz/en/explore/how-to-get-there/ | 公式（公園運営者） | 2026-10-28 | 掲載適用年不明、2027年要再確認 |
 | https://strab.co.za/border-transfers/ | 事業者掲載の送迎価格 | 2026-10-28 | ZAR、適用年不明、2027年要再確認 |
@@ -273,10 +273,10 @@ CDC: モザンビークへ行く旅行者にマラリア予防薬を推奨（全
 | https://www.gov.uk/foreign-travel-advice/mozambique | 公式（英国政府） | 2026-11-08 | 2026-08-20更新 |
 | https://www.gov.uk/foreign-travel-advice/mozambique/entry-requirements | 公式（英国政府） | 2026-11-08 | 現行（英国旅券向け） |
 | https://www.gov.uk/foreign-travel-advice/mozambique/safety-and-security | 公式（英国政府） | 2026-11-08 | 現行（日付なし） |
-| https://en.wikivoyage.org/wiki/Mozambique | 準公式 | 2026-11-08 | 年不明（2026年8月レート記載） |
-| https://en.wikivoyage.org/wiki/Maputo | 準公式 | 2026-11-08 | 年不明 |
-| https://en.wikivoyage.org/wiki/Inhambane | 準公式 | 2026-11-08 | 価格は2025年10月表記 |
-| https://en.wikivoyage.org/wiki/Vilanculos | 準公式 | 2026-11-08 | 2024年1月等 |
+| https://en.wikivoyage.org/wiki/Mozambique | 第三者（利用者編集） | 2026-11-08 | 年不明（2026年8月レート記載） |
+| https://en.wikivoyage.org/wiki/Maputo | 第三者（利用者編集） | 2026-11-08 | 年不明 |
+| https://en.wikivoyage.org/wiki/Inhambane | 第三者（利用者編集） | 2026-11-08 | 価格は2025年10月表記 |
+| https://en.wikivoyage.org/wiki/Vilanculos | 第三者（利用者編集） | 2026-11-08 | 2024年1月等 |
 | https://www.anac.gov.mz/en/parques/ponta-do-ouro/ | 公式（保護区当局） | 2026-10-18/28（既存資料） | 年不明 |
 | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_123.html | 公式（外務省） | 2026-10-20（既存資料） | 2025-07-04発出 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/mozambique | 公式（CDC） | 2026-10-20（既存資料） | 現行 |
