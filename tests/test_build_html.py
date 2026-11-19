@@ -257,8 +257,14 @@ class AuditFixTests(unittest.TestCase):
         import re
         text = (ROOT / "index.html").read_text(encoding="utf-8")
         legend = re.search(r'<span class="legend">(.*?)</span>', text).group(1)
-        for k in re.findall(r'<i class="(\w+)"></i>', legend):
-            self.assertIn(f'class="ln {k}"', text)
+        for k in re.findall(r'<i class="tr (\w+)"></i>', legend):
+            self.assertIn(f'class="ln tr {k}"', text)
+
+    def test_home_map_shows_trip_to_and_from_japan(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        svg = text.split('<figure class="home-map">')[1].split("</figure>")[0]
+        for word in ("東京", "マニラ・バギオ", "モーリシャス", "ケープタウン", "2月 行き", "5/4 日本発", "帰国"):
+            self.assertIn(word, svg, word)
 
     def test_country_map_puts_list_beside_map(self):
         text = (ROOT / "maps" / "africa-countries.html").read_text(encoding="utf-8")

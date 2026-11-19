@@ -482,6 +482,87 @@ def africa_may_svg(id_prefix: str = "") -> str:
             f'<g class="rt on" data-rt="G">{ln}{dt}{nm}{lb}</g></g><path class="frame" d="{outline}"/></svg>')
 
 
+# トップページの全体図：日本からの行き・帰り（費用の航空券行と同じ区間）と、5月の案G。
+# (出発, 到着, 区分, 時期, 費用ID)。区分は色分け用（bg=バギオ往復, may=5月の周遊, home=日本への帰国）
+TRIP_LEGS = [
+    ("NRT", "MNL", "bg", "2月 行き", "PH-11"),
+    ("MNL", "NRT", "bg", "5月初め 一時帰国", "PH-12"),
+    ("NRT", "BOM", "may", "5/4 日本発", "AF-01"),
+    ("BOM", "MRU", "may", "", "AF-01"),
+    ("CPT", "NRT", "home", "7月末〜8月 帰国", "SC-08"),
+]
+TRIP_LABEL = {"bg": "バギオ（日本⇄マニラ）", "may": "5月の周遊（案G）", "home": "ケープタウン→日本（帰国）"}
+
+
+def _light_land(proj, geo, visit, tol=2.0):
+    """全体図用の軽い陸地：枠の外の国は省き、訪問国だけ名前（title）を付ける"""
+    import re as _re
+    out = []
+    for cid, (name, d) in bm.ring_paths(proj, geo, tol, skip=("010",)).items():
+        nums = [float(v) for v in _re.findall(r"-?\d+(?:\.\d+)?", d)]
+        xs, ys = nums[0::2], nums[1::2]
+        if not xs or max(xs) < 0 or min(xs) > proj.width or max(ys) < 0 or min(ys) > proj.height:
+            continue
+        d = _re.sub(r"(\d)\.\d", r"\1", d)  # 幅1000の図なので、陸地の座標は整数で足りる（ページを軽くする）
+        t = f"<title>{html.escape(name)}</title>" if cid in visit else ""
+        out.append(f'<path class="co{" v" if cid in visit else ""}" d="{d}">{t}</path>' if t else f'<path class="co" d="{d}"/>')
+    return "".join(out)
+
+
+def trip_overview_svg(id_prefix: str = "") -> str:
+    """トップページ用：日本⇄マニラ、日本→モーリシャス（5月）、アフリカ内の案G、ケープタウン→日本を1枚に描く。
+    アフリカ内の線は案Gのまま。区間は data/expenses.csv の航空券行（PH-11・PH-12・AF-01・SC-08）と対応する"""
+    points, routes = bm.load_model()
+    geo = bm.load_topo("countries-110m.json")
+    visit = {"392", "608", "356", "480", "450", "710", "716", "894", "072"}
+    proj = bm.Laea(80.0, 0.0, (12.0, 146.0, -36.0, 40.0), width=1000.0)
+    W, H = proj.width, proj.height
+    outline = f"M0 0H{bm.f1(W)}V{bm.f1(H)}H0Z"
+    grat = bm.graticule(proj, 20, 20, (0, 160), (-40, 60))
+    lines, labels, used = [], [], []
+    for a, b, k, when, _fid in TRIP_LEGS:
+        pa, pb = pt(points, a), pt(points, b)
+        d, pts = leg_path(proj, pa, pb, True, 40)
+        if {a, b} == {"NRT", "MNL"}:
+            d, mid = offset_line(pts, 22)  # 向きが逆なので、同じ値で左右に分かれる
+        else:
+            mid = pts[len(pts) // 2]
+        anchor = {"NRT": "end", "MNL": "start"}.get(a, "middle")
+        lines.append(f'<path class="ln tr {k}" d="{d}"><title>{html.escape(pa[0])}→{html.escape(pb[0])}（{html.escape(when or TRIP_LABEL[k])}）</title></path>')
+        if when:
+            gap = {"end": -8, "start": 8}.get(anchor, 0)
+            labels.append(f'<text class="dn tr {k}" x="{bm.f1(mid[0] + gap)}" y="{bm.f1(mid[1] - 6)}" text-anchor="{anchor}">{html.escape(when)}</text>')
+        for q in (a, b):
+            if q not in used:
+                used.append(q)
+    for l in routes["G"]["legs"]:
+        a, b = l["from_point"], l["to_point"]
+        if a in ("NRT", "BOM"):
+            continue
+        pa, pb = pt(points, a), pt(points, b)
+        d, _p = leg_path(proj, pa, pb, l["mode"] == "flight", 16)
+        lines.append(f'<path class="ln tr may" d="{d}"><title>{html.escape(pa[0])}→{html.escape(pb[0])}（5月・案G）</title></path>')
+        for q in (a, b):
+            if q not in used:
+                used.append(q)
+    big = {"NRT": ("東京", 8, -8, "start"), "MNL": ("マニラ・バギオ", -8, 4, "end"), "BOM": ("ムンバイ", -8, -6, "end"),
+           "MRU": ("モーリシャス", 8, 4, "start"), "CPT": ("ケープタウン", -8, 8, "end"), "TNR": ("マダガスカル", 8, -6, "start"),
+           "VICFALLS": ("ビクトリアの滝", -8, -6, "end")}
+    dots, names = [], []
+    for pid in used:
+        n, lat, lon = pt(points, pid)
+        x, y = proj.xy(lon, lat)
+        dots.append(f'<circle class="pt" cx="{bm.f1(x)}" cy="{bm.f1(y)}" r="{4.5 if pid in big else 2.5}"/>')
+        if pid in big:
+            t, dx, dy, anc = big[pid]
+            names.append(f'<text class="tx" x="{bm.f1(x + dx)}" y="{bm.f1(y + dy)}" text-anchor="{anc}">{html.escape(t)}</text>')
+    cid = f"{id_prefix}c1trip"
+    return (f'<svg class="m" viewBox="0 0 {bm.f1(W)} {bm.f1(H)}" role="img" aria-label="日本からの行き・帰りと5月の周遊（案G）の全体図">'
+            f'<defs><clipPath id="{cid}"><path d="{outline}"/></clipPath></defs><g clip-path="url(#{cid})">'
+            f'<path class="sea" d="{outline}"/><path class="grat" d="{grat}"/><g>{_light_land(proj, geo, visit)}</g>'
+            f'{"".join(lines)}{"".join(dots)}{"".join(names)}{"".join(labels)}</g><path class="frame" d="{outline}"/></svg>')
+
+
 def build_madagascar(points, geo):
     proj = bm.Laea(46.5, -19.0, (42.5, 51.5, -23.5, -15.5), width=700.0)
     W, H = proj.width, proj.height

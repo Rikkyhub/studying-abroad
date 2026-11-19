@@ -887,15 +887,17 @@ def region_compare(root: Path = ROOT) -> str:
 
 
 def home_map(root: Path = ROOT) -> str:
-    """トップの中心に置くルート地図（5月の案G）。全体図は maps/route-map.html（案の切替・拡大・カレンダー）"""
+    """トップの中心に置く全体の地図：日本からの行き・一時帰国・5月の周遊（案G）・帰国。案の切替は maps/route-map.html"""
     if root != ROOT:
         return ""
     import build_route_map  # 循環 import を避けるため、関数の中で読む
-    svg = build_route_map.africa_may_svg("home-")
+    svg = build_route_map.trip_overview_svg("home-")
+    legend = "".join(f'<i class="tr {k}"></i>{esc(t)} ' for k, t in build_route_map.TRIP_LABEL.items()).rstrip()
     return ('<figure class="home-map">'
             f'<div class="mapbox-h">{svg}</div>'
-            '<figcaption><span class="legend">' + "".join(f'<i class="{k}"></i>{t} ' for k, t in (("fl", "空路"), ("dm", "国内線"), ("rd", "陸路・車")) if f'class="ln {k}"' in svg).rstrip() + '</span>'
-            ' 比較の土台にしている基準モデル（旧・案G。採用ではありません）を点で結んだ概念図です。確定しているのは5/4 日本発→モーリシャスだけです。'
+            f'<figcaption><span class="legend">{legend}</span>'
+            ' 行き・帰りは予算に入れている航空券の区間です（2月 日本→マニラ、5月初め マニラ→日本、5/4 日本→ムンバイ→モーリシャス、ケープタウン→日本）。'
+            '日付が決まっているのは5/4 日本発だけで、帰国日・便は未定です。アフリカ内は比較の土台にしている基準モデル（案G）で、採用ではありません。'
             '<a href="maps/route-map.html">ルート地図で、5月・8月の案を切り替えて見る →</a></figcaption></figure>')
 
 
