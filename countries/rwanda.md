@@ -4,16 +4,16 @@
 
 - 確認日：2026-11-08（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 - 詳細（日数別モデルコース・月別シーズン・費用・コスパ/タイパ）は [ルワンダ 国別深掘り](../countries/rwanda.md)。
 
 ## 概要
 
-- 東アフリカの内陸国。ヴィルンガ火山群の山岳ゴリラ（火山国立公園）が最大の目玉（Wikivoyage、準公式）。
+- 東アフリカの内陸国。ヴィルンガ火山群の山岳ゴリラ（火山国立公園）が最大の目玉（Wikivoyage、第三者（利用者編集））。
 - 最適日数の目安は4〜5日（ゴリラ1回＋キガリ1日＋ニュングウェかアカゲラ1か所）。ゴリラだけなら最短2日（推計、深掘りレポート参照）。
 - 5月は長雨季の終盤で、トレッキングは泥と雨具が前提。
-- 毎月最終土曜はウムガンダ（共同清掃）で午前中の移動・営業が制限される（Wikivoyage、準公式）。2027年5月の最終土曜は5/29（本書の計算）で、この日は避ける。
-- ビニール袋は禁止（Wikivoyage Kigali、準公式）。
+- 毎月最終土曜はウムガンダ（共同清掃）で午前中の移動・営業が制限される（Wikivoyage、第三者（利用者編集））。2027年5月の最終土曜は5/29（本書の計算）で、この日は避ける。
+- ビニール袋は禁止（Wikivoyage Kigali、第三者（利用者編集））。
 
 ## おおよその位置の地図
 
@@ -23,17 +23,17 @@
 
 | 名称 | 場所・Google Maps 検索リンク | 見どころ | 入場料や体験料（通貨・年度・対象） | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| 火山国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Volcanoes%20National%20Park%20Rwanda) | 山岳ゴリラ（滞在1時間、15歳以上）、ゴールデンモンキー | ゴリラ許可証 USD 1,500／人／日（visitrwanda.com 公式、年度の記載なし。Wikivoyageの2025年値と一致） | 道はぬかるむが、ゴリラの出現は通年 | https://en.wikivoyage.org/wiki/Volcanoes_National_Park （準公式） |
-| キガリ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kigali%20Genocide%20Memorial) | ジェノサイド記念館、カフェ、市場 | 記念館は無料または寄付。大統領宮殿博物館 RWF 6,000（Wikivoyage、2026-11-08確認） | 屋内中心で雨に強い | https://en.wikivoyage.org/wiki/Kigali （準公式） |
+| 火山国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Volcanoes%20National%20Park%20Rwanda) | 山岳ゴリラ（滞在1時間、15歳以上）、ゴールデンモンキー | ゴリラ許可証 USD 1,500／人／日（visitrwanda.com 公式、年度の記載なし。Wikivoyageの2025年値と一致） | 道はぬかるむが、ゴリラの出現は通年 | https://en.wikivoyage.org/wiki/Volcanoes_National_Park （第三者（利用者編集）） |
+| キガリ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kigali%20Genocide%20Memorial) | ジェノサイド記念館、カフェ、市場 | 記念館は無料または寄付。大統領宮殿博物館 RWF 6,000（Wikivoyage、2026-11-08確認） | 屋内中心で雨に強い | https://en.wikivoyage.org/wiki/Kigali （第三者（利用者編集）） |
 | ニュングウェの森国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nyungwe%20Forest%20National%20Park) | 山地林、チンパンジー、キャノピーウォーク | 現行料金は未確認（公式サイトに価格なし） | 道が滑る、夜は冷える | https://www.visitnyungwe.org/ （公式） |
 | アカゲラ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Akagera%20National%20Park) | Big 5、ボートサファリ | 入園 USD 100（1日or1泊）／150（2泊）／200（3泊）（公式、年度表記なし、通年同額） | 公式は料金が季節で変わらないと明記 | https://www.akageranationalpark.org/ （公式） |
-| キブ湖 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake%20Kivu%20Rwanda) | 湖畔の保養、カヤック | 体験料は未確認 | ビルハルツ住血吸虫に注意 | https://en.wikivoyage.org/wiki/Rwanda （準公式） |
+| キブ湖 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake%20Kivu%20Rwanda) | 湖畔の保養、カヤック | 体験料は未確認 | ビルハルツ住血吸虫に注意 | https://en.wikivoyage.org/wiki/Rwanda （第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明（出典の記述） | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| ブロシェット | 串焼き。ヤギが多い。揚げ芋や焼きバナナ（イビトケ）が付く | 未確認 | https://en.wikivoyage.org/wiki/Rwanda （準公式、2026-11-08） |
+| ブロシェット | 串焼き。ヤギが多い。揚げ芋や焼きバナナ（イビトケ）が付く | 未確認 | https://en.wikivoyage.org/wiki/Rwanda （第三者（利用者編集）、2026-11-08） |
 | イビトケ（マトケ） | 甘くない調理用バナナ。主食に最も近い。煮込み・焼き・揚げ | 未確認 | 同上 |
 | メランジュ | 昼の都市部ビュッフェ。炭水化物中心で、豆・野菜・少量の肉や魚の煮込み付き。皿に取れるのは1回 | 「約USD 1超〜5、場合によって10」（年不明） | 同上 |
 | ジンガロ | ヤギの腸。ブロシェットとして出ることもある。避けるなら「OYA zingalo」 | 未確認 | 同上 |
@@ -58,7 +58,7 @@
 
 - **外務省危険レベル（公式、2025-02-04発出・2026-11-09確認）**：ルバブ郡からニャビフ郡までのコンゴ民主共和国との国境地帯は**レベル3（渡航中止勧告）**。ムサンゼ郡のコンゴ国境地帯と、ルシジ郡のコンゴ国境地帯（キブ湖内の島しょ、カメンベ空港を含む。『引き上げ』）は**レベル2（不要不急の渡航中止）**。**その他の地域（キガリ、ゴリラ観察の火山国立公園のうちコンゴ国境を除く部分など）はレベル1（十分注意）**。出典：https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_131.html （外務省 海外安全ホームページ、公式、2026-11-09確認）。
 - **FCDO（英国、公式、2026-11-08確認、Still current at 2026-11-07、最終更新2026-09-04）**：Rusizi地区のコンゴ国境から10km以内（キブ湖の島とカメンベ空港を含む）への不要不急渡航を非推奨。国境は不明瞭で、知らずにDRC側へ入る可能性がある。国境通過は予告なく閉鎖され得る。
-- **一般治安**：Wikivoyageは「アフリカで最も安全な国の1つ、夜のキガリも安心」と記載（準公式）。スリは市場とバスターミナルで注意。政府・軍関連施設の撮影は制限。緊急番号 112（総合）、912（救急）。
+- **一般治安**：Wikivoyageは「アフリカで最も安全な国の1つ、夜のキガリも安心」と記載（第三者（利用者編集））。スリは市場とバスターミナルで注意。政府・軍関連施設の撮影は制限。緊急番号 112（総合）、912（救急）。
 - **エボラ（ブンディブギョ型）**：FCDOは、DRC保健省が5月15日にイトゥリ州で発表（年の記載なし、前後の文脈から2026年）、WHOが2026-05-17付でPHEIC宣言と記述（公式）。ルワンダはキガリ空港で健康審査を導入し、DRCとの国境を制限。措置は予告なく変更され得る。**2027年5月時点の状況は未確認**。FCDOはルワンダの具体的な措置の期日を記載していない。
 - **マールブルグ**：2024-09-27に発生（キガリ近郊のコウモリ生息鉱山に関連）、最終確認例2024-10-30、2024-12-20に終息宣言（FCDO Health、公式）。**再燃の可能性は残る**ため、コウモリの洞窟（ムサンゼ洞窟など）訪問は手袋・マスク。現時点の発生は未確認。
 - **黄熱**：FCDOは「黄熱の感染リスク国から入国する場合は予防接種証明が必要」と記載（公式）。ルワンダ自体の接種推奨は取得した公式ページに記載がなく未確認。ケニア・ウガンダ経由の扱いは別途確認（ウガンダは2026-10-02付で証明不要になった旨が既存資料にあり）。
@@ -88,19 +88,19 @@
 
 ### 概要
 
-- 東アフリカの内陸国。標高が高く「赤道近くでも温暖」。ヴィルンガ火山群の山岳ゴリラ（火山国立公園）が最大の目玉（Wikivoyage、2026-11-08確認、準公式）。
+- 東アフリカの内陸国。標高が高く「赤道近くでも温暖」。ヴィルンガ火山群の山岳ゴリラ（火山国立公園）が最大の目玉（Wikivoyage、2026-11-08確認、第三者（利用者編集））。
 - 公用語はキニヤルワンダ語・フランス語・英語、通貨はRWF、時差はUTC+2、電圧230V 50Hz（visitrwanda.com、2026-11-08確認、公式）。
-- ビニール袋は禁止（Wikivoyage Kigali、準公式）。毎月最終土曜はウムガンダ（共同清掃）で午前中は移動・営業が制限される（Wikivoyage Rwanda、準公式）。5月の最終土曜（2027-05-29）は避けて日程を組む（日付は本書の計算）。
+- ビニール袋は禁止（Wikivoyage Kigali、第三者（利用者編集））。毎月最終土曜はウムガンダ（共同清掃）で午前中は移動・営業が制限される（Wikivoyage Rwanda、第三者（利用者編集））。5月の最終土曜（2027-05-29）は避けて日程を組む（日付は本書の計算）。
 
 ### 主な観光地
 
 | 名称 | 場所・Google Maps 検索リンク | 見どころ | 入場料や体験料（通貨・年度・対象） | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| 火山国立公園（ゴリラ） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Volcanoes%20National%20Park%20Rwanda) | 山岳ゴリラ（1時間滞在、15歳以上）、ゴールデンモンキー、ビソケ山、ダイアン・フォッシー墓所 | **ゴリラ許可証 USD 1,500／人（Wikivoyage掲載の2025年値）**。ゴールデンモンキー USD 100、フォッシー墓所ハイク USD 75、ビソケ登山 USD 75（同上） | 長雨季の終盤。道はぬかるむが、ゴリラの出現自体は通年（Wikivoyage）。雨具・ゲイター必携（visitrwanda.com） | https://en.wikivoyage.org/wiki/Volcanoes_National_Park （準公式）／https://www.visitrwanda.com/destinations/volcanoes-national-park/ （公式・料金記載なし） |
-| キガリ（ジェノサイド記念館ほか） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kigali%20Genocide%20Memorial) | 記念館（2023年からユネスコ世界遺産構成の1つ）、カフェ、アート、市場 | 記念館は無料または寄付（写真撮影は別料金）。大統領宮殿博物館 RWF 6,000（ガイド必須）（Wikivoyage、2026-11-08確認） | 屋内中心で雨に強い | https://en.wikivoyage.org/wiki/Kigali （準公式） |
-| ニュングウェの森国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nyungwe%20Forest%20National%20Park) | 保存状態の良い山地林、チンパンジー、キャノピーウォーク（高さ50m・長さ90m）、ジップライン | 入園料という枠はなく、ガイド必須の活動ごとに課金。ガイド付きトレイルは目安USD 40〜60／本（Wikivoyageの古い記載）。**チンパンジー・キャノピーの現行料金は未確認**（公式visitnyungwe.orgに価格記載なし） | 雨季は道が滑る、夜は冷える（最低0℃の記載）。未確認 | https://www.visitnyungwe.org/ （公式）／https://en.wikivoyage.org/wiki/Nyungwe_Forest_National_Park （準公式） |
+| 火山国立公園（ゴリラ） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Volcanoes%20National%20Park%20Rwanda) | 山岳ゴリラ（1時間滞在、15歳以上）、ゴールデンモンキー、ビソケ山、ダイアン・フォッシー墓所 | **ゴリラ許可証 USD 1,500／人（Wikivoyage掲載の2025年値）**。ゴールデンモンキー USD 100、フォッシー墓所ハイク USD 75、ビソケ登山 USD 75（同上） | 長雨季の終盤。道はぬかるむが、ゴリラの出現自体は通年（Wikivoyage）。雨具・ゲイター必携（visitrwanda.com） | https://en.wikivoyage.org/wiki/Volcanoes_National_Park （第三者（利用者編集））／https://www.visitrwanda.com/destinations/volcanoes-national-park/ （公式・料金記載なし） |
+| キガリ（ジェノサイド記念館ほか） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kigali%20Genocide%20Memorial) | 記念館（2023年からユネスコ世界遺産構成の1つ）、カフェ、アート、市場 | 記念館は無料または寄付（写真撮影は別料金）。大統領宮殿博物館 RWF 6,000（ガイド必須）（Wikivoyage、2026-11-08確認） | 屋内中心で雨に強い | https://en.wikivoyage.org/wiki/Kigali （第三者（利用者編集）） |
+| ニュングウェの森国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nyungwe%20Forest%20National%20Park) | 保存状態の良い山地林、チンパンジー、キャノピーウォーク（高さ50m・長さ90m）、ジップライン | 入園料という枠はなく、ガイド必須の活動ごとに課金。ガイド付きトレイルは目安USD 40〜60／本（Wikivoyageの古い記載）。**チンパンジー・キャノピーの現行料金は未確認**（公式visitnyungwe.orgに価格記載なし） | 雨季は道が滑る、夜は冷える（最低0℃の記載）。未確認 | https://www.visitnyungwe.org/ （公式）／https://en.wikivoyage.org/wiki/Nyungwe_Forest_National_Park （第三者（利用者編集）） |
 | アカゲラ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Akagera%20National%20Park) | Big 5、ボートサファリ（イヘマ湖）。キガリから日帰り・1泊可 | **入園 USD 100（1日or1泊）／150（2泊）／200（3泊）**、車両 USD 10、ガイド USD 25（半日）／40（全日）、ゲームドライブ（公園車）USD 200（半日）／350（全日）、ボート USD 35、夜間ドライブ USD 40（公式、年度表記なし）。**通年同額（季節で変わらない）** | 公式は料金が季節で変わらないと明記。雨季の道状態は未確認 | https://www.akageranationalpark.org/ （公式、2026-11-08確認） |
-| キブ湖（ギセニ、カロンギ、ルバヴ） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake%20Kivu%20Rwanda) | 湖畔の保養、カヤック、ボート、コンゴ・ナイル・トレイル（約227km） | 無料の公共湖畔あり。体験料は未確認 | 湖畔は比較的穏やか（未確認）。ビルハルツ住血吸虫に注意（Wikivoyage） | https://en.wikivoyage.org/wiki/Rwanda （準公式） |
+| キブ湖（ギセニ、カロンギ、ルバヴ） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lake%20Kivu%20Rwanda) | 湖畔の保養、カヤック、ボート、コンゴ・ナイル・トレイル（約227km） | 無料の公共湖畔あり。体験料は未確認 | 湖畔は比較的穏やか（未確認）。ビルハルツ住血吸虫に注意（Wikivoyage） | https://en.wikivoyage.org/wiki/Rwanda （第三者（利用者編集）） |
 
 ### 最適な観光日数
 
@@ -158,7 +158,7 @@
 #### ゴリラ許可証の手配
 
 - 発行主体は RDB（Rwanda Development Board）。公式の購入導線は visitrwanda.com から visitrwandabookings.rdb.rw へ（visitrwanda.com 火山国立公園ページ、2026-11-08確認、公式）。
-- 許可証は人気期に完売する。低季は直前に空きがある場合もある。日程変更は許可証価格の20%で、元の日付の前に手続きが必要（Wikivoyage Volcanoes、2025年版の記載、準公式）。
+- 許可証は人気期に完売する。低季は直前に空きがある場合もある。日程変更は許可証価格の20%で、元の日付の前に手続きが必要（Wikivoyage Volcanoes、2025年版の記載、第三者（利用者編集））。
 - 日付指定の許可証になるため、**航空・陸路の予約より先に日付を決める**のが順序として合理的（本書の提案）。実際の予約・支払いは本人の承認後に別途行う。
 - 公式予約サイトは今回取得できず、購入手順の詳細・支払い方法・キャンセル規定は**未確認**。
 
@@ -177,7 +177,7 @@
 
 ### 効率ルートと近隣国との接続
 
-- 国境（Wikivoyage Rwanda、2026-11-08確認、準公式）：**開通＝ウガンダ（Gatuna、Cyanika）、タンザニア（Rusumo）**。**ブルンジ、コンゴ民主共和国の陸路国境は2024年から無期限閉鎖と記載**。ただし英国FCDOはギセニ・ゴマ、ビュカブ国境の営業時間は変動し得ると記述しており、記載が食い違うため、コンゴ側は利用しない前提にする。
+- 国境（Wikivoyage Rwanda、2026-11-08確認、第三者（利用者編集））：**開通＝ウガンダ（Gatuna、Cyanika）、タンザニア（Rusumo）**。**ブルンジ、コンゴ民主共和国の陸路国境は2024年から無期限閉鎖と記載**。ただし英国FCDOはギセニ・ゴマ、ビュカブ国境の営業時間は変動し得ると記述しており、記載が食い違うため、コンゴ側は利用しない前提にする。
 - **ウガンダ接続**：カンパラ〜キガリのバスは8〜10時間（Wikivoyage）。既存資料（africa-overland-7-9-countries.md）はModern Coast 9時間を候補とするが、夜行の有無は未確認。ウガンダ南西のブウィンディ（ゴリラ）と組む場合、ルワンダ側ゴリラ許可証とウガンダ許可証の二重取りは費用面で不要になりやすい（ウガンダ側許可証料金は本書では未取得）。
 - **ケニア接続**：ナイロビ〜キガリのバスは約17〜24時間、USD 30〜55（Wikivoyage）。空路の運賃・便は未確認（既存資料 africa-route-comparison.md も採用せず）。
 - **タンザニア接続**：Rusumo〜ムワンザ経由。既存資料は「未確認区間（核心リスク）」とし、ムワンザ〜ムベヤは19〜21時間級と記載。所要日数が膨らむ。
@@ -244,7 +244,7 @@
 
 | URL | 種別 | 確認日 | 適用年度 |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Rwanda ほか上記各ページ | 準公式 | 2026-11-08 | 現行版（価格は年度が混在） |
+| https://en.wikivoyage.org/wiki/Rwanda ほか上記各ページ | 第三者（利用者編集） | 2026-11-08 | 現行版（価格は年度が混在） |
 | https://www.akageranationalpark.org/ | 公式 | 2026-11-08 | 年度表記なし |
 | https://www.migration.gov.rw/ | 公式 | 2026-11-08 | 現行 |
 | https://www.gov.uk/foreign-travel-advice/rwanda | 公式（英国政府） | 2026-11-08 | Still current at 2026-11-07 |
@@ -253,10 +253,10 @@
 
 | URL | 種別 | 確認日 | 適用年度 |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Rwanda | 準公式 | 2026-11-08 | 現行版（査証USD 50は2024-02時点） |
-| https://en.wikivoyage.org/wiki/Volcanoes_National_Park | 準公式 | 2026-11-08 | 2025（許可証USD 1,500） |
-| https://en.wikivoyage.org/wiki/Nyungwe_Forest_National_Park | 準公式 | 2026-11-08 | 年度不明 |
-| https://en.wikivoyage.org/wiki/Kigali | 準公式 | 2026-11-08 | 一部2024-02 |
+| https://en.wikivoyage.org/wiki/Rwanda | 第三者（利用者編集） | 2026-11-08 | 現行版（査証USD 50は2024-02時点） |
+| https://en.wikivoyage.org/wiki/Volcanoes_National_Park | 第三者（利用者編集） | 2026-11-08 | 2025（許可証USD 1,500） |
+| https://en.wikivoyage.org/wiki/Nyungwe_Forest_National_Park | 第三者（利用者編集） | 2026-11-08 | 年度不明 |
+| https://en.wikivoyage.org/wiki/Kigali | 第三者（利用者編集） | 2026-11-08 | 一部2024-02 |
 | https://www.visitrwanda.com/ ほか /facts/weather/, /facts/health/, /facts/immigration-visas/, /destinations/volcanoes-national-park/ | 公式 | 2026-11-08 | 年度表記なし |
 | https://www.akageranationalpark.org/ | 公式 | 2026-11-08 | 年度表記なし |
 | https://www.visitnyungwe.org/ | 公式 | 2026-11-08 | 価格記載なし |

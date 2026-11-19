@@ -4,12 +4,12 @@
 
 - 確認日：2026-11-08（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。Wikivoyageの価格は年度が不明なものが多く、参考値です。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。Wikivoyageの価格は年度が不明なものが多く、参考値です。
 - 詳細（日数別モデルコース・月別シーズン・費用・コスパ/タイパ）は [マラウイ 国別深掘り](../countries/malawi.md)。
 
 ## 概要
 
-- 南東アフリカの内陸国。国土の東〜北を細長いマラウイ湖が占め、観光の主役は湖畔（ダイビング・シュノーケル・カヤック）。サファリ（リウォンデ、マジェテ）とトレッキング（ムランジェ山）が副次（Wikivoyage、準公式）。
+- 南東アフリカの内陸国。国土の東〜北を細長いマラウイ湖が占め、観光の主役は湖畔（ダイビング・シュノーケル・カヤック）。サファリ（リウォンデ、マジェテ）とトレッキング（ムランジェ山）が副次（Wikivoyage、第三者（利用者編集））。
 - 湖には少なくとも700種のシクリッドがおり、ほぼ全て固有種（Wikipedia、準公式）。
 - 最適日数の目安は7日（湖3泊＋リウォンデ2泊＋移動2日）。湖だけなら4日、ムランジェ山まで広げるなら10日（推計、深掘りレポート参照）。
 - 5月は乾季の入口で、時期としては合うと推計（月別の透明度は未確認）。
@@ -22,18 +22,18 @@
 
 | 名称 | 場所・Google Maps 検索リンク | 見どころ | 入場料や体験料（通貨・年度・対象） | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| ケープマクレア | [検索リンク](https://www.google.com/maps/search/?api=1&query=Cape%20Maclear%20Malawi) | 砂浜、固有シクリッド、ボート、シュノーケル、カヤック | 国立公園ハイキング入場 USD 10（年度不明） | 乾季で良好と推計。**住血吸虫症リスクが高い** | https://en.wikivoyage.org/wiki/Cape_Maclear （準公式） |
-| ンカタベイ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nkhata%20Bay%20Malawi) | 北部の湾。淡水ダイビング | シングルダイブ USD 50〜、オープンウォーター講習 USD 400（年度不明） | 月別の透明度は未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （準公式） |
-| リウォンデ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Liwonde%20National%20Park) | シレ川沿い。カバ・ゾウ、ボートサファリ | 日帰り入園 USD 25（国際訪問者・成人）、車両 USD 4／日（年度不明）。公式は403で未取得 | 乾季は動物が川に集まる（Wikivoyage） | https://en.wikivoyage.org/wiki/Liwonde_National_Park （準公式） |
-| ムランジェ山 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mount%20Mulanje%20Malawi) | 最高峰Sapitwa 3,002m。山小屋・ポーター | 山小屋・ガイド料は未確認 | 乾季でトレッキング適期と推計 | https://en.wikivoyage.org/wiki/Mount_Mulanje （準公式） |
+| ケープマクレア | [検索リンク](https://www.google.com/maps/search/?api=1&query=Cape%20Maclear%20Malawi) | 砂浜、固有シクリッド、ボート、シュノーケル、カヤック | 国立公園ハイキング入場 USD 10（年度不明） | 乾季で良好と推計。**住血吸虫症リスクが高い** | https://en.wikivoyage.org/wiki/Cape_Maclear （第三者（利用者編集）） |
+| ンカタベイ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nkhata%20Bay%20Malawi) | 北部の湾。淡水ダイビング | シングルダイブ USD 50〜、オープンウォーター講習 USD 400（年度不明） | 月別の透明度は未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （第三者（利用者編集）） |
+| リウォンデ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Liwonde%20National%20Park) | シレ川沿い。カバ・ゾウ、ボートサファリ | 日帰り入園 USD 25（国際訪問者・成人）、車両 USD 4／日（年度不明）。公式は403で未取得 | 乾季は動物が川に集まる（Wikivoyage） | https://en.wikivoyage.org/wiki/Liwonde_National_Park （第三者（利用者編集）） |
+| ムランジェ山 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mount%20Mulanje%20Malawi) | 最高峰Sapitwa 3,002m。山小屋・ポーター | 山小屋・ガイド料は未確認 | 乾季でトレッキング適期と推計 | https://en.wikivoyage.org/wiki/Mount_Mulanje （第三者（利用者編集）） |
 | マジェテ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Majete%20Wildlife%20Reserve) | ブランタイヤ近郊。観光局はBig 5と案内 | 公園入場料（1人1日、2027年の公式料金）：国際の大人 USD 33、7〜12歳 USD 16.50、0〜6歳 無料。SADC・外国人居住者の大人 USD 17。車両 USD 6／台／日。ゲームドライブ USD 35、日没のゲームドライブ USD 40（出典：https://visitmajete.org/wp-content/uploads/sites/2/2026/09/Majete-Park-Fees-Activities-2027.pdf 、African Parks 運営の公式料金表、2026-11-09確認） | 未確認 | https://www.malawitourism.com/ （公式） |
-| リコマ島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Likoma%20Island%20Malawi) | 水中生物、モザンビークへの裏口。公共フェリーは週1〜2回 | 未確認 | フェリー運行日は流動的 | https://en.wikivoyage.org/wiki/Lake_Malawi （準公式） |
+| リコマ島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Likoma%20Island%20Malawi) | 水中生物、モザンビークへの裏口。公共フェリーは週1〜2回 | 未確認 | フェリー運行日は流動的 | https://en.wikivoyage.org/wiki/Lake_Malawi （第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明（出典の記述） | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| ンシマ（nsima） | トウモロコシ粉の厚い粥。右手で丸め、煮込みにつけて食べる。朝食では薄めてスープにすることもある | 地元食堂で MWK 600未満（年不明。2023年11月のクワチャ切り下げ後は古い可能性） | https://en.wikivoyage.org/wiki/Malawi （準公式、2026-11-08） |
+| ンシマ（nsima） | トウモロコシ粉の厚い粥。右手で丸め、煮込みにつけて食べる。朝食では薄めてスープにすることもある | 地元食堂で MWK 600未満（年不明。2023年11月のクワチャ切り下げ後は古い可能性） | https://en.wikivoyage.org/wiki/Malawi （第三者（利用者編集）、2026-11-08） |
 | リッシュ（relish） | ンシマに添える煮込み。牛・鶏・魚、豆、野菜、かぼちゃの葉（chibwabwa）、小魚の干物（usipa）など | 上に含む | 同上 |
 | ファストフード・屋台 | ハンバーガー、ピザ、フライドチキンが人気。ミートパイやソーセージロール（tuck shop） | 未確認 | 同上 |
 
@@ -102,7 +102,7 @@
 
 ### 概要
 
-- 南東アフリカの内陸国。国土の東〜北を細長いマラウイ湖（モザンビークではニアサ湖）が占める。観光の主役は湖畔（水辺・ダイビング・シュノーケル・カヤック）で、サファリ（リウォンデ、マジェテ）とトレッキング（ムランジェ山）が副次（Wikivoyage、準公式）。
+- 南東アフリカの内陸国。国土の東〜北を細長いマラウイ湖（モザンビークではニアサ湖）が占める。観光の主役は湖畔（水辺・ダイビング・シュノーケル・カヤック）で、サファリ（リウォンデ、マジェテ）とトレッキング（ムランジェ山）が副次（Wikivoyage、第三者（利用者編集））。
 - マラウイ湖には少なくとも700種のシクリッド（推定で最大1,000種）がおり、ほぼ全て固有種（Wikipedia、準公式）。透明度は最大約20 m、通常は約半分、泥の湾では3 m未満、1〜3月の雨で濁る。表層水温24〜29℃（同）。
 - 湖南端は Lake Malawi National Park（UNESCO世界遺産。Wikipedia記載）。
 - マラウイ観光局は、アフリカン・パークスによる野生動物の回復で「ビッグ5」が見られると案内し、ムランジェ山は2026年Tripadvisorアフリカ人気9位としている（malawitourism.com、公式、2026年）。
@@ -112,17 +112,17 @@
 
 | 名称 | 場所・Google Maps 検索リンク | 見どころ | 費用・料金（通貨・年度・対象） | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| ケープマクレア（Cape Maclear） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Cape%20Maclear%20Malawi) | 湖南部の半島の漁村。砂浜、透明な水。国立公園内に850種超の固有シクリッド。Mumbo島・Thumbi島・Otter Pointへのボート、シュノーケル、カヤック、PADIコース | 国立公園ハイキング入場 USD 10（Wikivoyage、年度不明）。宿は下表。 | 乾季で良好と推計。**住血吸虫症リスクが高い**（Wikivoyage）。Mumbo島周辺は「住血吸虫症なし」との記載（同、裏付け未取得） | https://en.wikivoyage.org/wiki/Cape_Maclear （準公式） |
-| ンカタベイ（Nkhata Bay） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nkhata%20Bay%20Malawi) | 北部の岩の湾。「世界最高級の淡水ダイビング」（Wikivoyage）。Likoma/Chizumulu島行きフェリー発着 | Aqua Africa（PADI）シングルダイブ USD 50〜、オープンウォーター講習 USD 400（Wikivoyage掲載、年度不明）。半日ボート（シュノーケル込み）USD 15〜18 | 乾季で良好と推計。月別の透明度は未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （準公式） |
-| モンキーベイ（Monkey Bay） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Monkey%20Bay%20Malawi) | ケープマクレアへの玄関。Ilalaフェリーの南の起点 | 未確認 | 未確認 | https://en.wikivoyage.org/wiki/Lake_Malawi （準公式） |
-| リコマ島／チズムル島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Likoma%20Island%20Malawi) | 水中生物で知られ、モザンビークへの裏口。公共フェリーは週1〜2回 | 未確認 | フェリー運行日は流動的 | https://en.wikivoyage.org/wiki/Lake_Malawi （準公式） |
-| カンデ／チンテチェ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kande%20Beach%20Malawi) | カンデ・ビーチ（ンカタベイ南約40 km）：キャンプ USD 5、ドミ USD 10、シャレー USD 25〜50。乗馬。チンテチェは情報なし | 左記（Wikivoyage、年度不明） | 未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （準公式） |
-| リウォンデ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Liwonde%20National%20Park) | 550 km²、シレ川沿い。カバ・ゾウ・魚鷲。ボートサファリ、4WDゲームドライブ、ウォーキング | 日帰り入園 USD 25（国際訪問者・成人）／USD 12（子ども）／車両 USD 4/日。年度不明（Wikivoyage）。**公式（African Parks）は403で取得不可**。ロッジ泊は料金込みの旨 | 乾季は動物が川に集まり良い（Wikivoyage）。5月は乾季入りで適性は高いと推計。乾季初期は草丈が高い可能性は未確認 | https://en.wikivoyage.org/wiki/Liwonde_National_Park （準公式） |
+| ケープマクレア（Cape Maclear） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Cape%20Maclear%20Malawi) | 湖南部の半島の漁村。砂浜、透明な水。国立公園内に850種超の固有シクリッド。Mumbo島・Thumbi島・Otter Pointへのボート、シュノーケル、カヤック、PADIコース | 国立公園ハイキング入場 USD 10（Wikivoyage、年度不明）。宿は下表。 | 乾季で良好と推計。**住血吸虫症リスクが高い**（Wikivoyage）。Mumbo島周辺は「住血吸虫症なし」との記載（同、裏付け未取得） | https://en.wikivoyage.org/wiki/Cape_Maclear （第三者（利用者編集）） |
+| ンカタベイ（Nkhata Bay） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nkhata%20Bay%20Malawi) | 北部の岩の湾。「世界最高級の淡水ダイビング」（Wikivoyage）。Likoma/Chizumulu島行きフェリー発着 | Aqua Africa（PADI）シングルダイブ USD 50〜、オープンウォーター講習 USD 400（Wikivoyage掲載、年度不明）。半日ボート（シュノーケル込み）USD 15〜18 | 乾季で良好と推計。月別の透明度は未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （第三者（利用者編集）） |
+| モンキーベイ（Monkey Bay） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Monkey%20Bay%20Malawi) | ケープマクレアへの玄関。Ilalaフェリーの南の起点 | 未確認 | 未確認 | https://en.wikivoyage.org/wiki/Lake_Malawi （第三者（利用者編集）） |
+| リコマ島／チズムル島 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Likoma%20Island%20Malawi) | 水中生物で知られ、モザンビークへの裏口。公共フェリーは週1〜2回 | 未確認 | フェリー運行日は流動的 | https://en.wikivoyage.org/wiki/Lake_Malawi （第三者（利用者編集）） |
+| カンデ／チンテチェ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kande%20Beach%20Malawi) | カンデ・ビーチ（ンカタベイ南約40 km）：キャンプ USD 5、ドミ USD 10、シャレー USD 25〜50。乗馬。チンテチェは情報なし | 左記（Wikivoyage、年度不明） | 未確認 | https://en.wikivoyage.org/wiki/Nkhata_Bay （第三者（利用者編集）） |
+| リウォンデ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Liwonde%20National%20Park) | 550 km²、シレ川沿い。カバ・ゾウ・魚鷲。ボートサファリ、4WDゲームドライブ、ウォーキング | 日帰り入園 USD 25（国際訪問者・成人）／USD 12（子ども）／車両 USD 4/日。年度不明（Wikivoyage）。**公式（African Parks）は403で取得不可**。ロッジ泊は料金込みの旨 | 乾季は動物が川に集まり良い（Wikivoyage）。5月は乾季入りで適性は高いと推計。乾季初期は草丈が高い可能性は未確認 | https://en.wikivoyage.org/wiki/Liwonde_National_Park （第三者（利用者編集）） |
 | マジェテ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Majete%20Wildlife%20Reserve) | ブランタイヤ近郊。Wikivoyageは項目名のみ。観光局は「ビッグ5」と案内 | **2027年の公式料金（USD）**：公園入場料（1人1日）＝国際／アフリカ他国の大人 **33**、7〜12歳 16.50、0〜6歳 無料。SADC・外国人居住者の大人 17、7〜12歳 9。マラウイ国民の大人 6。車両入場料 6／台／日（全車）。ゲームドライブ 35（国際）、日没のゲームドライブ 40、ガイド付き歩行 88（2〜3時間、4〜8人）、川のボート（季節により）、ホップオン・ガイド（自車に同乗）、スカウト（ガイド同行の係員）半日 30／全日 50 | 未確認 | https://visitmajete.org/wp-content/uploads/sites/2/2026/09/Majete-Park-Fees-Activities-2027.pdf （マジェテ野生動物保護区＝African Parks 運営、公式、『Park Fees & Activities 2027』。2026-11-09に pdftotext で読み取り）。観光局は『ビッグ5』と案内（https://www.malawitourism.com/ ） |
 | ヴワザ野生動物保護区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Vwaza%20Marsh%20Wildlife%20Reserve) | 北部。今回取得した資料に記載なし | **未確認** | 未確認 | （出典なし） |
-| ムランジェ山（Mulanje） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mount%20Mulanje%20Malawi) | 最高峰Sapitwa 3,002 m（技術的登攀なし、強度は高い）。山小屋、ガイド・ポーター手配（InfoMulanje／Likhubula Forestry Station） | 山小屋・ガイド料は**未確認**。麓の宿 MWK 35,000/泊（Hiker's Nest・個室・朝食付き、年度不明、Wikivoyage） | 乾季でトレッキング適期と推計。確認できる気候記載なし | https://en.wikivoyage.org/wiki/Mount_Mulanje （準公式） |
-| ゾンバ高原 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Zomba%20Plateau%20Malawi) | 旧植民地首都の背後の高原。ハイキング、展望 | **未確認** | 未確認 | https://en.wikivoyage.org/wiki/Malawi （準公式） |
-| リロングウェ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lilongwe%20Malawi) | 首都。空の玄関（LLW）。強盗報告あり | 空港→旧市街タクシー約USD 20（Wikivoyage、年度不明） | 通過用 | https://en.wikivoyage.org/wiki/Lilongwe （準公式） |
+| ムランジェ山（Mulanje） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Mount%20Mulanje%20Malawi) | 最高峰Sapitwa 3,002 m（技術的登攀なし、強度は高い）。山小屋、ガイド・ポーター手配（InfoMulanje／Likhubula Forestry Station） | 山小屋・ガイド料は**未確認**。麓の宿 MWK 35,000/泊（Hiker's Nest・個室・朝食付き、年度不明、Wikivoyage） | 乾季でトレッキング適期と推計。確認できる気候記載なし | https://en.wikivoyage.org/wiki/Mount_Mulanje （第三者（利用者編集）） |
+| ゾンバ高原 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Zomba%20Plateau%20Malawi) | 旧植民地首都の背後の高原。ハイキング、展望 | **未確認** | 未確認 | https://en.wikivoyage.org/wiki/Malawi （第三者（利用者編集）） |
+| リロングウェ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lilongwe%20Malawi) | 首都。空の玄関（LLW）。強盗報告あり | 空港→旧市街タクシー約USD 20（Wikivoyage、年度不明） | 通過用 | https://en.wikivoyage.org/wiki/Lilongwe （第三者（利用者編集）） |
 
 宿泊料金の例（Wikivoyage、通貨USD表記、年度不明、1人あるいは1室は記載のとおり）
 - ケープマクレア: Fat Monkeys ドミ USD 10／ダブル USD 65〜75、Thumbi View ドミ USD 14／ツイン USD 30、Chipatso Lodge USD 36〜80、Mumbo島 USD 275（食事付き）。
@@ -178,7 +178,7 @@
 
 ### 月別の最適シーズンと2027年5月
 
-- 雨季は10月中旬〜11月初旬から3月ごろまで、5〜7月は乾季（Wikivoyage、準公式）。FCDOは雨季（11〜4月）に洪水・地すべり・道路閉鎖の恐れと記載（gov.uk、公式、2026年）。
+- 雨季は10月中旬〜11月初旬から3月ごろまで、5〜7月は乾季（Wikivoyage、第三者（利用者編集））。FCDOは雨季（11〜4月）に洪水・地すべり・道路閉鎖の恐れと記載（gov.uk、公式、2026年）。
 - 湖の透明度は1〜3月の雨で悪化（Wikipedia）。逆算すると5月は雨の影響が薄れる時期と推計するが、**5月の月別透明度・水温は未確認**。
 - 野生動物は乾季に川へ集まる（Wikivoyage）。5月は乾季の入口で、後半（6〜10月）の方が視界はよくなる可能性が高い（推計）。
 - 現地イベント：Lake of Stars（9/10月、Mangochi）。5月は対象外。
@@ -222,7 +222,7 @@
 | 複数入国 6か月／12か月 | USD 150／USD 250 | 同上（両サイトで一致） | 同上 | 確認済み |
 | 到着時ビザ（単一） | USD 50 | 英国旅券向けの記載。現金USD推奨 | https://www.gov.uk/foreign-travel-advice/malawi/entry-requirements （公式、2026-11-08確認） | 日本旅券は**未確認** |
 | 日本国籍の扱い | **カテゴリー2（到着ビザ取得可）** | 2026-02-24付の公告で、カテゴリー2の国籍者は全指定入国地点で到着ビザを取得できる。日本は「Category Two Countries」一覧の79番。**事前申請は推奨**（処理時間と入国手続の短縮のため）。カテゴリー1（エチオピア、インド、中国、トルコ等47か国）は事前の査証または事前許可が必須 | https://evisa.gov.mw/ （マラウイ電子ビザ公式ポータル、2026-11-08確認）。一覧PDF https://evisa.gov.mw/PDFs/CategoryTwoCountries.pdf ・ https://evisa.gov.mw/PDFs/CategoryOneCountries.pdf | 確認済み（公告の有効期間・到着ビザの料金は未確認） |
-| 宿（ドミ） | USD 10〜15/泊 | 年度不明 | Wikivoyage （準公式） | 参考 |
+| 宿（ドミ） | USD 10〜15/泊 | 年度不明 | Wikivoyage （第三者（利用者編集）） | 参考 |
 | 宿（中級） | USD 30〜80/泊（部屋） | 年度不明 | Wikivoyage | 参考 |
 | 宿（高級離島等） | Mumbo島 USD 275 | 食事付き、年度不明 | Wikivoyage | 参考 |
 | 食事 | nsima＋おかず MWK 600未満 | 現地食堂、年度不明 | Wikivoyage | 参考（観光客向けは未確認） |
@@ -276,7 +276,7 @@
 
 | URL | 種別 | 確認日 | 適用年度 |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Malawi ほか上記各ページ | 準公式 | 2026-11-08 | 現行版（価格は年度不明） |
+| https://en.wikivoyage.org/wiki/Malawi ほか上記各ページ | 第三者（利用者編集） | 2026-11-08 | 現行版（価格は年度不明） |
 | https://www.malawitourism.com/ | 公式 | 2026-11-08 | 2026 |
 | https://www.gov.uk/foreign-travel-advice/malawi | 公式（英国政府） | 2026-11-08 | 2026-10-20更新 |
 
@@ -288,14 +288,14 @@
 | https://www.immigration.gov.mw/visa/types-of-malawi-visa/ | 公式 | 2026-11-08 | 年度表記なし |
 | https://www.gov.uk/foreign-travel-advice/malawi （および /entry-requirements, /safety-and-security, /health） | 公式（英国政府） | 2026-11-08 | 2026-10-20更新 |
 | https://www.malawitourism.com/ | 公式（観光局） | 2026-11-08 | 2026 |
-| https://en.wikivoyage.org/wiki/Malawi | 準公式 | 2026-11-08 | 現行版 |
-| https://en.wikivoyage.org/wiki/Lake_Malawi | 準公式 | 2026-11-08 | 現行版 |
-| https://en.wikivoyage.org/wiki/Cape_Maclear | 準公式 | 2026-11-08 | 現行版 |
-| https://en.wikivoyage.org/wiki/Nkhata_Bay | 準公式 | 2026-11-08 | 現行版 |
-| https://en.wikivoyage.org/wiki/Liwonde_National_Park | 準公式 | 2026-11-08 | 現行版 |
-| https://en.wikivoyage.org/wiki/Mount_Mulanje | 準公式 | 2026-11-08 | 現行版（概要のみ） |
-| https://en.wikivoyage.org/wiki/Lilongwe | 準公式 | 2026-11-08 | 現行版 |
-| https://en.wikivoyage.org/wiki/Blantyre | 準公式 | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Malawi | 第三者（利用者編集） | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Lake_Malawi | 第三者（利用者編集） | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Cape_Maclear | 第三者（利用者編集） | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Nkhata_Bay | 第三者（利用者編集） | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Liwonde_National_Park | 第三者（利用者編集） | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Mount_Mulanje | 第三者（利用者編集） | 2026-11-08 | 現行版（概要のみ） |
+| https://en.wikivoyage.org/wiki/Lilongwe | 第三者（利用者編集） | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Blantyre | 第三者（利用者編集） | 2026-11-08 | 現行版 |
 | https://en.wikipedia.org/wiki/Lake_Malawi | 準公式 | 2026-11-08 | 現行版 |
 | research/africa-overland-7-9-countries.md、research/africa-route-comparison.md | 既存資料 | 2026-10-16〜19 | 2026 |
 

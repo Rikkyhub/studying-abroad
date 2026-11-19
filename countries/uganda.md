@@ -4,15 +4,15 @@
 
 - 確認日：2026-11-08（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・CDCなど、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage・CDCなど、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 - 料金のうち、ゴリラ・チンパンジー・入園料・ゴールデンモンキー・火山登山は、UWAの公式料金表（2024年7月〜2026年6月）の値。**2027年5月は表の有効期間外で未確認**。
 - 詳細（日数別モデルコース・月別シーズン・費用・コスパ/タイパ）は [ウガンダ 国別深掘り](../countries/uganda.md)。
 
 ## 概要
 
-- 東アフリカの内陸国。マウンテンゴリラ（ブウィンディ、ムガヒンガ）とチンパンジー（キバレ）が最大の目玉（Wikivoyage、準公式）。
-- 玄関はエンテベ国際空港。空港〜カンパラは約35kmで渋滞が激しい（Wikivoyage Kampala、準公式）。
-- 5月は雨季の終盤で、トレイルはぬかるみ、4WDが必要（Wikivoyage、準公式）。許可証は取りやすい可能性がある（同）。
+- 東アフリカの内陸国。マウンテンゴリラ（ブウィンディ、ムガヒンガ）とチンパンジー（キバレ）が最大の目玉（Wikivoyage、第三者（利用者編集））。
+- 玄関はエンテベ国際空港。空港〜カンパラは約35kmで渋滞が激しい（Wikivoyage Kampala、第三者（利用者編集））。
+- 5月は雨季の終盤で、トレイルはぬかるみ、4WDが必要（Wikivoyage、第三者（利用者編集））。許可証は取りやすい可能性がある（同）。
 - 最適日数の目安は、ゴリラ＋チンパンジーで7日（エンテベ発着）、ゴリラのみなら4〜5日（推計、深掘りレポート参照）。
 
 ## おおよその位置の地図
@@ -28,13 +28,13 @@
 | キバレ森林国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kibale%20National%20Park) | チンパンジー・トレッキング | チンパンジー・トレッキング USD 250（ガイド料と入園料を含む、外国人非居住者、UWA公式料金表 2024-07〜2026-06） | 3〜5月は道がぬかるみ4WD推奨（Wikivoyage） | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
 | クイーンエリザベス国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Queen%20Elizabeth%20National%20Park) | カジンガ水路のボートサファリ、木登りライオン | 入園料 USD 40／日（外国人非居住者、UWA公式料金表 2024-07〜2026-06）。キャンブーラ渓谷のチンパンジー USD 100 | 未確認 | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
 | マーチソンフォールズ国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Murchison%20Falls%20National%20Park) | 滝へのボート、ハシビロコウ | 入園料 USD 45／日（外国人非居住者、UWA公式料金表 2024-07〜2026-06） | 未確認 | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf （公式） |
-| ジンジャ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Jinja%20Uganda) | ナイル川源流、ラフティング | 源流入場 UGX 30,000（2023年5月更新）、ラフティング終日 約USD 140（2026） | 未確認 | https://en.wikivoyage.org/wiki/Jinja （準公式） |
+| ジンジャ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Jinja%20Uganda) | ナイル川源流、ラフティング | 源流入場 UGX 30,000（2023年5月更新）、ラフティング終日 約USD 140（2026） | 未確認 | https://en.wikivoyage.org/wiki/Jinja （第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明（出典の記述） | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| ルウォンボ（Luwombo） | 肉またはピーナッツソースをバナナの葉で蒸した料理。主食（starchy side）を添える | 未確認 | https://en.wikivoyage.org/wiki/Uganda （準公式、2026-11-08） |
+| ルウォンボ（Luwombo） | 肉またはピーナッツソースをバナナの葉で蒸した料理。主食（starchy side）を添える | 未確認 | https://en.wikivoyage.org/wiki/Uganda （第三者（利用者編集）、2026-11-08） |
 | マトケ（Matooke） | 青いバナナをつぶした料理。カンパラ周辺の伝統料理 | 未確認 | 同上 |
 | ロレックス（Rolex） | 卵・玉ねぎ・野菜のオムレツをチャパティで巻いた国民的軽食 | 未確認 | 同上 |
 | 丸ごと揚げ魚 | 主に湖畔で食べる。フライドポテトが付く | 未確認 | 同上 |
@@ -43,8 +43,8 @@
 
 ## ビザ・入国（日本国籍）
 
-- eVisa（単回入国・90日）USD 51（Wikivoyage、2026年時点の記載、準公式）。公式 https://visas.immigration.go.ug/ は本文を取得できず、**料金は未確認**。
-- 東アフリカ観光ビザ（複数入国）USD 101（Wikivoyage、準公式。延長不可）。
+- eVisa（単回入国・90日）USD 51（Wikivoyage、2026年時点の記載、第三者（利用者編集））。公式 https://visas.immigration.go.ug/ は本文を取得できず、**料金は未確認**。
+- 東アフリカ観光ビザ（複数入国）USD 101（Wikivoyage、第三者（利用者編集）。延長不可）。
 - 黄熱：CDCによると入国時に1歳以上の全到着者に証明書が必要（2025-04-23更新、準公式）。
 - 旅券の残存期間などの要件は未確認。
 
@@ -54,7 +54,7 @@
 - エボラ：Wikivoyageはブンディブギョ型の流行を2026-05-15発表、WHOが2026-08-26に終息宣言と記載。一方CDCは2026-08-28更新でコンゴ民主共和国・ウガンダにレベル2の渡航情報を掲載。**両者に差があり、2027年5月時点の状況は未確認**。
 - マラリアは全地域でリスクあり（CDC、準公式）。予防薬の処方を推奨。
 - 治安：カンパラでスリ・ひったくり。バイクタクシー（ボダボダ）は事故が多い。夜間の徒歩を避ける（Wikivoyage）。
-- 同性愛を巡る法律が厳しく、LGBTQ+は極めて危険と記載（Wikivoyage、準公式）。
+- 同性愛を巡る法律が厳しく、LGBTQ+は極めて危険と記載（Wikivoyage、第三者（利用者編集））。
 - 水は瓶詰めを飲む。ビクトリア湖岸は住血吸虫症に注意。
 
 ### 詳細：安全・健康
@@ -64,14 +64,14 @@
 | 外務省の危険レベル | **公式（2025-08-18発出・2026-11-09確認）**：コンゴ国境地帯（ホイマ県以南）は**レベル3（渡航中止勧告）**。西部の複数県（ントロコ、ブンディブジョ、ブニャンカブ、カセセ、ルビリズィ、ルクンジリ、カヌング、キソロ〔いずれも国境地帯を除く〕、カバロレ、カムェンジェ）と、コンゴ国境（ブリーサ県以北）・南スーダン国境・カボング県のケニア国境・カラモジャ地域は**レベル2（不要不急の渡航中止）**。**首都カンパラ市を含むその他はレベル1**。西部のコンゴ国境は反政府組織ADFのテロ活動により『どのような目的でも渡航中止』。2025年6月にカンパラ近郊で自爆テロ未遂。地域を問わず凶悪犯罪（住居侵入・車上強盗・誘拐）に注意。**ブウィンディ・ムガヒンガがどの県の指定に当たるかは、本書では未確認** | https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_93.html （外務省 海外安全ホームページ、公式、2026-11-09確認） |
 | 黄熱 | CDC：9か月以上に接種推奨。入国時の証明書は「1歳以上の全到着者に必須」（2025-04-23更新）。ケニアも黄熱リスク国のため、証明書は取得しておくのが無難 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/uganda （準公式・2026-11-08確認、適用は更新時点） |
 | マラリア | 全地域でリスク。予防薬の処方推奨（アトバコン・プログアニル、ドキシサイクリン等）。クロロキン耐性の報告 | 同上 |
-| エボラ | Wikivoyage：ブンディブギョ型の流行が2026-05-15に発表され、WHOが2026-08-26に終息宣言と記載。一方CDCは2026-08-28更新で「DRC・ウガンダ」に対しレベル2（強化された注意）の渡航情報を掲載。**両者に差があり、2027年5月時点の状況は未確認**。出国時スクリーニングの可能性あり。出発直前に外務省・CDC・WHOを確認 | Wikivoyage Uganda、CDC（準公式・2026-11-08） |
+| エボラ | Wikivoyage：ブンディブギョ型の流行が2026-05-15に発表され、WHOが2026-08-26に終息宣言と記載。一方CDCは2026-08-28更新で「DRC・ウガンダ」に対しレベル2（強化された注意）の渡航情報を掲載。**両者に差があり、2027年5月時点の状況は未確認**。出国時スクリーニングの可能性あり。出発直前に外務省・CDC・WHOを確認 | Wikivoyage Uganda、CDC（第三者（利用者編集）・2026-11-08） |
 | その他ワクチン | A型・B型肝炎、腸チフス、麻疹（MMR）、狂犬病（活動内容次第）、髄膜炎菌（乾季12〜6月の髄膜炎ベルト地帯）。ムガヒンガ周辺はコンゴ民主共和国国境に近い | CDC（準公式） |
-| 治安・その他 | カンパラでスリ・ひったくり、ボダボダ（バイクタクシー）は事故が多い。夜間の徒歩を避ける。クイーンエリザベスでは2019年に誘拐事件の記載あり（Wikivoyage）。ゴリラ観察には武装ガードが同行。**LGBTQ+は2023年の法律により極めて危険**（Wikivoyage）。医療体制は弱い | https://en.wikivoyage.org/wiki/Uganda 、Kampala 記事（準公式） |
+| 治安・その他 | カンパラでスリ・ひったくり、ボダボダ（バイクタクシー）は事故が多い。夜間の徒歩を避ける。クイーンエリザベスでは2019年に誘拐事件の記載あり（Wikivoyage）。ゴリラ観察には武装ガードが同行。**LGBTQ+は2023年の法律により極めて危険**（Wikivoyage）。医療体制は弱い | https://en.wikivoyage.org/wiki/Uganda 、Kampala 記事（第三者（利用者編集）） |
 | 水・感染症 | 瓶詰め水を飲む。ビクトリア湖岸は住血吸虫症リスク | 同上 |
 
 ## 行き方・移動
 
-- 国際空港はエンテベ。ナイロビからはバスで約12時間（古い情報の可能性）、空路が現実的（Wikivoyage Uganda、準公式）。運賃は未確認。
+- 国際空港はエンテベ。ナイロビからはバスで約12時間（古い情報の可能性）、空路が現実的（Wikivoyage Uganda、第三者（利用者編集））。運賃は未確認。
 - 西部（ブウィンディ等）へは陸路で1日（カンパラ〜カバレ約8時間）。日数が少なければ国内線（運賃は未確認）。
 - ルワンダ・タンザニアとの接続は未確認。周遊の本線（ケニア→南部アフリカ）から外れる寄り道になる。
 
@@ -84,7 +84,7 @@
 | 観点 | 結論 |
 |---|---|
 | 最適日数 | **ゴリラ＋チンパンジーを含めて7日（エンテベ着発）**。ゴリラだけなら4〜5日、サファリ全部入りは10日。（推計） |
-| 2027年5月の適性 | 雨季（Wikivoyage: エンテベの雨のピークは3〜6月）。道がぬかるむが、許可証は取りやすい可能性（準公式）。ゴリラ観察は可能だがトレイルが厳しい。 |
+| 2027年5月の適性 | 雨季（Wikivoyage: エンテベの雨のピークは3〜6月）。道がぬかるむが、許可証は取りやすい可能性（第三者（利用者編集））。ゴリラ観察は可能だがトレイルが厳しい。 |
 | 費用目安（許可証のみ・1人・USD） | ゴリラ USD 800（準公式・2024年時点）＋チンパンジー USD 250（準公式・年度不明）。2027年の公式額は未確認。 |
 | コスパ | ★★★★☆（体験の希少性は高いが、許可証が高額で、陸路移動に時間がかかる） |
 | タイパ | ★★☆☆☆（主要地が西部に集中し、片道8〜10時間級の移動が多い。国内線を使えば★3） |
@@ -94,12 +94,12 @@
 
 | 目的地 | 最低日数（推計） | 理由・根拠 | 出典（区分） |
 |---|---|---|---|
-| ブウィンディ（マウンテンゴリラ） | 2泊（移動日含め実質3日） | トレッキング自体は2〜7時間＋ゴリラと1時間。各家族への入場は1日8人まで。拠点（Buhoma/Ruhija/Rushaga/Nkuringo）が離れており、許可証と同じ地区に泊まる必要がある | https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park （準公式・2026-11-08）／https://www.ugandawildlife.org/safari-activities/gorilla-tracking （公式・2026-11-08） |
-| ムガヒンガ（ゴリラ・ゴールデンモンキー・火山） | +1泊（任意） | ゴリラ許可証は1日約8枚。ゴールデンモンキー、火山3座（各6〜8時間）が選べる。キソロ経由の未舗装路 | https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park （準公式） |
-| キバレ（チンパンジー） | 1泊 | 半日トレッキング。フォートポータル近郊。3〜5月は道がぬかるみ4WD推奨 | https://en.wikivoyage.org/wiki/Kibale_Forest_National_Park （準公式・2026-11-08） |
-| クイーンエリザベス | 1〜2泊 | カジンガ水路のボートサファリ、イシャシャの木登りライオン | https://en.wikivoyage.org/wiki/Queen_Elizabeth_National_Park （準公式） |
-| マーチソンフォールズ | 2泊 | 滝へのボート、デルタ（ハシビロコウ）、ゲームドライブは別枠。カンパラから約5〜6時間級（推計、Wikivoyageは約90km圏外のMasindi経由とのみ） | https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park （準公式） |
-| ジンジャ（ナイル源流） | 日帰り〜1泊 | カンパラ東約80km。ラフティングは終日。バスUSh 7,000〜13,000（2026） | https://en.wikivoyage.org/wiki/Jinja （準公式） |
+| ブウィンディ（マウンテンゴリラ） | 2泊（移動日含め実質3日） | トレッキング自体は2〜7時間＋ゴリラと1時間。各家族への入場は1日8人まで。拠点（Buhoma/Ruhija/Rushaga/Nkuringo）が離れており、許可証と同じ地区に泊まる必要がある | https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park （第三者（利用者編集）・2026-11-08）／https://www.ugandawildlife.org/safari-activities/gorilla-tracking （公式・2026-11-08） |
+| ムガヒンガ（ゴリラ・ゴールデンモンキー・火山） | +1泊（任意） | ゴリラ許可証は1日約8枚。ゴールデンモンキー、火山3座（各6〜8時間）が選べる。キソロ経由の未舗装路 | https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park （第三者（利用者編集）） |
+| キバレ（チンパンジー） | 1泊 | 半日トレッキング。フォートポータル近郊。3〜5月は道がぬかるみ4WD推奨 | https://en.wikivoyage.org/wiki/Kibale_Forest_National_Park （第三者（利用者編集）・2026-11-08） |
+| クイーンエリザベス | 1〜2泊 | カジンガ水路のボートサファリ、イシャシャの木登りライオン | https://en.wikivoyage.org/wiki/Queen_Elizabeth_National_Park （第三者（利用者編集）） |
+| マーチソンフォールズ | 2泊 | 滝へのボート、デルタ（ハシビロコウ）、ゲームドライブは別枠。カンパラから約5〜6時間級（推計、Wikivoyageは約90km圏外のMasindi経由とのみ） | https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park （第三者（利用者編集）） |
+| ジンジャ（ナイル源流） | 日帰り〜1泊 | カンパラ東約80km。ラフティングは終日。バスUSh 7,000〜13,000（2026） | https://en.wikivoyage.org/wiki/Jinja （第三者（利用者編集）） |
 
 主要地の位置関係（一般知識）：ブウィンディ・クイーンエリザベス・キバレは**西部**、マーチソンは**北西**、ジンジャは**東**で、エンテベ/カンパラを挟んで反対方向。1周すると移動が大きいため、**全部入りは10日以上**が必要。
 
@@ -142,16 +142,16 @@
 
 | 項目 | 内容 | 出典（区分） |
 |---|---|---|
-| 気候の概況 | 赤道直下だが高度で変化。南部は年間通じて雨。エンテベの雨のピークは3〜6月と11〜12月 | https://en.wikivoyage.org/wiki/Uganda （準公式・2026-11-08） |
-| ブウィンディ | ほぼ年間雨。乾季は6〜8月。雨でトレイルは泥濘、晴れでは水分が必要。気温は約9〜30℃ | https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park （準公式） |
+| 気候の概況 | 赤道直下だが高度で変化。南部は年間通じて雨。エンテベの雨のピークは3〜6月と11〜12月 | https://en.wikivoyage.org/wiki/Uganda （第三者（利用者編集）・2026-11-08） |
+| ブウィンディ | ほぼ年間雨。乾季は6〜8月。雨でトレイルは泥濘、晴れでは水分が必要。気温は約9〜30℃ | https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park （第三者（利用者編集）） |
 | キバレ | 「真の乾季はない」。雨期は8〜11月と3〜5月、4月が最多。12〜2月がチンパン向き、6〜7月は比較的乾く | Kibale Forest 記事（準公式） |
-| マーチソン | 雨のピークは4〜5月と8〜10月。1月と年央は乾きやすい | https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park （準公式） |
+| マーチソン | 雨のピークは4〜5月と8〜10月。1月と年央は乾きやすい | https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park （第三者（利用者編集）） |
 | **2027年5月の適性** | **雨季の終盤。ゴリラ・チンパンジーは可能だが、泥濘で体力負担が大きく、4WD必須（推計）。マーチソンは雨のピークの一つ。** | 上記より推計 |
 | 許可証の低需要期割引 | 公式料金表（2024年7月〜2026年6月）に**低需要期の割引の記載はない**。割引の有無は2027年分の表が出るまで未確認 | 公式（有効期間外の表） |
 
 ### 無駄な動きのない効率ルート
 
-- 入口：**エンテベ国際空港**（主要ハブ。Emirates、Turkish、Qatar、Ethiopian、KLM、Kenya Airwaysなど）。陸路ではナイロビから約12時間、キガリ/モンバサからもバスあり（https://en.wikivoyage.org/wiki/Uganda 準公式）。空港〜カンパラ約35km、渋滞が激しい（https://en.wikivoyage.org/wiki/Kampala 準公式）。
+- 入口：**エンテベ国際空港**（主要ハブ。Emirates、Turkish、Qatar、Ethiopian、KLM、Kenya Airwaysなど）。陸路ではナイロビから約12時間、キガリ/モンバサからもバスあり（https://en.wikivoyage.org/wiki/Uganda 、第三者（利用者編集））。空港〜カンパラ約35km、渋滞が激しい（https://en.wikivoyage.org/wiki/Kampala 、第三者（利用者編集））。
 - **ケニアとの接続**：ナイロビ↔エンテベは航空が現実的。ナイロビ→カンパラのバスは約12時間（準公式、古い情報の可能性）。5月の周遊をナイロビ起点にするなら、「ナイロビ→エンテベ（空路）→ウガンダ→エンテベ→ナイロビまたは直接次国へ」が戻りの重複が少ない（推計）。運賃は**未確認**。
 - **ルワンダとの接続**：キソロ（ムガヒンガ/ブウィンディ南部）はルワンダ国境に近いが、Wikivoyageにキガリからの経路記載なし。国境運用・費用は**未確認**。ルワンダ経由の短縮ルートの是非は、この調査では**判断不能**。
 - **タンザニアとの接続**：直接の接続情報は取得していない（**未確認**）。
@@ -174,9 +174,9 @@
 | クイーンエリザベス入園料（カテゴリーA） | 40（子ども20） | USD | 2024-07〜2026-06 | 外国人非居住者・1日 | UWA公式料金表 2024-07〜2026-06（https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf、2026-11-08） |
 | ジンジャ：ナイル源流入場 | 30,000 | UGX | 2023年5月更新 | 非居住者 | Jinja 記事（準公式） |
 | ジンジャ：ラフティング（終日クラス5） | 約140 | USD | 2026 | 1人 | 同上 |
-| eVisa（単回入国・90日） | 51 | USD | 2026年時点の記載 | 日本旅券 | https://en.wikivoyage.org/wiki/Uganda （準公式）。公式 https://visas.immigration.go.ug/ は本文取得不可で**未確認** |
+| eVisa（単回入国・90日） | 51 | USD | 2026年時点の記載 | 日本旅券 | https://en.wikivoyage.org/wiki/Uganda （第三者（利用者編集））。公式 https://visas.immigration.go.ug/ は本文取得不可で**未確認** |
 | 東アフリカ観光ビザ（複数入国） | 101 | USD | 同上 | 同上 | 同上（準公式）。延長不可 |
-| 宿・食費（目安） | 約75,000/日（公園・アクティビティ除く）。バックパッカー宿 9,000〜18,000、ゲストハウス 15,000〜30,000 | UGX | 2026年前後（記載年不明） | 1人 | https://en.wikivoyage.org/wiki/Uganda （準公式） |
+| 宿・食費（目安） | 約75,000/日（公園・アクティビティ除く）。バックパッカー宿 9,000〜18,000、ゲストハウス 15,000〜30,000 | UGX | 2026年前後（記載年不明） | 1人 | https://en.wikivoyage.org/wiki/Uganda （第三者（利用者編集）） |
 | 国内交通 | カンパラ〜ジンジャ バス 7,000〜10,000／タクシー 10,000〜13,000 | UGX | 2026 | 1人 | Jinja 記事（準公式） |
 | 空港〜カンパラ | 75,000〜80,000（専用車）／Airport Express バス USD 30以上 | UGX / USD | 年度不明 | — | Kampala 記事（準公式） |
 | ツアー代（4WD+ガイド+宿の包括料金） | **未確認** | — | — | — | 出典を取得していない |
@@ -218,7 +218,7 @@
 
 | URL | 種別 | 確認日 | 適用年度 |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Uganda ほか上記各ページ | 準公式 | 2026-11-08 | 現行版（価格は年度が混在） |
+| https://en.wikivoyage.org/wiki/Uganda ほか上記各ページ | 第三者（利用者編集） | 2026-11-08 | 現行版（価格は年度が混在） |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/uganda | 準公式 | 2026-11-08 | 2025-04-23更新 |
 | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf | 公式 | 2026-11-08 | 2024-07〜2026-06 |
 
@@ -226,14 +226,14 @@
 
 | URL | 種別 | 確認日 | 適用年度 |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Uganda | 準公式 | 2026-11-08 | 現行版（2026年記載を含む） |
-| https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park | 準公式 | 2026-11-08 | 2024年記載 |
-| https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park | 準公式 | 2026-11-08 | 年度不明 |
-| https://en.wikivoyage.org/wiki/Kibale_Forest_National_Park | 準公式 | 2026-11-08 | 年度不明 |
-| https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park | 準公式 | 2026-11-08 | 一部2019年 |
-| https://en.wikivoyage.org/wiki/Queen_Elizabeth_National_Park | 準公式 | 2026-11-08 | 古い（2009年等） |
-| https://en.wikivoyage.org/wiki/Jinja | 準公式 | 2026-11-08 | 2023〜2026 |
-| https://en.wikivoyage.org/wiki/Kampala | 準公式 | 2026-11-08 | 年度不明 |
+| https://en.wikivoyage.org/wiki/Uganda | 第三者（利用者編集） | 2026-11-08 | 現行版（2026年記載を含む） |
+| https://en.wikivoyage.org/wiki/Bwindi_Impenetrable_National_Park | 第三者（利用者編集） | 2026-11-08 | 2024年記載 |
+| https://en.wikivoyage.org/wiki/Mgahinga_Gorilla_National_Park | 第三者（利用者編集） | 2026-11-08 | 年度不明 |
+| https://en.wikivoyage.org/wiki/Kibale_Forest_National_Park | 第三者（利用者編集） | 2026-11-08 | 年度不明 |
+| https://en.wikivoyage.org/wiki/Murchison_Falls_National_Park | 第三者（利用者編集） | 2026-11-08 | 一部2019年 |
+| https://en.wikivoyage.org/wiki/Queen_Elizabeth_National_Park | 第三者（利用者編集） | 2026-11-08 | 古い（2009年等） |
+| https://en.wikivoyage.org/wiki/Jinja | 第三者（利用者編集） | 2026-11-08 | 2023〜2026 |
+| https://en.wikivoyage.org/wiki/Kampala | 第三者（利用者編集） | 2026-11-08 | 年度不明 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/uganda | 準公式（米国CDC） | 2026-11-08 | 2025-04更新/2026-08更新 |
 | https://www.ugandawildlife.org/ ほか（visitor-guide, safari-activities/gorilla-tracking） | 公式 | 2026-11-08 | 料金記載なし |
 | https://ugandawildlife.org/wp-content/uploads/2024/03/UWA-Conservation-Tariff-July-2024-June-2026.pdf | 公式 | 2026-11-08 | 本文を読み取れず |
