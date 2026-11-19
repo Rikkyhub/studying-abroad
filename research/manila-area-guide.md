@@ -2,7 +2,7 @@
 
 - 確認日：2026-11-16
 - 目的：2027年2〜4月のフィリピン滞在（バギオ）の前後、または一時帰国・乗継の合間に、**マニラとその周辺**で何ができるかを一か所にまとめる。**予約・問い合わせは未実施**。
-- 区分：**準公式**＝Wikivoyage等、**二次**＝ダイブガイド等、**公式**＝事業者・政府の公式ページ、**一般**＝一般知識（出典未取得）。価格は取得できた年のもので、2027年の確定値ではない。通貨はPHP・USDのまま（円換算しない）。
+- 区分：**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認）、**二次**＝ダイブガイド等、**公式**＝事業者・政府の公式ページ、**一般**＝一般知識（出典未取得）。価格は取得できた年のもので、2027年の確定値ではない。通貨はPHP・USDのまま（円換算しない）。
 - 関連：[スービック湾の沈船ダイビング](subic-wreck-diving.md)（詳細。2/4昼着→1泊→2/5に潜る日程モデルつき）、[バギオ発のダイビング](baguio-diving.md)、[バギオの週末観光](baguio-sightseeing.md)
 
 ## 0. 結論（先に）
@@ -48,7 +48,7 @@
 
 ## 2. マニラ市内の観光（半日〜1日）
 
-出典：Wikivoyage Manila（準公式、2026-11-16確認）。入場料は多くが未掲載。
+出典：Wikivoyage Manila（第三者（利用者編集）、2026-11-16確認）。入場料は多くが未掲載。
 
 | 地区 | 見どころ | メモ |
 |---|---|---|
@@ -130,12 +130,12 @@
 
 | URL | 種別 | 確認日 | 適用年度・注記 |
 |---|---|---|---|
-| https://en.wikivoyage.org/wiki/Manila | 準公式（Wikivoyage） | 2026-11-16 | 入場料の多くは未掲載。バス・ジープニーは2019年。国立博物館の無料表記は2016年 |
-| https://en.wikivoyage.org/wiki/Batangas | 準公式（Wikivoyage） | 2026-11-16 | バスターミナルの記載は2023年。運賃・所要は載っていない |
-| https://en.wikivoyage.org/wiki/Puerto_Galera | 準公式（Wikivoyage） | 2026-11-16 | フェリー運賃は「2026年時点」と記載。ダイブ料金・宿は年不明 |
+| https://en.wikivoyage.org/wiki/Manila | 第三者（利用者編集）（Wikivoyage） | 2026-11-16 | 入場料の多くは未掲載。バス・ジープニーは2019年。国立博物館の無料表記は2016年 |
+| https://en.wikivoyage.org/wiki/Batangas | 第三者（利用者編集）（Wikivoyage） | 2026-11-16 | バスターミナルの記載は2023年。運賃・所要は載っていない |
+| https://en.wikivoyage.org/wiki/Puerto_Galera | 第三者（利用者編集）（Wikivoyage） | 2026-11-16 | フェリー運賃は「2026年時点」と記載。ダイブ料金・宿は年不明 |
 | https://buceoanilao.com/season-iii/ | 事業者公式（Buceo Anilao） | 2026-10-17 | 2026-10-01〜2027-06-30（[baguio-diving.md](baguio-diving.md)より） |
 | https://mangosdivecenter.com/fun-diving-in-subic-bay/ | 事業者公式（Mangos Dive Center） | 2026-11-15 | 更新日の記載なし、著作権表記2023（[subic-wreck-diving.md](subic-wreck-diving.md)より） |
-| https://en.wikivoyage.org/wiki/Baguio | 準公式（Wikivoyage） | 2026-11-16 | マニラ→バギオのバス（運賃は2023年3月、Genesis 2019年、Dagupan 2018年の更新）。ロアカン空港の定期便なし（2024年時点） |
+| https://en.wikivoyage.org/wiki/Baguio | 第三者（利用者編集）（Wikivoyage） | 2026-11-16 | マニラ→バギオのバス（運賃は2023年3月、Genesis 2019年、Dagupan 2018年の更新）。ロアカン空港の定期便なし（2024年時点） |
 | https://www.victoryliner.com | 事業者公式 | 2026-11-16 | 予約・引換・変更の条件のみ取得。路線・運賃のページは取得できず |
 
 ## 7. 調査ログ（2026-11-16）

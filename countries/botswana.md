@@ -4,7 +4,7 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
@@ -18,24 +18,24 @@
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| チョベ国立公園（カズングラ経由の日帰り） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Chobe+National+Park+Botswana) | 象の密度が高い。拠点はカサネ(Chobe川沿い)。ビクトリアの滝へ移動しやすい（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（準公式） |
-| オカバンゴ・デルタ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Okavango+Delta) | 砂漠に流れ込む内陸デルタ。拠点マウン。一部はモレミ猟区（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認。参考: Okavango Delta 記事はモコロ(丸木舟)体験を2〜8月の季節限定と記載（特定キャンプの記述） | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（準公式）, [Wikivoyage](https://en.wikivoyage.org/wiki/Okavango_Delta)（準公式） |
-| セントラル・カラハリ猟区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Central+Kalahari+Game+Reserve) | 世界第2位の規模の保護区（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（準公式） |
-| マカディカディ・パン（拠点グウェタ） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Makgadikgadi+Pans+Gweta) | グウェタが玄関口（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（準公式） |
-| ンザイ・パン国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nxai+Pan+National+Park) | Other destinations に掲載（説明なし） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（準公式） |
-| ツォディロ・ヒルズ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tsodilo+Hills) | 約4,500点の岩絵（10万年にわたり制作と記載）（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（準公式） |
-| カラハリ・トランスフロンティア公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kgalagadi+Transfrontier+Park) | Other destinations に掲載（説明なし） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（準公式） |
+| チョベ国立公園（カズングラ経由の日帰り） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Chobe+National+Park+Botswana) | 象の密度が高い。拠点はカサネ(Chobe川沿い)。ビクトリアの滝へ移動しやすい（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（第三者（利用者編集）） |
+| オカバンゴ・デルタ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Okavango+Delta) | 砂漠に流れ込む内陸デルタ。拠点マウン。一部はモレミ猟区（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認。参考: Okavango Delta 記事はモコロ(丸木舟)体験を2〜8月の季節限定と記載（特定キャンプの記述） | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（第三者（利用者編集））, [Wikivoyage](https://en.wikivoyage.org/wiki/Okavango_Delta)（第三者（利用者編集）） |
+| セントラル・カラハリ猟区 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Central+Kalahari+Game+Reserve) | 世界第2位の規模の保護区（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（第三者（利用者編集）） |
+| マカディカディ・パン（拠点グウェタ） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Makgadikgadi+Pans+Gweta) | グウェタが玄関口（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（第三者（利用者編集）） |
+| ンザイ・パン国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Nxai+Pan+National+Park) | Other destinations に掲載（説明なし） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（第三者（利用者編集）） |
+| ツォディロ・ヒルズ | [検索リンク](https://www.google.com/maps/search/?api=1&query=Tsodilo+Hills) | 約4,500点の岩絵（10万年にわたり制作と記載）（Wikivoyage） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（第三者（利用者編集）） |
+| カラハリ・トランスフロンティア公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kgalagadi+Transfrontier+Park) | Other destinations に掲載（説明なし） | 未確認 | Wikivoyage Botswana の Climate 節は空欄のため5月の気候は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana)（第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明（出典の記述） | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| seswaa（セスワー） | ボツワナ固有の肉料理。牛・山羊・羊を塩だけで柔らかく煮て、ほぐすか叩く。pap等と食べる | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（準公式） |
-| bogobe（ソルガムのお粥） | sorghum meal porridge。seswaaの付け合わせ | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（準公式） |
-| bogobe jwa lerotse | ソルガム粥とlerotseメロン(加熱するとバターナッツに似る)の伝統料理 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（準公式） |
-| pap / samp | トウモロコシ粉の粥 / 砕きトウモロコシ | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（準公式） |
-| mopane worms（モパネワーム） | ボツワナ料理の例として挙げられる(昆虫の幼虫) | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（準公式） |
-Wikivoyage は準公式。価格は出典に年次付き数値がないため全て未確認。
+| seswaa（セスワー） | ボツワナ固有の肉料理。牛・山羊・羊を塩だけで柔らかく煮て、ほぐすか叩く。pap等と食べる | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（第三者（利用者編集）） |
+| bogobe（ソルガムのお粥） | sorghum meal porridge。seswaaの付け合わせ | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（第三者（利用者編集）） |
+| bogobe jwa lerotse | ソルガム粥とlerotseメロン(加熱するとバターナッツに似る)の伝統料理 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（第三者（利用者編集）） |
+| pap / samp | トウモロコシ粉の粥 / 砕きトウモロコシ | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（第三者（利用者編集）） |
+| mopane worms（モパネワーム） | ボツワナ料理の例として挙げられる(昆虫の幼虫) | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Botswana#Eat)（第三者（利用者編集）） |
+Wikivoyage は第三者（利用者編集）の旅行ガイド。価格は出典に年次付き数値がないため全て未確認。
 
 ## ビザ・入国（日本国籍）
 
@@ -51,7 +51,7 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 |---|---|---|
 | 外務省 危険レベル | **危険情報・感染症危険情報とも出ていない**（公式、2026-11-09確認、https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_296.html （外務省 海外安全ホームページ、公式、2026-11-09確認））。2027年5月の値は未確認 | 外務省 https://www.anzen.mofa.go.jp/info/pcsafetymeasure_296.html |
 | FCDO（英国） | 警告レベル・地域別の警告は当該ページに記載なし。ページは2026-11-06更新、2026-11-07確認済みと表示（2026年の情報で、2027年のものではない） | GOV.UK 2026-11-08確認 |
-| 治安 | 犯罪は少ないが増加傾向、周囲に注意。薬物は実刑義務。常用薬は処方箋携行（Wikivoyage Botswana、現行版） | 準公式 |
+| 治安 | 犯罪は少ないが増加傾向、周囲に注意。薬物は実刑義務。常用薬は処方箋携行（Wikivoyage Botswana、現行版） | 第三者（利用者編集） |
 | マラリア | 北部（チョベ、オカバンゴ）はマラリア地域。モレミでも蚊が多い。2025年4月に通常存在しない地域にも拡大と報告（FCDO health）。雨季ほか5月の具体的リスクは未確認。出発の少なくとも8週間前に医師・TravelHealthProで相談 | GOV.UK、Wikivoyage |
 | 住血吸虫症・炭疽・ダニ | 淡水接触を避ける、動物の死骸に触れない、ダニ対策 | GOV.UK health（2026-11-08確認） |
 | 医療 | 都市部は良好、地方は不十分。南ア・英国への搬送が必要な場合あり。私立病院は前払い。必ず海外旅行保険 | GOV.UK、Wikivoyage |
@@ -110,11 +110,11 @@ KAZA UNIVISA でカズングラ経由の日帰りのみ（ボツワナ宿泊は�
 
 | 時期 | 内容（出典） | 区分 |
 |---|---|---|
-| 11月〜4月 | 雨季。動物は恒久的な水場から離れる傾向（Chobe公園、Wikivoyage）。ンザイ・パンは雨季が見ごろとの記述もある | 準公式 |
-| 5月〜9月 | 乾季。「より行きやすい」（Wikivoyage Nxai Pan）。チョベでは乾季に象が川へ集まり見やすい（Wikivoyage Chobe） | 準公式 |
-| 6月〜8月 | 朝晩は非常に寒く日中は暑い（Wikivoyage Botswana）。デルタの氾濫が7〜8月に最大で約100,000km²（Wikivoyage Botswana） | 準公式 |
+| 11月〜4月 | 雨季。動物は恒久的な水場から離れる傾向（Chobe公園、Wikivoyage）。ンザイ・パンは雨季が見ごろとの記述もある | 第三者（利用者編集） |
+| 5月〜9月 | 乾季。「より行きやすい」（Wikivoyage Nxai Pan）。チョベでは乾季に象が川へ集まり見やすい（Wikivoyage Chobe） | 第三者（利用者編集） |
+| 6月〜8月 | 朝晩は非常に寒く日中は暑い（Wikivoyage Botswana）。デルタの氾濫が7〜8月に最大で約100,000km²（Wikivoyage Botswana） | 第三者（利用者編集） |
 | 5月 | **デルタの増水の始まり／乾季入り**。モコロは2〜8月の範囲内（Hauxa）。ただし**5月の降雨量・水位・平均気温・人出に関する数値は未確認**（公式の月別データ未取得）。Wikivoyage の Climate 節は空欄 | 未確認 |
-| マカディカディ | 野生動物は6〜11月（Wikivoyage）。5月はやや早い | 準公式 |
+| マカディカディ | 野生動物は6〜11月（Wikivoyage）。5月はやや早い | 第三者（利用者編集） |
 
 - 2027年5月の洪水到達時期は年によって変わると考えられるが、**予測は未確認**。マラリア・蚊は雨季ほどではないが5月も注意（後述）。
 - 2027年5月は乾季入りの時期で、気温が穏やかなこと・チョベの象を見やすいことが利点という**推測**だが、公式データでは裏付けていない（未確認）。
@@ -123,13 +123,13 @@ KAZA UNIVISA でカズングラ経由の日帰りのみ（ボツワナ宿泊は�
 
 | 接続 | 内容（出典） | 区分 |
 |---|---|---|
-| カサネ周辺の4か国国境 | カサネ/カズングラはボツワナ・ザンビア・ジンバブエ・ナミビアが近接する地点。2021年から**ボツワナ↔ザンビアの橋**が開通（ジンバブエ側にはなし）。歩行者は橋を渡れず車・タクシーが必要（Wikivoyage Kasane/Kazungula） | 準公式 |
-| カサネ→ビクトリアの滝 | 約70km。日帰りは未ガイドでP400〜500、ジンバブエ査証US$30〜55（国籍による）。ただし**日本旅券の料金は未確認**、年は未記載（Wikivoyage Kasane） | 準公式 |
+| カサネ周辺の4か国国境 | カサネ/カズングラはボツワナ・ザンビア・ジンバブエ・ナミビアが近接する地点。2021年から**ボツワナ↔ザンビアの橋**が開通（ジンバブエ側にはなし）。歩行者は橋を渡れず車・タクシーが必要（Wikivoyage Kasane/Kazungula） | 第三者（利用者編集） |
+| カサネ→ビクトリアの滝 | 約70km。日帰りは未ガイドでP400〜500、ジンバブエ査証US$30〜55（国籍による）。ただし**日本旅券の料金は未確認**、年は未記載（Wikivoyage Kasane） | 第三者（利用者編集） |
 | ビクトリアの滝側 | KAZA UNIVISA（US$50、12か月のうち最大30日、ザンビア/ジンバブエ間、**ボツワナは日帰りのみ（カズングラ国境経由）**）。日本は対象国（https://www.zambiaimmigration.gov.zm/kaza-univisa/ （公式、ザンビア入国管理局、2026-11-08確認）） | 公式（ザンビア入管、2026-11-08確認）。2027年の条件は未確認 |
-| カサネ→ナミビア(カティマ・ムリロ) | 道路・ミニバスがあるが国境の詳細は未確認（Wikivoyage Kasane） | 準公式 |
-| カサネ空港(BBK) | ガボローネ・ヨハネスブルグ便の記載（Wikivoyage Kasane / Chobe）。2027年5月の便数・運賃は**未確認** | 準公式 |
-| マウン空港(MUB) | ガボローネ・カサネ・ビクトリアの滝・ヨハネスブルグ(Air Botswana)、ケープタウン・ヨハネスブルグ(Airlink)、ウィントフック(FlyNamibia)（Wikivoyage Maun） | 準公式 |
-| ガボローネ空港(GBE) | ジンバブエ・ザンビア・南ア・ナミビア・ケニア・エチオピアから便（Wikivoyage Botswana）。ヨハネスブルグ↔ガボローネのバスは約6時間 | 準公式 |
+| カサネ→ナミビア(カティマ・ムリロ) | 道路・ミニバスがあるが国境の詳細は未確認（Wikivoyage Kasane） | 第三者（利用者編集） |
+| カサネ空港(BBK) | ガボローネ・ヨハネスブルグ便の記載（Wikivoyage Kasane / Chobe）。2027年5月の便数・運賃は**未確認** | 第三者（利用者編集） |
+| マウン空港(MUB) | ガボローネ・カサネ・ビクトリアの滝・ヨハネスブルグ(Air Botswana)、ケープタウン・ヨハネスブルグ(Airlink)、ウィントフック(FlyNamibia)（Wikivoyage Maun） | 第三者（利用者編集） |
+| ガボローネ空港(GBE) | ジンバブエ・ザンビア・南ア・ナミビア・ケニア・エチオピアから便（Wikivoyage Botswana）。ヨハネスブルグ↔ガボローネのバスは約6時間 | 第三者（利用者編集） |
 
 効率ルート案（評価）：
 1. **ビクトリアの滝(2〜3泊) → カサネ日帰り/1〜2泊 → （空路）マウン → デルタ2泊 → （空路）ヨハネスブルグ/ケープタウン**。往復の重複がなく、陸路の長距離（カサネ↔マウン、未舗装区間あり）を避けられる。
@@ -137,7 +137,7 @@ KAZA UNIVISA でカズングラ経由の日帰りのみ（ボツワナ宿泊は�
 
 ### 費用
 
-> 以下は Wikivoyage(準公式)の数値で、年は記載のあるもののみ併記。**2027年の確定料金ではない。**公式（DWNP・各事業者）の確認は未了。
+> 以下は Wikivoyage（第三者（利用者編集））の数値で、年は記載のあるもののみ併記。**2027年の確定料金ではない。**公式（DWNP・各事業者）の確認は未了。
 
 | 項目 | 金額 | 通貨 | 年・条件 | 出典 |
 |---|---|---|---|---|
@@ -198,25 +198,25 @@ KAZA UNIVISA でカズングラ経由の日帰りのみ（ボツワナ宿泊は�
 | URL | 種別 | 確認日 | 適用年度 |
 |---|---|---|---|
 | https://www.anzen.mofa.go.jp/info/pcsafetymeasure_296.html | 公式 | 2026-10-20 | 2025-06-17更新 |
-| https://en.wikivoyage.org/wiki/Botswana | 準公式（Wikivoyage） | 2026-10-20 | 現行版（Other destinations/Eat節。Climate節は空）（今回追加） |
-| https://en.wikivoyage.org/wiki/Okavango_Delta | 準公式（Wikivoyage） | 2026-10-20 | 現行版（モコロの季節限定の記述）（今回追加） |
+| https://en.wikivoyage.org/wiki/Botswana | 第三者（利用者編集）（Wikivoyage） | 2026-10-20 | 現行版（Other destinations/Eat節。Climate節は空）（今回追加） |
+| https://en.wikivoyage.org/wiki/Okavango_Delta | 第三者（利用者編集）（Wikivoyage） | 2026-10-20 | 現行版（モコロの季節限定の記述）（今回追加） |
 
 ### 詳細（旧深掘り調査）
 
 | URL | 種別 | 確認日 | 適用年・備考 | 取得結果 |
 |---|---|---|---|---|
-| https://en.wikivoyage.org/wiki/Botswana | 準公式 | 2026-11-08 | 現行版（為替は2026年7月時点の記載） | 成功 |
-| https://en.wikivoyage.org/wiki/Okavango_Delta | 準公式 | 2026-11-08 | 現行版（一部2024・2025年） | 成功 |
-| https://en.wikivoyage.org/wiki/Chobe_National_Park | 準公式 | 2026-11-08 | 入園料は2023年3月時点 | 成功 |
-| https://en.wikivoyage.org/wiki/Kasane | 準公式 | 2026-11-08 | 現行版（年未記載の価格あり） | 成功 |
-| https://en.wikivoyage.org/wiki/Maun | 準公式 | 2026-11-08 | 現行版（年未記載の価格あり） | 成功 |
-| https://en.wikivoyage.org/wiki/Moremi_Game_Reserve | 準公式 | 2026-11-08 | 概要のみ | 成功 |
-| https://en.wikivoyage.org/wiki/Central_Kalahari_Game_Reserve | 準公式 | 2026-11-08 | 概要のみ | 成功 |
-| https://en.wikivoyage.org/wiki/Makgadikgadi_Pans_National_Park | 準公式 | 2026-11-08 | 概要のみ | 成功 |
-| https://en.wikivoyage.org/wiki/Nxai_Pan_National_Park | 準公式 | 2026-11-08 | 概要のみ | 成功 |
-| https://en.wikivoyage.org/wiki/Gweta | 準公式 | 2026-11-08 | 現行版 | 成功 |
-| https://en.wikivoyage.org/wiki/Kazungula | 準公式 | 2026-11-08 | 現行版 | 成功 |
-| https://en.wikivoyage.org/wiki/Victoria_Falls | 準公式 | 2026-11-08 | 価格は主に2019年 | 成功 |
+| https://en.wikivoyage.org/wiki/Botswana | 第三者（利用者編集） | 2026-11-08 | 現行版（為替は2026年7月時点の記載） | 成功 |
+| https://en.wikivoyage.org/wiki/Okavango_Delta | 第三者（利用者編集） | 2026-11-08 | 現行版（一部2024・2025年） | 成功 |
+| https://en.wikivoyage.org/wiki/Chobe_National_Park | 第三者（利用者編集） | 2026-11-08 | 入園料は2023年3月時点 | 成功 |
+| https://en.wikivoyage.org/wiki/Kasane | 第三者（利用者編集） | 2026-11-08 | 現行版（年未記載の価格あり） | 成功 |
+| https://en.wikivoyage.org/wiki/Maun | 第三者（利用者編集） | 2026-11-08 | 現行版（年未記載の価格あり） | 成功 |
+| https://en.wikivoyage.org/wiki/Moremi_Game_Reserve | 第三者（利用者編集） | 2026-11-08 | 概要のみ | 成功 |
+| https://en.wikivoyage.org/wiki/Central_Kalahari_Game_Reserve | 第三者（利用者編集） | 2026-11-08 | 概要のみ | 成功 |
+| https://en.wikivoyage.org/wiki/Makgadikgadi_Pans_National_Park | 第三者（利用者編集） | 2026-11-08 | 概要のみ | 成功 |
+| https://en.wikivoyage.org/wiki/Nxai_Pan_National_Park | 第三者（利用者編集） | 2026-11-08 | 概要のみ | 成功 |
+| https://en.wikivoyage.org/wiki/Gweta | 第三者（利用者編集） | 2026-11-08 | 現行版 | 成功 |
+| https://en.wikivoyage.org/wiki/Kazungula | 第三者（利用者編集） | 2026-11-08 | 現行版 | 成功 |
+| https://en.wikivoyage.org/wiki/Victoria_Falls | 第三者（利用者編集） | 2026-11-08 | 価格は主に2019年 | 成功 |
 | https://www.gov.uk/foreign-travel-advice/botswana | 公式（英国政府） | 2026-11-08 | 2026-11-06更新 | 成功（警告節のみ） |
 | https://www.gov.uk/foreign-travel-advice/botswana/entry-requirements | 公式（英国政府） | 2026-11-08 | 英国旅券の要件 | 成功 |
 | https://www.gov.uk/foreign-travel-advice/botswana/health | 公式（英国政府） | 2026-11-08 | 2025年4月のマラリア言及あり | 成功 |

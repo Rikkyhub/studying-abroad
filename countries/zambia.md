@@ -4,7 +4,7 @@
 
 - 確認日：2026-10-20（出典の確認日は各行に記載）
 - この国での予定：5月の周遊の候補国。旅程は未確定で、このページは調べた事実の整理です（予約や確定ではありません）。
-- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**準公式**＝Wikivoyage・観光情報サイト、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
+- 区分：**公式**＝政府・公園運営機関・事業者の公式ページ、**第三者（利用者編集）**＝Wikivoyage（利用者が編集する旅行ガイドで、**公式ではない**。運賃・運行・2027年の成立条件は事業者の一次資料で未確認。観光情報サイトも同じ第三者として扱う）、**一般**＝一般知識（出典未取得）。価格は取得できた年度のもので、2027年の確定料金ではありません。
 
 ## 概要
 
@@ -18,24 +18,24 @@
 
 | 名称 | 場所・Google Maps | 見どころ | 入場料・体験料 | 5月の適性 | 出典URL（区分） |
 |---|---|---|---|---|---|
-| Mosi-oa-Tunya / ビクトリアの滝（ザンビア側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+Livingstone+Zambia) | 世界最大級の滝。リビングストンが拠点（Wikivoyage Zambia） | 入場 USD 10／人／日（国際訪問者、公式表の2025年版。SADC・居住者 USD 5、5〜13歳は50%、5歳未満は無料）。Wikivoyageの USD 20 は旧値 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | https://www.zambiatourism.com/park-entry-fees/（準公式）, [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
-| South Luangwa 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=South+Luangwa+National+Park) | アフリカ有数のサファリ地（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate）。ただし同記事は雨季(12〜4月)に多くのロッジが閉まると記載。5月の営業状況は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
-| Lower Zambezi 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lower+Zambezi+National+Park) | 元大統領専用の猟区、大衆観光のない原生地（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
-| Kafue 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kafue+National+Park) | 国内最大の国立公園（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
-| North Luangwa 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=North+Luangwa+National+Park) | 日帰りとサファリが可能（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
-| Lochinvar 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lochinvar+National+Park) | バードウォッチングに優れる（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
-| Blue Lagoon 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Blue+Lagoon+National+Park+Zambia) | アクセスしやすく、リーチュエ・シマウマ・バッファローがいる（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（準公式） |
+| Mosi-oa-Tunya / ビクトリアの滝（ザンビア側） | [検索リンク](https://www.google.com/maps/search/?api=1&query=Victoria+Falls+Livingstone+Zambia) | 世界最大級の滝。リビングストンが拠点（Wikivoyage Zambia） | 入場 USD 10／人／日（国際訪問者、公式表の2025年版。SADC・居住者 USD 5、5〜13歳は50%、5歳未満は無料）。Wikivoyageの USD 20 は旧値 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | https://www.zambiatourism.com/park-entry-fees/（準公式）, [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（第三者（利用者編集）） |
+| South Luangwa 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=South+Luangwa+National+Park) | アフリカ有数のサファリ地（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate）。ただし同記事は雨季(12〜4月)に多くのロッジが閉まると記載。5月の営業状況は未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（第三者（利用者編集）） |
+| Lower Zambezi 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lower+Zambezi+National+Park) | 元大統領専用の猟区、大衆観光のない原生地（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（第三者（利用者編集）） |
+| Kafue 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Kafue+National+Park) | 国内最大の国立公園（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（第三者（利用者編集）） |
+| North Luangwa 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=North+Luangwa+National+Park) | 日帰りとサファリが可能（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（第三者（利用者編集）） |
+| Lochinvar 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Lochinvar+National+Park) | バードウォッチングに優れる（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（第三者（利用者編集）） |
+| Blue Lagoon 国立公園 | [検索リンク](https://www.google.com/maps/search/?api=1&query=Blue+Lagoon+National+Park+Zambia) | アクセスしやすく、リーチュエ・シマウマ・バッファローがいる（Wikivoyage） | 未確認 | 乾季は5〜8月。日中24〜28℃、夜は7℃まで下がることも。乾季初期は滝の水量が最大・バードウォッチング向き（Wikivoyage Zambia Climate） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia)（第三者（利用者編集）） |
 
 ## おすすめの食べ物
 
 | 料理 | 説明（出典の記述） | 価格 | 出典URL（区分） |
 |---|---|---|---|
-| nsima（ンシマ） | トウモロコシ粉の厚いお粥。右手で丸めて、ndiwo/umunani と呼ばれる煮込み(relish)につけて食べる | 未確認（Wikivoyageは「現地食堂で5クワチャ未満」と記すが年次不明の旧記述のため採用せず） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（準公式） |
-| relish：kapenta（小魚の干物） | tiny dried fish。ndiwo の具のひとつ | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（準公式） |
-| relish：chibwabwa（かぼちゃの葉）・ndelele（オクラ） | 野菜の relish。ほかに豆・ピーナッツ・キャベツ等 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（準公式） |
-| 朝食のnsimaスープ | 朝食ではnsimaを薄めてスープにし、砂糖を少し入れることがある | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（準公式） |
-| Chama産の米 | トウモロコシ主食の代替として挙げられる | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（準公式） |
-Wikivoyage は準公式。価格は出典に年次付き数値がないため全て未確認。
+| nsima（ンシマ） | トウモロコシ粉の厚いお粥。右手で丸めて、ndiwo/umunani と呼ばれる煮込み(relish)につけて食べる | 未確認（Wikivoyageは「現地食堂で5クワチャ未満」と記すが年次不明の旧記述のため採用せず） | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（第三者（利用者編集）） |
+| relish：kapenta（小魚の干物） | tiny dried fish。ndiwo の具のひとつ | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（第三者（利用者編集）） |
+| relish：chibwabwa（かぼちゃの葉）・ndelele（オクラ） | 野菜の relish。ほかに豆・ピーナッツ・キャベツ等 | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（第三者（利用者編集）） |
+| 朝食のnsimaスープ | 朝食ではnsimaを薄めてスープにし、砂糖を少し入れることがある | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（第三者（利用者編集）） |
+| Chama産の米 | トウモロコシ主食の代替として挙げられる | 未確認 | [Wikivoyage](https://en.wikivoyage.org/wiki/Zambia#Eat)（第三者（利用者編集）） |
+Wikivoyage は第三者（利用者編集）の旅行ガイド。価格は出典に年次付き数値がないため全て未確認。
 
 ## ビザ・入国（日本国籍）
 
@@ -87,7 +87,7 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 
 ### 観光日数の目安
 
-出典は主に Wikivoyage（準公式）と一般知識。「最適」は筆者の推計であり、公式の推奨日数は未確認。
+出典は主に Wikivoyage（第三者（利用者編集））と一般知識。「最適」は筆者の推計であり、公式の推奨日数は未確認。
 
 | 場所 | 目安 | 理由 | 5月の注意 |
 |---|---|---|---|
@@ -220,7 +220,7 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 | https://www.zambiaimmigration.gov.zm/kaza-univisa/ | 公式 | 2026-10-20 | 現行 |
 | https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/ | 公式（ザンビア入管料金表） | 2026-10-25 | 2026年掲載条件、2027年未確定 |
 | https://www.zambiatourism.com/park-entry-fees/ | 準公式（観光情報サイト） | 2026-10-20 | 2025（本文取得、数値未抽出） |
-| https://en.wikivoyage.org/wiki/Zambia | 準公式（Wikivoyage） | 2026-10-20 | 現行版（Climate/Other destinations/Eat節）（今回追加） |
+| https://en.wikivoyage.org/wiki/Zambia | 第三者（利用者編集）（Wikivoyage） | 2026-10-20 | 現行版（Climate/Other destinations/Eat節）（今回追加） |
 
 ### 詳細（旧深掘り調査）
 
@@ -231,13 +231,13 @@ Wikivoyage は準公式。価格は出典に年次付き数値がないため全
 | https://www.zambiaimmigration.gov.zm/kaza-univisa/ | 公式 | 2026-10-20（既存資料） | 現行 |
 | https://www.zambiaimmigration.gov.zm/for-residents/pricing-page/ | 公式 | 2026-10-25（既存資料） | 2026年掲載条件 |
 | https://wwwnc.cdc.gov/travel/destinations/traveler/none/zambia | 公的（CDC） | 2026-11-08 | 2026-08-25 レビュー、マラリア 2025-04-23 |
-| https://en.wikivoyage.org/wiki/Zambia | 準公式 | 2026-11-08 | 現行版 |
-| https://en.wikivoyage.org/wiki/Livingstone | 準公式 | 2026-11-08 | 現行版（価格は年次混在） |
-| https://en.wikivoyage.org/wiki/Victoria_Falls | 準公式 | 2026-11-08 | 現行版（2019〜2023年データ混在） |
-| https://en.wikivoyage.org/wiki/South_Luangwa_National_Park | 準公式 | 2026-11-08 | 2012〜2024混在 |
-| https://en.wikivoyage.org/wiki/Lower_Zambezi_National_Park | 準公式 | 2026-11-08 | 2016年ほか |
-| https://en.wikivoyage.org/wiki/Kafue_National_Park | 準公式 | 2026-11-08 | 2016〜2024混在 |
-| https://en.wikivoyage.org/wiki/Lusaka | 準公式 | 2026-11-08 | 2020〜2024混在 |
+| https://en.wikivoyage.org/wiki/Zambia | 第三者（利用者編集） | 2026-11-08 | 現行版 |
+| https://en.wikivoyage.org/wiki/Livingstone | 第三者（利用者編集） | 2026-11-08 | 現行版（価格は年次混在） |
+| https://en.wikivoyage.org/wiki/Victoria_Falls | 第三者（利用者編集） | 2026-11-08 | 現行版（2019〜2023年データ混在） |
+| https://en.wikivoyage.org/wiki/South_Luangwa_National_Park | 第三者（利用者編集） | 2026-11-08 | 2012〜2024混在 |
+| https://en.wikivoyage.org/wiki/Lower_Zambezi_National_Park | 第三者（利用者編集） | 2026-11-08 | 2016年ほか |
+| https://en.wikivoyage.org/wiki/Kafue_National_Park | 第三者（利用者編集） | 2026-11-08 | 2016〜2024混在 |
+| https://en.wikivoyage.org/wiki/Lusaka | 第三者（利用者編集） | 2026-11-08 | 2020〜2024混在 |
 | https://www.zambiatourism.com/park-entry-fees/ | 公式相当 | 2026-11-08 | 取得失敗（403） |
 
 ## 調査ログ
