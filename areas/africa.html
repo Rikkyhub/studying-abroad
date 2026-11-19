@@ -12,14 +12,15 @@ html{scroll-padding-top:calc(var(--bar) + 14px)}
 html{font-size:calc(16px * var(--fs,1))}
 body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.7 var(--sans)}
 a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1760px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{overflow-wrap:anywhere}
 h1{font-size:1.9rem;line-height:1.35;margin:8px 0 6px;font-weight:800;letter-spacing:.01em}
 h2{font-size:1.35rem;line-height:1.45;margin:30px 0 8px;padding-top:0;font-weight:800}
 h3{font-size:1.1rem;line-height:1.55;margin:20px 0 6px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
 p{margin:6px 0} p,li{max-width:80ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
 .note{background:var(--warn-soft);color:var(--ink);padding:8px 14px;margin:10px 0;max-width:none;border-radius:var(--rad-s)}
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
-.scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
+.scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow-x:auto;max-width:100%}
 table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
@@ -28,7 +29,7 @@ th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
-th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
+th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.c,th.c{text-align:center}
@@ -76,6 +77,16 @@ header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--
 header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
+}
+@media(max-width:600px){
+:root{--bar:0px}
+header.bar{position:static}
+header.bar .wrap{flex-wrap:wrap;gap:0 6px;padding-bottom:6px}
+header.bar .brand{margin-right:auto}
+header.bar .fs{order:2;position:static}
+header.bar nav.menu{order:3;flex:1 1 100%;overflow:visible;flex-wrap:wrap;gap:4px}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:5px 10px;min-height:32px;border:1px solid var(--line)}
+header.bar .drop{position:absolute;top:100%;max-height:70vh}
 }
 
 header.bar .fs{display:inline-flex;align-items:center;gap:2px;margin-left:6px;font-size:.82rem}
@@ -243,7 +254,7 @@ a.mini .go{font-size:.78rem;font-weight:700;margin-top:4px}
 
 /* ---- ホーム：画面の高さ(100dvh)から逆算し、左=地図／右=旅の流れ・予算・やること を最初の画面に収める ---- */
 body.home{overflow-x:hidden}
-.home-main{max-width:none;padding-top:6px;padding-bottom:8px}
+.home-main{max-width:none;padding-top:4px;padding-bottom:6px}
 .home-top{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin:2px 0 6px}
 .home-top h1{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:900;line-height:1.3;margin:0}
 .home-top .hero-note{color:var(--muted);font-size:.78rem;line-height:1.5;margin:0;max-width:none;flex:1 1 360px}
@@ -276,7 +287,7 @@ a.seg .cost small{display:block;font-weight:500;font-size:.68rem;color:var(--mut
 .home-top .hero-note{display:none}
 .home-top{margin:0 0 4px}
 a.seg{padding:4px 12px;border-top-width:4px}
-a.seg .sub{display:none}
+a.seg .sub{font-size:.74rem}
 a.seg .cost{font-size:1.05rem}
 .home-right .strip .strip-todo{display:none}
 .home-body{height:calc(100dvh - var(--bar) - 44px);min-height:420px}
@@ -297,6 +308,10 @@ a.seg .cost{font-size:1.05rem}
 .pane-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
 .pane-side{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.88rem;min-width:0}
 .pane-side>*:first-child{margin-top:0}
+dl.digest{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0 0 10px;padding:0 0 8px;border-bottom:1px solid var(--line);font-size:.84rem}
+dl.digest dt{color:var(--muted);white-space:nowrap}
+dl.digest dd{margin:0;font-weight:700;min-width:0;overflow-wrap:anywhere}
+.pane-side>ul:first-of-type{font-size:.76rem;color:var(--muted)}
 .pane-side h2.side-h{font-size:.95rem;margin:12px 0 4px;padding:6px 0 0;border-top:1px solid var(--line)}
 .pane-side h2.side-h:first-child{border-top:0;padding-top:0;margin-top:0}
 .pane-side ul{padding-left:1.15em;margin:4px 0}
@@ -312,7 +327,8 @@ a.seg .cost{font-size:1.05rem}
 .pane-side td[data-label]::before{content:attr(data-label) "：";color:var(--muted);font-weight:700}
 .pane-side th{position:static;white-space:normal}
 .pane{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
-.pane .tabs{display:flex;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.pane .tabs{display:flex;flex-wrap:wrap;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line)}
+.pane-side .side-meta{margin-top:10px;padding-top:8px;border-top:1px solid var(--line);font-size:.86em;color:var(--muted)}
 .pane .tabs button{font:inherit;font-size:.86rem;padding:7px 12px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);cursor:pointer;white-space:nowrap;border-radius:0;margin:0;min-height:0}
 .pane .tabs button[aria-selected=true]{color:var(--ink);font-weight:900;border-bottom-color:var(--c,var(--accent))}
 .pane .tabs button:hover{color:var(--ink)}
@@ -430,10 +446,10 @@ tr[hidden]{display:none}
 
 /* ---- 携帯 ---- */
 @media(max-width:900px){.route-cols{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table:not(.cal):not(.pl){min-width:560px} th{position:static}}
+@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} :not(.pane-side)>.scroll>table:not(.cal):not(.pl):not(.gday){min-width:560px} th{position:static}}
 @media(max-width:640px){
 .hero{padding:30px 20px 26px;border-radius:16px} .hero h1{font-size:1.7rem}
-.scroll{overflow-x:visible;border:0;background:none;border-radius:0}
+.scroll{overflow-x:auto;border:0;background:none;border-radius:0}
 .scroll table:not(:has(td[data-label])){min-width:0;table-layout:auto}
 .scroll table:not(:has(td[data-label])) th,.scroll table:not(:has(td[data-label])) td{padding:7px 6px;overflow-wrap:anywhere}
 .scroll table:has(td[data-label]){min-width:0;display:block}
@@ -445,7 +461,7 @@ tr[hidden]{display:none}
 .scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
 .scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
 }
-@media(max-width:480px){html{font-size:calc(15.5px * var(--fs,1))} th,td{padding:7px 9px} h1{font-size:1.5rem}}
+@media(max-width:480px){html{font-size:calc(15.5px * var(--fs,1))} th,td{padding:7px 9px} h1,.page-head h1{font-size:1.3rem;min-width:0;word-break:break-all}}
 details.tri-help,details.tri-save{margin:6px 0;border:1px solid var(--line);border-radius:8px;padding:2px 10px;background:var(--bg)}details.tri-help>summary,details.tri-save>summary{cursor:pointer;min-height:40px;display:flex;align-items:center;font-weight:700;font-size:.92rem}ul.tri-help-list{margin:4px 0 8px;padding-left:1.3em;font-size:.92rem}ul.tri-help-list li{margin:3px 0}.tri-btns{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
 .fx-tag{display:inline-block;font-size:.78rem;font-weight:700;padding:0 6px;border:1px solid var(--line);border-radius:4px;color:var(--muted);vertical-align:1px}td.fixed{text-align:center!important;white-space:nowrap;background:color-mix(in srgb,var(--link) 6%,transparent)}tr.fixed-amt td.fixed .fx-tag{margin-right:4px}.fx-note{margin:6px 0}
 .pl-range label{margin-right:12px;white-space:nowrap}.pl-sum{font-weight:700;margin:10px 0}.pl-sum.over{color:var(--bad)}
@@ -501,7 +517,7 @@ document.addEventListener("DOMContentLoaded",function(){set(v);document.querySel
 <p>2027年5月の周遊を、<strong>マダガスカル先行＋ビクトリアの滝周辺3か国（ジンバブエ・ザンビア・ボツワナ）</strong>で組み直す想定の<strong>匿名モデル</strong>です（Issue #77）。旅程・航空券・宿はすべて未確定で、<strong>日数と費用はこれから調べる段階</strong>です。予算の目安は60万円（航空券を含む）で、安全、費用、訪問国の数の順に優先します。</p>
 <p><strong>比較の土台にしている基準モデル（旧・案G）</strong>：東京 → ムンバイ → モーリシャス → アンタナナリボ（マダガスカル）→ モーリシャス → ヨハネスブルグ → ビクトリアの滝周辺（ジンバブエ・ザンビア・ボツワナ）→ ケープタウン。約35日（Day 1 = 5/3 の仮置き）。<strong>これは採用した旅程ではありません。</strong> Issue #137 の方針で、5月に<strong>確定しているのは「5/4 日本発 → モーリシャス」だけ</strong>で、それ以外の訪問国・順番・日数・ナミビアの有無はすべて比較中です。新しい比較（5月M0/M1、8月A0〜A12）は <a href="../research/137-route-redesign-comparison.html">5月×8月ルート再設計の比較</a> と <a href="../maps/route-map.html">ルート地図</a> にあります。航空券は利用者申告の参考値のみで未検証です。</p>
 <div class="scroll"><table><thead><tr><th>時期（モデル）</th><th>内容</th><th>状態</th><th>概要</th></tr></thead><tbody><tr><td data-label="時期（モデル）">2027年5月</td><td data-label="内容"><strong>アフリカ周遊（5月）</strong></td><td data-label="状態">検討中（モデル）</td><td data-label="概要">約5週間の匿名モデル。日本→ムンバイ経由→モーリシャス観光→マダガスカル→モーリシャス→ヨハネスブルグ→VFA周辺3か国→ケープタウン。5月配分目標60万円は航空券と現地費を合算（Issue #80）。便・現地費は未確認。</td></tr></tbody></table></div>
-</aside><div class="pane"><div class="tabs" role="tablist"><button type="button" role="tab" id="tab-t2" data-t="t2" aria-controls="pan-t2" aria-selected="true">旅の流れ（日ごと）</button><button type="button" role="tab" id="tab-t3" data-t="t3" aria-controls="pan-t3" aria-selected="false">今日のやること</button><button type="button" role="tab" id="tab-t4" data-t="t4" aria-controls="pan-t4" aria-selected="false">費用の見積</button><button type="button" role="tab" id="tab-t5" data-t="t5" aria-controls="pan-t5" aria-selected="false">住む場所・町と地図</button><button type="button" role="tab" id="tab-t6" data-t="t6" aria-controls="pan-t6" aria-selected="false">出発前の準備</button><button type="button" role="tab" id="tab-t7" data-t="t7" aria-controls="pan-t7" aria-selected="false">調査メモ</button></div><div class="pane-body"><section role="tabpanel" id="pan-t2" data-t="t2" aria-labelledby="tab-t2"><h2 id="2-旅の流れ日ごと">2. 旅の流れ（日ごと）</h2>
+</aside><div class="pane"><div class="tabs" role="tablist"><button type="button" role="tab" id="tab-t2" data-t="t2" aria-controls="pan-t2" aria-selected="true" title="旅の流れ（日ごと）">旅の流れ</button><button type="button" role="tab" id="tab-t3" data-t="t3" aria-controls="pan-t3" aria-selected="false">今日のやること</button><button type="button" role="tab" id="tab-t4" data-t="t4" aria-controls="pan-t4" aria-selected="false">費用の見積</button><button type="button" role="tab" id="tab-t5" data-t="t5" aria-controls="pan-t5" aria-selected="false">住む場所・町と地図</button><button type="button" role="tab" id="tab-t6" data-t="t6" aria-controls="pan-t6" aria-selected="false">出発前の準備</button><button type="button" role="tab" id="tab-t7" data-t="t7" aria-controls="pan-t7" aria-selected="false">調査メモ</button></div><div class="pane-body"><section role="tabpanel" id="pan-t2" data-t="t2" aria-labelledby="tab-t2"><h2 id="2-旅の流れ日ごと">2. 旅の流れ（日ごと）</h2>
 <p>日付と曜日、国、移動・観光・予備の別は、<strong><a href="../maps/route-map.html">ルート地図のカレンダー</a></strong>（日数案で切り替え）で見られます。35日表（Day 1〜35）は <a href="../research/may-madagascar-vfa-redesign.html">5月の再設計：マダガスカル先行＋ビクトリアの滝周辺3か国</a> にあります。</p>
 <div class="scroll"><table><thead><tr><th>区間</th><th>Day（基準モデルの5/3起点の仮置き。5/4発なら1日ずらす）</th><th>内容</th></tr></thead><tbody><tr><td data-label="区間">日本 → モーリシャス</td><td data-label="Day（基準モデルの5/3起点の仮置き。5/4発なら1日ずらす）">1〜2</td><td data-label="内容">東京→ムンバイ→モーリシャス（便・乗継時間は未確認）</td></tr><tr><td data-label="区間">モーリシャス</td><td data-label="Day（基準モデルの5/3起点の仮置き。5/4発なら1日ずらす）">3〜5</td><td data-label="内容">島内観光（3日）。観光なし／乗継のみ／2〜4日を比較中</td></tr><tr><td data-label="区間">マダガスカル</td><td data-label="Day（基準モデルの5/3起点の仮置き。5/4発なら1日ずらす）">6〜19</td><td data-label="内容">アンタナナリボ→東部（アンダシベ）→西部（モロンダバ）→首都。14暦日の案（10日・7日・5日に縮める案もあり）</td></tr><tr><td data-label="区間">マダガスカル → モーリシャス → 南アフリカ</td><td data-label="Day（基準モデルの5/3起点の仮置き。5/4発なら1日ずらす）">19〜22</td><td data-label="内容">モーリシャスへ戻り（Day 19）、1日待機（Day 20）、ヨハネスブルグへ（Day 21）、接続の余裕（Day 22）</td></tr><tr><td data-label="区間">ビクトリアの滝周辺</td><td data-label="Day（基準モデルの5/3起点の仮置き。5/4発なら1日ずらす）">23〜31</td><td data-label="内容">ジンバブエ（滝）→ ザンビア（リビングストン）→ ボツワナ（カサネ・チョベ）→ ジンバブエへ戻る。空路の前日（Day 31）は予備</td></tr><tr><td data-label="区間">ケープタウン</td><td data-label="Day（基準モデルの5/3起点の仮置き。5/4発なら1日ずらす）">32〜35</td><td data-label="内容">空路で移動（Day 32）。学校前の生活準備と予備日（Day 33〜35）</td></tr></tbody></table></div>
 <p>ルートは <a href="../docs/11-route-builder.html">モデルルート作成</a> で、5月のM0A〜M1B・8月のA0〜A12・旧案を読み込んで、日数や順番を触れます。期間（5/4〜6/6の34暦日）を国・町ごとの泊数に割り振って残り日数を見たいときは、<a href="../docs/13-day-planner.html">日程プランナー</a> を使います。</p>

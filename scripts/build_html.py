@@ -179,6 +179,50 @@ TAB_ORDER = ("旅程の目安", "旅の流れ", "今日のやること", "費用
              "おおよその位置の地図", "出発前の準備", "未確認", "出典", "調査ログ", "調査メモ")  # タブの並び（見る順）
 
 
+DIGEST_KEYS = (("最適日数", ("最適日数", "最適な観光日数", "観光日数", "日数")), ("5月の適性", ("5月の適性", "5月")),
+               ("費用目安", ("費用目安", "費用")), ("コスパ", ("コスパ",)), ("タイパ", ("タイパ",)), ("未確認", ("未確認", "主な未確認")))
+
+
+def digest_from_conclusion(body: str) -> str:
+    """国別ページの「結論」の表（観点／項目｜結論）から、左に固定する「項目：値」の短い一覧を作る。見出し名・項目名の揺れを吸収する。
+    結論の表がない国は空（何も足さない）。値は先頭の一文だけにして縦に伸ばさない"""
+    m = re.search(r'<h3[^>]*>結論[^<]*</h3>\s*(?:<[^h][^>]*>\s*)*<div class="scroll"><table>(.*?)</table></div>', body, re.S)
+    if not m:
+        return ""
+    rows = re.findall(r'<tr><td[^>]*>(.*?)</td><td[^>]*>(.*?)</td></tr>', m.group(1), re.S)
+    got = {}
+    for k, v in rows:
+        key = re.sub(r"<[^>]+>", "", k).strip()
+        for name, aliases in DIGEST_KEYS:
+            if name in got:
+                continue
+            if any(key == a or key.startswith(a) for a in aliases):
+                txt = re.sub(r"<[^>]+>", "", v).strip()
+                txt = re.sub(r"https?://[^\s）)」]+", "", txt)  # URL は左の一覧では出さない（出典は本文のタブにある）
+                txt = re.sub(r"[（(]\s*[）)]", "", txt).replace("公式（", "公式（").strip()
+                # 括弧の中の「。」では切らない：カッコの外にある最初の「。」までを使い、長ければ約48字で省略する
+                depth, cut = 0, len(txt)
+                for i, ch in enumerate(txt):
+                    if ch in "（(":
+                        depth += 1
+                    elif ch in "）)":
+                        depth = max(0, depth - 1)
+                    elif ch == "。" and depth == 0:
+                        cut = i
+                        break
+                first = txt[:cut].strip() or txt
+                if name in ("コスパ", "タイパ"):
+                    first = re.split(r"[（(]", first)[0].strip() + " " + (re.search(r"[（(]([0-9]/5)", first).group(1) if re.search(r"[（(]([0-9]/5)", first) else "")
+                elif name == "未確認":
+                    first = re.split(r"[（(、]", first)[0].strip()  # 最初の項目名だけ
+                if "全文を開く" in first or "http" in first or first.count("（") != first.count("）"):
+                    continue  # 折りたたみ・URL・閉じていない括弧は、左の短い一覧には出さない（右のタブで読める）
+                got[name] = first.strip() if len(first) <= 40 else first[:39] + "…"
+                break
+    out = [f"<dt>{html.escape(n)}</dt><dd>{html.escape(got[n])}</dd>" for n, _ in DIGEST_KEYS if n in got]
+    return '<dl class="digest">' + "".join(out) + "</dl>" if out else ""
+
+
 def _tab_rank(title: str) -> int:
     for i, k in enumerate(TAB_ORDER):
         if k in title:
@@ -191,7 +235,7 @@ def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) 
     reorder=True のときは、タブを TAB_ORDER の順（見る順）に並べ替える。戻り値：(導入のHTML, タブ＋パネルのHTML, [(id, 見出し)])"""
     parts = re.split(r'(?=<h2 id=)', body)
     intro, secs = parts[0], parts[1:]
-    items = []
+    items, side = [], ""
     for i, p in enumerate(secs):
         m = re.match(r'<h2 id="([^"]+)">(.*?)</h2>(.*)$', p, re.S)
         if not m:
@@ -208,7 +252,7 @@ def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) 
             # 先頭の箇条書きだけを左に出し、見出し(h3)以降の詳細は、同じ名前のタブに回す
             cut = re.search(r'<h3[ >]', rest)
             head_part, detail = (rest[:cut.start()], rest[cut.start():]) if cut else (rest, "")
-            intro += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{head_part}'
+            side += f'<h2 class="side-h" id="{hid}">{h2html}</h2>{head_part}'
             if detail.strip():
                 items.append((i, title + "（詳細）", hid + "-detail", h2html + "（詳細）", detail))
             continue
@@ -220,9 +264,16 @@ def build_panes(body: str, side_keys: tuple = SIDE_KEYS, reorder: bool = False) 
         key = f"t{i + 1}"
         heads.append((hid, title))
         label = re.sub(r"^[0-9]+[.．]\s*", "", title)
-        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 0 else "false"}">{html.escape(label)}</button>')
+        detail_tab = label.endswith("（詳細）")
+        short = re.sub(r"（[^（）]*）", "", label).strip() or label
+        short += "（詳細）" if detail_tab else ""
+        tip = f' title="{html.escape(label)}"' if short != label else ""
+        tabs.append(f'<button type="button" role="tab" id="tab-{key}" data-t="{key}" aria-controls="pan-{key}" aria-selected="{"true" if n == 0 else "false"}"{tip}>{html.escape(short)}</button>')
         pans.append(f'<section role="tabpanel" id="pan-{key}" data-t="{key}" aria-labelledby="tab-{key}"><h2 id="{hid}">{h2html}</h2>{rest}</section>')
     html_ = f'<div class="pane"><div class="tabs" role="tablist">{"".join(tabs)}</div><div class="pane-body">{"".join(pans)}</div></div>'
+    if reorder and side:
+        # 国別ページ：左は概要・ビザ・安全を先に、確認日・区分などの注記は後ろに回す
+        intro = side + (f'<div class="side-meta">{intro}</div>' if intro.strip() else "")
     return intro, html_, heads
 
 
@@ -548,6 +599,8 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     tabbed = path.parent.name in ("areas", "countries") and len(re.findall(r"<h2 id=", body)) >= 3
     if tabbed:
         intro, panes, _heads = build_panes(body, reorder=(path.parent.name == "countries"))  # 国別ページは、見る順にタブを並べ替える
+        if path.parent.name == "countries":
+            intro = digest_from_conclusion(body) + intro  # 左の先頭に、結論の短い一覧（最適日数・5月の適性・費用…）を置く
         body = '<div class="pane-wrap"><aside class="pane-side">' + intro + '</aside>' + panes + '</div>' + PANE_SCRIPT
     elif path.parent.name in ("research", "areas"):
         shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く
@@ -813,7 +866,7 @@ def home_map(root: Path = ROOT) -> str:
     svg = build_route_map.africa_may_svg("home-")
     return ('<figure class="home-map">'
             f'<div class="mapbox-h">{svg}</div>'
-            '<figcaption><span class="legend"><i class="fl"></i>空路 <i class="dm"></i>国内線 <i class="rd"></i>陸路・車</span>'
+            '<figcaption><span class="legend">' + "".join(f'<i class="{k}"></i>{t} ' for k, t in (("fl", "空路"), ("dm", "国内線"), ("rd", "陸路・車")) if f'class="ln {k}"' in svg).rstrip() + '</span>'
             ' 比較の土台にしている基準モデル（旧・案G。採用ではありません）を点で結んだ概念図です。確定しているのは5/4 日本発→モーリシャスだけです。'
             '<a href="maps/route-map.html">ルート地図で、5月・8月の案を切り替えて見る →</a></figcaption></figure>')
 
@@ -1323,7 +1376,7 @@ root.querySelector(".r-send").addEventListener("click",function(ev){
  getDir().then(function(dir){return dir.getFileHandle("route.json",{create:true}).then(function(fh){return fh.createWritable()}).then(function(w){return w.write(text).then(function(){return w.close()})})})
   .then(function(){msg("triage フォルダに保存しました（Claudeが確認します）")}).catch(function(e){if(e&&e.name==="AbortError")return;download()});
 });
-build();paintCmp();
+build();
 })();
 </script>"""
 

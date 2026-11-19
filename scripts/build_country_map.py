@@ -54,8 +54,20 @@ CSS = BASE_CSS + """
 :root{--sea:#e6eef3;--land:#f4f1e8;--border:#b9b4a4;--grat:#cdd8df;--k1:#d9e6f2;--k1s:#0072B2;--k2:#f3e3d3;--k2s:#B84A00;--k3:#d8eee5;--k3s:#007A5A;--k4:#efdcea;--k4s:#A5498A;--soon:#ececec}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sea:#1a2530;--land:#2b2f2c;--border:#59605a;--grat:#2a3844;--k1:#1f3a50;--k1s:#56B4E9;--k2:#4a3321;--k2s:#FF9A5C;--k3:#1f4033;--k3s:#3DCCA0;--k4:#452c3d;--k4s:#E7A6CE;--soon:#34383a}}
 :root[data-theme="dark"]{--sea:#1a2530;--land:#2b2f2c;--border:#59605a;--grat:#2a3844;--k1:#1f3a50;--k1s:#56B4E9;--k2:#4a3321;--k2s:#FF9A5C;--k3:#1f4033;--k3s:#3DCCA0;--k4:#452c3d;--k4s:#E7A6CE;--soon:#34383a}
-.mapbox{position:relative;margin:10px 0;border:1px solid var(--line)}
-svg#cmap{display:block;width:100%;height:auto;background:var(--sea);font-family:var(--sans)}
+.cm-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:start;margin:8px 0}
+.mapbox{position:relative;margin:0;border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;background:var(--sea)}
+svg#cmap{display:block;width:100%;height:auto;max-height:calc(100dvh - 222px);background:var(--sea);font-family:var(--sans)}
+.cm-right{min-width:0;position:sticky;top:calc(var(--bar,52px) + 8px);max-height:calc(100dvh - 222px);overflow:auto;padding-right:4px}
+.cm-right h2{font-size:1.05rem;margin:6px 0 4px}
+.cm-right .lg{flex-direction:column;gap:4px;margin:0 0 6px;font-size:.86em}
+.cm-right .cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:6px;margin:4px 0}
+.cm-right .cc{padding:6px 10px}
+.cm-right .cc span{font-size:.84em;line-height:1.5}
+.cm-right .muted,.cm-right .note{font-size:.84em}
+.page-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 16px}
+.page-top h1{margin:2px 0;font-size:1.5rem}
+.page-top .lead{margin:0;font-size:.9rem;color:var(--muted)}
+@media(max-width:1000px){.cm-grid{grid-template-columns:minmax(0,1fr)}.cm-right{position:static;max-height:none;overflow:visible}svg#cmap{max-height:none}}
 .sea{fill:var(--sea)} .grat{fill:none;stroke:var(--grat);stroke-width:.6} .frame{fill:none;stroke:var(--border);stroke-width:1}
 .co{fill:var(--land);stroke:var(--border);stroke-width:.5;fill-rule:evenodd;stroke-linejoin:round}
 a.cn{cursor:pointer;outline:none}
@@ -152,15 +164,18 @@ def build() -> str:
 {bar("../", "maps/africa-countries.html")}
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
-<h1>アフリカ国別地図</h1>
-<p class="lead">色のついた国を押す（クリック・タップ・Tabキーで選んでEnter）と、その国の観光地・おすすめの食べ物・ビザ・安全・行き方のページに移動します。旅程の候補になった国だけを色分けしています。</p>
+<div class="page-top"><h1>アフリカ国別地図</h1>
+<p class="lead">色のついた国を押す（クリック・タップ・Tabキーで選んでEnter）と、その国の観光地・おすすめの食べ物・ビザ・安全・行き方のページに移動します。旅程の候補になった国だけを色分けしています。</p></div>
 {bm.map_switch("africa-countries")}
+<div class="cm-grid">
 <div class="mapbox">{svg}</div>
+<div class="cm-right">
 <div class="lg" aria-label="色の凡例">{legend}</div>
-<p class="muted">破線で灰色の国は、ページを準備中です。国境線は概念図としての表示で、各国の公式な主張を表すものではありません。小さな国（レソト・エスワティニ）は地図上で押しにくいので、下の一覧からも移動できます。</p>
 <h2>国の一覧</h2>
 <div class="cards">{"".join(cards)}</div>
+<p class="muted">破線で灰色の国は、ページを準備中です。国境線は概念図としての表示で、各国の公式な主張を表すものではありません。小さな国（レソト・エスワティニ）は地図上で押しにくいので、右の一覧からも移動できます。</p>
 <p class="note">各国ページの内容は、政府・観光局・国立公園など公式の情報を優先し、出典・確認日・未確認事項を記載しています。料金は取得できた年度のもので、2027年の確定料金ではありません。個人の予約・日程・支払いは含みません。</p>
+</div></div>
 <footer><nav class="all" id="all-pages" aria-label="全ページ">{site_nav(ROOT, ROOT / "maps" / "africa-countries.html")}</nav><p>地図データ：<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a>（パブリックドメイン）を <a href="https://github.com/topojson/world-atlas" target="_blank" rel="noopener">world-atlas</a> 2.0.2（ISC）経由で使用し、ランベルト正積方位図法で描画。このページは <code>scripts/build_country_map.py</code> が自動生成します（手で編集しない）。外部の通信は行いません。</p></footer>
 </main>
 <script>

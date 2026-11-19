@@ -42,14 +42,15 @@ html{scroll-padding-top:calc(var(--bar) + 14px)}
 html{font-size:calc(16px * var(--fs,1))}
 body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.7 var(--sans)}
 a{color:var(--link);text-underline-offset:3px} a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1760px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{overflow-wrap:anywhere}
 h1{font-size:1.9rem;line-height:1.35;margin:8px 0 6px;font-weight:800;letter-spacing:.01em}
 h2{font-size:1.35rem;line-height:1.45;margin:30px 0 8px;padding-top:0;font-weight:800}
 h3{font-size:1.1rem;line-height:1.55;margin:20px 0 6px;font-weight:700} h4{font-size:1rem;margin:22px 0 4px}
 p{margin:6px 0} p,li{max-width:80ch} .lead{color:var(--ink);margin:0 0 6px;font-size:1.05rem} .muted{color:var(--muted);font-size:.93rem}
 .note{background:var(--warn-soft);color:var(--ink);padding:8px 14px;margin:10px 0;max-width:none;border-radius:var(--rad-s)}
 ol.todo{margin:8px 0;padding-left:1.6em} ol.todo li{margin:6px 0} ul.facts{margin:8px 0;padding-left:1.4em;color:var(--muted)}
-.scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card)}
+.scroll{margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow-x:auto;max-width:100%}
 table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
@@ -58,7 +59,7 @@ th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
-th{position:sticky;top:var(--bar);z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
+th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.c,th.c{text-align:center}
@@ -106,6 +107,16 @@ header.bar .fs{flex:none;margin-left:0;position:sticky;right:0;background:var(--
 header.bar .fs span{display:none}
 header.bar nav.menu>details{position:static}
 header.bar .drop{position:fixed;left:12px;right:12px;top:calc(var(--bar) + 4px);min-width:0;max-height:calc(100vh - var(--bar) - 20px);overflow:auto}
+}
+@media(max-width:600px){
+:root{--bar:0px}
+header.bar{position:static}
+header.bar .wrap{flex-wrap:wrap;gap:0 6px;padding-bottom:6px}
+header.bar .brand{margin-right:auto}
+header.bar .fs{order:2;position:static}
+header.bar nav.menu{order:3;flex:1 1 100%;overflow:visible;flex-wrap:wrap;gap:4px}
+header.bar nav.menu>a,header.bar nav.menu>details>summary{padding:5px 10px;min-height:32px;border:1px solid var(--line)}
+header.bar .drop{position:absolute;top:100%;max-height:70vh}
 }
 
 header.bar .fs{display:inline-flex;align-items:center;gap:2px;margin-left:6px;font-size:.82rem}
@@ -273,7 +284,7 @@ a.mini .go{font-size:.78rem;font-weight:700;margin-top:4px}
 
 /* ---- ホーム：画面の高さ(100dvh)から逆算し、左=地図／右=旅の流れ・予算・やること を最初の画面に収める ---- */
 body.home{overflow-x:hidden}
-.home-main{max-width:none;padding-top:6px;padding-bottom:8px}
+.home-main{max-width:none;padding-top:4px;padding-bottom:6px}
 .home-top{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin:2px 0 6px}
 .home-top h1{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:900;line-height:1.3;margin:0}
 .home-top .hero-note{color:var(--muted);font-size:.78rem;line-height:1.5;margin:0;max-width:none;flex:1 1 360px}
@@ -306,7 +317,7 @@ a.seg .cost small{display:block;font-weight:500;font-size:.68rem;color:var(--mut
 .home-top .hero-note{display:none}
 .home-top{margin:0 0 4px}
 a.seg{padding:4px 12px;border-top-width:4px}
-a.seg .sub{display:none}
+a.seg .sub{font-size:.74rem}
 a.seg .cost{font-size:1.05rem}
 .home-right .strip .strip-todo{display:none}
 .home-body{height:calc(100dvh - var(--bar) - 44px);min-height:420px}
@@ -327,6 +338,10 @@ a.seg .cost{font-size:1.05rem}
 .pane-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
 .pane-side{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.88rem;min-width:0}
 .pane-side>*:first-child{margin-top:0}
+dl.digest{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0 0 10px;padding:0 0 8px;border-bottom:1px solid var(--line);font-size:.84rem}
+dl.digest dt{color:var(--muted);white-space:nowrap}
+dl.digest dd{margin:0;font-weight:700;min-width:0;overflow-wrap:anywhere}
+.pane-side>ul:first-of-type{font-size:.76rem;color:var(--muted)}
 .pane-side h2.side-h{font-size:.95rem;margin:12px 0 4px;padding:6px 0 0;border-top:1px solid var(--line)}
 .pane-side h2.side-h:first-child{border-top:0;padding-top:0;margin-top:0}
 .pane-side ul{padding-left:1.15em;margin:4px 0}
@@ -342,7 +357,8 @@ a.seg .cost{font-size:1.05rem}
 .pane-side td[data-label]::before{content:attr(data-label) "：";color:var(--muted);font-weight:700}
 .pane-side th{position:static;white-space:normal}
 .pane{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
-.pane .tabs{display:flex;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.pane .tabs{display:flex;flex-wrap:wrap;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line)}
+.pane-side .side-meta{margin-top:10px;padding-top:8px;border-top:1px solid var(--line);font-size:.86em;color:var(--muted)}
 .pane .tabs button{font:inherit;font-size:.86rem;padding:7px 12px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);cursor:pointer;white-space:nowrap;border-radius:0;margin:0;min-height:0}
 .pane .tabs button[aria-selected=true]{color:var(--ink);font-weight:900;border-bottom-color:var(--c,var(--accent))}
 .pane .tabs button:hover{color:var(--ink)}
@@ -460,10 +476,10 @@ tr[hidden]{display:none}
 
 /* ---- 携帯 ---- */
 @media(max-width:900px){.route-cols{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} table:not(.cal):not(.pl){min-width:560px} th{position:static}}
+@media(max-width:760px){.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch} :not(.pane-side)>.scroll>table:not(.cal):not(.pl):not(.gday){min-width:560px} th{position:static}}
 @media(max-width:640px){
 .hero{padding:30px 20px 26px;border-radius:16px} .hero h1{font-size:1.7rem}
-.scroll{overflow-x:visible;border:0;background:none;border-radius:0}
+.scroll{overflow-x:auto;border:0;background:none;border-radius:0}
 .scroll table:not(:has(td[data-label])){min-width:0;table-layout:auto}
 .scroll table:not(:has(td[data-label])) th,.scroll table:not(:has(td[data-label])) td{padding:7px 6px;overflow-wrap:anywhere}
 .scroll table:has(td[data-label]){min-width:0;display:block}
@@ -475,7 +491,7 @@ tr[hidden]{display:none}
 .scroll table:has(td[data-label]) td::before{content:attr(data-label);display:block;font-weight:700;color:var(--muted);font-size:.8rem;margin-bottom:2px}
 .scroll table:has(td[data-label]) td.n,.scroll table:has(td[data-label]) td.c{text-align:left;white-space:normal}
 }
-@media(max-width:480px){html{font-size:calc(15.5px * var(--fs,1))} th,td{padding:7px 9px} h1{font-size:1.5rem}}
+@media(max-width:480px){html{font-size:calc(15.5px * var(--fs,1))} th,td{padding:7px 9px} h1,.page-head h1{font-size:1.3rem;min-width:0;word-break:break-all}}
 """
 
 BASE_CSS = TOKENS + COMPONENTS
