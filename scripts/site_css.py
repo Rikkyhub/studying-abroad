@@ -270,6 +270,9 @@ a.region-col .go{margin-top:auto;padding-top:10px;font-weight:700;font-size:.82r
 .home-map .co{fill:var(--land);stroke:var(--border);stroke-width:.5;fill-rule:evenodd;stroke-linejoin:round} .home-map .co.v{fill:var(--hl);stroke:var(--muted);stroke-width:.8}
 .home-map .ln{fill:none;stroke-width:2.6;stroke-linecap:round} .home-map .ln.fl{stroke:var(--fl);stroke-dasharray:7 5} .home-map .ln.dm{stroke:var(--dm)} .home-map .ln.rd{stroke:var(--rd);stroke-width:3}
 .home-map .pt{fill:var(--bg);stroke:var(--pt);stroke-width:2}
+.home-map .ln.tr{fill:none;stroke-width:2.6;stroke-dasharray:7 5;stroke-linecap:round} .home-map .ln.tr.bg{stroke:var(--r-baguio)} .home-map .ln.tr.may{stroke:var(--r-may)} .home-map .ln.tr.home{stroke:var(--r-cape)}
+.home-map .dn.tr.bg{fill:var(--r-baguio)} .home-map .dn.tr.may{fill:var(--r-may)} .home-map .dn.tr.home{fill:var(--r-cape)}
+.home-map .legend i.tr{border-top-style:dashed} .home-map .legend i.tr.bg{border-top-color:var(--r-baguio)} .home-map .legend i.tr.may{border-top-color:var(--r-may)} .home-map .legend i.tr.home{border-top-color:var(--r-cape)}
 .home-map .tx{font-size:12.5px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3.4px;stroke-linejoin:round;pointer-events:none} .home-map .tx.big{font-size:15px}
 .home-map .dn{font-size:11px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
 .home-map .dn.a{fill:var(--fl)} .home-map .dn.b{fill:var(--dm)} .home-map .dn.c{fill:var(--rd)}
