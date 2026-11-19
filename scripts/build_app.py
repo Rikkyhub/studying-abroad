@@ -331,7 +331,7 @@ var h=/^#(prep|plan|cmp|map)$/.exec(location.hash);setTab(h?h[1]:"prep");
 """
 
 
-def build(root: Path = ROOT) -> str:
+def _build_raw(root: Path = ROOT) -> str:
     tok = json.loads((root / "app" / "tokens.json").read_text(encoding="utf-8"))
     tasks = load_tasks(root)
     routes, map_svg = load_routes(root)
@@ -385,6 +385,12 @@ def build(root: Path = ROOT) -> str:
 <script>{JS}</script>
 </body></html>
 """
+
+
+def build(root: Path = ROOT) -> str:
+    """作業管理用の「Issue #番号」の言及を外す（build_html.reader_clean）"""
+    from build_html import reader_clean
+    return reader_clean(_build_raw(root))
 
 
 def main() -> int:
