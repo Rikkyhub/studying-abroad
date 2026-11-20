@@ -55,4 +55,4 @@
 ## 5. 調査メモ
 
 - 比較・日別・航空網・出典：[アフリカと南米：5月・8月の順番とルート比較](../research/africa-south-america-2027-comparison.md)（第3章・第5〜8章・第11章）
-- 南米の各国の入国条件・治安は、まだ調べていません（未確認）。
+- 国ごとの体験・季節・入国・安全：[南米の国別比較（1）：ペルー・ボリビア・エクアドル・ブラジル](../research/south-america-countries-a.md)、[南米の国別比較（2）：アルゼンチン・チリ・メキシコ](../research/south-america-countries-b.md)
