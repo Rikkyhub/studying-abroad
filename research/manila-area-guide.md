@@ -144,3 +144,20 @@
 - 気付いたこと：Wikivoyage Batangas にはアニラオ（マビニ）のバス所要・運賃がなく、ジープニーが実用的との記載のみ。マニラのBGC・マカティの記載もなかった。
 - 検索エンジンは使っていない。外務省の危険情報は403で取得できず、未確認。
 - 2026-11-16（追記）：Wikivoyage Baguio と Victory Liner 公式トップを取得。Victory Liner の路線・時刻表ページは取得できず。WebSearch は環境の制限で使えず。Genesis・Solid North の公式は未取得。
+
+### 2026-11-20｜アニラオ・プエルト・ガレラ、市内の入場料、空港からの移動、バギオ行きのバス（R-58〜R-61・R-67）
+
+※ WebSearch は使えなかったため、公式ページを直接取得した。pamasahe.com・commutetour は**第三者の集約サイト**で、公式ではない。2026年以前、または年の書いていない値で、**2027年の料金ではない**。
+
+| 項目 | 確認できたこと | 出典（2026-11-20閲覧） | 適用年 |
+|---|---|---|---|
+| アニラオへの行き方（R-58） | JAM Liner：Cubao（Kamias）→Batangas City Grand Terminal、**PHP268**、毎時、約3時間（集約サイト）。マビニへの直通バスはなく、Grand Terminal から **BW-05 ジープニー**、リゾートへはトライシクル（Wikivoyage） | [pamasahe（第三者）](https://pamasahe.com/routes/cubao-manila-batangas-jam-liner-bus-schedule-fares)、[Wikivoyage Anilao](https://en.wikivoyage.org/wiki/Anilao) | 2026年10月更新／年の記載なし |
+| プエルト・ガレラのダイブ（R-59） | Asia Divers（公式）：**1本 USD37（タンク・ウェイト・ボート・ガイド込み）**、器材 USD8/本〜18/日、ナイト +18、ナイトロックス +7/本。Drift Diver 講習 USD270 | [Asia Divers](https://asiadivers.com/dive-resort-philippines/scuba-diving-rates/) | 年の記載なし |
+| イントラムロス（R-60） | Fort Santiago PHP75（学生等50）。Baluarte de San Diego は毎日8〜17時（最終入場16時）。Casa Manila・Museo de Intramuros は月曜休み。本サイトは HTTP 526 のため、Wayback の保存版（2026-10-14）で確認 | [Intramuros（保存版）](http://web.archive.org/web/20261014080256/https://intramuros.gov.ph/hours/) | 年の記載なし |
+| 国立博物館 | **入場無料**。個人は予約不要（walk-in）。日・月・祝日は walk-in 専用 | [National Museum 予約](https://reservation.nationalmuseum.gov.ph/) | 日付なし |
+| Manila Ocean Park | 平日10〜18時、土日祝9〜18時。料金ページにあるのは期間限定の割引だけで、**通常料金は未確認** | [Manila Ocean Park](https://manilaoceanpark.com/buy-tickets/) | 2026 |
+| Rizal Park | 公園の市民憲章（2026-03-25版）にあるのは撮影・会場貸しの許可料だけで、一般の入場料の項目がない（「無料」とは明記されていない） | [NPDC 市民憲章PDF](https://npdc.gov.ph/wp-content/uploads/2026/04/NPDC_CC_03252026.pdf) | 2026 |
+| 空港（NAIA）から市内（R-61） | UBE Express の PITX 行き **PHP150**（第3ターミナル発、1〜2時間おき、4:30〜20:00）。HM Transport で EDSA-Taft まで PHP40。黄色の空港タクシーは初乗り70＋4〜4.5/250m。Grab も使える | [Wikivoyage NAIA](https://en.wikivoyage.org/wiki/Ninoy_Aquino_International_Airport) | 年の記載なし |
+| マニラ→バギオのバス（R-67） | Victory Liner（Pasay→Baguio、集約サイト）：Regular 842・Deluxe 979・First 1,309・Royal 1,948（PHP）、約5時間。Genesis／JoyBus（Pasay→Baguio）：795・1,005・1,035。JoyBus 公式の時刻表は2023年時点で、Cubao・Avenida 発と **Baguio→NAIA**（NAIA→Baguio の記載はない） | [pamasahe VL](https://pamasahe.com/routes/manila-baguio-victory-liner-bus-schedule-fares)、[pamasahe Genesis](https://pamasahe.com/routes/pasay-manila-baguio-genesis-transport-service-inc-schedule-fares)、[JoyBus 公式](https://joybus.ph/joybus-trip-schedules) | 2026年8〜9月更新／2023 |
+
+**未確認**：PITX・Buendia 発のバタンガス行き、ジープニーの運賃、プエルト・ガレラのドリフトの条件と海洋保護区料、San Agustin の入場料、UBE Express の公式運賃（サイトが JS で描画され取得できない）、NAIA・PITX 発のバギオ行きの現行便。2027年の料金。

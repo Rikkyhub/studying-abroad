@@ -173,3 +173,19 @@
 - **失敗**：PAGASA PDF の WebFetch 本文抽出（バイナリのため。保存PDFの読取で代替）。旧調査での失敗：newsinfo.inquirer.net・mb.com.ph・pia.gov.ph・bmb.gov.ph・car.denr.gov.ph/mt-pulag（403）、mtpulag.denr.gov.ph（DNS）、banaue.gov.ph・benguet.gov.ph（接続不可）、main.baguio.gov.ph（JavaScript で本文なし）、sagada.gov.ph（再構築中）。
 - **計算**：復活祭の日付（2027-03-28）は計算アルゴリズムによる。
 - **2026-11-18追補**（Issue #171）：BenCab 公式（bencabmuseum.org/location-info）で営業日・最終入場・学割の条件、Sagada 自治体公式（tourism.sagada.gov.ph/getting-here）で GL Trans の時刻・約6時間・事前予約なしを確認。新節 §3.5 に週末旅行の優先度を追加。Mt. Pulag・Atok・La Union の2027年の料金・運行は引き続き未確認。
+
+### 2026-11-20｜サガダ・ラ・ウニオン・パナグベンガ・アトック・プラグ山の追加確認（R-63〜R-66）
+
+※ WebSearch は使えなかったため、公式ページを直接取得した。pamasahe.com・commutetour は**第三者の集約サイト**で、公式ではない。2026年以前、または年の書いていない値で、**2027年の料金ではない**。
+
+| 項目 | 確認できたこと | 出典（2026-11-20閲覧） | 適用年 |
+|---|---|---|---|
+| サガダ（R-63） | 町の公式：登録料 **PHP100/人**（到着時、またはオンラインで事前登録）。認定ガイド団体は6つ。**ガイド料は公式に記載なし**。Wikivoyage：Cave Connection（2〜3時間）1名800・1名追加ごとに+400、通常の洞窟 500/1〜4名、GL Trans 220・約6時間 | [Sagada Tourism](https://tourism.sagada.gov.ph/accredited-partners/)、[Wikivoyage Sagada](https://en.wikivoyage.org/wiki/Sagada) | 公式はフッター2025／Wikivoyageは年不明 |
+| ラ・ウニオン（R-64） | Gov Pack Rd（SM Baguio の下）発→San Juan：Partas PHP137、Fred and Cathy PHP147、4:00〜22:00（集約サイト）。サーフレッスンの料金は2010年の情報しかなく、参考にとどめる | [commutetour（第三者）](https://ph.commutetour.com/ph/routes/baguio-routes/baguio-to-san-fernando-la-union/) | 2026-01-15更新 |
+| パナグベンガ（R-65） | 主催者の公式サイトに**2027年の日程はまだない**。参考の**2026年**（第30回）：開会パレード 2/1、Grand Street Dance Parade 2/28、Grand Floral Float Parade 3/1、Session Road in Bloom 3/2〜8、閉会 3/8。**2027年に当てはめない** | [Panagbenga 2026 公式日程](https://www.panagbengaflowerfestival.com/wp-content/uploads/2026/02/30th-Panagbenga-Official-Calendar-as-of-19-February-2026.jpg) | 2026 |
+| アトックの花畑（R-66） | ベンゲット州の観光ページ：Northern Blossom は **PHP250**、月〜土 6:00〜11:30・13:00〜16:30、**日曜休み**、見頃は1〜4月。ガイド 500〜1,000（客5人まで） | [Benguet Tourism Northern Blossom](https://tourism.benguet.gov.ph/tourist_spots/northern-blossom-flower-farm/) | 年の記載なし |
+| プラグ山（R-66） | DENR 入山料は**外国人 USD15（またはペソ換算）**。Bokod 町の環境料 外国人200、Kabayan 町 300、集落の維持料 30〜60。ガイドの例：Babalak 1〜5名 1,500。Ambangeg の DENR ビジターセンターで登録し、**オリエンテーションは必須** | [Benguet Tourism Mt. Pulag](https://tourism.benguet.gov.ph/tourist_spots/mt-pulag/) | 年の記載なし |
+
+**未確認**：サガダの洞窟ガイドの公式料金と雨天閉鎖の基準、ラ・ウニオンの所要時間と現行のサーフ料金、パナグベンガ2027の日程と交通規制、プラグ山の診断書の要否・予約方法・2027年の運営（mtpulag.ph は JS のみ、PIA は403で取得できなかった）。
+
+**検索ログ（2026-11-20、R-50〜R-67 共通）**：WebSearch は使えなかった（API 400）。Brave の HTML 版で検索し、各サイトを直接取得。取得できた：mangosdivecenter、philippinedives、scubaholicssubic、scubatechphilippines、victoryliner、joybus.ph、panagbengaflowerfestival.com、tourism.sagada.gov.ph、tourism.benguet.gov.ph、reservation.nationalmuseum.gov.ph、manilaoceanpark.com、npdc.gov.ph、Wayback の intramuros.gov.ph、wildorchidsubic.com、asiadivers.com、pamasahe.com、commutetour、Wikivoyage。取得できなかった：intramuros.gov.ph（526）、Victory Liner の時刻ページ（停止中）、genesistransport・ubeexpress・newnaia・mtpulag.ph（JS で描画）、pana.ph（証明書の期限切れ）、PIA（403）、arizonadivesubic（DNS）、pitx（406）。

@@ -383,6 +383,10 @@
 | PHP | 2.53 | 2026-10-16 | MUFG 対顧客外国為替相場 仲値(TTM) | [出典](https://www.murc-kawasesouba.jp/fx/index.php) |
 | ZAR | 9.59 | 2026-10-16 | MUFG 対顧客外国為替相場 仲値(TTM) | [出典](https://www.murc-kawasesouba.jp/fx/index.php) |
 | USD | 158.19 | 2026-10-16 | MUFG 対顧客外国為替相場 仲値(TTM) | [出典](https://www.murc-kawasesouba.jp/fx/index.php) |
+| MZN | 2.5 | 2026-11-19 | 中銀参考レート(USD/MZN 63.91)×MUFG 米ドル仲値(TTM 159.48)で換算 | [出典](https://www.bancomoc.mz/en/areas-of-expertise/markets/foreign-exchange-market/) |
+| MUR | 3.41 | 2026-11-19 | 中銀の紙幣参考レート中値(USD/MUR 46.755)×MUFG 米ドル仲値(TTM 159.48)で換算 | [出典](https://www.bom.mu/markets/foreign-exchange-markets/exchange-rates/indicative-exchange-rates) |
+| KES | 1.23 | 2026-11-19 | 中銀公表レート(USD/KES 129.99)×MUFG 米ドル仲値(TTM 159.48)で換算 | [出典](https://www.centralbank.go.ke/) |
+| MGA | 0.0345 | 2026-10-30 | MUFGリサーチ「世界の為替相場」(USD/MGA 4571.50)×MUFG 米ドル仲値(TTM 157.54)で換算 | [出典](https://www.murc-kawasesouba.jp/fx/world.html) |
 <!-- /AUTO:fx -->
 
 ## 7. 更新のしかた
