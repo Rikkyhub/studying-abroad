@@ -104,6 +104,8 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 | 分野 | 資料 | 内容 | 参考（一次情報） | 最終確認日 |
 |---|---|---|---|---|
 | アフリカ | [アフリカと南米：5月・8月の順番とルート比較（2027年）](../research/africa-south-america-2027-comparison.md) | 5月アフリカ→8月南米と、5月南米→8月アフリカを、季節・黄熱・航空網・現地費で比較。航空券は未取得で総額は暫定 | [forth.go.jp](https://www.forth.go.jp/useful/yellowfever.html)<br>[galapagos.gob.ec](https://galapagos.gob.ec/tributo-de-ingreso/)<br>[machupicchu.gob.pe](https://www.machupicchu.gob.pe/circuitos-y-rutas-de-visita/) | 2026-11-20 |
+| アフリカ | [南米の国別比較（1）：ペルー・ボリビア・エクアドル・ブラジル](../research/south-america-countries-a.md) | 4か国の主な体験・5月と8月の季節・入国・黄熱・安全・費用・つながり。公式は英国外務省と一部の事業者のみ | [gov.uk](https://www.gov.uk/foreign-travel-advice/peru)<br>[gov.uk](https://www.gov.uk/foreign-travel-advice/ecuador)<br>[explorama.com](https://explorama.com/rates.html) | 2026-11-20 |
+| アフリカ | [南米の国別比較（2）：アルゼンチン・チリ・メキシコ](../research/south-america-countries-b.md) | 3か国の体験・季節・入国・安全・つながりと、世界一周の動線としての意味。8月の帰路にメキシコ | [gov.uk](https://www.gov.uk/foreign-travel-advice/mexico)<br>[gov.uk](https://www.gov.uk/foreign-travel-advice/chile)<br>[gov.uk](https://www.gov.uk/foreign-travel-advice/argentina) | 2026-11-20 |
 | アフリカ | [アフリカ周遊（8月）の国別シーズン比較](../research/africa-august-comparison.md) | 8月の南部・東部アフリカ。乾季の最盛期にあたる国の見どころ・費用・混雑（調査版） | － | 2026-11-08 |
 
 「参考」は各資料が根拠にした公式・一次情報へのリンクです。

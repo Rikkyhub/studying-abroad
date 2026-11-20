@@ -15,8 +15,10 @@
 | [5月×8月ルート再設計の比較（Issue #137）](../research/137-route-redesign-comparison.html) | [#137](https://github.com/Rikkyhub/studying-abroad/issues/137) | 作成中 | 2026-11-16 |
 | [陸路縦断とマダガスカルの順序の比較（Issue #168）](../research/168-overland-vs-madagascar-comparison.html) | [#168](https://github.com/Rikkyhub/studying-abroad/issues/168) | 作成中 | 2026-11-18 |
 | [アフリカと南米：5月・8月の順番とルート比較（2027年）](../research/africa-south-america-2027-comparison.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-20 |
+| [南米の国別比較（1）：ペルー・ボリビア・エクアドル・ブラジル](../research/south-america-countries-a.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 作成中 | 2026-11-20 |
 | [ケープタウン発ダイビング](../research/capetown-diving.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 調査中 | 2026-10-17 |
 | [準備チェック](../docs/03-preparation.html) | － | 整理済 | － |
+| [南米の国別比較（2）：アルゼンチン・チリ・メキシコ](../research/south-america-countries-b.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 作成中 | 2026-11-20 |
 | [出発前ロードマップ](../docs/06-predeparture-roadmap.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 整理済 | 2026-10-17 |
 | [バギオの週末観光](../research/baguio-sightseeing.html) | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) | 調査中 | 2026-10-16 |
 | [ブログ記事候補](../blog/article-ideas.html) | － | 整理済 | － |
