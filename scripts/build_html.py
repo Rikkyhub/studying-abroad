@@ -1227,7 +1227,7 @@ INDEX_BODY = """@@bar@@
 </div>
 
 <h2 id="docs">資料一覧</h2>
-<p class="muted">「参考」は各資料が根拠にした一次情報へのリンクです。出典の全一覧は <a href="research/sources.html">すべての出典</a>。</p>
+<p class="muted">「参考」は一次情報へのリンクです。出典一覧は <a href="research/sources.html">すべての出典</a>。</p>
 @@docs@@
 
 <footer>基準日：@@asof@@。資料は一次ソースと確認日を優先します。旅券番号・予約番号・領収書・勤務先情報・個人の支払額や資産は公開しません。表示している金額はすべて公開料金などに基づく見積です。保守者・AI 向け：@@maint@@ ／ <a href="https://github.com/Rikkyhub/studying-abroad/issues">GitHub Issues</a></footer>
