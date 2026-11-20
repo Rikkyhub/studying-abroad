@@ -18,7 +18,7 @@ from urllib.parse import quote_plus, urlparse
 REGION_LABEL = OrderedDict([
     ("baguio", "バギオ"),
     ("africa", "アフリカ周遊（5月）"),
-    ("africa-aug", "アフリカ周遊（8月）"),
+    ("africa-aug", "8月の周遊（アフリカ・南米）"),
     ("capetown", "ケープタウン"),
     ("common", "日本国内・保険・共通"),
 ])
