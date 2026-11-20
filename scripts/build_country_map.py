@@ -43,6 +43,7 @@ def load_countries() -> list[dict]:
         rows = list(csv.DictReader(f))
     for r in rows:
         r["sort"] = int(r["sort"] or 0)
+    rows = [r for r in rows if r["group"] in AFRICA_GROUPS]
     return sorted(rows, key=lambda r: (r["sort"], r["slug"]))
 
 
@@ -98,7 +99,9 @@ GROUP_NAMES = {
     "g1": "5月の周遊で通る国（案G：モーリシャス・マダガスカル・ビクトリアの滝周辺3か国・南アフリカ）",
     "g2": "案Gの外の候補（南部・インド洋側：レソト・エスワティニ・ナミビア・モザンビーク・マラウイ）",
     "g3": "参考（東アフリカ：ケニア・タンザニア・ウガンダ・ルワンダ・エチオピア）",
+    "g4": "南米・メキシコ（アフリカ地図には描かない。国別ページは上部の「国別」から）",
 }
+AFRICA_GROUPS = ("g1", "g2", "g3")  # この地図（アフリカ）に描く国のグループ。g4（南米・メキシコ）は描かない
 
 
 def _build_raw() -> str:

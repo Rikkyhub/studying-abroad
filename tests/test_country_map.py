@@ -51,6 +51,8 @@ class MapPageTests(unittest.TestCase):
     def test_every_country_with_a_page_is_a_link(self):
         t = PAGE.read_text(encoding="utf-8")
         for c in countries():
+            if c["group"] not in cm.AFRICA_GROUPS:  # 南米・メキシコ（g4）はアフリカ地図に描かない
+                continue
             self.assertIn(f'href="../countries/{c["slug"]}.html"', t, c["slug"])
 
     def test_all_link_targets_exist(self):
@@ -67,7 +69,7 @@ class MapPageTests(unittest.TestCase):
     def test_keyboard_and_screen_reader_access(self):
         t = PAGE.read_text(encoding="utf-8")
         self.assertIn('role="group"', t)
-        self.assertEqual(len(re.findall(r'<a class="cn[^"]*" href=', t)), len(countries()))
+        self.assertEqual(len(re.findall(r'<a class="cn[^"]*" href=', t)), len([c for c in countries() if c["group"] in cm.AFRICA_GROUPS]))
         self.assertIn("aria-label", t)
 
     def test_output_does_not_depend_on_hash_seed(self):

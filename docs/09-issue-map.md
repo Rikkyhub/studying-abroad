@@ -80,6 +80,13 @@
 | [モーリシャス（国別ページ）](../countries/mauritius.html) | [#77](https://github.com/Rikkyhub/studying-abroad/issues/77) | 作成中 | 2026-11-10 |
 | [アフリカの国の比較表（13か国）（日数・シーズン・費用・コスパ・タイパ）](../research/africa-13-countries-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
 | [アフリカ周遊（8月）の国別シーズン比較](../research/africa-august-comparison.html) | [#1](https://github.com/Rikkyhub/studying-abroad/issues/1) | 調査中 | 2026-11-08 |
+| [ペルー](../countries/peru.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
+| [ボリビア](../countries/bolivia.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
+| [エクアドル](../countries/ecuador.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
+| [ブラジル](../countries/brazil.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
+| [アルゼンチン](../countries/argentina.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
+| [チリ](../countries/chile.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
+| [メキシコ](../countries/mexico.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
 | [確認待ち（QA）](../docs/10-qa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-11-08 |
 | [モデルルート作成](../docs/11-route-builder.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-08 |
 | [飛行機代の内訳](../docs/12-flights.html) | [#80](https://github.com/Rikkyhub/studying-abroad/issues/80) | 作成中 | 2026-11-09 |
