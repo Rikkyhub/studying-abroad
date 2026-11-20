@@ -25,7 +25,7 @@ SOURCE_DIRS = ["areas", "research", "countries", "docs", "blog"]
 DATA_DIR = "data"
 GROUPS = {"areas": "地域別", "research": "現地調査", "countries": "国別（アフリカ・南米）", "docs": "計画・費用", "blog": "ブログ"}
 ISSUE_MAP = "09-issue-map.md"
-MAP_PAGES = [("world-map", "世界地図"), ("africa-map", "アフリカ地図"), ("africa-countries", "アフリカ国別地図"), ("route-map", "ルート地図（5月・8月の案を選んで見る）")]  # scripts/build_maps.py が生成する maps/*.html
+MAP_PAGES = [("world-map", "世界地図"), ("africa-map", "アフリカ地図"), ("africa-countries", "アフリカ国別地図"), ("southamerica-countries", "南米国別地図"), ("route-map", "ルート地図（5月・8月の案を選んで見る）")]  # scripts/build_maps.py が生成する maps/*.html
 MAP_GROUP = "ルート地図"
 ARCHIVE_PREFIX = "archive-"  # research/archive-*.md = 採用していない・古い比較案（案Gの前の資料）
 ARCHIVE_GROUP = "過去の比較案（参考）"

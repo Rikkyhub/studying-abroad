@@ -7,6 +7,7 @@
   3. scripts/build_maps.py  data/route_points.csv・routes.csv・data/geo -> maps/*.html（世界地図・アフリカ地図）
   4b. scripts/build_route_map.py  data/route_points.csv -> maps/route-map.html（案Gの地図・Day番号・マダガスカル拡大図）
   4. scripts/build_country_map.py  data/countries.csv・countries/*.md の有無 -> maps/africa-countries.html（国別リンク地図）
+  4a. scripts/build_sa_country_map.py  同じ入力（group=g4）-> maps/southamerica-countries.html（南米の国別リンク地図）
   5. scripts/build_single.py 上の生成物を連結 -> all.html（全ページを1枚にした閲覧用。Vercel などの静的ホスティング用）
   6. scripts/build_app.py   data/tasks.csv・app/tokens.json -> app.html（準備タスクのアプリ風画面）
 
@@ -17,7 +18,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-STEPS = ["build.py", "build_html.py", "build_maps.py", "build_country_map.py", "build_route_map.py", "build_single.py", "build_app.py"]
+STEPS = ["build.py", "build_html.py", "build_maps.py", "build_country_map.py", "build_sa_country_map.py", "build_route_map.py", "build_single.py", "build_app.py"]
 
 
 def main(argv=None):
