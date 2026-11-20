@@ -72,7 +72,7 @@ class IndexTests(unittest.TestCase):
             self.assertIn(f'href="areas/{k}.html"', self.index)
         import re
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
-        self.assertLess(len(self.index), 100000)  # 5月の案Gの地図（SVG約46KB）をトップの中心に置いた分を加算  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
+        self.assertLess(len(self.index), 104000)  # 南米・メキシコの国別ページ7件を上部の「国別」と全ページ一覧に足した分（約1,100文字、#185。main時点で99,826文字）を加算  # 5月の案Gの地図（SVG約46KB）をトップの中心に置いた分を加算  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
 
     def test_tables_have_headers(self):
         import re

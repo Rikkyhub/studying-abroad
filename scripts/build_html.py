@@ -23,7 +23,7 @@ from urllib.parse import quote_plus, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIRS = ["areas", "research", "countries", "docs", "blog"]
 DATA_DIR = "data"
-GROUPS = {"areas": "地域別", "research": "現地調査", "countries": "アフリカの国別", "docs": "計画・費用", "blog": "ブログ"}
+GROUPS = {"areas": "地域別", "research": "現地調査", "countries": "国別（アフリカ・南米）", "docs": "計画・費用", "blog": "ブログ"}
 ISSUE_MAP = "09-issue-map.md"
 MAP_PAGES = [("world-map", "世界地図"), ("africa-map", "アフリカ地図"), ("africa-countries", "アフリカ国別地図"), ("route-map", "ルート地図（5月・8月の案を選んで見る）")]  # scripts/build_maps.py が生成する maps/*.html
 MAP_GROUP = "ルート地図"
@@ -1957,7 +1957,7 @@ NAV_MAIN = [("ホーム", "index.html"), ("バギオ", "areas/baguio.html"), ("�
             ("ケープタウン", "areas/capetown.html"), ("8月", "areas/africa-aug.html"), ("費用", "docs/02-budget.html")]
 
 
-COUNTRY_GROUP_LABEL = {"g1": "5月の周遊で通る国", "g2": "南部アフリカのほかの候補", "g3": "東アフリカ（参考）"}
+COUNTRY_GROUP_LABEL = {"g1": "5月の周遊で通る国", "g2": "南部アフリカのほかの候補", "g3": "東アフリカ（参考）", "g4": "南米・メキシコ"}
 
 
 def _country_links(root: Path = ROOT) -> list[tuple[str, list[tuple[str, str]]]]:
