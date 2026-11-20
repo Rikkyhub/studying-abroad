@@ -180,3 +180,21 @@
 - 取得失敗：mangosdivecenter.com の wreck-diving ページ（404）、PADIの飛行後・高地ページ（404）。Wikivoyage の Subic ページは別の自治体（Zambales）の記事で、ダイブ情報なし。
 - 検索エンジンは使っていない。
 - 認定・ログ本数は本人の申告で、公開資料には認定の詳細を書かない。
+
+### 2026-11-20｜沈船の水深・必要な認定・料金・許可、バス、宿の追加確認（R-50〜R-55）
+
+※ WebSearch は使えなかったため、公式ページを直接取得した。pamasahe.com・commutetour は**第三者の集約サイト**で、公式ではない。2026年以前、または年の書いていない値で、**2027年の料金ではない**。
+
+| 項目 | 確認できたこと | 出典（2026-11-20閲覧） | 適用年 |
+|---|---|---|---|
+| 水深と必要な認定（R-54） | Scubaholics Subic（事業者）の掲載値：El Capitan 3〜22m（OW）、LCU 8〜24m（OW）、San Quentin 11〜16m（OW）、**USS New York 15〜27m・内部35m（AOW）**、日本の哨戒艇 17〜24m（OW）、**LST-559 24〜36m（AOW、ナイトロックス推奨）**。LST と哨戒艇は地震の損傷で内部に入れない。**Skyraider は掲載なし** | [Scubaholics Subic](https://scubaholicssubic.com/ship-wrecks) | 年の記載なし |
+| 同（ダイブガイド） | USS New York 17〜30m（AOW、内部は Wreck Diver）、LST 28〜35m、Skyraider 35〜36m（AOW）。Oryoku Maru は戦没者の墓のため潜水禁止 | [philippinedives](https://philippinedives.com/dive-guide/subic-bay/)（二次情報） | 2026年5月時点 |
+| ログ本数の条件（R-50） | Mangos：ファンダイブは認定ダイバーなら可。潜るサイトは「資格・希望・潜水歴・海況」で決め、**経験本数の数値基準は書かれていない**。F4 Phantom（43m）だけ Deep 認定が必要 | [Mangos Fun diving](https://mangosdivecenter.com/fun-diving-in-subic-bay/) | 期限の記載なし |
+| 参考：沈船の講習 | Scuba Tech Philippines の Wreck Essentials は「AOW以上・**ログ25本以上**」。Beginner Wreck USD200（1日2本）、Essentials USD600（3日）。タンク・ガス・ボート代は別 | [Scuba Tech](https://scubatechphilippines.com/wreck-diving-courses/wreck-diving-essentials/) | 年の記載なし |
+| ダイブ料金（R-51） | Mangos：器材込み PHP2,300/本、自分の器材 PHP1,900/本（**ガイド・ボート込み**）。ナイトロックス +300、ダイブコンピューター 300/日（料金に含まない）。午前便は9:00発で2本・13時ごろ帰着（8:15集合）。午後便は14:00発で1本・最少2名 | 同上 Mangos | 期限の記載なし |
+| 相場（二次情報） | ファンダイブ PHP1,800〜2,500、5本 7,500〜9,000、10本 14,000〜17,000。SBMA のゲート料 約50、ガイドへのチップ 200〜500/日 | philippinedives | 2026年5月 |
+| USS New York の許可（R-55） | 「航路上にあるため **SBMA Harbor Patrol の事前許可が要る**」との記載。手続き・日数・事業者が手配するかは書かれていない | philippinedives | 2026 |
+| マニラ→オロンガポのバス（R-52） | Victory Liner 公式の時刻・運賃ページは「現在利用できません」。集約サイト：カロオカン発→オロンガポ 普通エアコン **PHP299**、エクスプレス **PHP379**、1日19便（4:30〜22:00）。Cubao PHP320・Avenida PHP308・Pasay PHP417（運賃のみ）。燃料サーチャージで上がることがある | [VL公式](https://www.victoryliner.com/TerminalGuide.aspx)、[pamasahe（第三者）](https://pamasahe.com/routes/caloocan-manila-olongapo-victory-liner-bus-schedule-fares) | 2026年11月更新 |
+| バレット地区の宿（R-53） | Wild Orchid Beach Resort（公式）：Deluxe **PHP3,999**〜Suite 8,999（**VAT込み**、予告なく変更あり）。朝食・所在地は未確認。二次の相場：格安 700〜1,250、中級 1,400〜2,500、ビーチリゾート 3,000〜 | [Wild Orchid](https://www.wildorchidsubic.com/rates.php)、philippinedives | 年の記載なし／2026 |
+
+**未確認**：アドバンス・ログ11本で LST に潜れるか（数値基準を公開している事業者がない。事業者に確認する）。USS New York の許可の手続き。Victory Liner の公式時刻・運賃。所要時間（集約サイトの約2時間と、既存の3〜4時間が食い違う）。2027年の料金。
