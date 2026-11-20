@@ -697,7 +697,7 @@ def _build_raw() -> str:
         info_parts.append(f'<div class="rinfo" data-rt="{rid}" style="display:none"><b>8月 南米 {html.escape(rid)}：{html.escape(title)}</b>'
                           f'日数の配分（目安）：{html.escape(days)}／主な未確認：{html.escape(unk)}。'
                           'ケープタウン→サンパウロが南米への唯一の直行（第三者の運航データ）。運賃・便・曜日は未確認。'
-                          '比較は<a href="../research/africa-south-america-2027-comparison.html">アフリカと南米の比較</a>の第5章</div>')
+                          'しおりは<a href="../areas/southamerica-aug.html">8月の周遊（南米）</a>、比較は<a href="../research/africa-south-america-2027-comparison.html">アフリカと南米の比較</a>の第5章</div>')
     infos_r = "".join(info_parts)
     btns_cal = "".join(f'<button type="button" data-cplan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
     cal_key = "".join(f'<span><i style="background:var(--c-{k})"></i>{v}</span>' for k, v in KIND_LABEL.items())

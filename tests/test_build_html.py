@@ -192,7 +192,7 @@ class IndexTests(unittest.TestCase):
 class NavTests(unittest.TestCase):
     """全ページ共通の上部ナビ：ホーム・地域4つ・費用が横並びで、ほかの入口は「ほか」から開く"""
 
-    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "8月", "費用")
+    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "アフリカ", "南米", "費用")  # アフリカ・南米は「8月」の開閉メニューの中
 
     def test_main_links_on_every_kind_of_page(self):
         for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "research/sources.html",
@@ -201,7 +201,7 @@ class NavTests(unittest.TestCase):
             nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
             for label in self.MAIN:
                 self.assertIn(f">{label}</a>", nav, f"{rel}: {label}")
-            for menu in ("国別", "地図", "ツール", "資料"):
+            for menu in ("8月", "国別", "地図", "ツール", "資料"):
                 self.assertIn(f"<summary>{menu}</summary>", nav, rel)
 
     def test_current_page_is_marked(self):
