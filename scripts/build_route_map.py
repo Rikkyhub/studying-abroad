@@ -464,6 +464,52 @@ def build_africa(points, geo, routes):
     return "".join(out)
 
 
+# 8月の南米案（research/africa-south-america-2027-comparison.md 第5章の表をそのまま点で結ぶ）。座標は空港・町のおおよその値。
+# 東京への最後の区間は「米国など経由」で、図の外（北西）へ出る線で示す。運賃・便・曜日は未確認
+SA_POINTS = {
+    "GRU": ("サンパウロ", -23.4356, -46.4731), "LIM": ("リマ", -12.0219, -77.1143), "CUZ": ("クスコ", -13.5357, -71.9388),
+    "MAPI": ("マチュピチュ", -13.1631, -72.5450), "IQT": ("イキトス", -3.7848, -73.3088), "ICA": ("ワカチナ", -14.0875, -75.7626),
+    "LPB": ("ラパス", -16.5133, -68.1922), "UYU": ("ウユニ", -20.4463, -66.8484), "GYE": ("グアヤキル", -2.1574, -79.8837),
+    "GPS": ("ガラパゴス", -0.4538, -90.2659),
+}
+_F, _O = "flight", "overland"
+_PERU = [("LIM", "CUZ", _F), ("CUZ", "MAPI", _O), ("MAPI", "CUZ", _O), ("CUZ", "LIM", _F), ("LIM", "IQT", _F), ("IQT", "LIM", _F)]
+SA_ROUTES = {
+    "SA8-1": ("ペルー集中", "クスコ・マチュピチュ6、イキトス4、移動・予備11", "リマ→東京（直行なし）",
+              [("CPT", "GRU", _F), ("GRU", "LIM", _F)] + _PERU + [("LIM", "NRT", _F)]),
+    "SA8-2": ("ペルー＋ワカチナ", "クスコ5、イキトス4、ワカチナ2、移動10", "ワカチナのバギーの規制の最新状況",
+              [("CPT", "GRU", _F), ("GRU", "LIM", _F), ("LIM", "ICA", _O), ("ICA", "LIM", _O)] + _PERU + [("LIM", "NRT", _F)]),
+    "SA8-3": ("ペルー＋ウユニ", "イキトス4、クスコ5、ウユニ3、移動9", "ラパス→東京の通し運賃。8月のウユニは最低−7.6℃",
+              [("CPT", "GRU", _F), ("GRU", "LIM", _F), ("LIM", "IQT", _F), ("IQT", "LIM", _F), ("LIM", "CUZ", _F), ("CUZ", "MAPI", _O),
+               ("MAPI", "CUZ", _O), ("CUZ", "LPB", _F), ("LPB", "UYU", _F), ("UYU", "LPB", _F), ("LPB", "NRT", _F)]),
+    "SA8-4": ("ペルー＋ガラパゴス", "クスコ5、イキトス3、ガラパゴス4、移動9", "8月のガラパゴスは航空運賃が高い時期（Wikivoyage）",
+              [("CPT", "GRU", _F), ("GRU", "LIM", _F), ("LIM", "CUZ", _F), ("CUZ", "MAPI", _O), ("MAPI", "LIM", _O), ("LIM", "IQT", _F),
+               ("IQT", "LIM", _F), ("LIM", "GYE", _F), ("GYE", "GPS", _F), ("GPS", "GYE", _F), ("GYE", "NRT", _F)]),
+}
+SA_IDS = list(SA_ROUTES)
+
+
+def build_south_america(points, geo):
+    """8月の南米案（ケープタウン→サンパウロ→ペルー周辺→東京）の地図。切り替えで見える1枚"""
+    LOCAL.update(SA_POINTS)
+    proj = bm.Laea(-40.0, -15.0, (-92.0, 22.0, -36.0, 6.0))
+    W, H = proj.width, proj.height
+    outline = f"M0 0H{bm.f1(W)}V{bm.f1(H)}H0Z"
+    grat = bm.graticule(proj, 10, 10, (-100, 30), (-40, 20))
+    visit = {"604", "068", "218", "076", "710"}
+    groups = []
+    for i, (rid, (_t, _d, _u, legs)) in enumerate(SA_ROUTES.items()):
+        rows = [{"from_point": a, "to_point": b, "mode": m} for a, b, m in legs]
+        ln, dt, nm, lb = route_svg(proj, points, rows, rid)
+        groups.append(f'<g class="rt" data-rt="{rid}" style="display:none">{ln}{dt}{nm}{lb}</g>')
+    tx, ty = proj.xy(-88.0, 4.0)
+    note = f'<text class="dn" x="{bm.f1(tx)}" y="{bm.f1(ty)}" text-anchor="start">↖ 東京へ（米国など経由）</text>'
+    return (f'<div class="mapbox" data-pan="sa" hidden><svg class="m" viewBox="0 0 {bm.f1(W)} {bm.f1(H)}" role="img" aria-label="8月の南米の案の全体図">'
+            f'<defs><clipPath id="c1sa"><path d="{outline}"/></clipPath></defs><g clip-path="url(#c1sa)">'
+            f'<path class="sea" d="{outline}"/><path class="grat" d="{grat}"/><g>{_light_land(proj, geo, visit, 0.8)}</g>'
+            f'{"".join(groups)}{note}</g><path class="frame" d="{outline}"/></svg></div>')
+
+
 def africa_may_svg(id_prefix: str = "") -> str:
     """トップページ用：5月の案G だけの地図（SVG1枚。約46KB）。8月の地図やマダガスカル拡大は含めない。
     id_prefix は <clipPath> の id を、ページ内の他の地図と重ねないための接頭辞"""
@@ -611,7 +657,7 @@ def build_madagascar(points, geo):
 def _build_raw() -> str:
     points, routes = bm.load_model()
     geo = bm.load_topo("countries-50m.json")
-    africa = build_africa(points, geo, routes)
+    africa = build_africa(points, geo, routes) + build_south_america(points, geo)
     mada = build_madagascar(points, geo)
 
     def chip(rid):
@@ -625,10 +671,15 @@ def _build_raw() -> str:
     aug_n = len([r for r in AUG_IDS if r in routes])
     may_chips = "".join(chip(r) for r in MAY_IDS if r in routes)
     aug_chips = "".join(chip(r) for r in AUG_IDS if r in routes)
+    sa_n = len(SA_IDS)
+    sa_chips = "".join(f'<label title="{html.escape(rid + " " + v[0])}"><input type="radio" name="rt" value="{rid}">'
+                       f'<span>{html.escape(rid + " " + v[0])}</span></label>' for rid, v in SA_ROUTES.items())
     rtabs = ('<div class="tabs" role="tablist" aria-label="5月と8月の切替">'
              f'<button type="button" role="tab" data-tab="may" aria-selected="true">5月の案（{may_n}）</button>'
-             f'<button type="button" role="tab" data-tab="aug" aria-selected="false">8月の案（{aug_n}）</button></div>'
-             f'<div class="chips" data-pan="may">{may_chips}</div><div class="chips" data-pan="aug" hidden>{aug_chips}</div>')
+             f'<button type="button" role="tab" data-tab="aug" aria-selected="false">8月 アフリカ（{aug_n}）</button>'
+             f'<button type="button" role="tab" data-tab="sa" aria-selected="false">8月 南米（{sa_n}）</button></div>'
+             f'<div class="chips" data-pan="may">{may_chips}</div><div class="chips" data-pan="aug" hidden>{aug_chips}</div>'
+             f'<div class="chips" data-pan="sa" hidden>{sa_chips}</div>')
     g_info = ('案Gは35日表（Day 番号つき）。費用は<a href="../research/may-madagascar-vfa-redesign.html">ルート調査</a>と'
               '<a href="../research/africa-budget-fermi.html">フェルミ予算</a>を参照'
               + g_day_table())
@@ -642,6 +693,11 @@ def _build_raw() -> str:
             body = g_info
         disp = "block" if r == "G" else "none"
         info_parts.append(f'<div class="rinfo" data-rt="{r}" style="display:{disp}"><b>{html.escape(routes[r]["name"])}</b>{body}</div>')
+    for rid, (title, days, unk, _legs) in SA_ROUTES.items():
+        info_parts.append(f'<div class="rinfo" data-rt="{rid}" style="display:none"><b>8月 南米 {html.escape(rid)}：{html.escape(title)}</b>'
+                          f'日数の配分（目安）：{html.escape(days)}／主な未確認：{html.escape(unk)}。'
+                          'ケープタウン→サンパウロが南米への唯一の直行（第三者の運航データ）。運賃・便・曜日は未確認。'
+                          '比較は<a href="../research/africa-south-america-2027-comparison.html">アフリカと南米の比較</a>の第5章</div>')
     infos_r = "".join(info_parts)
     btns_cal = "".join(f'<button type="button" data-cplan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
     cal_key = "".join(f'<span><i style="background:var(--c-{k})"></i>{v}</span>' for k, v in KIND_LABEL.items())
@@ -670,7 +726,7 @@ def _build_raw() -> str:
 {bar("../", "maps/route-map.html")}
 <main class="wrap page">
 <p class="crumb"><a href="../index.html">トップ</a> ／ ルート地図</p>
-<div class="map-top"><h1>ルート地図（5月・8月の案）</h1>
+<div class="map-top"><h1>ルート地図（5月・8月の案：アフリカ・南米）</h1>
 <div class="zoom" role="group" aria-label="地図の表示サイズ"><span>地図のサイズ：</span>{zbtns}</div></div>
 <div class="rsel" role="group" aria-label="表示するルート">{rtabs}</div>
 <div class="rwrap"><div class="zwrap">{africa}</div><div class="rside">{infos_r}</div></div>

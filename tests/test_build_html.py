@@ -92,7 +92,7 @@ class IndexTests(unittest.TestCase):
         sec = self.index.split('<h2 id="budget">')[1].split("<h2 id=")[0]
         # 8月は金額なしで「未計上」と出る
         for label in ("目標総予算", "上限予算", "見積合計（標準）", "フィリピン（バギオ）", "アフリカ周遊（5月）",
-                      "南アフリカ（ケープタウン）", "アフリカ周遊（8月）", "飛行機代"):
+                      "南アフリカ（ケープタウン）", "8月の周遊（アフリカ・南米）", "飛行機代"):
             self.assertIn(label, sec)
         self.assertIn("モデル", sec)
         self.assertIn("実費ではありません", sec)
@@ -192,7 +192,7 @@ class IndexTests(unittest.TestCase):
 class NavTests(unittest.TestCase):
     """全ページ共通の上部ナビ：ホーム・地域4つ・費用が横並びで、ほかの入口は「ほか」から開く"""
 
-    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "アフリカ8月", "費用")
+    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "8月", "費用")
 
     def test_main_links_on_every_kind_of_page(self):
         for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "research/sources.html",

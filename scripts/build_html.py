@@ -714,7 +714,7 @@ DONE_STATUS = ("完了", "不要")
 PAGE_STATUS = {"researching": "調査中", "ready": "整理済", "draft": "作成中"}
 FX_SOURCE_NOTE = ("参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が"
                   "加わるため、実際に受け取る額・支払う額とは一致しません。")
-REGION_PAGES = [("baguio", "バギオ"), ("africa", "アフリカ周遊（5月）"), ("africa-aug", "アフリカ周遊（8月）"), ("capetown", "ケープタウン"), ("common", "日本国内・保険・共通")]
+REGION_PAGES = [("baguio", "バギオ"), ("africa", "アフリカ周遊（5月）"), ("africa-aug", "8月の周遊（アフリカ・南米）"), ("capetown", "ケープタウン"), ("common", "日本国内・保険・共通")]
 
 
 def csv_records(path: Path) -> list[dict]:
@@ -1059,7 +1059,7 @@ def budget_cards(root: Path = ROOT) -> str:
         split_card("フィリピン（バギオ）", "baguio", "現地費（航空券を除く）"),
         split_card("アフリカ周遊（5月）", "africa", f'現地費（航空券を除く）。航空券と合わせた5月の総額は {build.yen(may_total)}'),
         split_card("南アフリカ（ケープタウン）", "capetown", "現地費（航空券を除く）"),
-        split_card("アフリカ周遊（8月）", "africa-aug", "現地費（航空券を除く）。国は未定"),
+        split_card("8月の周遊（アフリカ・南米）", "africa-aug", "現地費（航空券を除く）。行き先は未定"),
         flight,
         split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用"),
     ]
@@ -1954,7 +1954,7 @@ INDEX_PAGE = """<!doctype html>
 
 # 上部ナビ（全ページ共通）：ホーム／地域4つ／費用の横並びと、右端の「ほか」（開閉）。パスは ROOT からの相対
 NAV_MAIN = [("ホーム", "index.html"), ("バギオ", "areas/baguio.html"), ("アフリカ5月", "areas/africa.html"),
-            ("ケープタウン", "areas/capetown.html"), ("アフリカ8月", "areas/africa-aug.html"), ("費用", "docs/02-budget.html")]
+            ("ケープタウン", "areas/capetown.html"), ("8月", "areas/africa-aug.html"), ("費用", "docs/02-budget.html")]
 
 
 COUNTRY_GROUP_LABEL = {"g1": "5月の周遊で通る国", "g2": "南部アフリカのほかの候補", "g3": "東アフリカ（参考）"}
