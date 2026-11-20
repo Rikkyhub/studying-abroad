@@ -332,3 +332,25 @@ Issue #137 の2026-11-18追記。**採用しない比較案**です。確認で�
 - **セーシェル入国**：日本旅券の観光90日以内は査証不要で電子渡航許可が必要。公式FAQは EUR10（銀行手数料別）。
 - **R5（CPT⇄VFA の空路短縮）**：Airlinkの旧時刻表 4Z390、FlightStats 4Z391。2027年の運航・価格は未確認。`data/expenses.csv` の AF-21（VFA→CPT 約47,000円）は、この空路短縮案の関連情報として参照する。
 - **AU-01**（8月の追加観光）：島旅3案と北上案を候補として記録。実施・日数・総額は、案の選択と運賃の入力待ち。
+
+### 2026-11-20｜ナミビア・セーシェル・TAZARA・国境の追加確認（R-71〜R-83）
+
+WebSearch は使えなかったため、公式ページを直接取得した。便数は FlightConnections の**2026年の表示**で、2027年のダイヤではない。
+
+| 番号 | 確認できたこと | 出典（2026-11-20閲覧） | 適用年 |
+|---|---|---|---|
+| R-73 日の出 | Sesriem（南緯24°29′・東経15°48′、UTC+2）。**2027-05-15**：日の出 7:24、日の入 18:21、市民薄明の始まり 6:33。**2027-08-05**：日の出 7:31、日の入 18:34、市民薄明の始まり 6:40 | [timeanddate（5月）](https://www.timeanddate.com/sun/@-24.4867,15.8008?month=5&year=2027)、[同（8月）](https://www.timeanddate.com/sun/@-24.4867,15.8008?month=8&year=2027) | 2027（天文計算） |
+| R-73 入園料・ゲート | NWR は「Sossus Dune Lodge の宿泊者は日の出前に入れ、日没後まで滞在できる」とだけ書く。**入園料の有効期間（24時間か暦日か）と Sesriem ゲートの開閉時刻は未確認** | [NWR Sesriem Camp](https://www.nwr.com.na/resorts/sesriem-camp/)、[MEFT Namib-Naukluft](https://www.meft.gov.na/national-parks/namib-naukluft-park/224/) | — |
+| R-72 Go2 | 予約画面のデータに、ウィントフック→Sesriem と復路の路線がある。乗車点の表示は「Sesriem (13:00)」（Sesriem発）・「Sesriem (07:45)」（Kalkrand行き）。**運賃と運行曜日は動的表示で取れず未確認**。13:00 が発時刻か着時刻かも未確認 | [Go2](https://go2.na/) | 年の記載なし |
+| R-71 空路 | ケープタウン→ウィントフックは直行が Airlink または Safair、**月89便**。ヨハネスブルグ→ウィントフックは**月171便**。曜日の記載はない | [WDH–CPT](https://www.flightconnections.com/flights-from-windhoek-wdh-to-cape-town-cpt)、[WDH–JNB](https://www.flightconnections.com/flights-from-windhoek-wdh-to-johannesburg-jnb) | 2026 |
+| R-71 バス | Intercape の時刻・曜日・運賃は**未確認**（全ページが Cloudflare で403） | [Intercape](https://www.intercape.co.za/) | — |
+| R-77 セーシェル便 | マヘ島（SEZ）⇄アンタナナリボは Emirates のみ。SEZ→TNR は**月25便**、所要 2時間45分（ページの更新 2026-02-11）。曜日と便名は記載なし | [TNR–SEZ](https://www.flightconnections.com/flights-from-antananarivo-tnr-to-mahe-island-sez) | 2026 |
+| R-81 電子渡航許可 | 公式サイトのトップと FAQ に金額の記載がない（動的表示）。**手数料は未確認**（既存の EUR10／EUR10.90 は更新できていない） | [Seychelles Travel Authorisation](https://seychelles.govtas.com/) | — |
+| R-80 TAZARA | 公式告知（2026-10-20付）：2026-10-19 にザンビア内（Msanza〜Kapwila）で事故。New Kapiri-Mposhi 発の Mukuba 越境列車は「2026-10-27まで取消」、その間は国内区間だけ運行。**一覧の最新は2026-10-20で、再開の告知はない** | [TAZARA News](https://www.tazarasite.com/news-and-updates)、[取消の告知](https://www.tazarasite.com/cancellation-mukuba-cross-border-service-and-temporary-local-train-operations) | 2026 |
+| R-83 国境の時間 | カズングラ橋とビクトリアフォールズの国境の開所時間は**未確認**（ZIMRA・ZRA・BURS に一覧ページが見当たらず、候補のURLは404） | [ZIMRA](https://www.zimra.co.zw/)、[BURS](https://www.burs.org.bw/)、[ZRA](https://www.zra.org.zm/) | — |
+
+**読み取れること**：ソッサスフレイで日の出を見るなら、5月も8月も7時半ごろ。そのため、ゲートの開く時刻と公園内の宿の扱いが決め手になる（未確認）。TAZARA は、2026-10-27以降の再開の告知がない。そのため、北上ルートでは使えない前提で比べる。
+
+**未確認**：入園料の有効期間とゲート時刻、Go2 の運賃・曜日、Intercape、ナミビアの空路とセーシェル便の曜日（2027年）、セーシェルの電子渡航許可の手数料、TAZARA の再開、国境の開所時間。
+
+**検索ログ（2026-11-20）**：timeanddate（地名のURLは使えず、座標のURLで取得）。NWR の sesriem-camp・sossus-dune-lodge・park-entry-fees、MEFT の Namib-Naukluft。go2.na の予約画面のJSから路線と乗車点の時刻を抽出。intercape.co.za は403。FlightConnections の3路線。seychelles.govtas.com のトップと FAQ（金額なし）、seychelles.travel は522。tazarasite.com のニュース一覧・取消告知・運賃表。ZIMRA・BURS・ZRA・zambiatourism の国境一覧の候補URLは404。
