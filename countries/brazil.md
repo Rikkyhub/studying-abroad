@@ -1,6 +1,6 @@
 # ブラジル
 
-[← 南米・メキシコの比較へ戻る](../research/africa-south-america-2027-comparison.md)
+[← 南米国別地図へ戻る](../maps/southamerica-countries.html)　／　[南米・メキシコの比較](../research/africa-south-america-2027-comparison.md)
 
 - 確認日：2026-11-20（出典の確認日は各行に記載。このページは調査資料 [南米の国別比較（1）：ペルー・ボリビア・エクアドル・ブラジル](../research/south-america-countries-a.md) のブラジルの部分を、国別ページの形に並べ直したものです。数値は資料の転記で、新しい取得はありません）
 - この国での予定：**乗継地・追加候補（サンパウロ、イグアスの滝）**。2027年5月・8月のどちらに入れるか、入れないかは**未決定**です（Issue #185）。予約や確定ではありません。
@@ -18,7 +18,7 @@
 
 ## おおよその位置の地図
 
-地図は未作成です（国別の地点データ `data/country_places.csv` はアフリカの国だけ）。位置は下の観光地の表と、[ルート地図](../maps/route-map.html) の南米の案で確認できます。
+国の位置は [南米国別地図](../maps/southamerica-countries.html) で見られます（国ごとの観光地の点は未作成。`data/country_places.csv` はアフリカの国だけ）。観光地の位置は下の表と、[ルート地図](../maps/route-map.html) の南米の案で確認できます。
 
 ## 主な観光地
 

@@ -250,6 +250,7 @@ MNL＝マニラ、NBO＝ナイロビ、ADD＝アディスアベバ、TNR＝ア�
 - [世界地図（移動の全体像）](../maps/world-map.html)
 - [アフリカ地図（周遊ルート案）](../maps/africa-map.html)
 - [アフリカ国別地図（国を押すと、その国の観光地・食べ物・ビザ・安全のページへ）](../maps/africa-countries.html)
+- [南米国別地図（国を押すと、その国の観光地・季節・ビザ・安全のページへ）](../maps/southamerica-countries.html)
 
 主要な空港・国境・国立公園の地図リンクは、上の「場所と地図」の表と [アフリカ周遊ルート比較（主要地点のGoogle Mapsリンク）](../research/africa-route-comparison.md) にあります。
 <!-- /AUTO:maps -->
