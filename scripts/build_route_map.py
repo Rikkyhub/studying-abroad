@@ -540,7 +540,7 @@ TRIP_LEGS = [
 TRIP_LABEL = {"bg": "バギオ（日本⇄マニラ）", "may": "5月の周遊（案G）", "home": "ケープタウン→日本（帰国）"}
 
 
-def _light_land(proj, geo, visit, tol=2.0):
+def _light_land(proj, geo, visit, tol=2.6):
     """全体図用の軽い陸地：枠の外の国は省き、訪問国だけ名前（title）を付ける"""
     import re as _re
     out = []
