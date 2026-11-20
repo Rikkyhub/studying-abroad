@@ -24,7 +24,7 @@ P24,plan,運用,HTML・Word への変換,Markdownを正本にHTML/Wordを作る�
 P25,plan,運用,AI・別PC向け引き継ぎ,別のAI・PCで作業を引き継ぐ手順,docs/08-handoff.html,,ready,110,,,
 P26,plan,地域別,バギオ（フィリピン語学留学）,語学学校の12週モデル・費用・資料・場所,areas/baguio.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,110,2026-10-17,,
 P27,plan,地域別,アフリカ周遊（5月）,約1か月の周遊モデル・ルート案・費用・資料,areas/africa.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,120,2026-10-17,,
-P76,plan,地域別,アフリカ周遊（8月）,留学後の追加周遊モデル・シーズン比較・費用（未計上）・資料,areas/africa-aug.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,125,2026-11-08,,
+P76,plan,地域別,8月の周遊（アフリカ・南米）,留学後の追加周遊モデル（アフリカ・南米）・シーズン比較・費用（未計上）・資料,areas/africa-aug.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,125,2026-11-08,,
 P28,plan,地域別,ケープタウン（第2か国留学）,8週間の語学留学モデル・費用・資料・場所,areas/capetown.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,130,2026-10-17,,
 P29,plan,地域別,日本国内・保険・共通,出発前後の共通手続き・保険・共通費用,areas/common.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,140,2026-10-17,,
 P30,research,アフリカ,南部アフリカ各国の日数・費用・体験の多様性,5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先）,research/southern-africa-countries.html,https://github.com/Rikkyhub/studying-abroad/issues/38,researching,140,2026-10-18,https://biggameparks.org/rates;https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/;https://www.anac.gov.mz/en/parques/ponta-do-ouro/,africa
