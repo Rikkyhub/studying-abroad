@@ -232,7 +232,7 @@
 | U4 | 2027年のBI手数料（観光延長・SSP） | 公式表は2014年版。2026-10 の告知は Annual Report のみ | 渡航直前に BI を再確認 |
 | U5 | SSP の有効期間・学校代行の範囲 | BI公式ページに記載なし（2026-11-20再確認：申請者は本人・手順に面接あり、代行の記載なし） | 学校・BI に確認 |
 | U6 | 査証免除入国で8週間の語学学習をしてよいか | 大使館FAQは holiday/business のみ。DHA・学校は study に触れるが、免除入国の明文がない | 在日南ア大使館と学校に確認 |
-| U7 | reg 11(5) が現行条文か | 第2次（2024-05-20）・第3次（2024-10-09）改正のPDFが画像のみで本文を読めない。DHA の統合版は2018年版 | 大使館に確認。テキスト版の官報・統合版を探す |
+| U7 | reg 11(5) が現行条文か | 2026-11-20、第2次（GN R.4847）・第3次（GN 5398）改正の画像PDFを目視：reg 11 の改正は (4)・(4)(b) だけで、**11(5) は改正されていない**。運用は未確認 | 大使館に、再入国時の付与日数を確認する |
 | U8 | 再入国時に審査官が実際にどう付与するか | 法令と運用が一致するとは限らない | 大使館・学校に確認。入国スタンプを記録 |
 | U9 | R1,775 の内訳と延長の処理日数 | VFS 料金ページ取得失敗 | 学校・VFS に確認 |
 | U10 | ナミビアNgoma国境の2027年の実運用・査証料・決済 | [内務省Fact Sheet第4版（2025-05-28）](https://eservices.mhaiss.gov.na/form/FactSheetVisaRequirementstoNamibia.pdf)の受付地点一覧でNgomaはeVisa・到着時査証の双方に掲載。[内務省eServices](https://eservices.mhaiss.gov.na/visaonarrival)でJapanが対象国に掲載（2026-10-27確認）。2025年の参考料金NAD 1,600＋3%は2027年確定額ではない。[ボツワナ政府BOPAの2025-04-01発表](https://dailynews.gov.bw/news-detail/85576)ではSedudu–Ngomaの**チョベ国立公園内通過ゲート／B334通行ルート**が24時間運用となったが、**国際国境の出入国審査・査証発給が24時間になったという根拠ではない**。[ナミビア内務省の国境一覧](https://mhaiss.gov.na/es/entries)はNgomaの連絡先を掲載する一方、受付時刻は明示しない（2026-10-27確認）。2027年の国境通過可能時刻は未確認 | [ナミビア内務省eServices](https://eservices.mhaiss.gov.na/visaonarrival)・Ngoma国境窓口・駐日ナミビア公館へ2027年の実際の受付時間、現地発給・事前eVisa要否、カード/現金、最終料金を照会。本人申請は未実施 |
@@ -422,3 +422,29 @@ BI公式ページを直接取得して確認した（WebSearchは使えなかっ
 - Monol・BECI・JIC・HELP の2027年版料金・日程（公式サイトに接続できなかった）
 
 **検索ログ（2026-11-20）**：WebSearch はエラーで使えなかった。取得できた：immigration.gov.ph の special-study-permit・visas/visa-waiver・faqs・acr-i-card-issuance・acr-i-card・tourist-visa-extension・advisory-etravel-registration、etravel.gov.ph とFAQ、在日比大使館 visa-free entry と other-visa-categories、philschools.jp の PINES 料金表PDF（メタデータのみ）。取得できなかった：e-services.immigration.gov.ph（応答なし）、在日比大使館の9(a)ページ（404）、anzen.mofa.go.jp（403）、philippineairlines.com（404）、cebupacificair.com（本文なし・500）、jal.co.jp（403）、ana.co.jp（接続切断）、Monol・JIC（DNS解決不可）、BECI（接続切断）、HELP（証明書エラー）。
+### 2026-11-20｜南アフリカ：短期の語学就学と、周辺国からの再入国（2027年未確定）
+
+公式ページを直接取得して確認した（WebSearch は使えなかった）。**2027年に適用されるかは、どの項目も未確認**。
+
+| 項目 | 確認できたこと | 出典（2026-11-20閲覧） | 適用年 |
+|---|---|---|---|
+| 査証免除の一覧 | 版は「Issued on 09 December 2025」のまま。日本の一般旅券は 90 Days・Visa Fees No。入国目的（就学など）の注記はない | [DHA Exempt countries](https://www.dha.gov.za/index.php/immigration-services/exempt-countries) | 2025-12-09版 |
+| 訪問者ビザの目的 | 目的に「study purposes」がある。免除は「for purposes covered by a visitor's permit… 90 days or less」。滞在期間は入国審査官が決める。**免除で入国した人の3か月未満の就学を個別に扱う記載はない** | [DHA Types of visas](https://www.dha.gov.za/index.php/immigration-services/types-of-visas) | 年の記載なし |
+| 2024〜2026年の規則変更 | DHA の告示（2024-10〜2026-10-30）に、訪問者ビザ・免除・就学を変える告示は見当たらない | [DHA Notices](https://www.dha.gov.za/index.php/notices) | 2024〜2026 |
+| 第2次改正（GN R.4847, 2024-05-20） | 画像PDFを目視した。reg 11 の改正は「substitution for subregulation (4)」だけ。**11(5) は改正されていない** | [官報PDF](https://www.gov.za/sites/default/files/gcis_document/202405/50675rg11704gon4847.pdf) | 2024年改正 |
+| 第3次改正（GN 5398, 2024-10-09） | 画像PDFを目視した。改正は reg 1・11(4)(b)・18 だけ。**11(5) は改正されていない** | [官報PDF](https://www.dha.gov.za/images/notices/8october24/Gazette-Third-Amendment-of-the-Immigration-Regulations-2014.pdf) | 2024年改正 |
+| 再入国（reg 11(5)） | 上の確認の範囲では、2018年統合版の文言がそのまま有効と読める。免除で入国した人は、再入国時に「same visa」（同じ期間の続き）で入る。期限が切れていれば、7日以内の新しいビザ。「country of residence」（住んでいる国）から来た場合だけ、免除期間分の新しいビザを出しうる。**周辺国に出れば90日がリセットされる、とする公式の記載は見つからない** | 本書 2-2 に引用した2018年統合版 | 2018〜2026 |
+| 大使館FAQ | 「The endorsement on the visa determines for which period the visitor's permit will be valid」。日数は入国日から数える。再入国の記載はない | [在日南ア大使館 FAQ](https://dirco.gov.za/japan/frequently-asked-questions/) | © 2026 |
+| EC Cape Town（学校） | 「A student who is issued with a port-of-entry Visitor's Visa (for 30 or 90 days), may participate in a language course with EC for the duration of their visa」。延長は30日または90日。延長は到着後30日以内に申請するよう案内しており、規則の「60日前」と食い違う。「no guarantee」とも書いている。**学校の案内で、当局の見解ではない** | [EC Visa information](https://ecenglish.com/en/visa-information/)（dateModified 2026-08-25） | 2026 |
+| UCT ELC（学校） | 「If your course is shorter than 90 days, you may be eligible to study on a visitor's visa」（変わっていない） | [UCT ELC Visa information](https://uctlanguagecentre.com/enroll/student-support/visa-information) | © 2026 |
+| IH Cape Town（学校） | 規約 s12「Depending on your country of origin, you may require a visa to study」。入国を拒否されても返金しない（s13）。短期・免除国についての記載はない | [IH Terms and conditions](https://ihcapetown.com/terms-and-conditions/) | 料金は2025-11-01〜2026-10-31 |
+| Good Hope Studies（学校） | 査証が拒否されたら授業料を全額返金。2027年料金表の「Special visa requirements apply」は18歳未満向けの文脈 | [GHS General conditions](https://www.ghs.co.za/general-conditions/)、[GHS 2027料金表](https://www.ghs.co.za/fileadmin/user_upload/www.ghs.co.za/FILES/Downloads/GHS_Price_list_2027.pdf) | 2027料金表 |
+
+**結論（2026-11-20時点）**：
+- 免除入国での8週間の受講は、学校（EC・UCT）は「できる・できる場合がある」と書いているが、**当局（DHA・在日大使館）の明文はない**。
+- 5月に入国して周辺国に出たあとの8月の再入国は、規則上は**最初の90日の続き**として扱われる可能性が高く、「出国すればリセット」とは言えない。
+- 6〜7月の受講と8月の再入国を合わせる場合は、日数の上限を超えないかを、大使館に書面で確認する必要がある（問い合わせ文案は第7節。**送信はしない**）。
+
+**未確認**：当局が免除入国での8週間受講を認めるか／再入国時に実際に何日が付与されるか／IH・GHS の短期就学の方針／EC の延長時期と規則の食い違い／ETA が2027年に日本旅券へ義務化されるか／外務省の南ア安全情報（403で再確認できなかった）。
+
+**検索ログ（2026-11-20）**：WebSearch は使えなかった（400エラー）。取得できた：DHA の exempt-countries・types-of-visas・Notices の1〜3ページと Directive No.4 of 2025、gov.za と DHA の改正官報PDF（画像を目視）、在日南ア大使館の FAQ と Immigration–Visa Info、UCT ELC、IH の規約、GHS の一般条件と2027料金表、EC の visa-information（curl で取得）。取得できなかった：EC（WebFetch では403）、IH の visa ページ（404）、goodhopestudies.com（ドメインなし。正しくは ghs.co.za）、eurocentres.com（404）、ltc.co.za（接続拒否）、anzen.mofa.go.jp（403）。
