@@ -284,6 +284,8 @@ svg.m{display:block;width:100%;height:auto;background:var(--sea);font-family:var
 .ln{fill:none;stroke-width:2.6;stroke-linecap:round}
 .ln.fl{stroke:var(--fl);stroke-dasharray:7 5} .ln.dm{stroke:var(--dm)} .ln.rd{stroke:var(--rd);stroke-width:3}
 .pt{fill:var(--bg);stroke:var(--pt);stroke-width:2}
+.sn{fill:var(--ink);stroke:var(--bg);stroke-width:2}
+.snt{fill:var(--bg);font-size:11px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
 .tx{font-size:calc(12.5px * var(--ts,1));font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3.4px;stroke-linejoin:round;pointer-events:none}
 .tx.big{font-size:calc(15px * var(--ts,1))}
 .dn{font-size:calc(11px * var(--ts,1));font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
@@ -466,6 +468,33 @@ def build_africa(points, geo, routes):
 
 # 8月の南米案（research/africa-south-america-2027-comparison.md 第5章の表をそのまま点で結ぶ）。座標は空港・町のおおよその値。
 # 東京への最後の区間は「米国など経由」で、図の外（北西）へ出る線で示す。運賃・便・曜日は未確認
+
+# 8月の南米：イグアス経由の2案の日付入りルート（2027-08-01 ケープタウン発、08-22 リマ発）。areas/southamerica-aug.md の日別の表と対応させる。
+# stops = (地点, 名前, 日付, 番号)。legs = (出発, 到着, 種別, 日付ラベル)。日付・曜日は計算した暫定で、便の運航日は未確認
+SA_DAYPLAN = {
+    "SA8-6": {
+        "stops": [("CPT", "ケープタウン", "8/1", 1), ("IGU", "イグアス", "8/2〜8/4", 2), ("LPB", "ラパス", "8/5・8/9", 3), ("UYU", "ウユニ", "8/6〜8/8", 4),
+                  ("CUZ", "クスコ・聖なる谷", "8/10〜8/13・8/15", 5), ("MAPI", "マチュピチュ", "8/14（8/13〜15）", 6), ("PEM", "タンボパタ", "8/16〜8/18", 7),
+                  ("LIM", "リマ", "8/18〜8/22", 8)],
+        "legs": [("CPT", "IGU", "flight", "8/1〜2"), ("IGU", "LPB", "flight", "8/4〜5"), ("LPB", "UYU", "flight", "8/6"), ("UYU", "LPB", "flight", "8/9"),
+                 ("LPB", "CUZ", "flight", "8/10"), ("CUZ", "MAPI", "overland", "8/13 列車"), ("MAPI", "CUZ", "overland", "8/15 列車"),
+                 ("CUZ", "PEM", "flight", "8/16"), ("PEM", "LIM", "flight", "8/18"), ("LIM", "NRT", "flight", "8/22")],
+    },
+    "SA8-5": {
+        "stops": [("CPT", "ケープタウン", "8/1", 1), ("IGU", "イグアス", "8/2〜8/5", 2), ("CUZ", "クスコ・聖なる谷", "8/6〜8/8・8/12〜8/13・8/15", 3),
+                  ("PEM", "タンボパタ", "8/9〜8/12", 4), ("MAPI", "マチュピチュ", "8/14（8/13〜15）", 5), ("LIM", "リマ", "8/16〜8/22", 6), ("ICA", "ワカチナ（任意）", "8/17〜8/18", 7)],
+        "legs": [("CPT", "IGU", "flight", "8/1〜2"), ("IGU", "CUZ", "flight", "8/5〜6"), ("CUZ", "PEM", "flight", "8/9"), ("PEM", "CUZ", "flight", "8/12"),
+                 ("CUZ", "MAPI", "overland", "8/13 列車"), ("MAPI", "CUZ", "overland", "8/15 列車"), ("CUZ", "LIM", "flight", "8/16"),
+                 ("LIM", "ICA", "overland", "8/17 バス"), ("ICA", "LIM", "overland", "8/18 バス"), ("LIM", "NRT", "flight", "8/22")],
+    },
+}
+# ラベルの位置（点からの差 dx, dy と text-anchor）。key = (inset かどうか, 地点)
+SA_LABEL = {
+    (False, "CPT"): (-12, -14, "end"), (False, "IGU"): (12, 22, "start"),
+    (True, "LIM"): (-14, -6, "end"), (True, "CUZ"): (-14, 22, "end"), (True, "MAPI"): (-14, -22, "end"), (True, "PEM"): (14, 4, "start"),
+    (True, "LPB"): (14, -2, "start"), (True, "UYU"): (-14, 6, "end"), (True, "ICA"): (-14, 30, "end"),
+}
+
 SA_POINTS = {
     "GRU": ("サンパウロ", -23.4356, -46.4731), "LIM": ("リマ", -12.0219, -77.1143), "CUZ": ("クスコ", -13.5357, -71.9388),
     "MAPI": ("マチュピチュ", -13.1631, -72.5450), "IQT": ("イキトス", -3.7848, -73.3088), "ICA": ("ワカチナ", -14.0875, -75.7626),
@@ -487,13 +516,50 @@ SA_ROUTES = {
     "SA8-4": ("ペルー＋ガラパゴス", "クスコ5、イキトス3、ガラパゴス4、移動9", "8月のガラパゴスは航空運賃が高い時期（Wikivoyage）",
               [("CPT", "GRU", _F), ("GRU", "LIM", _F), ("LIM", "CUZ", _F), ("CUZ", "MAPI", _O), ("MAPI", "LIM", _O), ("LIM", "IQT", _F),
                ("IQT", "LIM", _F), ("LIM", "GYE", _F), ("GYE", "GPS", _F), ("GPS", "GYE", _F), ("GYE", "NRT", _F)]),
-    "SA8-5": ("イグアス→ペルー（ウユニなし）", "イグアス滞在、マチュピチュ、アマゾン（タンボパタ）、リマでダイビング。日数の配分は未確定", "各区間の実便と日付、マチュピチュの2027年の入場枠",
-              [("CPT", "IGU", _F), ("IGU", "CUZ", _F), ("CUZ", "MAPI", _O), ("MAPI", "CUZ", _O), ("CUZ", "PEM", _F), ("PEM", "LIM", _F), ("LIM", "NRT", _F)]),
-    "SA8-6": ("イグアス→ウユニ→ペルー", "SA8-5 にラパス・ウユニ（2泊3日）とラパス→プーノ→クスコの昼間の陸路を足す。日数の配分は未確定", "ラパス→クスコの昼間の陸路、高地順応の日数",
-              [("CPT", "IGU", _F), ("IGU", "LPB", _F), ("LPB", "UYU", _F), ("UYU", "LPB", _F), ("LPB", "PUNO", _O), ("PUNO", "CUZ", _O), ("CUZ", "MAPI", _O),
-               ("MAPI", "CUZ", _O), ("CUZ", "PEM", _F), ("PEM", "LIM", _F), ("LIM", "NRT", _F)]),
+    "SA8-5": ("イグアス→ペルー（ウユニなし）", "8/1 ケープタウン発 → イグアス8/2〜5 → クスコ8/6〜 → タンボパタ8/9〜12 → マチュピチュ8/14 → リマ8/16〜22（8/22 リマ発）", "各区間の実便と曜日、マチュピチュの2027年の入場枠",
+              [(a_, b_, m_) for a_, b_, m_, _l in SA_DAYPLAN["SA8-5"]["legs"]]),
+    "SA8-6": ("イグアス→ウユニ→ペルー", "8/1 ケープタウン発 → イグアス8/2〜4 → ラパス8/5 → ウユニ8/6〜8 → クスコ8/10〜 → マチュピチュ8/14 → タンボパタ8/16〜18 → リマ8/18〜22（8/22 リマ発）", "各区間の実便と曜日、ウユニのツアーの日程、マチュピチュの2027年の入場枠",
+              [(a_, b_, m_) for a_, b_, m_, _l in SA_DAYPLAN["SA8-6"]["legs"]]),
 }
 SA_IDS = list(SA_ROUTES)
+
+
+def _sa_day_group(proj, points, plan, inset):
+    """日付入りの1案：線（日付つき）と、番号つきの丸と名前。inset=True は拡大図、False は全体図"""
+    lines, marks = [], []
+    legs = plan["legs"]
+    pairs = {(a_, b_) for a_, b_, _m, _l in legs}
+    for a_, b_, mode, label in legs:
+        pa, pb = pt(points, a_), pt(points, b_)
+        d, pts = leg_path(proj, pa, pb, mode == "flight", 24)
+        if (b_, a_) in pairs:
+            d, mid = offset_line(pts, 11 if inset else 6)
+        else:
+            mid = ((pts[0][0] + pts[-1][0]) / 2, (pts[0][1] + pts[-1][1]) / 2)
+        cls = MODE_STYLE[mode][0]
+        lines.append(f'<path class="ln {cls}" d="{d}"><title>{html.escape(pa[0])}→{html.escape(pb[0])}（{html.escape(label)}）</title></path>')
+        length = ((pts[-1][0] - pts[0][0]) ** 2 + (pts[-1][1] - pts[0][1]) ** 2) ** 0.5
+        if inset and mode == "overland":
+            continue  # 拡大図では、列車・バスの日付は停留地の名前の下の日付に含まれているので、線には重ねない
+        if b_ != "NRT" and (inset or length > 90):
+            back = (b_, a_) in pairs and legs.index((a_, b_, mode, label)) > [(x, y) for x, y, _m, _l in legs].index((b_, a_))
+            ly = mid[1] + (15 if back else -5)
+            if inset and {a_, b_} == {"CUZ", "MAPI"}:
+                continue  # クスコ〜マチュピチュの日付は、マチュピチュの名前の下に出すので、線には重ねない
+            marks.append(f'<text class="dn" x="{bm.f1(mid[0])}" y="{bm.f1(ly)}" text-anchor="middle">{html.escape(label)}</text>')
+    for pid, name, dates, num in plan["stops"]:
+        n, lat, lon = pt(points, pid)
+        x, y = proj.xy(lon, lat)
+        if not proj.in_view(x, y, -4):
+            continue
+        if not inset and pid not in ("CPT", "IGU"):
+            marks.append(f'<circle class="pt" cx="{bm.f1(x)}" cy="{bm.f1(y)}" r="3"/>')
+            continue
+        marks.append(f'<circle class="sn" cx="{bm.f1(x)}" cy="{bm.f1(y)}" r="8.5"/><text class="snt" x="{bm.f1(x)}" y="{bm.f1(y)}">{num}</text>')
+        dx, dy, anc = SA_LABEL.get((inset, pid), (13, 4, "start"))
+        marks.append(f'<text class="tx" x="{bm.f1(x + dx)}" y="{bm.f1(y + dy)}" text-anchor="{anc}">{html.escape(name)}</text>')
+        marks.append(f'<text class="dn" x="{bm.f1(x + dx)}" y="{bm.f1(y + dy + 13)}" text-anchor="{anc}">{html.escape(dates)}</text>')
+    return "".join(lines) + "".join(marks)
 
 
 def build_south_america(points, geo):
@@ -505,7 +571,23 @@ def build_south_america(points, geo):
     grat = bm.graticule(proj, 10, 10, (-100, 30), (-40, 20))
     visit = {"604", "068", "218", "076", "710"}
     groups = []
+    ip = bm.Laea(-72.5, -15.0, (-78.5, -65.5, -21.5, -10.5), width=400.0)  # 拡大図：ペルー・ボリビア
+    IW, IH = ip.width, ip.height
+    IX, IY = W - IW - 8, 8
+    iout = f"M0 0H{bm.f1(IW)}V{bm.f1(IH)}H0Z"
+    ivisit = {"604", "068", "076", "032", "152"}
+    inset_land = _light_land(ip, geo, ivisit, 0.4)
     for i, (rid, (_t, _d, _u, legs)) in enumerate(SA_ROUTES.items()):
+        if rid in SA_DAYPLAN:
+            plan = SA_DAYPLAN[rid]
+            main = _sa_day_group(proj, points, plan, False)
+            ins = _sa_day_group(ip, points, plan, True)
+            groups.append(f'<g class="rt" data-rt="{rid}" style="display:none">{main}'
+                          f'<svg x="{bm.f1(IX)}" y="{IY}" width="{bm.f1(IW)}" height="{bm.f1(IH)}" viewBox="0 0 {bm.f1(IW)} {bm.f1(IH)}">'
+                          f'<defs><clipPath id="c1in-{rid}"><path d="{iout}"/></clipPath></defs><g clip-path="url(#c1in-{rid})">'
+                          f'<path class="sea" d="{iout}"/><path class="grat" d="{bm.graticule(ip, 5, 5, (-85, -60), (-25, -5))}"/><g>{inset_land}</g>{ins}</g>'
+                          f'<path class="frame" d="{iout}"/><text class="tx" x="8" y="{IH - 8}">拡大：ペルー・ボリビア（③〜⑧）</text></svg></g>')
+            continue
         rows = [{"from_point": a, "to_point": b, "mode": m} for a, b, m in legs]
         ln, dt, nm, lb = route_svg(proj, points, rows, rid)
         groups.append(f'<g class="rt" data-rt="{rid}" style="display:none">{ln}{dt}{nm}{lb}</g>')
@@ -703,7 +785,7 @@ def _build_raw() -> str:
     for rid, (title, days, unk, _legs) in SA_ROUTES.items():
         info_parts.append(f'<div class="rinfo" data-rt="{rid}" style="display:none"><b>8月 南米 {html.escape(rid)}：{html.escape(title)}</b>'
                           f'日数の配分（目安）：{html.escape(days)}／主な未確認：{html.escape(unk)}。'
-                          + ('ケープタウン→イグアスは、サンパウロなどでの乗継（検索の参考額の表示では13時間台）。実便・対象日・荷物は未確認。'
+                          + ('ケープタウン→イグアスは、サンパウロなどでの乗継（検索の参考額の表示では13時間台）。日付は 8/1 ケープタウン発・8/22 リマ発・日本着 8/24〜25 の想定。実便・曜日・荷物は未確認。'
                              if rid in ('SA8-5', 'SA8-6') else 'ケープタウン→サンパウロが南米への唯一の直行（第三者の運航データ）。運賃・便・曜日は未確認。') +
                           'しおりは<a href="../areas/southamerica-aug.html">8月の周遊（南米）</a>、比較は<a href="../research/africa-south-america-2027-comparison.html">アフリカと南米の比較</a>の第5章</div>')
     infos_r = "".join(info_parts)
