@@ -24,7 +24,7 @@ P24,plan,運用,HTML・Word への変換,Markdownを正本にHTML/Wordを作る�
 P25,plan,運用,AI・別PC向け引き継ぎ,別のAI・PCで作業を引き継ぐ手順,docs/08-handoff.html,,ready,110,,,
 P26,plan,地域別,バギオ（フィリピン語学留学）,語学学校の12週モデル・費用・資料・場所,areas/baguio.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,110,2026-10-17,,
 P27,plan,地域別,アフリカ周遊（5月）,約1か月の周遊モデル・ルート案・費用・資料,areas/africa.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,120,2026-10-17,,
-P76,plan,地域別,8月の周遊（アフリカ・南米）,留学後の追加周遊モデル（アフリカ・南米）・シーズン比較・費用（未計上）・資料,areas/africa-aug.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,125,2026-11-08,,
+P76,plan,地域別,8月の周遊（アフリカ）,留学後の追加周遊モデル（アフリカ）・シーズン比較・費用（未計上）・資料,areas/africa-aug.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,125,2026-11-08,,
 P28,plan,地域別,ケープタウン（第2か国留学）,8週間の語学留学モデル・費用・資料・場所,areas/capetown.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,130,2026-10-17,,
 P29,plan,地域別,日本国内・保険・共通,出発前後の共通手続き・保険・共通費用,areas/common.html,https://github.com/Rikkyhub/studying-abroad/issues/7,ready,140,2026-10-17,,
 P30,research,アフリカ,南部アフリカ各国の日数・費用・体験の多様性,5月の国別日数・費用とS1〜S5の再比較（体験の多様性優先）,research/southern-africa-countries.html,https://github.com/Rikkyhub/studying-abroad/issues/38,researching,140,2026-10-18,https://biggameparks.org/rates;https://www.victoriafallsbridge.com/activities/victoria-falls-bungee-jumping/;https://www.anac.gov.mz/en/parques/ponta-do-ouro/,africa
@@ -76,3 +76,4 @@ P90,research,アフリカ,陸路縦断とマダガスカルの順序の比較（
 P91,research,アフリカ,アフリカと南米：5月・8月の順番とルート比較（2027年）,5月アフリカ→8月南米と、5月南米→8月アフリカを、季節・黄熱・航空網・現地費で比較。航空券は未取得で総額は暫定,research/africa-south-america-2027-comparison.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,28,2026-11-20,https://www.forth.go.jp/useful/yellowfever.html;https://galapagos.gob.ec/tributo-de-ingreso/;https://www.machupicchu.gob.pe/circuitos-y-rutas-de-visita/,africa;africa-aug
 P92,research,アフリカ,南米の国別比較（1）：ペルー・ボリビア・エクアドル・ブラジル,4か国の主な体験・5月と8月の季節・入国・黄熱・安全・費用・つながり。公式は英国外務省と一部の事業者のみ,research/south-america-countries-a.html,https://github.com/Rikkyhub/studying-abroad/issues/185,draft,29,2026-11-20,https://www.gov.uk/foreign-travel-advice/peru;https://www.gov.uk/foreign-travel-advice/ecuador;https://explorama.com/rates.html,africa;africa-aug
 P93,research,アフリカ,南米の国別比較（2）：アルゼンチン・チリ・メキシコ,3か国の体験・季節・入国・安全・つながりと、世界一周の動線としての意味。8月の帰路にメキシコ,research/south-america-countries-b.html,https://github.com/Rikkyhub/studying-abroad/issues/185,draft,30,2026-11-20,https://www.gov.uk/foreign-travel-advice/mexico;https://www.gov.uk/foreign-travel-advice/chile;https://www.gov.uk/foreign-travel-advice/argentina,africa;africa-aug
+P94,plan,地域別,8月の周遊（南米）,留学後の追加周遊モデル（南米：ペルー中心の4案）・季節・観光の料金・準備,areas/southamerica-aug.html,https://github.com/Rikkyhub/studying-abroad/issues/7,draft,126,2026-11-20,,

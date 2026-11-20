@@ -540,7 +540,7 @@ TRIP_LEGS = [
 TRIP_LABEL = {"bg": "バギオ（日本⇄マニラ）", "may": "5月の周遊（案G）", "home": "ケープタウン→日本（帰国）"}
 
 
-def _light_land(proj, geo, visit, tol=2.0):
+def _light_land(proj, geo, visit, tol=2.6):
     """全体図用の軽い陸地：枠の外の国は省き、訪問国だけ名前（title）を付ける"""
     import re as _re
     out = []
@@ -697,7 +697,7 @@ def _build_raw() -> str:
         info_parts.append(f'<div class="rinfo" data-rt="{rid}" style="display:none"><b>8月 南米 {html.escape(rid)}：{html.escape(title)}</b>'
                           f'日数の配分（目安）：{html.escape(days)}／主な未確認：{html.escape(unk)}。'
                           'ケープタウン→サンパウロが南米への唯一の直行（第三者の運航データ）。運賃・便・曜日は未確認。'
-                          '比較は<a href="../research/africa-south-america-2027-comparison.html">アフリカと南米の比較</a>の第5章</div>')
+                          'しおりは<a href="../areas/southamerica-aug.html">8月の周遊（南米）</a>、比較は<a href="../research/africa-south-america-2027-comparison.html">アフリカと南米の比較</a>の第5章</div>')
     infos_r = "".join(info_parts)
     btns_cal = "".join(f'<button type="button" data-cplan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
     cal_key = "".join(f'<span><i style="background:var(--c-{k})"></i>{v}</span>' for k, v in KIND_LABEL.items())
