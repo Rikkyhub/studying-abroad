@@ -471,6 +471,8 @@ SA_POINTS = {
     "MAPI": ("マチュピチュ", -13.1631, -72.5450), "IQT": ("イキトス", -3.7848, -73.3088), "ICA": ("ワカチナ", -14.0875, -75.7626),
     "LPB": ("ラパス", -16.5133, -68.1922), "UYU": ("ウユニ", -20.4463, -66.8484), "GYE": ("グアヤキル", -2.1574, -79.8837),
     "GPS": ("ガラパゴス", -0.4538, -90.2659),
+    "IGU": ("イグアス", -25.5963, -54.4872), "PEM": ("タンボパタ（プエルト・マルドナド）", -12.6136, -69.2286),
+    "PUNO": ("プーノ", -15.8402, -70.0219),
 }
 _F, _O = "flight", "overland"
 _PERU = [("LIM", "CUZ", _F), ("CUZ", "MAPI", _O), ("MAPI", "CUZ", _O), ("CUZ", "LIM", _F), ("LIM", "IQT", _F), ("IQT", "LIM", _F)]
@@ -485,6 +487,11 @@ SA_ROUTES = {
     "SA8-4": ("ペルー＋ガラパゴス", "クスコ5、イキトス3、ガラパゴス4、移動9", "8月のガラパゴスは航空運賃が高い時期（Wikivoyage）",
               [("CPT", "GRU", _F), ("GRU", "LIM", _F), ("LIM", "CUZ", _F), ("CUZ", "MAPI", _O), ("MAPI", "LIM", _O), ("LIM", "IQT", _F),
                ("IQT", "LIM", _F), ("LIM", "GYE", _F), ("GYE", "GPS", _F), ("GPS", "GYE", _F), ("GYE", "NRT", _F)]),
+    "SA8-5": ("イグアス→ペルー（ウユニなし）", "イグアス滞在、マチュピチュ、アマゾン（タンボパタ）、リマでダイビング。日数の配分は未確定", "各区間の実便と日付、マチュピチュの2027年の入場枠",
+              [("CPT", "IGU", _F), ("IGU", "CUZ", _F), ("CUZ", "MAPI", _O), ("MAPI", "CUZ", _O), ("CUZ", "PEM", _F), ("PEM", "LIM", _F), ("LIM", "NRT", _F)]),
+    "SA8-6": ("イグアス→ウユニ→ペルー", "SA8-5 にラパス・ウユニ（2泊3日）とラパス→プーノ→クスコの昼間の陸路を足す。日数の配分は未確定", "ラパス→クスコの昼間の陸路、高地順応の日数",
+              [("CPT", "IGU", _F), ("IGU", "LPB", _F), ("LPB", "UYU", _F), ("UYU", "LPB", _F), ("LPB", "PUNO", _O), ("PUNO", "CUZ", _O), ("CUZ", "MAPI", _O),
+               ("MAPI", "CUZ", _O), ("CUZ", "PEM", _F), ("PEM", "LIM", _F), ("LIM", "NRT", _F)]),
 }
 SA_IDS = list(SA_ROUTES)
 
@@ -696,7 +703,8 @@ def _build_raw() -> str:
     for rid, (title, days, unk, _legs) in SA_ROUTES.items():
         info_parts.append(f'<div class="rinfo" data-rt="{rid}" style="display:none"><b>8月 南米 {html.escape(rid)}：{html.escape(title)}</b>'
                           f'日数の配分（目安）：{html.escape(days)}／主な未確認：{html.escape(unk)}。'
-                          'ケープタウン→サンパウロが南米への唯一の直行（第三者の運航データ）。運賃・便・曜日は未確認。'
+                          + ('ケープタウン→イグアスは、サンパウロなどでの乗継（検索の参考額の表示では13時間台）。実便・対象日・荷物は未確認。'
+                             if rid in ('SA8-5', 'SA8-6') else 'ケープタウン→サンパウロが南米への唯一の直行（第三者の運航データ）。運賃・便・曜日は未確認。') +
                           'しおりは<a href="../areas/southamerica-aug.html">8月の周遊（南米）</a>、比較は<a href="../research/africa-south-america-2027-comparison.html">アフリカと南米の比較</a>の第5章</div>')
     infos_r = "".join(info_parts)
     btns_cal = "".join(f'<button type="button" data-cplan="{k}" aria-pressed="{"true" if k == "now" else "false"}">{html.escape(p["label"])}</button>' for k, p in PLANS.items())
