@@ -230,7 +230,7 @@
 | U2 | 学校料金表の延長区分（85日の当てはめ、累計か段階ごとか） | 料金表に説明がない | 学校に確認（第7節） |
 | U3 | ACR I-CARD（PHP 4,000）が SSP I-CARD と別に必要か | 料金表に条件がない | 学校に確認 |
 | U4 | 2027年のBI手数料（観光延長・SSP） | 公式表は2014年版。2026-10 の告知は Annual Report のみ | 渡航直前に BI を再確認 |
-| U5 | SSP の有効期間・学校代行の範囲 | BI公式ページに記載なし | 学校・BI に確認 |
+| U5 | SSP の有効期間・学校代行の範囲 | BI公式ページに記載なし（2026-11-20再確認：申請者は本人・手順に面接あり、代行の記載なし） | 学校・BI に確認 |
 | U6 | 査証免除入国で8週間の語学学習をしてよいか | 大使館FAQは holiday/business のみ。DHA・学校は study に触れるが、免除入国の明文がない | 在日南ア大使館と学校に確認 |
 | U7 | reg 11(5) が現行条文か | 2026-11-20、第2次（GN R.4847）・第3次（GN 5398）改正の画像PDFを目視：reg 11 の改正は (4)・(4)(b) だけで、**11(5) は改正されていない**。運用は未確認 | 大使館に、再入国時の付与日数を確認する |
 | U8 | 再入国時に審査官が実際にどう付与するか | 法令と運用が一致するとは限らない | 大使館・学校に確認。入国スタンプを記録 |
@@ -395,6 +395,33 @@
 
 **2026-11-03｜在日南ア大使館の年末査証受付・予約手続（一般制度）**：[大使館の2026-11-02公式告知](https://dirco.gov.za/japan/2026/11/02/notice-temporary-closure-of-the-consular-immigration-and-civic-section/)は、査証申請の年内最終受付を**2026-12-09**、再開を**2027-01-06**と案内する。[東京公館の査証案内](https://dirco.gov.za/japan/immigration-visa-info/)は、来館前の**オンライン予約が必要**と記載する（当該ページの更新年は未表示）。これは東京公館の受付・予約手続の一般情報であり、民間語学学校での短期就学に事前査証が必要か、予約枠・審査完了日を確定しない。**2027年の就学区分は未確認**。次の取得先：学校の正式受入書、東京公館の査証担当からの書面回答。調査ログ：両公式ページを2026-11-03に直接確認、2027年の資格を確定する記述は確認できず。予約・申請・問い合わせは未実施。
 
+### 2026-11-20｜フィリピン：SSP・延長・ACR・出国便・eTravelの公式ページ再確認（2027年未確定）
+
+BI公式ページを直接取得して確認した（WebSearchは使えなかったため、URLを直接取得）。金額はすべて**2014-03-06付の料金表**で、2027年の金額とはみなさない。
+
+| 項目 | 確認できたこと | 出典（2026-11-20閲覧） | 適用年 |
+|---|---|---|---|
+| SSPの申請者・手順 | 申請者は「学生査証の対象外の外国人」本人、申請先はBI本庁。手順：CGAF様式→CRUの事前審査→支払票の受取・納付→領収書の写しを提出→**面接（hearing）**と生体情報の登録→ARDへACR I-Cardの書類→許可後にSSPとACR I-Cardを受け取る。**学校の代行については記載なし** | [BI Special Study Permit](https://immigration.gov.ph/special-study-permit/) | 年の記載なし |
+| SSPの手数料 | 合計 PHP 5,240（申請2,000・実施1,000・サービス200・証明500・LRF・Express 500×3）。別に I-Card USD 50 | 同上 | 料金は2014-03-06付 |
+| ACR I-Card | 一時訪問者として**59日を超えて**滞在する外国人が対象。USD 50＋PHP 500。延長の申請と同時に出す。別ページの「ACR I-Card Certification」（PHP 1,010）は登録の証明書で、カード本体とは別 | [ACR I-Card Issuance](https://immigration.gov.ph/acr-i-card-issuance/)、[ACR I-Card](https://immigration.gov.ph/acr-i-card/) | 料金は2014-03-06付 |
+| 30日＋延長 | 入国時30日 → Visa Waiver（＋29日で計59日、PHP 3,030）→ 以後1か月・2か月単位（成人・査証不要国 PHP 4,400／4,900）→ 2か月延長の後は PHP 2,430／2,930。LSVVE（最長6か月をまとめて）PHP 11,500・本庁のみ | [Visa Waiver](https://immigration.gov.ph/visas/visa-waiver/) | 料金は2014-03-06付 |
+| 延長の申請時期・窓口 | 滞在期限の**7日前から**申請でき、少なくとも1週間前までに申請。窓口は全国のBI事務所、またはオンライン（e-services の Tourist Visa Extension） | [BI FAQ](https://immigration.gov.ph/faqs/)、[Tourist Visa Extension](https://immigration.gov.ph/tourist-visa-extension/)（2024年ごろの告知） | 年の記載なし |
+| 日本で事前に査証を取る選択肢 | 在日比大使館は、30日を超えて滞在する人は、現地で延長するか、**日本出国前に大使館で一時訪問者査証（9(a)）を申請**できると案内 | [在日比大使館 Visa-free entry](https://tokyo.philembassy.net/en/consular-section/services/visa/visa-free-entry-for-temporary-visits/) | 更新日の記載なし |
+| 出国便の要件 | 大使館の文言は「valid tickets for their return journey to port of origin or to their next port of destination」。**日付の条件（30日以内かどうか）は書かれていない** | 同上 | 更新日の記載なし |
+| eTravel | 無料。到着する外国人は登録が必要。搭乗前に登録の証明を見せる。QRが緑ならそのまま入国審査、赤なら検疫で追加検査。紛失時は再表示ページあり。登録時期は、FAQ「到着の72時間以内」とBIの告知「少なくとも72時間前」で**表記が食い違う** | [eTravel](https://etravel.gov.ph/)、[eTravel FAQ](https://etravel.gov.ph/frequently-asked-questions)、[BI Advisory](https://immigration.gov.ph/advisory-etravel-registration/) | FAQは日付なし、告知は2026年10月ごろ |
+| 学校の2027年版料金 | PINES の公開料金表は「Tuition Fee v05（Oct 4 onwards）」（2026年10月〜版）のまま。2027年版の公開は確認できない | [PINES 料金表PDF](https://philschools.jp/pricelist/pines.pdf) | 2026年10月〜版 |
+
+**未確認（2026-11-20時点）**
+- SSPの有効期間・処理日数（BI公式ページに記載なし）
+- SSPを学校が代行するか、面接（hearing）に本人の出頭が要るか（公式は申請者＝本人とだけ記載）→ 学校に確認
+- 2027年のBI手数料（公式の料金表は2014年版のまま、改定の告知は見当たらない）
+- ACR I-Card が SSP 用とは別に要るか（U3 のまま。BIはSSPの手順の中でACR I-Cardを発行している）
+- 航空会社（PAL・Cebu Pacific・JAL・ANA）の出国便チェックの文言（ページを取得できなかった。U1 のまま）
+- 日本で取る9(a)査証の期間・円建て料金（大使館の該当ページが404）
+- eTravel の登録時期の表記の食い違い（到着前に再確認する）
+- Monol・BECI・JIC・HELP の2027年版料金・日程（公式サイトに接続できなかった）
+
+**検索ログ（2026-11-20）**：WebSearch はエラーで使えなかった。取得できた：immigration.gov.ph の special-study-permit・visas/visa-waiver・faqs・acr-i-card-issuance・acr-i-card・tourist-visa-extension・advisory-etravel-registration、etravel.gov.ph とFAQ、在日比大使館 visa-free entry と other-visa-categories、philschools.jp の PINES 料金表PDF（メタデータのみ）。取得できなかった：e-services.immigration.gov.ph（応答なし）、在日比大使館の9(a)ページ（404）、anzen.mofa.go.jp（403）、philippineairlines.com（404）、cebupacificair.com（本文なし・500）、jal.co.jp（403）、ana.co.jp（接続切断）、Monol・JIC（DNS解決不可）、BECI（接続切断）、HELP（証明書エラー）。
 ### 2026-11-20｜南アフリカ：短期の語学就学と、周辺国からの再入国（2027年未確定）
 
 公式ページを直接取得して確認した（WebSearch は使えなかった）。**2027年に適用されるかは、どの項目も未確認**。
