@@ -599,7 +599,7 @@ def render(path: Path, root: Path = ROOT) -> str:
 FOLD_DOCS = {"docs/02-budget.md": "1. 概要", "docs/03-preparation.md": "", "docs/10-qa.md": "", "docs/09-issue-map.md": ""}
 
 
-PAGE_TAG_CLASS = {"baguio": "r-baguio", "africa": "r-may", "africa-aug": "r-aug", "capetown": "r-cape"}
+PAGE_TAG_CLASS = {"baguio": "r-baguio", "africa": "r-may", "africa-aug": "r-aug", "southamerica-aug": "r-aug", "capetown": "r-cape"}
 
 
 def page_tag(path: Path, root: Path = ROOT) -> str:
@@ -611,7 +611,7 @@ def page_tag(path: Path, root: Path = ROOT) -> str:
     cls = PAGE_TAG_CLASS.get(path.stem, "") if d == "areas" else ""
     if cls:
         tl = csv_records(root / DATA_DIR / "timeline.csv") if (root / DATA_DIR / "timeline.csv").exists() else []
-        periods = [r["period"] for r in sorted(tl, key=lambda r: (int(r["sort"] or 0), r["id"])) if path.stem in r["region"].split(";")]
+        periods = [r["period"] for r in sorted(tl, key=lambda r: (int(r["sort"] or 0), r["id"])) if {"southamerica-aug": "africa-aug"}.get(path.stem, path.stem) in r["region"].split(";")]  # 8月の南米も8月の期間を出す
         if periods:
             name = " ・ ".join(dict.fromkeys(periods))
     return f'<span class="tag {cls}">{esc(name)}</span>'.replace('class="tag "', 'class="tag"')
@@ -1059,7 +1059,7 @@ def budget_cards(root: Path = ROOT) -> str:
         split_card("フィリピン（バギオ）", "baguio", "現地費（航空券を除く）"),
         split_card("アフリカ周遊（5月）", "africa", f'現地費（航空券を除く）。航空券と合わせた5月の総額は {build.yen(may_total)}'),
         split_card("南アフリカ（ケープタウン）", "capetown", "現地費（航空券を除く）"),
-        split_card("8月の周遊（アフリカ・南米）", "africa-aug", "現地費（航空券を除く）。行き先は未定"),
+        split_card("8月の周遊（アフリカ・南米）", "africa-aug", "現地費（航空券を除く）。アフリカか南米かは未定"),
         flight,
         split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用"),
     ]
@@ -1954,7 +1954,8 @@ INDEX_PAGE = """<!doctype html>
 
 # 上部ナビ（全ページ共通）：ホーム／地域4つ／費用の横並びと、右端の「ほか」（開閉）。パスは ROOT からの相対
 NAV_MAIN = [("ホーム", "index.html"), ("バギオ", "areas/baguio.html"), ("アフリカ5月", "areas/africa.html"),
-            ("ケープタウン", "areas/capetown.html"), ("8月", "areas/africa-aug.html"), ("費用", "docs/02-budget.html")]
+            ("ケープタウン", "areas/capetown.html"), ("8月", [("アフリカ", "areas/africa-aug.html"), ("南米", "areas/southamerica-aug.html")]),
+            ("費用", "docs/02-budget.html")]  # 8月は、押すとアフリカ・南米を選ぶ開閉メニュー
 
 
 COUNTRY_GROUP_LABEL = {"g1": "5月の周遊で通る国", "g2": "南部アフリカのほかの候補", "g3": "東アフリカ（参考）", "g4": "南米・メキシコ"}
@@ -1994,7 +1995,13 @@ def bar(prefix: str, current: str = "") -> str:
         cur = ' aria-current="page"' if href == current else ""
         url = href if href.startswith("#") else prefix + href
         return f'<a href="{url}"{cur}>{html.escape(label)}</a>'
-    main = "".join(link(l, h) for l, h in NAV_MAIN)
+    def item(l, h):
+        if isinstance(h, str):
+            return link(l, h)
+        here = any(x == current for _, x in h)  # 8月：アフリカ／南米の2ページを選ぶ開閉メニュー
+        return (f'<details class="more-nav{" on" if here else ""}"><summary>{html.escape(l)}</summary>'
+                f'<div class="drop">{"".join(link(a, b) for a, b in h)}</div></details>')
+    main = "".join(item(l, h) for l, h in NAV_MAIN)
     menus = []
     for name, groups in _nav_menus():
         here = any(h == current for _, items in groups for _, h in items)

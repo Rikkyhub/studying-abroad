@@ -72,7 +72,7 @@ class IndexTests(unittest.TestCase):
             self.assertIn(f'href="areas/{k}.html"', self.index)
         import re
         self.assertLessEqual(len(re.findall(r"<table>", self.index)), 3)  # 地域・通貨・資料
-        self.assertLess(len(self.index), 102000)  # 100,000→102,000：南米・メキシコ7か国の国別ページ（上部「国別」メニュー7リンク＋資料一覧）を足した分。main時点で99,996文字、足した後は約100,600文字（#185）  # 5月の案Gの地図（SVG約46KB）をトップの中心に置いた分を加算  # 全ページ一覧（国別・8月ページ）の増加に合わせて調整（#58）。カルーセル・折りたたみ用のCSS/JS分を加味。トップは / で開くため軽さを保つ
+        self.assertLess(len(self.index), 105000)  # 8月の地域別メニュー追加で100,128文字。5%弱の余裕を認めつつトップの肥大化を監視する
 
     def test_tables_have_headers(self):
         import re
@@ -192,7 +192,7 @@ class IndexTests(unittest.TestCase):
 class NavTests(unittest.TestCase):
     """全ページ共通の上部ナビ：ホーム・地域4つ・費用が横並びで、ほかの入口は「ほか」から開く"""
 
-    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "8月", "費用")
+    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "アフリカ", "南米", "費用")  # アフリカ・南米は「8月」の開閉メニューの中
 
     def test_main_links_on_every_kind_of_page(self):
         for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "research/sources.html",
@@ -201,7 +201,7 @@ class NavTests(unittest.TestCase):
             nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
             for label in self.MAIN:
                 self.assertIn(f">{label}</a>", nav, f"{rel}: {label}")
-            for menu in ("国別", "地図", "ツール", "資料"):
+            for menu in ("8月", "国別", "地図", "ツール", "資料"):
                 self.assertIn(f"<summary>{menu}</summary>", nav, rel)
 
     def test_current_page_is_marked(self):

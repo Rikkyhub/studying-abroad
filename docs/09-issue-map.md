@@ -14,11 +14,11 @@
 | [マニラ周辺の観光とダイビング（バギオ滞在の前後）](../research/manila-area-guide.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 作成中 | 2026-11-16 |
 | [5月×8月ルート再設計の比較（Issue #137）](../research/137-route-redesign-comparison.html) | [#137](https://github.com/Rikkyhub/studying-abroad/issues/137) | 作成中 | 2026-11-16 |
 | [陸路縦断とマダガスカルの順序の比較（Issue #168）](../research/168-overland-vs-madagascar-comparison.html) | [#168](https://github.com/Rikkyhub/studying-abroad/issues/168) | 作成中 | 2026-11-18 |
-| [アフリカと南米の比較（2027年）](../research/africa-south-america-2027-comparison.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-20 |
-| [南米の国別比較（1）](../research/south-america-countries-a.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 作成中 | 2026-11-20 |
+| [アフリカと南米：5月・8月の順番とルート比較（2027年）](../research/africa-south-america-2027-comparison.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-20 |
+| [南米の国別比較（1）：ペルー・ボリビア・エクアドル・ブラジル](../research/south-america-countries-a.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 作成中 | 2026-11-20 |
 | [ケープタウン発ダイビング](../research/capetown-diving.html) | [#3](https://github.com/Rikkyhub/studying-abroad/issues/3) | 調査中 | 2026-10-17 |
 | [準備チェック](../docs/03-preparation.html) | － | 整理済 | － |
-| [南米の国別比較（2）](../research/south-america-countries-b.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 作成中 | 2026-11-20 |
+| [南米の国別比較（2）：アルゼンチン・チリ・メキシコ](../research/south-america-countries-b.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 作成中 | 2026-11-20 |
 | [出発前ロードマップ](../docs/06-predeparture-roadmap.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 整理済 | 2026-10-17 |
 | [バギオの週末観光](../research/baguio-sightseeing.html) | [#4](https://github.com/Rikkyhub/studying-abroad/issues/4) | 調査中 | 2026-10-16 |
 | [ブログ記事候補](../blog/article-ideas.html) | － | 整理済 | － |
@@ -41,7 +41,8 @@
 | [アフリカ周遊ルート比較](../research/africa-route-comparison.html) | [#23](https://github.com/Rikkyhub/studying-abroad/issues/23) | 調査中 | 2026-10-17 |
 | [アフリカ周遊（5月）](../areas/africa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [アフリカ縦断7/9か国・共通ビザ・モザンビーク潜水](../research/africa-overland-7-9-countries.html) | [#44](https://github.com/Rikkyhub/studying-abroad/issues/44) | 調査中 | 2026-10-18 |
-| [8月の周遊（アフリカ・南米）](../areas/africa-aug.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-08 |
+| [8月の周遊（アフリカ）](../areas/africa-aug.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-08 |
+| [8月の周遊（南米）](../areas/southamerica-aug.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-20 |
 | [第2か国留学（ケープタウン）](../research/second-school.html) | － | 調査中 | 2026-10-17 |
 | [ケープタウン（第2か国留学）](../areas/capetown.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
 | [日本国内・保険・共通](../areas/common.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-10-17 |
