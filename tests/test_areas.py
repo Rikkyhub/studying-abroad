@@ -51,6 +51,19 @@ class AreaPageTests(unittest.TestCase):
             side = html.split('<aside class="pane-side">')[1].split("</aside>")[0]
             self.assertTrue("旅の要点" in side or "概要" in side, k)
 
+    def test_may_and_south_america_pages_have_map_and_dated_itinerary_on_the_left(self):
+        # 左に地図と日付つきの旅程（Day 番号ではなく実際の日付）、右に文章のタブ
+        import re
+        for k in ("africa", "southamerica-aug"):
+            html = read(f"areas/{k}.html")
+            side = html.split('<aside class="pane-side">')[1].split("</aside>")[0]
+            self.assertIn('class="sidemap"', side, k)
+            self.assertIn('class="lday"', side, k)
+            self.assertRegex(side, r"\d+/\d+（[月火水木金土日]）", k)
+            text = re.sub(r"<svg.*?</svg>", "", side, flags=re.S)  # 地図の座標の数字は除く
+            self.assertNotRegex(text, r"Day \d", k)
+        self.assertNotIn("基準モデルの5/3起点の仮置き", read("areas/africa.html"))
+
     def test_country_pages_tabs_in_reading_order(self):
         # 国別ページ：左に概要・ビザ・安全、右のタブは「旅程の目安」が先頭、その後に観光地・行き方・食べ物
         import re
