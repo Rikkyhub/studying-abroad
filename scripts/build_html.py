@@ -642,6 +642,9 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         body = fold_sections(body, min_chars=900, open_key=FOLD_DOCS[rel])
     if 'class="sec"' in body:
         body += "\n" + SECTION_SCRIPT
+    if rel == "docs/02-budget.md" and "@@SEVEN-MONTH-BUDGET@@" in md:
+        from budget_dashboard import render
+        body = body.replace("<p>@@SEVEN-MONTH-BUDGET@@</p>", render())
     if "@@COUNTRY-MAP@@" in md:
         import build_country_maps
         body = body.replace("@@COUNTRY-MAP@@", "<style>" + build_country_maps.CSS + "</style>" + build_country_maps.render(path.stem, root))
