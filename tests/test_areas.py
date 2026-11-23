@@ -96,7 +96,8 @@ class AreaPageTests(unittest.TestCase):
                 self.assertIn("未計上", areas.cost_block(rows, areas.PHASE_REGION[r["phase"]]))
         # 金額未入力の行（Issue #77/#80 の新5月案：マダガスカル国内線）は、全シナリオ「未計上」で ¥0 と書かない
         line = next(ln for ln in read("areas/africa.md").splitlines() if "マダガスカル国内線" in ln and ln.startswith("|"))
-        self.assertEqual(line.count("未計上"), 3)
+        self.assertIn("USD", line)
+        self.assertNotIn("未計上", line)
         self.assertNotIn("¥0 |", line)
 
     def test_subtotal_equals_sum_of_converted_rows_no_currency_mixing(self):
@@ -107,7 +108,7 @@ class AreaPageTests(unittest.TestCase):
                 want = sum(r["est"][s] for r in rows if areas.PHASE_REGION[r["phase"]] == k and not r["no_amount"] and r["est"][s] is not None)
                 self.assertAlmostEqual(t["all"][s] or 0.0, want, places=3)
         # 全地域の小計の合計はビルドの総計と一致（取りこぼし・二重計上なし）
-        total = sum((areas.region_totals(rows, k)["all"]["std"] or 0) for k in REGIONS)
+        total = sum((areas.region_totals(rows, k)["all"]["std"] or 0) for k in (*REGIONS, "southamerica-aug", "africa-aug"))
         self.assertAlmostEqual(total, S["total"]["std"], places=3)
 
     def test_every_expense_phase_maps_to_a_region(self):

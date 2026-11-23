@@ -91,8 +91,8 @@ class IndexTests(unittest.TestCase):
         import re
         sec = self.index.split('<h2 id="budget">')[1].split("<h2 id=")[0]
         # 8月は金額なしで「未計上」と出る
-        for label in ("目標総予算", "上限予算", "見積合計（標準）", "フィリピン（バギオ）", "アフリカ周遊（5月）",
-                      "南アフリカ（ケープタウン）", "8月の周遊（アフリカ・南米）", "飛行機代"):
+        for label in ("目標総予算", "上限予算", "7か月の標準概算", "フィリピン（バギオ）", "アフリカ周遊（5月）",
+                      "南アフリカ（ケープタウン）", "8月の周遊（ペルー案）", "飛行機代"):
             self.assertIn(label, sec)
         self.assertIn("モデル", sec)
         self.assertIn("実費ではありません", sec)

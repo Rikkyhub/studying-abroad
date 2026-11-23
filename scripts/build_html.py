@@ -862,9 +862,11 @@ def _station_costs(root: Path) -> dict:
     rows = build.load_model()[1]
     out = {}
     for key, _ in REGION_PAGES:
-        rs = [r for r in rows if r["id"] not in FLIGHT_IDS and areas.PHASE_REGION.get(r["phase"], "common") == key and not r["no_amount"]]
+        rs = [r for r in rows if r["id"] not in FLIGHT_IDS and (areas.PHASE_REGION.get(r["phase"], "common") == key or (key == "africa-aug" and r["id"].startswith("SA8-"))) and not r["no_amount"]]
         if rs:
             out[key] = build.yen(sum(r["est"]["std"] or 0.0 for r in rs))
+    if any(r["id"].startswith("SA8-") for r in rows):
+        out["southamerica-aug"] = out["africa-aug"]
     return out
 
 
@@ -935,10 +937,12 @@ def home_flow(root: Path = ROOT) -> str:
         key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
         cls = REGION_CLASS.get(key, "reg-common")
         cost = costs.get(key)
+        if key == "africa-aug" and "southamerica-aug" in costs:
+            key = "southamerica-aug"
         cost_html = (f'<span class="cost num">{esc(cost)}<small>現地費・標準</small></span>' if cost
                      else '<span class="cost num">未計上<small>国が未定のため</small></span>')
         out.append(f'<a class="seg {cls}" href="areas/{key}.html"><span class="when">{esc(r["period"])}</span>'
-                   f'<h3>{esc(r["title"])}</h3>{cost_html}'
+                   f'<h3>{esc("8月の周遊（ペルー案）" if key == "southamerica-aug" else r["title"])}</h3>{cost_html}'
                    f'<span class="sub">{esc(r["summary"])}</span></a>')
     return "".join(out)
 
@@ -956,7 +960,7 @@ def budget_strip(root: Path = ROOT) -> str:
     open_p0 = sorted((t for t in tasks if t["priority"] == "1" and t["status"] not in DONE_STATUS), key=key)
     chips = "".join(f'<li><b>{esc(_short_deadline(t["deadline_note"]))}</b>{esc(t["task"])}</li>' for t in open_p0[:3])
     return ('<div class="strip">'
-            f'<div class="strip-budget"><span class="k">見積合計（標準）</span><span class="big num">{esc(build.yen(tot))}</span>'
+            f'<div class="strip-budget"><span class="k">7か月の標準概算</span><span class="big num">{esc(build.yen(tot))}</span>'
             f'<div class="meter" role="img" aria-label="見積合計 {esc(build.yen(tot))}、目標 {esc(build.man(goal))}、上限 {esc(build.man(cap))}">'
             f'<i style="width:{pct(tot):.1f}%"></i><span class="mark" style="left:{pct(goal):.1f}%"><span>目標 {esc(build.man(goal))}</span></span>'
             f'<span class="mark" style="left:100%"><span>上限 {esc(build.man(cap))}</span></span></div>'
@@ -966,7 +970,7 @@ def budget_strip(root: Path = ROOT) -> str:
 
 
 def budget_meter(root: Path = ROOT) -> str:
-    """予算のものさし：見積合計（標準）と、目標・上限の目盛つきの棒"""
+    """予算のものさし：7か月の標準概算と、目標・上限の目盛つきの棒"""
     if root != ROOT:
         return ""
     import build
@@ -1000,7 +1004,7 @@ def now_short(root: Path = ROOT) -> str:
             f'<p class="sub">最優先の未完了は {len(open_p0)} 件。全件は <a href="docs/10-qa.html">確認待ち（QA）</a> と、各地域のページに。</p></section>')
 
 
-FLIGHT_IDS = ("PH-11", "PH-12", "AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21", "SC-08")  # 国際線・国内線。バス・現地交通・査証は除外
+FLIGHT_IDS = ("PH-11", "PH-12", "AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21", "SC-08", "SA8-out", "SA8-dom", "SA8-return")  # 国際線・国内線。バス・現地交通・査証は除外
 
 
 def budget_cards(root: Path = ROOT) -> str:
@@ -1060,14 +1064,14 @@ def budget_cards(root: Path = ROOT) -> str:
     cards = [
         card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標"),
         card("上限予算", build.man(S["budget_cap"]), "モデルの上限"),
-        card("見積合計（標準）", build.yen(tot["std"]),
+        card("7か月の標準概算", build.yen(tot["std"]),
              f'低 {esc(build.yen(tot["low"]))} 〜 余 {esc(build.yen(tot["high"]))}<br><span class="muted">未計上 {n_na + n_part}件は含まず、0円ではない</span>'
              f'<span class="tri-top" data-total="{int(round(tot["std"]))}" hidden></span>',
              "docs/02-budget.html"),
         split_card("フィリピン（バギオ）", "baguio", "現地費（航空券を除く）"),
         split_card("アフリカ周遊（5月）", "africa", f'現地費（航空券を除く）。航空券と合わせた5月の総額は {build.yen(may_total)}'),
         split_card("南アフリカ（ケープタウン）", "capetown", "現地費（航空券を除く）"),
-        split_card("8月の周遊（アフリカ・南米）", "africa-aug", "現地費（航空券を除く）。アフリカか南米かは未定"),
+        split_card("8月の周遊（ペルー案）", "southamerica-aug", "現地費（航空券を除く）", href="areas/southamerica-aug.html") if any(r["id"].startswith("SA8-") for r in rows) else split_card("8月の周遊（アフリカ案）", "africa-aug", "現地費（航空券を除く）"),
         flight,
         split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用"),
     ]
@@ -1705,7 +1709,7 @@ FLIGHTS_MD = "12-flights.md"
 FLIGHT_GROUPS = [
     ("フィリピン", ("PH-11", "PH-12")),
     ("5月の周遊（日本→モーリシャス→マダガスカル→ビクトリアの滝周辺→ケープタウン）", ("AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF-21")),
-    ("帰国", ("SC-08",)),
+    ("8月の南米経由・帰国", ("SA8-out", "SA8-dom", "SA8-return", "SC-08")),
 ]
 
 
