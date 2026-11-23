@@ -300,5 +300,36 @@ class AuditFixTests(unittest.TestCase):
         self.assertEqual(reader_clean("資料（2026-10-26閲覧、Issue #66）"), "資料（2026-10-26閲覧）")
 
 
+class TripDesignerTests(unittest.TestCase):
+    """旅のデザイナー（docs/14-trip-designer.html）：ブラウザの中だけで動く入力画面"""
+
+    def setUp(self):
+        self.text = (ROOT / "docs" / "14-trip-designer.html").read_text(encoding="utf-8")
+
+    def test_page_has_map_calendar_inputs_and_presets(self):
+        for key in ('data-designer', 'id="dz-svg"', 'id="dz-preset"', 'id="dz-start"', 'id="dz-undo"', 'id="dz-zoom"'):
+            self.assertIn(key, self.text, key)
+        for pid in ("SA8-6", "SA8-5"):
+            self.assertIn(f'"id":"{pid}"', self.text, pid)
+
+    def test_input_stays_in_the_browser_only(self):
+        # 入力は localStorage だけ。外部への送信（fetch・XMLHttpRequest・sendBeacon）は使わない
+        self.assertIn("localStorage", self.text)
+        for bad in ("fetch(", "XMLHttpRequest", "sendBeacon", "WebSocket"):
+            self.assertNotIn(bad, self.text, bad)
+
+    def test_designer_is_in_the_tools_menu(self):
+        nav = (ROOT / "index.html").read_text(encoding="utf-8").split('<nav class="menu"')[1].split("</nav>")[0]
+        self.assertIn("旅のデザイナー", nav)
+
+    def test_sa8_6_nights_end_on_aug_22(self):
+        import re, datetime as dt
+        m = re.search(r'\{"id":"SA8-6".*?"stops":(\[\[.*?\]\])\}', self.text, re.S)
+        import json
+        stops = json.loads(m.group(1))
+        end = dt.date(2027, 8, 1) + dt.timedelta(days=sum(int(x[1]) for x in stops))
+        self.assertEqual(end, dt.date(2027, 8, 22))
+
+
 if __name__ == "__main__":
     unittest.main()

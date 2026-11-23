@@ -648,6 +648,9 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
     if "@@COUNTRY-MAP@@" in md:
         import build_country_maps
         body = body.replace("@@COUNTRY-MAP@@", "<style>" + build_country_maps.CSS + "</style>" + build_country_maps.render(path.stem, root))
+    if "@@TRIP-DESIGNER@@" in md:
+        import build_designer  # 循環 import を避けるため、関数の中で読む
+        body = body.replace("<p>@@TRIP-DESIGNER@@</p>", build_designer.designer_html()).replace("@@TRIP-DESIGNER@@", build_designer.designer_html())
     if "@@ROUTE-TABLE@@" in md:
         body = body.replace("@@ROUTE-TABLE@@", ROUTE_TABLE_HTML)
     if "@@DAY-PLANNER@@" in md:
@@ -705,6 +708,10 @@ def outputs(root: Path = ROOT) -> dict[Path, str]:
         dmd = planner_markdown()
         out[dp] = dmd
         out[dp.with_suffix(".html")] = render_text(dmd, dp, root)
+        gp = root / "docs" / DESIGNER_MD
+        gmd = designer_markdown()
+        out[gp] = gmd
+        out[gp.with_suffix(".html")] = render_text(gmd, gp, root)
         fp = root / "docs" / FLIGHTS_MD
         fmd = flights_markdown(root)
         out[fp] = fmd
@@ -1493,6 +1500,28 @@ def route_markdown(root: Path = ROOT) -> str:
         "- 費用の自動計算・地図への表示は、ルートの形が固まってから次の段階で足します。", ""]) + "\n"
 
 
+DESIGNER_MD = "14-trip-designer.md"
+
+
+def designer_markdown() -> str:
+    """旅のデザイナー。入力は閲覧者のブラウザ内だけ（localStorage）。公開されるのは説明文と、既存の案（匿名モデル）だけ"""
+    return "\n".join([
+        "# 旅のデザイナー", "",
+        "案を読み込んで、日数・順番・行き先を入れ替えながら、**地図と日付**を見て旅を組み立てます。入力は**このブラウザの中だけ**に保存され、公開されません。", "",
+        "@@TRIP-DESIGNER@@", "",
+        "## 使い方", "",
+        "- **案を読み込む**：下の一覧から案を選び、「読み込む」を押します。出発日は変えられます。",
+        "- **カード**：行き先・泊数・移動（飛行機／陸路・列車）・やることを直します。カードはドラッグで並べ替えできます（▲▼でも動かせます）。",
+        "- **表**：1日ずつの日付を見ながら、行を直します。",
+        "- **保存した案を比べる**：いまの案に名前を付けて保存し、日数・国数・飛行機の回数・日本着の目安を並べます。",
+        "- 「元に戻す」で、直前の操作を取り消せます。", "",
+        "## 注意（計算の前提）", "",
+        "- 日付は、出発日から各行の泊数を足して割り付けます。**運航の曜日や、実際の便は確認していません**。",
+        "- **日本着の目安は推計**です。最後の出発日から約2日後を目安にしています（リマ→東京は直行がなく乗継で約24〜30時間、日付変更線で日本は14時間進む）。8/24・8/25に収まるかの判定にだけ使い、予約には使わないでください。",
+        "- 地図の線は、飛行機は大圏（地球上の最短経路）、陸路・列車は直線の概念図です。実際の経路ではありません。",
+        "- 費用はまだ計算していません。", ""]) + "\n"
+
+
 PLANNER_MD = "13-day-planner.md"
 # 国ごとの最適日数の目安（research/africa-13-countries-comparison.md の『最適日数（推計）』列の要約。推計であり確定ではない）
 # キー＝route_points.csv の国名。値＝(目安の泊数の下限, 上限, 説明)
@@ -1998,7 +2027,7 @@ def _nav_menus() -> list[tuple[str, list[tuple[str, list[tuple[str, str]]]]]]:
     return [
         ("国別", _country_links()),
         ("地図", [("", maps)]),
-        ("ツール", [("", [("ルート作成", "docs/11-route-builder.html"), ("日程プランナー", "docs/13-day-planner.html"),
+        ("ツール", [("", [("旅のデザイナー", "docs/14-trip-designer.html"), ("ルート作成", "docs/11-route-builder.html"), ("日程プランナー", "docs/13-day-planner.html"),
                           ("航空券の比較", "docs/12-flights.html"), ("準備チェック", "docs/03-preparation.html"),
                           ("準備タスク（アプリ表示）", "app.html")])]),
         ("資料", [("", [("日本国内・保険・共通", "areas/common.html"),

@@ -1,0 +1,158 @@
+<style>
+.dz{display:grid;grid-template-columns:minmax(320px,42%) minmax(0,1fr);gap:14px;align-items:start;margin:8px 0}
+.dz-left{position:sticky;top:calc(var(--bar,52px) + 8px);min-width:0;max-height:calc(100dvh - var(--bar,52px) - 16px);overflow:auto}
+.dz-map{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--sea,#e6eef3)}
+.dz-map svg{display:block;width:100%;height:auto}
+.dz-map .land{fill:var(--land,#f4f1e8);stroke:var(--border,#b9b4a4);stroke-width:.5;stroke-linejoin:round}
+.dz-map .grat{fill:none;stroke:var(--grat,#cdd8df);stroke-width:.5}
+.dz-map .ln{fill:none;stroke-width:2.4;stroke-linecap:round}
+.dz-map .ln.fly{stroke:var(--fl,#9B1D20);stroke-dasharray:7 5}.dz-map .ln.move{stroke:var(--rd,#8A6D00)}
+.dz-map .sn{fill:var(--ink);stroke:var(--bg);stroke-width:2}
+.dz-map .snt{fill:var(--bg);font-size:12px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.dz-map .tx{font-size:15px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea,#e6eef3);stroke-width:3px;pointer-events:none}
+.dz-sum{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:8px 0;font-size:.86rem}
+.dz-sum div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.dz-sum b{display:block;font-size:1.05rem}
+.dz-sum .warn b{color:var(--c-warn,#b3261e)} .dz-sum .ok b{color:var(--c-ok,#0b6e4f)}
+.dz-bar{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:6px 0}
+.dz-bar button,.dz-card button,.dz-row button{font:inherit;min-height:34px;padding:2px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
+.dz-bar button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.dz-bar label{font-size:.88rem} .dz-bar input,.dz-bar select,.dz-card input,.dz-card select,.dz-row input,.dz-row select{font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-width:0}
+.dz-tabs{display:flex;gap:4px;margin:8px 0 4px}.dz-tabs button{border-radius:8px 8px 0 0}
+.dz-cards{display:grid;gap:8px}
+.dz-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:grab}
+.dz-card.over{outline:2px dashed var(--link)}
+.dz-card .num{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:800;font-size:.8rem}
+.dz-card .when{font-weight:800;font-size:.86rem;color:var(--muted)}
+.dz-card .fld{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:.86rem}
+.dz-card .fld input.nt{flex:1 1 180px}
+.dz-card input[type=number]{width:4.2em}
+table.dz-table{width:100%;font-size:.84rem;table-layout:auto}
+table.dz-table th{position:static}
+table.dz-table td{padding:3px 5px}
+.dz-note{font-size:.82rem;color:var(--muted);margin:4px 0}
+.dz-cmp{width:100%;font-size:.86rem}
+.dz-bar label{display:flex;flex-wrap:wrap;align-items:center;gap:4px;max-width:100%}.dz select,.dz input{max-width:100%}
+.dz-card{grid-template-columns:auto minmax(0,1fr)} .dz-card>div:last-child{grid-column:1/-1}
+@media(max-width:1000px){.dz{grid-template-columns:minmax(0,1fr)}.dz-left{position:static}}
+</style>
+<div class="dz" data-designer>
+<div class="dz-left">
+<div class="dz-bar" style="margin-top:0"><button type="button" id="dz-zoom" aria-pressed="false">拡大して見る（行き先が集まる所）</button><span class="dz-note" id="dz-zt"></span></div>
+<div class="dz-map"><svg id="dz-svg" viewBox="0 0 1000 560" role="img" aria-label="入力した旅程の地図"></svg></div>
+<div class="dz-sum" id="dz-sum"></div>
+<p class="dz-note" id="dz-warn" aria-live="polite"></p>
+</div>
+<div class="dz-right">
+<div class="dz-bar"><label>案を読み込む <select id="dz-preset"></select></label><button type="button" id="dz-load">読み込む</button>
+<label>出発日 <input type="date" id="dz-start"></label>
+<label>日本着の目安 <select id="dz-ret"><option value="24">8/24</option><option value="25">8/25</option></select></label></div>
+<div class="dz-bar"><label>行き先を足す <select id="dz-add"></select></label><button type="button" id="dz-addbtn">＋足す</button>
+<button type="button" id="dz-undo">元に戻す</button></div>
+<div class="dz-tabs" role="tablist" aria-label="入力のしかた"><button type="button" role="tab" data-v="cards" aria-pressed="true">カード（並べ替え・日数）</button><button type="button" role="tab" data-v="table" aria-pressed="false">表（1行ずつ直す）</button><button type="button" role="tab" data-v="cmp" aria-pressed="false">保存した案を比べる</button></div>
+<div id="dz-cards" class="dz-cards"></div>
+<div id="dz-table" hidden></div>
+<div id="dz-cmp" hidden></div>
+</div>
+</div>
+<script>
+(function(){
+var root=document.querySelector("[data-designer]");if(!root)return;
+var GEO=@@GEO@@,PTS=@@POINTS@@,PRE=@@PRESETS@@,WIN=@@WINDOW@@;
+var KEY="trip-designer-v1",WD="日月火水木金土";
+var P={};PTS.forEach(function(p){P[p[0]]={name:p[1],country:p[2],lat:p[3],lon:p[4]}});
+// ---- 地図の投影（ランベルト正積方位図法。build_maps.py の Laea と同じ式）----
+var W=1000,pad=8,lon0=40,lat0=0,p1=0,x0,x1,y0,y1,sc,H,VW=WIN;
+function raw(lon,lat){var phi=lat*Math.PI/180,dl=(lon-lon0)*Math.PI/180;var c=Math.sin(p1)*Math.sin(phi)+Math.cos(p1)*Math.cos(phi)*Math.cos(dl);var k=Math.sqrt(2/Math.max(1e-9,1+c));return[k*Math.cos(phi)*Math.sin(dl),k*(Math.cos(p1)*Math.sin(phi)-Math.sin(p1)*Math.cos(phi)*Math.cos(dl))]}
+function setView(w,lo,la){lon0=lo;lat0=la;p1=lat0*Math.PI/180;VW=w;var xs=[],ys=[];for(var i=0;i<=40;i++){var t=i/40;[w[2],w[3]].forEach(function(a){var r=raw(w[0]+(w[1]-w[0])*t,a);xs.push(r[0]);ys.push(r[1])});[w[0],w[1]].forEach(function(o){var r=raw(o,w[2]+(w[3]-w[2])*t);xs.push(r[0]);ys.push(r[1])})}
+ x0=Math.min.apply(null,xs);x1=Math.max.apply(null,xs);y0=Math.min.apply(null,ys);y1=Math.max.apply(null,ys);sc=(W-2*pad)/(x1-x0);H=(y1-y0)*sc+2*pad}
+function xy(lon,lat){var r=raw(lon,lat);return[(r[0]-x0)*sc+pad,(y1-r[1])*sc+pad]}
+function gc(a,b,n){var A=function(la,lo){la*=Math.PI/180;lo*=Math.PI/180;return[Math.cos(la)*Math.cos(lo),Math.cos(la)*Math.sin(lo),Math.sin(la)]};var u=A(a.lat,a.lon),v=A(b.lat,b.lon),d=Math.max(-1,Math.min(1,u[0]*v[0]+u[1]*v[1]+u[2]*v[2])),om=Math.acos(d),o=[];for(var i=0;i<=n;i++){var t=i/n,q;if(om<1e-9)q=u;else{var s=Math.sin(om),k1=Math.sin((1-t)*om)/s,k2=Math.sin(t*om)/s;q=[k1*u[0]+k2*v[0],k1*u[1]+k2*v[1],k1*u[2]+k2*v[2]]}o.push(xy(Math.atan2(q[1],q[0])*180/Math.PI,Math.asin(q[2])*180/Math.PI))}return o}
+var land="";
+// ---- 状態 ----
+var st={start:"2027-08-01",ret:"24",stops:[],saved:[]},undo=[],view="cards";
+try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o&&o.stops)st=o}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function snap(){undo.push(JSON.stringify(st));if(undo.length>40)undo.shift()}
+function pd(s){var a=s.split("-");return new Date(Date.UTC(+a[0],+a[1]-1,+a[2]))}
+function addd(d,n){return new Date(d.getTime()+n*864e5)}
+function md(d){return(d.getUTCMonth()+1)+"/"+d.getUTCDate()}
+function fd(d){return md(d)+"（"+WD[d.getUTCDay()]+"）"}
+// ---- 日付の割り付け：各行は「到着日」から「泊数」ぶん滞在する ----
+function plan(){var d=pd(st.start),rows=[];st.stops.forEach(function(s,i){var arr=d,dep=addd(d,+s[1]||0);rows.push({i:i,s:s,arr:arr,dep:dep,p:P[s[0]]});d=dep});return{rows:rows,end:d}}
+// 日本着の目安：最後の発の日 + 乗継（約26〜30時間、日付変更線で+14時間）。推計
+function jpArrive(end){return addd(end,2)}
+// ---- 画面 ----
+var $=function(id){return document.getElementById(id)};
+function render(){var pl=plan();drawMap(pl);drawSum(pl);if(view==="cards")drawCards(pl);else if(view==="table")drawTable(pl);else drawCmp();
+ [].forEach.call(root.querySelectorAll(".dz-tabs button"),function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-v")===view))});
+ $("dz-cards").hidden=view!=="cards";$("dz-table").hidden=view!=="table";$("dz-cmp").hidden=view!=="cmp";save()}
+var zoomed=false;
+function cluster(pl){var pts=[];pl.rows.forEach(function(r){if(r.p&&r.p.country!=="日本")pts.push([r.p.lon,r.p.lat,r.s[0]])});var best=[],bn=0;pts.forEach(function(a){var near=pts.filter(function(b){return Math.abs(a[0]-b[0])<25&&Math.abs(a[1]-b[1])<25});if(near.length>bn){bn=near.length;best=near}});return best}
+function fitView(pl){var la=[],lo=[];pl.rows.forEach(function(r){if(r.p&&r.p.country!=="日本"){la.push(r.p.lat);lo.push(r.p.lon)}});if(!la.length){setView(WIN,40,0);return}
+ if(zoomed){var cl=cluster(pl);if(cl.length){la=cl.map(function(c){return c[1]});lo=cl.map(function(c){return c[0]})}}
+ var w=[Math.min.apply(null,lo)-(zoomed?4:8),Math.max.apply(null,lo)+(zoomed?4:8),Math.min.apply(null,la)-(zoomed?4:8),Math.max.apply(null,la)+(zoomed?4:8)];
+ if(w[1]-w[0]>200){w=WIN}else if(w[1]-w[0]<(zoomed?16:40)){var c=(w[0]+w[1])/2;var hw=zoomed?8:20;w[0]=c-hw;w[1]=c+hw}
+ if(w[3]-w[2]<(zoomed?12:30)){var d=(w[2]+w[3])/2;var hh=zoomed?6:15;w[2]=d-hh;w[3]=d+hh}
+ setView(w,(w[0]+w[1])/2,(w[2]+w[3])/2)}
+function drawMap(pl){fitView(pl);land="";GEO.forEach(function(r){var okx=false;for(var i=0;i<r.length;i+=3){if(r[i][0]>=VW[0]-30&&r[i][0]<=VW[1]+30&&r[i][1]>=VW[2]-30&&r[i][1]<=VW[3]+30){okx=true;break}}if(!okx)return;land+="M"+r.map(function(p){var q=xy(p[0],p[1]);return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+"Z"});var s='<path d="M0 0H'+W+'V'+H.toFixed(1)+'H0Z" fill="var(--sea,#e6eef3)"/><path class="land" d="'+land+'"/>',m="";
+ for(var i=1;i<pl.rows.length;i++){var a=pl.rows[i-1].p,b=pl.rows[i].p;if(!a||!b||a===b)continue;var mode=pl.rows[i].s[2]==="move"?"move":"fly",pts=mode==="move"?[xy(a.lon,a.lat),xy(b.lon,b.lat)]:gc(a,b,24);
+  if(mode==="move")s+='<path class="ln move" d="M'+pts.map(function(q){return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+'"/>';else s+='<path class="ln fly" d="M'+pts.map(function(q){return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+'"/>'}
+ var seen={},out=[];pl.rows.forEach(function(r,i){if(!r.p)return;var q=xy(r.p.lon,r.p.lat),k=r.s[0];if(q[0]<0||q[0]>W||q[1]<0||q[1]>H){out.push(r.p.name);return}seen[k]=(seen[k]||0);
+  var grp=pl.rows.map(function(z,j){return z.s[0]===k?j+1:0}).filter(Boolean);if(grp[0]!==i+1)return;var lab=grp.length>2?grp[0]+"…":grp.join("・");m+='<circle class="sn" cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="'+(lab.length>2?15:11)+'"/><text class="snt" x="'+q[0].toFixed(1)+'" y="'+q[1].toFixed(1)+'">'+lab+'</text>';
+  var dy=(i%2?20:-12);m+='<text class="tx" x="'+(q[0]+16).toFixed(1)+'" y="'+(q[1]+dy).toFixed(1)+'">'+r.p.name.replace(/（.*）/,"")+'</text>'});
+ if(out.length)m+='<text class="tx" x="14" y="'+(H-14).toFixed(1)+'">図の外：'+out.filter(function(v,i,a){return a.indexOf(v)===i}).join("・")+'（拡大中。「全体を見る」で表示）</text>';
+ $("dz-svg").setAttribute("viewBox","0 0 "+W+" "+H.toFixed(1));$("dz-svg").innerHTML=s+m}
+function drawSum(pl){var n=pl.rows.length,nights=pl.rows.reduce(function(a,r){return a+(+r.s[1]||0)},0),fl=pl.rows.slice(1).filter(function(r){return r.s[2]!=="move"}).length;
+ var aug=pd(st.start).getUTCMonth()===7,jp=jpArrive(pl.end),want=+st.ret,limit=Date.UTC(pd(st.start).getUTCFullYear(),7,want),over=aug&&jp.getTime()>limit;
+ var ctry={};pl.rows.forEach(function(r){if(r.p&&r.p.country&&r.p.country!=="日本")ctry[r.p.country]=1});
+ $("dz-sum").innerHTML='<div><span>日数（出発〜最後の出発日）</span><b>'+nights+'泊 '+(nights+1)+'日</b></div><div><span>訪れる国</span><b>'+Object.keys(ctry).length+'か国</b></div><div><span>飛行機に乗る回数</span><b>'+fl+'回</b></div><div class="'+(over?"warn":"ok")+'"><span>日本着の目安（推計）'+(aug?'':'・5月の案は判定なし')+'</span><b>'+fd(jp)+'</b></div>';
+ $("dz-warn").textContent=over?"日本着の目安が8/"+want+"を超えます。日数を減らすか、最後の出発日を早めてください（推計。実際の便で確認が必要です）。":"最後の出発日から約2日後に日本へ着く推計です（日付変更線で日本は14時間進む。実便は未確認）。"}
+function stopOpts(sel){return PTS.map(function(p){return'<option value="'+p[0]+'"'+(p[0]===sel?" selected":"")+'>'+p[1]+'（'+p[2]+'）</option>'}).join("")}
+function drawCards(pl){var h="";pl.rows.forEach(function(r,i){var last=i===pl.rows.length-1,first=i===0;
+ h+='<div class="dz-card" draggable="true" data-i="'+i+'"><span class="num">'+(i+1)+'</span><div><div class="when">'+(first?fd(r.arr)+" 出発":(r.dep-r.arr?md(r.arr)+"〜"+md(r.dep)+"（"+((r.dep-r.arr)/864e5)+"泊）":fd(r.arr)))+'</div>'
+ +'<div class="fld"><select data-f="0" aria-label="行き先">'+stopOpts(r.s[0])+'</select><label>泊数 <input type="number" min="0" max="60" data-f="1" value="'+(+r.s[1]||0)+'"></label>'
+ +'<select data-f="2" aria-label="ここまでの移動"><option value="fly"'+(r.s[2]==="fly"?" selected":"")+'>飛行機で</option><option value="move"'+(r.s[2]==="move"?" selected":"")+'>陸路・列車で</option></select>'
+ +'<input class="nt" type="text" data-f="3" value="'+String(r.s[3]||"").replace(/"/g,"&quot;")+'" placeholder="やること"></div></div>'
+ +'<div><button type="button" data-a="up" aria-label="上へ">▲</button><button type="button" data-a="down" aria-label="下へ">▼</button><button type="button" data-a="del" aria-label="削除">×</button></div></div>'});
+ $("dz-cards").innerHTML=h||'<p class="dz-note">案を読み込むか、「＋足す」で行き先を入れてください。</p>'}
+function drawTable(pl){var h='<table class="dz-table"><thead><tr><th>日付</th><th>行き先</th><th>泊</th><th>移動</th><th>やること</th></tr></thead><tbody>';
+ pl.rows.forEach(function(r,i){h+='<tr data-i="'+i+'"><th scope="row">'+md(r.arr)+(r.dep-r.arr?"〜"+md(r.dep):"")+'（'+WD[r.arr.getUTCDay()]+'）</th><td><select data-f="0">'+stopOpts(r.s[0])+'</select></td><td><input type="number" min="0" max="60" data-f="1" value="'+(+r.s[1]||0)+'" style="width:3.6em"></td><td><select data-f="2"><option value="fly"'+(r.s[2]==="fly"?" selected":"")+'>飛行機</option><option value="move"'+(r.s[2]==="move"?" selected":"")+'>陸路</option></select></td><td><input type="text" data-f="3" value="'+String(r.s[3]||"").replace(/"/g,"&quot;")+'" style="width:100%"></td></tr>'});
+ $("dz-table").innerHTML=h+'</tbody></table>'}
+function drawCmp(){var h='<p class="dz-note">いまの案に名前を付けて保存すると、ここに並びます（このブラウザの中だけに保存。公開されません）。</p><div class="dz-bar"><input type="text" id="dz-nm" placeholder="案の名前" style="flex:1 1 160px"><button type="button" id="dz-save">この案を保存</button></div>';
+ if(st.saved.length){h+='<table class="dz-cmp"><thead><tr><th>案</th><th>日数</th><th>国</th><th>飛行機</th><th>日本着（推計）</th><th></th></tr></thead><tbody>';
+  st.saved.forEach(function(c,i){var d=pd(c.start),n=0,fl=0,ct={},prev=null;c.stops.forEach(function(s,j){n+=+s[1]||0;d=addd(d,+s[1]||0);if(j>0&&s[2]!=="move")fl++;var p=P[s[0]];if(p&&p.country!=="日本")ct[p.country]=1});
+   h+='<tr><td>'+c.name.replace(/</g,"&lt;")+'</td><td>'+(n+1)+'日</td><td>'+Object.keys(ct).length+'か国</td><td>'+fl+'回</td><td>'+fd(jpArrive(d))+'</td><td><button type="button" data-open="'+i+'">開く</button> <button type="button" data-rm="'+i+'">削除</button></td></tr>'});
+  h+='</tbody></table>'}
+ $("dz-cmp").innerHTML=h}
+// ---- 操作 ----
+function mut(f){snap();f();render()}
+root.addEventListener("input",function(e){var el=e.target,card=el.closest("[data-i]");if(!card||el.getAttribute("data-f")===null)return;var i=+card.getAttribute("data-i"),f=+el.getAttribute("data-f");
+ snap();st.stops[i][f]=f===1?Math.max(0,Math.min(60,+el.value||0)):el.value;if(f===0&&!st.stops[i][3])st.stops[i][3]="";var keep=document.activeElement,pos=el.selectionStart;
+ var pl=plan();drawMap(pl);drawSum(pl);if(view==="table")drawTable(pl);else drawCards(pl);save();
+ var again=root.querySelector('[data-i="'+i+'"] [data-f="'+f+'"]');if(again&&el.type==="text"){again.focus();try{again.setSelectionRange(pos,pos)}catch(x){}}});
+root.addEventListener("change",function(e){if(e.target.getAttribute&&e.target.getAttribute("data-f")!==null)render()});
+root.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var card=b.closest("[data-i]"),a=b.getAttribute("data-a");
+ if(a&&card){var i=+card.getAttribute("data-i");mut(function(){if(a==="del")st.stops.splice(i,1);else if(a==="up"&&i>0){var t=st.stops[i];st.stops[i]=st.stops[i-1];st.stops[i-1]=t}else if(a==="down"&&i<st.stops.length-1){var t2=st.stops[i];st.stops[i]=st.stops[i+1];st.stops[i+1]=t2}});return}
+ if(b.hasAttribute("data-v")){view=b.getAttribute("data-v");render();return}
+ if(b.id==="dz-save"){var nm=($("dz-nm").value||"案"+(st.saved.length+1));snap();st.saved.push({name:nm,start:st.start,stops:JSON.parse(JSON.stringify(st.stops))});render();return}
+ if(b.hasAttribute("data-open")){var c=st.saved[+b.getAttribute("data-open")];mut(function(){st.start=c.start;st.stops=JSON.parse(JSON.stringify(c.stops));$("dz-start").value=st.start});view="cards";render();return}
+ if(b.hasAttribute("data-rm")){mut(function(){st.saved.splice(+b.getAttribute("data-rm"),1)});return}});
+$("dz-load").addEventListener("click",function(){var p=PRE.filter(function(x){return x.id===$("dz-preset").value})[0];if(!p)return;mut(function(){st.start=p.start;st.stops=JSON.parse(JSON.stringify(p.stops));$("dz-start").value=st.start})});
+$("dz-addbtn").addEventListener("click",function(){mut(function(){st.stops.push([$("dz-add").value,1,"fly",""])})});
+$("dz-undo").addEventListener("click",function(){if(!undo.length)return;st=JSON.parse(undo.pop());$("dz-start").value=st.start;$("dz-ret").value=st.ret;render()});
+$("dz-zoom").addEventListener("click",function(){zoomed=!zoomed;$("dz-zoom").setAttribute("aria-pressed",String(zoomed));$("dz-zoom").textContent=zoomed?"全体を見る":"拡大して見る（行き先が集まる所）";render()});
+$("dz-start").addEventListener("change",function(){mut(function(){st.start=$("dz-start").value||st.start})});
+$("dz-ret").addEventListener("change",function(){st.ret=$("dz-ret").value;render()});
+// ドラッグで並べ替え
+var drag=null;root.addEventListener("dragstart",function(e){var c=e.target.closest&&e.target.closest(".dz-card");if(!c)return;drag=+c.getAttribute("data-i");try{e.dataTransfer.setData("text/plain",String(drag))}catch(x){}});
+root.addEventListener("dragover",function(e){var c=e.target.closest&&e.target.closest(".dz-card");if(c&&drag!==null){e.preventDefault();c.classList.add("over")}});
+root.addEventListener("dragleave",function(e){var c=e.target.closest&&e.target.closest(".dz-card");if(c)c.classList.remove("over")});
+root.addEventListener("drop",function(e){var c=e.target.closest&&e.target.closest(".dz-card");if(!c||drag===null)return;e.preventDefault();var to=+c.getAttribute("data-i"),from=drag;drag=null;if(from===to)return;mut(function(){var it=st.stops.splice(from,1)[0];st.stops.splice(to,0,it)})});
+// 初期化
+$("dz-preset").innerHTML=PRE.map(function(p){return'<option value="'+p.id+'">'+p.name+'</option>'}).join("");
+$("dz-add").innerHTML=stopOpts("");$("dz-start").value=st.start;$("dz-ret").value=st.ret;
+if(!st.stops.length){var p0=PRE[0];st.start=p0.start;st.stops=JSON.parse(JSON.stringify(p0.stops));$("dz-start").value=st.start}
+render();
+})();
+</script>
