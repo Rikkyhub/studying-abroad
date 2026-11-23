@@ -10,8 +10,9 @@
 .travel-budget summary{cursor:pointer;padding:.4rem 0;overflow-wrap:anywhere}.travel-budget .line{display:grid;gap:.3rem;padding:.65rem 0;border-top:1px solid #d9e4df;overflow-wrap:anywhere}
 .travel-budget .line small{display:block}.travel-budget select{width:fit-content}
 </style>
-<div class="overview"><span>2〜8月｜計上済みの標準概算</span><strong data-total></strong><small data-coverage></small></div>
-<p>8月はペルー集中案（SA8-1、20泊21日）で試算。フィリピン帰国便は往復券に含め、ケープタウンからは南米経由で帰国します。確定額の公開登録はありません。</p>
+<label>予算案 <select data-plan><option value="low">低予算</option><option value="std" selected>標準</option><option value="high">余裕</option></select></label>
+<div class="overview"><span data-plan-title>7か月の標準概算</span><strong data-total></strong><small data-coverage></small></div>
+<p>標準案はホームと同じ明細で集計します。ペルー案は20泊21日で、ロッジの宿食を差し引いています。確定額の公開登録はありません。</p>
 <div class="controls" role="group" aria-label="集計の切り替え"></div>
 <p data-help aria-live="polite"></p><div data-groups></div>
 <noscript>内訳の切り替えにはJavaScriptを有効にしてください。</noscript>
@@ -19,7 +20,9 @@
 <script>
 (function(){
   const root=document.currentScript.closest('.travel-budget');
-  const rows=JSON.parse(root.querySelector('.budget-data').textContent);
+  const plans=JSON.parse(root.querySelector('.budget-data').textContent);
+  const plan=root.querySelector('[data-plan]');
+  let rows=plans.std;
   const modes={phase:'期間別',country:'国別',category:'費目別',months:'月別',payment:'支払状況別',saving:'節約余地別'};
   const labels=['未確認','未払い','一部支払済み','支払済み'];
   const yen=n=>n.toLocaleString('ja-JP')+'円';
@@ -36,10 +39,13 @@
     const known=entries.filter(e=>e.amount!==null);
     return known.length?yen(known.reduce((sum,e)=>sum+e.amount,0)):'金額未取得';
   }
-  root.querySelector('[data-total]').textContent=subtotal(rows);
-  root.querySelector('[data-coverage]').textContent='金額未取得 '+rows.filter(r=>r.amount===null).length+'件は小計の対象外';
+
   let mode='phase';
   function draw(){
+    root.querySelector('[data-total]').textContent=subtotal(rows);
+    root.querySelector('[data-plan-title]').textContent='7か月の'+plan.selectedOptions[0].textContent+'概算';
+    const missing=rows.filter(r=>r.amount===null).length;
+    root.querySelector('[data-coverage]').textContent=missing?'金額未取得 '+missing+'件は小計の対象外':'全'+rows.length+'件を計上（仮予算を含む）';
     const groups=new Map();
     for(const row of rows){
       const key=mode==='payment'?status(row.id):mode==='saving'?
@@ -66,6 +72,7 @@
       for(const {row,amount} of entries){
         const line=add(group,'div','');line.className='line';
         add(line,'span',row.item);add(line,'b',amount===null?'金額未取得':'概算 '+yen(amount));
+        if(row.note && (row.id.startsWith('SA8-')||row.id==='AF-16'))add(line,'small',row.note);
         if(mode==='saving'&&row.saving!==null)add(line,'small','削減目安 '+yen(row.saving));
         if(row.source){
           const url=String(row.source).match(/^https?:\/\/[^\s、]+/);
@@ -89,6 +96,7 @@
     const button=add(root.querySelector('.controls'),'button',label);
     button.type='button';button.value=key;button.onclick=()=>{mode=key;draw()};
   }
+  plan.onchange=()=>{rows=plans[plan.value];draw()};
   draw();
 })();
 </script>

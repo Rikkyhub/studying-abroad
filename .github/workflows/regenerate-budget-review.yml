@@ -1,0 +1,24 @@
+name: Regenerate budget pages for review
+on:
+  push:
+    branches: [feat/7-reconcile-travel-estimates]
+    paths-ignore: ['**/*.html', '**/*.md']
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/build_all.py
+      - name: Commit generated pages to this review branch
+        run: |
+          git add -u
+          git diff --cached --quiet && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m '7か月予算から公開ページを再生成'
+          git push origin HEAD:refs/heads/feat/7-reconcile-travel-estimates

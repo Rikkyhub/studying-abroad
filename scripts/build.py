@@ -346,7 +346,7 @@ def gen_budget_summary(S):
             ["見積合計（金額入力済みの全行）", yen(t["std"]), f"{yen(t['low'])} ／ {yen(t['high'])}", "各行を1回だけ加算。金額未入力の行は含まない"],
             ["うち 見積（出典あり）", yen(S["by_status"]["見積"]["std"]), f"{yen(S['by_status']['見積']['low'])} ／ {yen(S['by_status']['見積']['high'])}", f"{S['status_count']['見積']} 件"],
             ["うち 未確認（出典なし・推定）", yen(S["by_status"]["未確認"]["std"]), f"{yen(S['by_status']['未確認']['low'])} ／ {yen(S['by_status']['未確認']['high'])}", f"{S['status_count']['未確認']} 件（金額未入力を含む）。費用として加算するだけで、何からも差し引かない"],
-            ["金額未入力", f"{len(na)} 件", "—", "0円ではない。見積合計は下限の目安で、6か月総額は未完成"],
+            ["金額未入力", f"{len(na)} 件", "—", "0円ではない。未取得の金額は予算に加算しない"],
             ["目標250万円との差", yen(S["vs_ideal"]["std"]), f"{yen(S['vs_ideal']['low'])} ／ {yen(S['vs_ideal']['high'])}", "予算目標 − 見積合計（マイナス＝超過）"],
             ["上限300万円との差", yen(S["vs_cap"]["std"]), f"{yen(S['vs_cap']['low'])} ／ {yen(S['vs_cap']['high'])}", "予算目標 − 見積合計（マイナス＝超過）"],
             ["5月アフリカ周遊（AF-行）", yen(S["africa_total"]), "—", f"配分目標 {yen(S['budget_africa'])}（総予算の内数）"],
@@ -557,6 +557,9 @@ def render_all(S, rows, tasks, articles, timeline, fx, problems):
         b = areas.all_blocks(region, rows=rows, tasks=tasks, timeline=timeline, pages=pages, places=places,
                              fx_records=fx_records, root=ROOT)
         out[path] = apply_auto(path.read_text(encoding="utf-8").replace("\r\n", "\n"), b)
+    peru = ROOT / "areas/southamerica-aug.md"
+    out[peru] = apply_auto(peru.read_text(encoding="utf-8"),
+                           {"peru_cost": areas.cost_block(rows, "southamerica-aug")})
     return out
 
 
@@ -577,12 +580,20 @@ def load_model():
     # enters the global budget, so alternatives never accumulate together.
     from august_budget import apply_to_expenses as apply_august
     expenses = apply_august(expenses, ROOT)
+    # A selected Africa route and the Peru working budget are mutually exclusive.
+    africa_august = any(r["id"].startswith("AU83-") for r in expenses)
+    expenses = [r for r in expenses if r["id"] != "PH-12" and
+                (not r["id"].startswith("SA8-") if africa_august else
+                 r["id"] not in {"SC-08", "AU-01"})]
     tasks = read_csv("tasks.csv")
     articles = read_csv("articles.csv")
     timeline = read_csv("timeline.csv")
     funds = read_csv("funds.csv")
     validate(expenses, tasks, articles, timeline, problems, funds)
     rows = compute(expenses, fx, problems)
+    # Round each line once so all published subtotals reconcile with line items.
+    for row in rows:
+        row["est"] = {s: round(v) if v is not None else None for s, v in row["est"].items()}
     S = summarize(rows, funds)
     return S, rows, tasks, articles, timeline, fx, problems, funds
 
