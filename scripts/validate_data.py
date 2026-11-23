@@ -208,7 +208,7 @@ def main():
                     ERRORS.append(f"{name}:{n}: region {rg!r} は baguio/africa/africa-aug/capetown/common（; 区切り）のいずれか")
             if name == "tasks.csv" and not row["region"]:
                 ERRORS.append(f"{name}:{n}: region が空です（地域別ページへの割り当て。共通なら common）")
-    phases = {"フィリピン", "アフリカ周遊", "アフリカ周遊（8月）", "2校目", "8月", "共通・日本"}
+    phases = {"8月 南米・ペルー案", "フィリピン", "アフリカ周遊", "アフリカ周遊（8月）", "2校目", "8月", "共通・日本"}
     for n, row in loaded["expenses.csv"]:
         if row["phase"] not in phases:
             ERRORS.append(f"expenses.csv:{n}: phase {row['phase']!r} が地域に対応づけられていません（scripts/areas.py の PHASE_REGION）")

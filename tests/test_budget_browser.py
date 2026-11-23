@@ -41,6 +41,15 @@ frame.onload = () => {
         expect([...groups].some(g=>g.querySelector('summary').textContent.includes('2027-08')), 'August');
       }
     }
+    const plan = dashboard.querySelector('[data-plan]');
+    const values = {};
+    for (const key of ['low', 'high', 'std']) {
+      plan.value = key;
+      plan.dispatchEvent(new Event('change'));
+      values[key] = Number(dashboard.querySelector('[data-total]').textContent.replace(/[^0-9]/g, ''));
+    }
+    expect(values.low < values.std && values.std < values.high, 'scenario totals');
+    expect(dashboard.querySelector('[data-total]').textContent === total, 'restore standard');
     result.textContent = 'PASS';
   } catch(error) { result.textContent = error.message; }
 };

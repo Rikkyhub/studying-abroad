@@ -24,7 +24,7 @@ REGION_LABEL = OrderedDict([
 ])
 REGION_FILE = {k: f"areas/{k}.md" for k in REGION_LABEL}
 # expenses.csv の phase 列 -> 地域
-PHASE_REGION = {"フィリピン": "baguio", "アフリカ周遊": "africa", "アフリカ周遊（8月）": "africa-aug", "2校目": "capetown", "8月": "capetown", "共通・日本": "common"}
+PHASE_REGION = {"8月 南米・ペルー案": "southamerica-aug", "フィリピン": "baguio", "アフリカ周遊": "africa", "アフリカ周遊（8月）": "africa-aug", "2校目": "capetown", "8月": "capetown", "共通・日本": "common"}
 REGION_CURRENCIES = {"baguio": ["PHP", "USD"], "africa": ["ZAR", "USD"], "africa-aug": ["ZAR", "USD"], "capetown": ["ZAR"], "common": []}
 SCEN = OrderedDict([("low", "低予算"), ("std", "標準"), ("high", "余裕")])
 DONE = ("完了", "不要")
