@@ -33,42 +33,42 @@ LOCAL = {
 # 全体図の経路。(通し番号の表示, 出発点, 到着点, 種類, 日数の表示)
 # 点の ID は data/route_points.csv。Day は 35日表（現行14日案）の日。
 MAIN_LEGS = [
-    ("BOM", "MRU", "flight", "Day 1〜2"),   # 日本→ムンバイ→モーリシャス（日本側は図の外）
-    ("MRU", "TNR", "flight", "Day 6"),
-    ("TNR", "MRU", "flight", "Day 19"),
-    ("MRU", "JNB", "flight", "Day 21"),
-    ("JNB", "VICFALLS", "flight", "Day 23"),
+    ("BOM", "MRU", "flight", "5/3〜5/4"),   # 日本→ムンバイ→モーリシャス（日本側は図の外）
+    ("MRU", "TNR", "flight", "5/8"),
+    ("TNR", "MRU", "flight", "5/21"),
+    ("MRU", "JNB", "flight", "5/23"),
+    ("JNB", "VICFALLS", "flight", "5/25"),
     ("VICFALLS", "LIVINGSTONE", "overland", ""),
     ("LIVINGSTONE", "KASANE", "overland", ""),
     ("KASANE", "VICFALLS", "overland", ""),
-    ("VICFALLS", "CPT", "flight", "Day 32"),
+    ("VICFALLS", "CPT", "flight", "6/3"),
 ]
 
 # 日数案ごとのマダガスカル内の動き（Day は日本発 Day 1 からの通し番号）。
 # 出国日以降は共通の内容で、日付だけが前倒しになる。
 PLANS = {
     "now": {
-        "label": "現行 14日", "stay": 14, "exit": "Day 19 5/21(金)", "total": 35,
-        "legs": [("MRU", "TNR", "Day 6", "flight"), ("TNR", "ANDASIBE", "Day 7", "road"), ("ANDASIBE", "TNR", "Day 9", "road"),
-                 ("TNR", "MORONDAVA", "Day 10", "domestic"), ("MORONDAVA", "TNR", "Day 16", "domestic"), ("TNR", "MRU", "Day 19", "flight")],
+        "label": "現行 14日", "stay": 14, "exit": "5/21(金)", "total": 35,
+        "legs": [("MRU", "TNR", "5/8", "flight"), ("TNR", "ANDASIBE", "5/9", "road"), ("ANDASIBE", "TNR", "5/11", "road"),
+                 ("TNR", "MORONDAVA", "5/12", "domestic"), ("MORONDAVA", "TNR", "5/18", "domestic"), ("TNR", "MRU", "5/21", "flight")],
         "note": "余裕重視。首都で2日、西部で予備2日。欠航の予備は計4日。",
     },
     "A": {
-        "label": "A 10日", "stay": 10, "exit": "Day 15 5/17(月)", "total": 31,
-        "legs": [("MRU", "TNR", "Day 6", "flight"), ("TNR", "ANDASIBE", "Day 7", "road"), ("ANDASIBE", "TNR", "Day 9", "road"),
-                 ("TNR", "MORONDAVA", "Day 10", "domestic"), ("MORONDAVA", "TNR", "Day 14", "domestic"), ("TNR", "MRU", "Day 15", "flight")],
+        "label": "A 10日", "stay": 10, "exit": "5/17(月)", "total": 31,
+        "legs": [("MRU", "TNR", "5/8", "flight"), ("TNR", "ANDASIBE", "5/9", "road"), ("ANDASIBE", "TNR", "5/11", "road"),
+                 ("TNR", "MORONDAVA", "5/12", "domestic"), ("MORONDAVA", "TNR", "5/16", "domestic"), ("TNR", "MRU", "5/17", "flight")],
         "note": "標準。欠航の予備は1日。",
     },
     "B": {
-        "label": "B 7日", "stay": 7, "exit": "Day 12 5/14(金)", "total": 28,
-        "legs": [("MRU", "TNR", "Day 6", "flight"), ("TNR", "ANDASIBE", "Day 6", "road"), ("ANDASIBE", "TNR", "Day 7", "road"),
-                 ("TNR", "MORONDAVA", "Day 8", "domestic"), ("MORONDAVA", "TNR", "Day 11", "domestic"), ("TNR", "MRU", "Day 12", "flight")],
+        "label": "B 7日", "stay": 7, "exit": "5/14(金)", "total": 28,
+        "legs": [("MRU", "TNR", "5/8", "flight"), ("TNR", "ANDASIBE", "5/8", "road"), ("ANDASIBE", "TNR", "5/9", "road"),
+                 ("TNR", "MORONDAVA", "5/10", "domestic"), ("MORONDAVA", "TNR", "5/13", "domestic"), ("TNR", "MRU", "5/14", "flight")],
         "note": "4泊5日＋予備2日。首都に泊まらず直行できれば最短。欠航1回までは吸収できる。",
     },
     "C": {
-        "label": "C 5日", "stay": 5, "exit": "Day 10 5/12(水)", "total": 26,
-        "legs": [("MRU", "TNR", "Day 6", "flight"), ("TNR", "ANDASIBE", "Day 6", "road"), ("ANDASIBE", "TNR", "Day 7", "road"),
-                 ("TNR", "MORONDAVA", "Day 8", "domestic"), ("MORONDAVA", "TNR", "Day 10", "domestic"), ("TNR", "MRU", "Day 10", "flight")],
+        "label": "C 5日", "stay": 5, "exit": "5/12(水)", "total": 26,
+        "legs": [("MRU", "TNR", "5/8", "flight"), ("TNR", "ANDASIBE", "5/8", "road"), ("ANDASIBE", "TNR", "5/9", "road"),
+                 ("TNR", "MORONDAVA", "5/10", "domestic"), ("MORONDAVA", "TNR", "5/12", "domestic"), ("TNR", "MRU", "5/12", "flight")],
         "note": "4泊5日のみ。欠航の予備なし。1回の欠航で出国日がずれる。",
     },
 }
@@ -224,7 +224,7 @@ def aug_calendar_days(key):
     return [(i + 1, AUG_START + _dt.timedelta(days=i), *d) for i, d in enumerate(AUG_PLANS[key]["days"])]
 
 def calendar_html(plan, days=None):
-    """月ごとの週表（月曜始まり）。1日=1セル。日付・Day番号・国・場所・内容"""
+    """月ごとの週表（月曜始まり）。1日=1セル。日付・国・場所・内容"""
     ds = {d[1]: d for d in (days if days is not None else calendar_days(plan))}
     first, last = min(ds), max(ds)
     out = []
@@ -245,7 +245,7 @@ def calendar_html(plan, days=None):
                 if e:
                     has = True
                     n, _d, country, place, what, kind = e
-                    cells.append(f'<td class="k-{kind}"><span class="dd">{day.day}</span><span class="dn2">Day {n}</span>'
+                    cells.append(f'<td class="k-{kind}"><span class="dd">{day.day}</span>'
                                  f'<b>{html.escape(country)}</b><span class="pl">{html.escape(place)}</span><span class="wh">{html.escape(what)}</span></td>')
                 else:
                     cells.append(f'<td class="off"><span class="dd">{day.day}</span></td>')
@@ -375,7 +375,7 @@ def land_svg(proj, geo, visit, tol, extra=""):
 # 全体図で選べる案。G は Day 番号つき（35日表）。他は routes.csv の区間をそのまま描く（Day なし）
 MAY_IDS = ["G", "M0A", "M0B", "M0C", "M1A", "M1B"]
 AUG_IDS = ["A0", "A1", "A2", "A3", "A4", "A4X", "A5", "A5X", "A6", "A7", "A8", "A9", "A10", "A11", "A12"]
-G_DAYS = {("BOM", "MRU"): "Day 1〜2", ("MRU", "TNR"): "Day 6", ("TNR", "MRU"): "Day 19", ("MRU", "JNB"): "Day 21", ("JNB", "VICFALLS"): "Day 23", ("VICFALLS", "CPT"): "Day 32"}
+G_DAYS = {("BOM", "MRU"): "5/3〜5/4", ("MRU", "TNR"): "5/8", ("TNR", "MRU"): "5/21", ("MRU", "JNB"): "5/23", ("JNB", "VICFALLS"): "5/25", ("VICFALLS", "CPT"): "6/3"}
 SHORT = {"G": "G：現行35日", "M0A": "M0-A ナミビアなし・往復", "M0B": "M0-B オープンジョー", "M0C": "M0-C 短縮", "M1A": "M1-A ボツワナ→ナミビア", "M1B": "M1-B マウン入口"}
 
 
@@ -390,7 +390,7 @@ def g_day_table() -> str:
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
         if len(cells) >= 3:
             rows.append("<tr>" + "".join(f"<td>{html.escape(re.sub(r'[*]+', '', c))}</td>" for c in cells[:3]) + "</tr>")
-    return ('<table class="gday"><thead><tr><th>区間</th><th>Day</th><th>内容</th></tr></thead><tbody>'
+    return ('<table class="gday"><thead><tr><th>区間</th><th>日付</th><th>内容</th></tr></thead><tbody>'
             + "".join(rows) + "</tbody></table>") if rows else ""
 
 
@@ -427,7 +427,7 @@ def route_svg(proj, points, legs, rid):
     if rid == "G":
         _, vla, vlo = pt(points, "VICFALLS")
         vx, vy = proj.xy(vlo, vla)
-        labels.append(f'<text class="dn c" x="{bm.f1(vx - 12)}" y="{bm.f1(vy - 34)}" text-anchor="end">Day 24〜31 滝周辺3か国</text>')
+        labels.append(f'<text class="dn c" x="{bm.f1(vx - 12)}" y="{bm.f1(vy - 34)}" text-anchor="end">5/26〜6/1 滝周辺3か国</text>')
     dots, names = [], []
     for pid in used:
         n, lat, lon = pt(points, pid)
@@ -560,6 +560,88 @@ def _sa_day_group(proj, points, plan, inset):
         marks.append(f'<text class="tx" x="{bm.f1(x + dx)}" y="{bm.f1(y + dy)}" text-anchor="{anc}">{html.escape(name)}</text>')
         marks.append(f'<text class="dn" x="{bm.f1(x + dx)}" y="{bm.f1(y + dy + 13)}" text-anchor="{anc}">{html.escape(dates)}</text>')
     return "".join(lines) + "".join(marks)
+
+
+
+# ---- 地域ページの左側（地図＋日付つきの旅程）。areas/*.md の左に固定して、右の文章と同時に見られるようにする ----
+_WD = "月火水木金土日"
+_KIND_JA = {"fly": "空路", "move": "移動", "tour": "観光", "gap": "予備", "base": "準備"}
+
+
+def _dd(d):
+    return f"{d.month}/{d.day}（{_WD[d.weekday()]}）"
+
+
+def _dayrows(days):
+    """(日付, 場所, 内容, 種別) のリストを、日付つきの小さな表にする。連続する同じ場所は1行にまとめる"""
+    rows = []
+    for dt, place, what, kind in days:
+        if rows and rows[-1][2] == place and rows[-1][3] == what and rows[-1][4] == kind:
+            rows[-1][1] = dt
+        else:
+            rows.append([dt, dt, place, what, kind])
+    out = []
+    for a_, b_, place, what, kind in rows:
+        when = _dd(a_) if a_ == b_ else f"{a_.month}/{a_.day}〜{b_.month}/{b_.day}"
+        out.append(f'<tr class="k-{kind}"><th scope="row">{html.escape(when)}</th><td><b>{html.escape(place)}</b>'
+                   f'<span>{html.escape(what)}</span></td></tr>')
+    return '<table class="lday"><tbody>' + "".join(out) + "</tbody></table>"
+
+
+def may_side_html() -> str:
+    """5月（アフリカ）の左：小さな地図（案G）と、実際の日付つきの旅程。日付は 5/3 を Day 1 とする仮置き"""
+    svg = africa_may_svg("side-")
+    days = [(d, c, w, k) for _n, d, c, _pl, w, k in calendar_days("now")]
+    return ('<div class="sidemap"><div class="mapbox-h">' + svg + '</div>'
+            '<p class="cap">案Gの点を結んだ概念図（確定した旅程ではありません）</p></div>'
+            '<h3 class="sd">日付ごとの旅程（5/3発の仮置き）</h3>' + _dayrows(days))
+
+
+# SA8-6 の日付ごとの旅程（areas/southamerica-aug.md の表と同じ内容。日付は 2027 年）
+SA6_DAYS = [
+    ((8, 1), "ケープタウン→イグアス", "サンパウロ乗継", "fly"), ((8, 2), "イグアス", "ブラジル側の滝", "tour"), ((8, 3), "イグアス", "アルゼンチン側の滝", "tour"),
+    ((8, 4), "イグアス→ラパス", "乗継2回で翌朝着", "fly"), ((8, 5), "ラパス", "高地順応（標高約3,600m）", "gap"), ((8, 6), "ウユニ", "ツアー1日目（直行で移動）", "tour"),
+    ((8, 7), "ウユニ", "ツアー2日目", "tour"), ((8, 8), "ウユニ", "ツアー3日目", "tour"), ((8, 9), "ウユニ→ラパス", "直行で戻る", "fly"),
+    ((8, 10), "ラパス→クスコ", "直行。高地順応を続ける", "fly"), ((8, 11), "聖なる谷", "クスコ周辺", "tour"), ((8, 12), "聖なる谷", "予備日（前泊）", "gap"),
+    ((8, 13), "アグアスカリエンテス", "列車で村へ（予備の入場日）", "move"), ((8, 14), "マチュピチュ", "入場（仮の第一候補）", "tour"), ((8, 15), "クスコ", "列車で戻る（予備の入場日）", "move"),
+    ((8, 16), "タンボパタ", "クスコから直行。アマゾン1日目", "fly"), ((8, 17), "タンボパタ", "アマゾン2日目", "tour"), ((8, 18), "リマ", "タンボパタから直行", "fly"),
+    ((8, 19), "リマ", "観光・ダイビングの準備", "base"), ((8, 20), "リマ", "ダイビング（最後の潜水）", "tour"), ((8, 21), "リマ", "予備日（潜水はしない）", "gap"),
+    ((8, 22), "リマ→東京", "リマ発（乗継）", "fly"), ((8, 23), "機内・乗継", "日付変更線を越える", "fly"), ((8, 24), "日本", "日本着（想定。乗継が長ければ8/25）", "base"),
+]
+
+
+def sa_side_html() -> str:
+    """8月の南米の左：番号つきの地図（SA8-6）と、日付つきの旅程"""
+    points, _routes = bm.load_model()
+    geo = bm.load_topo("countries-50m.json")
+    svg = _sa_overview_svg(points, geo, "SA8-6")
+    days = [(_dt.date(2027, m, d), place, what, kind) for (m, d), place, what, kind in SA6_DAYS]
+    return ('<div class="sidemap"><div class="mapbox-h">' + svg + '</div>'
+            '<p class="cap">SA8-6（イグアス→ウユニ→ペルー）の概念図。番号と日付は旅程と対応します</p></div>'
+            '<h3 class="sd">日付ごとの旅程（8/1 ケープタウン発 〜 8/22 リマ発）</h3>' + _dayrows(days))
+
+
+def _sa_overview_svg(points, geo, rid):
+    """左の地図用：上に南米全体（ケープタウンまで）、下にペルー・ボリビアの拡大図を縦に並べる（重ならない）"""
+    LOCAL.update(SA_POINTS)
+    proj = bm.Laea(-40.0, -15.0, (-92.0, 22.0, -36.0, 6.0), width=900.0)
+    W, H = proj.width, proj.height
+    ip = bm.Laea(-72.5, -15.0, (-78.5, -65.5, -21.5, -10.5), width=900.0)
+    IW, IH = ip.width, ip.height
+    plan = SA_DAYPLAN[rid]
+    main = _sa_day_group(proj, points, plan, False)
+    ins = _sa_day_group(ip, points, plan, True)
+    GAP = 14.0
+    total_h = H + GAP + IH
+    outline = f"M0 0H{bm.f1(W)}V{bm.f1(H)}H0Z"
+    iout = f"M0 0H{bm.f1(IW)}V{bm.f1(IH)}H0Z"
+    return (f'<svg class="m" viewBox="0 0 {bm.f1(W)} {bm.f1(total_h)}" role="img" aria-label="8月の南米の案の地図（上：全体、下：ペルー・ボリビアの拡大）">'
+            f'<defs><clipPath id="side-c1"><path d="{outline}"/></clipPath><clipPath id="side-c2"><path d="{iout}"/></clipPath></defs>'
+            f'<g clip-path="url(#side-c1)"><path class="sea" d="{outline}"/><g>{_light_land(proj, geo, {"604", "068", "218", "076", "710"}, 0.8)}</g>{main}</g>'
+            f'<path class="frame" d="{outline}"/>'
+            f'<g transform="translate(0 {bm.f1(H + GAP)})"><g clip-path="url(#side-c2)"><path class="sea" d="{iout}"/>'
+            f'<g>{_light_land(ip, geo, {"604", "068", "076", "032", "152"}, 0.4)}</g>{ins}</g><path class="frame" d="{iout}"/>'
+            f'<text class="tx" x="10" y="{bm.f1(IH - 12)}">拡大：ペルー・ボリビア（③〜⑧）</text></g></svg>')
 
 
 def build_south_america(points, geo):
@@ -769,7 +851,7 @@ def _build_raw() -> str:
              f'<button type="button" role="tab" data-tab="sa" aria-selected="false">8月 南米（{sa_n}）</button></div>'
              f'<div class="chips" data-pan="may">{may_chips}</div><div class="chips" data-pan="aug" hidden>{aug_chips}</div>'
              f'<div class="chips" data-pan="sa" hidden>{sa_chips}</div>')
-    g_info = ('案Gは35日表（Day 番号つき）。費用は<a href="../research/may-madagascar-vfa-redesign.html">ルート調査</a>と'
+    g_info = ('案Gの日付は5/3発の仮置きです。費用は<a href="../research/may-madagascar-vfa-redesign.html">ルート調査</a>と'
               '<a href="../research/africa-budget-fermi.html">フェルミ予算</a>を参照'
               + g_day_table())
     info_parts = []
@@ -821,18 +903,18 @@ def _build_raw() -> str:
 <div class="rsel" role="group" aria-label="表示するルート">{rtabs}</div>
 <div class="rwrap"><div class="zwrap">{africa}</div><div class="rside">{infos_r}</div></div>
 {legend}
-<p class="lead" style="margin-top:14px">モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウンの35日モデル。線の横の「Day」は、<a href="../research/may-madagascar-vfa-redesign.html#day-1day-35乗継と国内移動を含む相対日モデル">35日表</a>の日です。Day 1 は 2027年5月3日の仮置きで、確定した日程ではありません。</p>
+<p class="lead" style="margin-top:14px">モーリシャス→マダガスカル→ビクトリアの滝周辺3か国→ケープタウンの35日モデル。線の横の日付は、<a href="../research/may-madagascar-vfa-redesign.html#day-1day-35乗継と国内移動を含む相対日モデル">35日表</a>の日です。Day 1 は 2027年5月3日の仮置きで、確定した日程ではありません。</p>
 {bm.map_switch("route-map")}
 <h2>2. カレンダー（5月・8月）</h2>
 <div class="tabs" role="tablist" aria-label="カレンダーの月"><button type="button" role="tab" data-ctab="may" aria-selected="true">5月の案G</button><button type="button" role="tab" data-ctab="aug" aria-selected="false">8月の案（代表4案）</button></div>
 <div data-cpan="may">
-<p>日付と曜日、国、移動・観光・予備を月ごとの表にしたものです。マダガスカルの日数案（現行・A・B・C）で切り替わります。Day 1 は2027年5月3日（月）の仮置きで、確定した日程ではありません。</p>
+<p>日付と曜日、国、移動・観光・予備を月ごとの表にしたものです。マダガスカルの日数案（現行・A・B・C）で切り替わります。日付は 5/3（月）に日本を出る仮置きで、確定した日程ではありません（5/4発なら1日ずらします）。</p>
 <div class="plans" role="group" aria-label="日数案（カレンダー）">{btns_cal}</div>
 <div class="cal-key" aria-label="色の凡例">{cal_key}</div>
 {cal_blocks}
 </div>
 <div data-cpan="aug" hidden>
-<p>8月は、ケープタウンの留学終了後に出発し、<b>8/20（金）までの日本着が基本</b>の約20日の案です（<b>8/23復職予定</b>のため、8/24以降の帰国は基本プランに含めません。予約・確定はしていません）。Day 1 は8/1（日）の仮置きで、確定した日程ではありません。MPM→NBO（水・金・日）、WDH↔CPTのバス（水・金・日）など、確認できた曜日の制約には合わせてあります。運賃・便は未確認です。</p>
+<p>8月は、ケープタウンの留学終了後（8/1発）に出発し、約3週間で日本へ帰る案です（予約・確定はしていません）。日付は 8/1（日）を出発日とした仮置きで、確定した日程ではありません。MPM→NBO（水・金・日）、WDH↔CPTのバス（水・金・日）など、確認できた曜日の制約には合わせてあります。運賃・便は未確認です。</p>
 <div class="plans" role="group" aria-label="8月の案（カレンダー）">{aug_btns}</div>
 {aug_infos}
 <div class="cal-key" aria-label="色の凡例">{cal_key}</div>

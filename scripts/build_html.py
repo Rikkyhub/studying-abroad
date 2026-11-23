@@ -174,6 +174,7 @@ window.addEventListener("hashchange",function(){var h2=location.hash.replace(/^#
 })();</script>"""
 
 
+SIDE_MAPS = {"africa": "may_side_html", "southamerica-aug": "sa_side_html"}  # 左に、地図と日付つきの旅程を置く地域ページ
 SIDE_KEYS = ("概要", "旅の要点", "ビザ", "安全")  # 左に固定して、いつも見える節
 TAB_ORDER = ("旅程の目安", "旅の流れ", "今日のやること", "費用", "主な観光地", "住む場所", "ビザ", "安全", "行き方", "おすすめの食べ物",
              "おおよその位置の地図", "出発前の準備", "未確認", "出典", "調査ログ", "調査メモ")  # タブの並び（見る順）
@@ -626,7 +627,11 @@ def render_text(md: str, path: Path, root: Path = ROOT) -> str:
         intro, panes, _heads = build_panes(body, reorder=(path.parent.name == "countries"))  # 国別ページは、見る順にタブを並べ替える
         if path.parent.name == "countries":
             intro = digest_from_conclusion(body) + intro  # 左の先頭に、結論の短い一覧（最適日数・5月の適性・費用…）を置く
-        body = '<div class="pane-wrap"><aside class="pane-side">' + intro + '</aside>' + panes + '</div>' + PANE_SCRIPT
+        side_extra, side_cls = "", ""
+        if path.parent.name == "areas" and path.stem in SIDE_MAPS:
+            import build_route_map  # 循環 import を避けるため、関数の中で読む
+            side_extra, side_cls = getattr(build_route_map, SIDE_MAPS[path.stem])(), " has-map"
+        body = (f'<div class="pane-wrap{side_cls}"><aside class="pane-side">' + side_extra + intro + '</aside>' + panes + '</div>' + PANE_SCRIPT)
     elif path.parent.name in ("research", "areas"):
         shiori = path.parent.name == "areas" and bool(re.search(r"^## \d+\. 調査メモ", md, re.M))  # 旅のしおり型：調査メモだけ閉じ、ほかは開く
         body = fold_sections(fold_notes(body), min_chars=400 if path.parent.name == "areas" else 600,
@@ -1236,13 +1241,24 @@ INDEX_BODY = """@@bar@@
 """
 
 
+def _as_of(root: Path, meta: dict) -> str:
+    """トップページの基準日。meta.csv の as_of が空でなければそれ、空なら費用行の確認日（collected_on）の最新日（build.today()）"""
+    if (meta.get("as_of") or "").strip():
+        return meta["as_of"].strip()
+    if root != ROOT:
+        return ""
+    import build
+    build.load_model()
+    return build.today().isoformat()
+
+
 def index_page(root: Path = ROOT) -> str:
-    meta = {r["key"]: r["value"] for r in csv_records(root / DATA_DIR / "meta.csv")} if (root / DATA_DIR / "meta.csv").exists() else {}
+    meta ={r["key"]: r["value"] for r in csv_records(root / DATA_DIR / "meta.csv")} if (root / DATA_DIR / "meta.csv").exists() else {}
     maint = " ／ ".join(f'<a href="{esc(r["path"])}">{esc(r["title"])}</a>' for r in sorted_pages(root) if r["area"] == "運用")
     maint += ' ／ <a href="docs/09-issue-map.html">Issue対応表</a>'
     body = INDEX_BODY.replace("@@bar@@", bar("", "index.html"))
     for k, v in (("budget", budget_cards(root)), ("homemap", home_map(root)), ("flow", home_flow(root)), ("strip", budget_strip(root)), ("now", now_block(root)), ("fx", fx_summary(root)),
-                 ("docs", docs_summary(root)), ("asof", esc(meta.get("as_of", ""))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
+                 ("docs", docs_summary(root)), ("asof", esc(_as_of(root, meta))), ("maint", maint), ("script", INDEX_FX_SCRIPT + "\n" + INDEX_CAROUSEL_SCRIPT + "\n" + INDEX_TRIAGE_SCRIPT)):
         body = body.replace(f"@@{k}@@", v)
     return INDEX_PAGE.replace("@@css@@", BASE_CSS).replace("@@fsjs@@", FONT_SIZE_JS).replace("@@body@@", body)
 

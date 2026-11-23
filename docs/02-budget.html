@@ -236,16 +236,16 @@ a.region-col .go{margin-top:auto;padding-top:10px;font-weight:700;font-size:.82r
 .home-map .legend i{display:inline-block;width:20px;height:0;border-top:3px solid var(--fl);vertical-align:middle;margin-right:2px}
 .home-map .legend i.fl{border-top-style:dashed}
 .home-map .legend i.dm{border-top-color:var(--dm)} .home-map .legend i.rd{border-top-color:var(--rd)}
-.home-map .sea{fill:var(--sea)} .home-map .grat{fill:none;stroke:var(--grat);stroke-width:.6} .home-map .frame{fill:none;stroke:var(--border);stroke-width:1}
-.home-map .co{fill:var(--land);stroke:var(--border);stroke-width:.5;fill-rule:evenodd;stroke-linejoin:round} .home-map .co.v{fill:var(--hl);stroke:var(--muted);stroke-width:.8}
-.home-map .ln{fill:none;stroke-width:2.6;stroke-linecap:round} .home-map .ln.fl{stroke:var(--fl);stroke-dasharray:7 5} .home-map .ln.dm{stroke:var(--dm)} .home-map .ln.rd{stroke:var(--rd);stroke-width:3}
-.home-map .pt{fill:var(--bg);stroke:var(--pt);stroke-width:2}
-.home-map .ln.tr{fill:none;stroke-width:2.6;stroke-dasharray:7 5;stroke-linecap:round} .home-map .ln.tr.bg{stroke:var(--r-baguio)} .home-map .ln.tr.may{stroke:var(--r-may)} .home-map .ln.tr.home{stroke:var(--r-cape)}
-.home-map .dn.tr.bg{fill:var(--r-baguio)} .home-map .dn.tr.may{fill:var(--r-may)} .home-map .dn.tr.home{fill:var(--r-cape)}
+.home-map .sea,.sidemap .sea{fill:var(--sea)} .home-map .grat,.sidemap .grat{fill:none;stroke:var(--grat);stroke-width:.6} .home-map .frame,.sidemap .frame{fill:none;stroke:var(--border);stroke-width:1}
+.home-map .co,.sidemap .co{fill:var(--land);stroke:var(--border);stroke-width:.5;fill-rule:evenodd;stroke-linejoin:round} .home-map .co.v,.sidemap .co.v{fill:var(--hl);stroke:var(--muted);stroke-width:.8}
+.home-map .ln,.sidemap .ln{fill:none;stroke-width:2.6;stroke-linecap:round} .home-map .ln.fl,.sidemap .ln.fl{stroke:var(--fl);stroke-dasharray:7 5} .home-map .ln.dm,.sidemap .ln.dm{stroke:var(--dm)} .home-map .ln.rd,.sidemap .ln.rd{stroke:var(--rd);stroke-width:3}
+.home-map .pt,.sidemap .pt{fill:var(--bg);stroke:var(--pt);stroke-width:2}
+.home-map .ln.tr,.sidemap .ln.tr{fill:none;stroke-width:2.6;stroke-dasharray:7 5;stroke-linecap:round} .home-map .ln.tr.bg,.sidemap .ln.tr.bg{stroke:var(--r-baguio)} .home-map .ln.tr.may,.sidemap .ln.tr.may{stroke:var(--r-may)} .home-map .ln.tr.home,.sidemap .ln.tr.home{stroke:var(--r-cape)}
+.home-map .dn.tr.bg,.sidemap .dn.tr.bg{fill:var(--r-baguio)} .home-map .dn.tr.may,.sidemap .dn.tr.may{fill:var(--r-may)} .home-map .dn.tr.home,.sidemap .dn.tr.home{fill:var(--r-cape)}
 .home-map .legend i.tr{border-top-style:dashed} .home-map .legend i.tr.bg{border-top-color:var(--r-baguio)} .home-map .legend i.tr.may{border-top-color:var(--r-may)} .home-map .legend i.tr.home{border-top-color:var(--r-cape)}
-.home-map .tx{font-size:12.5px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3.4px;stroke-linejoin:round;pointer-events:none} .home-map .tx.big{font-size:15px}
-.home-map .dn{font-size:11px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
-.home-map .dn.a{fill:var(--fl)} .home-map .dn.b{fill:var(--dm)} .home-map .dn.c{fill:var(--rd)}
+.home-map .tx,.sidemap .tx{font-size:12.5px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3.4px;stroke-linejoin:round;pointer-events:none} .home-map .tx.big,.sidemap .tx.big{font-size:15px}
+.home-map .dn,.sidemap .dn{font-size:11px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+.home-map .dn.a,.sidemap .dn.a{fill:var(--fl)} .home-map .dn.b,.sidemap .dn.b{fill:var(--dm)} .home-map .dn.c,.sidemap .dn.c{fill:var(--rd)}
 a.mini{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-top:6px solid var(--c,var(--r-common));border-radius:12px;padding:10px 12px;transition:transform .2s,box-shadow .2s;max-width:none}
 a.mini:hover{transform:translateY(-3px);box-shadow:var(--shadow-up)}
 a.mini.reg-baguio{--c:var(--r-baguio)} a.mini.reg-may{--c:var(--r-may)} a.mini.reg-aug{--c:var(--r-aug)} a.mini.reg-cape{--c:var(--r-cape)} a.mini.reg-common{--c:var(--r-common)}
@@ -333,6 +333,19 @@ dl.digest dd{margin:0;font-weight:700;min-width:0;overflow-wrap:anywhere}
 .pane-side th{position:static;white-space:normal}
 .pane{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
 .pane .tabs{display:flex;flex-wrap:wrap;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line)}
+.pane-wrap.has-map{grid-template-columns:minmax(0,1fr)}
+.pane-side .sidemap{margin:0 0 6px}
+.pane-side .sidemap .mapbox-h{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--sea)}
+.pane-side .sidemap svg.m{display:block;width:100%;height:auto}
+.sidemap .sn{fill:var(--ink);stroke:var(--bg);stroke-width:2} .sidemap .snt{fill:var(--bg);font-size:11px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.sidemap .tx{font-size:19px;stroke-width:5px} .sidemap .dn{font-size:16px;stroke-width:4px} .sidemap .snt{font-size:15px} .sidemap .ln{stroke-width:3.4px}
+.pane-side .sidemap .cap{font-size:.72rem;color:var(--muted);margin:3px 0 0;line-height:1.4}
+.pane-side h3.sd{font-size:.88rem;margin:8px 0 4px}
+table.lday{width:100%;border-collapse:collapse;font-size:.76rem;line-height:1.4;table-layout:fixed;min-width:0}
+table.lday th{position:static;background:none;width:5.6em;white-space:nowrap;font-weight:700;vertical-align:top;padding:3px 6px 3px 0;border-bottom:1px solid var(--line);text-align:left}
+table.lday td{padding:3px 0;border-bottom:1px solid var(--line);vertical-align:top;min-width:0}
+table.lday td b{display:block;font-size:.8rem} table.lday td span{display:block;color:var(--muted)}
+table.lday tr.k-fly th{color:var(--c-fly-ink,#9B1D20)} table.lday tr.k-tour td b{color:var(--ink)} table.lday tr.k-gap td span{font-style:normal;opacity:.85}
 .pane-side .side-meta{margin-top:10px;padding-top:8px;border-top:1px solid var(--line);font-size:.86em;color:var(--muted)}
 .pane .tabs button{font:inherit;font-size:.86rem;padding:7px 12px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);cursor:pointer;white-space:nowrap;border-radius:0;margin:0;min-height:0}
 .pane .tabs button[aria-selected=true]{color:var(--ink);font-weight:900;border-bottom-color:var(--c,var(--accent))}
@@ -345,6 +358,7 @@ dl.digest dd{margin:0;font-weight:700;min-width:0;overflow-wrap:anywhere}
 .page-head.r-baguio~.doc{--c:var(--r-baguio)} .page-head.r-may~.doc{--c:var(--r-may)} .page-head.r-aug~.doc{--c:var(--r-aug)} .page-head.r-cape~.doc{--c:var(--r-cape)}
 @media(min-width:1000px){
 .doc.tabbed .pane-wrap{grid-template-columns:minmax(300px,330px) minmax(0,1fr);height:calc(100dvh - var(--bar) - 112px);min-height:420px}
+.doc.tabbed .pane-wrap.has-map{grid-template-columns:minmax(380px,34%) minmax(0,1fr)}
 .doc.tabbed .pane-side{position:sticky;top:calc(var(--bar) + 8px);max-height:100%;overflow:auto;align-self:start}
 .doc.tabbed .pane{display:grid;grid-template-rows:auto minmax(0,1fr);height:100%;min-height:0}
 .doc.tabbed .pane-body{overflow:auto;min-height:0}
@@ -524,7 +538,7 @@ if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.add
 <article>
 <p class="sec-tools"><button type="button" data-sec="open">すべての節を開く</button> <button type="button" data-sec="close">すべての節を閉じる</button></p>
 <p><strong>このページの見方（2026-11-11）</strong>：下の「AUTO」の表は <code>data/expenses.csv</code> から自動で作った見積モデルです（<code>py scripts/build_all.py</code> で再生成）。<strong>公開料金に基づく匿名の見積であって、支払・実費の記録ではありません。</strong> 空欄は0円ではなく、2027年の料金・条件は未確認です。先頭の「1. 概要」だけ開いてあり、ほかの節は見出しを押すと開きます。</p>
-<p>集計の基準日：2026-10-17（<code>data/meta.csv</code> の <code>as_of</code>。個別の料金の確認日は各行に記載）。<strong>数値は公開料金に基づく見積モデルと予算目標であって、支払・実費の記録ではない。</strong> 個人の請求額・支払額・資産残高は非公開で管理し、この公開資料の集計には含めません（<a href="05-public-data-policy.html">公開データ方針</a>）。</p>
+<p>集計の基準日：下の「集計日」を見てください（費用行の確認日 <code>collected_on</code> の最新日が自動で入ります。<code>data/meta.csv</code> の <code>as_of</code> に日付を入れると固定できます）。個別の料金の確認日は各行に記載。<strong>数値は公開料金に基づく見積モデルと予算目標であって、支払・実費の記録ではない。</strong> 個人の請求額・支払額・資産残高は非公開で管理し、この公開資料の集計には含めません（<a href="05-public-data-policy.html">公開データ方針</a>）。</p>
 <ul><li>AUTO ブロック（<code>AUTO:名前</code> の目印で囲まれた部分）の中は <code>scripts/build.py</code> が CSV から作り直します。手で編集しても上書きされます。</li></ul>
 <details class="sec"><summary><h2 id="2026-11-085月航空券を独立表示する予算区分issue-80">2026-11-08｜5月航空券を独立表示する予算区分</h2></summary>
 <p><strong>定義</strong>：トップの「飛行機代」には日本発着・Mauritius↔Madagascar・Mauritius→JNB・JNB→VFA・VFA→Cape Town・マダガスカル国内線をまとめる。「アフリカ周遊（5月）」には<strong>航空券以外</strong>のバス・タクシー・越境送迎、ビザ・KAZA、宿泊・食事・観光・サファリを含める。各費用を正本<code>data/expenses.csv</code>の1行にのみ置き、同じ支払を2区分に重複計上しない。</p>
@@ -541,7 +555,7 @@ if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.add
 <ul><li><strong>基本式：</strong> 泊数×1泊単価、日数×1日食費、回数×シャトル/体験単価。各行は低予算・標準・余裕の3ケース。10泊×3,000円＝30,000円は例示であり、35日仮旅程ではマダガスカル13泊×3,000円＝39,000円。</li><li><strong>検証：</strong> 5月の試算期間は5/4〜6/6の<strong>34暦日</strong>（両端を含む。）で、旧モデルは35日＝34泊。ただし便変更時は日数・泊数も修正。機内食・宿食・ツアー送迎・学校宿泊が含まれる場合は二重加算しない。</li><li><strong>区分：</strong> 航空券は「飛行機代」、シャトル/バス・査証・宿泊・食事・ツアーは「アフリカ周遊現地費」。<strong>5月配分60万円は航空券＋現地費合算</strong>で判定する。</li><li><strong>未確定：</strong> 仮単価は市場平均や2027年の販売額ではない。マダガスカル国内線・追加料金・保険・予備費などの未取得額は0円にしない。</li><li><details class="more"><summary>生成： python3 scripts/build_all.pyで総額・自動表・HTMLを同期し、python3 -m unittest d…<span class="hint">（全文を開く）</span></summary><div class="full"><strong>生成：</strong> <code>python3 scripts/build_all.py</code>で総額・自動表・HTMLを同期し、<code>python3 -m unittest discover -s tests</code>のMarkdown/CSV二重計上チェックを通す。PR #81は生成物・CI・独立レビュー未完了のDraftであり、この節だけの変更を本番反映済みとは扱わない。</div></details></li></ul>
 <hr>
 </details><details class="sec" open><summary><h2 id="1-概要自動">1. 概要（自動）</h2></summary>
-<p>集計日: 2026-10-17（<code>py scripts/build_all.py</code> で再計算）。<strong>公開用の匿名モデル</strong>で、個人の支払い・実費・資金は含みません。</p>
+<p>集計日: 2026-11-16（<code>py scripts/build_all.py</code> で再計算）。<strong>公開用の匿名モデル</strong>で、個人の支払い・実費・資金は含みません。</p>
 <div class="scroll"><table><thead><tr><th>指標</th><th>標準</th><th>低予算 ／ 余裕</th><th>説明</th></tr></thead><tbody><tr><td data-label="指標">見積合計（金額入力済みの全行）</td><td data-label="標準">¥2,564,965</td><td data-label="低予算 ／ 余裕">¥2,356,415 ／ ¥2,936,692</td><td data-label="説明">各行を1回だけ加算。金額未入力の行は含まない</td></tr><tr><td data-label="指標">うち 見積（出典あり）</td><td data-label="標準">¥1,045,042</td><td data-label="低予算 ／ 余裕">¥993,702 ／ ¥1,143,224</td><td data-label="説明">14 件</td></tr><tr><td data-label="指標">うち 未確認（出典なし・推定）</td><td data-label="標準">¥1,519,923</td><td data-label="低予算 ／ 余裕">¥1,362,713 ／ ¥1,793,469</td><td data-label="説明">29 件（金額未入力を含む）。費用として加算するだけで、何からも差し引かない</td></tr><tr><td data-label="指標">金額未入力</td><td data-label="標準">3 件</td><td data-label="低予算 ／ 余裕">—</td><td data-label="説明">0円ではない。見積合計は下限の目安で、6か月総額は未完成</td></tr><tr><td data-label="指標">目標250万円との差</td><td data-label="標準">¥-64,965</td><td data-label="低予算 ／ 余裕">¥143,585 ／ ¥-436,692</td><td data-label="説明">予算目標 − 見積合計（マイナス＝超過）</td></tr><tr><td data-label="指標">上限300万円との差</td><td data-label="標準">¥435,035</td><td data-label="低予算 ／ 余裕">¥643,585 ／ ¥63,308</td><td data-label="説明">予算目標 − 見積合計（マイナス＝超過）</td></tr><tr><td data-label="指標">5月アフリカ周遊（AF-行）</td><td data-label="標準">¥622,104</td><td data-label="低予算 ／ 余裕">—</td><td data-label="説明">配分目標 ¥600,000（総予算の内数）</td></tr></tbody></table></div>
 <p><strong>金額未入力（0円扱いしない）</strong>: AU-01 7月末〜8月の追加観光（任意・未計画）、AF-16 マダガスカル国内線：アンタナナリボ↔モロンダバ（往復・曜日要確認）、PH-12 マニラ→日本（一時帰国）片道</p>
 <p>一部シナリオだけ未計上の行はありません。</p>
