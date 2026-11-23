@@ -87,6 +87,7 @@
 | [アルゼンチン](../countries/argentina.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
 | [チリ](../countries/chile.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
 | [メキシコ](../countries/mexico.html) | [#185](https://github.com/Rikkyhub/studying-abroad/issues/185) | 調査中 | 2026-11-20 |
+| [パラグアイ](../countries/paraguay.html) | [#198](https://github.com/Rikkyhub/studying-abroad/issues/198) | 調査中 | 2026-11-23 |
 | [確認待ち（QA）](../docs/10-qa.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 整理済 | 2026-11-08 |
 | [モデルルート作成](../docs/11-route-builder.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 作成中 | 2026-11-08 |
 | [飛行機代の内訳](../docs/12-flights.html) | [#80](https://github.com/Rikkyhub/studying-abroad/issues/80) | 作成中 | 2026-11-09 |
