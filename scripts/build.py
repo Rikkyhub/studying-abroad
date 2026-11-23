@@ -345,7 +345,7 @@ def gen_budget_summary(S):
         md_table(["指標", "標準", "低予算 ／ 余裕", "説明"], [
             ["見積合計（金額入力済みの全行）", yen(t["std"]), f"{yen(t['low'])} ／ {yen(t['high'])}", "各行を1回だけ加算。金額未入力の行は含まない"],
             ["うち 見積（出典あり）", yen(S["by_status"]["見積"]["std"]), f"{yen(S['by_status']['見積']['low'])} ／ {yen(S['by_status']['見積']['high'])}", f"{S['status_count']['見積']} 件"],
-            ["うち 未確認（出典なし・推定）", yen(S["by_status"]["未確認"]["std"]), f"{yen(S['by_status']['未確認']['low'])} ／ {yen(S['by_status']['未確認']['high'])}", f"{S['status_count']['未確認']} 件（金額未入力を含む）。費用として加算するだけで、何からも差し引かない"],
+            ["うち 未確認（対象日の料金・条件）", yen(S["by_status"]["未確認"]["std"]), f"{yen(S['by_status']['未確認']['low'])} ／ {yen(S['by_status']['未確認']['high'])}", f"{S['status_count']['未確認']} 件（金額未入力を含む）。費用として加算するだけで、何からも差し引かない"],
             ["金額未入力", f"{len(na)} 件", "—", "0円ではない。未取得の金額は予算に加算しない"],
             ["目標250万円との差", yen(S["vs_ideal"]["std"]), f"{yen(S['vs_ideal']['low'])} ／ {yen(S['vs_ideal']['high'])}", "予算目標 − 見積合計（マイナス＝超過）"],
             ["上限300万円との差", yen(S["vs_cap"]["std"]), f"{yen(S['vs_cap']['low'])} ／ {yen(S['vs_cap']['high'])}", "予算目標 − 見積合計（マイナス＝超過）"],
@@ -477,7 +477,7 @@ def gen_articles(articles):
 
 
 def gen_unconfirmed(rows, tasks):
-    items = [f"- 費用 {r['id']}: {r['item']}（{'金額未入力・見積合計に含まれていない（0円ではない）' if r['no_amount'] else '推定 ' + yen(r['est']['std']) + '・出典なし'}）" for r in rows if r["status"] == "未確認"]
+    items = [f"- 費用 {r['id']}: {r['item']}（{'金額未入力・見積合計に含まれていない（0円ではない）' if r['no_amount'] else '推定 ' + yen(r['est']['std']) + ('・参考資料あり' if r['source'] else '・出典未取得')}）" for r in rows if r["status"] == "未確認"]
     items += [f"- 費用 {r['id']}: {r['item']}（{'・'.join(SCENARIOS[s] for s in r['unpriced'])}は未計上＝空欄。0円ではない）" for r in rows if r.get("unpriced")]
     items += [f"- タスク {t['id']}: {t['task']}（{t['next_action']}）" for t in tasks if t["status"] == "要確認"]
     return "\n".join(items) if items else "なし"
@@ -520,9 +520,9 @@ def render_all(S, rows, tasks, articles, timeline, fx, problems):
                 "",
                 md_table(["項目", "現状"], [
                     ["準備タスク", f"{done}/{total} 完了"],
-                    ["見積合計（標準）", f"{yen(S['total']['std'])}（{fmt3(S['total'])}）"],
+                    ["7か月の標準概算", f"{yen(S['total']['std'])}（{fmt3(S['total'])}）"],
                     ["うち 見積（出典あり）", f"{yen(S['by_status']['見積']['std'])}（{S['status_count']['見積']} 件）"],
-                    ["うち 未確認（出典なし・推定）", f"{yen(S['by_status']['未確認']['std'])}（{S['status_count']['未確認']} 件）"],
+                    ["うち 未確認（対象日の料金・条件）", f"{yen(S['by_status']['未確認']['std'])}（{S['status_count']['未確認']} 件）"],
                     ["金額未入力の費目", f"{len(S['no_amount'])} 件（0円ではない・合計に含まれない）"],
                     ["上限300万円との差（標準）", f"{yen(S['vs_cap']['std'])}（予算目標 − 見積合計）"],
                     ["記事候補", f"{len(articles)} 件"],

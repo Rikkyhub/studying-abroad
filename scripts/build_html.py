@@ -866,7 +866,7 @@ def _station_costs(root: Path) -> dict:
         if rs:
             out[key] = build.yen(sum(r["est"]["std"] or 0.0 for r in rs))
     if any(r["id"].startswith("SA8-") for r in rows):
-        out["peru-active"] = True
+        out["southamerica-aug"] = out["africa-aug"]
     return out
 
 
@@ -937,7 +937,7 @@ def home_flow(root: Path = ROOT) -> str:
         key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
         cls = REGION_CLASS.get(key, "reg-common")
         cost = costs.get(key)
-        if key == "africa-aug" and costs.get("peru-active"):
+        if key == "africa-aug" and "southamerica-aug" in costs:
             key = "southamerica-aug"
         cost_html = (f'<span class="cost num">{esc(cost)}<small>現地費・標準</small></span>' if cost
                      else '<span class="cost num">未計上<small>国が未定のため</small></span>')
