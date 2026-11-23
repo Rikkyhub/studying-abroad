@@ -20,10 +20,10 @@ def sa_countries():
 
 
 class SouthAmericaMapTests(unittest.TestCase):
-    def test_seven_countries_each_with_a_page(self):
+    def test_eight_countries_each_with_a_page(self):
         cs = sa_countries()
         self.assertEqual(sorted(c["slug"] for c in cs),
-                         sorted(["peru", "bolivia", "ecuador", "brazil", "argentina", "chile", "mexico"]))
+                         sorted(["peru", "bolivia", "ecuador", "brazil", "argentina", "chile", "mexico", "paraguay"]))
         for c in cs:
             self.assertTrue((REPO / "countries" / f"{c['slug']}.md").is_file(), c["slug"])
 
