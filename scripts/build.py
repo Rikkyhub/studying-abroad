@@ -65,9 +65,19 @@ TRIP_START = dt.date(2027, 2, 1)
 _META = {}
 
 
+_LATEST_COLLECTED = ""
+
+
 def today():
-    """集計基準日。data/meta.csv の as_of（生成物を決定的にするため実行日は使わない）"""
-    return dt.date.fromisoformat(_META.get("as_of", "2026-10-17"))
+    """集計基準日（生成物を決定的にするため実行日は使わない）。
+    data/meta.csv の as_of が**空でなければ**それを使う（手で固定したいとき）。空なら、費用行の確認日（expenses.csv の collected_on）の最新日。
+    手で日付を更新し忘れて、READMEや予算ページの基準日が実データより古くなるのを防ぐ（Issue #7）"""
+    manual = (_META.get("as_of") or "").strip()
+    if manual:
+        return dt.date.fromisoformat(manual)
+    if _LATEST_COLLECTED:
+        return dt.date.fromisoformat(_LATEST_COLLECTED)
+    return dt.date.fromisoformat("2026-10-17")
 
 
 # ---------------------------------------------------------------- 読み込み
@@ -505,7 +515,7 @@ def render_all(S, rows, tasks, articles, timeline, fx, problems):
         "articles": {"articles": gen_articles(articles)},
         "readme": {
             "status": "\n".join([
-                f"集計基準日: {today().isoformat()}（data/meta.csv）",
+                f"集計基準日: {today().isoformat()}（費用行の確認日の最新日。data/meta.csv で固定も可）",
                 "",
                 md_table(["項目", "現状"], [
                     ["準備タスク", f"{done}/{total} 完了"],
@@ -556,6 +566,8 @@ def load_model():
         _META[r["key"]] = r["value"]
     fx = load_fx()
     expenses = read_csv("expenses.csv")
+    global _LATEST_COLLECTED
+    _LATEST_COLLECTED = max((r["collected_on"] for r in expenses if re.fullmatch(r"\d{4}-\d{2}-\d{2}", r.get("collected_on", ""))), default="")
     # For May travel, editable Markdown is the sole Fermi-estimate input.
     # Apply in memory; do not modify or require any extra user-managed CSV.
     from fermi_budget import apply_to_expenses

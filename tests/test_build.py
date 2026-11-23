@@ -279,5 +279,32 @@ class RepoDataTest(unittest.TestCase):
             self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
 
+class AsOfDateTest(unittest.TestCase):
+    """集計基準日：as_of が空なら費用行の確認日の最新日、入っていればそれを使う（手で更新し忘れて古くなるのを防ぐ。Issue #7）"""
+
+    def setUp(self):
+        self._meta, self._latest = dict(build._META), build._LATEST_COLLECTED
+
+    def tearDown(self):
+        build._META.clear()
+        build._META.update(self._meta)
+        build._LATEST_COLLECTED = self._latest
+
+    def test_empty_as_of_uses_latest_collected_on(self):
+        build._META["as_of"] = ""
+        build._LATEST_COLLECTED = "2026-11-16"
+        self.assertEqual(build.today().isoformat(), "2026-11-16")
+
+    def test_manual_as_of_wins(self):
+        build._META["as_of"] = "2026-10-17"
+        build._LATEST_COLLECTED = "2026-11-16"
+        self.assertEqual(build.today().isoformat(), "2026-10-17")
+
+    def test_repo_as_of_is_not_older_than_latest_expense_date(self):
+        S, rows, *_ = build.load_model()
+        latest = max(r["collected_on"] for r in rows if r["collected_on"])
+        self.assertGreaterEqual(build.today().isoformat(), latest)
+
+
 if __name__ == "__main__":
     unittest.main()
