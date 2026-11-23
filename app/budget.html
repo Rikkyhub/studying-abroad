@@ -1,0 +1,95 @@
+<section class="travel-budget" aria-label="7か月の費用">
+<style>
+.travel-budget{max-width:56rem;margin:0 auto 2rem;min-width:0}
+.travel-budget .overview{background:#123e42;color:white;border-radius:16px;padding:1.2rem 1.4rem}
+.travel-budget .overview strong{display:block;font:700 clamp(1.9rem,6vw,3rem)/1.3 system-ui;font-variant-numeric:tabular-nums}
+.travel-budget .overview small{color:#d1e7df}.travel-budget .controls{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0}
+.travel-budget button,.travel-budget select{font:inherit;min-height:44px;padding:.4rem .8rem;border:1px solid #78938e;border-radius:8px;color:#193e39;background:white}
+.travel-budget button[aria-pressed=true]{background:#15564e;color:white}
+.travel-budget .group{margin:.5rem 0;border:1px solid #b4c8c3;border-radius:10px;padding:.65rem .8rem}
+.travel-budget summary{cursor:pointer;padding:.4rem 0;overflow-wrap:anywhere}.travel-budget .line{display:grid;gap:.3rem;padding:.65rem 0;border-top:1px solid #d9e4df;overflow-wrap:anywhere}
+.travel-budget .line small{display:block}.travel-budget select{width:fit-content}
+</style>
+<div class="overview"><span>2〜8月｜計上済みの標準概算</span><strong data-total></strong><small data-coverage></small></div>
+<p>8月はペルー集中案（SA8-1、20泊21日）で試算。フィリピン帰国便は往復券に含め、ケープタウンからは南米経由で帰国します。確定額の公開登録はありません。</p>
+<div class="controls" role="group" aria-label="集計の切り替え"></div>
+<p data-help aria-live="polite"></p><div data-groups></div>
+<noscript>内訳の切り替えにはJavaScriptを有効にしてください。</noscript>
+<script type="application/json" class="budget-data">@@ROWS@@</script>
+<script>
+(function(){
+  const root=document.currentScript.closest('.travel-budget');
+  const rows=JSON.parse(root.querySelector('.budget-data').textContent);
+  const modes={phase:'期間別',country:'国別',category:'費目別',months:'月別',payment:'支払状況別',saving:'節約余地別'};
+  const labels=['未確認','未払い','一部支払済み','支払済み'];
+  const yen=n=>n.toLocaleString('ja-JP')+'円';
+  const notes={months:'利用期間の日数で按分しています。期間のない費目は予定月に表示します。',payment:'明細の支払状況をこのブラウザで記録できます。金額は各明細の予算額です。',saving:'標準案から低予算案に変えた場合の差額です。低予算額がない明細は比較できません。'};
+  const storageKey='studying-abroad.budget.payment.v1';
+  let payment={};
+  try{payment=JSON.parse(localStorage.getItem(storageKey))||{}}catch(e){}
+  const status=id=>labels.includes(payment[id])?payment[id]:labels[0];
+  function add(parent,tag,text){
+    const node=document.createElement(tag);
+    node.textContent=text; parent.append(node); return node;
+  }
+  function subtotal(entries){
+    const known=entries.filter(e=>e.amount!==null);
+    return known.length?yen(known.reduce((sum,e)=>sum+e.amount,0)):'金額未取得';
+  }
+  root.querySelector('[data-total]').textContent=subtotal(rows);
+  root.querySelector('[data-coverage]').textContent='金額未取得 '+rows.filter(r=>r.amount===null).length+'件は小計の対象外';
+  let mode='phase';
+  function draw(){
+    const groups=new Map();
+    for(const row of rows){
+      const key=mode==='payment'?status(row.id):mode==='saving'?
+        (row.saving===null?'比較額なし':row.saving>0?'節約余地あり':'低予算案と同額'):row[mode];
+      const parts=mode==='months'?Object.entries(row.months):[[key,row.amount]];
+      for(const [name,amount] of parts){
+        if(!groups.has(name))groups.set(name,[]);
+        groups.get(name).push({row,amount});
+      }
+    }
+    const hint=root.querySelector('[data-help]');
+    hint.textContent=notes[mode]||'見出しを開くと明細と金額の根拠を確認できます。';
+    const panel=root.querySelector('[data-groups]');panel.replaceChildren();
+    root.querySelectorAll('.controls button').forEach(b=>b.setAttribute('aria-pressed',String(b.value===mode)));
+    const order=[...groups.keys()];
+    if(mode==='months')order.sort((a,b)=>(a==='pre'?'0':a).localeCompare(b==='pre'?'0':b));
+    for(const key of order){
+      const entries=groups.get(key), group=add(panel,'details','');group.className='group';
+      const name=({pre:'出発前',post:'帰国後'})[key]||key;
+      const missing=entries.filter(e=>e.amount===null).length;
+      const saving=entries.reduce((sum,e)=>sum+(e.row.saving||0),0);
+      add(group,'summary',name+'　'+subtotal(entries)+(missing?' ｜未取得 '+missing+'件':'')+
+        (mode==='saving'&&key==='節約余地あり'?' ｜削減目安 '+yen(saving):''));
+      for(const {row,amount} of entries){
+        const line=add(group,'div','');line.className='line';
+        add(line,'span',row.item);add(line,'b',amount===null?'金額未取得':'概算 '+yen(amount));
+        if(mode==='saving'&&row.saving!==null)add(line,'small','削減目安 '+yen(row.saving));
+        if(row.source){
+          const url=String(row.source).match(/^https?:\/\/[^\s、]+/);
+          if(url){const link=add(line,'a','根拠を見る');link.href=url[0]}
+        }
+        if(mode==='payment'){
+          const select=add(line,'select','');select.setAttribute('aria-label',row.item+'の支払状況');
+          labels.forEach(label=>add(select,'option',label));select.value=status(row.id);
+          select.onchange=()=>{
+            payment[row.id]=select.value;
+            let stored=true;
+            try{localStorage.setItem(storageKey,JSON.stringify(payment))}catch(e){stored=false}
+            draw();hint.textContent=row.item+'を「'+payment[row.id]+'」に変更しました。'+(stored?'':'保存できないため、この画面のみ有効です。');
+            root.querySelector('.controls button[aria-pressed=true]').focus();
+          };
+        }
+      }
+    }
+  }
+  for(const [key,label] of Object.entries(modes)){
+    const button=add(root.querySelector('.controls'),'button',label);
+    button.type='button';button.value=key;button.onclick=()=>{mode=key;draw()};
+  }
+  draw();
+})();
+</script>
+</section>
