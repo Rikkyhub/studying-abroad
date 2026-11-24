@@ -195,7 +195,7 @@ def cost_block(rows, region):
         item += f" `{r['id']}`"  # 行ID（要否の判断をページをまたいで結びつけるための印。HTMLでは小さな表示になる）
         body.append([item, r["status"], cost_group(r["category"]), _local(r)] + [yen(r["est"][s]) for s in SCEN])
     t = region_totals(rows, region)
-    for label, key in (("**小計：公開価格表からの匿名の見積（見積と未確認の合計）**", "all"), ("うち 見積（出典あり）", "見積"), ("うち 未確認（出典なし・推定）", "未確認")):
+    for label, key in (("**小計：公開価格表からの匿名の見積（見積と未確認の合計）**", "all"), ("うち 見積（出典あり）", "見積"), ("うち 未確認（対象日の料金・条件を要確認）", "未確認")):
         body.append([label, "－", "－", "－"] + [(f"**{yen(t[key][s])}**" if key == "all" else ("－" if t[key][s] is None else yen(t[key][s]))) for s in SCEN])
     # 航空券と現地費の内訳（小計に1回だけ含まれる。トップの「飛行機代」「アフリカ周遊（5月）」カードと同じ分け方）
     air = [r for r in rs if r["category"].startswith("航空券") and not r["no_amount"]]
