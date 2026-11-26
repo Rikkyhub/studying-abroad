@@ -211,6 +211,20 @@
 | R-89 | プクサナのダイビング事業者の条件（Pacific Divers は取得時に502） | 2本・18時間以上／24時間の目安に合う日程 | 事業者公式 | `areas/southamerica-aug.md` |
 | R-90 | KAZAのオンライン電子査証の入国地点（VFAの空港での発給は未確認） | ザンビア側のみ確認 | 各国の入管公式 | `areas/africa-aug.md` |
 
+### N. 『ここでしかできない体験』レポートの裏取り（Claude が取得できなかったもの）
+
+[アフリカ6か国『ここでしかできない体験』比較](africa-unique-experiences-report.md)の元レポートは出典URLが残っておらず、数値は**公式で未確認**です。予算には、公式で確認できた値だけを入れます。
+
+| # | 項目 | 何を調べるか | 取得先の候補 | 反映先 |
+|---|---|---|---|---|
+| R-91 | 元レポートの料金の出典URL（Chobe・Okavango・ヘリ・microlight・ケルプ・シャークケージ） | レポートに残っていない料金を、事業者・政府の公式ページで1件ずつ確認（金額・通貨・年・含まれる内容）。特に Chobe ボート BWP498、モコロ（€60／135／255、US$105〜155）、海中の滝ヘリ MUR9,880、microlight US$196、ケルプ R2,340〜3,495、シャークケージ R1,850〜4,905 | 各事業者の公式料金ページ、観光当局 | `research/africa-unique-experiences-report.md` の §2・§3 |
+| R-92 | マダガスカルの国立公園料金の改定（130,000 MGA／日） | 既存調査（65,000／55,000／45,000 MGA、2024年の画像）と、レポートの「2026年以降130,000 MGA／日」のどちらが現行か。公園別の適用額（Andasibe-Mantadia、Kirindy、Tsingy、Isalo、Ranomafana）とガイド料 | Madagascar National Parks 公式（TARIFS_DEAP.pdf）、各公園ページ | `research/africa-unique-experiences-report.md` の §2・§3 |
+| R-93 | ザンビア側のビクトリアの滝の入場料（2026・2027年） | 公式表（2025年、USD10）とレポート（約USD20）の食い違い。外国人の1日の入場料の現行値 | ザンビア観光局・NHCC・DNPW の公式料金表 | `research/africa-unique-experiences-report.md` の §2・§3 |
+| R-94 | ガンスバイのシャークケージの直近の状況と、never@home・IH の学生価格 | ホホジロザメの直近の観察記録（主対象が別種になっていないか）。never@home・IH Cape Town の公開価格・割引（2つで10%、3つ以上で15%）。ケージの許可事業者リスト | 南アフリカ政府の許可事業者リスト、各事業者の公式、never@home・IH 公式 | `research/africa-unique-experiences-report.md` の §2・§3 |
+| R-95 | モーリシャスのクジラ関連の規制強化（2026年10月の方針） | 観光当局が公表した規則強化の内容と施行時期。船上観察の条件（2027年） | モーリシャス観光当局（Tourism Authority） | `research/africa-unique-experiences-report.md` の §2・§3 |
+| R-96 | Chobe の国立公園入園料と、licensed operator 利用時の現行料金 | 非居住者の1日料金（BWP120／190／270の食い違い）、車両料金、2026年の値上げ案が延期された後の現行表、2027年の適用 | ボツワナ野生生物・国立公園局（DWNP） | `research/africa-unique-experiences-report.md` の §2・§3 |
+| R-97 | 元レポートの為替と `data/fx.csv` の差の整理 | レポートは 1 USD＝159.35円、1 ZAR＝9.13円、1 BWP＝11.17円などを使用。`data/fx.csv`（ZAR 9.59円、USD 158.19円、2026-10-16）との差を、同日基準でそろえる。BWP・ZMW は `data/fx.csv` に未追加 | 日銀・MUFG の公表値、各国中央銀行 | `research/africa-unique-experiences-report.md` の §2・§3 |
+
 ## 3. 優先順位の目安
 
 1. **R-01（為替）** と **R-02・R-07・R-13（運賃・見積）** が、予算の合計を決める。
