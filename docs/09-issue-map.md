@@ -59,6 +59,7 @@
 | [長期留学＋周遊の保険（カード90日・期間の穴）](../research/long-stay-insurance.html) | [#49](https://github.com/Rikkyhub/studying-abroad/issues/49) | 調査中 | 2026-10-19 |
 | [【過去案】5月アフリカ周遊3ルートの比較](../research/archive-may-three-routes-comparison.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-20 |
 | [【過去案】5月アフリカ周遊3ルート（Deep Research比較）](../research/archive-africa-2027-may-three-route-deep-research.html) | [#51](https://github.com/Rikkyhub/studying-abroad/issues/51) | 調査中 | 2026-10-19 |
+| [アフリカ6か国『ここでしかできない体験』比較](../research/africa-unique-experiences-report.html) | [#137](https://github.com/Rikkyhub/studying-abroad/issues/137) | 作成中 | 2026-11-26 |
 | [【過去案】D案（ナミビアなし）の陸路周遊検証](../research/archive-d-plan-no-namibia.html) | [#53](https://github.com/Rikkyhub/studying-abroad/issues/53) | 調査中 | 2026-10-20 |
 | [優先度2の準備タスク調査](../research/prep-priority2-tasks.html) | [#20](https://github.com/Rikkyhub/studying-abroad/issues/20) | 調査中 | 2026-10-20 |
 | [ケープタウン語学留学の学校選定（Deep Research）](../research/deep-research-report.html) | [#7](https://github.com/Rikkyhub/studying-abroad/issues/7) | 調査中 | 2026-10-21 |
