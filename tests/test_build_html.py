@@ -87,18 +87,40 @@ class IndexTests(unittest.TestCase):
         # 地図と4つの区間のカードが、最初の h2（予算）より前にある＝最初の画面に入る
         self.assertLess(self.index.index('class="home-map"'), self.index.index('<h2 id="budget">'))
 
-    def test_budget_cards_are_model_and_never_zero_for_unpriced(self):
+    def test_budget_overview_uses_the_shared_period_by_kind_table(self):
         import re
         sec = self.index.split('<h2 id="budget">')[1].split("<h2 id=")[0]
-        # 8月は金額なしで「未計上」と出る
-        for label in ("目標総予算", "上限予算", "7か月の標準概算", "フィリピン（バギオ）", "アフリカ周遊（5月）",
-                      "南アフリカ（ケープタウン）", "8月の周遊（ペルー案）", "飛行機代"):
-            self.assertIn(label, sec)
+        # 行＝時期、列＝費目の1枚の表（費用ページの概要と同じ分け方）
+        for label in ("時期", "航空券・長距離移動", "宿泊", "食費・日用品", "現地交通", "観光・ツアー", "授業料・ビザ", "保険・医療・通信", "合計",
+                      "2〜4月 バギオ", "5月 アフリカ周遊", "6〜7月 ケープタウン", "8月 周遊"):
+            self.assertIn(label, sec, label)
         self.assertIn("モデル", sec)
         self.assertIn("実費ではありません", sec)
-        self.assertIn("未計上", sec)
         self.assertNotIn("¥0", sec)
         self.assertNotIn("0円</", sec)
+
+    def test_overview_rows_and_columns_add_up_to_the_same_total(self):
+        import re
+        sec = self.index.split('<h2 id="budget">')[1].split("<h2 id=")[0]
+        rows = re.findall(r"<tr>(.*?)</tr>", sec.split("<tbody>")[1], re.S)
+        nums = [[int(x.replace(",", "")) for x in re.findall(r"¥([\d,]+)", r)] for r in rows]
+        grand = nums[-1][-1]
+        self.assertEqual(sum(r[-1] for r in nums[:-1]), grand)  # 行（時期）の合計＝全体
+        self.assertEqual(sum(nums[-1][:-1]), grand)  # 列（費目）の合計＝全体
+
+    def test_budget_page_starts_with_the_same_overview(self):
+        text = (ROOT / "docs" / "02-budget.html").read_text(encoding="utf-8")
+        body = text.split("<article")[1]
+        top = body.split("内訳を切り替えて見る</h2>")[0]
+        self.assertIn("費用の概要", top)
+        for label in ("航空券・長距離移動", "授業料・ビザ", "2〜4月 バギオ", "8月 周遊"):
+            self.assertIn(label, top, label)
+
+    def test_area_pages_use_the_shared_cost_kinds(self):
+        for k in ("baguio", "africa", "capetown", "southamerica-aug"):
+            md = (ROOT / "areas" / f"{k}.md").read_text(encoding="utf-8")
+            self.assertIn("ホーム以外のすべてのページと同じ、7つの費目の分け方", md, k)
+            self.assertNotIn("交通費（飛行機以外）", md, k)  # 古い6区分の名前
 
     def test_timeline_cards_one_per_period_with_area_link(self):
         import csv
@@ -121,9 +143,11 @@ class IndexTests(unittest.TestCase):
         self.assertIn('class="home-body"', head)  # 左=地図、右=旅の流れ・予算・やること の2領域
         self.assertIn('class="home-map"', head)  # 左：ルート地図
         self.assertEqual(len(re.findall(r'<a class="seg ', head)), 4)  # 右：旅の流れ（時間順の4区間）
-        self.assertIn('class="strip"', head)  # 右：予算の帯
-        for seg in re.findall(r'<a class="seg .*?</a>', head, re.S):
-            self.assertRegex(seg, r"¥[\d,]+|未計上")
+        self.assertIn('class="strip"', head)  # 右下：いま何をするか（費用の金額は出さない）
+        # ホームの最初の画面には、費用の金額を出さない（費用ページの概要を見る）
+        first_screen = re.sub(r"<svg.*?</svg>", "", head, flags=re.S)
+        self.assertNotRegex(first_screen, r"¥[\d,]{4,}")
+        self.assertIn('href="docs/02-budget.html"', head)  # 費用ページへの入口は残す
 
     def test_currency_cards(self):
         sec = self.index.split('<h2 id="fx">')[1].split("<h2 id=")[0]

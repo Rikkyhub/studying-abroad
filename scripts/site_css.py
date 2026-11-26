@@ -302,12 +302,13 @@ body.home{overflow-x:hidden}
 .home-left .home-map figcaption{margin-top:4px;font-size:.72rem;line-height:1.45;display:block}
 .home-right{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:8px;align-content:stretch}
 .flow{display:grid;grid-auto-rows:minmax(0,1fr);gap:8px;min-height:0}
-a.seg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"when title cost" "sub sub cost";gap:2px 14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c,var(--r-common));border-radius:10px;padding:6px 14px;min-height:0;overflow:hidden;transition:border-color .2s,box-shadow .2s;max-width:none}
+a.seg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"when title go" "sub sub sub";gap:2px 14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c,var(--r-common));border-radius:10px;padding:6px 14px;min-height:0;overflow:hidden;transition:border-color .2s,box-shadow .2s;max-width:none}
 a.seg:hover{border-color:var(--c);box-shadow:var(--shadow)}
 a.seg.reg-baguio{--c:var(--r-baguio)} a.seg.reg-may{--c:var(--r-may)} a.seg.reg-aug{--c:var(--r-aug)} a.seg.reg-cape{--c:var(--r-cape)} a.seg.reg-common{--c:var(--r-common)}
 a.seg .when{grid-area:when;font-weight:900;font-size:.84rem;color:var(--c);white-space:nowrap}
 a.seg h3{grid-area:title;font-size:1rem;font-weight:900;line-height:1.35;margin:0}
-a.seg .sub{grid-area:sub;font-size:.78rem;color:var(--muted);line-height:1.45;margin:0;max-width:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+a.seg .sub{grid-area:sub;font-size:.78rem;color:var(--muted);line-height:1.45;margin:0;max-width:none;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+a.seg .go{grid-area:go;font-size:.78rem;font-weight:700;color:var(--c);white-space:nowrap;text-align:right}
 a.seg .cost{grid-area:cost;text-align:right;font-weight:900;font-size:1.15rem;line-height:1.2;white-space:nowrap}
 a.seg .cost small{display:block;font-weight:500;font-size:.68rem;color:var(--muted)}
 .home-right .strip{grid-template-columns:minmax(0,1fr);gap:6px;margin-top:0}

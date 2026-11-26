@@ -28,20 +28,19 @@ PHASE_REGION = {"8月 南米・ペルー案": "southamerica-aug", "フィリピ�
 REGION_CURRENCIES = {"baguio": ["PHP", "USD"], "africa": ["ZAR", "USD"], "africa-aug": ["ZAR", "USD"], "capetown": ["ZAR"], "common": []}
 SCEN = OrderedDict([("low", "低予算"), ("std", "標準"), ("high", "余裕")])
 DONE = ("完了", "不要")
-# 費用の見せ方の区分（expenses.csv の category は変えず、表示のときだけこの6区分にまとめる）
-COST_GROUPS = ["交通費（飛行機）", "交通費（飛行機以外）", "食費", "宿泊費", "ツアー代（チケット代）", "その他"]
-CATEGORY_GROUP = {
-    "航空券・長距離移動": "交通費（飛行機）",
-    "現地交通費": "交通費（飛行機以外）",
-    "食費・日常生活費": "食費",
-    "寮・ホームステイ・宿泊": "宿泊費",
-    "観光・ツアー・ダイビング": "ツアー代（チケット代）",
-}
+# 費用の見せ方の区分。ホーム以外のすべてのページで、費用は scripts/cost_overview.py の「費目」（7区分）で分ける。
+# expenses.csv の category は変えず、表示のときだけこの7区分にまとめる
+import cost_overview as _co
+
+COST_GROUPS = list(_co.KINDS.values())
+CATEGORY_GROUP = {cat: _co.KINDS[kind] for cat, kind in _co.CATEGORY_KIND.items()}
 
 
 def cost_group(category):
-    """費目（category）を6つの費用区分へ。対応表にないもの（授業料・ビザ・保険・通信など）は「その他」"""
-    return CATEGORY_GROUP.get(category, "その他")
+    """費目（category）を7つの共通の費目へ。対応表にないものは「保険・医療・通信」"""
+    return CATEGORY_GROUP.get(category, _co.KINDS["misc"])
+
+
 KIND_LABEL = {"school": "学校", "sightseeing": "観光", "diving": "ダイビング", "airport": "空港", "hospital": "病院", "other": "その他"}
 MAPS_URL = "https://www.google.com/maps/search/?api=1&query="
 FX_NOTE = ("参考レート（銀行の仲値）です。現金の両替・ATM・カード決済では、売り買いの差（スプレッド）や手数料が"
@@ -179,7 +178,7 @@ def group_table(rs):
             if r["est"][s] is not None:
                 tot[g][s] = (tot[g][s] or 0.0) + r["est"][s]
     body = [[g] + [yen(tot[g][s]) for s in SCEN] for g in COST_GROUPS if any(tot[g][s] is not None for s in SCEN)]
-    return "**費用区分ごとの小計**（下の表の「費用区分」列と同じ分け方）\n\n" + md_table(["費用区分", "低予算", "標準", "余裕"], body, aligns=["l", "r", "r", "r"])
+    return "**費目ごとの小計**（ホーム以外のすべてのページと同じ、7つの費目の分け方）\n\n" + md_table(["費目", "低予算", "標準", "余裕"], body, aligns=["l", "r", "r", "r"])
 
 
 def cost_block(rows, region):
@@ -207,7 +206,7 @@ def cost_block(rows, region):
            "",
            group_table(rs),
            "",
-           md_table(["項目", "区分", "費用区分", "現地通貨（標準）", "低予算", "標準", "余裕"], body, aligns=["l", "l", "l", "l", "r", "r", "r"]),
+           md_table(["項目", "区分", "費目", "現地通貨（標準）", "低予算", "標準", "余裕"], body, aligns=["l", "l", "l", "l", "r", "r", "r"]),
            "",
            "金額は公開価格表からの**匿名の見積**です（実際の支払額ではありません）。通貨が異なる行は、下の「通貨と円換算」の参考レートで円に換算して"
            "合計しています（円未満は四捨五入）。区分の「未確認」は出典なしの推定または金額未入力で、見積と区別して表示しています。"]

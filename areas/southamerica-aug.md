@@ -15,27 +15,27 @@
 <!-- AUTO:peru_cost -->
 低予算・標準・余裕の意味と、「固定」の見方は、下の合計の欄の「この表の見方」を開くと読めます。
 
-**費用区分ごとの小計**（下の表の「費用区分」列と同じ分け方）
+**費目ごとの小計**（ホーム以外のすべてのページと同じ、7つの費目の分け方）
 
-| 費用区分 | 低予算 | 標準 | 余裕 |
+| 費目 | 低予算 | 標準 | 余裕 |
 |---|---:|---:|---:|
-| 交通費（飛行機） | ¥309,241 | ¥410,647 | ¥535,251 |
-| 交通費（飛行機以外） | ¥11,073 | ¥18,034 | ¥25,944 |
-| 食費 | ¥18,000 | ¥27,000 | ¥45,000 |
-| 宿泊費 | ¥36,000 | ¥54,000 | ¥90,000 |
-| ツアー代（チケット代） | ¥73,478 | ¥113,025 | ¥113,025 |
+| 航空券・長距離移動 | ¥309,241 | ¥410,647 | ¥535,251 |
+| 宿泊 | ¥36,000 | ¥54,000 | ¥90,000 |
+| 食費・日用品 | ¥18,000 | ¥27,000 | ¥45,000 |
+| 現地交通 | ¥11,073 | ¥18,034 | ¥25,944 |
+| 観光・ツアー | ¥73,478 | ¥113,025 | ¥113,025 |
 
-| 項目 | 区分 | 費用区分 | 現地通貨（標準） | 低予算 | 標準 | 余裕 |
+| 項目 | 区分 | 費目 | 現地通貨（標準） | 低予算 | 標準 | 余裕 |
 |---|---|---|---|---:|---:|---:|
-| ケープタウン→リマ（サンパウロ経由を想定） [出典](https://www.google.com/travel/flights/flights-from-cape-town-to-lima.html) `SA8-out` | 未確認 | 交通費（飛行機） | USD 1,000 | ¥127,185 | ¥158,190 | ¥205,647 |
-| リマ⇄クスコ・イキトス（計4区間） [出典](https://www.latamairlines.com/pe/es/destinos/vuelos-desde-lima-a-iquitos) `SA8-dom` | 未確認 | 交通費（飛行機） | USD 300 | ¥30,056 | ¥47,457 | ¥69,604 |
-| リマ→東京（片道） [出典](https://www.expedia.com/lp/flights/lim/nrt/lima-to-tokyo) `SA8-return` | 未確認 | 交通費（飛行機） | 円建て | ¥152,000 | ¥205,000 | ¥260,000 |
-| マチュピチュ列車往復 [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-train` | 未確認 | 交通費（飛行機以外） | USD 90 | ¥11,073 | ¥14,237 | ¥22,147 |
-| マチュピチュ往復バス [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-bus` | 未確認 | 交通費（飛行機以外） | USD 24 | ¥0 | ¥3,797 | ¥3,797 |
-| 食費18日（ツアー3日分を除く） [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-food` | 未確認 | 食費 | 円建て | ¥18,000 | ¥27,000 | ¥45,000 |
-| 宿泊18泊（ロッジの2泊を除く） [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-hotel` | 未確認 | 宿泊費 | 円建て | ¥36,000 | ¥54,000 | ¥90,000 |
-| マチュピチュ入場1回 [出典](https://www.culturacusco.gob.pe/dmdocuments/transparencia/2026/upp/e%20TUSNE-resolucion-ministerial-000451-2024-mc-anexo-tusne-2025.pdf) `SA8-entry` | 未確認 | ツアー代（チケット代） | PEN 152 | ¥7,038 | ¥7,038 | ¥7,038 |
-| イキトスのロッジ2泊3日（食事・送迎込み） [出典](https://libertad-jungle-lodge.com/packages/) `SA8-lodge` | 未確認 | ツアー代（チケット代） | USD 670 | ¥66,440 | ¥105,987 | ¥105,987 |
+| ケープタウン→リマ（サンパウロ経由を想定） [出典](https://www.google.com/travel/flights/flights-from-cape-town-to-lima.html) `SA8-out` | 未確認 | 航空券・長距離移動 | USD 1,000 | ¥127,185 | ¥158,190 | ¥205,647 |
+| リマ⇄クスコ・イキトス（計4区間） [出典](https://www.latamairlines.com/pe/es/destinos/vuelos-desde-lima-a-iquitos) `SA8-dom` | 未確認 | 航空券・長距離移動 | USD 300 | ¥30,056 | ¥47,457 | ¥69,604 |
+| リマ→東京（片道） [出典](https://www.expedia.com/lp/flights/lim/nrt/lima-to-tokyo) `SA8-return` | 未確認 | 航空券・長距離移動 | 円建て | ¥152,000 | ¥205,000 | ¥260,000 |
+| 宿泊18泊（ロッジの2泊を除く） [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-hotel` | 未確認 | 宿泊 | 円建て | ¥36,000 | ¥54,000 | ¥90,000 |
+| 食費18日（ツアー3日分を除く） [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-food` | 未確認 | 食費・日用品 | 円建て | ¥18,000 | ¥27,000 | ¥45,000 |
+| マチュピチュ列車往復 [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-train` | 未確認 | 現地交通 | USD 90 | ¥11,073 | ¥14,237 | ¥22,147 |
+| マチュピチュ往復バス [出典](https://github.com/Rikkyhub/studying-abroad/blob/main/research/africa-south-america-2027-comparison.md) `SA8-bus` | 未確認 | 現地交通 | USD 24 | ¥0 | ¥3,797 | ¥3,797 |
+| マチュピチュ入場1回 [出典](https://www.culturacusco.gob.pe/dmdocuments/transparencia/2026/upp/e%20TUSNE-resolucion-ministerial-000451-2024-mc-anexo-tusne-2025.pdf) `SA8-entry` | 未確認 | 観光・ツアー | PEN 152 | ¥7,038 | ¥7,038 | ¥7,038 |
+| イキトスのロッジ2泊3日（食事・送迎込み） [出典](https://libertad-jungle-lodge.com/packages/) `SA8-lodge` | 未確認 | 観光・ツアー | USD 670 | ¥66,440 | ¥105,987 | ¥105,987 |
 | **小計：公開価格表からの匿名の見積（見積と未確認の合計）** | － | － | － | **¥447,792** | **¥622,706** | **¥809,220** |
 | うち 見積（出典あり） | － | － | － | － | － | － |
 | うち 未確認（対象日の料金・条件を要確認） | － | － | － | ¥447,792 | ¥622,706 | ¥809,220 |
@@ -50,10 +50,10 @@
 - SA8-out：別日の片道804ドル（2回乗継）。同じ経由地・荷物条件の運賃は未確認。標準1000・余裕1300ドルは予算枠。
 - SA8-dom：LATAMの別日片道はイキトス49.18・クスコ45.64ドル（https://www.latamairlines.com/pe/es/destinos/vuelos-desde-lima-a-cusco ）。復路同額の仮定で約190ドル。標準75・余裕110ドル×4区間。受託荷物条件は要確認。
 - SA8-return：低予算は南米地域ページの8/17参考15.2万円。別日片道1274米ドルの表示を既存レートで換算し標準20.5万円に丸めた。余裕26万円は予算枠。8/22発・荷物込みの実売は未取得。
+- SA8-hotel：20泊のうち18泊。比較資料の1泊2000・3000・5000円。
+- SA8-food：21日からロッジ3日を引く仮定。現地で含まれる食数を再確認。
 - SA8-train：参考下限は片道35ドル。標準45・余裕70ドルを各2回で仮置き。
 - SA8-bus：往復24ドルの過去参考。低予算は徒歩。
-- SA8-food：21日からロッジ3日を引く仮定。現地で含まれる食数を再確認。
-- SA8-hotel：20泊のうち18泊。比較資料の1泊2000・3000・5000円。
 - SA8-entry：ペルー文化省2025年一般料金。1名1ルート。対象年の料金・空きは未確認。
 - SA8-lodge：事業者掲載額。標準は1名催行670ドル。低予算420ドルは2名グループを組めた場合の1人額。2027年8月の見積は未取得。
 <!-- /AUTO:peru_cost -->
