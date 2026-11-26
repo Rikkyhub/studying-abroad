@@ -363,11 +363,50 @@ def gen_budget_summary(S):
     return "\n".join(lines)
 
 
+
+def gen_budget_overview(S, rows):
+    """費用ページの先頭：行＝時期、列＝費目の1枚の表（標準）。全ページの費用の見方をこれにそろえる"""
+    import cost_overview as co
+    tab = co.build(rows, "std")
+    tot = co.totals(tab)
+    head = ["時期"] + list(co.KINDS.values()) + ["合計"]
+    body = []
+    for key, name in co.PERIODS.items():
+        c = tab[key]
+        body.append([name] + [yen(c[k]) if c[k] else "—" for k in co.KINDS] + [f"**{yen(c['計'])}**"])
+    body.append(["**合計**"] + [f"**{yen(tot[k])}**" for k in co.KINDS] + [f"**{yen(tot['計'])}**"])
+    t = S["total"]
+    unv = tot["未確認"]
+    share = (unv / tot["計"] * 100) if tot["計"] else 0
+    lines = [
+        f"**7か月の標準の見積は {yen(t['std'])}**（低予算 {yen(t['low'])} 〜 余裕 {yen(t['high'])}）。"
+        f"目標{man(S['budget_ideal'])}・上限{man(S['budget_cap'])}に対して、"
+        + ("**上限の範囲内**です。" if S["vs_cap"]["std"] >= 0 else f"**上限を {yen(-S['vs_cap']['std'])} 超えています**。")
+        + f"そのうち、出典のある見積は {yen(tot['見積'])}、対象日の料金が未確認のものが {yen(unv)}（{share:.0f}%）です。",
+        "",
+        md_table(head, body),
+        "",
+        "- 行は**時期**、列は**費目**です。ホームを除くすべてのページで、費用はこの分け方で書きます。",
+        "- 金額は標準プランです。低予算・余裕は、下の「概要」の表にあります。",
+        "- 8月は、いま数字が入っている南米・ペルー案の1案だけです。アフリカ案は、まだ金額を入れていません（未計上であり、0円ではありません）。",
+        "- 6〜7月の行に「ケープタウン→日本」の航空券がないのは、8月の南米案の「リマ→東京」と二重になるため、南米案を採るあいだは除いているからです（アフリカ案を採るときは、この航空券を6〜7月に入れます）。",
+        "- 金額未入力の行は、どの表にも含みません（0円ではありません）。",
+    ]
+    return "\n".join(lines)
+
+
 def gen_budget_by_cat(S):
-    rows = [[c, yen(v["low"]), yen(v["std"]), yen(v["high"])] for c, v in S["by_cat"].items()]
+    """費目別（共通の7費目）。行＝費目、列＝低予算・標準・余裕"""
+    import cost_overview as co
+    tot = {k: _z() for k in co.KINDS}
+    for cat, v in S["by_cat"].items():
+        k = co.CATEGORY_KIND.get(cat, "misc")
+        for s in SCENARIOS:
+            tot[k][s] += v[s]
+    rows = [[name, yen(tot[k]["low"]), yen(tot[k]["std"]), yen(tot[k]["high"])] for k, name in co.KINDS.items()]
     t = S["total"]
     rows.append(["**合計**", f"**{yen(t['low'])}**", f"**{yen(t['std'])}**", f"**{yen(t['high'])}**"])
-    return md_table(["費目", "低予算", "標準", "余裕"], rows) + "\n\n金額は公開価格表などからの匿名の見積です。金額未入力の行・未計上のシナリオは含みません（0円ではありません）。"
+    return md_table(["費目", "低予算", "標準", "余裕"], rows) + "\n\n費目は、ホーム以外のすべてのページで同じ7つの分け方です。金額は公開価格表などからの匿名の見積です。金額未入力の行・未計上のシナリオは含みません（0円ではありません）。"
 
 
 def gen_budget_by_month(S):
@@ -509,7 +548,7 @@ def render_all(S, rows, tasks, articles, timeline, fx, problems):
     out = {}
     done, total = task_progress(tasks)
     blocks = {
-        "budget": {"summary": gen_budget_summary(S), "by_category": gen_budget_by_cat(S), "by_month": gen_budget_by_month(S),
+        "budget": {"overview": gen_budget_overview(S, rows), "summary": gen_budget_summary(S), "by_category": gen_budget_by_cat(S), "by_month": gen_budget_by_month(S),
                    "by_country": gen_budget_by_country(S), "detail": gen_budget_detail(rows), "fx": gen_fx(fx)},
         "prep": {"tasks": gen_tasks(tasks)},
         "timeline": {"timeline": gen_timeline(timeline), "by_month": gen_budget_by_month(S)},

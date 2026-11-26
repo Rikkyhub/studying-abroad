@@ -936,44 +936,35 @@ def region_mini(root: Path = ROOT) -> tuple[str, str]:
 
 
 def home_flow(root: Path = ROOT) -> str:
-    """ホームの右側：旅の全体の流れ。時間順の4区間を、色の線つきの帯で縦に並べる（期間・見出し・現地費・要約）"""
+    """ホームの右側：旅の全体の流れ。時間順の4区間を、色の線つきの帯で縦に並べる（期間・見出し・要約）。
+    費用は、ホームの最初の画面には出さない（費用ページの概要を見る）"""
     timeline = sorted(csv_records(root / DATA_DIR / "timeline.csv"), key=lambda r: (int(r["sort"] or 0), r["id"]))
     costs = _station_costs(root)
     out = []
     for r in timeline:
         key = next((k for k, _ in REGION_PAGES if k in r["region"].split(";")), "common")
         cls = REGION_CLASS.get(key, "reg-common")
-        cost = costs.get(key)
         if key == "africa-aug" and "southamerica-aug" in costs:
             key = "southamerica-aug"
-        cost_html = (f'<span class="cost num">{esc(cost)}<small>現地費・標準</small></span>' if cost
-                     else '<span class="cost num">未計上<small>国が未定のため</small></span>')
         out.append(f'<a class="seg {cls}" href="areas/{key}.html"><span class="when">{esc(r["period"])}</span>'
-                   f'<h3>{esc("8月の周遊（ペルー案）" if key == "southamerica-aug" else r["title"])}</h3>{cost_html}'
+                   f'<h3>{esc("8月の周遊（アフリカ・南米）" if key in ("southamerica-aug", "africa-aug") else r["title"])}</h3>'
+                   f'<span class="go">しおりを開く →</span>'
                    f'<span class="sub">{esc(r["summary"])}</span></a>')
     return "".join(out)
 
 
 def budget_strip(root: Path = ROOT) -> str:
-    """予算の1行の帯：見積合計の棒（目標・上限の目盛）と、優先の高いやること3件のチップ"""
+    """ホームの下の帯：優先の高いやること3件のチップ。費用の金額は、ホームの最初の画面には出さない"""
     if root != ROOT:
         return ""
-    import build
-    S = build.load_model()[0]
-    tot, goal, cap = S["total"]["std"], S["budget_ideal"], S["budget_cap"]
-    pct = lambda v: max(0.0, min(100.0, v / cap * 100.0))
     tasks = csv_records(root / DATA_DIR / "tasks.csv")
     key = lambda t: (-int(t["lead_days"] or 0), t["id"])
     open_p0 = sorted((t for t in tasks if t["priority"] == "1" and t["status"] not in DONE_STATUS), key=key)
     chips = "".join(f'<li><b>{esc(_short_deadline(t["deadline_note"]))}</b>{esc(t["task"])}</li>' for t in open_p0[:3])
     return ('<div class="strip">'
-            f'<div class="strip-budget"><span class="k">7か月の標準概算</span><span class="big num">{esc(build.yen(tot))}</span>'
-            f'<div class="meter" role="img" aria-label="見積合計 {esc(build.yen(tot))}、目標 {esc(build.man(goal))}、上限 {esc(build.man(cap))}">'
-            f'<i style="width:{pct(tot):.1f}%"></i><span class="mark" style="left:{pct(goal):.1f}%"><span>目標 {esc(build.man(goal))}</span></span>'
-            f'<span class="mark" style="left:100%"><span>上限 {esc(build.man(cap))}</span></span></div>'
-            '<span class="note">モデルの見積。未計上は含まず、0円ではありません。 <a href="docs/02-budget.html">内訳へ →</a></span></div>'
             f'<div class="strip-todo"><span class="k">いま何をするか（最優先）</span><ul>{chips}</ul>'
-            f'<span class="note">最優先の未完了 {len(open_p0)} 件。<a href="docs/10-qa.html">確認待ち（QA）へ →</a></span></div></div>')
+            f'<span class="note">最優先の未完了 {len(open_p0)} 件。<a href="docs/10-qa.html">確認待ち（QA）へ →</a>'
+            ' ／ 費用は <a href="docs/02-budget.html">費用ページ</a> へ</span></div></div>')
 
 
 def budget_meter(root: Path = ROOT) -> str:
@@ -1015,76 +1006,32 @@ FLIGHT_IDS = ("PH-11", "PH-12", "AF-01", "AF-02", "AF-16", "AF-17", "AF-18", "AF
 
 
 def budget_cards(root: Path = ROOT) -> str:
-    """予算の全体像。モデルの目標・見積だけを表示する。金額未入力は「未計上」と書き、0円にも合計にもしない"""
+    """予算の全体像（ホームの下のほう。最初の画面ではない）。費用ページの概要と同じ「時期×費目」の表。
+    金額未入力は含めず、0円にも合計にもしない"""
     if root != ROOT:
         return ""
     import build  # scripts/build.py（集計の正本）
-    S = build.load_model()[0]
-    tot = S["total"]
-    n_na, n_part = len(S["no_amount"]), len(S["partial"])
-
-    def card(label, value, note, href=None):
-        inner = f'<p class="eyebrow">{esc(label)}</p><p class="val">{esc(value)}</p><p class="sub">{note}</p>'
-        return card_link(href, inner) if href else f'<div class="card">{inner}</div>'
-
-    unpriced = f'金額が入っていない {n_na} 件' + (f'と一部だけ未入力の {n_part} 件' if n_part else "") + \
-        'は未計上です（0円ではなく、合計に含まれていません）。'
-    rows = build.load_model()[1]
-    import areas  # 地域の対応表（phase 列 → 地域）
-
-    def group_of(r):
-        if r["id"] in FLIGHT_IDS:
-            return "flight"
-        return areas.PHASE_REGION.get(r["phase"], "common")
-
-    def range_text(rs):
-        priced = [r for r in rs if not r["no_amount"]]
-        if not priced:
-            return None
-        t = {s: sum(r["est"][s] or 0.0 for r in priced) for s in ("low", "std", "high")}
-        return t
-
-    def split_card(label, key, note, href=None):
-        """カードは 見出し・標準の金額・一言・低〜余裕の幅・詳細ページへのリンク だけにする。長い注記や行ごとの内訳は載せない"""
-        rs = [r for r in rows if group_of(r) == key]
-        t = range_text(rs)
-        miss = [r for r in rs if r["no_amount"] or r["unpriced"]]
-        miss_txt = f' <span class="muted">未計上 {len(miss)}件</span>' if miss else ""
-        if href is None:
-            href = f"areas/{key}.html" if key in dict(REGION_PAGES) else None
-        if t is None:
-            return card(label, "未計上", esc(note), href)
-        rng = f'低 {esc(build.yen(t["low"]))} 〜 余 {esc(build.yen(t["high"]))}'
-        return card(label, build.yen(t["std"]), f'{esc(note)}<br><span class="muted">{rng}</span>{miss_txt}', href)
-
-    # 5月の総額＝『飛行機代』カードのうち AF- の航空券 ＋『アフリカ周遊（5月）』カードの現地費。
-    # 独立した合計カードにはせず（二重に足されて見えるため）、内訳として注記する。各行は1回だけ数える
-    def _std(r):
-        return r["est"]["std"] or 0.0
-    af_air = sum(_std(r) for r in rows if r["id"].startswith("AF-") and r["id"] in FLIGHT_IDS and not r["no_amount"])
-    af_ground = sum(_std(r) for r in rows if r["id"].startswith("AF-") and r["id"] not in FLIGHT_IDS and not r["no_amount"])
-    may_total = af_air + af_ground
-
-    # 行ごとの内訳は載せず、詳細ページ（飛行機代は専用ページ）へのリンクにする
-    flight = split_card("飛行機代", "flight", "全ての航空券（国内線を含む）", href="docs/12-flights.html")
-
-    cards = [
-        card("目標総予算", build.man(S["budget_ideal"]), "モデルの予算目標"),
-        card("上限予算", build.man(S["budget_cap"]), "モデルの上限"),
-        card("7か月の標準概算", build.yen(tot["std"]),
-             f'低 {esc(build.yen(tot["low"]))} 〜 余 {esc(build.yen(tot["high"]))}<br><span class="muted">未計上 {n_na + n_part}件は含まず、0円ではない</span>'
-             f'<span class="tri-top" data-total="{int(round(tot["std"]))}" hidden></span>',
-             "docs/02-budget.html"),
-        split_card("フィリピン（バギオ）", "baguio", "現地費（航空券を除く）"),
-        split_card("アフリカ周遊（5月）", "africa", f'現地費（航空券を除く）。航空券と合わせた5月の総額は {build.yen(may_total)}'),
-        split_card("南アフリカ（ケープタウン）", "capetown", "現地費（航空券を除く）"),
-        split_card("8月の周遊（ペルー案）", "southamerica-aug", "現地費（航空券を除く）", href="areas/southamerica-aug.html") if any(r["id"].startswith("SA8-") for r in rows) else split_card("8月の周遊（アフリカ案）", "africa-aug", "現地費（航空券を除く）"),
-        flight,
-        split_card("共通（保険・日本国内など）", "common", "上の区分に入らない費用"),
-    ]
+    import cost_overview as co
+    S, rows = build.load_model()[0], build.load_model()[1]
+    tab = co.build(rows, "std")
+    tot = co.totals(tab)
+    t = S["total"]
+    head = "".join(f"<th>{esc(n)}</th>" for n in ["時期"] + list(co.KINDS.values()) + ["合計"])
+    body = ""
+    for key, name in co.PERIODS.items():
+        c = tab[key]
+        body += (f"<tr><th scope=\"row\">{esc(name)}</th>" + "".join(f'<td class="n">{esc(build.yen(c[k])) if c[k] else "—"}</td>' for k in co.KINDS)
+                 + f'<td class="n"><b>{esc(build.yen(c["計"]))}</b></td></tr>')
+    body += ("<tr><th scope=\"row\">合計</th>" + "".join(f'<td class="n"><b>{esc(build.yen(tot[k]))}</b></td>' for k in co.KINDS)
+             + f'<td class="n"><b>{esc(build.yen(tot["計"]))}</b></td></tr>')
+    verdict = "上限の範囲内" if S["vs_cap"]["std"] >= 0 else f"上限を {build.yen(-S['vs_cap']['std'])} 超えている"
     return ('<p class="sec-lead">金額はすべて公開料金などに基づく<strong>モデルの見積</strong>で、実費ではありません。'
-            '各カードを開くと内訳があります。空欄は「未計上」で、0円ではありません。計算ルールは <a href="docs/02-budget.html">予算の計算ルール</a>。</p>\n'
-            + '<div class="grid">' + "".join(cards) + '</div>')
+            '行は時期、列は費目です（ほかのページの費用も、この分け方です）。空欄「—」は計上なしで、金額未入力の行は含みません（0円ではありません）。 '
+            '<a href="docs/02-budget.html">費用ページ</a>で、低予算・余裕や明細を見られます。</p>'
+            f'<p class="sub">7か月の標準の見積は <strong>{esc(build.yen(t["std"]))}</strong>'
+            f'（低 {esc(build.yen(t["low"]))} 〜 余 {esc(build.yen(t["high"]))}）。目標 {esc(build.man(S["budget_ideal"]))}・上限 {esc(build.man(S["budget_cap"]))}に対して、{esc(verdict)}です。</p>'
+            f'<div class="scroll"><table class="cost-ov"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
+            f'<span class="tri-top" data-total="{int(round(t["std"]))}" hidden></span>')
 
 
 def now_block(root: Path = ROOT) -> str:
