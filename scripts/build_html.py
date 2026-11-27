@@ -298,8 +298,8 @@ _U = r"(?:円|万円|件|日|泊|回|%|％|USD|PHP|ZAR|EUR|km|時間|分)?"
 NUMERIC_CELL = re.compile(rf"^(?:[¥$＄€]|[A-Z]{{2,3}})?-?[\d,.]+{_U}(?:[〜～/／\-][¥$]?-?[\d,.]+{_U})*$")
 
 # 「**ラベル**：本文」だけの段落（ラベルは短く、本文は長い）。続けて2つ以上並ぶと、ラベルと本文の2列の一覧にする
-_KV_P = re.compile(r"<p><strong>([^<]{2,28})</strong>[：:]\s*(.{40,}?)</p>", re.S)
-_KV_RUN = re.compile(r"(?:<p><strong>[^<]{2,28}</strong>[：:]\s*.{40,}?</p>\s*){2,}", re.S)
+_KV_P = re.compile(r"<p><strong>([^<]{2,28})</strong>[：:]\s*((?:(?!</p>).){40,})</p>", re.S)
+_KV_RUN = re.compile(r"(?:<p><strong>[^<]{2,28}</strong>[：:]\s*(?:(?!</p>).){40,}</p>\s*){2,}", re.S)
 
 
 def group_labeled_paragraphs(body: str) -> str:

@@ -379,6 +379,275 @@ class ReadabilityTests(unittest.TestCase):
         _, body, _ = convert("**見方**：" + "あ" * 50 + "\n")
         self.assertNotIn("kvp", body)
 
+    def test_labeled_paragraph_list_never_swallows_headings_or_tables(self):
+        long = "あ" * 50
+        md = f"**見方**：{long}\n\n### 途中の見出し\n\n**定義**：{long}\n\n| a | b |\n|---|---|\n| 1 | 2 |\n\n**実例**：{long}\n"
+        _, body, toc = convert(md)
+        self.assertIn("途中の見出し", "".join(t for _, _, t in toc))  # 見出しは残る
+        import re as _re
+        with (ROOT / "data" / "timeline.csv").open(newline="", encoding="utf-8-sig") as f:
+            rows = list(csv.DictReader(f))
+        # 各期間が1つのカード（a.mini）で、地域ページへのリンクになっている
+        self.assertEqual(len(re.findall(r'<a class="seg [^"]*" href="areas/', sec)), len(rows))
+        for r in rows:
+            self.assertIn(r["period"], sec)
+        self.assertIn("モデル", sec)
+
+    def test_first_screen_has_compare_and_budget_strip(self):
+        import re
+        head = self.index.split('<h2 id="budget">')[0]
+        top = re.search(r'<div class="home-top">(.*?)</div>', head, re.S).group(1)
+        self.assertLess(len(re.sub(r"<[^>]+>", "", top)), 200)  # 見出し行は短く（最初の画面に地図と旅の流れが入る）
+        self.assertIn('class="home-body"', head)  # 左=地図、右=旅の流れ・予算・やること の2領域
+        self.assertIn('class="home-map"', head)  # 左：ルート地図
+        self.assertEqual(len(re.findall(r'<a class="seg ', head)), 4)  # 右：旅の流れ（時間順の4区間）
+        self.assertIn('class="strip"', head)  # 右下：いま何をするか（費用の金額は出さない）
+        # ホームの最初の画面には、費用の金額を出さない（費用ページの概要を見る）
+        first_screen = re.sub(r"<svg.*?</svg>", "", head, flags=re.S)
+        self.assertNotRegex(first_screen, r"¥[\d,]{4,}")
+        self.assertIn('href="docs/02-budget.html"', head)  # 費用ページへの入口は残す
+
+    def test_currency_cards(self):
+        sec = self.index.split('<h2 id="fx">')[1].split("<h2 id=")[0]
+        for c in ("PHP", "ZAR", "USD"):
+            self.assertIn(f"（{c}）", sec)
+        self.assertIn("1万円＝", sec)
+        self.assertIn('id="fx-calc"', sec)
+
+    def test_link_cards_do_not_nest_links(self):
+        import re
+        for m in re.findall(r'<a class="(?:card link[^"]*|seg [^"]*)".*?</a>', self.index, re.S):
+            self.assertEqual(m.count("<a "), 1, m[:80])
+
+    def test_floating_card_css(self):
+        import re
+        style = re.search(r"<style>(.*?)</style>", self.index, re.S).group(1)
+        self.assertNotIn("border-left", style)
+        self.assertNotIn("border-left", self.index)
+        self.assertNotIn("gradient", style)
+        self.assertRegex(style, r"transition:transform \.\d+s ease,box-shadow \.\d+s ease")
+        self.assertRegex(style, r"@media \(hover:hover\)\{\.card:hover\{transform:translateY\(-\d+px\);box-shadow:var\(--shadow-up\)")
+        self.assertRegex(style, r"--shadow:0 10px 30px rgba\(0,0,0,\.\d+\)")
+        self.assertRegex(style, r"@media \(prefers-reduced-motion:reduce\)\{\.card\{transition:none\}\.card:hover\{transform:none\}\}")
+        self.assertIn("a.card:focus-visible", style)
+        self.assertRegex(style, r"gap:2[4-9]px|gap:[3-9]\d px|gap:2[4-9]px")
+        self.assertIn("minmax(240px,1fr)", style)
+
+    def test_no_csv_links_on_top_page(self):
+        import re
+        self.assertNotRegex(self.index, r"""(href|src)=["'][^"']*\.csv""")
+
+    def test_all_pages_csv_non_ops_pages_listed(self):
+        import csv
+        with (ROOT / "data" / "pages.csv").open(newline="", encoding="utf-8-sig") as f:
+            rows = list(csv.DictReader(f))
+        for r in rows:
+            self.assertTrue((ROOT / r["path"]).is_file(), r["path"])
+            if r["area"] not in ("地域別", "運用"):
+                self.assertIn(f'href="{r["path"]}"', self.index)
+
+    def test_no_issue_links_in_dashboard_tables(self):
+        self.assertNotIn("/issues/", self.index.split("<footer>")[0])
+        self.assertIn("docs/09-issue-map.html", self.index)
+
+    def test_fx_json_matches_csv(self):
+        import csv, json, re
+        with (ROOT / "data" / "fx.csv").open(newline="", encoding="utf-8-sig") as f:
+            fx = list(csv.DictReader(f))
+        m = re.search(r'<script type="application/json" id="fx-data">(.*?)</script>', self.index, re.S)
+        data = json.loads(m.group(1))
+        self.assertEqual([d["code"] for d in data], [r["currency"] for r in fx])
+        for d, r in zip(data, fx):
+            self.assertEqual(d["rate"], float(r["jpy_per_unit"]) if r["jpy_per_unit"] else None)
+
+    def test_unknown_rate_shows_unconfirmed(self):
+        import tempfile
+        from build_html import fx_summary
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); (root / "data").mkdir()
+            (root / "data" / "fx.csv").write_text(
+                "currency,name_ja,unit,region,jpy_per_unit,rate_date,rate_kind,source\nBWP,プラ,P,ボツワナ,,,,\n",
+                encoding="utf-8")
+            self.assertIn("未確認", fx_summary(root))
+
+
+class NavTests(unittest.TestCase):
+    """全ページ共通の上部ナビ：ホーム・地域4つ・費用が横並びで、ほかの入口は「ほか」から開く"""
+
+    MAIN = ("ホーム", "バギオ", "アフリカ5月", "ケープタウン", "アフリカ", "南米", "費用")  # アフリカ・南米は「8月」の開閉メニューの中
+
+    def test_main_links_on_every_kind_of_page(self):
+        for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "research/sources.html",
+                    "docs/02-budget.html", "maps/route-map.html"):
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
+            for label in self.MAIN:
+                self.assertIn(f">{label}</a>", nav, f"{rel}: {label}")
+            for menu in ("8月", "国別", "地図", "ツール", "資料"):
+                self.assertIn(f"<summary>{menu}</summary>", nav, rel)
+
+    def test_current_page_is_marked(self):
+        text = (ROOT / "areas/capetown.html").read_text(encoding="utf-8")
+        nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
+        self.assertRegex(nav, r'href="[^"]*areas/capetown\.html" aria-current="page">ケープタウン</a>')
+
+    def test_menus_reach_every_country_and_tool(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        nav = text.split('<nav class="menu"')[1].split("</nav>")[0]
+        for label in ("南アフリカ", "ケニア", "ルワンダ", "アフリカ各国の比較", "Q&amp;A（確認待ち）", "世界地図", "ルート地図",
+                      "ルート作成", "日程プランナー", "全ページ一覧"):
+            self.assertIn(label, nav, label)
+        self.assertNotIn("<summary>ほか</summary>", nav)
+
+
+class FontSizeAndHomeMapTests(unittest.TestCase):
+    """文字サイズのボタン（小・中・大）と、トップの中心に置くルート地図"""
+
+    def test_font_size_buttons_on_every_page_kind(self):
+        for rel in ("index.html", "areas/africa.html", "countries/kenya.html", "docs/02-budget.html",
+                    "maps/route-map.html", "maps/world-map.html", "maps/africa-countries.html"):
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            for v in ("0.9", "1", "1.15"):
+                self.assertIn(f'data-fs="{v}"', text, f"{rel}: {v}")
+            self.assertIn('var K="site-fs"', text, rel)  # 保存・復元（localStorage は try/catch の中）
+            self.assertIn("try{", text.split('var K="site-fs"')[1][:600], rel)
+
+    def test_home_has_route_map_before_budget(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        i_map = text.index('class="home-map"')
+        self.assertLess(i_map, text.index('<h2 id="budget">'))
+        self.assertEqual(text.count('class="m"'), 1)  # 地図のSVGは1つ（5月の案G）
+        self.assertIn('href="maps/route-map.html"', text)
+        self.assertEqual(text.count('class="seg '), 4)  # 右に旅の流れ（区間4つ）
+
+
+class AuditFixTests(unittest.TestCase):
+    """Playwright の点検で見つかった不具合の再発防止。"""
+
+    def test_route_builder_does_not_call_planner_only_function(self):
+        import build_html
+        self.assertNotIn("paintCmp", build_html.ROUTE_SCRIPT)
+
+    def test_mobile_header_wraps_menu_and_tables_scroll(self):
+        from site_css import COMPONENTS
+        self.assertIn("@media(max-width:600px)", COMPONENTS)
+        self.assertIn("nav.menu{order:3;flex:1 1 100%", COMPONENTS)
+        self.assertIn(".scroll{overflow-x:auto;border:0", COMPONENTS)
+        self.assertNotIn(".scroll{overflow-x:visible", COMPONENTS)
+
+    def test_home_legend_lists_only_drawn_line_types(self):
+        import re
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        legend = re.search(r'<span class="legend">(.*?)</span>', text).group(1)
+        for k in re.findall(r'<i class="tr (\w+)"></i>', legend):
+            self.assertIn(f'class="ln tr {k}"', text)
+
+    def test_home_map_shows_trip_to_and_from_japan(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        svg = text.split('<figure class="home-map">')[1].split("</figure>")[0]
+        for word in ("東京", "マニラ・バギオ", "モーリシャス", "ケープタウン", "2月 行き", "5/4 日本発", "帰国"):
+            self.assertIn(word, svg, word)
+
+    def test_country_map_puts_list_beside_map(self):
+        text = (ROOT / "maps" / "africa-countries.html").read_text(encoding="utf-8")
+        self.assertIn('<div class="cm-grid">', text)
+        self.assertLess(text.index('class="mapbox"'), text.index('class="cm-right"'))
+
+    def test_country_tabs_use_short_labels_and_side_starts_with_summary(self):
+        import re
+        text = (ROOT / "countries" / "namibia.html").read_text(encoding="utf-8")
+        labels = re.findall(r'role="tab"[^>]*>([^<]*)<', text)
+        self.assertIn("旅程の目安", labels)
+        self.assertFalse(any("）（" in x for x in labels))
+        side = re.search(r'<aside class="pane-side">(.*?)</aside>', text, re.S).group(1)
+        self.assertLess(side.index("概要"), side.index("side-meta"))
+
+    def test_app_page_links_back_home(self):
+        self.assertIn('href="index.html"', (ROOT / "app.html").read_text(encoding="utf-8"))
+
+    def test_reader_pages_do_not_mention_issue_numbers(self):
+        import re
+        keep = {"docs/05-public-data-policy.html", "docs/07-export.html", "docs/08-handoff.html", "docs/09-issue-map.html"}
+        for p in [ROOT / "index.html", ROOT / "app.html", *ROOT.glob("areas/*.html"), *ROOT.glob("countries/*.html"),
+                  *ROOT.glob("maps/*.html"), *ROOT.glob("research/*.html"), *ROOT.glob("docs/*.html")]:
+            rel = p.relative_to(ROOT).as_posix()
+            if rel in keep:
+                continue
+            self.assertIsNone(re.search(r"Issue\s*#\d", p.read_text(encoding="utf-8")), rel)
+
+    def test_reader_clean_keeps_js_parentheses(self):
+        from build_html import reader_clean
+        self.assertEqual(reader_clean("function(){a()}"), "function(){a()}")
+        self.assertEqual(reader_clean("比較（Issue #137）です"), "比較です")
+        self.assertEqual(reader_clean("資料（2026-10-26閲覧、Issue #66）"), "資料（2026-10-26閲覧）")
+
+
+class TripDesignerTests(unittest.TestCase):
+    """旅のデザイナー（docs/14-trip-designer.html）：ブラウザの中だけで動く入力画面"""
+
+    def setUp(self):
+        self.text = (ROOT / "docs" / "14-trip-designer.html").read_text(encoding="utf-8")
+
+    def test_page_has_map_calendar_inputs_and_presets(self):
+        for key in ('data-designer', 'id="dz-svg"', 'id="dz-preset"', 'id="dz-start"', 'id="dz-undo"', 'id="dz-zoom"'):
+            self.assertIn(key, self.text, key)
+        for pid in ("SA8-6", "SA8-5"):
+            self.assertIn(f'"id":"{pid}"', self.text, pid)
+
+    def test_input_stays_in_the_browser_only(self):
+        # 入力は localStorage だけ。外部への送信（fetch・XMLHttpRequest・sendBeacon）は使わない
+        self.assertIn("localStorage", self.text)
+        for bad in ("fetch(", "XMLHttpRequest", "sendBeacon", "WebSocket"):
+            self.assertNotIn(bad, self.text, bad)
+
+    def test_designer_is_in_the_tools_menu(self):
+        nav = (ROOT / "index.html").read_text(encoding="utf-8").split('<nav class="menu"')[1].split("</nav>")[0]
+        self.assertIn("旅のデザイナー", nav)
+
+    def test_sa8_6_nights_end_on_aug_22(self):
+        import re, datetime as dt
+        m = re.search(r'\{"id":"SA8-6".*?"stops":(\[\[.*?\]\])\}', self.text, re.S)
+        import json
+        stops = json.loads(m.group(1))
+        end = dt.date(2027, 8, 1) + dt.timedelta(days=sum(int(x[1]) for x in stops))
+        self.assertEqual(end, dt.date(2027, 8, 22))
+
+
+class ReadabilityTests(unittest.TestCase):
+    """表と文章の読みやすさ（全ページ共通の変換）"""
+
+    def test_money_columns_become_numeric_columns_without_explicit_alignment(self):
+        md = "| 指標 | 標準 | 説明 |\n|---|---|---|\n| 合計 | ¥3,140,854 | 各行を1回だけ加算 |\n| 差 | ¥-140,854 | マイナスは超過 |\n"
+        _, body, _ = convert(md)
+        self.assertEqual(body.count('class="n"'), 3)  # 見出し1＋数値2。説明の列は数値列にしない
+
+    def test_text_columns_are_not_turned_into_numeric_columns(self):
+        md = "| 項目 | 内容 |\n|---|---|\n| 航空券 | 13 件の候補 |\n| 宿泊 | 2泊 |\n"
+        _, body, _ = convert(md)
+        self.assertNotIn('class="n"', body)
+
+    def test_consecutive_labeled_paragraphs_become_a_definition_list(self):
+        long = "あ" * 50
+        md = f"**見方**：{long}\n\n**定義**：{long}\n\n**実例**：{long}\n"
+        _, body, _ = convert(md)
+        self.assertIn('<dl class="kvp">', body)
+        self.assertEqual(body.count("<dt>"), 3)
+
+    def test_single_labeled_paragraph_stays_a_paragraph(self):
+        _, body, _ = convert("**見方**：" + "あ" * 50 + "\n")
+        self.assertNotIn("kvp", body)
+
+    def test_labeled_paragraph_list_never_swallows_headings_or_tables(self):
+        long = "あ" * 50
+        md = f"**見方**：{long}\n\n### 途中の見出し\n\n**定義**：{long}\n\n| a | b |\n|---|---|\n| 1 | 2 |\n\n**実例**：{long}\n"
+        _, body, toc = convert(md)
+        self.assertIn("途中の見出し", "".join(t for _, _, t in toc))  # 見出しは残る
+        self.assertNotRegex(body, r'<dl class="kvp">(?:(?!</dl>).)*<h3', re.S if False else 0) if False else None
+        import re as _re
+        for m in _re.finditer(r'<dl class="kvp">(.*?)</dl>', body, _re.S):
+            self.assertNotRegex(m.group(1), r"<h[1-6]|<table")
+        self.assertIn("<table", body)
+
     def test_wide_tables_are_marked(self):
         n = 8
         md = "| " + " | ".join(f"列{i}" for i in range(n)) + " |\n|" + "---|" * n + "\n| " + " | ".join("あ" for _ in range(n)) + " |\n"
