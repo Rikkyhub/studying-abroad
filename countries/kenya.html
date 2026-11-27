@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -555,16 +565,16 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")ms.forEach(f
 <h3 id="モデルコース日ごとの動き">モデルコース（日ごとの動き）</h3>
 <p>実在の日付・便名・予約を含まない<strong>相対日程</strong>。移動時間は上表と同じ準公式・推計。公園料はKWS公式（第6章）。雨季の遅れを見込んでバッファを入れる。</p>
 <h4 id="21-3日ナイロビ近郊集中最小">2.1 3日：ナイロビ近郊集中（最小）</h4>
-<div class="scroll"><table><thead><tr><th>Day</th><th>動き</th></tr></thead><tbody><tr><td data-label="Day">1</td><td data-label="動き">JKIA到着→宿（夜間到着は宿の送迎）。</td></tr><tr><td data-label="Day">2</td><td data-label="動き">早朝ナイロビ国立公園（半日）→午後ジラフセンター等の市内→宿。</td></tr><tr><td data-label="Day">3</td><td data-label="動き">余裕を見て出発。</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">Day</th><th>動き</th></tr></thead><tbody><tr><td class="n" data-label="Day">1</td><td data-label="動き">JKIA到着→宿（夜間到着は宿の送迎）。</td></tr><tr><td class="n" data-label="Day">2</td><td data-label="動き">早朝ナイロビ国立公園（半日）→午後ジラフセンター等の市内→宿。</td></tr><tr><td class="n" data-label="Day">3</td><td data-label="動き">余裕を見て出発。</td></tr></tbody></table></div>
 <ul><li>向く人：次の国への接続が主目的で、動物は1回だけ見たい。費用の目安は archive-kenya-nairobi-short-stay.md の2泊3日行を参照。</li></ul>
 <h4 id="22-5日ナイロビナクル陸路で最も効率的">2.2 5日：ナイロビ＋ナクル（陸路で最も効率的）</h4>
-<div class="scroll"><table><thead><tr><th>Day</th><th>動き</th></tr></thead><tbody><tr><td data-label="Day">1</td><td data-label="動き">JKIA到着→ナイロビ泊。</td></tr><tr><td data-label="Day">2</td><td data-label="動き">早朝ナイロビ国立公園→午後に休息（時差・睡眠）。</td></tr><tr><td data-label="Day">3</td><td data-label="動き">ナイロビ→ナクル湖国立公園（約140km）、午後にゲームドライブ→ナクル近辺泊。</td></tr><tr><td data-label="Day">4</td><td data-label="動き">午前ナクル、昼にナイロビへ戻る（または近郊のヘルズゲート／ナイバシャ。ヘルズゲートはナクル行きの途中で立ち寄れる位置、推計）。</td></tr><tr><td data-label="Day">5</td><td data-label="動き">出発。</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">Day</th><th>動き</th></tr></thead><tbody><tr><td class="n" data-label="Day">1</td><td data-label="動き">JKIA到着→ナイロビ泊。</td></tr><tr><td class="n" data-label="Day">2</td><td data-label="動き">早朝ナイロビ国立公園→午後に休息（時差・睡眠）。</td></tr><tr><td class="n" data-label="Day">3</td><td data-label="動き">ナイロビ→ナクル湖国立公園（約140km）、午後にゲームドライブ→ナクル近辺泊。</td></tr><tr><td class="n" data-label="Day">4</td><td data-label="動き">午前ナクル、昼にナイロビへ戻る（または近郊のヘルズゲート／ナイバシャ。ヘルズゲートはナクル行きの途中で立ち寄れる位置、推計）。</td></tr><tr><td class="n" data-label="Day">5</td><td data-label="動き">出発。</td></tr></tbody></table></div>
 <ul><li>5月は午後に雨が降りやすい（準公式：ナクルは午後のにわか雨が多い）。午前を主にする。</li></ul>
 <h4 id="23-7日ナイロビマサイマラ空路予備">2.3 7日：ナイロビ＋マサイマラ（空路）＋予備</h4>
-<div class="scroll"><table><thead><tr><th>Day</th><th>動き</th></tr></thead><tbody><tr><td data-label="Day">1</td><td data-label="動き">JKIA到着→ナイロビ泊。</td></tr><tr><td data-label="Day">2</td><td data-label="動き">ナイロビ国立公園。</td></tr><tr><td data-label="Day">3</td><td data-label="動き">Wilson空港→マラへ空路（約30分、準公式。運賃は<strong>未確認</strong>）。昼・夕にゲームドライブ。</td></tr><tr><td data-label="Day">4</td><td data-label="動き">終日ゲームドライブ（マラ泊）。</td></tr><tr><td data-label="Day">5</td><td data-label="動き">朝ゲームドライブ→午後ナイロビへ空路。</td></tr><tr><td data-label="Day">6</td><td data-label="動き">予備日（欠航・遅延・雨天の吸収。ナイロビ市内）。</td></tr><tr><td data-label="Day">7</td><td data-label="動き">出発。</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">Day</th><th>動き</th></tr></thead><tbody><tr><td class="n" data-label="Day">1</td><td data-label="動き">JKIA到着→ナイロビ泊。</td></tr><tr><td class="n" data-label="Day">2</td><td data-label="動き">ナイロビ国立公園。</td></tr><tr><td class="n" data-label="Day">3</td><td data-label="動き">Wilson空港→マラへ空路（約30分、準公式。運賃は<strong>未確認</strong>）。昼・夕にゲームドライブ。</td></tr><tr><td class="n" data-label="Day">4</td><td data-label="動き">終日ゲームドライブ（マラ泊）。</td></tr><tr><td class="n" data-label="Day">5</td><td data-label="動き">朝ゲームドライブ→午後ナイロビへ空路。</td></tr><tr><td class="n" data-label="Day">6</td><td data-label="動き">予備日（欠航・遅延・雨天の吸収。ナイロビ市内）。</td></tr><tr><td class="n" data-label="Day">7</td><td data-label="動き">出発。</td></tr></tbody></table></div>
 <ul><li>陸路にするなら片道が約5〜7時間（雨季は最大約7時間、準公式）になり、実質1日を失う。5月は空路が現実的（費用は上がる、数値は<strong>未確認</strong>）。</li></ul>
 <h4 id="24-10日アンボセリマラナクルの周遊余裕型">2.4 10日：アンボセリ＋マラ＋ナクルの周遊（余裕型）</h4>
-<div class="scroll"><table><thead><tr><th>Day</th><th>動き</th></tr></thead><tbody><tr><td data-label="Day">1</td><td data-label="動き">JKIA到着→ナイロビ泊。</td></tr><tr><td data-label="Day">2</td><td data-label="動き">ナイロビ国立公園＋市内。</td></tr><tr><td data-label="Day">3-4</td><td data-label="動き">ナイロビ→アンボセリ（約4〜5時間）。2泊。</td></tr><tr><td data-label="Day">5</td><td data-label="動き">アンボセリ→ナイロビ（約4〜5時間）、予備。</td></tr><tr><td data-label="Day">6-8</td><td data-label="動き">マサイマラ（空路）2泊。</td></tr><tr><td data-label="Day">9</td><td data-label="動き">ナクルまたは予備日。</td></tr><tr><td data-label="Day">10</td><td data-label="動き">出発。</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">Day</th><th>動き</th></tr></thead><tbody><tr><td class="n" data-label="Day">1</td><td data-label="動き">JKIA到着→ナイロビ泊。</td></tr><tr><td class="n" data-label="Day">2</td><td data-label="動き">ナイロビ国立公園＋市内。</td></tr><tr><td class="n" data-label="Day">3-4</td><td data-label="動き">ナイロビ→アンボセリ（約4〜5時間）。2泊。</td></tr><tr><td class="n" data-label="Day">5</td><td data-label="動き">アンボセリ→ナイロビ（約4〜5時間）、予備。</td></tr><tr><td class="n" data-label="Day">6-8</td><td data-label="動き">マサイマラ（空路）2泊。</td></tr><tr><td class="n" data-label="Day">9</td><td data-label="動き">ナクルまたは予備日。</td></tr><tr><td class="n" data-label="Day">10</td><td data-label="動き">出発。</td></tr></tbody></table></div>
 <ul><li>10日では「サファリを繰り返さない」観点（archive-kenya-nairobi-short-stay.md 第12章）と重なる。南部アフリカでChobeを代表サファリにするなら、<strong>ケニアは5日以内に絞る方が合理的</strong>（推計）。</li></ul>
 <h4 id="25-沿岸を入れる場合任意">2.5 沿岸を入れる場合（任意）</h4>
 <p>ナイロビ→モンバサのSGR（約5〜6時間、2nd class KES 1,000／1st class KES 3,000：Wikivoyage Nairobi。Wikivoyage Kenyaは2024年値として2nd KES 1,500／1st KES 4,500とあり、<strong>値が食い違う</strong>。実額は未確認）。ジャンボジェット等の国内線はナイロビ〜モンバサ片道約KES 3,500〜（準公式、年度不明）。沿岸の一部は外務省・FCDOとも渡航制限あり（第8章）。</p>

@@ -355,5 +355,36 @@ class TripDesignerTests(unittest.TestCase):
         self.assertEqual(end, dt.date(2027, 8, 22))
 
 
+class ReadabilityTests(unittest.TestCase):
+    """表と文章の読みやすさ（全ページ共通の変換）"""
+
+    def test_money_columns_become_numeric_columns_without_explicit_alignment(self):
+        md = "| 指標 | 標準 | 説明 |\n|---|---|---|\n| 合計 | ¥3,140,854 | 各行を1回だけ加算 |\n| 差 | ¥-140,854 | マイナスは超過 |\n"
+        _, body, _ = convert(md)
+        self.assertEqual(body.count('class="n"'), 3)  # 見出し1＋数値2。説明の列は数値列にしない
+
+    def test_text_columns_are_not_turned_into_numeric_columns(self):
+        md = "| 項目 | 内容 |\n|---|---|\n| 航空券 | 13 件の候補 |\n| 宿泊 | 2泊 |\n"
+        _, body, _ = convert(md)
+        self.assertNotIn('class="n"', body)
+
+    def test_consecutive_labeled_paragraphs_become_a_definition_list(self):
+        long = "あ" * 50
+        md = f"**見方**：{long}\n\n**定義**：{long}\n\n**実例**：{long}\n"
+        _, body, _ = convert(md)
+        self.assertIn('<dl class="kvp">', body)
+        self.assertEqual(body.count("<dt>"), 3)
+
+    def test_single_labeled_paragraph_stays_a_paragraph(self):
+        _, body, _ = convert("**見方**：" + "あ" * 50 + "\n")
+        self.assertNotIn("kvp", body)
+
+    def test_wide_tables_are_marked(self):
+        n = 8
+        md = "| " + " | ".join(f"列{i}" for i in range(n)) + " |\n|" + "---|" * n + "\n| " + " | ".join("あ" for _ in range(n)) + " |\n"
+        _, body, _ = convert(md)
+        self.assertIn('<table class="wide">', body)
+
+
 if __name__ == "__main__":
     unittest.main()

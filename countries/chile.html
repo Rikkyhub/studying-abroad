@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -538,7 +548,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")ms.forEach(f
 <div class="pane-wrap"><aside class="pane-side"><h2 class="side-h" id="概要">概要</h2>
 <p>南米の太平洋側の細長い国。首都サンティアゴ。ウユニから南へ抜けるサン・ペドロ・デ・アタカマ。</p>
 <p>比較表の要約（<a href="../research/south-america-countries-b.html">比較資料</a>の第1章から）：</p>
-<div class="scroll"><table><thead><tr><th>国</th><th>主な体験</th><th>5月の適性</th><th>8月の適性</th><th>最低日数</th><th>日本旅券の入国</th><th>黄熱</th><th>治安の要点</th><th>ペルー中心の旅にどうつながるか</th><th>足す価値</th></tr></thead><tbody><tr><td data-label="国">チリ</td><td data-label="主な体験">サン・ペドロ・デ・アタカマ、サンティアゴ、イースター島、パタゴニア</td><td data-label="5月の適性">良い（アタカマ）。イースター島も可</td><td data-label="8月の適性">アタカマは夜が非常に寒い。トーレス・デル・パイネは冬で公共バスなし</td><td data-label="最低日数">アタカマ3〜4日。サンティアゴ1日。イースター島3泊以上</td><td data-label="日本旅券の入国">90日までビザ不要（Wikivoyage）</td><td data-label="黄熱">今回取得したFCDO入国要件のページに記載なし</td><td data-label="治安の要点">サンティアゴ・バルパライソで武器を使った強盗が増加、北部国境の地雷原（FCDO）</td><td data-label="ペルー中心の旅にどうつながるか">ウユニ→アタカマの陸路（既存資料）。サンティアゴ—リマ直行3時間45分</td><td data-label="足す価値">ウユニから抜けるなら追加する価値あり。サンティアゴは太平洋横断の乗継地</td></tr></tbody></table></div>
+<div class="scroll"><table class="wide"><thead><tr><th>国</th><th>主な体験</th><th>5月の適性</th><th>8月の適性</th><th>最低日数</th><th>日本旅券の入国</th><th>黄熱</th><th>治安の要点</th><th>ペルー中心の旅にどうつながるか</th><th>足す価値</th></tr></thead><tbody><tr><td data-label="国">チリ</td><td data-label="主な体験">サン・ペドロ・デ・アタカマ、サンティアゴ、イースター島、パタゴニア</td><td data-label="5月の適性">良い（アタカマ）。イースター島も可</td><td data-label="8月の適性">アタカマは夜が非常に寒い。トーレス・デル・パイネは冬で公共バスなし</td><td data-label="最低日数">アタカマ3〜4日。サンティアゴ1日。イースター島3泊以上</td><td data-label="日本旅券の入国">90日までビザ不要（Wikivoyage）</td><td data-label="黄熱">今回取得したFCDO入国要件のページに記載なし</td><td data-label="治安の要点">サンティアゴ・バルパライソで武器を使った強盗が増加、北部国境の地雷原（FCDO）</td><td data-label="ペルー中心の旅にどうつながるか">ウユニ→アタカマの陸路（既存資料）。サンティアゴ—リマ直行3時間45分</td><td data-label="足す価値">ウユニから抜けるなら追加する価値あり。サンティアゴは太平洋横断の乗継地</td></tr></tbody></table></div>
 <h2 class="side-h" id="ビザ入国日本国籍">ビザ・入国（日本国籍）</h2>
 <ul><li>ビザ：日本はビザ免除で、観光は最大90日（Wikivoyage Chile）。</li><li><details class="more"><summary>入国の記録：Wikivoyageは「PDIが旅券を読み取り、バーコードつきの紙を出す。出国時に必要」と書く。FCDOは「観光カード（tarj…<span class="hint">（全文を開く）</span></summary><div class="full">入国の記録：Wikivoyageは「PDIが旅券を読み取り、バーコードつきの紙を出す。出国時に必要」と書く。FCDOは「観光カード（tarjeta de turismo）を出国時に返す。なくしたらPDIで再発行」と書く。両者の表現が違うので、到着時に渡された紙を出国まで保管する。</div></details></li><li>黄熱：FCDOのチリ入国要件のページに記載なし。TravelHealthProを参照とされる。</li></ul>
 <h2 class="side-h" id="安全健康">安全・健康</h2>

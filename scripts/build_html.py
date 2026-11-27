@@ -293,6 +293,22 @@ window.addEventListener("hashchange",fromHash);fromHash();
 </script>"""
 
 
+# 数値だけの表の列：通貨記号・数字・単位・範囲（〜／）の組み合わせ（例：¥3,140,854、¥2,760,610 ／ ¥3,699,199、13 件、58 USD、5/4〜5/5）
+_U = r"(?:円|万円|件|日|泊|回|%|％|USD|PHP|ZAR|EUR|km|時間|分)?"
+NUMERIC_CELL = re.compile(rf"^(?:[¥$＄€]|[A-Z]{{2,3}})?-?[\d,.]+{_U}(?:[〜～/／\-][¥$]?-?[\d,.]+{_U})*$")
+
+# 「**ラベル**：本文」だけの段落（ラベルは短く、本文は長い）。続けて2つ以上並ぶと、ラベルと本文の2列の一覧にする
+_KV_P = re.compile(r"<p><strong>([^<]{2,28})</strong>[：:]\s*(.{40,}?)</p>", re.S)
+_KV_RUN = re.compile(r"(?:<p><strong>[^<]{2,28}</strong>[：:]\s*.{40,}?</p>\s*){2,}", re.S)
+
+
+def group_labeled_paragraphs(body: str) -> str:
+    def run(m):
+        items = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in _KV_P.findall(m.group(0)))
+        return f'<dl class="kvp">{items}</dl>\n'
+    return _KV_RUN.sub(run, body)
+
+
 def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
     """Markdown -> (title, body_html, toc)"""
     md = re.sub(r"<!--.*?-->", "", md, flags=re.S)
@@ -351,6 +367,15 @@ def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
             rows = []
             while i < len(lines) and lines[i].strip().startswith("|"):
                 rows.append(split_row(lines[i])); i += 1
+            # 金額・件数・日付などの「短い数値」だけが並ぶ列は、見出し行で右寄せを書いていなくても数値列にする
+            # （数値列は折り返さない。¥3,140,854 が途中で切れて見にくくなるのを防ぐ）
+            for k in range(len(aligns)):
+                if aligns[k]:
+                    continue
+                cells = [re.sub(r"\*\*|\s", "", r[k]) for r in rows if k < len(r)]
+                cells = [c for c in cells if c and c not in ("—", "－", "-", "未計上", "未確認")]
+                if len(cells) >= 2 and all(len(c) <= 24 and NUMERIC_CELL.match(c) for c in cells):
+                    aligns[k] = "right"
 
             def cell(tag, c, k):
                 a = aligns[k] if k < len(aligns) else ""
@@ -365,6 +390,8 @@ def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
             tbody = "".join("<tr>" + "".join(cell("td", c, k) for k, c in enumerate(r)) + "</tr>" for r in rows)
             is_cost = head[:1] == ["項目"] and "低予算" in head and "標準" in head and "余裕" in head
             tattr = ' class="cost" data-cost' if is_cost else ""  # 費用表：要否の列は JS が足す（保存先はそのブラウザだけ）
+            if len(head) >= 7:  # 列が多い表：各列に最小幅を持たせ、枠からはみ出す分は枠の中で横にスクロールする
+                tattr = ' class="cost wide" data-cost' if is_cost else ' class="wide"'
             out.append(f'<div class="scroll"><table{tattr}><thead>{thead}</thead><tbody>{tbody}</tbody></table></div>')
             continue
         if s.startswith(">"):
@@ -384,7 +411,7 @@ def convert(md: str) -> tuple[str, str, list[tuple[int, str, str]]]:
         para.append(s)
         i += 1
     flush()
-    return title, "\n".join(out), toc
+    return title, group_labeled_paragraphs("\n".join(out)), toc
 
 
 def list_block(lines: list[str], i: int) -> str:

@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -554,11 +564,11 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")ms.forEach(f
 <h3 id="モデルコースアルーシャ起点推計">モデルコース（アルーシャ起点、推計）</h3>
 <p>前提：JRO（キリマンジャロ国際空港）着、またはナイロビからのバスでアルーシャ着。ツアー会社の手配（公園料金込み）を想定。2027年5月の運行・宿の営業状況は未確認。</p>
 <h4 id="2-1-4日サファリ北部サーキット凝縮">2-1. 4日サファリ（北部サーキット凝縮）</h4>
-<div class="scroll"><table><thead><tr><th>日</th><th>動き</th></tr></thead><tbody><tr><td data-label="日">1</td><td data-label="動き">アルーシャ → マニャラ湖（約1.5時間）で半日サファリ → カラツ泊</td></tr><tr><td data-label="日">2</td><td data-label="動き">カラツ → ンゴロンゴロ・クレーター下降（午前）→ セレンゲティ南部へ（約3時間強）</td></tr><tr><td data-label="日">3</td><td data-label="動き">セレンゲティで終日ゲームドライブ（5月は群れが西・北へ移動中の見込み、後述）→ 泊</td></tr><tr><td data-label="日">4</td><td data-label="動き">朝のゲームドライブ → 小型機でアルーシャへ（Seronera発約USD165片道、年不明）またはカラツ経由で陸路</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">日</th><th>動き</th></tr></thead><tbody><tr><td class="n" data-label="日">1</td><td data-label="動き">アルーシャ → マニャラ湖（約1.5時間）で半日サファリ → カラツ泊</td></tr><tr><td class="n" data-label="日">2</td><td data-label="動き">カラツ → ンゴロンゴロ・クレーター下降（午前）→ セレンゲティ南部へ（約3時間強）</td></tr><tr><td class="n" data-label="日">3</td><td data-label="動き">セレンゲティで終日ゲームドライブ（5月は群れが西・北へ移動中の見込み、後述）→ 泊</td></tr><tr><td class="n" data-label="日">4</td><td data-label="動き">朝のゲームドライブ → 小型機でアルーシャへ（Seronera発約USD165片道、年不明）またはカラツ経由で陸路</td></tr></tbody></table></div>
 <h4 id="2-2-7日サファリ4日ザンジバル3日">2-2. 7日（サファリ4日＋ザンジバル3日）</h4>
-<div class="scroll"><table><thead><tr><th>日</th><th>動き</th></tr></thead><tbody><tr><td data-label="日">1〜4</td><td data-label="動き">上記4日サファリ（4日目を小型機でアルーシャまたは直接ザンジバル方面へ）</td></tr><tr><td data-label="日">5</td><td data-label="動き">アルーシャ（ARK）またはJRO → ザンジバル（ZNZ）へ国内線（所要・運賃は未確認）</td></tr><tr><td data-label="日">6</td><td data-label="動き">ストーンタウン観光（スパイスツアーUSD10〜、ジョザニ森USD8〜はいずれも年不明）</td></tr><tr><td data-label="日">7</td><td data-label="動き">ビーチ（ヌングイ等）または出国。5月は雨天時の代替を用意</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">日</th><th>動き</th></tr></thead><tbody><tr><td class="n" data-label="日">1〜4</td><td data-label="動き">上記4日サファリ（4日目を小型機でアルーシャまたは直接ザンジバル方面へ）</td></tr><tr><td class="n" data-label="日">5</td><td data-label="動き">アルーシャ（ARK）またはJRO → ザンジバル（ZNZ）へ国内線（所要・運賃は未確認）</td></tr><tr><td class="n" data-label="日">6</td><td data-label="動き">ストーンタウン観光（スパイスツアーUSD10〜、ジョザニ森USD8〜はいずれも年不明）</td></tr><tr><td class="n" data-label="日">7</td><td data-label="動き">ビーチ（ヌングイ等）または出国。5月は雨天時の代替を用意</td></tr></tbody></table></div>
 <h4 id="2-3-10日サファリ5日ザンジバル4泊予備">2-3. 10日（サファリ5日＋ザンジバル4泊＋予備）</h4>
-<div class="scroll"><table><thead><tr><th>日</th><th>動き</th></tr></thead><tbody><tr><td data-label="日">1</td><td data-label="動き">アルーシャ着・休息</td></tr><tr><td data-label="日">2</td><td data-label="動き">タランギレ（またはマニャラ）日帰りサファリ</td></tr><tr><td data-label="日">3</td><td data-label="動き">ンゴロンゴロへ（カラツ泊）</td></tr><tr><td data-label="日">4</td><td data-label="動き">クレーター下降 → セレンゲティ南部</td></tr><tr><td data-label="日">5</td><td data-label="動き">セレンゲティ終日（可能なら西回廊方面へ移動）</td></tr><tr><td data-label="日">6</td><td data-label="動き">セレンゲティ午前 → アルーシャへ戻る</td></tr><tr><td data-label="日">7〜10</td><td data-label="動き">ザンジバルへ移動、ストーンタウン1泊＋ビーチ2泊＋予備1日</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">日</th><th>動き</th></tr></thead><tbody><tr><td class="n" data-label="日">1</td><td data-label="動き">アルーシャ着・休息</td></tr><tr><td class="n" data-label="日">2</td><td data-label="動き">タランギレ（またはマニャラ）日帰りサファリ</td></tr><tr><td class="n" data-label="日">3</td><td data-label="動き">ンゴロンゴロへ（カラツ泊）</td></tr><tr><td class="n" data-label="日">4</td><td data-label="動き">クレーター下降 → セレンゲティ南部</td></tr><tr><td class="n" data-label="日">5</td><td data-label="動き">セレンゲティ終日（可能なら西回廊方面へ移動）</td></tr><tr><td class="n" data-label="日">6</td><td data-label="動き">セレンゲティ午前 → アルーシャへ戻る</td></tr><tr><td class="n" data-label="日">7〜10</td><td data-label="動き">ザンジバルへ移動、ストーンタウン1泊＋ビーチ2泊＋予備1日</td></tr></tbody></table></div>
 <h4 id="2-4-14日キリマンジャロ登山を含む拡張">2-4. 14日（キリマンジャロ登山を含む拡張）</h4>
 <p>登山6〜7日＋サファリ4日＋ザンジバル3日。<strong>5月はキリマンジャロの雨季（4〜5月が最も雨が多い、Wikivoyage）</strong>にあたり、足場・視界・体調面で不利。留学の周遊中に高山病・天候リスクを負う意義は薄く、<strong>本資料では推奨しない</strong>（推計）。登山をする場合も、Wikivoyageが示す1日ハイキング（マランゴ〜マウンディ・クレーター、2025年8月時点でUSD85＋ガイド・車USD85前後）程度の軽い体験に留める案を挙げるにとどめる。</p>
 <p><strong>ラベル：コース構成は推計／個別の運賃・所要は未確認または年不明</strong></p>
