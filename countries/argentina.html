@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -538,7 +548,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")ms.forEach(f
 <div class="pane-wrap"><aside class="pane-side"><h2 class="side-h" id="概要">概要</h2>
 <p>南米の南東の国。首都ブエノスアイレス。イグアスの滝（アルゼンチン側）が主な目的。</p>
 <p>比較表の要約（<a href="../research/south-america-countries-b.html">比較資料</a>の第1章から）：</p>
-<div class="scroll"><table><thead><tr><th>国</th><th>主な体験</th><th>5月の適性</th><th>8月の適性</th><th>最低日数</th><th>日本旅券の入国</th><th>黄熱</th><th>治安の要点</th><th>ペルー中心の旅にどうつながるか</th><th>足す価値</th></tr></thead><tbody><tr><td data-label="国">アルゼンチン</td><td data-label="主な体験">イグアスの滝、ブエノスアイレス、北西部（サルタ・フフイ）、パタゴニア</td><td data-label="5月の適性">良い（イグアス・北西部）。パタゴニアは5月から降雪</td><td data-label="8月の適性">イグアスは乾いた時期。北西部は乾燥・夜は冷える。パタゴニアは冬</td><td data-label="最低日数">イグアス2日＋移動。ブエノスアイレス1〜2日</td><td data-label="日本旅券の入国">90日までビザ不要（Wikivoyage）</td><td data-label="黄熱">黄熱の危険国（既存資料：FORTH）。南アへ入る前なら証明書が必要（既存資料）</td><td data-label="治安の要点">ブエノスアイレスで置き引き・ひったくり・マスタード詐欺（FCDO）</td><td data-label="ペルー中心の旅にどうつながるか">リマとエセイサ（EZE）は直行4時間50分。ボリビアのビジャソンからラ・キアカ経由でサルタへ陸路</td><td data-label="足す価値">追加する価値あり（イグアス）。ただし黄熱の扱いに注意</td></tr></tbody></table></div>
+<div class="scroll"><table class="wide"><thead><tr><th>国</th><th>主な体験</th><th>5月の適性</th><th>8月の適性</th><th>最低日数</th><th>日本旅券の入国</th><th>黄熱</th><th>治安の要点</th><th>ペルー中心の旅にどうつながるか</th><th>足す価値</th></tr></thead><tbody><tr><td data-label="国">アルゼンチン</td><td data-label="主な体験">イグアスの滝、ブエノスアイレス、北西部（サルタ・フフイ）、パタゴニア</td><td data-label="5月の適性">良い（イグアス・北西部）。パタゴニアは5月から降雪</td><td data-label="8月の適性">イグアスは乾いた時期。北西部は乾燥・夜は冷える。パタゴニアは冬</td><td data-label="最低日数">イグアス2日＋移動。ブエノスアイレス1〜2日</td><td data-label="日本旅券の入国">90日までビザ不要（Wikivoyage）</td><td data-label="黄熱">黄熱の危険国（既存資料：FORTH）。南アへ入る前なら証明書が必要（既存資料）</td><td data-label="治安の要点">ブエノスアイレスで置き引き・ひったくり・マスタード詐欺（FCDO）</td><td data-label="ペルー中心の旅にどうつながるか">リマとエセイサ（EZE）は直行4時間50分。ボリビアのビジャソンからラ・キアカ経由でサルタへ陸路</td><td data-label="足す価値">追加する価値あり（イグアス）。ただし黄熱の扱いに注意</td></tr></tbody></table></div>
 <h2 class="side-h" id="ビザ入国日本国籍">ビザ・入国（日本国籍）</h2>
 <ul><li>ビザ：日本はビザ免除の対象で、観光は最大90日（Wikivoyage Argentina、第三者（利用者編集））。入国時に最初の宿の住所を伝える。証明は不要とされる。</li><li>FCDO（英国旅券向け）：90日までビザ不要。到着時に旅券へスタンプを押さなくなった。出入国の証明は移民局が出す。1万米ドル超の現金は申告が必要。</li><li><details class="more"><summary>黄熱：FCDOは「アルゼンチンに黄熱の危険があるため、次に行く国で証明書が必要になる場合がある」と書く。入国の条件としては書いていない。既存…<span class="hint">（全文を開く）</span></summary><div class="full">黄熱：FCDOは「アルゼンチンに黄熱の危険があるため、次に行く国で証明書が必要になる場合がある」と書く。入国の条件としては書いていない。既存資料では、アルゼンチンはFORTHの危険国一覧に入っており、南アフリカは危険国の後に証明書を求める。<strong>5月案でアルゼンチン→ケープタウンの順にすると、黄熱の証明書が必要になる可能性が高い。</strong></div></details></li></ul>
 <h2 class="side-h" id="安全健康">安全・健康</h2>

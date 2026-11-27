@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -538,7 +548,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")ms.forEach(f
 <div class="pane-wrap"><aside class="pane-side"><h2 class="side-h" id="概要">概要</h2>
 <p>北米の国。首都メキシコシティ。リマ→メキシコシティ→成田がどちらも直行で、8月の帰路に組み込みやすい。</p>
 <p>比較表の要約（<a href="../research/south-america-countries-b.html">比較資料</a>の第1章から）：</p>
-<div class="scroll"><table><thead><tr><th>国</th><th>主な体験</th><th>5月の適性</th><th>8月の適性</th><th>最低日数</th><th>日本旅券の入国</th><th>黄熱</th><th>治安の要点</th><th>ペルー中心の旅にどうつながるか</th><th>足す価値</th></tr></thead><tbody><tr><td data-label="国">メキシコ</td><td data-label="主な体験">メキシコシティとテオティワカン、ユカタンのセノーテ潜水、ホルボッシュのジンベエザメ</td><td data-label="5月の適性">内陸は良い。沿岸は暑い。ジンベエザメは5月下旬から</td><td data-label="8月の適性">ジンベエザメの最盛期（7〜8月）。ハリケーンの時期にかかる可能性</td><td data-label="最低日数">メキシコシティ2日。ユカタン3〜4日</td><td data-label="日本旅券の入国">ビザ不要（FMM）。滞在日数は入国審査官が決める（最大180日）</td><td data-label="黄熱">今回のページに記載なし</td><td data-label="治安の要点">北部・一部の州は渡航中止勧告。メキシコシティ・キンタナロー・ユカタン・オアハカは勧告対象外（FCDO）</td><td data-label="ペルー中心の旅にどうつながるか">リマ—メキシコシティ直行6時間。メキシコシティ—成田直行14時間45分</td><td data-label="足す価値">8月の帰路の乗継地として最も現実的。2〜5日の途中滞在の価値あり</td></tr></tbody></table></div>
+<div class="scroll"><table class="wide"><thead><tr><th>国</th><th>主な体験</th><th>5月の適性</th><th>8月の適性</th><th>最低日数</th><th>日本旅券の入国</th><th>黄熱</th><th>治安の要点</th><th>ペルー中心の旅にどうつながるか</th><th>足す価値</th></tr></thead><tbody><tr><td data-label="国">メキシコ</td><td data-label="主な体験">メキシコシティとテオティワカン、ユカタンのセノーテ潜水、ホルボッシュのジンベエザメ</td><td data-label="5月の適性">内陸は良い。沿岸は暑い。ジンベエザメは5月下旬から</td><td data-label="8月の適性">ジンベエザメの最盛期（7〜8月）。ハリケーンの時期にかかる可能性</td><td data-label="最低日数">メキシコシティ2日。ユカタン3〜4日</td><td data-label="日本旅券の入国">ビザ不要（FMM）。滞在日数は入国審査官が決める（最大180日）</td><td data-label="黄熱">今回のページに記載なし</td><td data-label="治安の要点">北部・一部の州は渡航中止勧告。メキシコシティ・キンタナロー・ユカタン・オアハカは勧告対象外（FCDO）</td><td data-label="ペルー中心の旅にどうつながるか">リマ—メキシコシティ直行6時間。メキシコシティ—成田直行14時間45分</td><td data-label="足す価値">8月の帰路の乗継地として最も現実的。2〜5日の途中滞在の価値あり</td></tr></tbody></table></div>
 <h2 class="side-h" id="ビザ入国日本国籍">ビザ・入国（日本国籍）</h2>
 <ul><li><details class="more"><summary>入国（Wikivoyage Mexico）：日本はFMM（観光カード）の対象。最大180日だが、実際の日数は審査官が3〜180日の間で決める…<span class="hint">（全文を開く）</span></summary><div class="full">入国（Wikivoyage Mexico）：日本はFMM（観光カード）の対象。最大180日だが、実際の日数は審査官が3〜180日の間で決める。窓口を離れる前に日数を確認する。FMMはUS$22で、空路なら航空券に含まれる。紙のカードは廃止が進み、電子版（FMMd）になる。</div></details></li><li>黄熱：今回取得したページに記載なし。</li><li><details class="more"><summary>Wikivoyage：テオティワカンで2026年4月に暴力事件があった。再開済みだが警備強化や入場制限がありうる（2026年4月22日更新）…<span class="hint">（全文を開く）</span></summary><div class="full">Wikivoyage：テオティワカンで2026年4月に暴力事件があった。再開済みだが警備強化や入場制限がありうる（2026年4月22日更新）。メキシコシティでは流しのタクシーで短時間誘拐の危険、地下鉄ですりが毎日起きる。シティオ（乗り場）タクシーかラジオタクシーを使う。</div></details></li></ul>
 <h2 class="side-h" id="安全健康">安全・健康</h2>

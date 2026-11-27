@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -569,7 +579,7 @@ if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.add
 <div class="scroll"><table><thead><tr><th>行</th><th>内容</th><th>反映</th></tr></thead><tbody><tr><td data-label="行">AF-18（ビクトリアの滝周辺→ケープタウン）</td><td data-label="内容">Proflight の便・運賃</td><td data-label="反映"><strong>金額は空欄のまま</strong>。公式で取れたのは<strong>往復運賃の例</strong>（US$563〜、過去1週間の予約）で、片道の運賃ではない。往復を半分にして片道とみなすのは根拠がなく、推測になるため入れない。便（LVI→CPT の月曜・金曜）と手荷物は備考に反映し、<strong>片道の見積を取るまで金額未入力</strong></td></tr><tr><td data-label="行">AF-16・AF-14・AF-15（マダガスカル）</td><td data-label="内容">国内線・観光・宿泊</td><td data-label="反映"><strong>空欄のまま</strong>（MGA 円換算不可、国内線運賃未確認）</td></tr></tbody></table></div>
 <hr>
 <h2 id="5-未確認次の取得先">5. 未確認（次の取得先）</h2>
-<div class="scroll"><table><thead><tr><th>#</th><th>項目</th><th>次の取得先</th></tr></thead><tbody><tr><td data-label="#">1</td><td data-label="項目">MGA・BWP・ZMW の円換算レート</td><td data-label="次の取得先">銀行の相場に載らない通貨の公的な参考レート</td></tr><tr><td data-label="#">2</td><td data-label="項目">Madagascar Airlines の国内線運賃（TNR⇄MOQ ほか）</td><td data-label="次の取得先">公式サイト（403で取得不可）。旅行会社の見積</td></tr><tr><td data-label="#">3</td><td data-label="項目">アンダシベ・マンタディアのガイド料・入園料の等級</td><td data-label="次の取得先">MNPの料金資料（画像／PDF）</td></tr><tr><td data-label="#">4</td><td data-label="項目">LVI→CPT の片道運賃と座席、変更取消条件</td><td data-label="次の取得先">Proflight の予約画面</td></tr><tr><td data-label="#">5</td><td data-label="項目">VFA→CPT・カサネ→CPT の直行の有無</td><td data-label="次の取得先">Airlink の予約画面</td></tr><tr><td data-label="#">6</td><td data-label="項目">2027年5月の月曜・金曜便の実際の運航と、ケープタウン到着日の余裕</td><td data-label="次の取得先">Proflight の予約画面</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">#</th><th>項目</th><th>次の取得先</th></tr></thead><tbody><tr><td class="n" data-label="#">1</td><td data-label="項目">MGA・BWP・ZMW の円換算レート</td><td data-label="次の取得先">銀行の相場に載らない通貨の公的な参考レート</td></tr><tr><td class="n" data-label="#">2</td><td data-label="項目">Madagascar Airlines の国内線運賃（TNR⇄MOQ ほか）</td><td data-label="次の取得先">公式サイト（403で取得不可）。旅行会社の見積</td></tr><tr><td class="n" data-label="#">3</td><td data-label="項目">アンダシベ・マンタディアのガイド料・入園料の等級</td><td data-label="次の取得先">MNPの料金資料（画像／PDF）</td></tr><tr><td class="n" data-label="#">4</td><td data-label="項目">LVI→CPT の片道運賃と座席、変更取消条件</td><td data-label="次の取得先">Proflight の予約画面</td></tr><tr><td class="n" data-label="#">5</td><td data-label="項目">VFA→CPT・カサネ→CPT の直行の有無</td><td data-label="次の取得先">Airlink の予約画面</td></tr><tr><td class="n" data-label="#">6</td><td data-label="項目">2027年5月の月曜・金曜便の実際の運航と、ケープタウン到着日の余裕</td><td data-label="次の取得先">Proflight の予約画面</td></tr></tbody></table></div>
 <details class="sec"><summary><h2 id="6-調査ログ2026-11-08">6. 調査ログ（2026-11-08）</h2></summary>
 <div class="scroll"><table><thead><tr><th>取得先</th><th>結果</th></tr></thead><tbody><tr><td data-label="取得先">proflight-zambia.com（リビングストン発・ルサカ発・手荷物）</td><td data-label="結果">成功。LVI→CPT の曜日・時刻・運航期間、往復運賃の目安、手荷物規則</td></tr><tr><td data-label="取得先">flyairlink.com（トップ、/network）</td><td data-label="結果">成功。就航先に VFA・LVI・BBK・MUB・CPT・JNB。路線ペアの記載なし</td></tr><tr><td data-label="取得先">en.wikivoyage.org（Morondava、Antananarivo）</td><td data-label="結果">成功。空路は毎日・約1時間（運賃なし）、陸路55,000Ar、宿・食事の価格</td></tr><tr><td data-label="取得先">airmadagascar.com</td><td data-label="結果">403。国内線運賃は未取得</td></tr><tr><td data-label="取得先">kayak.co.jp（VFA→CPT）</td><td data-label="結果">404</td></tr><tr><td data-label="取得先">murc-kawasesouba.jp</td><td data-label="結果">MGA・BWP・ZMW・MUR は一覧になし</td></tr><tr><td data-label="取得先">WebSearch</td><td data-label="結果">この環境では使えなかった</td></tr></tbody></table></div>
 <ul><li><details class="more"><summary>再確認（2026-11-10）：Proflight Zambia の公式サイト proflight-zambia.com の /flight…<span class="hint">（全文を開く）</span></summary><div class="full">再確認（2026-11-10）：Proflight Zambia の公式サイト proflight-zambia.com の <code>/flights/flights-from-livingstone/</code> と <code>/flights/flights-to-cape-town/</code> の時刻表を再取得し、本書 2.1 の表と<strong>一致</strong>することを確認した。P0 050（月・水・土 08:40→11:40）は 2027-05-01〜06-23 だけ月曜のみ、P0 054（金 12:05→15:05）は 2026-12-11 から無期限。ルサカ発（P0 050 07:15→11:40、P0 054 10:40→15:05）も同じ曜日で、『その他の曜日は、ヨハネスブルグ経由の提携（flySafair・SAA・Cemair）』と公式に記載。変更は発生していない。</div></details></li></ul>

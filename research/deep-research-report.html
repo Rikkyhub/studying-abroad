@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -636,7 +646,7 @@ if(m.addEventListener)m.addEventListener("change",f);else if(m.addListener)m.add
 <p>今回の希望に合わせた重み、</p>
 <ul><li>友達・交流 30%</li><li>英語教育 25%</li><li>Business/海外就労 15%</li><li>活動・自由度 15%</li><li>宿泊・安全 10%</li><li>費用対効果 5%</li></ul>
 <p>で、<strong>公開情報を根拠に私が分析評価した値</strong>は以下です。これは学校が公表する客観スコアではなく、今回の希望との適合度です。年齢構成などデータがない項目は高得点を付けず、不確実性を残しています。</p>
-<div class="scroll"><table><thead><tr><th>学校</th><th class="n">交流</th><th class="n">教育</th><th class="n">Business</th><th class="n">活動</th><th class="n">宿泊等</th><th class="n">費用</th><th class="n">加重評価</th><th>データ確度</th></tr></thead><tbody><tr><td data-label="学校"><strong>GHS</strong></td><td class="n" data-label="交流">9.2</td><td class="n" data-label="教育">9.0</td><td class="n" data-label="Business">9.2</td><td class="n" data-label="活動">9.5</td><td class="n" data-label="宿泊等">8.5</td><td class="n" data-label="費用">3.5</td><td class="n" data-label="加重評価"><strong>8.8</strong></td><td data-label="データ確度">高</td></tr><tr><td data-label="学校"><strong>UCT ELC</strong></td><td class="n" data-label="交流">8.5</td><td class="n" data-label="教育">9.2</td><td class="n" data-label="Business">9.0</td><td class="n" data-label="活動">9.0</td><td class="n" data-label="宿泊等">7.5</td><td class="n" data-label="費用">5.5</td><td class="n" data-label="加重評価"><strong>8.6</strong></td><td data-label="データ確度">高</td></tr><tr><td data-label="学校"><strong>IH Cape Town</strong></td><td class="n" data-label="交流">8.0</td><td class="n" data-label="教育">8.3</td><td class="n" data-label="Business"><strong>9.5</strong></td><td class="n" data-label="活動">8.0</td><td class="n" data-label="宿泊等">8.0</td><td class="n" data-label="費用"><strong>9.5</strong>*</td><td class="n" data-label="加重評価"><strong>8.4</strong></td><td data-label="データ確度">中〜高</td></tr><tr><td data-label="学校"><strong>Cape Studies</strong></td><td class="n" data-label="交流">7.0</td><td class="n" data-label="教育">8.4</td><td class="n" data-label="Business">7.5</td><td class="n" data-label="活動">6.5</td><td class="n" data-label="宿泊等"><strong>9.2</strong></td><td class="n" data-label="費用"><strong>9.5</strong>*</td><td class="n" data-label="加重評価"><strong>7.7</strong></td><td data-label="データ確度">中</td></tr></tbody></table></div>
+<div class="scroll"><table class="wide"><thead><tr><th>学校</th><th class="n">交流</th><th class="n">教育</th><th class="n">Business</th><th class="n">活動</th><th class="n">宿泊等</th><th class="n">費用</th><th class="n">加重評価</th><th>データ確度</th></tr></thead><tbody><tr><td data-label="学校"><strong>GHS</strong></td><td class="n" data-label="交流">9.2</td><td class="n" data-label="教育">9.0</td><td class="n" data-label="Business">9.2</td><td class="n" data-label="活動">9.5</td><td class="n" data-label="宿泊等">8.5</td><td class="n" data-label="費用">3.5</td><td class="n" data-label="加重評価"><strong>8.8</strong></td><td data-label="データ確度">高</td></tr><tr><td data-label="学校"><strong>UCT ELC</strong></td><td class="n" data-label="交流">8.5</td><td class="n" data-label="教育">9.2</td><td class="n" data-label="Business">9.0</td><td class="n" data-label="活動">9.0</td><td class="n" data-label="宿泊等">7.5</td><td class="n" data-label="費用">5.5</td><td class="n" data-label="加重評価"><strong>8.6</strong></td><td data-label="データ確度">高</td></tr><tr><td data-label="学校"><strong>IH Cape Town</strong></td><td class="n" data-label="交流">8.0</td><td class="n" data-label="教育">8.3</td><td class="n" data-label="Business"><strong>9.5</strong></td><td class="n" data-label="活動">8.0</td><td class="n" data-label="宿泊等">8.0</td><td class="n" data-label="費用"><strong>9.5</strong>*</td><td class="n" data-label="加重評価"><strong>8.4</strong></td><td data-label="データ確度">中〜高</td></tr><tr><td data-label="学校"><strong>Cape Studies</strong></td><td class="n" data-label="交流">7.0</td><td class="n" data-label="教育">8.4</td><td class="n" data-label="Business">7.5</td><td class="n" data-label="活動">6.5</td><td class="n" data-label="宿泊等"><strong>9.2</strong></td><td class="n" data-label="費用"><strong>9.5</strong>*</td><td class="n" data-label="加重評価"><strong>7.7</strong></td><td data-label="データ確度">中</td></tr></tbody></table></div>
 <p>\* IH/Cape Studiesの費用評価は「スマ留51万円の提示条件がその学校・希望コース・宿泊に確実に適用される」という前提です。</p>
 <p>この表だけならGHSが首位ですが、<strong>56万円という予算枠（匿名モデル）は単なる5%の評価項目ではなく、実際には必須条件です</strong>。GHSはそこで脱落します。UCTも正式な学校＋宿泊総額を取るまでは予算適合を確認できません。</p>
 <p>その「ハード条件」を加えると、実務上の順位は、</p>

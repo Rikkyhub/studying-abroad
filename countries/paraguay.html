@@ -25,13 +25,23 @@ table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.65}
 th,td{padding:7px 9px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere;word-break:normal;line-break:strict}
 td{min-width:3.6em} tbody tr:last-child td{border-bottom:0}
 table{table-layout:auto}
+td:first-child:not(.n):not(.c){min-width:8.5em}
+table.wide{min-width:max-content}
+table.wide td,table.wide th{min-width:7em}
+table.wide td.n,table.wide th.n{min-width:6em}
+dl.kvp{margin:10px 0;border:1px solid var(--line);border-radius:var(--rad);background:var(--card);overflow:hidden}
+dl.kvp>div{display:grid;grid-template-columns:minmax(7.5em,13em) minmax(0,1fr);gap:4px 16px;padding:9px 14px;border-top:1px solid var(--line)}
+dl.kvp>div:first-child{border-top:0}
+dl.kvp dt{font-weight:700;margin:0;line-height:1.55}
+dl.kvp dd{margin:0;line-height:1.75;min-width:0}
+@media(max-width:700px){dl.kvp>div{grid-template-columns:minmax(0,1fr)}}
 th:last-child:not(.n):not(.c),td:last-child:not(.n):not(.c){min-width:11em}
 table th{padding-left:9px;padding-right:9px}
 thead th:first-child{border-top-left-radius:calc(var(--rad) - 1px)} thead th:last-child{border-top-right-radius:calc(var(--rad) - 1px)}
 tbody tr:last-child td:first-child{border-bottom-left-radius:calc(var(--rad) - 1px)} tbody tr:last-child td:last-child{border-bottom-right-radius:calc(var(--rad) - 1px)} tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--th) 42%,transparent)}
 th{position:sticky;top:0;z-index:2;background:var(--th);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
 table th:first-child,table td:first-child{font-weight:700}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:5.5em}
 td.c,th.c{text-align:center}
 td strong{font-weight:700}
 code{font-family:var(--mono);font-size:.9em;background:var(--code);padding:1px 5px;border-radius:4px}
@@ -550,7 +560,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")ms.forEach(f
 <ul><li><details class="more"><summary>確認日：2026-11-21〜11-23（出典の確認日は各行に記載）。このページは、コメントに記録された一次資料（パ…<span class="hint">（全文を開く）</span></summary><div class="full">確認日：2026-11-21〜11-23（出典の確認日は各行に記載）。このページは、コメントに記録された<strong>一次資料（パラグアイ移民局・保健省・ブラジル観光省など）の確認結果を整理したもの</strong>で、今回の新しい取得はありません。</div></details></li><li><details class="more"><summary>この国での予定：8月のイグアス周辺で、ブラジル・アルゼンチンに加えて入国観光する候補です。成立が確認できるまでは暫定で、入国条件・黄熱・移動…<span class="hint">（全文を開く）</span></summary><div class="full">この国での予定：<strong>8月のイグアス周辺で、ブラジル・アルゼンチンに加えて入国観光する候補</strong>です。<strong>成立が確認できるまでは暫定</strong>で、入国条件・黄熱・移動が成立しなければ、国数をA（ウユニあり）は4か国、B（ウユニなし）は3か国に戻します。予約や確定ではありません。</div></details></li><li>区分：<strong>公式</strong>＝政府・事業者の公式ページ、<strong>第三者</strong>＝経路検索・旅行ガイドなど（<strong>公式ではない</strong>）、<strong>未取得</strong>＝取れなかったもの（<strong>0円・0分ではない</strong>）。2026年の掲載は2027年8月の運用を保証しません。</li></ul>
 </div></aside><div class="pane"><div class="tabs" role="tablist"><button type="button" role="tab" id="tab-t8" data-t="t8" aria-controls="pan-t8" aria-selected="true" title="旅程の目安（日数・費用）">旅程の目安</button><button type="button" role="tab" id="tab-t3" data-t="t3" aria-controls="pan-t3" aria-selected="false">主な観光地</button><button type="button" role="tab" id="tab-t7" data-t="t7" aria-controls="pan-t7" aria-selected="false">行き方・移動</button><button type="button" role="tab" id="tab-t4" data-t="t4" aria-controls="pan-t4" aria-selected="false">おすすめの食べ物</button><button type="button" role="tab" id="tab-t2" data-t="t2" aria-controls="pan-t2" aria-selected="false">おおよその位置の地図</button><button type="button" role="tab" id="tab-t9" data-t="t9" aria-controls="pan-t9" aria-selected="false">未確認事項</button><button type="button" role="tab" id="tab-t10" data-t="t10" aria-controls="pan-t10" aria-selected="false">出典一覧</button><button type="button" role="tab" id="tab-t11" data-t="t11" aria-controls="pan-t11" aria-selected="false">調査ログ</button></div><div class="pane-body"><section role="tabpanel" id="pan-t8" data-t="t8" aria-labelledby="tab-t8"><h2 id="旅程の目安日数費用">旅程の目安（日数・費用）</h2>
 <h3 id="イグアス周辺の滞在日数の比較案">イグアス周辺の滞在日数の比較（案）</h3>
-<div class="scroll"><table><thead><tr><th>滞在</th><th>内容</th><th>状態</th></tr></thead><tbody><tr><td data-label="滞在">3日</td><td data-label="内容">ブラジル側の滝・アルゼンチン側の滝・予備（パラグアイは国境の日帰りのみ）</td><td data-label="状態">移住地は入らない</td></tr><tr><td data-label="滞在">4日</td><td data-label="内容">上に<strong>移住地1日（日帰り）</strong>を足す</td><td data-label="状態">日帰りが成立するかは、バスの往復最終便しだい（<strong>未取得</strong>）</td></tr><tr><td data-label="滞在">5日</td><td data-label="内容">上に<strong>移住地1泊</strong>を足す</td><td data-label="状態">1泊版を並行して比較する</td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th class="n">滞在</th><th>内容</th><th>状態</th></tr></thead><tbody><tr><td class="n" data-label="滞在">3日</td><td data-label="内容">ブラジル側の滝・アルゼンチン側の滝・予備（パラグアイは国境の日帰りのみ）</td><td data-label="状態">移住地は入らない</td></tr><tr><td class="n" data-label="滞在">4日</td><td data-label="内容">上に<strong>移住地1日（日帰り）</strong>を足す</td><td data-label="状態">日帰りが成立するかは、バスの往復最終便しだい（<strong>未取得</strong>）</td></tr><tr><td class="n" data-label="滞在">5日</td><td data-label="内容">上に<strong>移住地1泊</strong>を足す</td><td data-label="状態">1泊版を並行して比較する</td></tr></tbody></table></div>
 <h3 id="費用">費用</h3>
 <div class="scroll"><table><thead><tr><th>項目</th><th>状態</th></tr></thead><tbody><tr><td data-label="項目">国境の登録・事前登録</td><td data-label="状態"><strong>無料</strong>（移民局、公式）</td></tr><tr><td data-label="項目">Foz→Ciudad del Esteの国際バス</td><td data-label="状態"><strong>未取得</strong>（市内バスR$5は流用不可）</td></tr><tr><td data-label="項目">Ciudad del Este→移住地の往復</td><td data-label="状態"><strong>未取得</strong></td></tr><tr><td data-label="項目">移住地での見学・食事・宿</td><td data-label="状態"><strong>未取得</strong></td></tr><tr><td data-label="項目">黄熱の予防接種</td><td data-label="状態">医療機関で相談（費用は<a href="../research/vaccines-and-medicines-checklist.html">ワクチンと薬のチェックリスト</a>）</td></tr></tbody></table></div>
 <p><strong>パラグアイの費用は、すべて未取得で、総額には入れていません（0円ではありません）。</strong> A・B両案に同じ額を足す前提で、取得してから反映します。</p>
